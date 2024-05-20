@@ -5,10 +5,18 @@
     <classes>
       <class name="comapnyAdminTest.AuditorCriticalTestCases">
         <methods>
-          <include name="PendingReviewUpdate1"/>
+          <include name="ViewEditPR1"/>
           <include name="setBrowser"/>
+          <include name="DocumentClearButton1"/>
           <include name="Login"/>
+          <include name="UpdateInEditButton1"/>
+          <include name="MultipleComplianceDownload1"/>
+          <include name="ViewReportOfCompliance1"/>
+          <include name="CommentButtonPR1"/>
+          <include name="ClearButton1"/>
           <include name="browserClosing"/>
+          <include name="ActnColmFileDownld1"/>
+          <include name="MoreReport1"/>
         </methods>
       </class> <!-- comapnyAdminTest.AuditorCriticalTestCases -->
     </classes>

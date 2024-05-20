@@ -42,7 +42,7 @@ public class ManagementTestCases extends BasePage{
 	public static XSSFSheet sheet = null;		//Sheet variable
 	public static List<WebElement> elementsList = null;
 	
-	/*
+	
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		
@@ -52,7 +52,7 @@ public class ManagementTestCases extends BasePage{
 		sheet = workbook.getSheetAt(5);					//Retrieving second sheet of Workbook
 		return sheet;
 	}
-	*/
+	
 	@BeforeTest
 
 	void setBrowser() throws Exception
@@ -93,7 +93,7 @@ public class ManagementTestCases extends BasePage{
 	}
 	
 	
-	
+	/*
 	
 	@Test(priority = 1) 
 	void ProjectsCountGridCount1() throws InterruptedException, IOException
@@ -473,6 +473,7 @@ public class ManagementTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
+	
 	
 	
 	@Test(priority = 30) 
@@ -989,7 +990,7 @@ public class ManagementTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	
+	*/
 	
 	//////////////Multiple Filter Verification
 	

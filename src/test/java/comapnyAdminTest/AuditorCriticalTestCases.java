@@ -67,7 +67,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent = new com.relevantcodes.extentreports.ExtentReports("E:\\VenderAuditProject\\Reports\\VCACompanyAuditorCritical.html",true);
 		
 		
-		test = extent.startTest("Verify OpenBrowser");
+		test = extent.startTest("Loging In - Auditor(Critical)");
 		
 		test.log(LogStatus.PASS, "Test Passed - Auditor Login.");
 		extent.endTest(test);
@@ -100,7 +100,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	}
 	
 	
-	/*
+	
 	
 	@Test(priority = 1) 
 	void UpcomingdashboardAndGridCountMatch1() throws InterruptedException, IOException
@@ -152,8 +152,6 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	
-	
 
 	
 	
@@ -200,12 +198,12 @@ public class AuditorCriticalTestCases extends BasePage{
 	
 	
 	
-	*/
+	
 	
 	@Test(priority = 8) 
 	void PendingReviewUpdate1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Pending Review Audit - Edit - Download And View Button Verification");
+		test = extent.startTest("Pending Review Audit - Edit - View Document Button Verification");
 		
 		CriticalMethod2.PendingReviewUpdate(test,workbook);
 		
@@ -213,13 +211,23 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 	
-
-	/*
+	@Test(priority = 8) 
+	void PendingReviewDownload1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Pending Review Audit - Edit - Download Button Verification");
+		
+		CriticalMethod2.PendingReviewDownload(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
 	
 	@Test(priority = 9) 
 	void ViewEditPR1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Pending Review Audit - Edit - View Button Verification");
+		test = extent.startTest("Pending Review Audit - Edit - View Compliance Button Verification");
 		
 		CriticalMethod2.ViewEditPR(test,workbook);
 		
@@ -233,7 +241,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	@Test(priority = 10) 
 	void CommentButtonPR1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Pending Review Audit - Edit - Comment Button Verification");
+		test = extent.startTest("Pending Review Audit - Edit - Chat Button Verification");
 		
 		CriticalMethod2.CommentButtonPR(test,workbook);
 		
@@ -579,7 +587,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	}
 	
 	
-*/
+
 	
 
 	

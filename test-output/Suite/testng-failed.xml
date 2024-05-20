@@ -3,39 +3,31 @@
 <suite thread-count="2" parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="2" parallel="classes" name="Test(failed)">
     <classes>
-      <class name="comapnyAdminTest.ContractorTestCasesCritical">
+      <class name="comapnyAdminTest.ProjectDirectorCriticalTestCases">
         <methods>
-          <include name="ClearButtonDocument1"/>
-          <include name="UpdateOverdue11"/>
-          <include name="Login"/>
-          <include name="GreyInRedCountMtch1"/>
-          <include name="AuditCompletionStatusClosed1"/>
-          <include name="PWSNotApplicableJKHillHigh1"/>
-          <include name="UpdateUpcoming1"/>
+          <include name="DownloadAndViewButton1"/>
+          <include name="setBrowser"/>
           <include name="browserClosing"/>
-          <include name="ComentOverdue11"/>
-          <include name="setBrowser"/>
-          <include name="PWSNotCompliedJKHills1"/>
-          <include name="ViewOverdue1"/>
-          <include name="OverdueDownloadAndViewButton1"/>
-          <include name="AuditCompletionStatusOverdue1"/>
-        </methods>
-      </class> <!-- comapnyAdminTest.ContractorTestCasesCritical -->
-      <class name="comapnyAdminTest.AuditorCriticalTestCases">
-        <methods>
-          <include name="setBrowser"/>
-          <include name="PendingReviewUpdate1"/>
+          <include name="Login"/>
+          <include name="ViewButtonReport1"/>
           <include name="DocumentClearButton1"/>
-          <include name="Login"/>
-          <include name="UpdateInEditButton1"/>
-          <include name="AuditCompletionStatusRed1"/>
-          <include name="ViewReportOfCompliance1"/>
-          <include name="CommentButtonPR1"/>
-          <include name="GreyInRedCountMtch1"/>
-          <include name="OverdueEditButton1"/>
-          <include name="browserClosing"/>
         </methods>
-      </class> <!-- comapnyAdminTest.AuditorCriticalTestCases -->
+      </class> <!-- comapnyAdminTest.ProjectDirectorCriticalTestCases -->
+      <class name="comapnyAdminTest.ProjectHeadCriticalTestCases">
+        <methods>
+          <include name="AuditCompletionStatusRed1"/>
+          <include name="PWCSSABCconstructionNotCompliedHigh1"/>
+          <include name="setBrowser"/>
+          <include name="DownloadAndViewButton1"/>
+          <include name="PWCSSABCConstructionCompliedHigh1"/>
+          <include name="ViewButton"/>
+          <include name="Login"/>
+          <include name="PWCSSABCconstructionNotApplicableHigh1"/>
+          <include name="browserClosing"/>
+          <include name="MoreReportDownload1"/>
+          <include name="PWAuditStatusSummeryABCConstructionOverdue1"/>
+        </methods>
+      </class> <!-- comapnyAdminTest.ProjectHeadCriticalTestCases -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -6439,26 +6439,20 @@ public class Method extends BasePage {
 		Thread.sleep(3000);
 		
 		
-		Locator.PendingMapping().click();
+		Locator.CheckBox().click();
 		Thread.sleep(3000);
 		
-		Locator.mapCompliance().click();
+		Locator.NextButton().click();
 		Thread.sleep(7000);
-		
-   
-		
-        Locator.SelectCompliance11CM().click();
+			
+        Locator.SelectComplianceCheckBox1().click();
         Thread.sleep(3000);
         
-		Locator.SelectMappingTypeDD().click();
+		Locator.SelectComplianceCheckBox2().click();
 		Thread.sleep(7000);
 		
-		
-		
-		
-		Locator.SaveCompliance().click();
+		Locator.SaveMappingButton().click();
 		Thread.sleep(3000);
-		
 		
 		Thread.sleep(20000);
 		
@@ -8224,11 +8218,11 @@ public class Method extends BasePage {
 		
    
 		
-        Locator.SelectCompliance11CM().click();
-        Thread.sleep(3000);
+  //      Locator.SelectCompliance11CM().click();
+   //     Thread.sleep(3000);
         
-		Locator.SelectMappingTypeDD().click();
-		Thread.sleep(7000);
+	//	Locator.SelectMappingTypeDD().click();
+	//	Thread.sleep(7000);
 		
 		
 		/*
@@ -8241,7 +8235,7 @@ public class Method extends BasePage {
         Thread.sleep(3000);
 		*/
 		
-		Locator.SaveCompliance().click();
+	//	Locator.SaveCompliance().click();
 		
 		
 		

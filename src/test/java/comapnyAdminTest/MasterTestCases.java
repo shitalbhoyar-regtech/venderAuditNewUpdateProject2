@@ -19,6 +19,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import companyAdmin.CriticalMethod;
 import companyAdmin.Method;
 import login.BasePage;
 
@@ -34,7 +35,7 @@ public class MasterTestCases extends BasePage{
 	public static List<WebElement> elementsList = null;
 	public static List<String> lines = null;
 	
-	/*
+	
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		
@@ -44,7 +45,7 @@ public class MasterTestCases extends BasePage{
 		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
 		return sheet;
 	}
-	*/
+	
 	@BeforeTest
 	void setBrowser() throws Exception
 	{
@@ -61,14 +62,14 @@ public class MasterTestCases extends BasePage{
 	void Login() throws InterruptedException, IOException
 	{
 		initialization("company",0);
-		/*
+		
 		XSSFSheet sheet = ReadExcel();
 		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String URL = c1.getStringCellValue();			//Got the URL stored at position 0,1
-		
+		/*
 		login.Login.BrowserSetup(URL);	
-
+*/
 	
 		Row row1 = sheet.getRow(1);						//Selected 1st index row (Second row)
 		Cell c2 = row1.getCell(1);						//Selected cell (1 row,1 column)
@@ -77,7 +78,7 @@ public class MasterTestCases extends BasePage{
 		Row row2 = sheet.getRow(2);						//Selected 2nd index row (Third row)
 		Cell c3 = row2.getCell(1);						//Selected cell (2 row,1 column)
 		String password = c3.getStringCellValue();		//Got the URL stored at position 2,1
-		
+		/*
 		driver = login.Login.UserLogin(uname,password,"company");		//Method of Login class to login user.
 		*/
 	}
@@ -87,20 +88,20 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-/*
+
 	
 	@Test(priority = 1) 
 	void Entity() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Entity Master - Add Entity Verification ");
 		
-		Method.Addentity2(test,workbook);
+		CriticalMethod.Addentity2(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-	*/
+	
 	
 	@Test(priority = 2) 
 	void EntityValidation() throws InterruptedException, IOException
@@ -127,7 +128,7 @@ public class MasterTestCases extends BasePage{
 		extent.flush();
 	}
 	
-	/*
+	
 	
 	
 	@Test(priority = 4) 
@@ -135,7 +136,7 @@ public class MasterTestCases extends BasePage{
 	{
 		test = extent.startTest("Entity Master - Delete Sub Entity Verification ");
 		
-		Method.DeleteSubEntity(test,workbook);
+		CriticalMethod.DeleteSubEntity(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -148,7 +149,18 @@ public class MasterTestCases extends BasePage{
 	{
 		test = extent.startTest("Entity Master - Add Sub Entity Verification ");
 		
-		Method.AddSubEntity2(test,workbook);
+		CriticalMethod.AddSubEntity2(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 6) 
+	void AddSubEntity2validation21() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Entity Master - Without Entre Data Add Sub-Entity Verification");
+		
+		Method.AddSubEntity2validation2(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -156,24 +168,24 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 6) 
+	@Test(priority = 7) 
 	void UpdateSubEntity1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Entity Master - Update Sub Entity Verification ");
 		
-		Method.UpdateSubEntity(test,workbook);
+		CriticalMethod.UpdateSubEntity(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
 	
-	@Test(priority = 7) 
+	@Test(priority = 8) 
 	void UpdateEntity11() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Entity Master - Update Entity Verification ");
 		
-		Method.UpdateEntity(test,workbook);
+		CriticalMethod.UpdateEntity(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -181,12 +193,12 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 8) 
+	@Test(priority = 9) 
 	void Clear() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Entity Master - Clear Button Verification");
 		
-		Method.ClearEntityButton(test,workbook);
+		CriticalMethod.ClearEntityButton(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -197,12 +209,12 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-      @Test(priority = 9) 
+      @Test(priority = 10) 
 		void DeleteE() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Entity Master - Delete Entity Verification");
 			
-			Method.DeleteE(test,workbook);
+			CriticalMethod.DeleteE(test,workbook);
 			
 			extent.endTest(test);
 			extent.flush();
@@ -210,19 +222,19 @@ public class MasterTestCases extends BasePage{
 		
 	
 	
-	@Test(priority = 10) 
+	@Test(priority = 11) 
 	void UploadEntity() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Entity Master - File Upload Verification");
 		
-		Method.UploadEntity1(test,workbook);
+		CriticalMethod.UploadEntity1(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-	*/
-	@Test(priority = 11) 
+	
+	@Test(priority = 12) 
 	void UploadEntityBlankSheet1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Entity Master - Without Enter Data File Upload Verification");
@@ -233,20 +245,30 @@ public class MasterTestCases extends BasePage{
 		extent.flush();
 	}
 	
-	/*
 	
 	
+	@Test(priority = 13) 
+	void UploadEntityValidation1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Entity Master - Without inserting File upload verification  ");
+		
+		Method.UploadEntityValidation(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
 
 	
 	
 	
 	
-	@Test(priority = 12) 
+	@Test(priority = 14) 
 	void AddUser1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("User Master - Add User Verification");
 		
-		Method.AddUser(test,workbook);
+		CriticalMethod.AddUser(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -255,12 +277,12 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority =13) 
+	@Test(priority =15) 
 	void UpdateUser1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("User Master - Update User Verification ");
 		
-		Method.UpdateUser(test,workbook);
+		CriticalMethod.UpdateUser(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -268,19 +290,19 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 14) 
+	@Test(priority = 16) 
 	void UserResetPass2() throws InterruptedException, IOException
 	{
 		test = extent.startTest("User Master - User Reset Password Verification ");
 		
-		Method.UserReset4(test,workbook);
+		CriticalMethod.UserReset4(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
-	*/
 	
-	@Test(priority = 15) 
+	
+	@Test(priority = 17) 
 	void ValidationUser1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("User Master - Without Enter Data For Every Field");
@@ -292,54 +314,27 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	/*
+	
 
 	
 	
-	@Test(priority = 16) 
+	@Test(priority = 18) 
 	void UserDelete11() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - Delete User Verification ");
 		
-		Method.UserDelete1(test,workbook);
+		CriticalMethod.UserDelete1(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 
-	@Test(priority = 17) 
+	@Test(priority = 19) 
 	void UploadUser1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - File Upload Verification");
 		
-		Method.UploadUser(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	*/
-	
-	@Test(priority = 18) 
-	void UploadUserWithoutEnterData1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" User Master - Without Enter Data File Upload Verification");
-		
-		Method.UploadUserWithoutEnterData(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	/*
-	
-	@Test(priority = 19) 
-	void AddContractor1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" User Master - Add Contractor Verification ");
-		
-		Method.AddContractors(test,workbook);
+		CriticalMethod.UploadUser(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -348,1115 +343,6 @@ public class MasterTestCases extends BasePage{
 	
 	
 	@Test(priority = 20) 
-	void UpdateContractor1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" User Master - Update Contractor Verification ");
-		
-		Method.UpdateContractor(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	
-	
-		@Test(priority = 21) 
-	void ResetPassContractor11() throws InterruptedException, IOException
-	{
-		test = extent.startTest("User Master - Reset Password Contractor Verification ");
-		
-		Method.ResetPassContractor1(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 22) 
-	void DeleteContractor1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" User Master - Delete Contractor Verification");
-		
-		Method.DeleteContractor(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 23) 
-	void AddManagementAssignment1() throws InterruptedException, IOException                     
-	{
-		test = extent.startTest(" User Master - Add Management Assignment Verification ");
-		
-		Method.AddManagementAssignment(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 24) 
-	void DeleteMA() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" User Master - Delete Management Assignment Verification ");
-		
-		Method.DeleteMA(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	
-	
-	@Test(priority = 25) 
-	void AddProject1() throws InterruptedException, IOException         
-	{
-		test = extent.startTest(" Project Master - Add Project Verification ");
-		
-		Method.AddProject(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 26) 
-	void AddLicence1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Project Master - Add Licence Verification ");
-		
-		Method.AddLicence(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 27) 
-	void UpdateProject1() throws InterruptedException, IOException               
-	{
-		test = extent.startTest(" Project Master - Update Project Verification");
-		
-		Method.UpdateProject(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	
-	@Test(priority = 28) 
-	void DeleteProject1() throws InterruptedException, IOException     
-	{
-		test = extent.startTest(" Project Master - Delete Project Verification");
-		
-		Method.DeleteProject(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 29) 
-	void UploadProject1() throws InterruptedException, IOException      
-	{
-		test = extent.startTest(" Project Master - Upload File Verification ");
-		
-		Method.UploadProject(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	*/
-	@Test(priority = 30) 
-	void UploadProjectBlankSheet1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Project Master - Without Enter Data Upload File Verification ");
-		
-		Method.UploadProjectBlankSheet(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	/*
-	
-	
-	@Test(priority = 31) 
-	void ProjectClearButton1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Project Master - Clear Button Verification ");
-		
-		Method.ProjectClearButton(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 32) 
-	void MapNewProje1ct() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Project Master - Map New Project Verification ");
-		
-		Method.MapNewProject(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	
-		
-	@Test(priority = 33) 
-	void CTContractorAdd1() throws InterruptedException, IOException              
-	{
-		test = extent.startTest(" Contractor Master - Add Contractor Verification ");
-		
-		Method.CTContractorAdd(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-
-
-	@Test(priority = 34) 
-	void UpdateContractorCT1() throws InterruptedException, IOException        
-	{
-		test = extent.startTest(" Contractor Master - Update Contractor Verification");
-		
-		Method.UpdateContractorCT(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	
-	@Test(priority = 35) 
-	void ExportButton() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Contractor Master - Export Button Verification");
-		
-		Method.ExportButton(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 36) 
-	void ClearButtonCTCC1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Contractor Master - Clear Button Verification");
-		
-		Method.ClearButtonCTCC(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 37)
-	void UploadContractorCT1() throws InterruptedException, IOException         
-	{
-		test = extent.startTest("Contractor Master - File Upload Verification ");
-		
-		Method.UploadContractorCT(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	*/
-	@Test(priority = 38) 
-	void uploadContractorBlanksheet1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Contractor Master - Without Enter Data Upload File Verification");
-		
-		Method.uploadContractorBlanksheet(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	/*
-	
-	@Test(priority = 39) 
-	void UploadContractorProjectMapping1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Contractor Master - Project Mapping File Upload Verification ");
-		
-		Method.UploadContractorProjectMappingSheet(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	*/
-	
-	@Test(priority = 40) 
-	void UploadContractorProjectMappingBlankSheet1() throws InterruptedException, IOException          
-	{
-		test = extent.startTest("Contractor Master -  Without enter data Project Mapping File Upload Verification ");
-		
-		Method.UploadContractorProjectMapping(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	/*
-	
-    @Test(priority = 41) 
-	void AddLicenceCT1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Contractor Master - Add Licence Verification ");
-		
-		Method.AddLicenceCT(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 42) 
-	void ViewLicence1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Contractor Master - View Licence Verification");
-		
-		Method.ViewLicence(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 43) 
-	void UpdateLicence1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Contractor Master - Update Licence Verification ");
-		
-		Method.UpdateLicence(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 44) 
-	void DeleteLicenceC1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Contractor Master - Delete Licence Verification");
-		
-		Method.DeleteLicenceC(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 45) 
-	void DeleteContractorCT1() throws InterruptedException, IOException             
-	{
-		test = extent.startTest(" Contractor Master - Delete Contractor Verification");
-		
-		Method.DeleteContractorCT(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 46) 
-	void AddActAndComplience1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Add Act Verification");
-		
-		Method.AddActAndComplience(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	*/
-	@Test(priority = 47) 
-	void AddActWithState1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Add Act With State Verification");
-		
-		Method.AddActWithState(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 48) 
-	void AddActWithDifferentState1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Add Act With Different State Verification");
-		
-		Method.AddActWithDifferentState(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 49) 
-	void AddActDuplicate1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Add Duplicate Act With State Verification");
-		
-		Method.AddActDuplicate(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-
-	@Test(priority = 50) 
-	void AddActDuplicateForCentral1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Add Duplicate Act With Central Verification");
-		
-		Method.AddActDuplicateForCentral(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	/*
-	
-
-	
-	@Test(priority = 51) 
-	void ClearAC1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Clear Button Verification");
-		
-		Method.ClearAC(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 52) 
-	void UpdateActAndCompliance1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Update Act Verification");
-		
-		Method.UpdateActAndCompliance(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-
-		
-	@Test(priority = 53) 
-	void DeleteAc1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Delete Act Verification");
-		
-		Method.DeleteAc(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	
-	@Test(priority = 54) 
-	void UploadActAndCompliance1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Act - Upload File Verification");
-		
-		Method.UploadActAndCompliance(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	*/
-	@Test(priority = 55) 
-	void UploadActWithsameAct1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Upload File With Same Act Verification");
-		
-		Method.UploadActWithsameAct(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	
-	
-	@Test(priority = 56) 
-	void UploadeActBlankSheet1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Without Enter Data File Upload Verification");
-		
-		Method.UploadeActBlankSheet(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	/*
-	@Test(priority = 57) 
-	void AddCompliance1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Add Compliance For Central Verification");
-		
-		Method.AddCompliance(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 58) 
-	void AddComplianceForState1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Add Compliance For State Verification");
-		
-		Method.AddComplianceForState(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-
-	@Test(priority = 59) 
-	void AddComplianceForDiffeState1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Add Compliance For Different State Verification");
-		
-		Method.AddComplianceForDiffeState(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	*/
-	
-	@Test(priority = 60) 
-	void AddDuplicateComplianceCentral1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Add  Duplicate Compliance For Central Verification");
-		
-		Method.AddDuplicateComplianceCentral(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	/*
-	@Test(priority = 61) 
-	void UpdateComplianceAC1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Update Compliance For State Verification");
-		
-		Method.UpdateComplianceAC(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 62) 
-	void DeleteCompliance1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Delete Compliance For State Verification");
-		
-		Method.DeleteCompliance(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 63) 
-	void ComplianceClearButton1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Compliance Clear Button Verification");
-		
-		Method.ComplianceClearButton(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 64) 
-	void UploadCompliance1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master -Compliance - File Upload Verification");
-		
-		Method.UploadCompliance(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	*/
-	@Test(priority = 65) 
-	void UploadBlankSheetComplianceAC1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Without Enter Data Compliance File Upload Verification");
-		
-		Method.UploadBlankSheetComplianceAC(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	/*
-	
-	
-	@Test(priority = 66) 
-	void AddTemplateAC1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Add Template Verification");
-		
-		Method.AddTemplateAC(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	
-	
-	
-	
-	@Test(priority = 67) 
-	void TemplateClearButton1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Act And Compliance master - Template Clear Button Verification");
-		
-		Method.TemplateClearButton(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 68) 
-	void DeleteTemplateAC1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Delete Template Verification ");
-		
-		Method.DeleteTemplateAC(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 69) 
-	void UploadTemplate1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Template - File Upload Verification ");
-		
-		Method.UploadTemplate(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	*/
-	
-	@Test(priority = 70) 
-	void UploadBlankSheetTemplateAC1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Without Enter Data Template File Upload Verification ");
-		
-		Method.UploadBlankSheetTemplateAC(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 71) 
-	void DuplicateTemplateAC1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Add Duplicate Template Verification ");
-		
-		Method.DuplicateTemplateAC(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	/*
-	
-	@Test(priority = 72) 
-	void AddContractorType1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Contractor Type Master - Add Contractor Type Verification ");
-		
-		Method.AddContractorType(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 73) 
-	void UpdateContractorType1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Contractor Type Master - Update Contractor Type Verification ");
-		
-		Method.UpdateContractorType(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 74) 
-	void DeleteContractorType1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Contractor Type Master - Delete Contractor Type Verification ");
-		
-		Method.DeleteContractorType(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 75) 
-	void ContractorTypeClearButtonn1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Contractor Type Master - Clear Button Verification ");
-		
-		Method.ContractorTypeClearButtonn(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 76) 
-	void AddCity1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" City Master - Add City Verification ");
-		
-		Method.AddCity(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 77) 
-	void UpdateCity1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" City Master - Update City Verification ");
-		
-		Method.UpdateCity(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 78) 
-	void DeleteCity1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" City Master - Delete City Verification ");
-		
-		Method.DeleteCity(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 79) 
-	void CityMasterClearButton1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" City Master - Clear Button Verification ");
-		
-		Method.CityMasterClearButton(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 80) 
-	void AddLicenceType1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Licence Type Master  - Add Licence Type Verification ");
-		
-		Method.AddLicenceType(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 81) 
-	void UpdateLicenceType1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("  Licence Type Master  - Update Licence Type Verification");
-		
-		Method.UpdateLicenceType(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 82) 
-	void DeleteLicenceType1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("  Licence Type Master  - Delete Licence Type Verification ");
-		
-		Method.DeleteLicenceType(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 83) 
-	void LicenceTypeClearButton1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("  Licence Type Master  - Clear Button Verification ");
-		
-		Method.LicenceTypeClearButton(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 84) 
-	void AddDataPoint1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("  Data Point Master  - Add Data Point Verification");
-		
-		Method.AddDataPoint(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 85) 
-	void UpdateDataPoint1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Data Point Master  - Update Data Point Verification ");
-		
-		Method.UpdateDataPoint(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 86) 
-	void DeleteDataPoint1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Data Point Master  - Delete Data Point Verification ");
-		
-		Method.DeleteDataPoint(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 87) 
-	void DataPointClearButton1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Data Point Master -  Clear Button  Verification ");
-		
-		Method.DataPointClearButton(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-
-	
-	
-	
-	@Test(priority = 88) 
-	void AddNewCompliance1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Compliance Mapping Tab - Add Compliance Verification ");
-		
-		Method.AddNewCompliance(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 89) 
-	void UpdateCompliencesFTab1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Compliance Mapping Tab - Edit Button-Remove Compliance Verification");
-		
-		Method.UpdateCompliencesFTab(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 90) 
-	void ExportReportDownloadCM1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Compliance Mapping Tab - Update - Export To Excel Button Verification ");
-		
-		Method.ExportReportDownloadCM(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 91) 
-	void ExportButtonCM1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Compliance Mapping Tab - Export Button Verification");
-		
-		Method.ExportButtonCM(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 92) 
-	void ClearButton1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Compliance Mapping Tab - Clear Button Verification ");
-		
-		Method.ClearButton(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 93)                                                // pending
-	void UploadCMFTab1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Compliance Mapping Tab - File Upload Verification ");
-		
-		Method.UploadCMFTab(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	*/
-	@Test(priority = 94) 
-	void UploadBlankSheetCM1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Compliance Mapping Tab - Without Enter Data File Upload Verification");
-		
-		Method.UploadBlankSheetCM(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	/*
-	
-	@Test(priority = 95) 
-	void ViewIconCM1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Compliance Mapping Tab - View Button Verification ");
-		
-		Method.ViewIconCM(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 96)                                               // pending
-	void AuditSchedule1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Audit Schedule Tab - Add Audit Scheduled Verification ");
-		
-		Method.AuditSchedule(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	
-	@Test(priority = 97) 
-	void ClearButtonAS1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Audit Schedule Tab - Clear Button Verification");
-		
-		Method.ClearButtonAS(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 98)                                                        
-	void AssignComplience1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Audit Assignment Tab - Assign Compliance Verification ");
-		
-		Method.AssignComplience(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 99)                                                          // pending
-	void UnassignComplianceAA1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Audit Assignment Tab - UnAssign Compliance Verification  ");
-		
-		Method.UnassignComplianceAA(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 100) 
-	void ClearButtonAA1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Audit Assignment Tab - Clear Button Verification  ");
-		
-		Method.ClearButtonAA(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 101) 
-	void ExportReportFromReport1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Report Tab - Export Button Verification  ");
-		
-		Method.ExportReportFromReport(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 102) 
-	void ClearButtonReport1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Report Tab - Clear Button Verification ");
-		
-		Method.ClearButtonReport(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 103) 
-	void MoreReportR1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Report Tab - More Reports - Files Download Verification  ");
-		
-		Method.MoreReportR(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority =104) 
-	void ActionColReportDownload1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Report Tab - Action Column - File Download Verification  ");
-		
-		Method.ActionColReportDownload(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	
-	@Test(priority = 105) 
-	void ViewReport1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Report Tab - View Button Verification  ");
-		
-		Method.ViewReport(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	*/
-	
-	
-	//>>>>>>>>>>>>>>>>>>>>>>>>>>>Negative Test Cases Script
-	
-	
-	
-	@Test(priority = 106) 
-	void UploadEntityValidation1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Entity Master - Without inserting File upload verification  ");
-		
-		Method.UploadEntityValidation(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 107) 
 	void UploadUservalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - Without inserting File Upload Verification");
@@ -1468,21 +354,9 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	
-	
-	@Test(priority = 108) 
-	void AddContractorsvalidation1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" User Master - Without Enter data Add Contractor Verification");
 		
-		Method.AddContractorsvalidation(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
 	
-	
-	@Test(priority = 109) 
+	@Test(priority = 21) 
 	void AddContractorsvalidationallfield1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - Without Enter Data in every Field Verification");
@@ -1495,7 +369,108 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 110) 
+	@Test(priority = 22) 
+	void UploadUserWithoutEnterData1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" User Master - Without Enter Data File Upload Verification");
+		
+		Method.UploadUserWithoutEnterData(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	@Test(priority = 23) 
+	void AddContractor1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" User Master - Add Contractor Verification ");
+		
+		CriticalMethod.AddContractors(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 24) 
+	void UpdateContractor1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" User Master - Update Contractor Verification ");
+		
+		CriticalMethod.UpdateContractor(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	
+		@Test(priority = 25) 
+	void ResetPassContractor11() throws InterruptedException, IOException
+	{
+		test = extent.startTest("User Master - Reset Password Contractor Verification ");
+		
+		CriticalMethod.ResetPassContractor1(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 26) 
+	void DeleteContractor1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" User Master - Delete Contractor Verification");
+		
+		CriticalMethod.DeleteContractor(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 27) 
+	void AddManagementAssignment1() throws InterruptedException, IOException                     
+	{
+		test = extent.startTest(" User Master - Add Management Assignment Verification ");
+		
+		CriticalMethod.AddManagementAssignment(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 28) 
+	void DeleteMA() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" User Master - Delete Management Assignment Verification ");
+		
+		CriticalMethod.DeleteMA(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 29) 
+	void AddContractorsvalidation1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" User Master - Without Enter data Add Contractor Verification");
+		
+		Method.AddContractorsvalidation(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	@Test(priority = 30) 
 	void AddManagementAssignmentvalidation11() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - Without Enter data Add Management Assignment Verification");
@@ -1509,12 +484,24 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 111) 
-	void AddManagementAssignmentvalidation1() throws InterruptedException, IOException
+	@Test(priority = 31) 
+	void AddProject1() throws InterruptedException, IOException         
 	{
-		test = extent.startTest(" User Master - Without Enter Data in every Field Add Management Assignment Verification");
+		test = extent.startTest(" Project Master - Add Project Verification ");
 		
-		Method.AddManagementAssignmentvalidation(test,workbook);
+		CriticalMethod.AddProject(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 32) 
+	void AddLicence1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Project Master - Add Licence Verification ");
+		
+		CriticalMethod.AddLicence(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -1522,7 +509,59 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 112) 
+	@Test(priority = 33) 
+	void UpdateProject1() throws InterruptedException, IOException               
+	{
+		test = extent.startTest(" Project Master - Update Project Verification");
+		
+		CriticalMethod.UpdateProject(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	@Test(priority = 34) 
+	void DeleteProject1() throws InterruptedException, IOException     
+	{
+		test = extent.startTest(" Project Master - Delete Project Verification");
+		
+		CriticalMethod.DeleteProject(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 35) 
+	void UploadProject1() throws InterruptedException, IOException      
+	{
+		test = extent.startTest(" Project Master - Upload File Verification ");
+		
+		CriticalMethod.UploadProject(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	@Test(priority = 36) 
+	void UploadProjectBlankSheet1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Project Master - Without Enter Data Upload File Verification ");
+		
+		Method.UploadProjectBlankSheet(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 37) 
 	void UploadProjectvalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Project Master - Without inserting File Upload Verification");
@@ -1534,7 +573,123 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 113) 
+	
+	
+	@Test(priority = 38) 
+	void ProjectClearButton1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Project Master - Clear Button Verification ");
+		
+		CriticalMethod.ProjectClearButton(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 39) 
+	void MapNewProje1ct() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Project Master - Map New Project Verification ");
+		
+		CriticalMethod.MapNewProject(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 40) 
+	void ProjectMasterMultipleFilter1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Project Master - Multiple Filter Verification ");
+		
+		Method.ProjectMasterMultipleFilter(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
+		
+	@Test(priority = 41) 
+	void CTContractorAdd1() throws InterruptedException, IOException              
+	{
+		test = extent.startTest(" Contractor Master - Add Contractor Verification ");
+		
+		CriticalMethod.CTContractorAdd(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+
+
+	@Test(priority = 42) 
+	void UpdateContractorCT1() throws InterruptedException, IOException        
+	{
+		test = extent.startTest(" Contractor Master - Update Contractor Verification");
+		
+		CriticalMethod.UpdateContractorCT(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	@Test(priority = 43) 
+	void ExportButton() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Contractor Master - Export Button Verification");
+		
+		CriticalMethod.ExportButton(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 44) 
+	void ClearButtonCTCC1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Contractor Master - Clear Button Verification");
+		
+		CriticalMethod.ClearButtonCTCC(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 45)
+	void UploadContractorCT1() throws InterruptedException, IOException         
+	{
+		test = extent.startTest("Contractor Master - File Upload Verification ");
+		
+		CriticalMethod.UploadContractorCT(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 46) 
+	void uploadContractorBlanksheet1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Contractor Master - Without Enter Data Upload File Verification");
+		
+		Method.uploadContractorBlanksheet(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 47) 
 	void UploadContractorCTvalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Contractor Master - Without inserting File Upload Verification");
@@ -1547,7 +702,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 114) 
+	@Test(priority = 48) 
 	void UploadContractorProjectMappingSheetvalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Contractor Master - Without inserting Project Mapping File Upload Verification");
@@ -1562,7 +717,226 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 115) 
+	
+
+	
+	@Test(priority = 49) 
+	void UploadContractorProjectMapping1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Contractor Master - Project Mapping File Upload Verification ");
+		
+		CriticalMethod.UploadContractorProjectMappingSheet(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 50) 
+	void UploadContractorProjectMappingBlankSheet1() throws InterruptedException, IOException          
+	{
+		test = extent.startTest("Contractor Master -  Without enter data Project Mapping File Upload Verification ");
+		
+		Method.UploadContractorProjectMapping(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+    @Test(priority = 51) 
+	void AddLicenceCT1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Contractor Master - Add Licence Verification ");
+		
+		CriticalMethod.AddLicenceCT(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 55) 
+	void ViewLicence1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Contractor Master - View Licence Verification");
+		
+		CriticalMethod.ViewLicence(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 56) 
+	void UpdateLicence1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Contractor Master - Update Licence Verification ");
+		
+		CriticalMethod.UpdateLicence(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 57) 
+	void DeleteLicenceC1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Contractor Master - Delete Licence Verification");
+		
+		CriticalMethod.DeleteLicenceC(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 58) 
+	void DeleteContractorCT1() throws InterruptedException, IOException             
+	{
+		test = extent.startTest(" Contractor Master - Delete Contractor Verification");
+		
+		CriticalMethod.DeleteContractorCT(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 59) 
+	void ContractorMasterMultipleFilter1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Contractor Master - Multiple Filter Verification ");
+		
+		Method.ContractorMasterMultipleFilter(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+
+	
+	@Test(priority = 60) 
+	void AddActAndComplience1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Add Act Verification");
+		
+		CriticalMethod.AddActAndComplience(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 61) 
+	void AddActWithState1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Add Act With State Verification");
+		
+		Method.AddActWithState(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 62) 
+	void AddActWithDifferentState1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Add Act With Different State Verification");
+		
+		Method.AddActWithDifferentState(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 63) 
+	void AddActDuplicate1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Add Duplicate Act With State Verification");
+		
+		Method.AddActDuplicate(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+
+	@Test(priority = 64) 
+	void AddActDuplicateForCentral1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Add Duplicate Act With Central Verification");
+		
+		Method.AddActDuplicateForCentral(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+
+	
+	@Test(priority = 65) 
+	void ClearAC1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Clear Button Verification");
+		
+		CriticalMethod.ClearAC(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 66) 
+	void UpdateActAndCompliance1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Update Act Verification");
+		
+		CriticalMethod.UpdateActAndCompliance(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+
+		
+	@Test(priority = 67) 
+	void DeleteAc1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Delete Act Verification");
+		
+		CriticalMethod.DeleteAc(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	@Test(priority = 68) 
+	void UploadActAndCompliance1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Act - Upload File Verification");
+		
+		CriticalMethod.UploadActAndCompliance(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 69) 
 	void UploadeActvalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master - Act - Without inserting File Upload Verification");
@@ -1575,7 +949,149 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 116) 
+	
+
+
+	
+	@Test(priority = 70) 
+	void UploadActWithsameAct1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Upload File With Same Act Verification");
+		
+		Method.UploadActWithsameAct(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	
+	@Test(priority = 71) 
+	void UploadeActBlankSheet1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Without Enter Data File Upload Verification");
+		
+		Method.UploadeActBlankSheet(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 72) 
+	void AddCompliance1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Add Compliance For Central Verification");
+		
+		CriticalMethod.AddCompliance(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 73) 
+	void AddComplianceForState1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Add Compliance For State Verification");
+		
+		Method.AddComplianceForState(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	@Test(priority = 74) 
+	void AddComplianceForDiffeState1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Add Compliance For Different State Verification");
+		
+		Method.AddComplianceForDiffeState(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 75) 
+	void AddDuplicateComplianceCentral1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Add  Duplicate Compliance For Central Verification");
+		
+		Method.AddDuplicateComplianceCentral(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 76) 
+	void UpdateComplianceAC1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Update Compliance For State Verification");
+		
+		CriticalMethod.UpdateComplianceAC(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 77) 
+	void DeleteCompliance1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Delete Compliance For State Verification");
+		
+		CriticalMethod.DeleteCompliance(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 78) 
+	void ComplianceClearButton1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Compliance Clear Button Verification");
+		
+		CriticalMethod.ComplianceClearButton(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 79) 
+	void UploadCompliance1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master -Compliance - File Upload Verification");
+		
+		CriticalMethod.UploadCompliance(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 80) 
+	void UploadBlankSheetComplianceAC1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Without Enter Data Compliance File Upload Verification");
+		
+		Method.UploadBlankSheetComplianceAC(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 81) 
 	void UploadCompliancevalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master - Compliance - Without inserting File Upload Verification");
@@ -1587,7 +1103,80 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 117) 
+
+	
+	@Test(priority = 82) 
+	void AddTemplateAC1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Add Template Verification");
+		
+		CriticalMethod.AddTemplateAC(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 83) 
+	void TemplateClearButton1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Act And Compliance master - Template Clear Button Verification");
+		
+		CriticalMethod.TemplateClearButton(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 84) 
+	void DeleteTemplateAC1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Delete Template Verification ");
+		
+		CriticalMethod.DeleteTemplateAC(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 85) 
+	void UploadTemplate1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Template - File Upload Verification ");
+		
+		CriticalMethod.UploadTemplate(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 86) 
+	void UploadBlankSheetTemplateAC1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Without Enter Data Template File Upload Verification ");
+		
+		Method.UploadBlankSheetTemplateAC(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 87) 
+	void DuplicateTemplateAC1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Add Duplicate Template Verification ");
+		
+		Method.DuplicateTemplateAC(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 88) 
 	void UploadTemplatevalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master - Template - Without inserting File Upload Verification");
@@ -1598,10 +1187,300 @@ public class MasterTestCases extends BasePage{
 		extent.flush();
 	}
 	
+
+	
+	@Test(priority = 89) 
+	void AddContractorType1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Contractor Type Master - Add Contractor Type Verification ");
+		
+		CriticalMethod.AddContractorType(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 90) 
+	void UpdateContractorType1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Contractor Type Master - Update Contractor Type Verification ");
+		
+		CriticalMethod.UpdateContractorType(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 91) 
+	void DeleteContractorType1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Contractor Type Master - Delete Contractor Type Verification ");
+		
+		CriticalMethod.DeleteContractorType(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 92) 
+	void ContractorTypeClearButtonn1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Contractor Type Master - Clear Button Verification ");
+		
+		CriticalMethod.ContractorTypeClearButtonn(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
 	
 	
-	@Test(priority = 118) 
+	@Test(priority = 93) 
+	void AddCity1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" City Master - Add City Verification ");
+		
+		CriticalMethod.AddCity(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 94) 
+	void UpdateCity1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" City Master - Update City Verification ");
+		
+		CriticalMethod.UpdateCity(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 95) 
+	void DeleteCity1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" City Master - Delete City Verification ");
+		
+		CriticalMethod.DeleteCity(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 96) 
+	void CityMasterClearButton1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" City Master - Clear Button Verification ");
+		
+		CriticalMethod.CityMasterClearButton(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 97) 
+	void AddLicenceType1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Licence Type Master  - Add Licence Type Verification ");
+		
+		CriticalMethod.AddLicenceType(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 98) 
+	void UpdateLicenceType1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("  Licence Type Master  - Update Licence Type Verification");
+		
+		CriticalMethod.UpdateLicenceType(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 99) 
+	void DeleteLicenceType1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("  Licence Type Master  - Delete Licence Type Verification ");
+		
+		CriticalMethod.DeleteLicenceType(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 100) 
+	void LicenceTypeClearButton1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("  Licence Type Master  - Clear Button Verification ");
+		
+		CriticalMethod.LicenceTypeClearButton(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 101) 
+	void AddDataPoint1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("  Data Point Master  - Add Data Point Verification");
+		
+		CriticalMethod.AddDataPoint(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 102) 
+	void UpdateDataPoint1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Data Point Master  - Update Data Point Verification ");
+		
+		CriticalMethod.UpdateDataPoint(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 103) 
+	void DeleteDataPoint1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Data Point Master  - Delete Data Point Verification ");
+		
+		CriticalMethod.DeleteDataPoint(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 104) 
+	void DataPointClearButton1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Data Point Master -  Clear Button  Verification ");
+		
+		CriticalMethod.DataPointClearButton(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+
+	
+	
+	
+	@Test(priority = 105) 
+	void AddNewCompliance1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Compliance Mapping Tab - Add Compliance Verification ");
+		
+		CriticalMethod.AddNewCompliance(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 106) 
+	void UpdateCompliencesFTab1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Compliance Mapping Tab - Edit Button-Remove Compliance Verification");
+		
+		CriticalMethod.UpdateCompliencesFTab(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 107) 
+	void ExportReportDownloadCM1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Compliance Mapping Tab - Update - Export To Excel Button Verification ");
+		
+		CriticalMethod.ExportReportDownloadCM(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 108) 
+	void ExportButtonCM1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Compliance Mapping Tab - Export Button Verification");
+		
+		CriticalMethod.ExportButtonCM(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 109) 
+	void ClearButton1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Compliance Mapping Tab - Clear Button Verification ");
+		
+		CriticalMethod.ClearButton(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 110)                                                // pending
+	void UploadCMFTab1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Compliance Mapping Tab - File Upload Verification ");
+		
+		CriticalMethod.UploadCMFTab(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 111) 
+	void UploadBlankSheetCM1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Compliance Mapping Tab - Without Enter Data File Upload Verification");
+		
+		Method.UploadBlankSheetCM(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 112) 
+	void ViewIconCM1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Compliance Mapping Tab - View Button Verification ");
+		
+		CriticalMethod.ViewIconCM(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 113) 
 	void UploadCMFTabvalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Compliance mapping Tab - Without inserting File Upload Verification");
@@ -1612,10 +1491,206 @@ public class MasterTestCases extends BasePage{
 		extent.flush();
 	}
 	
+
+	@Test(priority = 114) 
+	void AddNewComplianceFilter1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Compliance Mapping Tab - Multiple Filter Verification ");
+		
+		Method.AddNewComplianceFilter(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
 	
 	
-	@Test(priority = 119) 
+	
+	@Test(priority = 115)                                               // pending
+	void AuditSchedule1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Audit Schedule Tab - Add Audit Scheduled Verification ");
+		
+		CriticalMethod.AuditSchedule(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	@Test(priority = 116) 
+	void ClearButtonAS1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Audit Schedule Tab - Clear Button Verification");
+		
+		CriticalMethod.ClearButtonAS(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 117) 
+	void ASMultipleFilter1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Audit Scheduled Tab - Multiple Filter Verification ");
+		
+		Method.ASMultipleFilter(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority = 118)                                                        
+	void AssignComplience1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Audit Assignment Tab - Assign Compliance Verification ");
+		
+		CriticalMethod.AssignComplience(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 119)                                                          // pending
+	void UnassignComplianceAA1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Audit Assignment Tab - UnAssign Compliance Verification  ");
+		
+		CriticalMethod.UnassignComplianceAA(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 120) 
+	void ClearButtonAA1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Audit Assignment Tab - Clear Button Verification  ");
+		
+		CriticalMethod.ClearButtonAA(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 121) 
+	void AAMultipleFilter1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Audit Assignment Tab - Multiple Filter Verification ");
+		
+		Method.AAMultipleFilter(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+
+	
+	@Test(priority = 122) 
+	void ExportReportFromReport1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Report Tab - Export Button Verification  ");
+		
+		CriticalMethod.ExportReportFromReport(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 123) 
+	void ClearButtonReport1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Report Tab - Clear Button Verification ");
+		
+		CriticalMethod.ClearButtonReport(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 124) 
+	void MoreReportR1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Report Tab - More Reports - Files Download Verification  ");
+		
+		CriticalMethod.MoreReportR(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	@Test(priority =125) 
+	void ActionColReportDownload1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Report Tab - Action Column - File Download Verification  ");
+		
+		CriticalMethod.ActionColReportDownload(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	@Test(priority = 126) 
+	void ViewReport1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Report Tab - View Button Verification  ");
+		
+		CriticalMethod.ViewReport(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 127) 
+	void ReportMultipleFilter1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Report Tab - Multiple Filter Verification ");
+		
+		Method.ReportMultipleFilter(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
+	
+	//>>>>>>>>>>>>>>>>>>>>>>>>>>>Negative Test Cases Script
+
+	
+	
+	
+
+	
+	
+//	@Test(priority = 111) 
+	void AddManagementAssignmentvalidation1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" User Master - Without Enter Data in every Field Add Management Assignment Verification");
+		
+		Method.AddManagementAssignmentvalidation(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	
+//	@Test(priority = 119) 
 	void AddNewCompliancevalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Compliance mapping Tab - Add Compliance without selecting Project Verification");
@@ -1628,7 +1703,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 120) 
+//	@Test(priority = 120) 
 	void AuditSchedulevalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Audit Schedule Tab - 	Without selecting activation date Add Scheduled Verification");
@@ -1641,7 +1716,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 121) 
+//	@Test(priority = 121) 
 	void AssignCompliencevalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Audit Assignment Tab - Without selecting Auditor Audit Assignment Verification");
@@ -1654,23 +1729,12 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 122) 
-	void AddSubEntity2validation21() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Entity Master - Without Entre Data Add Sub-Entity Verification");
-		
-		Method.AddSubEntity2validation2(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
+
 	
 	
 	
 	
-	
-	
-	@Test(priority = 123) 
+//	@Test(priority = 123) 
 	void AddSubEntity2validation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Entity Master - Without Entre For Particular Field Add Sub-Entity Verification");
@@ -1683,7 +1747,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 124) 
+//	@Test(priority = 124) 
 	void AddCityvalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" City Master - Without Entre City Name Add City Verification");
@@ -1696,7 +1760,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 125) 
+//	@Test(priority = 125) 
 	void AddLicenceTypevalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Licence Type Master - Without Entre Licence Name Add Add Licence Type Verification");
@@ -1715,7 +1779,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 126) 
+	//@Test(priority = 126) 
 	void Addentity2validatinEmail1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Entity Master - Add Entity By Invalid EmailId Verification");
@@ -1728,7 +1792,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 127) 
+//	@Test(priority = 127) 
 	void AddSubEntity2validationemail1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Entity Master - Add Sub-Entity By Invalid EmailId Verification");
@@ -1742,7 +1806,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 128) 
+//	@Test(priority = 128) 
 	void AddUserInvalidEmail1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - Add User By Invalid Email Id Verification ");
@@ -1756,7 +1820,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 129) 
+//	@Test(priority = 129) 
 	void AddUserInvalidContact1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - Add User By Invalid Contact No. Verification ");
@@ -1769,7 +1833,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 130) 
+//	@Test(priority = 130) 
 	void AddContractorsInvalidEmail1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - Add Contractor By Invalid Email Id Verification ");
@@ -1784,7 +1848,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 131) 
+//	@Test(priority = 131) 
 	void AddLicenceCTvalidation11() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Contractor Master - Without Enter Data Add Licence Verification ");
@@ -1796,7 +1860,7 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 132) 
+//	@Test(priority = 132) 
 	void AddLicenceCTvalidation21() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Contractor Master - Add Licence - Without Enter Data For Every Field Verification ");
@@ -1810,7 +1874,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 133) 
+//	@Test(priority = 133) 
 	void AddDataPointvalidation11() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Data Point Master - Without Enter Data For Every Field Add Data Point Verification ");
@@ -1822,7 +1886,7 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 134) 
+//	@Test(priority = 134) 
 	void AddDataPointvalidation12() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Data Point Master - Without Enter Data Add Data Point Verification ");
@@ -1834,7 +1898,7 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 135) 
+//	@Test(priority = 135) 
 	void AddActAndCompliencevalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master - Without Enter Data Add Act Verification ");
@@ -1846,7 +1910,7 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 136) 
+//	@Test(priority = 136) 
 	void AddActAndCompliencevalidation21() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master - Without Enter For Particular Field Add Act Verification ");
@@ -1858,7 +1922,7 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 137) 
+//	@Test(priority = 137) 
 	void AddTemplateACvalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master - Template - Without Enter data Add Template Verification ");
@@ -1870,7 +1934,7 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 138) 
+//	@Test(priority = 138) 
 	void AddTemplateACvalidation21() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master - Template - Without Selecting Compliance Add Template Verification ");
@@ -1883,7 +1947,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 139) 
+//	@Test(priority = 139) 
 	void AddContractorTypevalidation1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Contractor Type Master - Without Enter data Add Contractor Type Verification ");
@@ -1898,7 +1962,7 @@ public class MasterTestCases extends BasePage{
 	
 
 	
-	@Test(priority = 140) 
+//	@Test(priority = 140) 
 	void UploadEntitydifferentExcelsheet1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Entity Master - Upload Entity With Different sheet Name Verification ");
@@ -1938,7 +2002,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 143) 
+//	@Test(priority = 143) 
 	void UploadUserDifferentExcelSheet1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - Upload User With Different Sheet Name Verification ");
@@ -1979,7 +2043,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 146) 
+//	@Test(priority = 146) 
 	void UploadProjectDifferentExcelSheet1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Project Master - Upload Project With Different Excel Sheet Verification ");
@@ -2018,7 +2082,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 149) 
+//	@Test(priority = 149) 
 	void UploadContractorCTDifferentExcelSheet1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Contractor Master - Upload Contractor With Different Excel Sheet Name Verification ");
@@ -2060,7 +2124,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 152) 
+//	@Test(priority = 152) 
 	void UploadContractorProjectMappingDifferentSheetName1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Contractor Master - Upload Contractor Project-Mapping With different excel sheet name Verification ");
@@ -2103,7 +2167,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 155) 
+//	@Test(priority = 155) 
 	void UploadActAndComplianceDifferentExcelSheetName1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master - Upload Act With Different Excel Sheet Name Verification ");
@@ -2148,7 +2212,7 @@ public class MasterTestCases extends BasePage{
 	//////////////////////////////////////
 	
 	
-	@Test(priority = 158) 
+//	@Test(priority = 158) 
 	void UploadComplianceDifferentExcelSheetName1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master -Compliance- Upload File With Different Sheet Name Verification ");
@@ -2190,7 +2254,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 161) 
+//	@Test(priority = 161) 
 	void UploadTemplateDifferentExcelSheet1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master -Template- Upload File With Different Sheet Name  Verification ");
@@ -2234,7 +2298,7 @@ public class MasterTestCases extends BasePage{
 
 	
 	
-	@Test(priority = 164) 
+//	@Test(priority = 164) 
 	void UploadCMFTabDifferentSheetName1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Compliance Mapping Tab - Upload File With Different Sheet Name Verification ");
@@ -2278,7 +2342,7 @@ public class MasterTestCases extends BasePage{
 	////////////////////////
 	
 	
-	@Test(priority = 167) 
+//	@Test(priority = 167) 
 	void AddContractorsInvalidContacts1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - Add Contractor By Invalid contact number verification ");
@@ -2291,7 +2355,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 168) 
+//	@Test(priority = 168) 
 	void UploadEntityMandatoryDataNotFilled1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Entity Master - Upload Entity Without Filling Mandatory Field verification ");
@@ -2304,7 +2368,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 169) 
+//	@Test(priority = 169) 
 	void UploadUserNotFilledMandatoryData1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - Upload User Without Filling Mandatory Field verification ");
@@ -2319,7 +2383,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 170) 
+//	@Test(priority = 170) 
 	void UploadProjectNotFillingMandatoryData1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Project Master - Upload Project Without Filling Mandatory Field verification ");
@@ -2332,7 +2396,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 161) 
+//	@Test(priority = 161) 
 	void UploadContractorCTNotFillingMandatoryData1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Contractor Master - Upload Contractor Without Filling Mandatory Field verification ");
@@ -2345,7 +2409,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 172) 
+//	@Test(priority = 172) 
 	void UploadContractorProjectMappingNotFilledMandatoryData1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Contractor Master - Upload Contractor Project-Mapping Without Filling Mandatory Field verification ");
@@ -2359,7 +2423,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 173) 
+//	@Test(priority = 173) 
 	void UploadActAndComplianceNotFillingMandatoryData1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master - Upload Act Without Filling Mandatory Field verification ");
@@ -2373,7 +2437,7 @@ public class MasterTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 174) 
+//	@Test(priority = 174) 
 	void UploadComplianceNotFilledMandatoryData1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master - Upload Compliance Without Filling Mandatory Field verification ");
@@ -2385,7 +2449,7 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 175) 
+//	@Test(priority = 175) 
 	void UploadTemplateNotFillingMandatoryData1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance Master - Upload Compliance Without Filling Mandatory Field verification ");
@@ -2397,7 +2461,7 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 176) 
+//	@Test(priority = 176) 
 	void UploadCMFTabNotFillingMandtoryData1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Compliance Mapping Tab - Upload Compliance Without Filling Mandatory Field verification ");
@@ -2407,89 +2471,9 @@ public class MasterTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	
-	
-	
-	
-	
-	//Multifilter
-	
-	
-	@Test(priority = 177) 
-	void ProjectMasterMultipleFilter1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Project Master - Multiple Filter Verification ");
 		
-		Method.ProjectMasterMultipleFilter(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
 	
 	
-	
-	
-	@Test(priority = 178) 
-	void ContractorMasterMultipleFilter1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Contractor Master - Multiple Filter Verification ");
-		
-		Method.ContractorMasterMultipleFilter(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 179) 
-	void AddNewComplianceFilter1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Compliance Mapping Tab - Multiple Filter Verification ");
-		
-		Method.AddNewComplianceFilter(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 180) 
-	void ASMultipleFilter1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Audit Scheduled Tab - Multiple Filter Verification ");
-		
-		Method.ASMultipleFilter(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 181) 
-	void AAMultipleFilter1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Audit Assignment Tab - Multiple Filter Verification ");
-		
-		Method.AAMultipleFilter(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	
-	@Test(priority = 182) 
-	void ReportMultipleFilter1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Report Tab - Multiple Filter Verification ");
-		
-		Method.ReportMultipleFilter(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
 	
 	
 	
@@ -2509,7 +2493,7 @@ public class MasterTestCases extends BasePage{
 	
 	*/
 	
-	
+	/*
 	
 	@Test(priority = 183) 
 	void UploadEntityWithoutEnterTwoMandatoryField11() throws InterruptedException, IOException
@@ -2734,27 +2718,9 @@ public class MasterTestCases extends BasePage{
 	}
 	
 	
-	/*
-	 * 
-	 * 
-	 
+
 	
-	@Test(priority = 192) 
-	void ComplianceMappingTabCountMatch1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Compliance mapping tab - Grid and Excel sheet count match Verification ");
-		
-		Method.ComplianceMappingTabCountMatch(test);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	*
-	*
 	*/
-	
-	
 	
 	
 	

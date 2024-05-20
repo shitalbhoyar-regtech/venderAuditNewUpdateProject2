@@ -836,7 +836,7 @@ public class Locator1 extends BasePage{
 	    
 	    		public static WebElement UpcomingDownloadAndViewButton()		//Method for searching Username input
 	    		{
-	    			UpcomingDownloadAndViewButton = getDriver().findElement(By.xpath("(//a[@role='button'])[1]"));
+	    			UpcomingDownloadAndViewButton = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[1]"));
 	    		return UpcomingDownloadAndViewButton;
 	    	    }
 	    
@@ -853,7 +853,7 @@ public class Locator1 extends BasePage{
 	  
 	    		public static WebElement ClosedDownloadAndView()		//Method for searching Username input
 	    		{
-	    			ClosedDownloadAndView = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-download k-grid-docView'])[2]"));
+	    			ClosedDownloadAndView = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[1]"));
 	    		return ClosedDownloadAndView;
 	    	    }
 	    
@@ -861,7 +861,7 @@ public class Locator1 extends BasePage{
 	    		
 	    		public static WebElement ClosedView()		//Method for searching Username input
 	    		{
-	    			ClosedView = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-view k-grid-view'])[1]"));
+	    			ClosedView = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[3]"));
 	    		return ClosedView;
 	    	    }
 	    		
@@ -892,7 +892,7 @@ public class Locator1 extends BasePage{
 	    
 	    public static WebElement ViewRejected()		//Method for searching Username input
 		{
-	    	ViewRejected = getDriver().findElement(By.xpath("(//a[@role='button'])[2]"));
+	    	ViewRejected = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[3]"));
 		return ViewRejected;
 	    }
 	    
@@ -920,17 +920,24 @@ public class Locator1 extends BasePage{
 	    }		
 		
 	    
+	    public static WebElement DownloadDocument()		//Method for searching Username input
+		{
+			ComplianceStatus = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[2]"));
+		return ComplianceStatus;
+	    }		
+
+	  
 	    
 	   
 	    public static WebElement ViewButtonofOverdue()		//Method for searching Username input
 		{
-			ViewButtonofOverdue = getDriver().findElement(By.xpath("(//a[@role='button'])[2]"));
+			ViewButtonofOverdue = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[3]"));
 		return ViewButtonofOverdue;
 	    }
 	    
 	    public static WebElement ViewButtonPendingForReview()		//Method for searching Username input
 	  		{
-	    	ViewButtonPendingForReview = getDriver().findElement(By.xpath("(//a[@role='button'])[2]"));
+	    	ViewButtonPendingForReview = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[3]"));
 	  		return ViewButtonPendingForReview;
 	  	    }
 	  	    
@@ -938,7 +945,7 @@ public class Locator1 extends BasePage{
 	    
 	    public static WebElement CommentButtonoverdue()		//Method for searching Username input
 		{
-			CommentButtonoverdue = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-editAllComments k-grid-Comments'])[1]"));
+			CommentButtonoverdue = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[6]"));
 		return CommentButtonoverdue;
 	    }
 	    
@@ -954,7 +961,7 @@ public class Locator1 extends BasePage{
 	    
 	    public static WebElement EditinEditOverdue()		//Method for searching Username input
 	  		{
-	    	EditinEditOverdue = getDriver().findElement(By.xpath("(//span[@class='k-icon k-i-edit'])[4]"));
+	    	EditinEditOverdue = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[2]/td[4]/span"));
 	  			return EditinEditOverdue;
 	  			
 	  			
@@ -963,7 +970,7 @@ public class Locator1 extends BasePage{
 	    
 	    public static WebElement EditinEditUpcoming()		//Method for searching Username input
   		{
-	    	EditinEditUpcoming = getDriver().findElement(By.xpath("(//span[@class='k-icon k-i-edit'])[1]"));
+	    	EditinEditUpcoming = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[4]/span"));
   			return EditinEditUpcoming;
   			
   			
@@ -2072,12 +2079,88 @@ public class Locator1 extends BasePage{
 	
 	public static WebElement ViewButtonofEditPR()		//Method for searching Username input
 	{
-		ViewButtonofEditPR = getDriver().findElement(By.xpath("(//a[@role='button'])[2]"));
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[1]"));
 	return ViewButtonofEditPR;
     }
 
 	
+	public static WebElement AuditLog()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[7]"));
+	return ViewButtonofEditPR;
+    }
+
+
+	public static WebElement transactionLog()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='tabstripAuditlog']/ul/li[1]/span[2]"));
+	return ViewButtonofEditPR;
+    }
+
+	public static WebElement statusLog()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='tabstripAuditlog']/ul/li[2]/span[2]"));
+	return ViewButtonofEditPR;
+    }
+
 	
+	public static WebElement CreatedOn()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='gridAuditLog']/div[1]/div/table/colgroup/col[1]"));
+	return ViewButtonofEditPR;
+    }
+
+	public static WebElement Action()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='gridAuditLog']/div[1]/div/table/colgroup/col[2]"));
+	return ViewButtonofEditPR;
+    }
+
+	public static WebElement RemarkStatusLog()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='gridAuditLog']/div[1]/div/table/colgroup/col[3]"));
+	return ViewButtonofEditPR;
+    }
+
+	public static WebElement FileName()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='gridAuditLog']/div[1]/div/table/colgroup/col[4]"));
+	return ViewButtonofEditPR;
+    }
+
+	
+	public static WebElement CreatedBy()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='gridAuditLog']/div[1]/div/table/colgroup/col[5]"));
+	return ViewButtonofEditPR;
+    }
+
+	public static WebElement Role()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='gridAuditLog']/div[1]/div/table/colgroup/col[6]"));
+	return ViewButtonofEditPR;
+    }
+
+	
+
+	public static WebElement transactionLogRemark()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='gridAuditLogAll']/div[1]/div/table/colgroup/col[1]"));
+	return ViewButtonofEditPR;
+    }
+
+	public static WebElement transactionLogCreatedBy()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='gridAuditLogAll']/div[1]/div/table/colgroup/col[2]"));
+	return ViewButtonofEditPR;
+    }
+
+	public static WebElement transactionLogCreatedon()		//Method for searching Username input
+	{
+		ViewButtonofEditPR = getDriver().findElement(By.xpath("//*[@id='gridAuditLogAll']/div[1]/div/table/colgroup/col[3]"));
+	return ViewButtonofEditPR;
+    }
+
 	
 	public static WebElement Dashboard()		//Method for searching Username input
 	{
@@ -2179,7 +2262,7 @@ public class Locator1 extends BasePage{
 	
 	public static WebElement UpcomingSelectFile()		//Method for searching Username input
 	{
-		UpcomingSelectFile = getDriver().findElement(By.xpath("(//input[@id='ComplaineDocUpload'])[1]"));
+		UpcomingSelectFile = getDriver().findElement(By.xpath("(//input[@id='ComplaineDocUpload'])[2]"));
 		return UpcomingSelectFile;
 	}
 	
@@ -2433,7 +2516,7 @@ public class Locator1 extends BasePage{
 		
 		public static WebElement UpdateOverdue()		//Method for searching Username input
 		{
-			UpdateOverdue = getDriver().findElement(By.xpath("//a[@class='k-button k-button-icontext ob-edit k-grid-edit']"));
+			UpdateOverdue = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]"));
 		return UpdateOverdue;
 	    }
 		
@@ -2609,7 +2692,7 @@ public class Locator1 extends BasePage{
 		
 		public static WebElement SelectLocationDocumentDD()		//Method for searching Username input
 		{
-			SelectLocationDocumentDD = getDriver().findElement(By.xpath("(//span[.='Demo'])[1]"));
+			SelectLocationDocumentDD = getDriver().findElement(By.xpath("(//span[.='TeamLease Regtech'])[4]"));
 		return SelectLocationDocumentDD;
 	    }
 		
@@ -3297,7 +3380,7 @@ public class Locator1 extends BasePage{
 		
 		public static WebElement HeadCountselectmonthDD()		//Method for searching Username input
 		{
-			HeadCountselectmonthDD = getDriver().findElement(By.xpath("(//*[local-name()='div']//*[name()='ul'])[18]//*[name()='li' and .='Jan']"));
+			HeadCountselectmonthDD = getDriver().findElement(By.xpath("(//*[local-name()='div']//*[name()='ul'])[41]//*[name()='li' and .='Jan']"));
 		return HeadCountselectmonthDD;
 	    }
 		
@@ -3329,7 +3412,7 @@ public class Locator1 extends BasePage{
 		
 		public static WebElement HeadCountclose()		//Method for searching Username input
 		{
-			HeadCountclose = getDriver().findElement(By.xpath("//a[@class='k-button k-bare k-button-icon k-window-action']"));
+			HeadCountclose = getDriver().findElement(By.xpath("(//a[@class='k-button k-bare k-button-icon k-window-action'])[2]"));
 		return HeadCountclose;
 	    }
 		

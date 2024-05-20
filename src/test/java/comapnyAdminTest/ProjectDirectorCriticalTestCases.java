@@ -56,9 +56,9 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 	{
 		
 		extent = new com.relevantcodes.extentreports.ExtentReports("E:\\VenderAuditProject\\Reports\\VCACompanyProjectDirectorCritical.html",true);
-		test = extent.startTest("Verify OpenBrowser");
+		test = extent.startTest("Project Director Login (Critical)");
 		
-		test.log(LogStatus.PASS, "Test Passed - Project Director Login.");
+		test.log(LogStatus.PASS, "Test Passed");
 		extent.endTest(test);
 		extent.flush();
 	}

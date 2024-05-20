@@ -61,9 +61,9 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	{
 		
 		extent = new com.relevantcodes.extentreports.ExtentReports("E:\\VenderAuditProject\\Reports\\VCACompanyProjectHeadCritical.html",true);
-		test = extent.startTest("Verify OpenBrowser");
+		test = extent.startTest("Logging In - Project Head Login (Critical)");
 		
-		test.log(LogStatus.PASS, "Test Passed - Project Head Login.");
+		test.log(LogStatus.PASS, "Test Passed ");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -283,7 +283,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	@Test(priority = 14) 
 	void PWAuditStatusSummeryABCConstructionOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Audit Status Summary - ' Project - Creation Construction ' Count Verification");
+		test = extent.startTest("Bar Graph - Project Wise - Audit Status Summary - ' Project - PRI Update ' Count Verification");
 		
 		Method3.PWAuditStatusSummeryABCConstructionOverdue(test,workbook);
 		
@@ -299,9 +299,9 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	void PWCSSubcontractorCompliedHigh1() throws InterruptedException, IOException
 	{
 	//	WebWait wait = new WebWait( 1000);
-		Thread.sleep(26000);
+		Thread.sleep(10000);
 		
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
@@ -309,7 +309,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	    Thread.sleep(2000);
 		
 		String t = Locator3.RudraHeritage().getText();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		
 		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - " + t + " Complied Status Verification");
 		

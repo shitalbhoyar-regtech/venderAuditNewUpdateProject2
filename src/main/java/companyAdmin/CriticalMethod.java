@@ -10,6 +10,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -3865,29 +3867,24 @@ public class CriticalMethod extends BasePage {
 	
 	public static void AddNewCompliance( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		
+		WebDriverWait wait = new WebDriverWait( getDriver(), 30);
 		Locator.ComplianceMapping().click();
 		Thread.sleep(3000);
 		
 		
-		Locator.PendingMapping().click();
+		Locator.CheckBox().click();
 		Thread.sleep(3000);
 		
-		Locator.mapCompliance().click();
+		Locator.NextButton().click();
 		Thread.sleep(7000);
-		
-   
-		
-        Locator.SelectCompliance11CM().click();
+			
+        Locator.SelectComplianceCheckBox1().click();
         Thread.sleep(3000);
         
-		Locator.SelectMappingTypeDD().click();
+		Locator.SelectComplianceCheckBox2().click();
 		Thread.sleep(7000);
 		
-		
-		
-		
-		Locator.SaveCompliance().click();
+		Locator.SaveMappingButton().click();
 		Thread.sleep(3000);
 		
 		

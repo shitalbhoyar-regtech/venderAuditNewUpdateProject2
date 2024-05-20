@@ -21,13 +21,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import companyAdmin.Locator;
 import companyContractor.Locator1;
+import companyContractor.Method1;
 import companyProjectHead.Locator3;
 import login.BasePage;
 
@@ -118,7 +119,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void UpcomingdashboardAndGridCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void UpcomingdashboardAndGridCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 	
 //	//WebWait wait = new WebWait(, 1000);
@@ -175,8 +176,9 @@ public class Method2 extends BasePage{
     jss.executeScript("window.scrollBy(0,-1000)");
     Thread.sleep(2000);
 	
-	
-	Method2.UpcomingExportButton(test, workbook);
+	Method2.UpcomingAuditExcelCountGridCount1(test,workbook);	
+
+//	Method2.UpcomingExportButton(test, workbook);
 	
 	Thread.sleep(2000);
 	
@@ -217,6 +219,157 @@ public class Method2 extends BasePage{
 		
 		
 		
+	}
+	
+	public static void UpcomingAuditExcelCountGridCount1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		//WebWait wait = new WebWait( 1000);
+		/*
+		Thread.sleep(20000);
+		
+        Locator1.Upcoming().click();					                //Clicking on Dashboard count
+        Thread.sleep(20000);
+        
+       
+		//wait.until(ExpectedConditions.visibilityOf(Locator1.GridLoad()));
+        
+		Thread.sleep(4000);
+       			
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(5000);
+       
+/
+        */
+        
+        Thread.sleep(7000);
+        Locator.readTotalItems1().click();
+		String item = Locator.readTotalItems1().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+	
+		if(compliancesCount.equalsIgnoreCase("to"))
+		{
+			Thread.sleep(5000);
+		   item = Locator.readTotalItems1().getText();
+			bits = item.split(" ");
+        
+		}
+		
+        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+        
+        js1.executeScript("window.scrollBy(0,-1000)");
+        Thread.sleep(2000);
+ 		
+		Thread.sleep(4000);
+ 	//	Locator.ExportButtonCT().click();
+	//	Thread.sleep(9000);
+		/*
+		if(Locator1.UpcomingExport().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		 Locator1.UpcomingExport().click();
+			test.log(LogStatus.PASS, " Export Button Is Clickable" );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, " Export Button From Workspace "  );
+			
+		}
+		*/
+        File dir9 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] dirContents9 = dir9.listFiles();						//Counting number of files in directory before download
+ 		
+ 		Thread.sleep(3000);
+ 		Locator1.UpcomingExport().click();
+ 		
+ 	 	Thread.sleep(9000);
+ 		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] allFilesNew0 = dir0.listFiles();						//Counting number of files in directory after download
+ 	  
+        Thread.sleep(3000);
+ 	   if (dirContents9.length < allFilesNew0.length) {
+ 			test.log(LogStatus.PASS,  " File Download Successfully");
+ 		}
+ 	   else
+ 	   {
+ 		 	test.log(LogStatus.FAIL, "  File Does Not Download Successfully "   );
+
+ 		}   
+ 	   Thread.sleep(4000);
+
+		
+		
+	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\Audit Compliances Report .xlsx");
+	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);
+	
+	//int rowCount = sheet.getLastRowNum();
+	
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+	
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	
+	
+	System.out.println("Row Count in column  " + columnNumber + ": " + actualRow);
+	
+	workbook.close();
+	fis.close();
+	
+	if(count1 == actualRow)
+	{
+		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+	
+	Thread.sleep(2000);
+	
+	String fis1 = "C:\\\\Users\\\\shitalb\\\\Downloads\\\\Audit Compliances Report .xlsx";
+	
+	File file = new File(fis1);
+	  
+	 if(file.exists()) {
+		 
+		 if(file.delete())
+		 {
+		 
+		 System.out.println("File deleted Successfully.");
+	     }
+		 
+	 }
+	 else {
+		 
+		 System.out.println("File does not exist Successfully.");
+	 }
+	 
+	 Thread.sleep(2000);
+     
+	    
 	}
 	
 	
@@ -445,7 +598,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void OverdueDashboardAndGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void OverdueDashboardAndGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -503,8 +656,9 @@ public class Method2 extends BasePage{
 	    jss.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
 		
-		
-	    Method2.ExportButtonOverdue(test, workbook);
+		Method2.UpcomingAuditExcelCountGridCount1(test,workbook);	
+
+	//    Method2.ExportButtonOverdue(test, workbook);
 	    Thread.sleep(2000);
 	    
 	    Method2.OverdueClearButton(test, workbook);
@@ -5692,7 +5846,12 @@ public class Method2 extends BasePage{
 	
 	public static void AddHeadCountOverdue( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Thread.sleep(20000);
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(9000);
+	    
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divOverdueCount"))); 
+		Thread.sleep(2000);
+
 		Locator2.OverdueDasboardCount().click();
 		Thread.sleep(10000);
 		
@@ -5708,7 +5867,8 @@ public class Method2 extends BasePage{
 		Locator1.HeadCountButton().click();
 		Thread.sleep(6000);
 		
-		
+		Method2.AddHeadCountOverduevalidation(test,workbook);
+
 		
 		Locator1.HeadCountselectmonthOverdue().click();
 		Thread.sleep(3000);
@@ -5761,6 +5921,7 @@ public class Method2 extends BasePage{
 	
 	public static void AddHeadCountOverduevalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
+		/*
 		Thread.sleep(20000);
 		Locator2.OverdueDasboardCount().click();
 		Thread.sleep(10000);
@@ -5803,7 +5964,7 @@ public class Method2 extends BasePage{
 			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 			Locator1.HeadCountFemaleCount().sendKeys(c1.getStringCellValue()); // Writing Task title
 			Thread.sleep(2000);
-			*/
+			
 		
 		//	Locator1.HeadCountsave().click();
 			
@@ -5822,7 +5983,22 @@ public class Method2 extends BasePage{
 				
 			}
 			Thread.sleep(2000);
+		*/
 		
+		Locator1.HeadCountsave().click();
+		
+		Thread.sleep(5000);
+		 Alert ac3=getDriver().switchTo().alert();
+			
+			String t4=getDriver().switchTo().alert().getText();
+			
+			test.log(LogStatus.PASS, t4 );
+			
+			Thread.sleep(2000);
+			ac3.accept();
+			
+			Thread.sleep(2000);
+
 		
 	
 		
@@ -6502,9 +6678,9 @@ public class Method2 extends BasePage{
        
        Locator2.Project().click();
        Thread.sleep(2000);
-       String ProjectText =Locator2.ProjectDD().getText();
+       String ProjectText =Locator2.Agriculture().getText();
        Thread.sleep(2000);
-       Locator2.ProjectDD().click();
+       Locator2.Agriculture().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -6548,9 +6724,9 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Period2().getText();
+       String periodtext =Locator2.Apr24().getText();
        Thread.sleep(2000);
-      Locator2.Period2().click();
+      Locator2.Apr24().click();
       Thread.sleep(2000);
     //  Locator2.Period().click();
      // Thread.sleep(3000);
@@ -6729,15 +6905,11 @@ public class Method2 extends BasePage{
   //     Thread.sleep(2000);
 		
 		
-		   
-		
-		
-       
        Locator2.Project().click();
        Thread.sleep(2000);
-       String ProjectText =Locator2.ProjectDD().getText();
+       String ProjectText =Locator2.PRIUpdate().getText();
        Thread.sleep(2000);
-       Locator2.ProjectDD().click();
+       Locator2.PRIUpdate().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -6781,9 +6953,9 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.PeriodDD().getText();
+       String periodtext =Locator2.Feb22().getText();
        Thread.sleep(2000);
-      Locator2.PeriodDD().click();
+      Locator2.Feb22().click();
       Thread.sleep(2000);
       Locator2.Period().click();
       Thread.sleep(3000);
@@ -6962,9 +7134,9 @@ public class Method2 extends BasePage{
        
 		Locator2.Project().click();
 	       Thread.sleep(2000);
-	       String ProjectText =Locator2.ProjectDD().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(2000);
-	       Locator2.ProjectDD().click();
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(2000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -7008,9 +7180,9 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Period3().getText();
+       String periodtext =Locator2.PeriodNCPWCSSDD().getText();
        Thread.sleep(2000);
-      Locator2.Period3().click();
+      Locator2.PeriodNCPWCSSDD().click();
       Thread.sleep(2000);
       Locator2.Period().click();
       Thread.sleep(3000);
@@ -7190,9 +7362,9 @@ public class Method2 extends BasePage{
        
        Locator2.Project().click();
        Thread.sleep(2000);
-       String ProjectText =Locator2.ProjectDD().getText();
+       String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
-       Locator2.ProjectDD().click();
+       Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -7229,13 +7401,15 @@ public class Method2 extends BasePage{
        Locator2.Status1PendingReview().click();
        Thread.sleep(2000);
        Locator2.Status2PendingReview().click();
+       Thread.sleep(3000);
+       Locator2.Status().click();
        Thread.sleep(2000);
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.PeriodDD().getText();
+       String periodtext =Locator2.Feb23().getText();
        Thread.sleep(2000);
-      Locator2.PeriodDD().click();
+      Locator2.Feb23().click();
       Thread.sleep(2000);
       Locator2.Period().click();
       Thread.sleep(3000);
@@ -7414,9 +7588,9 @@ public class Method2 extends BasePage{
        
 		Locator2.Project().click();
 	       Thread.sleep(2000);
-	       String ProjectText =Locator2.ProjectDD().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(2000);
-	       Locator2.ProjectDD().click();
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(2000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -7638,9 +7812,9 @@ public class Method2 extends BasePage{
      
        Locator2.Project().click();
        Thread.sleep(3000);
-       String ProjectText =Locator2.ClosedProject().getText();
+       String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
-       Locator2.ClosedProject().click();
+       Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -7676,14 +7850,11 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodFilterCompliedMediumDD().getText();
+       String PeriodText =Locator2.Jan24().getText();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedMediumDD().click();
+       Locator2.Jan24().click();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHigh().click();
-       Thread.sleep(2000);
-       
-       
+        
        
        
         List<String> li=new ArrayList<String>();
@@ -7841,9 +8012,9 @@ public class Method2 extends BasePage{
      
        Locator2.Project().click();
        Thread.sleep(3000);
-       String ProjectText =Locator2.ClosedProject().getText();
+       String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
-       Locator2.ClosedProject().click();
+       Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -7880,14 +8051,11 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodFilterCompliedMediumDD().getText();
+       String PeriodText =Locator2.Jan24().getText();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedMediumDD().click();
+       Locator2.Jan24().click();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHigh().click();
-       Thread.sleep(2000);
-       
-       
+         
        
        
         List<String> li=new ArrayList<String>();
@@ -8065,9 +8233,9 @@ public class Method2 extends BasePage{
      
        Locator2.Project().click();
        Thread.sleep(3000);
-       String ProjectText =Locator2.ClosedProject().getText();
+       String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
-       Locator2.ClosedProject().click();
+       Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -8126,11 +8294,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodFilterCompliedMediumDD().getText();
+       String PeriodText =Locator2.PeriodMediumNC().getText();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedMediumDD().click();
-       Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHigh().click();
+       Locator2.PeriodMediumNC().click();
        Thread.sleep(2000);
        
        
@@ -8276,7 +8442,7 @@ public class Method2 extends BasePage{
 		Locator2.RedGraph2().click();
 		Thread.sleep(2000);
 		
-	    Locator2.RedGraph2Green().click();					                //Clicking on Dashboard count
+	    Locator2.RedGraphInRed().click();					                //Clicking on Dashboard count
 
 	    Thread.sleep(2000);
 	    
@@ -8287,9 +8453,9 @@ public class Method2 extends BasePage{
      
        Locator2.Project().click();
        Thread.sleep(3000);
-       String ProjectText =Locator2.ClosedProject().getText();
+       String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
-       Locator2.ClosedProject().click();
+       Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -8334,11 +8500,11 @@ public class Method2 extends BasePage{
        
        Locator2.Risk().click();
        Thread.sleep(2000);
-       Locator2.RiskFilterNotCompliedLow().click();
+       Locator2.RiskFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String RiskText =Locator2.RiskFilterNotCompliedLowDD1().getText();
+       String RiskText =Locator2.RiskNADD1().getText();
        Thread.sleep(2000);
-       Locator2.RiskFilterNotCompliedLowDD1().click();
+       Locator2.RiskNADD1().click();
        Thread.sleep(2000);
        Locator2.Risk().click();
        Thread.sleep(2000);
@@ -8349,9 +8515,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodFilterCompliedHighDD().getText();
+       String PeriodText =Locator2.Feb23().getText();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHighDD().click();
+       Locator2.Feb23().click();
        Thread.sleep(2000);
       
        
@@ -8521,9 +8687,9 @@ public class Method2 extends BasePage{
      
        Locator2.Project().click();
        Thread.sleep(3000);
-       String ProjectText =Locator2.ClosedProject().getText();
+       String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
-       Locator2.ClosedProject().click();
+       Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -8581,9 +8747,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodMediumNC().getText();
+       String PeriodText =Locator2.Mar23().getText();
        Thread.sleep(2000);
-       Locator2.PeriodMediumNC().click();
+       Locator2.Mar23().click();
        Thread.sleep(2000);
     //   Locator2.PeriodFilterCompliedHigh().click();
     //   Thread.sleep(2000);
@@ -8753,9 +8919,9 @@ public class Method2 extends BasePage{
      
        Locator2.Project().click();
        Thread.sleep(3000);
-       String ProjectText =Locator2.ClosedProject().getText();
+       String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
-       Locator2.ClosedProject().click();
+       Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -8815,11 +8981,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodFilterCompliedHighDD().getText();
+       String PeriodText =Locator2.Mar23().getText();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHighDD().click();
-       Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHigh().click();
+       Locator2.Mar23().click();
        Thread.sleep(2000);
        
        
@@ -8970,9 +9134,9 @@ public class Method2 extends BasePage{
      
        Locator2.Project().click();
        Thread.sleep(3000);
-       String ProjectText =Locator2.ClosedProject().getText();
+       String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
-       Locator2.ClosedProject().click();
+       Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -9008,13 +9172,11 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodNADD().getText();
+       String PeriodText =Locator2.Jul20().getText();
        Thread.sleep(2000);
-       Locator2.PeriodNADD().click();
+       Locator2.Jul20().click();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHigh().click();
-       Thread.sleep(2000);
-       
+        
        
        
        
@@ -9148,7 +9310,7 @@ public class Method2 extends BasePage{
 	    Thread.sleep(2000);
 		
 		Locator2.GreyGraph().click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 	    Locator2.GreyInYellow().click();					                //Clicking on Dashboard count
 
@@ -9161,9 +9323,9 @@ public class Method2 extends BasePage{
      
        Locator2.Project().click();
        Thread.sleep(3000);
-       String ProjectText =Locator2.ClosedProject().getText();
+       String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
-       Locator2.ClosedProject().click();
+       Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -9199,13 +9361,11 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodNADD().getText();
+       String PeriodText =Locator2.Feb23().getText();
        Thread.sleep(2000);
-       Locator2.PeriodNADD().click();
+       Locator2.Feb23().click();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHigh().click();
-       Thread.sleep(2000);
-       
+        
        
        
        
@@ -9354,9 +9514,9 @@ public class Method2 extends BasePage{
      
        Locator2.Project().click();
        Thread.sleep(3000);
-       String ProjectText =Locator2.ClosedProject().getText();
+       String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
-       Locator2.ClosedProject().click();
+       Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -9392,14 +9552,11 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodNADD().getText();
+       String PeriodText =Locator2.Feb23().getText();
        Thread.sleep(2000);
-       Locator2.PeriodNADD().click();
+       Locator2.Feb23().click();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHigh().click();
-       Thread.sleep(2000);
-       
-       
+         
        
        
         List<String> li=new ArrayList<String>();
@@ -9532,20 +9689,20 @@ public class Method2 extends BasePage{
 	    jss.executeScript("window.scrollBy(0,300)");
 	    Thread.sleep(2000);
 	    
-		Locator1.ACSREDGraph().click();
+	    Locator2.ACSREDGraph().click();					                //Clicking on Dashboard count
 		Thread.sleep(3000);
 		
 		getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
       
 		
-	    Locator1.Project().click();
+	    Locator2.Project().click();
 	       Thread.sleep(5000);
-	       String ProjectText =Locator1.Projecttext1().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(6000);
-	       Locator1.ProjectFilterCompliedHigh().click();
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(2000);
-	       Locator1.Project().click();
+	       Locator2.Project().click();
 	       Thread.sleep(2000);
        
        
@@ -9586,9 +9743,9 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator1.period2().getText();
+       String periodtext =Locator2.Sep20().getText();
        Thread.sleep(2000);
-      Locator1.period2().click();
+      Locator2.Sep20().click();
       Thread.sleep(2000);
       
       
@@ -9596,23 +9753,23 @@ public class Method2 extends BasePage{
         List<String> li=new ArrayList<String>();
         
       //  li.add(locationtext);
-        
+        li.add(ProjectText);
         li.add(ContractorTypeText);
         li.add(FrequencyText);
         li.add(Statustext);
 	    li.add(periodtext);
-	    li.add(ProjectText);
+	    
         
         Thread.sleep(3000);
         
 		List<String> filter=new ArrayList<String>();	
 	//	filter.add("Location");
-		
+		filter.add("Project");
 		filter.add("ContractorType");
 		filter.add("Frequency");
 		filter.add("Status");
 	    filter.add("Period");
-	    filter.add("Project");
+	    
 		
 		
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -9627,11 +9784,11 @@ public class Method2 extends BasePage{
 		Thread.sleep(5000);
 	
 	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[3]"));
-		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[4]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
-	    List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+	    List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
 
 		
 		Thread.sleep(2000);
@@ -9748,7 +9905,7 @@ public class Method2 extends BasePage{
 	    jss.executeScript("window.scrollBy(0,300)");
 	    Thread.sleep(2000);
 	    
-		Locator2.ACSBlueGraph().click();
+	    Locator2.ACSBlueGraph().click();					                //Clicking on Dashboard count
 		Thread.sleep(16000);
 		
 		
@@ -9757,13 +9914,13 @@ public class Method2 extends BasePage{
       
 		
 	   
-	    Locator1.Project().click();
+	    Locator2.Project().click();
 	       Thread.sleep(5000);
-	       String ProjectText =Locator1.Projecttext1().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(6000);
-	       Locator1.ProjectFilterCompliedHigh().click();
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(2000);
-	       Locator1.Project().click();
+	       Locator2.Project().click();
 	       Thread.sleep(2000);
        
        
@@ -9804,9 +9961,9 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator1.period().getText();
+       String periodtext =Locator2.Feb23().getText();
        Thread.sleep(2000);
-      Locator1.period().click();
+      Locator2.Feb23().click();
       Thread.sleep(2000);
       
        
@@ -9842,11 +9999,11 @@ public class Method2 extends BasePage{
 		Thread.sleep(5000);
 	
 	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[4]"));
-		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[9]"));
-	    List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[8]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+	    List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
 
 		
 		Thread.sleep(2000);
@@ -9949,6 +10106,199 @@ public class Method2 extends BasePage{
 	}
 
 
+	public static void ACSClosedMultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(26000);
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,300)");
+	    Thread.sleep(2000);
+	    
+	    Locator2.ACSGreenGraph().click();					                //Clicking on Dashboard count
+		Thread.sleep(16000);
+		
+		
+		getDriver().switchTo().frame(Locator2.Frame());
+	    Thread.sleep(9000);
+      
+		
+	   
+	    Locator2.Project().click();
+	       Thread.sleep(5000);
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
+	       Thread.sleep(6000);
+	       Locator2.ChandranganConstruction1().click();
+	       Thread.sleep(2000);
+	       Locator2.Project().click();
+	       Thread.sleep(2000);
+       
+       
+       
+       Locator2.ContractorType().click();
+       Thread.sleep(2000);
+       String ContractorTypeText =Locator2.ContractorTypeDD().getText();
+       Thread.sleep(2000);
+       Locator2.ContractorTypeDD().click();
+       Thread.sleep(2000);
+       Locator2.ContractorType().click();
+       Thread.sleep(2000);
+       
+       
+       
+       
+       Locator2.Frequency().click();
+       Thread.sleep(2000);
+       String FrequencyText =Locator1.FrequencyDD().getText();
+       Thread.sleep(2000);
+       Locator2.FrequencyDD().click();
+       Thread.sleep(2000);
+       Locator2.Frequency().click();
+       Thread.sleep(2000);
+       
+       Locator2.Status().click();
+       Thread.sleep(2000);
+       String Statustext =Locator2.Status1Closed().getText();
+       Thread.sleep(2000);
+       Locator2.Status1Closed().click();
+       Thread.sleep(2000);
+       Locator2.Status2Closed().click();
+       Thread.sleep(2000);
+       Locator2.Status().click();
+       Thread.sleep(2000);
+       
+       
+       
+       Locator2.Period().click();
+       Thread.sleep(2000);
+       String periodtext =Locator2.PeriodNADD().getText();
+       Thread.sleep(2000);
+      Locator2.PeriodNADD().click();
+      Thread.sleep(2000);
+      
+       
+        List<String> li=new ArrayList<String>();
+        
+      //  li.add(locationtext);
+        li.add(ProjectText);
+        li.add(ContractorTypeText);
+        li.add(FrequencyText);
+        li.add(Statustext);
+	    li.add(periodtext);
+        
+        Thread.sleep(3000);
+        
+		List<String> filter=new ArrayList<String>();	
+	//	filter.add("Location");
+		filter.add("Project");
+		filter.add("ContractorType");
+		filter.add("Frequency");
+		filter.add("Status");
+	    filter.add("Period");
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(3000);
+
+		Locator1.GridCount().click();					//Clicking on Text of total items just to scroll down.
+		String s = Locator1.GridCount().getText();
+		Thread.sleep(2000);
+
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(5000);
+	
+	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+	    List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+
+		
+		Thread.sleep(2000);
+
+		for(int i=0; i<li.size(); i++){
+			
+			List<String> text= new ArrayList<String>();
+			HashSet<String> pass=new LinkedHashSet<>();
+			HashSet<String> fail=new LinkedHashSet<>();
+			List<WebElement> raw=new ArrayList<WebElement>();
+
+				if(i==0)
+				{
+					raw.addAll(projectcol);
+				}
+			else if(i==1)
+				{
+					raw.addAll(contractorcol);
+				}
+			else if(i==2)
+			{
+				raw.addAll(frequencycol);
+			}
+				
+			else if(i==3)
+			{
+				raw.addAll(statuscol);
+			}
+			else if(i==4)
+			{
+				raw.addAll(periodcol);
+			}
+			       
+				
+			for(int k=0;k<raw.size();k++)
+				{
+					text.add(raw.get(k).getText());
+				}
+
+				for(int l=0;l<text.size();l++)
+					{
+				if(text.get(l).equals(li.get(i)))
+					{
+						pass.add(text.get(l));	
+						System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+					}
+				else
+				{
+					fail.add(text.get(l));		
+					System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+					System.out.println(i);
+
+				}
+				 }
+		 
+	for(String Fal : fail)
+		 {
+				test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+		 }	
+		 for(String Pas : pass)
+		 {
+			 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+				test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+				System.out.println(filter.get(i)+" : "+Pas);
+	 }
+		 text.clear();
+		pass.clear();
+		fail.clear();
+		raw.clear();
+		
+		
+		}
+		}else {
+			test.log(LogStatus.PASS,"No records found");	
+		}
+		Thread.sleep(3000);
+
+		
+	}
+
+
 	
 	///Bar Graph
 	
@@ -9990,7 +10340,7 @@ public class Method2 extends BasePage{
 	    
 	    Thread.sleep(2000);
 		
-		Locator2.PWSCompliedGraph().click();
+		Locator2.PWSCompliedJKHills().click();
 		Thread.sleep(2000);
 		
 	    Locator2.PWSCompliedGraphHigh().click();					                //Clicking on Dashboard count
@@ -10003,9 +10353,11 @@ public class Method2 extends BasePage{
 	  
        Locator2.Project().click();
        Thread.sleep(3000);
-       String ProjectText =Locator2.Project3().getText();
+       String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(3000);
-       Locator2.Project2().click();
+       Locator2.ChandranganConstruction1().click();
+       Thread.sleep(3000);
+       Locator2.ChandranganConstruction1().click();
        Thread.sleep(3000);
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -10039,11 +10391,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodFilterCompliedMediumDD().getText();
+       String PeriodText =Locator2.Jul20().getText();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedMediumDD().click();
-       Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHigh().click();
+       Locator2.Jul20().click();
        Thread.sleep(2000);
        
        
@@ -10181,9 +10531,9 @@ public class Method2 extends BasePage{
 	    jss.executeScript("window.scrollBy(0,900)");
 	    Thread.sleep(2000);
 		
-		Locator2.PWSCompliedGraph().click();
+		Locator2.PWSCompliedJKHills().click();
 		Thread.sleep(5000);
-		
+
 	    Locator2.PWSCompliedGraphMedium().click();					                //Clicking on Dashboard count
 
 	    Thread.sleep(2000);
@@ -10194,9 +10544,11 @@ public class Method2 extends BasePage{
 	   
 	       Locator2.Project().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator2.Project3().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(3000);
-	       Locator2.Project2().click();
+	       Locator2.ChandranganConstruction1().click();
+	       Thread.sleep(3000);
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(3000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -10232,13 +10584,11 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodFilterCompliedMediumDD().getText();
+       String PeriodText =Locator2.Jul20().getText();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedMediumDD().click();
+       Locator2.Jul20().click();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHigh().click();
-       Thread.sleep(2000);
-       
+      
        
        
        
@@ -10372,7 +10722,7 @@ public class Method2 extends BasePage{
 	    
 	    Thread.sleep(2000);
 		
-		Locator2.PWSCompliedGraph().click();
+		Locator2.PWSCompliedJKHills().click();
 		Thread.sleep(2000);
 		
 	    Locator2.PWSCompliedGraphLow().click();					                //Clicking on Dashboard count
@@ -10385,9 +10735,11 @@ public class Method2 extends BasePage{
 	   
 	    Locator2.Project().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator2.Project3().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(3000);
-	       Locator2.Project2().click();
+	       Locator2.ChandranganConstruction1().click();
+	       Thread.sleep(3000);
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(3000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -10565,7 +10917,7 @@ public class Method2 extends BasePage{
 	    jss.executeScript("window.scrollBy(0,1000)");
 	    Thread.sleep(5000);
 		
-		Locator2.PWSNotCompliedGraph().click();
+		Locator2.PWSCompliedJKHills().click();
 		Thread.sleep(2000);
 		
 	    Locator2.PWSNotCompliedGraphHighRisk().click();					                //Clicking on Dashboard count
@@ -10579,9 +10931,11 @@ public class Method2 extends BasePage{
      
 	    Locator2.Project().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator2.Project3().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(3000);
-	       Locator2.Project2().click();
+	       Locator2.ChandranganConstruction1().click();
+	       Thread.sleep(3000);
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(3000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -10616,9 +10970,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodNCPWCSSDD().getText();
+       String PeriodText =Locator2.Feb23().getText();
        Thread.sleep(2000);
-       Locator2.PeriodNCPWCSSDD().click();
+       Locator2.Feb23().click();
        Thread.sleep(2000);
       
        
@@ -10757,7 +11111,7 @@ public class Method2 extends BasePage{
 	    jss.executeScript("window.scrollBy(0,900)");
 	    Thread.sleep(4000);
 		
-		Locator2.PWSNotCompliedGraph().click();
+		Locator2.PWSCompliedJKHills().click();
 		Thread.sleep(7000);
 		
 	    Locator2.PWSNotCompliedGraphMediumRisk().click();					                //Clicking on Dashboard count
@@ -10771,9 +11125,11 @@ public class Method2 extends BasePage{
      
 	    Locator2.Project().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator2.Project3().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(3000);
-	       Locator2.Project2().click();
+	       Locator2.ChandranganConstruction1().click();
+	       Thread.sleep(3000);
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(3000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -10807,9 +11163,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodNCPWCSSDD().getText();
+       String PeriodText =Locator2.Mar23().getText();
        Thread.sleep(2000);
-       Locator2.PeriodNCPWCSSDD().click();
+       Locator2.Mar23().click();
        Thread.sleep(2000);
      
        
@@ -10947,7 +11303,7 @@ public class Method2 extends BasePage{
 	    Thread.sleep(2000);
 	    
 		
-		Locator2.PWSNotCompliedGraph().click();
+		Locator2.PWSCompliedJKHills().click();
 		Thread.sleep(2000);
 		
 		
@@ -10962,9 +11318,11 @@ public class Method2 extends BasePage{
      
 	    Locator2.Project().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator2.Project3().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(3000);
-	       Locator2.Project2().click();
+	       Locator2.ChandranganConstruction1().click();
+	       Thread.sleep(3000);
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(3000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -11003,9 +11361,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodNCPWCSSDD().getText();
+       String PeriodText =Locator2.Jul20().getText();
        Thread.sleep(2000);
-       Locator2.PeriodNCPWCSSDD().click();
+       Locator2.Jul20().click();
        Thread.sleep(2000);
        
        
@@ -11147,7 +11505,7 @@ public class Method2 extends BasePage{
 	    
 	    */
 		
-		Locator2.PWSNotApplicableGraph().click();
+		Locator2.PWSCompliedJKHills().click();
 		Thread.sleep(2000);
 		
 	    Locator2.PWSNotApplicableGraphHigh().click();					                //Clicking on Dashboard count
@@ -11160,9 +11518,11 @@ public class Method2 extends BasePage{
        	
 	    Locator2.Project().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator2.Project3().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(3000);
-	       Locator2.Project2().click();
+	       Locator2.ChandranganConstruction1().click();
+	       Thread.sleep(3000);
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(3000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -11355,10 +11715,10 @@ public class Method2 extends BasePage{
 	    jss.executeScript("window.scrollBy(0,900)");
 	    Thread.sleep(2000);
 		
-		Locator2.PWSNotApplicableGraph().click();
+		Locator2.PWSCompliedJKHills().click();
 		Thread.sleep(2000);
-		
 		*/
+		
 		
 	    Locator2.PWSNotApplicableGraphmedium().click();					                //Clicking on Dashboard count
 
@@ -11370,9 +11730,11 @@ public class Method2 extends BasePage{
       
 	    Locator2.Project().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator2.Project3().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(3000);
-	       Locator2.Project2().click();
+	       Locator2.ChandranganConstruction1().click();
+	       Thread.sleep(3000);
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(3000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -11566,9 +11928,11 @@ public class Method2 extends BasePage{
 	    
 	    Locator2.Project().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator2.Project3().getText();
+	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(3000);
-	       Locator2.Project2().click();
+	       Locator2.ChandranganConstruction1().click();
+	       Thread.sleep(3000);
+	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(3000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);

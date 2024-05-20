@@ -3,10 +3,9 @@
 <suite thread-count="2" parallel="classes" name="Suite">
   <test  name="Test">
     <classes>
-     <class name="comapnyAdminTest.AuditorCriticalTestCases"/>
-      <class name="comapnyAdminTest.ContractorTestCasesCritical"/>
-      
-      
+ 
+      <class name="comapnyAdminTest.ProjectHeadCriticalTestCases"/>
+      <class name="comapnyAdminTest.ProjectDirectorCriticalTestCases"/>     
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -159,7 +159,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 	private void openBrower(int no) throws IOException {
 
 		if (browser.contains("chrome")) {
-					System.setProperty("webdriver.chrome.driver", "E:\\driver\\chromedriver-win32\\chromedriver.exe");
+					System.setProperty("webdriver.chrome.driver", "C:\\Users\\shitalb\\Documents\\chromedriver-win32\\chromedriver.exe");
 					//WebDriverManager.chromedriver().setup();
 					ChromeOptions options = new ChromeOptions();
 					options.addArguments("--remote-allow-origins=*");

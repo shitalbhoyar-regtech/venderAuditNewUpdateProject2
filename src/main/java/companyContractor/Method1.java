@@ -18,7 +18,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -27,6 +27,8 @@ import com.relevantcodes.extentreports.LogStatus;
 import companyAdmin.Locator;
 import companyAuditor.Locator2;
 import companyAuditor.Method2;
+import companyManagement.Locator5;
+import companyProjectDirector.Locator4;
 import companyProjectHead.Locator3;
 import login.BasePage;
 
@@ -842,10 +844,129 @@ public class Method1 extends BasePage{
 	
 	
 	
+	public static void UpcomingDownload( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		Thread.sleep(20000);
+		Locator1.Upcoming().click();
+		Thread.sleep(20000);
+		
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Thread.sleep(5000);
+		 
+			File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(9000);
+		     Locator2.Downloadupcoming().click();
+			
+		 	Thread.sleep(18000);
+			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+			
+		   
+	        Thread.sleep(9000);
+		   if (dirContents1.length < allFilesNew1.length) {
+				test.log(LogStatus.PASS,  "Document Downloaded Successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL, "Document Does Not Downloaded Successfully");
+			}		
+
+	
+	}
+	
+	
+	
+	public static void UpcomingAuditLog( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(7000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
+		Thread.sleep(4000);
+		
+		Locator1.Upcoming().click();
+		Thread.sleep(2000);
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Locator1.AuditLog().click();
+		Thread.sleep(4000);
+		
+if(Locator1.transactionLog().isDisplayed()&&Locator1.statusLog().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Transaction log tab and status log tab should be seen in the Audit log popup");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Transaction log tab and status log tab should be not seen in the Audit log popup");
+			
+		}
+
+		
+		
+	}
 	
 	
 	
 	
+	public static void Upcomingtransactionandstatuslog( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(7000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
+		Thread.sleep(4000);
+		
+		Locator1.Upcoming().click();
+		Thread.sleep(2000);
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Locator1.AuditLog().click();
+		Thread.sleep(4000);
+		
+		Locator1.transactionLog().click();
+		Thread.sleep(4000);
+		
+if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreatedBy().isDisplayed()&&Locator1.transactionLogCreatedon().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Remark column, Created By Column and Created On Column should be seen on the page of transaction log Page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Remark column, Created By Column and Created On Column should be not seen on the page of transaction log Page");
+			
+		}
+
+        Locator1.statusLog().click();
+        Thread.sleep(4000);
+		
+if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
+			
+		}
+
+        
+        
+	}
 	
 	
 	public static void UpdateOverdue1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -860,11 +981,11 @@ public class Method1 extends BasePage{
         js.executeScript("window.scrollBy(0,1000)");
         Thread.sleep(4000);
         
-        Locator1.LastPaging().click();
-		Thread.sleep(5000);
+  //      Locator1.LastPaging().click();
+	//	Thread.sleep(5000);
 		
-		Locator1.FirstLeftPaging().click();
-		Thread.sleep(5000);
+	//	Locator1.FirstLeftPaging().click();
+	//	Thread.sleep(5000);
 	       
 	//	Locator1.FirstLeftPaging().click();
 	//	Thread.sleep(5000);
@@ -1085,11 +1206,11 @@ public class Method1 extends BasePage{
         js.executeScript("window.scrollBy(0,1000)");
         Thread.sleep(4000);
         
-        Locator1.LastPaging().click();
-		Thread.sleep(5000);
+   //     Locator1.LastPaging().click();
+	//	Thread.sleep(5000);
 		
-		Locator1.FirstLeftPaging().click();
-		Thread.sleep(5000);
+	//	Locator1.FirstLeftPaging().click();
+	//	Thread.sleep(5000);
 	       
 	//	Locator1.FirstLeftPaging().click();
 	//	Thread.sleep(5000);
@@ -1318,6 +1439,146 @@ public class Method1 extends BasePage{
 	}
 	
 	
+	public static void OverdueAuditLog( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(7000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
+		Thread.sleep(4000);
+		
+		Locator1.Overdue().click();
+		Thread.sleep(2000);
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Locator1.AuditLog().click();
+		Thread.sleep(4000);
+		
+if(Locator1.transactionLog().isDisplayed()&&Locator1.statusLog().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Transaction log tab and status log tab should be seen in the Audit log popup");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Transaction log tab and status log tab should be not seen in the Audit log popup");
+			
+		}
+
+		
+		
+	}
+	
+	
+	public static void Overduetransactionandstatuslog( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(7000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
+		Thread.sleep(4000);
+		
+		Locator1.Overdue().click();
+		Thread.sleep(2000);
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Locator1.AuditLog().click();
+		Thread.sleep(4000);
+		
+		Locator1.transactionLog().click();
+		Thread.sleep(4000);
+		
+if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreatedBy().isDisplayed()&&Locator1.transactionLogCreatedon().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Remark column, Created By Column and Created On Column should be seen on the page of transaction log Page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Remark column, Created By Column and Created On Column should be not seen on the page of transaction log Page");
+			
+		}
+
+        Locator1.statusLog().click();
+        Thread.sleep(4000);
+		
+if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
+			
+		}
+
+        
+        
+	}
+	
+	
+	
+	
+	public static void DownloadDocumentOverdue( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		Thread.sleep(20000);
+		Locator1.Overdue().click();
+		Thread.sleep(20000);
+		
+		 JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(4000);
+	        
+	 //       Locator1.LastPaging().click();
+	//		Thread.sleep(5000);
+			
+	//		Locator1.FirstLeftPaging().click();
+	//		Thread.sleep(5000);
+		       
+	//		Locator1.FirstLeftPaging().click();
+		//	Thread.sleep(5000);	   
+			
+		//	Locator1.FirstLeftPaging().click();
+		//	Thread.sleep(5000);	       
+
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(3000);
+		
+         Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Thread.sleep(9000);    
+		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator1.DownloadDocument().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "Document Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Document Does Not Downloaded Successfully");
+		}		
+		
+		
+		
+	}
 	
 	
 	
@@ -1333,11 +1594,11 @@ public class Method1 extends BasePage{
 	        js.executeScript("window.scrollBy(0,1000)");
 	        Thread.sleep(4000);
 	        
-	        Locator1.LastPaging().click();
-			Thread.sleep(5000);
+	 //       Locator1.LastPaging().click();
+	//		Thread.sleep(5000);
 			
-			Locator1.FirstLeftPaging().click();
-			Thread.sleep(5000);
+	//		Locator1.FirstLeftPaging().click();
+	//		Thread.sleep(5000);
 		       
 	//		Locator1.FirstLeftPaging().click();
 		//	Thread.sleep(5000);	   
@@ -1359,13 +1620,13 @@ public class Method1 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator1.ViewButtonofOverdue().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " View Compliance Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Compliance Button Does Not Working Properly "  );
 			
 		}
 		
@@ -1387,11 +1648,11 @@ public class Method1 extends BasePage{
 	        js.executeScript("window.scrollBy(0,1000)");
 	        Thread.sleep(4000);
 	        
-	        Locator1.LastPaging().click();
-			Thread.sleep(5000);
+	//        Locator1.LastPaging().click();
+	//		Thread.sleep(5000);
 			
-			Locator1.FirstLeftPaging().click();
-			Thread.sleep(5000);
+	//		Locator1.FirstLeftPaging().click();
+	//		Thread.sleep(5000);
 		       
 	//		Locator1.FirstLeftPaging().click();
 	//		Thread.sleep(5000);
@@ -1653,13 +1914,13 @@ public class Method1 extends BasePage{
 			
 			Thread.sleep(3000);
 		    Locator1.ViewRejected().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " View Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button Does Not Working Properly "  );
 			
 		}
 		
@@ -1736,9 +1997,89 @@ public class Method1 extends BasePage{
 	}
 	
 	
+	public static void RejectedAuditLog( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(7000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
+		Thread.sleep(4000);
+		
+		Locator1.Rejected().click();
+		Thread.sleep(2000);
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Locator1.AuditLog().click();
+		Thread.sleep(4000);
+		
+if(Locator1.transactionLog().isDisplayed()&&Locator1.statusLog().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Transaction log tab and status log tab should be seen in the Audit log popup");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Transaction log tab and status log tab should be not seen in the Audit log popup");
+			
+		}
+
+		
+		
+	}
+
 	
+	public static void Rejectedtransactionandstatuslog( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(7000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
+		Thread.sleep(4000);
+		
+		Locator1.Rejected().click();
+		Thread.sleep(2000);
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Locator1.AuditLog().click();
+		Thread.sleep(4000);
+		
+		Locator1.transactionLog().click();
+		Thread.sleep(4000);
+		
+if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreatedBy().isDisplayed()&&Locator1.transactionLogCreatedon().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Remark column, Created By Column and Created On Column should be seen on the page of transaction log Page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Remark column, Created By Column and Created On Column should be not seen on the page of transaction log Page");
+			
+		}
+
+        Locator1.statusLog().click();
+        Thread.sleep(4000);
+		
+if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
+			
+		}
+
+        
+        
+	}
 	
-	
+
 	
 	
 	public static void UpdateRejected( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -2123,13 +2464,13 @@ public class Method1 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator1.ViewButtonPendingForReview().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " View Compliance Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Compliance Button Does Not Working Properly "  );
 			
 		}
 		
@@ -2144,7 +2485,7 @@ public class Method1 extends BasePage{
 	public static void ComentPendingRewiew( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Thread.sleep(20000);
+		Thread.sleep(10000);
 		Locator1.PendingRewiew().click();
 		Thread.sleep(20000);
 		
@@ -2206,9 +2547,86 @@ public class Method1 extends BasePage{
 	}
 		
 		
+	public static void PendingReviewAuditLog( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
 		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(7000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
+		Thread.sleep(4000);
+		
+		Locator1.PendingRewiew().click();
+		Thread.sleep(2000);
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Locator1.AuditLog().click();
+		Thread.sleep(4000);
+		
+if(Locator1.transactionLog().isDisplayed()&&Locator1.statusLog().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Transaction log tab and status log tab should be seen in the Audit log popup");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Transaction log tab and status log tab should be not seen in the Audit log popup");
+			
+		}
+
+		
+		
+	}
+
 	
-	
+	public static void PendingRewiewtransactionandstatuslog( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(7000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
+		Thread.sleep(4000);
+		
+		Locator1.PendingRewiew().click();
+		Thread.sleep(2000);
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Locator1.AuditLog().click();
+		Thread.sleep(4000);
+		
+		Locator1.transactionLog().click();
+		Thread.sleep(4000);
+		
+if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreatedBy().isDisplayed()&&Locator1.transactionLogCreatedon().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Remark column, Created By Column and Created On Column should be seen on the page of transaction log Page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Remark column, Created By Column and Created On Column should be not seen on the page of transaction log Page");
+			
+		}
+
+        Locator1.statusLog().click();
+        Thread.sleep(4000);
+		
+if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
+			
+		}
+
+	}
+
 	
 	
 	public static void updatePending( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -2536,6 +2954,46 @@ public class Method1 extends BasePage{
 	
 	
 	
+	public static void DownloadClosed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		Thread.sleep(20000);
+		Locator1.CountMatchClose().click();
+		Thread.sleep(20000);
+		
+		Locator1.EditButtonRejected().click();
+		Thread.sleep(2000);
+		
+         Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Thread.sleep(5000);
+		
+		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.Downloadupcoming().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "Document Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Document Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
+		
+		
+	}
+	
 	
 	
 	
@@ -2643,9 +3101,88 @@ public class Method1 extends BasePage{
 		
 		
 		
+	public static void ClosedAuditLog( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(7000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
+		Thread.sleep(4000);
+		
+		Locator1.CountMatchClose().click();
+		Thread.sleep(2000);
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Locator1.AuditLog().click();
+		Thread.sleep(4000);
+		
+if(Locator1.transactionLog().isDisplayed()&&Locator1.statusLog().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Transaction log tab and status log tab should be seen in the Audit log popup");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Transaction log tab and status log tab should be not seen in the Audit log popup");
+			
+		}
+
+		
+		
+	}
+
 	
+	public static void Closedtransactionandstatuslog( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(7000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
+		Thread.sleep(4000);
+		
+		Locator1.CountMatchClose().click();
+		Thread.sleep(2000);
+		
+		Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Locator1.AuditLog().click();
+		Thread.sleep(4000);
+		
+		Locator1.transactionLog().click();
+		Thread.sleep(4000);
+		
+if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreatedBy().isDisplayed()&&Locator1.transactionLogCreatedon().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Remark column, Created By Column and Created On Column should be seen on the page of transaction log Page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Remark column, Created By Column and Created On Column should be not seen on the page of transaction log Page");
+			
+		}
+
+        Locator1.statusLog().click();
+        Thread.sleep(4000);
+		
+if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
+			
+		}
+
+	}
+
 	
-	
+
 	
 	
 	
@@ -2761,8 +3298,8 @@ public class Method1 extends BasePage{
 		
 		Locator1.SelectLocationDocument().click();
 		Thread.sleep(2000);
-		Locator1.SelectLocationDocumentDrop().click();
-		Thread.sleep(2000);
+	//	Locator1.SelectLocationDocumentDrop().click();
+	//	Thread.sleep(2000);
 		Locator1.SelectLocationDocumentDD().click();
 		Thread.sleep(2000);
 		
@@ -5366,7 +5903,7 @@ public class Method1 extends BasePage{
 		//    Thread.sleep(3000);
 			
 		    
-		   Locator1.PWSNotCompliedJKHills().click();
+		   Locator1.PWSCompliedJKHills().click();
 		   
 		   Thread.sleep(3000);
 			
@@ -5775,7 +6312,7 @@ public class Method1 extends BasePage{
 		 //   Thread.sleep(3000);
 			
 		    
-		   Locator1.PWSNotCompliedJKHills().click();
+		   Locator1.PWSCompliedJKHills().click();
 		   
 		   Thread.sleep(3000);
 			

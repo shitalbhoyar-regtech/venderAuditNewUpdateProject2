@@ -12,11 +12,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -909,27 +909,117 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(4000);
 		    Locator2.EditButtonPendingReview().click();
-			test.log(LogStatus.PASS, " Download and View Document Button is Clickable " );
+			test.log(LogStatus.PASS, " View Document Button Working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Download and View Document Button Does not Clickable "  );
+			test.log(LogStatus.FAIL, "  View Document Button Does not Working properly "  );
 			
 		}
 		Thread.sleep(4000);
+		/*
+	//	getDriver().switchTo().frame(Locator2.FRAME());
+	//	Thread.sleep(4000);
 		
-		getDriver().switchTo().frame(Locator2.Framenew());
-		Thread.sleep(4000);
+	//	getDriver().switchTo().frame(Locator2.FRAME1());
+	//	Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+	    wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@class='k-content-frame']")));
 		
-		Locator2.Download().click();
+	    WebDriverWait wait1 = new WebDriverWait( getDriver(),(60));
+	    wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@id='fc12']")));
+	    Thread.sleep(4000);
+	    
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
 		Thread.sleep(9000);
+	     Locator2.Download().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "Document Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Document Does Not Downloaded Successfully");
+		}		
+
+	   Thread.sleep(2000);
+	//	Locator2.Download().click();
+	//	Thread.sleep(9000);
 	//	CriticalMethod2.ViewEditPR(test,workbook);
 	//	Thread.sleep(4000);
-			
+			*/
 		
 	}
+	
+	
+	
+	public static void PendingReviewDownload( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		Thread.sleep(20000);
+		Locator2.PendingReviewCountDashboard().click();
+		Thread.sleep(20000);
+		
+		Locator2.EditButtonnPendingReview().click();
+		Thread.sleep(9000);
+		
+		
+		
+		
+        Method2.SwitchToNewlyOpenedWindow( test, workbook);
+		
+		Thread.sleep(5000);
+		
+		/*
+        JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,450)");
+	    Thread.sleep(4000);
+	    
+		*/
+		    
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.Downloadpr().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "Document Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Document Does Not Downloaded Successfully");
+		}		
+
+	   Thread.sleep(2000);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public static void ViewEditPR( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
@@ -959,13 +1049,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ViewButtonofEditPR().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " View Compliance Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Compliance Button does not Working Properly "  );
 			
 		}
 		Thread.sleep(2000);
@@ -1431,10 +1521,10 @@ public class CriticalMethod2 extends BasePage{
 		Thread.sleep(20000);
 		
 		Locator2.SelectLocationDocument().click();
-		Thread.sleep(9000);
-		
-		Locator2.SelectLocationDropDocument().click();
 		Thread.sleep(2000);
+		
+	//	Locator2.SelectLocationDropDocument().click();
+	//	Thread.sleep(2000);
 		
 		Locator2.SelectLocationDropDownDocument().click();
 		Thread.sleep(2000);
@@ -1446,13 +1536,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ClearDocument().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -1629,7 +1719,7 @@ public class CriticalMethod2 extends BasePage{
 		Thread.sleep(2000);
 		
 		Locator2.MonthReportDD().click();	
-		Thread.sleep(5000);
+		Thread.sleep(9000);
 		
 		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download

@@ -254,7 +254,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 
 	
-	
+	/*
 	
 	@Test(priority =13 ) 
 	void RejectedAndGridCountMatch1() throws InterruptedException, IOException

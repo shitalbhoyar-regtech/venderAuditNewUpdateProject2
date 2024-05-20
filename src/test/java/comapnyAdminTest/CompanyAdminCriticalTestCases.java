@@ -57,7 +57,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	{
 		
 		extent = new com.relevantcodes.extentreports.ExtentReports("E:\\VenderAuditProject\\Reports\\VCACompanyAdminCritical.html",true);
-		test = extent.startTest("Verify OpenBrowser");
+		test = extent.startTest("Loging In - Company Admin(Critical)");
 		
 		test.log(LogStatus.PASS, "Test Passed - Company Admin Login");
 		extent.endTest(test);

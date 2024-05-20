@@ -5,8 +5,11 @@ import java.io.FileInputStream;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -17,6 +20,7 @@ import companyContractor.Locator1;
 import companyManagement.Locator5;
 import companyProjectHead.Locator3;
 import login.BasePage;
+
 
 public class CriticalMethod4 extends BasePage{
 	
@@ -29,7 +33,29 @@ public class CriticalMethod4 extends BasePage{
 
 	
 	
+	public static void LocationPopupColumnist( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
 	
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divLocationCount']"))); 
+		Thread.sleep(1000);
+		Locator4.Location().click();
+		Thread.sleep(2000);
+		
+if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed()&&Locator4.EmailColumn().isDisplayed()&&Locator4.ContactPersonColumn().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "The Column of Location, Adress, Email and contact person should be seen in the Location popup");
+		}else {
+			
+			test.log(LogStatus.FAIL, "The Column of Location, Adress, Email and contact person should be not seen in the Location popup");
+			
+		}
+	        
+		
+	}
+
 	
 	
 	

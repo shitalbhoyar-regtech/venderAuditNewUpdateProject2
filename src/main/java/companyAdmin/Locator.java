@@ -966,7 +966,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement StatusD()		//Method for searching Username input
 	{
-		StatusD = getDriver().findElement(By.xpath("//li[.='Suspended']"));
+		StatusD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul/li[.='Active']"));
 		return StatusD;
 		
 	}
@@ -3706,18 +3706,18 @@ public class Locator extends BasePage{
 	
 
 	
-	public static WebElement SelectMappingTypeDD()		//Method for searching Username input
+	public static WebElement SelectComplianceCheckBox2()		//Method for searching Username input
 	{
-		SelectMappingTypeDD = getDriver().findElement(By.xpath("//li[.='Compliance']"));
+		SelectMappingTypeDD = getDriver().findElement(By.xpath("(//div[@id='gridCompliances']//td//label[@class='k-checkbox-label k-no-text'])[2]"));
 		return SelectMappingTypeDD;
 		
 		
 	}
 	
 	
-	public static WebElement PendingMapping()		//Method for searching Username input
+	public static WebElement CheckBox()		//Method for searching Username input
 	{
-		PendingMapping = getDriver().findElement(By.id("btnpendingMapping"));
+		PendingMapping = getDriver().findElement(By.xpath("(//div[@id='gridPendingMapping']//td//label[@class='k-checkbox-label k-no-text'])[1]"));
 		return PendingMapping;
 		
 		
@@ -3848,17 +3848,17 @@ public class Locator extends BasePage{
 		
 	}
 	
-	public static WebElement SaveCompliance()		//Method for searching Username input
+	public static WebElement SaveMappingButton()		//Method for searching Username input
 	{
-		SaveCompliance = getDriver().findElement(By.id("btnSaveComplianceMapping"));
+		SaveCompliance = getDriver().findElement(By.xpath("//button[@id='btnSaveComplianceMapping']"));
 		return SaveCompliance;
 		
 		
 	}
 	
-	public static WebElement mapCompliance()		//Method for searching Username input
+	public static WebElement NextButton()		//Method for searching Username input
 	{
-		mapCompliance = getDriver().findElement(By.xpath("//a[.='Map Compliances']"));
+		mapCompliance = getDriver().findElement(By.xpath("//button[@id='btnNext']"));
 		return mapCompliance;
 		
 		
@@ -3982,9 +3982,9 @@ public class Locator extends BasePage{
 		
 	}
 	
-	public static WebElement SelectCompliance11CM()		//Method for searching Username input
+	public static WebElement SelectComplianceCheckBox1()		//Method for searching Username input
 	{
-		SelectCompliance11CM = getDriver().findElement(By.xpath("//*[@id='assingmentwindow']/div[2]/div[1]/div[1]/div/span/span/span[2]"));
+		SelectCompliance11CM = getDriver().findElement(By.xpath("(//div[@id='gridCompliances']//td//label[@class='k-checkbox-label k-no-text'])[1]"));
 		return SelectCompliance11CM;
 		
 		
