@@ -170,7 +170,7 @@ public class CriticalMethod2 extends BasePage{
 		Thread.sleep(20000);
 		Locator2.UpcomingCountDashboard().click();
 		Thread.sleep(20000);
-		*/
+		
 		if(Locator2.UpcomingExportButton().isEnabled())
 		{
 			
@@ -185,8 +185,28 @@ public class CriticalMethod2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.UpcomingExportButton().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
 		
 	}
 	
@@ -212,13 +232,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.UpcomingClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -232,9 +252,9 @@ public class CriticalMethod2 extends BasePage{
 	public static void UpcomingEditButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Thread.sleep(20000);
+		Thread.sleep(9000);
 		Locator2.UpcomingCountDashboard().click();
-		Thread.sleep(20000);
+		Thread.sleep(9000);
 		
 //		Locator2.EditButtonPendingReview().click();
 //		Thread.sleep(9000);
@@ -261,14 +281,54 @@ public class CriticalMethod2 extends BasePage{
 		Thread.sleep(4000);
 		
 		
-		CriticalMethod2.AddHeadCountUpcomingAudit(test,workbook);
-		Thread.sleep(2000);
+	//	CriticalMethod2.AddHeadCountUpcomingAudit(test,workbook);
+	//	Thread.sleep(2000);
 		
 		
 		
 	}
 	
 	
+	public static void UpcomingViewDownloadButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		Thread.sleep(15000);
+		Locator2.UpcomingCountDashboard().click();
+		Thread.sleep(7000);
+		
+		Locator2.UpcomingEditButton().click();
+		Thread.sleep(9000);
+		
+		
+		// Locator2.ViewButtonPR().click();
+	    
+		
+		
+		if(Locator2.ViewDocument().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator2.ViewDocument().click();
+			test.log(LogStatus.PASS, " View Document Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  View Document Button Does Not Working Properly "  );
+			
+		}
+		Thread.sleep(9000);
+		
+		getDriver().switchTo().frame(Locator2.OuterFrame());
+		Thread.sleep(3000);
+	
+		getDriver().switchTo().frame(Locator2.InnerFrame());
+		Thread.sleep(7000);
+		
+	    Locator2.Downloadbutton().click();
+	    Thread.sleep(4000);
+	}
 	
 	
 	
@@ -303,8 +363,8 @@ public class CriticalMethod2 extends BasePage{
 		}
 		Thread.sleep(4000);
 		
-		CriticalMethod2.AddHeadCountOverdueAudit(test,workbook);
-		Thread.sleep(9000);
+	//	CriticalMethod2.AddHeadCountOverdueAudit(test,workbook);
+	//	Thread.sleep(9000);
 		
 	}
 	
@@ -341,8 +401,8 @@ public class CriticalMethod2 extends BasePage{
 			
 		}
 		Thread.sleep(7000);
-		CriticalMethod2.RejectedHeadCount(test,workbook);
-		Thread.sleep(5000);
+	//	CriticalMethod2.RejectedHeadCount(test,workbook);
+	//	Thread.sleep(5000);
 		
 	}
 	
@@ -417,8 +477,8 @@ public class CriticalMethod2 extends BasePage{
 			
 		}
 		Thread.sleep(2000);
-		CriticalMethod2.ClosedReviewAddHeadCount(test,workbook);
-		Thread.sleep(2000);
+	//	CriticalMethod2.ClosedReviewAddHeadCount(test,workbook);
+	//	Thread.sleep(2000);
 	}
 	
 	
@@ -517,7 +577,7 @@ public class CriticalMethod2 extends BasePage{
 		Thread.sleep(20000);
 		
 		
-		*/
+		
 		if(Locator2.OverdueExportButton().isEnabled())
 		{
 			
@@ -532,7 +592,28 @@ public class CriticalMethod2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.OverdueExportButton().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
 		
 	}
 	
@@ -557,13 +638,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.OverdueClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -665,7 +746,7 @@ public class CriticalMethod2 extends BasePage{
 		Locator2.RejectedDasboardCount().click();
 		Thread.sleep(20000);
 		
-		*/
+		
 		
 		if(Locator2.RejectedExportButton().isEnabled())
 		{
@@ -681,7 +762,28 @@ public class CriticalMethod2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.RejectedExportButton().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
 	}
 	
 	
@@ -704,13 +806,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RejectedClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -823,7 +925,7 @@ public class CriticalMethod2 extends BasePage{
 		Locator2.PendingReviewCountDashboard().click();
 		Thread.sleep(20000);
 		
-		*/
+		
 		
 		if(Locator2.PendingReviewExportButton().isEnabled())
 		{
@@ -840,7 +942,28 @@ public class CriticalMethod2 extends BasePage{
 			
 		}
 		
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.PendingReviewExportButton().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
 		
 	}
 	
@@ -865,13 +988,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PendingReviewClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -882,9 +1005,9 @@ public class CriticalMethod2 extends BasePage{
 	public static void PendingReviewUpdate( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Thread.sleep(20000);
+		WebDriverWait wait = new WebDriverWait( getDriver(),(900));
 		Locator2.PendingReviewCountDashboard().click();
-		Thread.sleep(20000);
+		WebDriverWait wait1 = new WebDriverWait( getDriver(),(900));
 		
 		Locator2.EditButtonnPendingReview().click();
 		Thread.sleep(9000);
@@ -904,11 +1027,11 @@ public class CriticalMethod2 extends BasePage{
 	    
 		*/
 		
-		if(Locator2.EditButtonPendingReview().isEnabled())
+		if(Locator2.PendingReviewview().isEnabled())
 		{
 			
 			Thread.sleep(4000);
-		    Locator2.EditButtonPendingReview().click();
+		    Locator2.PendingReviewview().click();
 			test.log(LogStatus.PASS, " View Document Button Working properly " );
 			
 		}
@@ -919,17 +1042,17 @@ public class CriticalMethod2 extends BasePage{
 			
 		}
 		Thread.sleep(4000);
-		/*
-	//	getDriver().switchTo().frame(Locator2.FRAME());
-	//	Thread.sleep(4000);
 		
-	//	getDriver().switchTo().frame(Locator2.FRAME1());
-	//	Thread.sleep(4000);
-		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-	    wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@class='k-content-frame']")));
+		getDriver().switchTo().frame(Locator2.OuterFrame());
+		Thread.sleep(4000);
 		
-	    WebDriverWait wait1 = new WebDriverWait( getDriver(),(60));
-	    wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@id='fc12']")));
+		getDriver().switchTo().frame(Locator2.InnerFrame());
+		Thread.sleep(4000);
+		
+	//    wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@class='k-content-frame']")));
+		
+	 //   WebDriverWait wait1 = new WebDriverWait( getDriver(),(60));
+	 //   wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@id='fc12']")));
 	    Thread.sleep(4000);
 	    
 		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
@@ -957,7 +1080,7 @@ public class CriticalMethod2 extends BasePage{
 	//	Thread.sleep(9000);
 	//	CriticalMethod2.ViewEditPR(test,workbook);
 	//	Thread.sleep(4000);
-			*/
+			
 		
 	}
 	
@@ -966,9 +1089,9 @@ public class CriticalMethod2 extends BasePage{
 	public static void PendingReviewDownload( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Thread.sleep(20000);
+		Thread.sleep(9000);
 		Locator2.PendingReviewCountDashboard().click();
-		Thread.sleep(20000);
+		Thread.sleep(9000);
 		
 		Locator2.EditButtonnPendingReview().click();
 		Thread.sleep(9000);
@@ -1024,11 +1147,11 @@ public class CriticalMethod2 extends BasePage{
 	public static void ViewEditPR( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Thread.sleep(20000);
+		Thread.sleep(9000);
 		Locator2.PendingReviewCountDashboard().click();
-		Thread.sleep(20000);
+		Thread.sleep(9000);
 		
-		Locator2.EditButtonPendingReview().click();
+		Locator2.UpcomingEditButton().click();
 		Thread.sleep(9000);
 		
 		
@@ -1096,7 +1219,7 @@ public class CriticalMethod2 extends BasePage{
 		Locator2.PendingReviewCountDashboard().click();
 		Thread.sleep(20000);
 		
-		Locator2.EditButtonPendingReview().click();
+		Locator2.UpcomingEditButton().click();
 		Thread.sleep(9000);
 		
 		Method2.SwitchToNewlyOpenedWindow( test, workbook);
@@ -1342,7 +1465,7 @@ public class CriticalMethod2 extends BasePage{
 		Thread.sleep(20000);
 		Locator2.ClosedDashboardCountMatch().click();
 		Thread.sleep(20000);
-		*/
+		
 		
 		
 		if(Locator2.ClosedExportButton().isEnabled())
@@ -1360,7 +1483,28 @@ public class CriticalMethod2 extends BasePage{
 			
 		}
 		
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.ClosedExportButton().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
 	}
 	
 	public static void ClearButtonClosed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -1383,13 +1527,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ClosedClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -1424,13 +1568,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.DocumentViewButton().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -1452,7 +1596,7 @@ public class CriticalMethod2 extends BasePage{
 		Locator2.CheckBoxDocument().click();
 		Thread.sleep(2000);
 		
-		
+		/*
 		if(Locator2.DownloadDocument().isEnabled())
 		{
 			
@@ -1467,7 +1611,28 @@ public class CriticalMethod2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File download Successfully "  );
 			
 		}
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.DownloadDocument().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(2000);
 		
 		
 	}
@@ -1490,7 +1655,7 @@ public class CriticalMethod2 extends BasePage{
 		
 		Locator2.CheckBox3Document().click();
 		Thread.sleep(2000);
-		
+		/*
 		if(Locator2.DownloadDocument().isEnabled())
 		{
 			
@@ -1505,7 +1670,29 @@ public class CriticalMethod2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File download Successfully "  );
 			
 		}
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.DownloadDocument().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(2000);
+
 		
 		
 		
@@ -1568,7 +1755,7 @@ public class CriticalMethod2 extends BasePage{
 		
 		
 		
-		
+		/*
 		if(Locator2.ExportReportR().isEnabled())
 		{
 			
@@ -1583,7 +1770,30 @@ public class CriticalMethod2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File download Successfully "  );
 			
 		}
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.ExportReportR().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(2000);
+
+
 		
 	}
 	
@@ -1617,13 +1827,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ClearButtonReport().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -1641,7 +1851,7 @@ public class CriticalMethod2 extends BasePage{
 		Thread.sleep(20000);
 		Locator2.Report().click();
 		Thread.sleep(20000);
-		
+		/*
 		Locator2.ProjectReport1().click();
 		Thread.sleep(2000);
 		Locator2.ProjectReport1DD().click();
@@ -1660,7 +1870,7 @@ public class CriticalMethod2 extends BasePage{
 		
 			Thread.sleep(3000);
 		
-		*/
+		
 		if(Locator2.ActionClmFileDonld().isEnabled())
 		{
 			
@@ -1675,6 +1885,30 @@ public class CriticalMethod2 extends BasePage{
 			test.log(LogStatus.FAIL, "  Compliance Report Download Successfully "  );
 			
 		}
+		
+		*/
+		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.ActionClmFileDonld().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(2000);
+
 		
 		
 		
@@ -1694,7 +1928,7 @@ public class CriticalMethod2 extends BasePage{
 		Locator2.MoreReport().click();
 		Thread.sleep(4000);
 		
-		
+		/*
 		if(Locator2.CloseAuditReportR().isEnabled())
 		{
 			
@@ -1709,11 +1943,28 @@ public class CriticalMethod2 extends BasePage{
 			test.log(LogStatus.FAIL, " Closed Audit Report Download Successfully"  );
 			
 		}
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.CloseAuditReportR().click();
 		
-       Thread.sleep(5000);
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
 		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "Closed Audit Report Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Closed Audit Report Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(5000);
 		
 		Locator2.MonthReport().click();	
 		Thread.sleep(2000);
@@ -1721,20 +1972,20 @@ public class CriticalMethod2 extends BasePage{
 		Locator2.MonthReportDD().click();	
 		Thread.sleep(9000);
 		
-		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(3000);
 		Locator2.MouthCloseReportR().click();
 		
 	 	Thread.sleep(9000);
-		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		File dir5 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew5 = dir5.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
 	  
         Thread.sleep(3000);
-	   if (dirContents1.length < allFilesNew1.length) {
+	   if (dirContents.length < allFilesNew5.length) {
 			test.log(LogStatus.PASS,  "Month Wise Closed Audit Report Download Successfully");
 		}
 	   else
@@ -1743,7 +1994,7 @@ public class CriticalMethod2 extends BasePage{
 		}
 	   Thread.sleep(3000);
 	   
-			
+			/*
 			if(Locator2.RemarkReportR().isEnabled())
 			{
 				
@@ -1759,13 +2010,34 @@ public class CriticalMethod2 extends BasePage{
 				test.log(LogStatus.FAIL, " Compliance Remark Report File Download Successfully"  );
 				
 			}
-			
-			Thread.sleep(6000);
+			*/
+	   
+		File dira = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContentsa = dira.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.RemarkReportR().click();
+		
+	 	Thread.sleep(18000);
+		File dirb = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNewb = dirb.listFiles();						//Counting number of files in directory after download
+		
+	   
+       Thread.sleep(9000);
+	   if (dirContentsa.length < allFilesNewb.length) {
+			test.log(LogStatus.PASS,  "Compliance Remark Report Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Compliance Remark Report Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(5000);
+
+			
 		
 
 	//	Locator2.AuditReport().click();
-		
+		/*
 		if(Locator2.AuditReport().isEnabled())
 		{
 			
@@ -1781,7 +2053,30 @@ public class CriticalMethod2 extends BasePage{
 			
 		}
 		Thread.sleep(2000);
+		*/
+	   
+		File dirc = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContentsc = dirc.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.AuditReport().click();
+		
+	 	Thread.sleep(18000);
+		File dird = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNewd = dird.listFiles();						//Counting number of files in directory after download
+		
+	   
+      Thread.sleep(9000);
+	   if (dirContentsc.length < allFilesNewd.length) {
+			test.log(LogStatus.PASS,  "Audit Report Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Audit Report Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(5000);
+
+
 
 		
 		
@@ -1806,13 +2101,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 			Locator2.ReportViewCoplc().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable" );
+			test.log(LogStatus.PASS, " View Button working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " View Button Is Clickable"  );
+			test.log(LogStatus.FAIL, " View Button working properly"  );
 			
 		}
 		
@@ -1911,13 +2206,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ClearButtonRedGraphGrid().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -1929,13 +2224,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ViewRedButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -2014,13 +2309,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ClearButtonRedGraphGrid().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2120,13 +2415,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "   Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "   Clear button working properly "  );
 			
 		}
 		
@@ -2141,13 +2436,13 @@ public class CriticalMethod2 extends BasePage{
 				
 				Thread.sleep(2000);
 			    Locator2.YellowGraphViewButton().click();
-				test.log(LogStatus.PASS, "  View Button Is Clickable " );
+				test.log(LogStatus.PASS, "  View Button working properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 				
 			}
 			
@@ -2264,13 +2559,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2283,13 +2578,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -2372,13 +2667,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2436,13 +2731,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2548,13 +2843,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraph2GreenClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2567,13 +2862,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -2637,13 +2932,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraph2GreenClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2757,13 +3052,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraphInYellowClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2775,13 +3070,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -2847,13 +3142,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraphInYellowClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2949,13 +3244,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraphInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "   Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "   Clear button working properly "  );
 			
 		}
 		
@@ -2970,13 +3265,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -3052,13 +3347,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraphInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -3171,13 +3466,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInGreenClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -3188,13 +3483,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(4000);
 		    Locator2.ViewGreyInGreen().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -3308,13 +3603,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInYellowClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -3325,13 +3620,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInYellowViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -3444,13 +3739,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -3461,13 +3756,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -3600,13 +3895,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ACSREDGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -3737,13 +4032,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ACSBlueGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -3872,13 +4167,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ACSGreenGraphGreedClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -4014,13 +4309,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -4031,13 +4326,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -4160,13 +4455,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphMediumGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -4177,13 +4472,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphMediumGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, " View Button working properly "  );
 			
 		}
 		
@@ -4303,13 +4598,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphLowGridClearButton().click();
-			test.log(LogStatus.PASS, "Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -4321,13 +4616,13 @@ public class CriticalMethod2 extends BasePage{
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphLowGridViewButton().click();
 			test.log(LogStatus.PASS, ""
-					+ "  View Button Is Clickable " );
+					+ "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -4445,13 +4740,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphHighRiskGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -4462,13 +4757,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphHighRiskGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -4593,13 +4888,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphMediumRiskGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -4610,13 +4905,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphMediumRiskGridViewButton().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -4733,13 +5028,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphLowRiskGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -4750,13 +5045,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphMediumRiskGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -4785,10 +5080,11 @@ public class CriticalMethod2 extends BasePage{
 		
 		
 		//WebWait wait = new WebWait( 1000);
-		Thread.sleep(26000);
+		Thread.sleep(9000);
 		
 			
-	    Locator2.ClosedDashboardCountMatch().click();					                //Clicking on Dashboard count
+		int open = Integer.parseInt(Locator2.ClosedDashboardCountMatch().getText());	//Reading Dashboard count.
+        Locator2.ClosedDashboardCountMatch().click();				                //Clicking on Dashboard count
 
 	  //  Thread.sleep(9000);
 	   
@@ -4803,7 +5099,7 @@ public class CriticalMethod2 extends BasePage{
         Method2.SwitchToNewlyOpenedWindow( test, workbook);
 		
 		Thread.sleep(5000);
-		
+        
 		Locator2.ClosedReopenButton().click();
 		Thread.sleep(5000);
 		
@@ -4815,8 +5111,42 @@ public class CriticalMethod2 extends BasePage{
 		
 		Thread.sleep(4000);
 		ace.accept();
-		
-		
+	        
+	        Locator1.Dashboard1().click();	
+	        Thread.sleep(7000);
+	         
+	        int count1 = Integer.parseInt(Locator2.ClosedDashboardCountMatch().getText());	//Reading Dashboard count.
+	        
+
+/*
+	String item = Locator1.RejectedGridCount().getText();
+	String[] bits = item.split(" ");								//Splitting the String
+	String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+	int count1 = Integer.parseInt(compliancesCount);
+*/
+	
+	
+	if(open != count1)
+				
+	{
+					
+	//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+					
+	test.log(LogStatus.PASS, "Before Reopen Compliance Count = "+open+" | After Reopen Compliance Count = "+count1);
+				
+	}
+				
+	else
+				
+	{
+					
+	//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+					
+	test.log(LogStatus.FAIL, "Before Reopen Compliance Count = "+open+" | Before Reopen Compliance Count = "+count1);
+				
+	}
+
+
 		
 	}
 	
@@ -4915,13 +5245,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotApplicableGraphHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -4932,13 +5262,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -5054,13 +5384,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotApplicableGraphHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -5071,13 +5401,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		
@@ -5186,13 +5516,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotApplicableGraphHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -5203,13 +5533,13 @@ public class CriticalMethod2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button does not working properly "  );
 			
 		}
 		

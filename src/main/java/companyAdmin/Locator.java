@@ -1033,7 +1033,7 @@ public class Locator extends BasePage{
 		
 	public static WebElement AddSubEntity()		//Method for searching Username input
 	{
-		AddSubEntity = getDriver().findElement(By.xpath("//a[contains(@class,'k-button k-button-icontext k-grid-arrow-right enabled k-grid-proceed')]"));
+		AddSubEntity = getDriver().findElement(By.xpath("(//a[contains(@class,'k-button k-button-icontext k-grid-arrow-right enabled k-grid-proceed')])[4]"));
 		return AddSubEntity;
 		
 	}
@@ -1447,21 +1447,21 @@ public class Locator extends BasePage{
 	
 	public static WebElement DeleteUser()		//Method for searching Username input
 	{
-		DeleteUser = getDriver().findElement(By.xpath("(//a[contains(@class,'k-button k-button-icontext ob-Delete')])[17]"));
+		DeleteUser = getDriver().findElement(By.xpath("(//a[contains(@class,'k-button k-button-icontext ob-Delete')])[14]"));
 		return DeleteUser;
 		
 	}
 	
 	public static WebElement EditUser()		//Method for searching Username input
 	{
-		EditUser = getDriver().findElement(By.xpath("(//a[@role='button'])[65]"));
+		EditUser = getDriver().findElement(By.xpath("//*[@id='gridUser']/div[2]/table/tbody/tr[14]/td[7]/a[1]"));
 		return EditUser;
 		
 	}
 	
 	public static WebElement UserResetPass5()		//Method for searching Username input
 	{
-		UserResetPass5 = getDriver().findElement(By.xpath("(//div[@class='ob-Reset'])[17]"));
+		UserResetPass5 = getDriver().findElement(By.xpath("(//div[@class='ob-Reset'])[14]"));
 		return UserResetPass5;
 		
 	}
@@ -1600,7 +1600,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement AddContractorTypeuser()		//Method for searching Username input
 	{
-		AddContractorTypeuser = getDriver().findElement(By.xpath("//li[.='Plumbing']"));
+		AddContractorTypeuser = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/div//ul[@id='drpContractorType_listbox']/li[1]"));
 		return AddContractorTypeuser;
 		
 	}
@@ -1663,7 +1663,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement EditContractor()		//Method for searching Username input
 	{
-		EditContractor = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-Edit k-grid-Edit'])[7]"));
+		EditContractor = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-Edit k-grid-Edit'])[9]"));
 		return EditContractor;
 		
 	}
@@ -1673,14 +1673,14 @@ public class Locator extends BasePage{
 	
 	public static WebElement ResetPassContractor()		//Method for searching Username input
 	{
-		ResetPassContractor = getDriver().findElement(By.xpath("(//div[@class='ob-Reset'])[17]"));
+		ResetPassContractor = getDriver().findElement(By.xpath("//*[@id='gridUser1']/div[2]/table/tbody/tr[9]/td[5]/div"));
 		return ResetPassContractor;
 		
 	}
 	
 	public static WebElement DeleteContractor()		//Method for searching Username input
 	{
-		DeleteContractor = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-Delete k-grid-edit2'])[17]"));
+		DeleteContractor = getDriver().findElement(By.xpath("//*[@id='gridUser1']/div[2]/table/tbody/tr[9]/td[5]/a[2]"));
 		return DeleteContractor;
 		
 	}
@@ -1688,7 +1688,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement DeleteContractor1()		//Method for searching Username input
 	{
-		DeleteContractor1 = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-Delete k-grid-edit2'])[14]"));
+		DeleteContractor1 = getDriver().findElement(By.xpath("//*[@id='gridUser1']/div[2]/table/tbody/tr[3]/td[5]/a[2]"));
 		return DeleteContractor1;
 		
 	}
@@ -1728,7 +1728,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement LocationMAssignDropDown()		//Method for searching Username input
 	{
-		LocationMAssignDropDown = getDriver().findElement(By.xpath("(//div[@class='k-animation-container']//ul/li//span[.='Demo'])[2]"));
+		LocationMAssignDropDown = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li"));
 		return LocationMAssignDropDown;
 		
 	}
@@ -1754,7 +1754,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement MAssignProjectCheckBox()		//Method for searching Username input
 	{
-		MAssignProjectCheckBox = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//span[.='Ishu Heritage']"));
+		MAssignProjectCheckBox = getDriver().findElement(By.xpath("(//div[@class='k-animation-container']//div/div[@class='k-widget k-treeview'])[2]//li[1]//div/span[1]"));
 		return MAssignProjectCheckBox;
 		
 	}
@@ -1795,7 +1795,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement MAssignUserCheckBox()		//Method for searching Username input
 	{
-		MAssignUserCheckBox = getDriver().findElement(By.xpath("//span[.='Management User']"));
+		MAssignUserCheckBox = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/div/div[@class='k-widget k-treeview']/ul/li[1]"));
 		return MAssignUserCheckBox;
 		
 	}
@@ -1899,7 +1899,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement DeleteMA()		//Method for searching Username input
 	{
-		DeleteMA = getDriver().findElement(By.xpath("(//a[@role='button'])[42]"));
+		DeleteMA = getDriver().findElement(By.xpath("//*[@id='gridmaaped1']/div[2]/table/tbody/tr[1]/td[4]/a"));
 		return DeleteMA;
 		
 	}
@@ -1966,7 +1966,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement LocationTypeD()		//Method for searching Username input
 	{
-		LocationTypeD = getDriver().findElement(By.xpath("//li[.='CMRL']"));
+		LocationTypeD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/div/div/ul[@id='txtProjectOffice_listbox']//li[1]"));
 		return LocationTypeD;
 		
 	}
@@ -2024,7 +2024,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement LocationP()		//Method for searching Username input
 	{
-		LocationP = getDriver().findElement(By.xpath("(//span[contains(@class,'k-dropdown-wrap k-state-defau')])[7]"));
+		LocationP = getDriver().findElement(By.xpath("//*[@id='divCaseSummary']/div[4]/span"));
 		return LocationP;
 		
 	}
@@ -2032,14 +2032,14 @@ public class Locator extends BasePage{
 	
 	public static WebElement LocationPDrop()		//Method for searching Username input
 	{
-		LocationPDrop = getDriver().findElement(By.xpath("(//div[@class='k-animation-container']//ul//li//span[@class='k-icon k-i-expand'])[1]"));
+		LocationPDrop = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li/div"));
 		return LocationPDrop;
 		
 	}
 	
 	public static WebElement LocationPDropDown()		//Method for searching Username input
 	{
-		LocationPDropDown = getDriver().findElement(By.xpath("(//div[@class='k-animation-container']//ul//li//span[.='Demo'])[1]"));
+		LocationPDropDown = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//div//ul[@class='k-group']//li[3]//span/span"));
 		return LocationPDropDown;
 		
 	}
@@ -2054,7 +2054,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement HeadD()		//Method for searching Username input
 	{
-		HeadD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[.='Project']"));
+		HeadD = getDriver().findElement(By.xpath("(//ul[@id='dropdownHead_listbox']//li)[4]"));
 		return HeadD;
 		
 	}
@@ -2068,7 +2068,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement DirectorD()		//Method for searching Username input
 	{
-		DirectorD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[.='Project Director ']"));
+		DirectorD = getDriver().findElement(By.xpath("(//ul[@id='dropdownDirector_listbox']//li)[2]"));
 		return DirectorD;
 		
 	}
@@ -2130,7 +2130,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement LicenceTypeLD()		//Method for searching Username input
 	{
-		LicenceTypeLD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[.='Maintenance ']"));
+		LicenceTypeLD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/div/div/ul[@id='dropdownLicenseType_listbox']/li[1]"));
 		return LicenceTypeLD;
 		
 	}
@@ -2165,6 +2165,34 @@ public class Locator extends BasePage{
 		
 	}
 	
+	public static WebElement Calender1()		//Method for searching Username input
+	{
+		UploadDocumentL = getDriver().findElement(By.xpath("//*[@id='NewDocModal']/div/div[2]/span/span/span[2]"));
+		return UploadDocumentL;
+		
+	}
+
+	public static WebElement Calender1DD()		//Method for searching Username input
+	{
+		UploadDocumentL = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//div/div/table//tr[2]//td[6]"));
+		return UploadDocumentL;
+		
+	}
+
+	public static WebElement Calender2()		//Method for searching Username input
+	{
+		UploadDocumentL = getDriver().findElement(By.xpath("//*[@id='NewDocModal']/div/div[3]/span/span/span[2]"));
+		return UploadDocumentL;
+		
+	}
+
+	public static WebElement Calender2DD()		//Method for searching Username input
+	{
+		UploadDocumentL = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//div/div/table//tr[6]//td[1]"));
+		return UploadDocumentL;
+		
+	}
+
 	
 	
 	public static WebElement SubmitLicence()		//Method for searching Username input
@@ -2302,7 +2330,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement MapcontractorDropDown()		//Method for searching Username input
 	{
-		MapcontractorDropDown = getDriver().findElement(By.xpath("//li[.='Vision Group of Contractors  - ramesh@vision.com']"));
+		MapcontractorDropDown = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/div/div/ul[@id='dropdownContractorName_listbox']/li[1]"));
 		return MapcontractorDropDown;
 		
 	}
@@ -2316,7 +2344,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement MapSelectProjectDropDown()		//Method for searching Username input
 	{
-		MapSelectProjectDropDown = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[.='ABC Construction']"));
+		MapSelectProjectDropDown = getDriver().findElement(By.xpath("(//ul[@id='dropdownProjectName_listbox'])[2]//li"));
 		return MapSelectProjectDropDown;
 		
 	}
@@ -2332,16 +2360,42 @@ public class Locator extends BasePage{
 	}
 	
 	
+	public static WebElement SelectType()		//Method for searching Username input
+	{
+		MapIfSubContractor = getDriver().findElement(By.xpath("//*[@id='subcon']/span"));
+		return MapIfSubContractor;
+		
+	}
+
+	public static WebElement SelectTypeDD()		//Method for searching Username input
+	{
+		MapIfSubContractor = getDriver().findElement(By.xpath("(//ul[@id='dropdowndrpProjectName_listbox'])[1]/li"));
+		return MapIfSubContractor;
+		
+	}
+
+	
+	
+	
 	public static WebElement MapIfSubContractorDropDown()		//Method for searching Username input
 	{
-		MapIfSubContractorDropDown = getDriver().findElement(By.xpath("//li[.='No']"));
+		MapIfSubContractorDropDown = getDriver().findElement(By.xpath("//li[.='Yes']"));
 		return MapIfSubContractorDropDown;
 		
 	}
 	
+	public static WebElement Mapcheckbox()		//Method for searching Username input
+	{
+		MapIfSubContractorDropDown = getDriver().findElement(By.xpath("//input[@id='checkboxisshow']"));
+		return MapIfSubContractorDropDown;
+		
+	}
+
+	
+	
 	public static WebElement MapFrequencyofComplienceSubmission()		//Method for searching Username input
 	{
-		MapFrequencyofComplienceSubmission = getDriver().findElement(By.xpath("(//span[.='Select Type'])[6]"));
+		MapFrequencyofComplienceSubmission = getDriver().findElement(By.xpath("//*[@id='divCaseSummary']/div[10]/span"));
 		return MapFrequencyofComplienceSubmission;
 		
 	}
@@ -2349,7 +2403,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement MapFrequencyofComplienceSubmissionDD()		//Method for searching Username input
 	{
-		MapFrequencyofComplienceSubmissionDD = getDriver().findElement(By.xpath("//li[.='Monthly']"));
+		MapFrequencyofComplienceSubmissionDD = getDriver().findElement(By.xpath("(//ul[@id='drpFrequency_listbox'])[1]//li"));
 		return MapFrequencyofComplienceSubmissionDD;
 		
 	}
@@ -2418,7 +2472,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement EditContractorCT()		//Method for searching Username input
 	{
-		EditContractorCT = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-Edit k-grid-Edit'])[2]"));
+		EditContractorCT = getDriver().findElement(By.xpath("//*[@id='gridContractor']/div[2]/table/tbody/tr[1]/td[9]/a[1]"));
 		return EditContractorCT;
 		
 	}
@@ -2426,7 +2480,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement DeleteContractorCT()		//Method for searching Username input
 	{
-		DeleteContractorCT = getDriver().findElement(By.xpath("(//a[@role='button'])[21]"));
+		DeleteContractorCT = getDriver().findElement(By.xpath("//*[@id='gridContractor']/div[2]/table/tbody/tr[3]/td[9]/a[7]"));
 		return DeleteContractorCT;
 		
 	}
@@ -2583,7 +2637,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement MappingEditProjectCT()		//Method for searching Username input
 	{
-		MappingEditProjectCT = getDriver().findElement(By.xpath("(//a[@role='button'])[18]"));
+		MappingEditProjectCT = getDriver().findElement(By.xpath("//*[@id='gridContractor']/div[2]/table/tbody/tr[1]/td[9]/a[4]"));
 		return MappingEditProjectCT;
 		
 	}
@@ -2692,21 +2746,21 @@ public class Locator extends BasePage{
 	
 	public static WebElement ActAndComplienceCentral()		//Method for searching Username input
 	{
-		ActAndComplienceCentral = getDriver().findElement(By.xpath("//span[.='Select']"));
+		ActAndComplienceCentral = getDriver().findElement(By.xpath("//*[@id='NewActModal']/div[1]/div[1]/span"));
 		return ActAndComplienceCentral;
 		
 	}
 	
 	public static WebElement UpdateActAndComplienceCentral()		//Method for searching Username input
 	{
-		UpdateActAndComplienceCentral = getDriver().findElement(By.xpath("(//span[@class='k-dropdown-wrap k-state-default'])[8]"));
+		UpdateActAndComplienceCentral = getDriver().findElement(By.xpath("//*[@id='NewActModal']/div[1]/div[1]/span"));
 		return UpdateActAndComplienceCentral;
 		
 	}
 	
 	public static WebElement DeleteActAndComplienceCentral()		//Method for searching Username input
 	{
-		DeleteActAndComplienceCentral = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-Disable k-grid-disable'])[6]"));
+		DeleteActAndComplienceCentral = getDriver().findElement(By.xpath("//*[@id='gridAct']/div[2]/table/tbody/tr[2]/td[6]/a[2]"));
 		return DeleteActAndComplienceCentral;
 		
 	}
@@ -2717,7 +2771,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement ActAndComplienceCentralDropDown()		//Method for searching Username input
 	{
-		ActAndComplienceCentralDropDown = getDriver().findElement(By.xpath("(//ul[@class='k-list k-reset']//*[name()='li' and  .='Central' ])[3]"));
+		ActAndComplienceCentralDropDown = getDriver().findElement(By.xpath("//ul[@id='ddlCentralOrStateCompliance_listbox']//li[1]"));
 		return ActAndComplienceCentralDropDown;
 		
 	}
@@ -2814,7 +2868,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement SelectActACDD()		//Method for searching Username input
 	{
-		SelectActACDD = getDriver().findElement(By.xpath("//li[.='Employees Compensation Act, 1923']"));
+		SelectActACDD = getDriver().findElement(By.xpath("//ul[@id='ddlActNameFilter_listbox']//li[1]"));
 		return SelectActACDD;
 		
 	}
@@ -2861,7 +2915,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement EditActAndCompliance()		//Method for searching Username input
 	{
-		EditActAndCompliance = getDriver().findElement(By.xpath("(//a[@role='button'])[7]"));
+		EditActAndCompliance = getDriver().findElement(By.xpath("//*[@id='gridAct']/div[2]/table/tbody/tr[1]/td[6]/a[1]"));
 		return EditActAndCompliance;
 		
 	}
@@ -2964,6 +3018,44 @@ public class Locator extends BasePage{
 		
 	}
 	
+	public static WebElement Compliencecheck()		//Method for searching Username input
+	{
+		ComplienceButtonAC = getDriver().findElement(By.xpath("//*[@id='gridCompliance']/div[2]/table/tbody/tr/td/label"));
+		return ComplienceButtonAC;
+		
+	}
+
+	public static WebElement Compliencecombinedformbutton()		//Method for searching Username input
+	{
+		ComplienceButtonAC = getDriver().findElement(By.xpath("//button[@id='btnAddCombinedForm']"));
+		return ComplienceButtonAC;
+		
+	}
+
+	public static WebElement Compliencechoosefile()		//Method for searching Username input
+	{
+		ComplienceButtonAC = getDriver().findElement(By.xpath("//input[@id='combinedFormDocUpload']"));
+		return ComplienceButtonAC;
+		
+	}
+
+	public static WebElement Complienceuploadbutton()		//Method for searching Username input
+	{
+		ComplienceButtonAC = getDriver().findElement(By.xpath("//button[@id='btncombinedFormDocUpload']"));
+		return ComplienceButtonAC;
+		
+	}
+	
+	public static WebElement ComplienceClose()		//Method for searching Username input
+	{
+		ComplienceButtonAC = getDriver().findElement(By.xpath("//div[@class='k-window-actions']/a"));
+		return ComplienceButtonAC;
+		
+	}
+
+
+	
+	
 	public static WebElement AddComplienceAC()		//Method for searching Username input
 	{
 		AddComplienceAC = getDriver().findElement(By.id("btnNewAddComplaince"));
@@ -2973,7 +3065,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement AddComplienceSelectAC()		//Method for searching Username input
 	{
-		AddComplienceSelectAC = getDriver().findElement(By.xpath("(//span[.='Select'])[3]"));
+		AddComplienceSelectAC = getDriver().findElement(By.xpath("//*[@id='NewComplianceModal']/div[1]/span"));
 		return AddComplienceSelectAC;
 		
 	}
@@ -2989,10 +3081,18 @@ public class Locator extends BasePage{
 	
 	public static WebElement AddComplienceSelectStatutaryACDD()		//Method for searching Username input
 	{
-		AddComplienceSelectStatutaryACDD = getDriver().findElement(By.xpath("(//li[.='Statutory'])[3]"));
+		AddComplienceSelectStatutaryACDD = getDriver().findElement(By.xpath("//ul[@id='ddlStatutory_listbox']//li[1]"));
 		return AddComplienceSelectStatutaryACDD;
 		
 	}
+	
+	public static WebElement AddComplienceSelectStatutaryInternal()		//Method for searching Username input
+	{
+		AddComplienceSelectStatutaryACDD = getDriver().findElement(By.xpath("//ul[@id='ddlStatutory_listbox']//li[2]"));
+		return AddComplienceSelectStatutaryACDD;
+		
+	}
+
 	
 	public static WebElement AddComplienceSelectStatutaryStateACDD()		//Method for searching Username input
 	{
@@ -3017,7 +3117,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement FrequencyACDD()		//Method for searching Username input
 	{
-		FrequencyACDD = getDriver().findElement(By.xpath("//li[.='Monthly']"));
+		FrequencyACDD = getDriver().findElement(By.xpath("//ul[@id='drpFrequency_listbox']/li"));
 		return FrequencyACDD;
 		
 	}
@@ -3046,7 +3146,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement UpdateSelectActCom()		//Method for searching Username input
 	{
-		UpdateSelectActCom = getDriver().findElement(By.xpath("(//span[@class='k-widget k-dropdown k-header'])[13]"));
+		UpdateSelectActCom = getDriver().findElement(By.xpath("//*[@id='divddlAct']/span"));
 		return UpdateSelectActCom;
 		
 	}
@@ -3056,7 +3156,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement SelectActDDCOM()		//Method for searching Username input
 	{
-		SelectActDDCOM = getDriver().findElement(By.xpath("(//li[@role='option'][contains(text(),'Employees Compensation Central')])[3]"));
+		SelectActDDCOM = getDriver().findElement(By.xpath("//ul[@id='ddlAct_listbox']/li[1]"));
 		return SelectActDDCOM;
 		
 	}
@@ -3095,7 +3195,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement EditComplianceAC()		//Method for searching Username input
 	{
-		EditComplianceAC = getDriver().findElement(By.xpath("//*[@id='gridComplaince']/div[2]/table/tbody/tr[3]/td[14]/a[1]"));
+		EditComplianceAC = getDriver().findElement(By.xpath("//*[@id='gridCompliance']/div[2]/table/tbody/tr[1]/td[19]/a[1]"));
 		return EditComplianceAC;
 		
 	}
@@ -3103,21 +3203,21 @@ public class Locator extends BasePage{
 	
 	public static WebElement UpdateStatutoryAC()		//Method for searching Username input
 	{
-		UpdateStatutoryAC = getDriver().findElement(By.xpath("(//span[@class='k-widget k-dropdown k-header'])[10]"));
+		UpdateStatutoryAC = getDriver().findElement(By.xpath("//*[@id='NewComplianceModal']/div[1]/span"));
 		return UpdateStatutoryAC;
 		
 	}
 	
 	public static WebElement UpdateCentralorStateAC()		//Method for searching Username input
 	{
-		UpdateCentralorStateAC = getDriver().findElement(By.xpath("(//span[@class='k-widget k-dropdown k-header'])[11]"));
+		UpdateCentralorStateAC = getDriver().findElement(By.xpath("//*[@id='divCentralOrStateCompliance']/span"));
 		return UpdateCentralorStateAC;
 		
 	}
 	
 	public static WebElement UpdateFrequencyAC()		//Method for searching Username input
 	{
-		UpdateFrequencyAC = getDriver().findElement(By.xpath("(//span[@class='k-widget k-dropdown k-header'])[14]"));
+		UpdateFrequencyAC = getDriver().findElement(By.xpath("//*[@id='NewComplianceModal']/div[10]/span[1]"));
 		return UpdateFrequencyAC;
 		
 	}
@@ -3125,7 +3225,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement DeleteComplianceAC()		//Method for searching Username input
 	{
-		DeleteComplianceAC = getDriver().findElement(By.xpath("(//a[@role='button'])[41]"));
+		DeleteComplianceAC = getDriver().findElement(By.xpath("//*[@id='gridCompliance']/div[2]/table/tbody/tr[1]/td[19]/a[2]"));
 		return DeleteComplianceAC;
 		
 	}
@@ -3146,14 +3246,14 @@ public class Locator extends BasePage{
 	
 	public static WebElement CalenderComplianceAC()		//Method for searching Username input
 	{
-		CalenderComplianceAC = getDriver().findElement(By.xpath("(//span[@class='k-select'])[11]"));
+		CalenderComplianceAC = getDriver().findElement(By.xpath("//*[@id='NewDisableModal']/div[1]/span/span/span[2]"));
 		return CalenderComplianceAC;
 		
 	}
 	
 	public static WebElement CalenderComplianceDateSelectAC()		//Method for searching Username input
 	{
-		CalenderComplianceDateSelectAC = getDriver().findElement(By.xpath("//a[.='24']"));
+		CalenderComplianceDateSelectAC = getDriver().findElement(By.xpath("//a[.='22']"));
 		return CalenderComplianceDateSelectAC;
 		
 	}
@@ -3244,7 +3344,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement TemplateCheckBoxAC()		//Method for searching Username input
 	{
-		TemplateCheckBoxAC = getDriver().findElement(By.xpath("(//th[@class='k-header'])[5]//*[name()='input' and @class='k-checkbox']"));
+		TemplateCheckBoxAC = getDriver().findElement(By.xpath("//*[@id='gridUnAssingCompliance']/div[2]/table/tbody/tr/td/label"));
 		return TemplateCheckBoxAC;
 		
 	}
@@ -3290,7 +3390,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement DeleteTemplateAC()		//Method for searching Username input
 	{
-		DeleteTemplateAC = getDriver().findElement(By.xpath("(//a[@role='button'])[68]"));
+		DeleteTemplateAC = getDriver().findElement(By.xpath("//*[@id='gridTemplate']/div[2]/table/tbody/tr[2]/td[6]/a[2]"));
 		return DeleteTemplateAC;
 		
 	}
@@ -3687,6 +3787,18 @@ public class Locator extends BasePage{
 		
 		
 	}
+	
+	
+	public static WebElement Assign()		//Method for searching Username input
+	{
+		ComplianceMapping = getDriver().findElement(By.xpath("//*[@id='tabstripAll']/ul/li[2]/span[2]"));
+		return ComplianceMapping;
+		
+		
+	}
+
+	
+	
 
 	public static WebElement AddComplianceMapping()		//Method for searching Username input
 	{
@@ -3867,7 +3979,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement StateCM()		//Method for searching Username input
 	{
-		StateCM = getDriver().findElement(By.xpath("(//span[.='State'])[3]"));
+		StateCM = getDriver().findElement(By.xpath("//*[@id='divMain']/div[1]"));
 		return StateCM;
 		
 		
@@ -3925,7 +4037,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement ClearButtonCM()		//Method for searching Username input
 	{
-		ClearButtonCM = getDriver().findElement(By.id("ClearfilterMain"));
+		ClearButtonCM = getDriver().findElement(By.xpath("//button[@id='ClearfilterAddMapping']"));
 		return ClearButtonCM;
 		
 		
@@ -3974,9 +4086,19 @@ public class Locator extends BasePage{
 		
 	}
 	
+	public static WebElement ProjectGetText()		//Method for searching Username input
+	{
+		ViewButtonCM = getDriver().findElement(By.xpath("//*[@id='divViewMapping']/div[1]/div[1]/label[1]"));
+		return ViewButtonCM;
+		
+		
+	}
+
+	
+	
 	public static WebElement TemplateDropCM()		//Method for searching Username input
 	{
-		TemplateDropCM = getDriver().findElement(By.cssSelector("#gridEditMapping > div.k-grid-content.k-auto-scrollable > table > tbody > tr.k-master-row > td.k-hierarchy-cell > a"));
+		TemplateDropCM = getDriver().findElement(By.xpath("//*[@id='gridEditMapping']/div[2]/table/tbody/tr/td[1]"));
 		return TemplateDropCM;
 		
 		
@@ -4002,7 +4124,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement ContractorTypeUserSelect()		//Method for searching Username input
 	{
-		ContractorTypeUserSelect = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul/li[.='Constructions']"));
+		ContractorTypeUserSelect = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/div//ul[@id='drpContractorType_listbox']/li[1]"));
 		return ContractorTypeUserSelect;
 		
 		
@@ -4037,7 +4159,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement SelectPeriodDD()		//Method for searching Username input
 	{
-		SelectPeriodDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul[@class='k-list k-reset']//*[name()='li' and .='Jan']"));
+		SelectPeriodDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul[@class='k-list k-reset']//li[1]"));
 		return SelectPeriodDD;
 		
 		
@@ -4066,7 +4188,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement SelectYearASDD()		//Method for searching Username input
 	{
-		SelectYearASDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[.='2022']"));
+		SelectYearASDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//div//div//ul//li[3]"));
 		return SelectYearASDD;
 		
 		
@@ -4092,16 +4214,28 @@ public class Locator extends BasePage{
 	
 	public static WebElement LocationAS()		//Method for searching Username input
 	{
-		LocationAS = getDriver().findElement(By.xpath("(//span[.='Location'])[3]"));
+		LocationAS = getDriver().findElement(By.xpath("//*[@id='dvAuditScheduling']/div[1]/span[3]"));
 		return LocationAS;
 		
 		
 	}
 	
+	public static WebElement Project()		//Method for searching Username input
+	{
+		LocationAS = getDriver().findElement(By.xpath("//*[@id='dvAuditAssigment']/div[1]/span[3]"));
+		return LocationAS;
+		
+		
+	}
+
+	
+	
+	
+	
 	
 	public static WebElement LocationDropAS()		//Method for searching Username input
 	{
-		LocationDropAS = getDriver().findElement(By.xpath("(//span[@class='k-icon k-i-expand'])[1]"));
+		LocationDropAS = getDriver().findElement(By.xpath("//ul[@id='dropdownFilterProjectName_listbox']/li"));
 		return LocationDropAS;
 		
 		
@@ -4174,7 +4308,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement SelectAuditorDDAA()		//Method for searching Username input
 	{
-		SelectAuditorDDAA = getDriver().findElement(By.xpath("(//div[@class='k-animation-container']//li[.='Auditor User'])[1]"));
+		SelectAuditorDDAA = getDriver().findElement(By.xpath("(//div[@class='k-animation-container']//div//ul//li)[1]"));
 		return SelectAuditorDDAA;
 		
 		
@@ -4263,7 +4397,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement CalenderStartDReport()		//Method for searching Username input
 	{
-		CalenderStartDReport = getDriver().findElement(By.xpath("(//span[@class='k-select'])[2]"));
+		CalenderStartDReport = getDriver().findElement(By.xpath("//*[@id='dvReports']/div[1]/div[1]"));
 		return CalenderStartDReport;
 		
 		
@@ -4272,7 +4406,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement CalenderStartDReportDD()		//Method for searching Username input
 	{
-		CalenderStartDReportDD = getDriver().findElement(By.xpath("(//a[.='1'])[1]"));
+		CalenderStartDReportDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li"));
 		return CalenderStartDReportDD;
 		
 		
@@ -4342,7 +4476,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement SelectMonthDD()		//Method for searching Username input
 	{
-		SelectMonthDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[.='Aug 23']"));
+		SelectMonthDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[.='Oct 22']"));
 		return SelectMonthDD;
 		
 		
@@ -4386,7 +4520,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement ActionColmnReportDownload()		//Method for searching Username input
 	{
-		ActionColmnReportDownload = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[12]/a[2]"));
+		ActionColmnReportDownload = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[13]/a[2]"));
 		return ActionColmnReportDownload;
 		
 		
@@ -4411,11 +4545,20 @@ public class Locator extends BasePage{
 	
 	public static WebElement ViewButtonDropReport()		//Method for searching Username input
 	{
-		ViewButtonDropReport = getDriver().findElement(By.xpath("(//a[@class='k-icon k-i-expand'])[2]"));
+		ViewButtonDropReport = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr[1]/td[7]/a[2]"));
 		return ViewButtonDropReport;
 		
 		
 	}
+	
+	public static WebElement Drop1()		//Method for searching Username input
+	{
+		ViewButtonDropReport = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[1]"));
+		return ViewButtonDropReport;
+		
+		
+	}
+
 	
 	
 	public static WebElement ViewButtonReport()		//Method for searching Username input

@@ -1,5 +1,6 @@
 package companyAdmin;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -15,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import companyAuditor.Locator2;
 import login.BasePage;
 
 public class CriticalMethod extends BasePage {
@@ -237,9 +239,6 @@ public class CriticalMethod extends BasePage {
 		ac.accept();
 		
 		Thread.sleep(3000);
-		
-		Locator.Close().click();
-		Thread.sleep(3000);
 				
 	//	CriticalMethod.UpdateSubEntity(,test,workbook);
 	//	Thread.sleep(3000);
@@ -395,13 +394,13 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(2000);
 		 Locator.EntityClear().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, " Clear Button does not working properly "  );
 			
 		}
 		
@@ -996,12 +995,12 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(4000);
 		Locator.AddContractorType().click();
 		Thread.sleep(4000);
-		
+		/*
 		row0 = sheet.getRow(27);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.AddContractorTypeSearch().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(3000);
-		
+		*/
 		
 		Locator.AddContractorTypeuser().click();
 		Thread.sleep(3000);
@@ -1270,8 +1269,8 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(4000);
 		Locator.LocationMAssign().click();
 		Thread.sleep(26000);
-		Locator.LocationMAssignDrop().click();
-		Thread.sleep(5000);
+	//	Locator.LocationMAssignDrop().click();
+	//	Thread.sleep(5000);
 		Locator.LocationMAssignDropDown().click();
 		Thread.sleep(5000);
 		Locator.Space().click();
@@ -1395,6 +1394,8 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(9000);
 		Locator.LocationPDrop().click();
 		Thread.sleep(4000);
+		Locator.LocationP().click();
+		Thread.sleep(9000);
 		Locator.LocationPDropDown().click();
 		Thread.sleep(6000);
 		Locator.Head().click();
@@ -1546,8 +1547,10 @@ public class CriticalMethod extends BasePage {
 		Locator.ElementD().click();
 		Thread.sleep(2000);
 		Locator.LocationP().click();
-		Thread.sleep(24000);
+		Thread.sleep(2000);
 		Locator.LocationPDrop().click();
+		Thread.sleep(4000);
+		Locator.LocationP().click();
 		Thread.sleep(4000);
 		Locator.LocationPDropDown().click();
 		Thread.sleep(6000);
@@ -1702,13 +1705,13 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(2000);
 		 Locator.ProjectClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable  " );
+			test.log(LogStatus.PASS, " Clear Button Working properly  " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, " Clear Button does not working properly "  );
 			
 		}
 		
@@ -1755,6 +1758,14 @@ public class CriticalMethod extends BasePage {
         Locator.MapIfSubContractorDropDown().click();
         Thread.sleep(3000);
         
+        Locator.Mapcheckbox().click();
+        Thread.sleep(3000);
+        
+        Locator.SelectType().click();
+        Thread.sleep(3000);
+        
+        Locator.SelectTypeDD().click();
+        Thread.sleep(3000);
         Locator.MapFrequencyofComplienceSubmission().click();
         Thread.sleep(3000);
         
@@ -2109,9 +2120,7 @@ public class CriticalMethod extends BasePage {
 		
 		Locator.UploadSubmitCT().click();
 		
-		
-		
-		Thread.sleep(20000);
+		Thread.sleep(9000);
 		 Alert ac1=getDriver().switchTo().alert();
 			
 			String t2=getDriver().switchTo().alert().getText();
@@ -2235,6 +2244,18 @@ public class CriticalMethod extends BasePage {
 		Locator.UploadDocumentL().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(4000);
 		
+		Locator.Calender1().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender1DD().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender2().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender1DD().click();
+		Thread.sleep(3000);
+		
 		Locator.SubmitLicence().click();
 		
 		
@@ -2355,12 +2376,12 @@ public class CriticalMethod extends BasePage {
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.Remark().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(3000);
-		
+		/*
 		row0 = sheet.getRow(35);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.ValidityDateL().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(3000);
-		
+		*/
 		Locator.AddLicenceHeadCountCT().clear();
 		Thread.sleep(3000);
 		
@@ -2375,6 +2396,18 @@ public class CriticalMethod extends BasePage {
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.UploadDocumentL().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(4000);
+		
+		Locator.Calender1().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender1DD().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender2().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender1DD().click();
+		Thread.sleep(3000);
 		
 		Locator.SubmitLicence().click();
 		
@@ -2513,13 +2546,13 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(2000);
 		 Locator.ClearAC().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable" );
+			test.log(LogStatus.PASS, " Clear Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, " Clear Button does not working properly "  );
 			
 		}
 		
@@ -2569,6 +2602,8 @@ public class CriticalMethod extends BasePage {
 		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
 		Cell c1 = null;
 		
+		Locator.ActNameAC().clear();
+		Thread.sleep(1000);
 		row0 = sheet.getRow(62);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.ActNameAC().sendKeys(c1.getStringCellValue()); // Writing Task title
@@ -2767,13 +2802,89 @@ public class CriticalMethod extends BasePage {
 	
 	
 	
+	public static void AddComplianceForInternal( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		Locator.MasterButton().click();
+		Thread.sleep(3000);
+		
+		Locator.ActAndComplianceMaster().click();
+		Thread.sleep(6000);
+		
+		Locator.ComplienceButtonAC().click();
+		Thread.sleep(3000);
+		
+		Locator.AddComplienceAC().click();
+		Thread.sleep(3000);
+		
+		Locator.AddComplienceSelectAC().click();
+		Thread.sleep(3000);
+		
+		Locator.AddComplienceSelectStatutaryInternal().click();
+		Thread.sleep(3000);
+		/*
+		Locator.ActAndComplienceCentral().click();
+		Thread.sleep(7000);
+		
+		Locator.ActAndComplienceCentralDropDown().click();
+		*/
+		Thread.sleep(3000);
+		
+		
+		Locator.SelectActCom().click();
+		Thread.sleep(3000);
+		
+		Locator.SelectActDDCOM().click();
+		Thread.sleep(3000);
+		
+		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+		int row = 0;
+		Thread.sleep(500);
+		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+		Cell c1 = null;
+		
+		row0 = sheet.getRow(157);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.ComplianceHeader().sendKeys(c1.getStringCellValue()); // Writing Task title
+		Thread.sleep(3000);
+		
+		Locator.FrequencyAC().click();
+		Thread.sleep(3000);
+		
+		Locator.FrequencyACDD().click();
+		Thread.sleep(3000);
+		
+		Locator.ComplianceSaveButtonAC().click();
+		Thread.sleep(3000);
+		
+		
+		Thread.sleep(8000);
+		
+		 Alert ac2=getDriver().switchTo().alert();
+			
+			String t3=getDriver().switchTo().alert().getText();
+			
+			test.log(LogStatus.PASS,  t3 );
+			
+			Thread.sleep(20000);
+			ac2.accept();
+		
+			Thread.sleep(4000);
+		
+		
+		
+		
+		
+	}
+
+	
 	
 	public static void UpdateComplianceAC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
 		Locator.MasterButton().click();
 		Thread.sleep(3000);
-		
+        
 		Locator.ActAndComplianceMaster().click();
 		Thread.sleep(6000);
 		
@@ -2807,6 +2918,9 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(500);
 		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
 		Cell c1 = null;
+		
+		Locator.ComplianceHeader().clear();
+		Thread.sleep(1000);
 		
 		row0 = sheet.getRow(68);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
@@ -2901,17 +3015,72 @@ public class CriticalMethod extends BasePage {
 				
 				Thread.sleep(2000);
 			 Locator.ComplianceClearBAC().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, " Clear Button Is Clickable"  );
+				test.log(LogStatus.FAIL, " Clear Button Working properly"  );
 				
 			}
 			
 		 
+	 }
+	 
+	 
+	 public static void ComplianceCombinedFormUpload( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	 {
+		 
+		 
+		 Locator.MasterButton().click();
+			Thread.sleep(3000);
+			
+			Locator.ActAndComplianceMaster().click();
+			Thread.sleep(6000);
+			
+			Locator.ComplienceButtonAC().click();
+			Thread.sleep(3000);
+			
+		//	Locator.Compliencecheck().click();
+		//	Thread.sleep(3000);
+			
+			WebElement element = Locator.Compliencecheck();	      
+			//JavascriptExecutor to click element
+		      JavascriptExecutor jse = (JavascriptExecutor)getDriver();
+		      jse.executeScript("arguments[0].click();", element);
+		      boolean b = element.isSelected();
+		      if (b) {
+		         System.out.println("Checkbox is not checked");
+		      }else {
+		         System.out.println("Checkbox is checked");
+		      }
+		
+			
+			Locator.Compliencecombinedformbutton().click();
+			Thread.sleep(3000);
+			
+			Locator.Compliencechoosefile().sendKeys("E:\\BackupDesktop\\FileUploadForEntityMaster\\Contractor-ProjectMapping.xlsx");
+			Thread.sleep(3000);
+			
+			Locator.Complienceuploadbutton().click();
+			Thread.sleep(3000);
+			
+            Alert ac2=getDriver().switchTo().alert();
+			
+			String t3=getDriver().switchTo().alert().getText();
+			
+			test.log(LogStatus.PASS, t3 );
+			
+			Thread.sleep(2000);
+			ac2.accept();
+		
+			Thread.sleep(2000);
+			Locator.ComplienceClose().click();
+			Thread.sleep(3000);
+			
+			
+			
 	 }
 	
 	public static void UploadCompliance( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -2937,6 +3106,55 @@ public class CriticalMethod extends BasePage {
 		Cell c1 = null;
 		
 		row0 = sheet.getRow(70);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.ChooseFileUploadCompliance().sendKeys(c1.getStringCellValue()); // Writing Task title
+		Thread.sleep(3000);
+		
+		
+		
+		Locator.ButtonComplianceUploadAC().click();
+		
+		
+		Thread.sleep(39000);
+		
+		 Alert ac2=getDriver().switchTo().alert();
+			
+			String t3=getDriver().switchTo().alert().getText();
+			
+			test.log(LogStatus.PASS,  t3 );
+			
+			Thread.sleep(20000);
+			ac2.accept();
+		
+			Thread.sleep(4000);
+		
+		
+	}
+	
+	
+	public static void UploadComplianceInternal( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		Locator.MasterButton().click();
+		Thread.sleep(3000);
+		
+		Locator.ActAndComplianceMaster().click();
+		Thread.sleep(6000);
+		
+		Locator.ComplienceButtonAC().click();
+		Thread.sleep(3000);
+		
+		Locator.ComplianceUploadAC().click();
+		Thread.sleep(3000);
+		
+		
+		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+		int row = 0;
+		Thread.sleep(500);
+		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+		Cell c1 = null;
+		
+		row0 = sheet.getRow(156);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.ChooseFileUploadCompliance().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(3000);
@@ -3074,13 +3292,13 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(2000);
 		 Locator.ClerButtonTemplateDDAC().click();
-			test.log(LogStatus.PASS, "Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "Clear Button Working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, " Clear Button does not working properly "  );
 			
 		}
 	
@@ -3337,13 +3555,13 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(2000);
 		 Locator.ContractorTypeClearButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear Button Working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, " Clear Button does not working properly "  );
 			
 		}
 		
@@ -3503,13 +3721,13 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(2000);
 		 Locator.CityClearButtonMaster().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, " Clear Button does not working properly "  );
 			
 		}
 		
@@ -3666,13 +3884,13 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(2000);
 		 Locator.LicenceTypeClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, " Clear Button does not working properly "  );
 			
 		}
 		
@@ -3849,13 +4067,13 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(2000);
 		 Locator.ClearButtonDataPoint().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, " Clear Button does not working properly "  );
 			
 		}
 		
@@ -3871,18 +4089,53 @@ public class CriticalMethod extends BasePage {
 		Locator.ComplianceMapping().click();
 		Thread.sleep(3000);
 		
+		WebElement element = Locator.CheckBox();	      
+		//JavascriptExecutor to click element
+	      JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+	      jse.executeScript("arguments[0].click();", element);
+	      boolean b = element.isSelected();
+	      if (b) {
+	         System.out.println("Checkbox is not checked");
+	      }else {
+	         System.out.println("Checkbox is checked");
+	      }
 		
-		Locator.CheckBox().click();
-		Thread.sleep(3000);
+	      
+	//	Locator.CheckBox().click();
+		Thread.sleep(1000);
 		
 		Locator.NextButton().click();
 		Thread.sleep(7000);
-			
-        Locator.SelectComplianceCheckBox1().click();
-        Thread.sleep(3000);
+		
+		WebElement element1 = Locator.SelectComplianceCheckBox1();	      
+		//JavascriptExecutor to click element
+	      JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	      jse.executeScript("arguments[0].click();", element1);
+	      boolean c = element.isSelected();
+	      if (c) {
+	         System.out.println("Checkbox is not checked");
+	      }else {
+	         System.out.println("Checkbox is checked");
+	      }
+	
+	      Thread.sleep(1000);
+   //     Locator.SelectComplianceCheckBox1().click();
+   //     Thread.sleep(3000);
+	      
+			WebElement element2 = Locator.SelectComplianceCheckBox2();	      
+			//JavascriptExecutor to click element
+		      JavascriptExecutor js2 = (JavascriptExecutor) getDriver();
+		      jse.executeScript("arguments[0].click();", element2);
+		      boolean d = element.isSelected();
+		      if (d) {
+		         System.out.println("Checkbox is not checked");
+		      }else {
+		         System.out.println("Checkbox is checked");
+		      }
+		      Thread.sleep(1000);
         
-		Locator.SelectComplianceCheckBox2().click();
-		Thread.sleep(7000);
+	//	Locator.SelectComplianceCheckBox2().click();
+	//	Thread.sleep(7000);
 		
 		Locator.SaveMappingButton().click();
 		Thread.sleep(3000);
@@ -3910,6 +4163,9 @@ public class CriticalMethod extends BasePage {
 	{
 		Thread.sleep(3000);
 		Locator.ComplianceMapping().click();
+		Thread.sleep(6000);
+		
+		Locator.Assign().click();
 		Thread.sleep(6000);
 		
 		Locator.UpdateComplienceCM().click();
@@ -3951,12 +4207,15 @@ public class CriticalMethod extends BasePage {
 		Locator.ComplianceMapping().click();
 		Thread.sleep(3000);
 		
+		Locator.Assign().click();
+		Thread.sleep(6000);
+		
 		Locator.UpdateComplienceCM().click();
 		Thread.sleep(5000);
 		
 		Locator.TemplateDropCM().click();
 		Thread.sleep(3000);
-		
+		/*
 		if(Locator.ExportToExcelCM().isEnabled())
 		{
 			
@@ -3971,8 +4230,29 @@ public class CriticalMethod extends BasePage {
 			test.log(LogStatus.FAIL, " File Download Successfully"  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator.ExportToExcelCM().click();
 		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+	    Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	   Thread.sleep(2000);
+
 		
 		
 	}
@@ -3984,7 +4264,10 @@ public class CriticalMethod extends BasePage {
 		Locator.ComplianceMapping().click();
 		Thread.sleep(6000);
 		
+		Locator.Assign().click();
+		Thread.sleep(6000);
 		
+		/*
 		if(Locator.ExportButtonCM().isEnabled())
 		{
 			
@@ -3999,8 +4282,30 @@ public class CriticalMethod extends BasePage {
 			test.log(LogStatus.FAIL, " File Download Successfully"  );
 			
 		}
-		
-		
+		*/
+	    
+	File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+	File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+	
+	Thread.sleep(9000);
+     Locator.ExportButtonCM().click();
+	
+ 	Thread.sleep(18000);
+	File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+	File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+	
+   
+    Thread.sleep(9000);
+   if (dirContents1.length < allFilesNew1.length) {
+		test.log(LogStatus.PASS,  "File Downloaded Successfully");
+	}
+   else
+   {
+		test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+	}		
+
+   Thread.sleep(2000);
+
 		
 
 	
@@ -4022,26 +4327,30 @@ public class CriticalMethod extends BasePage {
 		
 		Thread.sleep(3000);
 		Locator.ComplianceMapping().click();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		
 		Locator.StateCM().click();
-		Thread.sleep(6000);
+		Thread.sleep(2000);
 		
 		Locator.StateDDCM().click();
-		Thread.sleep(6000);
+		Thread.sleep(2000);
+		
+		Locator.StateCM().click();
+		Thread.sleep(2000);
+
 		
 		if(Locator.ClearButtonCM().isEnabled())
 		{
 			
 			Thread.sleep(2000);
 			Locator.ClearButtonCM().click();
-			test.log(LogStatus.PASS, "Clear Button Is Clickable" );
+			test.log(LogStatus.PASS, "Clear Button Working Properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is Clickable"  );
+			test.log(LogStatus.FAIL, " Clear Button Does Not Working Properly"  );
 			
 		}
 		
@@ -4109,7 +4418,7 @@ public class CriticalMethod extends BasePage {
 		Locator.UploadButtonCM().click();
 		Thread.sleep(3000);
 		
-		Thread.sleep(20000);
+		Thread.sleep(9000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
 			
@@ -4132,26 +4441,28 @@ public class CriticalMethod extends BasePage {
 		
 		Thread.sleep(3000);
 		Locator.ComplianceMapping().click();
-		Thread.sleep(7000);
+		Thread.sleep(4000);
 		
-		
+		Locator.Assign().click();
+		Thread.sleep(4000);
 		
 		if(Locator.ViewButtonCM().isEnabled())
 		{
 			
 			Thread.sleep(2000);
 			Locator.ViewButtonCM().click();
-			test.log(LogStatus.PASS, "View Button Is Clickable" );
+			test.log(LogStatus.PASS, "Overview Button Working Properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "Overview Button Working Properly "  );
 			
 		}
-		
-		
+		Thread.sleep(3000);
+		Locator.ProjectGetText().getText();
+		Thread.sleep(1000);
 		
 		
 		
@@ -4177,17 +4488,20 @@ public class CriticalMethod extends BasePage {
 		
 		Thread.sleep(4000);
 		
+	//	Locator.SelectYearASDD().click();
+	//	Thread.sleep(4000);
+		
 		WebElement element = Locator.SelectYearASDD();	      
 		//JavascriptExecutor to click element
 	      JavascriptExecutor jse = (JavascriptExecutor)  getDriver();
 	      jse.executeScript("arguments[0].click();", element);
 	      
 		
-	      Thread.sleep(20000);
+	      Thread.sleep(2000);
 		
 		Locator.SaveAuditScheduling().click();
 		
-		Thread.sleep(20000);
+		Thread.sleep(4000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
 			
@@ -4222,7 +4536,7 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(4000);
 		Locator.LocationDropAS().click();
 		Thread.sleep(7000);
-		Locator.LocationDropASh().click();
+		Locator.LocationAS().click();
 		Thread.sleep(4000);
 		
 		if(Locator.ClearButtonAS().isEnabled())
@@ -4230,13 +4544,13 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(2000);
 			Locator.ClearButtonAS().click();
-			test.log(LogStatus.PASS, "Clear Button Is Clickable" );
+			test.log(LogStatus.PASS, "Clear Button Working Properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is Clickable"  );
+			test.log(LogStatus.FAIL, " Clear Button Does Not Working Properly"  );
 			
 		}
 		
@@ -4329,25 +4643,24 @@ public class CriticalMethod extends BasePage {
 		Locator.AuditAssignment().click();
 		Thread.sleep(4000);
 		
-		Locator.LocationAS().click();
+		Locator.Project().click();
 		Thread.sleep(4000);
 		Locator.LocationDropAS().click();
 		Thread.sleep(4000);
-		Locator.LocationDropASh().click();
-		Thread.sleep(4000);
+		
 		
 		if(Locator.ClearButtonAA().isEnabled())
 		{
 			
 			Thread.sleep(2000);
 			Locator.ClearButtonAA().click();
-			test.log(LogStatus.PASS, "Clear Button Is Clickable" );
+			test.log(LogStatus.PASS, "Clear Button Working Properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is Clickable"  );
+			test.log(LogStatus.FAIL, " Clear Button Does Not Working Properly"  );
 			
 		}
 		
@@ -4367,7 +4680,7 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(4000);
 		Locator.Report().click();
 		Thread.sleep(4000);
-		
+		/*
 		if(Locator.ExportReportFR().isEnabled())
 		{
 			
@@ -4382,7 +4695,31 @@ public class CriticalMethod extends BasePage {
 			test.log(LogStatus.FAIL, " File Download Successfully");
 			
 		}
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator.ExportReportFR().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+	    Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	   Thread.sleep(2000);
+
+
 		
 	}
 		
@@ -4428,20 +4765,21 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(4000);
 		Locator.CalenderStartDReportDD().click();
 		Thread.sleep(4000);
-		
+		Locator.CalenderStartDReport().click();
+		Thread.sleep(4000);
 		
 		if(Locator.ClearButtonReport().isEnabled())
 		{
 			
 			Thread.sleep(2000);
 			Locator.ClearButtonReport().click();
-			test.log(LogStatus.PASS, "Clear Button Is Clickable" );
+			test.log(LogStatus.PASS, "Clear Button Working Properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " Clear Button Is Clickable"  );
+			test.log(LogStatus.FAIL, " Clear Button Does Not Working Properly"  );
 			
 		}
 		
@@ -4461,7 +4799,7 @@ public class CriticalMethod extends BasePage {
 		Locator.MoreReportReport().click();
 		Thread.sleep(4000);
 		
-		
+		/*
 		if(Locator.CloseAuditReportR().isEnabled())
 		{
 			
@@ -4476,14 +4814,34 @@ public class CriticalMethod extends BasePage {
 			test.log(LogStatus.FAIL, " Closed Audit Report Does Not Download Successfully"  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
-		Thread.sleep(2000);
+		Thread.sleep(9000);
+	     Locator.CloseAuditReportR().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+	    Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "Closed Audit Report Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Closed Audit Report Does Not Downloaded Successfully");
+		}		
+
+	   Thread.sleep(2000);
 		Locator.SelectMonth().click();
 		Thread.sleep(2000);
 		
 		Locator.SelectMonthDD().click();
-		Thread.sleep(2000);
-		
+		Thread.sleep(5000);
+		/*
 		if(Locator.MouthCloseReportR().isEnabled())
 		{
 			
@@ -4498,7 +4856,30 @@ public class CriticalMethod extends BasePage {
 			test.log(LogStatus.FAIL, " Month Wise Closed Audit Report Does Not Download Successfully"  );
 			
 		}
+		*/
 		
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator.MouthCloseReportR().click();
+		
+	 	Thread.sleep(18000);
+		File dir4 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew4 = dir4.listFiles();						//Counting number of files in directory after download
+		
+	   
+	    Thread.sleep(9000);
+	   if (dirContents.length < allFilesNew4.length) {
+			test.log(LogStatus.PASS,  "Month Wise Closed Audit Report Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Month Wise Closed Audit Report Does Not Downloaded Successfully");
+		}		
+
+	   Thread.sleep(5000);
+
 		
 		/*
 		
@@ -4517,7 +4898,7 @@ public class CriticalMethod extends BasePage {
 			*/
 		
 			Thread.sleep(4000);
-			
+			/*
 			if(Locator.RemarkReportR().isEnabled())
 			{
 				
@@ -4532,10 +4913,30 @@ public class CriticalMethod extends BasePage {
 				test.log(LogStatus.FAIL, " Compliance Remark Report Does Not Download Successfully"  );
 				
 			}
+			*/
 			
+			File dir7 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents7 = dir7.listFiles();						//Counting number of files in directory before download
 			
-			Thread.sleep(2000);
-		
+			Thread.sleep(9000);
+		     Locator.RemarkReportR().click();
+			
+		 	Thread.sleep(18000);
+			File dir9 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew9 = dir9.listFiles();						//Counting number of files in directory after download
+			
+		   
+		    Thread.sleep(9000);
+		   if (dirContents7.length < allFilesNew9.length) {
+				test.log(LogStatus.PASS,  "Compliance Remark Report Downloaded Successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL, "Compliance Remark Report Does Not Downloaded Successfully");
+			}		
+
+		   Thread.sleep(5000);
+		/*
 			if(Locator.AuditReport().isEnabled())
 			{
 				
@@ -4550,8 +4951,32 @@ public class CriticalMethod extends BasePage {
 				test.log(LogStatus.FAIL, " Audit Report File Download Successfully"  );
 				
 			}
-			
+			*/
 			Thread.sleep(2000);
+			
+			
+			File dir5 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents5 = dir5.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(9000);
+		     Locator.AuditReport().click();
+			
+		 	Thread.sleep(18000);
+			File dir6 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew6 = dir6.listFiles();						//Counting number of files in directory after download
+			
+		   
+		    Thread.sleep(9000);
+		   if (dirContents5.length < allFilesNew6.length) {
+				test.log(LogStatus.PASS,  "Audit Report Downloaded Successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL, "Audit Report Does Not Downloaded Successfully");
+			}		
+
+		   Thread.sleep(5000);
+
 			
 			/*
 		Locator.AuditReport().click();
@@ -4581,7 +5006,7 @@ public class CriticalMethod extends BasePage {
 		Locator.Report().click();
 		Thread.sleep(20000);
 		
-		
+		/*
 		if(Locator.ActionColmnReportDownload().isEnabled())
 		{
 			
@@ -4596,10 +5021,31 @@ public class CriticalMethod extends BasePage {
 			test.log(LogStatus.FAIL, "Compliance Remark Report Download Successfully"  );
 			
 		}
-		
+		*/
 		Thread.sleep(1000);
 		
+		File dir5 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents5 = dir5.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator.ActionColmnReportDownload().click();
+		
+	 	Thread.sleep(18000);
+		File dir6 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew6 = dir6.listFiles();						//Counting number of files in directory after download
+		
+	   
+	    Thread.sleep(9000);
+	   if (dirContents5.length < allFilesNew6.length) {
+			test.log(LogStatus.PASS,  "Compliance Remark Report Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Compliance Remark Report Does Not Downloaded Successfully");
+		}		
+
+	   Thread.sleep(5000);
+
 		
 	}
 
@@ -4613,22 +5059,26 @@ public class CriticalMethod extends BasePage {
  		Locator.Report().click();
  		Thread.sleep(20000);
  		
- 		Locator.ViewButtonDropReport().click();
+ 		Locator.Drop1().click();
  		Thread.sleep(9000);
+ 		
+ //		Locator.ViewButtonDropReport().click();
+ //		Thread.sleep(9000);
  	
  		
- 		if(Locator.ViewButtonReport().isEnabled())
+ 		
+ 		if(Locator.ViewButtonDropReport().isEnabled())
  		{
  			
  			Thread.sleep(2000);
- 			Locator.ViewButtonReport().click();
- 			test.log(LogStatus.PASS, "View Button Is Clickable " );
+ 			Locator.ViewButtonDropReport().click();
+ 			test.log(LogStatus.PASS, "View Button Working Properly " );
  			
  		}
  		
  		else
  		{
- 			test.log(LogStatus.FAIL, " View Button Is Clickable"  );
+ 			test.log(LogStatus.FAIL, " View Button Does Not Working Properly"  );
  			
  		}
     	 

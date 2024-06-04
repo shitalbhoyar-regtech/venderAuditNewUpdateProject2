@@ -201,7 +201,7 @@ public class Method2 extends BasePage{
 		Thread.sleep(20000);
 		Locator2.UpcomingCountDashboard().click();
 		Thread.sleep(20000);
-		*/
+		
 		if(Locator2.UpcomingExportButton().isEnabled())
 		{
 			
@@ -216,7 +216,29 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.UpcomingExportButton().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
+
 		
 		
 	}
@@ -394,13 +416,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.UpcomingClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -683,7 +705,7 @@ public class Method2 extends BasePage{
 		Thread.sleep(20000);
 		
 		
-		*/
+		
 		if(Locator2.OverdueExportButton().isEnabled())
 		{
 			
@@ -698,7 +720,29 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.OverdueExportButton().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
+
 		
 	}
 	
@@ -723,13 +767,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.OverdueClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -830,7 +874,7 @@ public class Method2 extends BasePage{
 		Locator2.RejectedDasboardCount().click();
 		Thread.sleep(20000);
 		
-		*/
+		
 		
 		if(Locator2.RejectedExportButton().isEnabled())
 		{
@@ -846,7 +890,28 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.RejectedExportButton().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
 	}
 	
 	
@@ -869,13 +934,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RejectedClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -986,7 +1051,7 @@ public class Method2 extends BasePage{
 		Locator2.PendingReviewCountDashboard().click();
 		Thread.sleep(20000);
 		
-		*/
+	
 		
 		if(Locator2.PendingReviewExportButton().isEnabled())
 		{
@@ -1002,7 +1067,28 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.PendingReviewExportButton().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
 		
 		
 	}
@@ -1028,13 +1114,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PendingReviewClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -1112,13 +1198,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ViewButtonofEditPR().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -1407,7 +1493,7 @@ public class Method2 extends BasePage{
 		Thread.sleep(20000);
 		Locator2.ClosedDashboardCountMatch().click();
 		Thread.sleep(20000);
-		*/
+		
 		
 		
 		if(Locator2.ClosedExportButton().isEnabled())
@@ -1424,7 +1510,29 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.ClosedExportButton().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
 		
 	}
 	
@@ -1448,13 +1556,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ClosedClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -1489,13 +1597,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.DocumentViewButton().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -1517,7 +1625,7 @@ public class Method2 extends BasePage{
 		Locator2.CheckBoxDocument().click();
 		Thread.sleep(2000);
 		
-		
+		/*
 		if(Locator2.DownloadDocument().isEnabled())
 		{
 			
@@ -1533,7 +1641,28 @@ public class Method2 extends BasePage{
 			
 		}
 		
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.DownloadDocument().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
 		
 	}
 	
@@ -1555,7 +1684,7 @@ public class Method2 extends BasePage{
 		
 		Locator2.CheckBox3Document().click();
 		Thread.sleep(2000);
-		
+		/*
 		if(Locator2.DownloadDocument().isEnabled())
 		{
 			
@@ -1570,8 +1699,28 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File download Successfully "  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.DownloadDocument().click();
 		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
 		
 		
 	}
@@ -1601,13 +1750,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ClearDocument().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -1633,7 +1782,7 @@ public class Method2 extends BasePage{
 		
 		
 		
-		
+		/*
 		if(Locator2.ExportReportR().isEnabled())
 		{
 			
@@ -1648,7 +1797,28 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, "  File download Successfully "  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.ExportReportR().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
 		
 	}
 	
@@ -1682,13 +1852,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ClearButtonReport().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -1723,7 +1893,7 @@ public class Method2 extends BasePage{
 		
 			Thread.sleep(3000);
 		
-		*/
+		
 		if(Locator2.ActionClmFileDonld().isEnabled())
 		{
 			
@@ -1738,7 +1908,29 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, "  Compliance Report Download Successfully "  );
 			
 		}
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.ActionClmFileDonld().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "Compliance Report Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Compliance Report Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
 		
 		
 	}
@@ -1757,7 +1949,7 @@ public class Method2 extends BasePage{
 		Locator2.MoreReport().click();
 		Thread.sleep(4000);
 		
-		
+		/*
 		if(Locator2.CloseAuditReportR().isEnabled())
 		{
 			
@@ -1772,10 +1964,28 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, " Closed Audit Report - File Download Successfully"  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.CloseAuditReportR().click();
 		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
 		
-       Thread.sleep(2000);
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "Closed Audit Report Download Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Closed Audit Report Does not Download Successfully");
+		}		
+
+	Thread.sleep(2000);
 		
 		
 		Locator2.MonthReport().click();
@@ -1785,7 +1995,7 @@ public class Method2 extends BasePage{
 		Locator2.MonthReportDD().click();
 		
 		Thread.sleep(2000);
-			
+			/*
 			if(Locator2.RemarkReportR().isEnabled())
 			{
 				
@@ -1800,18 +2010,36 @@ public class Method2 extends BasePage{
 				test.log(LogStatus.FAIL, " Compliance Remark Report - File Download Successfully"  );
 				
 			}
-			
-			
+			*/
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator2.RemarkReportR().click();
 		
+	 	Thread.sleep(18000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew2 = dir1.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents.length < allFilesNew2.length) {
+			test.log(LogStatus.PASS,  "Compliance Remark Report Download Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Compliance Remark Report Does not Download Successfully");
+		}		
+
+	Thread.sleep(2000);	
 
 		Locator2.AuditReport().click();
-		
-		if(Locator2.RemarkReportR().isEnabled())
+		/*
+		if(Locator2.AuditReport().isEnabled())
 		{
 			
 			Thread.sleep(2000);
-			Locator2.RemarkReportR().click();
+			Locator2.AuditReport().click();
 			test.log(LogStatus.PASS, "Audit Report  - File Download Successfully" );
 			
 		}
@@ -1821,6 +2049,28 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, " Audit Report - File Download Successfully"  );
 			
 		}
+		*/
+		File dira = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContentsa = dira.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator2.AuditReport().click();
+		
+	 	Thread.sleep(18000);
+		File dirb = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNewb = dirb.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContentsa.length < allFilesNewb.length) {
+			test.log(LogStatus.PASS,  "Audit Report Download Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Audit Report Does not Download Successfully");
+		}		
+
+	Thread.sleep(2000);
 		
 		
 
@@ -1847,13 +2097,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 			Locator2.ReportViewCoplc().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable" );
+			test.log(LogStatus.PASS, " Overview button working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " View Button Is Clickable"  );
+			test.log(LogStatus.FAIL, " Overview button working properly"  );
 			
 		}
 		
@@ -1952,13 +2202,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ClearButtonRedGraphGrid().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -1970,13 +2220,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ViewRedButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -2055,13 +2305,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ClearButtonRedGraphGrid().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -2161,13 +2411,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "   Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "   Clear button working properly "  );
 			
 		}
 		
@@ -2182,13 +2432,13 @@ public class Method2 extends BasePage{
 				
 				Thread.sleep(2000);
 			    Locator2.YellowGraphViewButton().click();
-				test.log(LogStatus.PASS, "  View Button Is Clickable " );
+				test.log(LogStatus.PASS, "  Overview button working properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 				
 			}
 			
@@ -2305,13 +2555,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -2324,13 +2574,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -2413,13 +2663,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -2477,13 +2727,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -2589,13 +2839,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraph2GreenClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -2608,13 +2858,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -2678,13 +2928,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraph2GreenClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -2798,13 +3048,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraphInYellowClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -2816,13 +3066,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -2888,13 +3138,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraphInYellowClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -2990,13 +3240,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraphInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "   Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "   Clear button working properly "  );
 			
 		}
 		
@@ -3011,13 +3261,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -3093,13 +3343,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraphInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -3140,7 +3390,7 @@ public class Method2 extends BasePage{
 		int open = Integer.parseInt(Locator2.GreyInGreenGraph().getText());	//Reading Dashboard count.
 	    Locator2.GreyInGreenGraph().click();					                //Clicking on Dashboard count
 
-	    Thread.sleep(20000);
+	    Thread.sleep(9000);
 	   
 	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
 	//	//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
@@ -3212,13 +3462,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInGreenClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -3229,13 +3479,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(4000);
 		    Locator2.ViewGreyInGreen().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -3281,7 +3531,7 @@ public class Method2 extends BasePage{
 		int open = Integer.parseInt(Locator2.GreyInYellow().getText());	//Reading Dashboard count.
 	    Locator2.GreyInYellow().click();					                //Clicking on Dashboard count
 
-	    Thread.sleep(20000);
+	    Thread.sleep(9000);
 	   
 	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
 	//	//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
@@ -3349,13 +3599,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInYellowClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -3366,13 +3616,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInYellowViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -3485,13 +3735,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -3502,13 +3752,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -3641,13 +3891,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ACSREDGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -3778,13 +4028,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ACSBlueGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -3913,13 +4163,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ACSGreenGraphGreedClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -4060,13 +4310,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -4077,13 +4327,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -4206,13 +4456,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphMediumGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -4223,13 +4473,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphMediumGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, " Overview button working properly "  );
 			
 		}
 		
@@ -4345,13 +4595,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphLowGridClearButton().click();
-			test.log(LogStatus.PASS, "Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -4363,13 +4613,13 @@ public class Method2 extends BasePage{
 			Thread.sleep(2000);
 		    Locator2.PWSCompliedGraphLowGridViewButton().click();
 			test.log(LogStatus.PASS, ""
-					+ "  View Button Is Clickable " );
+					+ "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -4485,13 +4735,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphHighRiskGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -4502,13 +4752,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphHighRiskGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -4633,13 +4883,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphMediumRiskGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -4650,13 +4900,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphMediumRiskGridViewButton().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -4773,13 +5023,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphLowRiskGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -4790,13 +5040,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotCompliedGraphMediumRiskGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -4953,13 +5203,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotApplicableGraphHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -4970,13 +5220,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -5092,13 +5342,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotApplicableGraphHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -5109,13 +5359,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -5224,13 +5474,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.PWSNotApplicableGraphHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -5241,13 +5491,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -5388,13 +5638,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInGreenClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -5405,13 +5655,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(4000);
 		    Locator2.ViewGreyInGreen().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -5525,13 +5775,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInYellowClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -5542,13 +5792,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInYellowViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -5661,13 +5911,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		
@@ -5678,13 +5928,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button Does not working properly "  );
 			
 		}
 		
@@ -12244,13 +12494,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ClearDocument().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
 		

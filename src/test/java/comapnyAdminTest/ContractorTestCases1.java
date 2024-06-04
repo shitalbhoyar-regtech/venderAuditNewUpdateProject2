@@ -94,10 +94,8 @@ public class ContractorTestCases1 extends BasePage{
 		*/
 	}
 	
-	
-	
-	
-	@Test(priority = 1) 
+
+//	@Test(priority = 1) 
 	void DashboardCountGridCount1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Dashboard Tab - Upcoming Audit");
@@ -108,12 +106,14 @@ public class ContractorTestCases1 extends BasePage{
 		extent.flush();
 	}
 	
+	
+	
 
 	
-	@Test(priority = 2) 
+//	@Test(priority = 2) 
 	void UpcomingView1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Upcoming Audit -Edit- View Button Verification   ");
+		test = extent.startTest("Upcoming Audit -Edit- View Document Button Verification   ");
 		
 		Method1.UpcomingView(test,workbook);
 		
@@ -123,10 +123,10 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-	@Test(priority = 3)                                                                    
+//	@Test(priority = 3)                                                                    
 	void CommentButtonUpcoming1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Upcoming Audit - Edit - Comment Button Verification");
+		test = extent.startTest("Upcoming Audit - Edit - Chat Button Verification");
 		
 		Method1.CommentButtonUpcoming(test,workbook);
 		
@@ -135,12 +135,45 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 	
+//	@Test(priority = 4)                                                                    
+	void UpcomingDownload1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Upcoming Audit - Edit - Download Button Verification");
+		
+		Method1.UpcomingDownload(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 5)                                                                    
+	void UpcomingAuditLog1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Upcoming Audit - Edit - Audit Log Button Verification");
+		
+		Method1.UpcomingAuditLog(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 6)                                                                    
+	void Upcomingtransactionandstatuslog1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Upcoming Audit - Edit - Audit Log - transaction and status log tab Verification");
+		
+		Method1.Upcomingtransactionandstatuslog(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
 	
 	
-	@Test(priority = 4)                                                                    
+//	@Test(priority = 7)                                                                    
 	void UpcomingDownloadAndViewButton1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Upcoming Audit - Edit - Download and View Button Verification");
+		test = extent.startTest("Upcoming Audit - Edit - View Compliance Button Verification");
 		
 		Method1.UpcomingDownloadAndViewButton(test,workbook);
 		
@@ -150,7 +183,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 
 
-	@Test(priority = 5)                                                                    
+//	@Test(priority = 8)                                                                    
 	void UpdateUpcoming1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Upcoming Audit - Edit - Audit Submited For Auditor Review");
@@ -163,7 +196,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-	@Test(priority =6 ) 
+	@Test(priority =9 ) 
 	void UpcomingMultipleFilter1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Upcoming Audit - Multiple Filter Verification  ");
@@ -173,8 +206,10 @@ public class ContractorTestCases1 extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-
 	
+	
+
+	/*
 	
 	@Test(priority =7 ) 
 	void overduecountMatch1() throws InterruptedException, IOException

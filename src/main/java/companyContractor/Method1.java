@@ -264,13 +264,13 @@ public class Method1 extends BasePage{
 			
 			Thread.sleep(2000);
 		 Locator1.UpcomingCleartButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		Thread.sleep(2000);
@@ -407,7 +407,7 @@ public class Method1 extends BasePage{
 	
 	Thread.sleep(2000);
 	
-	String fis1 = "C:\\\\Users\\\\shitalb\\\\Downloads\\\\Audit Compliances Report .xlsx";
+	String fis1 = "C:\\Users\\shitalb\\Downloads\\Audit Compliances Report .xlsx";
 	
 	File file = new File(fis1);
 	  
@@ -478,7 +478,7 @@ public class Method1 extends BasePage{
 		Thread.sleep(2000);
  	//	Locator.ExportButtonCT().click();
 	//	Thread.sleep(9000);
-		
+		/*
 		if(Locator1.UpcomingExport().isEnabled())
 		{
 			
@@ -493,7 +493,29 @@ public class Method1 extends BasePage{
 			test.log(LogStatus.FAIL, " Export Button From Workspace "  );
 			
 		}
-		Thread.sleep(2000);
+		*/
+        File dir9 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] dirContents9 = dir9.listFiles();						//Counting number of files in directory before download
+ 		
+ 		Thread.sleep(3000);
+ 		Locator1.UpcomingExport().click();
+ 		
+ 	 	Thread.sleep(9000);
+ 		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] allFilesNew0 = dir0.listFiles();						//Counting number of files in directory after download
+ 	  
+        Thread.sleep(3000);
+ 	   if (dirContents9.length < allFilesNew0.length) {
+ 			test.log(LogStatus.PASS,  " File Download Successfully");
+ 		}
+ 	   else
+ 	   {
+ 		 	test.log(LogStatus.FAIL, "  File Does Not Download Successfully "   );
+
+ 		}   
+ 	   Thread.sleep(4000);
+
+		
 		
 	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\Audit Compliances Report .xlsx");
 	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
@@ -609,7 +631,7 @@ public class Method1 extends BasePage{
 		Thread.sleep(2000);
  	//	Locator.ExportButtonCT().click();
 	//	Thread.sleep(9000);
-		
+		/*
 		if(Locator1.UpcomingExport().isEnabled())
 		{
 			
@@ -624,8 +646,29 @@ public class Method1 extends BasePage{
 			test.log(LogStatus.FAIL, " Export Button From Workspace "  );
 			
 		}
-		Thread.sleep(2000);
-		
+		*/
+	       File dir9 = new File("C:\\Users\\shitalb\\Downloads");
+	 		File[] dirContents9 = dir9.listFiles();						//Counting number of files in directory before download
+	 		
+	 		Thread.sleep(3000);
+	 		Locator1.UpcomingExport().click();
+	 		
+	 	 	Thread.sleep(9000);
+	 		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
+	 		File[] allFilesNew0 = dir0.listFiles();						//Counting number of files in directory after download
+	 	  
+	        Thread.sleep(3000);
+	 	   if (dirContents9.length < allFilesNew0.length) {
+	 			test.log(LogStatus.PASS,  " File Download Successfully");
+	 		}
+	 	   else
+	 	   {
+	 		 	test.log(LogStatus.FAIL, "  File Does Not Download Successfully "   );
+
+	 		}   
+	 	   Thread.sleep(4000);
+
+				
 	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\Audit Compliances Report .xlsx");
 	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
 	workbook = new XSSFWorkbook(fis);
@@ -940,8 +983,20 @@ if(Locator1.transactionLog().isDisplayed()&&Locator1.statusLog().isDisplayed()) 
 		Locator1.AuditLog().click();
 		Thread.sleep(4000);
 		
+	       Thread.sleep(6000);
+			
+	       if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
+	       			
+	       			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
+	       		}else {
+	       			
+	       			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
+	       			
+	       		}
+
+	       Thread.sleep(1000);
 		Locator1.transactionLog().click();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		
 if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreatedBy().isDisplayed()&&Locator1.transactionLogCreatedon().isDisplayed()) {
 			
@@ -951,20 +1006,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			test.log(LogStatus.FAIL, "Remark column, Created By Column and Created On Column should be not seen on the page of transaction log Page");
 			
 		}
-
-        Locator1.statusLog().click();
-        Thread.sleep(4000);
-		
-if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
-			
-			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
-		}else {
-			
-			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
-			
-		}
-
-        
+Thread.sleep(4000);
+    //    Locator1.statusLog().click();
+ 
         
 	}
 	
@@ -1173,13 +1217,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(3000);
 		    Locator1.ViewButtonofEditPR().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " View Documents Button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, " View Documents Button Does not working properly "  );
 			
 		}
 		
@@ -1421,13 +1465,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		 Locator1.UpcomingCleartButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -1493,6 +1537,18 @@ if(Locator1.transactionLog().isDisplayed()&&Locator1.statusLog().isDisplayed()) 
 		Locator1.AuditLog().click();
 		Thread.sleep(4000);
 		
+	       Thread.sleep(4000);
+			
+	       if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
+	       			
+	       			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
+	       		}else {
+	       			
+	       			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
+	       			
+	       		}
+
+		
 		Locator1.transactionLog().click();
 		Thread.sleep(4000);
 		
@@ -1505,18 +1561,8 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			
 		}
 
-        Locator1.statusLog().click();
-        Thread.sleep(4000);
-		
-if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
-			
-			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
-		}else {
-			
-			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
-			
-		}
-
+  //      Locator1.statusLog().click();
+ 
         
         
 	}
@@ -1816,13 +1862,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		 Locator1.UpcomingCleartButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -2051,6 +2097,17 @@ if(Locator1.transactionLog().isDisplayed()&&Locator1.statusLog().isDisplayed()) 
 		Locator1.AuditLog().click();
 		Thread.sleep(4000);
 		
+	       Thread.sleep(4000);
+			
+	       if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
+	       			
+	       			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
+	       		}else {
+	       			
+	       			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
+	       			
+	       		}
+
 		Locator1.transactionLog().click();
 		Thread.sleep(4000);
 		
@@ -2063,23 +2120,95 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			
 		}
 
-        Locator1.statusLog().click();
-        Thread.sleep(4000);
-		
-if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
-			
-			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
-		}else {
-			
-			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
-			
-		}
-
+   //     Locator1.statusLog().click();
+ 
         
         
 	}
 	
+	
+	public static void RejectedSubmitForAuditorButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(7000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
+		Thread.sleep(4000);
+		
+		int open = Integer.parseInt(Locator1.Rejected().getText());	//Reading Dashboard count.
+        Locator1.Rejected().click();					                //Clicking on Dashboard count
 
+        Thread.sleep(7000);
+       
+        //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator1.GridLoad()));
+        Locator1.UpcomingEditButton().click();
+		Thread.sleep(4000);
+       			
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(2000);
+        
+        Locator1.SubmitForAuditor().click();	
+        Thread.sleep(2000);
+        
+		 Alert ac3=getDriver().switchTo().alert();
+			
+			String t4=getDriver().switchTo().alert().getText();
+			
+			test.log(LogStatus.PASS, t4 );
+			
+			Thread.sleep(4000);
+			ac3.accept();
+			
+			Thread.sleep(4000);
+			
+			 Locator1.SubmitForAuditorClose().click();	
+		        Thread.sleep(2000);
+		        
+		        Locator1.Dashboard1().click();	
+		        Thread.sleep(7000);
+		         
+		        int count1 = Integer.parseInt(Locator1.Rejected().getText());	//Reading Dashboard count.
+		        Locator1.Rejected().click();
+
+/*
+		String item = Locator1.RejectedGridCount().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+*/
+		
+		
+		if(open != count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, "Before Rejected Count = "+open+" | After Rejected Count = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, "Before Rejected Count = "+open+" | Before Rejected Count = "+count1);
+					
+		}
+	
+		
+	//	Locator1.UpcomingEditButton().click();
+	//	Thread.sleep(4000);
+		
+		
+
+	}
 	
 	
 	public static void UpdateRejected( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -2236,13 +2365,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		 Locator1.UpcomingCleartButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -2601,6 +2730,18 @@ if(Locator1.transactionLog().isDisplayed()&&Locator1.statusLog().isDisplayed()) 
 		Locator1.AuditLog().click();
 		Thread.sleep(4000);
 		
+	       Thread.sleep(4000);
+			
+	       if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
+	       			
+	       			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
+	       		}else {
+	       			
+	       			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
+	       			
+	       		}
+
+
 		Locator1.transactionLog().click();
 		Thread.sleep(4000);
 		
@@ -2613,21 +2754,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			
 		}
 
-        Locator1.statusLog().click();
-        Thread.sleep(4000);
-		
-if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
-			
-			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
-		}else {
-			
-			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
-			
-		}
-
 	}
-
-	
+   //     Locator1.statusLog().click();
+ 	
 	
 	public static void updatePending( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
@@ -2752,13 +2881,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		 Locator1.UpcomingCleartButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear Button Working Properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -2815,10 +2944,10 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
         js1.executeScript("window.scrollBy(0,-1000)");
         Thread.sleep(2000);
  		
-		Thread.sleep(2000);
+		
  	//	Locator.ExportButtonCT().click();
 	//	Thread.sleep(9000);
-		
+		/*
 		if(Locator1.UpcomingExport().isEnabled())
 		{
 			
@@ -2833,7 +2962,30 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			test.log(LogStatus.FAIL, " Export Button From Workspace "  );
 			
 		}
+		*/
 		Thread.sleep(2000);
+		
+        File dir9 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] dirContents9 = dir9.listFiles();						//Counting number of files in directory before download
+ 		
+ 		Thread.sleep(3000);
+ 		Locator1.UpcomingExport().click();
+ 		
+ 	 	Thread.sleep(9000);
+ 		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] allFilesNew0 = dir0.listFiles();						//Counting number of files in directory after download
+ 	  
+        Thread.sleep(3000);
+ 	   if (dirContents9.length < allFilesNew0.length) {
+ 			test.log(LogStatus.PASS,  " File Download Successfully");
+ 		}
+ 	   else
+ 	   {
+ 		 	test.log(LogStatus.FAIL, "  File Does Not Download Successfully "   );
+
+ 		}   
+ 	   Thread.sleep(4000);
+
 		
 	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\Audit Compliances Report .xlsx");
 	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
@@ -3017,13 +3169,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.ClosedView().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " View Button Working Properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button Does Not Working Properly "  );
 			
 		}
 		
@@ -3155,6 +3307,18 @@ if(Locator1.transactionLog().isDisplayed()&&Locator1.statusLog().isDisplayed()) 
 		Locator1.AuditLog().click();
 		Thread.sleep(4000);
 		
+	       Thread.sleep(4000);
+			
+	       if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
+	       			
+	       			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
+	       		}else {
+	       			
+	       			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
+	       			
+	       		}
+
+		
 		Locator1.transactionLog().click();
 		Thread.sleep(4000);
 		
@@ -3167,18 +3331,8 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			
 		}
 
-        Locator1.statusLog().click();
-        Thread.sleep(4000);
-		
-if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1.RemarkStatusLog().isDisplayed()&&Locator1.FileName().isDisplayed()&&Locator1.CreatedBy().isDisplayed()&&Locator1.Role().isDisplayed()) {
-			
-			test.log(LogStatus.PASS, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be seen on the page of Status log Page");
-		}else {
-			
-			test.log(LogStatus.FAIL, "Created on column, Action column, Remark Column, File Name Column, Created By Column and Role Column should be not seen on on the page of Status log Page");
-			
-		}
-
+    //    Locator1.statusLog().click();
+ 
 	}
 
 	
@@ -3207,11 +3361,8 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		
 		Thread.sleep(20000);
 		Locator1.CountMatchClose().click();
-		Thread.sleep(20000);
-		
-		
-		
-		
+		Thread.sleep(6000);
+		/*
 		if(Locator1.ExportButtonClose().isEnabled())
 		{
 			
@@ -3226,6 +3377,30 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator1.ExportButtonClose().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
+
+	
 		
 	}
 	
@@ -3248,13 +3423,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		 Locator1.ClearButtonPending().click();
-			test.log(LogStatus.PASS, "  Clear  Button Is Clickable  " );
+			test.log(LogStatus.PASS, "  Clear Button Working Properly  " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable  "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly  "  );
 			
 		}
 		
@@ -3308,13 +3483,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		 Locator1.DocumentClearButton().click();
-			test.log(LogStatus.PASS, "  Clear  Button Is Clickable  " );
+			test.log(LogStatus.PASS, "  Clear Button Working Properly  " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable  "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly  "  );
 			
 		}
 		
@@ -3349,13 +3524,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(6000);
 		 Locator1.ViewPendingR().click();
-			test.log(LogStatus.PASS, "  View  Button Is Clickable  ");
+			test.log(LogStatus.PASS, "  View Button Working Properly  ");
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable  "  );
+			test.log(LogStatus.FAIL, "  View Button Does not working properly  "  );
 			
 		}
 		
@@ -3409,13 +3584,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		 Locator1.ViewDocument().click();
-			test.log(LogStatus.PASS, "  View  Button Is Clickable  " );
+			test.log(LogStatus.PASS, "  View Button Working Properly  " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable  "  );
+			test.log(LogStatus.FAIL, "  View Button Does not working properly "  );
 			
 		}
 		
@@ -3434,7 +3609,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		Locator1.DocumentCheckBox().click();
 		
 		Thread.sleep(6000);
-		
+		/*
 		if(Locator1.DocumentDownload().isEnabled())
 		{
 			
@@ -3449,6 +3624,29 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			test.log(LogStatus.FAIL, "  File Download Sucessfully  "  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator1.DocumentDownload().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
+
 		
 	}
 	
@@ -3465,7 +3663,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		Thread.sleep(6000);
 		Locator1.DocumentCheckBox3().click();
 		Thread.sleep(6000);
-		
+		/*
 		if(Locator1.DocumentDownload().isEnabled())
 		{
 			
@@ -3480,7 +3678,29 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			test.log(LogStatus.FAIL, "  File Download Sucessfully  "  );
 			
 		}
+		*/
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator1.DocumentDownload().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
 	}
 	
 	
@@ -3492,7 +3712,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		Thread.sleep(20000);
 		Locator1.ReportButton().click();
 		Thread.sleep(20000);
-		
+		/*
 		if(Locator1.ReportExportButton().isEnabled())
 		{
 			
@@ -3507,7 +3727,30 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			test.log(LogStatus.FAIL, "  File Download Sucessfully  "  );
 			
 		}
-		Thread.sleep(2000);
+		*/
+		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator1.ReportExportButton().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}		
+
+	Thread.sleep(2000);
+		
 		
 	}
 	
@@ -3522,9 +3765,29 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		Locator1.MoreReportReport().click();
 		Thread.sleep(6000);
 		
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator1.ClosedAuditReportMRR().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "Closed Audit Report Download Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Closed Audit Report Download Successfully");
+		}		
+
+	Thread.sleep(2000);
 	
-		
+		/*
 		if(Locator1.ClosedAuditReportMRR().isEnabled())
 		{
 			
@@ -3539,6 +3802,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			test.log(LogStatus.FAIL, " Closed Audit Report Download Sucessfully  "  );
 			
 		}
+		*/
 		
 		Thread.sleep(7000);
 		Locator.SelectMonth().click();
@@ -3546,7 +3810,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		
 		Locator.SelectMonthDD().click();
 		Thread.sleep(2000);
-		
+		/*
 		if(Locator.MouthCloseReportR().isEnabled())
 		{
 			
@@ -3561,6 +3825,29 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			test.log(LogStatus.FAIL, " Month Wise Closed Audit Report File Download Successfully"  );
 			
 		}
+		*/
+		
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator.MouthCloseReportR().click();
+		
+	 	Thread.sleep(18000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents.length < allFilesNew.length) {
+			test.log(LogStatus.PASS,  "Month Wise Closed Audit Report File Download Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Month Wise Closed Audit Report File Download Successfully");
+		}		
+
+	
 		Thread.sleep(7000);
 		
 		/*
@@ -3579,7 +3866,28 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			*/
 			Thread.sleep(4000);
 		
-		
+			File dira = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContentsa = dira.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(9000);
+		     Locator1.ComplianceRemarkReport().click();
+			
+		 	Thread.sleep(18000);
+			File dirb = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNewb = dirb.listFiles();						//Counting number of files in directory after download
+			
+		   
+	        Thread.sleep(9000);
+		   if (dirContentsa.length < allFilesNewb.length) {
+				test.log(LogStatus.PASS,  "Compliance Remark Report File Download Successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL, "Compliance Remark Report File Download Successfully");
+			}		
+
+
+		/*
 		if(Locator1.ComplianceRemarkReport().isEnabled())
 		{
 			
@@ -3594,11 +3902,30 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			test.log(LogStatus.FAIL, " Compliance Remark Report File Download Sucessfully  "  );
 			
 		}
+		*/
 		Thread.sleep(9000);
 		
-//		Locator1.AuditReport().click();
-//		Thread.sleep(6000);
+		File dirc = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContentsc = dirc.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(9000);
+	     Locator1.AuditReport().click();
+		
+	 	Thread.sleep(18000);
+		File dird = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNewd = dird.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContentsc.length < allFilesNewd.length) {
+			test.log(LogStatus.PASS,  "Audit Report Download Sucessfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Audit Report Download Sucessfully");
+		}		
+
+		/*
 		if(Locator1.AuditReport().isEnabled())
 		{
 			
@@ -3613,6 +3940,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			test.log(LogStatus.FAIL, " Audit Report File Download Sucessfully  "  );
 			
 		}
+		*/
 		Thread.sleep(4000);
 
 		/*
@@ -3655,13 +3983,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		 Locator1.ClearButtonReport().click();
-			test.log(LogStatus.PASS, "  Clear  Button Is Clickable  " );
+			test.log(LogStatus.PASS, "  Clear button working properly  " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable  "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly  "  );
 			
 		}
 		Thread.sleep(2000);
@@ -3828,13 +4156,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.ClearButtonRedGraphGrid().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly "  );
 			
 		}
 		
@@ -3846,13 +4174,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.ViewRedButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  View Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View Button Does not Working properly"  );
 			
 		}
 		
@@ -3979,13 +4307,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "   Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "   Clear Button Does not working properly "  );
 			
 		}
 		
@@ -4000,13 +4328,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.YellowGraphViewButton().click();
-				test.log(LogStatus.PASS, "  View Button Is Clickable " );
+				test.log(LogStatus.PASS, "  Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -4123,13 +4451,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -4142,13 +4470,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -4244,13 +4572,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraph2GreenClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -4263,13 +4591,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -4402,13 +4730,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraphInYellowClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -4420,13 +4748,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -4543,13 +4871,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.RedGraphInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "   Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "   Clear Button Working Properly "  );
 			
 		}
 		
@@ -4564,13 +4892,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -4702,13 +5030,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInGreenClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -4719,13 +5047,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(4000);
 		    Locator2.ViewGreyInGreen().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -4839,13 +5167,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInYellowClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -4856,13 +5184,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInYellowViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -4892,7 +5220,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		
 		
 		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(9000);
 		
 		Thread.sleep(2000);
 		
@@ -4907,7 +5235,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		int open = Integer.parseInt(Locator2.GreyInRed().getText());	//Reading Dashboard count.
 	    Locator2.GreyInRed().click();					                //Clicking on Dashboard count
 
-	    Thread.sleep(20000);
+	    Thread.sleep(9000);
 	   
 	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
 	//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
@@ -4975,13 +5303,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -4992,13 +5320,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.GreyInRedGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -5043,7 +5371,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		
 		
 		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(9000);
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
@@ -5053,7 +5381,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		int open = Integer.parseInt(Locator2.ACSREDGraph().getText());	//Reading Dashboard count.
 	    Locator2.ACSREDGraph().click();					                //Clicking on Dashboard count
 
-	    Thread.sleep(20000);
+	    Thread.sleep(9000);
 	   
 	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
 	//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
@@ -5121,13 +5449,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.ACSREDGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -5176,7 +5504,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 	{
 		
 		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(9000);
 		
 		/*
 		
@@ -5190,7 +5518,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		int open = Integer.parseInt(Locator2.ACSBlueGraph().getText());	//Reading Dashboard count.
 	    Locator2.ACSBlueGraph().click();					                //Clicking on Dashboard count
 
-	    Thread.sleep(20000);
+	    Thread.sleep(9000);
 	   
 	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
 	//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
@@ -5258,13 +5586,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator2.ACSBlueGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -5311,7 +5639,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 	{
 		
 		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(9000);
 		
 		/*
 		
@@ -5325,7 +5653,7 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		int open = Integer.parseInt(Locator1.ACSGreenGraph().getText());	//Reading Dashboard count.
 	    Locator1.ACSGreenGraph().click();					                //Clicking on Dashboard count
 
-	    Thread.sleep(20000);
+	    Thread.sleep(9000);
 	   
 	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
 	//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
@@ -5393,13 +5721,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.ACSGreenGraphGreedClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -5541,13 +5869,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ACSREDGraphGridClearButton().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -5558,13 +5886,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator2.PWSCompliedGraphHighGridViewButton().click();
-				test.log(LogStatus.PASS, " View Button Is Clickable " );
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -5695,13 +6023,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ACSREDGraphGridClearButton().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -5712,13 +6040,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator2.PWSCompliedGraphHighGridViewButton().click();
-				test.log(LogStatus.PASS, " View Button Is Clickable " );
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -5832,13 +6160,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ACSREDGraphGridClearButton().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -5849,13 +6177,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator2.PWSCompliedGraphHighGridViewButton().click();
-				test.log(LogStatus.PASS, " View Button Is Clickable " );
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -5978,13 +6306,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ACSREDGraphGridClearButton().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -5995,13 +6323,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator2.PWSCompliedGraphHighGridViewButton().click();
-				test.log(LogStatus.PASS, " View Button Is Clickable " );
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -6118,13 +6446,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ACSREDGraphGridClearButton().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -6135,13 +6463,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator2.PWSCompliedGraphHighGridViewButton().click();
-				test.log(LogStatus.PASS, " View Button Is Clickable " );
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -6241,13 +6569,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ACSREDGraphGridClearButton().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -6258,13 +6586,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator2.PWSCompliedGraphHighGridViewButton().click();
-				test.log(LogStatus.PASS, " View Button Is Clickable " );
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -6387,13 +6715,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ACSREDGraphGridClearButton().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -6404,13 +6732,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator2.PWSCompliedGraphHighGridViewButton().click();
-				test.log(LogStatus.PASS, " View Button Is Clickable " );
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -6546,13 +6874,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ACSREDGraphGridClearButton().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -6563,13 +6891,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator2.PWSCompliedGraphHighGridViewButton().click();
-				test.log(LogStatus.PASS, " View Button Is Clickable " );
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -6697,13 +7025,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ACSREDGraphGridClearButton().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -6714,13 +7042,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator2.PWSCompliedGraphHighGridViewButton().click();
-				test.log(LogStatus.PASS, " View Button Is Clickable " );
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -6902,13 +7230,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ClearButtonRedGraphGrid().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -6920,13 +7248,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ViewRedButton().click();
-				test.log(LogStatus.PASS, "  View Button Is Clickable " );
+				test.log(LogStatus.PASS, "  Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -7049,13 +7377,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ClearButtonRedGraphGrid().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -7067,13 +7395,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ViewRedButton().click();
-				test.log(LogStatus.PASS, "  View Button Is Clickable " );
+				test.log(LogStatus.PASS, "  Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -7193,13 +7521,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -7212,13 +7540,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -7328,13 +7656,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ClearButtonRedGraphGrid().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -7346,13 +7674,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ViewRedButton().click();
-				test.log(LogStatus.PASS, "  View Button Is Clickable " );
+				test.log(LogStatus.PASS, "  Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -7470,13 +7798,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ClearButtonRedGraphGrid().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -7488,13 +7816,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ViewRedButton().click();
-				test.log(LogStatus.PASS, "  View Button Is Clickable " );
+				test.log(LogStatus.PASS, "  Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -7617,13 +7945,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -7636,13 +7964,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -7754,13 +8082,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ClearButtonRedGraphGrid().click();
-				test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 				
 			}
 			
@@ -7772,13 +8100,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 				
 				Thread.sleep(2000);
 			    Locator1.ViewRedButton().click();
-				test.log(LogStatus.PASS, "  View Button Is Clickable " );
+				test.log(LogStatus.PASS, "  Overview Button Working properly" );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 				
 			}
 			
@@ -7901,13 +8229,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -7920,13 +8248,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -8038,13 +8366,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.SWSSubContractorOverdueGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -8178,13 +8506,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.SWSSubContractorPendinReviewGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -8313,13 +8641,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.SWSSubContractorClosedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -8448,13 +8776,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.ClearButtonRedGraphGrid().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -8466,13 +8794,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.ViewRedButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -8606,13 +8934,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -8625,13 +8953,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -8743,13 +9071,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.ClearButtonRedGraphGrid().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -8761,13 +9089,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(5000);
 		    Locator1.ViewRedButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -8901,13 +9229,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -8920,13 +9248,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -9043,13 +9371,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.ClearButtonRedGraphGrid().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -9061,13 +9389,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(5000);
 		    Locator1.ViewRedButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -9202,13 +9530,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -9221,13 +9549,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -9340,13 +9668,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -9359,13 +9687,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -9543,13 +9871,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.ClearButtonRedGraphGrid().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -9561,13 +9889,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(5000);
 		    Locator1.ViewRedButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -9701,13 +10029,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		
@@ -9720,13 +10048,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		    Locator1.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview Button Working properly" );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
 			
 		}
 		
@@ -11544,31 +11872,47 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 	
 	public static void UpcomingMultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Thread.sleep(19000);
+		Thread.sleep(6000);
 		Locator1.Upcoming().click();
-		Thread.sleep(16000);
+		Thread.sleep(7000);
 		
 		
-		/*
-		Locator1.EntityLocation().click();
-		Thread.sleep(500);
-		Locator1.EntityLocationExpand().click();
-		Thread.sleep(500);
-		Locator1.EntityLocationExpand().click();
-		Thread.sleep(500);
-      String locationtext =Locator1.EntityLocationExpand1().getText();
-       Thread.sleep(500);
-       Locator1.EntityLocationExpand1().click();
-       Thread.sleep(500);
-       Locator1.EntityLocation().click();
-       Thread.sleep(3000);
-       */
-       
-      
-       
-  //     Locator1.Status().click();
-  //     Thread.sleep(2000);
-       
+		
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnLocation().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnState().click();
+	       Thread.sleep(2000);
+	 
+		       
+		 Locator1.Location().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD1().click();
+	       Thread.sleep(1000);
+	       String LocationText =Locator1.LocationDD2().getText();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD2().click();
+	       Thread.sleep(1000);
+	       Locator1.Location().click();
+	       Thread.sleep(1000);
+	       
+	       Locator1.State().click();
+	       Thread.sleep(1000);
+	       String StateText =Locator1.StateDD().getText();
+	       Thread.sleep(2000);
+	       Locator1.StateDD().click();
+	       Thread.sleep(1000);
+	       Locator1.State().click();
+	       Thread.sleep(2000);
+
+	       
        Locator1.Project().click();
        Thread.sleep(2000);
        String ProjectText =Locator1.IBPConstruction().getText();
@@ -11577,17 +11921,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
        Thread.sleep(2000);
        Locator1.Project().click();
        Thread.sleep(2000);
-       
-       
-       
-       
-       
+        
        Locator1.ContractorType().click();
-       Thread.sleep(2000);
+       Thread.sleep(1000);
        String ContractorTypeText =Locator1.ContractorTypeDD().getText();
-       Thread.sleep(2000);
+       Thread.sleep(1000);
        Locator1.ContractorTypeDD().click();
-       Thread.sleep(2000);
+       Thread.sleep(1000);
        Locator1.ContractorType().click();
        Thread.sleep(2000);
        
@@ -11595,31 +11935,31 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
        
        
        Locator1.Frequency().click();
-       Thread.sleep(2000);
+       Thread.sleep(1000);
        String FrequencyText =Locator1.FrequencyDD().getText();
-       Thread.sleep(2000);
+       Thread.sleep(1000);
        Locator1.FrequencyDD().click();
-       Thread.sleep(2000);
+       Thread.sleep(1000);
        Locator1.Frequency().click();
        Thread.sleep(2000);
        
        Locator1.Status().click();
-       Thread.sleep(2000);
+       Thread.sleep(1000);
        String Statustext =Locator1.Status1R().getText();
-       Thread.sleep(2000);
+       Thread.sleep(1000);
        Locator1.Status1R().click();
-       Thread.sleep(2000);
+       Thread.sleep(1000);
        Locator1.Status2R().click();
-       Thread.sleep(2000);
+       Thread.sleep(1000);
        Locator1.Status().click();
        Thread.sleep(2000);
 
        
        Locator1.PeriodFilterCompliedHigh().click();
-       Thread.sleep(2000);
-       String Periodtext =Locator1.Mar24().getText();
-       Thread.sleep(2000);
-       Locator1.Mar24().click();
+       Thread.sleep(1000);
+       String Periodtext =Locator1.May24().getText();
+       Thread.sleep(1000);
+       Locator1.May24().click();
        Thread.sleep(2000);
        
 
@@ -11627,18 +11967,23 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
        
         List<String> li=new ArrayList<String>();
         
-      //  li.add(locationtext);
+        li.add(LocationText);
+        li.add(StateText);     
         li.add(ProjectText);
         li.add(ContractorTypeText);
         li.add(FrequencyText);
         li.add(Statustext);
         li.add(Periodtext);
         
+        
+        
+        
         Thread.sleep(3000);
         
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
-		filter.add("Project");
+		filter.add("Location");
+		filter.add("State");
+		filter.add("Facility");
 		filter.add("ContractorType");
 		filter.add("Frequency");
 		filter.add("Status");
@@ -11656,11 +12001,12 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[4]"));
-		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[9]"));
+		List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[10]"));
+		List<WebElement> statecol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[11]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[9]"));
 		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[8]"));
 
 		
@@ -11675,27 +12021,37 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 
 				if(i==0)
 				{
-					raw.addAll(projectcol);
+					raw.addAll(entitycol);
 				}
 			else if(i==1)
 				{
-					raw.addAll(contractorcol);
+					raw.addAll(statecol);
 				}
 			else if(i==2)
 			{
-				raw.addAll(frequencycol);
+				raw.addAll(projectcol);
 			}
 				
 			else if(i==3)
 			{
-				raw.addAll(statuscol);
+				raw.addAll(contractorcol);
 			}
 				
 			else if(i==4)
 			{
+				raw.addAll(frequencycol);
+			}
+				
+			else if(i==5)
+			{
+				raw.addAll(statuscol);
+			}
+
+			else if(i==6)
+			{
 				raw.addAll(periodcol);
 			}
-	
+
 				
 			for(int k=0;k<raw.size();k++)
 				{
@@ -14504,13 +14860,13 @@ if(Locator1.CreatedOn().isDisplayed()&&Locator1.Action().isDisplayed()&&Locator1
 			
 			Thread.sleep(2000);
 		 Locator1.UpcomingCleartButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
 		

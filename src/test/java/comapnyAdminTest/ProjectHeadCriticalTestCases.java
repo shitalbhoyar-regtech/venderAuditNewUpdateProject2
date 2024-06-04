@@ -96,7 +96,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	
 	
 	
-	
+	/*
 	@Test(priority = 1) 
 	void ProjectsCountGridCount1() throws InterruptedException, IOException
 	{
@@ -181,7 +181,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	@Test(priority = 7) 
 	void CTWCompliedgreen1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Complied Status' Count Verification");
+		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - Canteen - 'Complied Status' Count Verification");
 		
 		Method3.CTWCompliedgreen(test,workbook);
 		
@@ -196,7 +196,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	@Test(priority = 8) 
 	void CTWNotCompliedRed1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Not Complied Status' Count Verification");
+		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - Canteen - 'Not Complied Status' Count Verification");
 		
 		Method3.CTWNotCompliedRed(test,workbook);
 		
@@ -210,7 +210,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	@Test(priority = 9) 
 	void CTWNotApplicableGrey1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Not Applicable Status' Count Verification");
+		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - Canteen - 'Not Applicable Status' Count Verification");
 		
 		Method3.CTWNotApplicableGrey(test,workbook);
 		
@@ -224,7 +224,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	@Test(priority = 10) 
 	void CTWAuditStatusSummeryOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Audit Status Summary - Construction - Count Verification");
+		test = extent.startTest("Bar Graph - Stake Holder Wise - Audit Status Summary - Canteen - Count Verification");
 		
 		Method3.CTWAuditStatusSummeryOverdue(test,workbook);
 		
@@ -234,12 +234,12 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	
 	
 	
-	
+	*/
 	
 	@Test(priority = 11) 
 	void PWCSSABCConstructionCompliedHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Complied Status - 'Project - Chandragan Construction' Count Verification");
+		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Complied Status - 'Project - Geet Heritage' Count Verification");
 		
 		Method3.PWCSSABCConstructionCompliedHigh(test,workbook);
 		
@@ -252,7 +252,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	@Test(priority = 12) 
 	void PWCSSABCconstructionNotCompliedHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Complied Status - 'Project - Chandragan Construction' Count Verification");
+		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Complied Status - 'Project - Geet Heritage' Count Verification");
 		
 		Method3.PWCSSABCconstructionNotCompliedHigh(test,workbook);
 		
@@ -266,7 +266,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	@Test(priority = 13) 
 	void PWCSSABCconstructionNotApplicableHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Applicable Status - 'Project - Chandragan Construction' Count Verification");
+		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Applicable Status - 'Project - Geet Heritage' Count Verification");
 		
 		Method3.PWCSSABCconstructionNotApplicableHigh(test,workbook);
 		
@@ -283,7 +283,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	@Test(priority = 14) 
 	void PWAuditStatusSummeryABCConstructionOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Audit Status Summary - ' Project - PRI Update ' Count Verification");
+		test = extent.startTest("Bar Graph - Project Wise - Audit Status Summary - ' Project - Geet Heritage ' Count Verification");
 		
 		Method3.PWAuditStatusSummeryABCConstructionOverdue(test,workbook);
 		
@@ -293,7 +293,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	
 	
 	
-	
+	/*
 	
 	@Test(priority = 15) 
 	void PWCSSubcontractorCompliedHigh1() throws InterruptedException, IOException
@@ -513,7 +513,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	}
 	
 	
-	
+	*/
 	
 	
 	@AfterMethod

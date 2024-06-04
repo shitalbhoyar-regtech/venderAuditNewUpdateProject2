@@ -661,6 +661,34 @@ public class Locator2  extends BasePage{
 		return UpcomingCountDashboard;
 	}
 	
+	public static WebElement ViewDocument()		//Method for searching Username input
+	{
+		UpcomingCountDashboard = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[1]"));
+		return UpcomingCountDashboard;
+	}
+
+	public static WebElement OuterFrame()		//Method for searching Username input
+	{
+		UpcomingCountDashboard = getDriver().findElement(By.xpath("//iframe[@class='k-content-frame']"));
+		return UpcomingCountDashboard;
+	}
+
+	
+	public static WebElement InnerFrame()		//Method for searching Username input
+	{
+		UpcomingCountDashboard = getDriver().findElement(By.xpath("//div[@id='doccontrol']//iframe[@src]"));
+		return UpcomingCountDashboard;
+	}
+
+	public static WebElement Downloadbutton()		//Method for searching Username input
+	{
+		UpcomingCountDashboard = getDriver().findElement(By.xpath("//span[@id='downloadButton']"));
+		return UpcomingCountDashboard;
+	}
+
+	
+	
+	
 	public static WebElement UpcomingCountGrid()		//Method for searching Username input
 	{
 		UpcomingCountGrid = getDriver().findElement(By.xpath("//span[@class='k-pager-info k-label']"));
@@ -1030,11 +1058,18 @@ public class Locator2  extends BasePage{
 	return EditButtonnPendingReview;
     }
 	
+	public static WebElement PendingReviewview()		//Method for searching Username input
+	{
+		EditButtonnPendingReview = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[1]"));
+	return EditButtonnPendingReview;
+    }
+
+	
 	
 	
 	public static WebElement PWSCompliedJKHills()		//Method for searching Username input
 	{
-		PWSCompliedJKHills = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan']"));
+		PWSCompliedJKHills = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"));
 	return PWSCompliedJKHills;
     }
 	
@@ -1162,7 +1197,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement SelectLocationDropDownDocument()		//Method for searching Username input
 	{
-		SelectLocationDropDownDocument = getDriver().findElement(By.xpath("(//span[.='Demo'])[2]"));
+		SelectLocationDropDownDocument = getDriver().findElement(By.xpath("(//span[.='VCA Customer Audit'])[5]"));
 	return SelectLocationDropDownDocument;
     }
 	
@@ -1305,7 +1340,7 @@ public class Locator2  extends BasePage{
     
     public static WebElement MonthReportDD()		//Method for searching Username input
    	{
-    	MonthReportDD = getDriver().findElement(By.xpath("//li[.='Aug 23']"));
+    	MonthReportDD = getDriver().findElement(By.xpath("//li[.='Oct 22']"));
    	 return MonthReportDD;
    	}
     

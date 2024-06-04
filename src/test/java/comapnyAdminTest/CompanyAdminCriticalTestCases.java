@@ -94,7 +94,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	
 	
 	
-	
+	/*
 
 	
 	@Test(priority = 1) 
@@ -162,7 +162,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-	
+	*/
 	
 	@Test(priority = 7) 
 	void DeleteSubEntity1() throws InterruptedException, IOException
@@ -175,7 +175,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-	
+	/*
 	
 	 @Test(priority = 4) 
 	 void DeleteE() throws InterruptedException, IOException
@@ -230,7 +230,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-	
+
 	
 	@Test(priority = 11) 
 	void UserResetPass2() throws InterruptedException, IOException
@@ -366,7 +366,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	
 	
 	
-	
+	*/
 	
 	@Test(priority = 20) 
 	void AddProject1() throws InterruptedException, IOException         
@@ -405,7 +405,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-	
+	/*
 	
 	
 	@Test(priority = 23) 
@@ -528,7 +528,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	}
 	
 	
-	
+	*/
 	@Test(priority = 32) 
 	void UploadContractorProjectMapping1() throws InterruptedException, IOException
 	{
@@ -581,7 +581,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-     	@Test(priority = 36) 
+    	@Test(priority = 36) 
 		void DeleteLicenceC1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Contractor Master - Delete Licence Verification");
@@ -594,7 +594,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 37) 
+    	@Test(priority = 37) 
 		void DeleteContractorCT1() throws InterruptedException, IOException             
 		{
 			test = extent.startTest(" Contractor Master - Delete Contractor Verification");
@@ -618,12 +618,12 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		
+		/*
 	
 		@Test(priority = 39) 
 		void ClearAC1() throws InterruptedException, IOException
 		{
-			test = extent.startTest("Act And Compliance master - Clear Button Verification");
+			test = extent.startTest("Act And Compliance master - Act - Clear Button Verification");
 			
 			CriticalMethod.ClearAC(test,workbook);
 			
@@ -631,7 +631,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		
+		*/
 		
 		@Test(priority = 40) 
 		void UpdateActAndCompliance1() throws InterruptedException, IOException
@@ -644,7 +644,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		
+		/*
 
 			
 		@Test(priority = 41) 
@@ -658,7 +658,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		
+	
 		
 		@Test(priority = 42) 
 		void UploadActAndCompliance1() throws InterruptedException, IOException
@@ -676,7 +676,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		@Test(priority = 43) 
 		void AddCompliance1() throws InterruptedException, IOException
 		{
-			test = extent.startTest(" Act And Compliance master - Add Compliance For Central Verification");
+			test = extent.startTest(" Act And Compliance master - Add Compliance For Statutory Verification");
 			
 			CriticalMethod.AddCompliance(test,workbook);
 			
@@ -685,11 +685,24 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
+		@Test(priority = 43) 
+		void AddComplianceForInternal() throws InterruptedException, IOException
+		{
+			test = extent.startTest(" Act And Compliance master - Add Compliance For Internal Verification");
+			
+			CriticalMethod.AddComplianceForInternal(test,workbook);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+
+		
+		*/
 	
 		@Test(priority = 44) 
 		void UpdateComplianceAC1() throws InterruptedException, IOException
 		{
-			test = extent.startTest(" Act And Compliance master - Update Compliance For State Verification");
+			test = extent.startTest(" Act And Compliance master - Update Compliance Verification");
 			
 			CriticalMethod.UpdateComplianceAC(test,workbook);
 			
@@ -697,7 +710,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		
+		/*
 		
 		@Test(priority = 45) 
 		void DeleteCompliance1() throws InterruptedException, IOException
@@ -716,7 +729,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		@Test(priority = 46) 
 		void ComplianceClearButton1() throws InterruptedException, IOException
 		{
-			test = extent.startTest(" Act And Compliance master - Compliance Clear Button Verification");
+			test = extent.startTest(" Act And Compliance master - Compliance - Clear Button Verification");
 			
 			CriticalMethod.ComplianceClearButton(test,workbook);
 			
@@ -726,16 +739,31 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 47) 
+    	@Test(priority = 47) 
 		void UploadCompliance1() throws InterruptedException, IOException
 		{
-			test = extent.startTest(" Act And Compliance master -Compliance - File Upload Verification");
+			test = extent.startTest(" Act And Compliance master -Compliance - for statutory -File Upload Verification");
 			
 			CriticalMethod.UploadCompliance(test,workbook);
 			
 			extent.endTest(test);
 			extent.flush();
 		}
+		
+		
+		
+		@Test(priority = 47) 
+		void UploadComplianceInternal() throws InterruptedException, IOException
+		{
+			test = extent.startTest(" Act And Compliance master -Compliance - for Internal -File Upload Verification");
+			
+			CriticalMethod.UploadComplianceInternal(test,workbook);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+
+		
 		
 	
 		@Test(priority = 48) 
@@ -749,9 +777,22 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		
-		
 		@Test(priority = 49) 
+		void ComplianceCombinedFormUpload() throws InterruptedException, IOException
+		{
+			test = extent.startTest(" Act And Compliance master - Compliance - upload combined form Verification");
+			
+			CriticalMethod.ComplianceCombinedFormUpload(test,workbook);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+
+		
+		
+		
+		
+		@Test(priority = 50) 
 		void TemplateClearButton1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Act And Compliance master - Template Clear Button Verification");
@@ -982,7 +1023,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
-		
+		*/
 		
 		@Test(priority = 68) 
 		void AddNewCompliance1() throws InterruptedException, IOException
@@ -994,7 +1035,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.endTest(test);
 			extent.flush();
 		}
-		
+		/*
 		
 		@Test(priority = 69) 
 		void UpdateCompliencesFTab1() throws InterruptedException, IOException
@@ -1045,7 +1086,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		
+		*/
 		
 		@Test(priority = 73)                                                
 		void UploadCMFTab1() throws InterruptedException, IOException
@@ -1058,7 +1099,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		
+		/*
 		
 		@Test(priority = 74) 
 		void ViewIconCM1() throws InterruptedException, IOException
@@ -1072,7 +1113,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		
+		*/
 		
 		@Test(priority = 75)                                               
 		void AuditSchedule1() throws InterruptedException, IOException
@@ -1086,7 +1127,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
-		
+		/*
 		
 		@Test(priority = 76) 
 		void ClearButtonAS1() throws InterruptedException, IOException
@@ -1202,7 +1243,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		
+	*/
 		
 		
 	
