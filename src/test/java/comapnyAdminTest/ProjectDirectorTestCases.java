@@ -23,6 +23,7 @@ import companyManagement.Method5;
 import companyProjectDirector.CriticalMethod4;
 import companyProjectDirector.Locator4;
 import companyProjectDirector.Method4;
+import companyProjectHead.CriticalMethod3;
 import companyProjectHead.Locator3;
 import companyProjectHead.Method3;
 import login.BasePage;
@@ -40,26 +41,26 @@ public class ProjectDirectorTestCases extends BasePage{
 	public static XSSFSheet sheet = null;		//Sheet variable
 	public static List<WebElement> elementsList = null;
 	
-	/*
+	
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		
-		fis = new FileInputStream("E:\\\\VenderAuditProject\\\\TestData\\\\TestData.xlsx");
+		fis = new FileInputStream("E:\\VenderAuditProject\\TestData\\TestData.xlsx");
 		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(4);					//Retrieving second sheet of Workbook
 		return sheet;
 	}
-	*/
+	
 	@BeforeTest
 
 	void setBrowser() throws Exception
 	{
 		
 		extent = new com.relevantcodes.extentreports.ExtentReports("E:\\VenderAuditProject\\Reports\\VCACompanyProjectDirector.html",true);
-		test = extent.startTest("Verify OpenBrowser");
+		test = extent.startTest("Logging In - Project Director Login (Non-Critical)");
 		
-		test.log(LogStatus.PASS, "Test Passed - Project Director Login.");
+		test.log(LogStatus.PASS, "Test Passed ");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -68,14 +69,14 @@ public class ProjectDirectorTestCases extends BasePage{
 	void Login() throws InterruptedException, IOException
 	{
 		initialization("company",4);
-	/*
+	
 		XSSFSheet sheet = ReadExcel();
 		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String URL = c1.getStringCellValue();			//Got the URL stored at position 0,1
-		
+		/*
 		login.Login.BrowserSetup(URL);	
-
+*/
 	
 		Row row1 = sheet.getRow(1);						//Selected 1st index row (Second row)
 		Cell c2 = row1.getCell(1);						//Selected cell (1 row,1 column)
@@ -84,7 +85,7 @@ public class ProjectDirectorTestCases extends BasePage{
 		Row row2 = sheet.getRow(2);						//Selected 2nd index row (Third row)
 		Cell c3 = row2.getCell(1);						//Selected cell (2 row,1 column)
 		String password = c3.getStringCellValue();		//Got the URL stored at position 2,1
-		
+		/*
 		 = login.Login.UserLogin(uname,password,"company");		//Method of Login class to login user.
 		*/
 	}
@@ -97,6 +98,18 @@ public class ProjectDirectorTestCases extends BasePage{
 		test = extent.startTest("Dashboard Tab - Location Popup verification");
 		
 		CriticalMethod4.LocationPopupColumnist(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
+	@Test(priority = 1) 
+	void LocationPopupCompliance1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Dashboard Tab - Compliance Box verification");
+		
+		CriticalMethod4.LocationPopupCompliance(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -346,7 +359,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 20) 
 	void CTWCompliedgreen1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Complied Status' Count Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary - 'Complied Status' Count Verification");
 		
 		CriticalMethod4.CTWCompliedgreen(test,workbook);
 		
@@ -359,7 +372,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 21) 
 	void CTWCompliedgreen11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contractor Type Wise - Compliance Status Summary - Complied Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary - Complied Status - Multiple Filter Verification");
 		
 		Method4.CTWCompliedgreen1(test,workbook);
 		
@@ -374,7 +387,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 22) 
 	void CTWNotCompliedRed1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Not Complied Status' Count Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary - 'Not Complied Status' Count Verification");
 		
 		CriticalMethod4.CTWNotCompliedRed(test,workbook);
 		
@@ -387,7 +400,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 23) 
 	void CTWNotCompliedRed11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contractor Type Wise - Compliance Status Summary - Not Complied Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary - Not Complied Status - Multiple Filter Verification");
 		
 		Method4.CTWNotCompliedRed1(test,workbook);
 		
@@ -396,13 +409,10 @@ public class ProjectDirectorTestCases extends BasePage{
 	}
 	
 	
-
-
-	
 	@Test(priority = 24) 
 	void CTWNotApplicableGrey1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Not Applicable Status' Count Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary - 'Not Applicable Status' Count Verification");
 		
 		CriticalMethod4.CTWNotApplicableGrey(test,workbook);
 		
@@ -414,7 +424,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 25) 
 	void CTWNotApplicableGrey11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contractor Type Wise - Compliance Status Summary - Not Applicable Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary - Not Applicable Status - Multiple Filter Verification");
 		
 		Method4.CTWNotApplicableGrey1(test,workbook);
 		
@@ -427,7 +437,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 26) 
 	void CTWAuditStatusSummeryOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Audit Status Summary - Count Verification' Count Verification");
+		test = extent.startTest("Stake Holder Wise - Audit Status Summary Count Verification");
 		
 		CriticalMethod4.CTWAuditStatusSummeryOverdue(test,workbook);
 		
@@ -436,13 +446,13 @@ public class ProjectDirectorTestCases extends BasePage{
 	}
 	
 	
-	/*
+	
 	@Test(priority = 27) 
 	void CTWAuditStatusSummaryOverdue11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contractor Type Wise - Audit Status Summary - Overdue Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Audit Status Summary - Overdue Status - Multiple Filter Verification");
 		
-		Method4.CTWAuditStatusSummaryOverdue1(test,workbook);
+		Method4.CTWAuditStatusSummeryOverduen(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -453,9 +463,9 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 28) 
 	void CTWAuditStatusSummaryPendingReview11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contractor Type Wise - Audit Status Summary - Pending Review Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Audit Status Summary - Pending Review Status - Multiple Filter Verification");
 		
-		Method4.CTWAuditStatusSummaryPendingReview1(test,workbook);
+		Method4.CTWAuditStatusSummeryPendingReviewn(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -467,22 +477,22 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 29) 
 	void CTWAuditStatusSummaryCompletedStatus1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contractor Type Wise - Audit Status Summary - Completed Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Audit Status Summary - Completed Status - Multiple Filter Verification");
 		
-		Method4.CTWAuditStatusSummaryCompletedStatus(test,workbook);
+		Method4.CTWAuditStatusSummeryClosed(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-	*/
+	
 	
 	@Test(priority = 30) 
 	void PWCSSABCConstructionCompliedHigh1() throws InterruptedException, IOException
 	{
 		
 	//	WebWait wait = new WebWait( 1000);
-		Thread.sleep(26000);
+		Thread.sleep(000);
 		
 		Thread.sleep(2000);
 		
@@ -494,7 +504,7 @@ public class ProjectDirectorTestCases extends BasePage{
 		String t = Locator4.PWCSSABCConstructionComplied().getText();
 		Thread.sleep(2000);
 		
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Complied Status - Project - " + t + " Count Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Complied Status - Project - " + t + " Count Verification");
 		
 		CriticalMethod4.PWCSSABCConstructionCompliedHigh(test,workbook);
 		
@@ -507,7 +517,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 31) 
 	void PWCSCompliedGraphMultipleFilterHigh11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary -Complied Status - High Risk  - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary -Complied Status - High Risk  - Multiple Filter Verification");
 		
 		Method4.PWCSCompliedGraphMultipleFilterHigh1(test,workbook);
 		
@@ -517,10 +527,10 @@ public class ProjectDirectorTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 32) 
+    @Test(priority = 32) 
 	void PWCSSCompliedGraphMultipleFilterMedium1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary -Complied Status - Medium Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary -Complied Status - Medium Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSCompliedGraphMultipleFilterMedium(test,workbook);
 		
@@ -534,7 +544,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 33) 
 	void PWCSSCompliedGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary -Complied Status - Low Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary -Complied Status - Low Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSCompliedGraphMultipleFilterLow(test,workbook);
 		
@@ -562,7 +572,7 @@ public class ProjectDirectorTestCases extends BasePage{
 		String t = Locator4.PWCSSABCConstructionComplied().getText();
 		Thread.sleep(2000);
 
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Complied Status - Project - " + t + " Count Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Complied Status - Project - " + t + " Count Verification");
 		
 		CriticalMethod4.PWCSSABCconstructionNotCompliedHigh(test,workbook);
 		
@@ -574,7 +584,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 35) 
 	void PWCSSNotCompliedGraphMultipleFilterHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Complied Status - High Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Complied Status - High Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSNotCompliedGraphMultipleFilterHigh(test,workbook);
 		
@@ -587,7 +597,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 36) 
 	void PWCSSNotCompliedGraphMultipleFilterMedium1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Complied Status - Medium Risk  - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Complied Status - Medium Risk  - Multiple Filter Verification");
 		
 		Method4.PWCSSNotCompliedGraphMultipleFilterMedium(test,workbook);
 		
@@ -601,7 +611,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 37) 
 	void PWCSSNotCompliedGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Complied Status - Low Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Complied Status - Low Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSNotCompliedGraphMultipleFilterLow(test,workbook);
 		
@@ -627,7 +637,7 @@ public class ProjectDirectorTestCases extends BasePage{
 		String t = Locator4.PWCSSABCConstructionComplied().getText();
 		Thread.sleep(2000);
 
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Applicable Status - Project - " + t + " Count Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Applicable Status - Project - " + t + " Count Verification");
 		
 		CriticalMethod4.PWCSSABCconstructionNotApplicableHigh(test,workbook);
 		
@@ -639,7 +649,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 39) 
 	void PWCSNotApplicableHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Applicable Status - High Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Applicable Status - High Risk - Multiple Filter Verification");
 		
 		Method4.PWCSNotApplicableHigh(test,workbook);
 		
@@ -652,7 +662,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 40) 
 	void PWCSNotApplicableGraphmedium1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Applicable Status - Medium Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Applicable Status - Medium Risk - Multiple Filter Verification");
 		
 		Method4.PWCSNotApplicableGraphmedium(test,workbook);
 		
@@ -665,7 +675,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 41) 
 	void PWCSSNotApplicableGraphLow1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Applicable Status - Low Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Applicable Status - Low Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSNotApplicableGraphLow(test,workbook);
 		
@@ -680,7 +690,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 42) 
 	void PWAuditStatusSummeryABCConstructionOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Audit Status Summary - 'PRI Update -Project ' Count Verification");
+		test = extent.startTest("Facility Wise - Audit Status Summary - 'Geet Heritage ' Count Verification");
 		
 		CriticalMethod4.PWAuditStatusSummeryABCConstructionOverdue(test,workbook);
 		
@@ -689,20 +699,20 @@ public class ProjectDirectorTestCases extends BasePage{
 	}
 	
 	
-	/*
+	
 	
 	@Test(priority = 43) 
 	void PWAuditStatusSummaryABCConstructionOverdue11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Chart - Project Wise - Audit Status Summary - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Audit Status Summary - Multiple Filter Verification");
 		
-		Method4.PWAuditStatusSummaryABCConstructionOverdue1(test,workbook);
+		Method4.PWAuditStatusSummeryABCConstructionOverduep(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 
-		*/
+	
 	
 	
 	@Test(priority = 44) 
@@ -721,7 +731,7 @@ public class ProjectDirectorTestCases extends BasePage{
 		String t = Locator4.RudraHeritage().getText();
 		Thread.sleep(6000);
 		
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - " + t + " Complied Status Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - " + t + " Complied Status Verification");
 		
 		Method4.PWCSSubcontractorCompliedHigh(test,workbook);
 		
@@ -734,7 +744,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 45) 
 	void PWCSSubContractorCompliedHighmultipleFilter1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - Complied Status - High Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - Complied Status - High Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSubContractorCompliedHighmultipleFilter(test,workbook);
 		
@@ -748,7 +758,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 46) 
 	void PWCSSubContractorCompliedMediummultipleFilter1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - Complied Status - Medium Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - Complied Status - Medium Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSubContractorCompliedMediummultipleFilter(test,workbook);
 		
@@ -762,7 +772,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 47) 
 	void PWCSSubContractorCompliedLowmultipleFilter() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - Complied Status - Low Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - Complied Status - Low Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSubContractorCompliedLowmultipleFilter(test,workbook);
 		
@@ -791,7 +801,7 @@ public class ProjectDirectorTestCases extends BasePage{
 		String t = Locator4.RudraHeritage().getText();
 		Thread.sleep(6000);
 		
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - " + t + " Not Complied Status Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - " + t + " Not Complied Status Verification");
 				
 		Method4.PWCSSubcontractorNotCompliedHigh(test,workbook);
 		
@@ -805,7 +815,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 49) 
 	void PWCSSubContractorNotCompliedHighmultipleFilter1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - Not Complied - High Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - Not Complied - High Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSubContractorNotCompliedHighmultipleFilter(test,workbook);
 		
@@ -819,7 +829,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 50) 
 	void PWCSSubContractorNotCompliedMediummultipleFilter1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - Not Complied - Medium Risk Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - Not Complied - Medium Risk Multiple Filter Verification");
 		
 		Method4.PWCSSubContractorNotCompliedMediummultipleFilter(test,workbook);
 		
@@ -832,7 +842,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 51) 
 	void PWCSSubContractorNotCompliedLowmultipleFilter1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - Not Complied - Low Risk Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - Not Complied - Low Risk Multiple Filter Verification");
 		
 		Method4.PWCSSubContractorNotCompliedLowmultipleFilter(test,workbook);
 		
@@ -860,7 +870,7 @@ public class ProjectDirectorTestCases extends BasePage{
 		String t = Locator4.RudraHeritage().getText();
 		Thread.sleep(6000);
 		
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - " + t + " Not Applicable Status Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - " + t + " Not Applicable Status Verification");
 		
 		Method4.PWCSSubcontractorNotApplicableHigh(test,workbook);
 		
@@ -873,7 +883,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 53) 
 	void PWCSSubContractorNotApplicableHighmultipleFilter1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - Not Applicable Status - High Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - Not Applicable Status - High Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSubContractorNotApplicableHighmultipleFilter(test,workbook);
 		
@@ -888,7 +898,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 54) 
 	void PWCSSubContractorNotApplicableMediummultipleFilter1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - Not Applicable Status - Medium Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - Not Applicable Status - Medium Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSubContractorNotApplicableMediummultipleFilter(test,workbook);
 		
@@ -902,7 +912,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	@Test(priority = 55) 
 	void PWCSSubContractorNotApplicableLowmultipleFilter1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - Not Applicable Status - Low Risk - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Summary (Sub Contractor) - Not Applicable Status - Low Risk - Multiple Filter Verification");
 		
 		Method4.PWCSSubContractorNotApplicableLowmultipleFilter(test,workbook);
 		
@@ -961,7 +971,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	{
 		test = extent.startTest("Document Tab - Clear Button Verification");
 		
-		CriticalMethod4.DocumentClearButton(test,workbook);
+		Method3.DocumentClearButton(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -974,7 +984,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	{
 		test = extent.startTest("Document Tab - Multiple Filter Verification");
 		
-		Method4.DocumentTabMultipleFilter(test,workbook);
+		Method3.DocumentTabMultipleFilter(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -1030,7 +1040,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	{
 		test = extent.startTest("Report Tab - More Report Button Verification");
 		
-		CriticalMethod4.MoreReportDownload(test,workbook);
+		Method3.MoreReportDownload(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -1077,7 +1087,7 @@ public class ProjectDirectorTestCases extends BasePage{
 	}
 	
 
-	@Test(priority = 68) 
+//	@Test(priority = 68) 
 	void WorkspaceTaskFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Multiple Filter Verification");

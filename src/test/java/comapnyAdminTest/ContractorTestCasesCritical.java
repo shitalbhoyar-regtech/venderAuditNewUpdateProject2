@@ -19,6 +19,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import companyAdmin.CriticalMethod;
 import companyContractor.Locator1;
 import companyContractor.Method1;
 import login.BasePage;
@@ -745,10 +746,72 @@ public class ContractorTestCasesCritical extends BasePage {
 	}
 	
 	
+	@Test(priority = 47) 
+	void MyWorkspaceLicense1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - Audit and License Tab Verification ");
+		
+		Method1.MyWorkspaceLicense(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 48) 
+	void MyWorkspaceLicenseSearch1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - License tab Verification ");
+		
+		Method1.MyWorkspaceLicenseSearch(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+
+	
+	@Test(priority = 50) 
+	void MyWorkspaceRenewLicense() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - Renew License Verification ");
+		
+		Method1.MyWorkspaceRenewLicense(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+    @Test(priority = 51) 
+	void MyWorkspacePreviousDocumentView1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - License Tab - Previous Document Viewed Verification ");
+		
+		Method1.MyWorkspacePreviousDocumentView(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+
+//	@Test(priority = 52) 
+	void MyWorkspaceResendForApproval1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - Rejected License Resend for Approval Verification ");
+		
+		Method1.MyWorkspaceResendForApproval(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
 	
 	
-	@Test(priority =47) 
+	
+	
+	
+	
+	@Test(priority =52) 
 	void ClearButtonDocument1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Document Tab - Clear Button Verification ");
@@ -761,7 +824,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	
 	
 	
-	@Test(priority =48) 
+	@Test(priority =53) 
 	void ViewButtonDocuments1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Document Tab - View Button Verification ");
@@ -774,7 +837,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	
 	
 	
-	@Test(priority =49) 
+	@Test(priority =54) 
 	void DownloadDocument1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Document Tab - Download Button Verification ");
@@ -787,12 +850,12 @@ public class ContractorTestCasesCritical extends BasePage {
 	
 	
 	
-	@Test(priority =50) 
+	@Test(priority =55) 
 	void DownloadMultipleDocument() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Document Tab - Multiple File Download Verification ");
 		
-		Method1.DownloadDocument(test,workbook);
+		Method1.DownloadMultipleDocument(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -800,7 +863,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	
 	
 	
-	@Test(priority =51) 
+	@Test(priority =56) 
 	void ExportReportReport1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Report Tab - Export Button Verification ");
@@ -812,8 +875,19 @@ public class ContractorTestCasesCritical extends BasePage {
 	}
 	
 	
+	@Test(priority =57) 
+		void ActionColReportDownload1() throws InterruptedException, IOException
+		{
+			test = extent.startTest(" Report Tab - Action Column - File Download Verification  ");
+			
+			CriticalMethod.ActionColReportDownload(test,workbook);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 	
-	@Test(priority =52) 
+	
+	@Test(priority =58) 
 	void MoreReportDownload1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Report Tab - More Report Button Verification ");
@@ -825,7 +899,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	}
 	
 	
-	@Test(priority =53 ) 
+	@Test(priority =59 ) 
 	void ClearButtonReport1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Report Tab - Clear Button Verification ");

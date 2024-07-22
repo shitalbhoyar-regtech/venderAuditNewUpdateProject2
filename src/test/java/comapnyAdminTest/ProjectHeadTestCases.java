@@ -59,9 +59,9 @@ public class ProjectHeadTestCases extends BasePage{
 	{
 		
 		extent = new com.relevantcodes.extentreports.ExtentReports("E:\\VenderAuditProject\\Reports\\VCACompanyProjectHead.html",true);
-		test = extent.startTest("Verify OpenBrowser");
+		test = extent.startTest("Logging in - Project Head - Non Critical.");
 		
-		test.log(LogStatus.PASS, "Test Passed - Project Head Login.");
+		test.log(LogStatus.PASS, "Test Passed ");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -282,7 +282,7 @@ public class ProjectHeadTestCases extends BasePage{
 	
 
 	
-	@Test(priority = 15) 
+    @Test(priority = 15) 
 	void NotApplicableGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Applicable Status - Low Risk - Multiple Filter Verification");
@@ -349,10 +349,10 @@ public class ProjectHeadTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 20) 
+    @Test(priority = 20) 
 	void CTWCompliedgreen1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Complied Status' Count Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary - 'Complied Status' Count Verification");
 		
 		Method3.CTWCompliedgreen(test,workbook);
 		
@@ -366,7 +366,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 21) 
 	void CTWCompliedgreen11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - Complied Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary - Complied Status - Multiple Filter Verification");
 		
 		Method3.CTWCompliedgreen1(test,workbook);
 		
@@ -378,7 +378,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 22) 
 	void CTWNotCompliedRed1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Not Complied Status' Count Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary - 'Not Complied Status' Count Verification");
 		
 		Method3.CTWNotCompliedRed(test,workbook);
 		
@@ -390,7 +390,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 23) 
 	void CTWNotCompliedRed11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contractor Type Wise - Compliance Status Summary - Not Complied Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary- Not Complied Status - Multiple Filter Verification");
 		
 		Method3.CTWNotCompliedRed1(test,workbook);
 		
@@ -402,7 +402,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 24) 
 	void CTWNotApplicableGrey1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Not Applicable Status' Count Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary - 'Not Applicable Status' Count Verification");
 		
 		Method3.CTWNotApplicableGrey(test,workbook);
 		
@@ -414,7 +414,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 25) 
 	void CTWNotApplicableGrey11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contractor Type Wise - Compliance Status Summary - Not Applicable Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Compliance Status Summary - Not Applicable Status - Multiple Filter Verification");
 		
 		Method3.CTWNotApplicableGrey1(test,workbook);
 		
@@ -422,12 +422,12 @@ public class ProjectHeadTestCases extends BasePage{
 		extent.flush();
 	}
 	
-	
+
 	
 	@Test(priority = 26) 
 	void CTWAuditStatusSummeryOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest(" Contractor Type Wise - Audit Status Summary - Construction - Count Verification");
+		test = extent.startTest("Stake Holder Wise - Audit Status Summary - Canteen - Count Verification");
 		
 		Method3.CTWAuditStatusSummeryOverdue(test,workbook);
 		
@@ -440,7 +440,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 27) 
 	void CTWAuditStatusSummeryOverdue11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contractor Type Wise - Audit Status Summary - Overdue Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Audit Status Summary - Overdue Status - Multiple Filter Verification");
 		
 		Method3.CTWAuditStatusSummeryOverdue1(test,workbook);
 		
@@ -452,7 +452,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 28) 
 	void CTWAuditStatusSummeryPendingReview11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contractor Type Wise - Audit Status Summary - Pending Review Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Audit Status Summary - Pending Review Status - Multiple Filter Verification");
 		
 		Method3.CTWAuditStatusSummeryPendingReview1(test,workbook);
 		
@@ -465,7 +465,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 29) 
 	void CTWAuditStatusSummeryClosed1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Contractor Type Wise - Audit Status Summary - Completed Status - Multiple Filter Verification");
+		test = extent.startTest("Stake Holder Wise - Audit Status Summary - Completed Status - Multiple Filter Verification");
 		
 		Method3.CTWAuditStatusSummeryClosed(test,workbook);
 		
@@ -477,7 +477,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 30) 
 	void PWCSSABCConstructionCompliedHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Complied Status - 'Project - Chandragan Construction' Count Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Complied Status - 'Project - Geet Heritage' Count Verification");
 		
 		Method3.PWCSSABCConstructionCompliedHigh(test,workbook);
 		
@@ -490,7 +490,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 31) 
 	void PWCSCompliedGraphMultipleFilterHigh11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary -Complied - High Risk Status - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary -Complied - High Risk Status - Multiple Filter Verification");
 		
 		Method3.PWCSCompliedGraphMultipleFilterHigh1(test,workbook);
 		
@@ -503,7 +503,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 32) 
 	void PWCSSCompliedGraphMultipleFilterMedium1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary -Complied - Medium Risk Status - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary -Complied - Medium Risk Status - Multiple Filter Verification");
 		
 		Method3.PWCSSCompliedGraphMultipleFilterMedium(test,workbook);
 		
@@ -517,7 +517,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 33) 
 	void PWCSSCompliedGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary -Complied - Low Risk Status - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary -Complied - Low Risk Status - Multiple Filter Verification");
 		
 		Method3.PWCSSCompliedGraphMultipleFilterLow(test,workbook);
 		
@@ -529,7 +529,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 34) 
 	void PWCSSABCconstructionNotCompliedHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Complied Status - 'Project - Chandragan Construction' Count Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Complied Status - 'Project - Geet Heritage' Count Verification");
 		
 		Method3.PWCSSABCconstructionNotCompliedHigh(test,workbook);
 		
@@ -541,7 +541,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 35) 
 	void PWCSSNotCompliedGraphMultipleFilterHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Complied - High Risk Status - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Complied - High Risk Status - Multiple Filter Verification");
 		
 		Method3.PWCSSNotCompliedGraphMultipleFilterHigh(test,workbook);
 		
@@ -554,7 +554,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 36) 
 	void PWCSSNotCompliedGraphMultipleFilterMedium1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Complied - Medium Risk Status - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Complied - Medium Risk Status - Multiple Filter Verification");
 		
 		Method3.PWCSSNotCompliedGraphMultipleFilterMedium(test,workbook);
 		
@@ -568,7 +568,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 37) 
 	void PWCSSNotCompliedGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Complied - Low Risk Status - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Complied - Low Risk Status - Multiple Filter Verification");
 		
 		Method3.PWCSSNotCompliedGraphMultipleFilterLow(test,workbook);
 		
@@ -581,7 +581,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 38) 
 	void PWCSSABCconstructionNotApplicableHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Applicable Status - 'Project - Chandragan Construction' Count Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Applicable Status - 'Project - Geet Heritage' Count Verification");
 		
 		Method3.PWCSSABCconstructionNotApplicableHigh(test,workbook);
 		
@@ -593,7 +593,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 39) 
 	void PWCSNotApplicableHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Applicable - High Risk Status - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Applicable - High Risk Status - Multiple Filter Verification");
 		
 		Method3.PWCSNotApplicableHigh(test,workbook);
 		
@@ -606,7 +606,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 40) 
 	void PWCSNotApplicableGraphmedium1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Applicable - Medium Risk Status - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Applicable - Medium Risk Status - Multiple Filter Verification");
 		
 		Method3.PWCSNotApplicableGraphmedium(test,workbook);
 		
@@ -619,7 +619,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 41) 
 	void PWCSSNotApplicableGraphLow1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise - Compliance Status Summary - Not Applicable - Low Risk Status - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Compliance Status Summary - Not Applicable - Low Risk Status - Multiple Filter Verification");
 		
 		Method3.PWCSSNotApplicableGraphLow(test,workbook);
 		
@@ -632,7 +632,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 42) 
 	void PWAuditStatusSummeryABCConstructionOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Audit Status Summary - ' Project - PRI Update ' Count Verification");
+		test = extent.startTest("Facility Wise - Audit Status Summary - ' Project - Geet Heritage ' Count Verification");
 		
 		Method3.PWAuditStatusSummeryABCConstructionOverdue(test,workbook);
 		
@@ -645,7 +645,7 @@ public class ProjectHeadTestCases extends BasePage{
 	@Test(priority = 43) 
 	void PWAuditStatusSummeryABCConstructionOverdue11() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Chart - Project Wise - Audit Status Summary - Multiple Filter Verification");
+		test = extent.startTest("Facility Wise - Audit Status Summary - Multiple Filter Verification");
 		
 		Method3.PWAuditStatusSummeryABCConstructionOverdue1(test,workbook);
 		
@@ -666,7 +666,7 @@ public class ProjectHeadTestCases extends BasePage{
 	    jss.executeScript("window.scrollBy(0,3000)");
 	    Thread.sleep(3000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
 		Thread.sleep(3000);
 		
 		String t = Locator3.RudraHeritage().getText();
@@ -739,7 +739,7 @@ public class ProjectHeadTestCases extends BasePage{
 	    jss.executeScript("window.scrollBy(0,3000)");
 	    Thread.sleep(3000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
 		Thread.sleep(3000);
 			
 		String t = Locator3.RudraHeritage().getText();
@@ -807,7 +807,7 @@ public class ProjectHeadTestCases extends BasePage{
 	    jss.executeScript("window.scrollBy(0,3000)");
 	    Thread.sleep(3000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
 		Thread.sleep(3000);
 		
 		String t = Locator3.RudraHeritage().getText();

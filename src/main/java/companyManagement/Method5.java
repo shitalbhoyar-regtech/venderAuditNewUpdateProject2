@@ -1502,7 +1502,7 @@ public class Method5 extends BasePage{
 				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
-			    jss.executeScript("window.scrollBy(0,400)");
+			    jss.executeScript("window.scrollBy(0,300)");
 			    Thread.sleep(2000);
 				
 				
@@ -1589,7 +1589,7 @@ public class Method5 extends BasePage{
 				}
 				
 				
-				
+				/*
 				if(Locator5.ACSREDGraphGridExportButton().isEnabled())
 				{
 					
@@ -1604,7 +1604,28 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
+				*/
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}		
+
 				
 				Thread.sleep(4000);
 
@@ -1725,7 +1746,7 @@ public class Method5 extends BasePage{
 					
 				}
 				
-				
+				/*
 				
 				if(Locator5.ACSBlueGraphGridExportButton().isEnabled())
 				{
@@ -1741,6 +1762,29 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
+				*/
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(9000);
+			     Locator5.ACSBlueGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}		
+
+
 				
 				Thread.sleep(4000);
 
@@ -1860,8 +1904,8 @@ public class Method5 extends BasePage{
 					
 				}
 				
-				
-				
+				Thread.sleep(4000);
+				/*
 				if(Locator5.ACSGreenGraphGreedExportButton().isEnabled())
 				{
 					
@@ -1876,7 +1920,29 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
+				*/
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 				
+				Thread.sleep(9000);
+			     Locator5.ACSGreenGraphGreedExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}		
+
+
 				
 				Thread.sleep(4000);
 
@@ -1903,18 +1969,16 @@ public class Method5 extends BasePage{
             {
 				
 				
-				//WebWait wait = new WebWait(, 1000);
-				Thread.sleep(26000);
-				
-				Thread.sleep(2000);
-				
+				WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+				Thread.sleep(9000);
+					
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
 			    jss.executeScript("window.scrollBy(0,800)");
-			    Thread.sleep(2000);
-				
+			    Thread.sleep(4000);
+								
 				Locator5.CTWCompliedGreen().click();
-				Thread.sleep(2000);
+				Thread.sleep(9000);
 				
 				int open = Integer.parseInt(Locator5.CTWCompliedGreenHigh().getText());	//Reading Dashboard count.
 			    Locator5.CTWCompliedGreenHigh().click();					                //Clicking on Dashboard count
@@ -2327,16 +2391,13 @@ public class Method5 extends BasePage{
 			public static void CTWNotCompliedRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 			{
 				
-				
-				//WebWait wait = new WebWait(, 1000);
-				Thread.sleep(26000);
-				
-				Thread.sleep(2000);
-				
+				WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+				Thread.sleep(9000);
+					
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
 			    jss.executeScript("window.scrollBy(0,800)");
-			    Thread.sleep(2000);
+			    Thread.sleep(4000);
 				
 				Locator5.CTWNotCompliedRed().click();
 				Thread.sleep(2000);
@@ -2752,18 +2813,16 @@ public class Method5 extends BasePage{
 			{
 				
 				
-				//WebWait wait = new WebWait(, 1000);
-				Thread.sleep(26000);
-				
-				Thread.sleep(2000);
-				
+				WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+				Thread.sleep(9000);
+					
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
 			    jss.executeScript("window.scrollBy(0,800)");
-			    Thread.sleep(2000);
+			    Thread.sleep(4000);
 				
 				Locator5.CTWNotApplicableGrey().click();
-				Thread.sleep(2000);
+				Thread.sleep(9000);
 				
 				int open = Integer.parseInt(Locator5.CTWNotApplicableHigh().getText());	//Reading Dashboard count.
 			    Locator5.CTWNotApplicableHigh().click();					                //Clicking on Dashboard count
@@ -3173,22 +3232,22 @@ public class Method5 extends BasePage{
 			{
 				
 				
-				//WebWait wait = new WebWait(, 1000);
-				Thread.sleep(26000);
-				
-				
+				WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+				Thread.sleep(9000);
+					
+			  
 				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
 			    jss.executeScript("window.scrollBy(0,1550)");
-			    Thread.sleep(18000);
+			    Thread.sleep(9000);
 				
 				
 				
 				int open = Integer.parseInt(Locator5.CTWOverdueRed().getText());	//Reading Dashboard count.
 			    Locator5.CTWOverdueRed().click();					                //Clicking on Dashboard count
 
-			    Thread.sleep(20000);
+			    Thread.sleep(9000);
 			   
 			    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
 			//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
@@ -3267,7 +3326,7 @@ public class Method5 extends BasePage{
 				}
 				
 				
-				
+				/*
 				if(Locator5.ACSREDGraphGridExportButton().isEnabled())
 				{
 					
@@ -3282,7 +3341,28 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
+				*/
 				
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
 				
 				Thread.sleep(4000);
 
@@ -3404,7 +3484,7 @@ public class Method5 extends BasePage{
 				}
 				
 				
-				
+				/*
 				if(Locator5.ACSBlueGraphGridExportButton().isEnabled())
 				{
 					
@@ -3418,9 +3498,32 @@ public class Method5 extends BasePage{
 				{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
-				}
+				}*/
 				
 				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(9000);
+			     Locator5.ACSBlueGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
+				
+				Thread.sleep(4000);
+				
+				
 
 				getDriver().switchTo().parentFrame();
 				
@@ -3542,7 +3645,7 @@ public class Method5 extends BasePage{
 				}
 				
 				
-				
+				/*
 				if(Locator5.ACSGreenGraphGreedExportButton().isEnabled())
 				{
 					
@@ -3557,9 +3660,32 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
-				
+				*/
 				
 				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(9000);
+			     Locator5.ACSGreenGraphGreedExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
+				
+				Thread.sleep(4000);
+				
+				
 
 				getDriver().switchTo().parentFrame();
 				
@@ -4997,7 +5123,7 @@ public class Method5 extends BasePage{
 				}
 				
 				
-				
+				/*
 				if(Locator5.ACSREDGraphGridExportButton().isEnabled())
 				{
 					
@@ -5012,9 +5138,32 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
-				
+				*/
 				
 				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
+				
+				Thread.sleep(4000);
+				
+			
 
 				getDriver().switchTo().parentFrame();
 				
@@ -5133,7 +5282,7 @@ public class Method5 extends BasePage{
 				}
 				
 				
-				
+				/*
 				if(Locator5.ACSREDGraphGridExportButton().isEnabled())
 				{
 					
@@ -5147,10 +5296,32 @@ public class Method5 extends BasePage{
 				{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
-				}
-				
+				}*/
 				
 				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
+				
+				Thread.sleep(4000);
+				
+				
 
 				getDriver().switchTo().parentFrame();
 				
@@ -5260,7 +5431,7 @@ public class Method5 extends BasePage{
 					
 				}
 				
-				
+				/*
 				
 				if(Locator5.ACSREDGraphGridExportButton().isEnabled())
 				{
@@ -5276,9 +5447,32 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
-				
+				*/
 				
 				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
+				
+				Thread.sleep(4000);
+				
+				
 
 				getDriver().switchTo().parentFrame();
 				
@@ -5334,7 +5528,7 @@ public class Method5 extends BasePage{
 		Locator5.Document().click();
 		Thread.sleep(20000);
 		
-		
+		/*
 		if(Locator3.DocumentDownload().isEnabled())
 		{
 			
@@ -5349,7 +5543,30 @@ public class Method5 extends BasePage{
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
 		
+		Thread.sleep(4000);
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator3.DocumentDownload().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}	
+		
+		Thread.sleep(4000);
 		
 		/*
 		
@@ -5398,7 +5615,7 @@ public class Method5 extends BasePage{
 		
 		
 		
-		
+		/*
 		if(Locator3.DocumentDownload().isEnabled())
 		{
 			
@@ -5413,7 +5630,30 @@ public class Method5 extends BasePage{
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
 		
+		Thread.sleep(4000);
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator3.DocumentDownload().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+		}	
+		
+		Thread.sleep(4000);
 		/*
 		File dir2 = new File("C:\\Users\\Shital Bhoyar\\Downloads");
 		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
@@ -5542,40 +5782,70 @@ public class Method5 extends BasePage{
 		Locator5.Report().click();
 		Thread.sleep(20000);
 		
-		JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-	    
-		 js1.executeScript("window.scrollBy(0,1000)");
-		 Thread.sleep(9000);
-		
-		Locator1.LastPaging().click();
-		Thread.sleep(3000);
-	
-		
-		JavascriptExecutor js2 = (JavascriptExecutor) getDriver();
-	    
-		 js2.executeScript("window.scrollBy(0,-1000)");
-		 Thread.sleep(9000);
-			
-		
-		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		File dir5 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents5 = dir5.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(9000);
-	     Locator5.ReportFileDownload().click();
+	     Locator.ActionColmnReportDownload().click();
 		
 	 	Thread.sleep(18000);
-		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		File dir6 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew6 = dir6.listFiles();						//Counting number of files in directory after download
 		
 	   
-        Thread.sleep(9000);
-	   if (dirContents1.length < allFilesNew1.length) {
-			test.log(LogStatus.PASS,  "Audit Month Compliance Report Download Successfully");
+	    Thread.sleep(9000);
+	   if (dirContents5.length < allFilesNew6.length) {
+			test.log(LogStatus.PASS,  "Excel Format Downloaded Successfully");
 		}
 	   else
 	   {
-			test.log(LogStatus.FAIL, "Audit Month Compliance Report Does Not Download Successfully");
+			test.log(LogStatus.FAIL, "Excel Format Does Not Downloaded Successfully");
+		}		
+
+	   Thread.sleep(1000);
+	   
+	   Locator.Status1().click();
+	   Thread.sleep(500);
+	   Locator.Status1DD().click();
+	   Thread.sleep(500);
+	   
+	   if (Locator.PDFViewandDownload().isEnabled()) {
+		   
+		   Locator.PDFViewandDownload().click();
+		   Thread.sleep(500);
+			test.log(LogStatus.PASS,  "PDF Viewed Successfully");
 		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "PDF Does Not Viewed Successfully");
+		}
+	   Thread.sleep(500);
+	   getDriver().switchTo().frame(Locator.Frame());
+		Thread.sleep(3000);
+	
+		getDriver().switchTo().frame(Locator2.InnerFrame());
+		Thread.sleep(7000);
+		
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator.Downloadasapdf().click();
+		
+	 	Thread.sleep(18000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir1.listFiles();						//Counting number of files in directory after download
+		
+	   
+	    Thread.sleep(9000);
+	   if (dirContents.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "PDF Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "PDF Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(500);
 
 		
 		
@@ -5631,7 +5901,7 @@ public class Method5 extends BasePage{
 		
 		Locator5.ReportMoreReport().click();
 		Thread.sleep(2000);
-		
+		/*
 		if(Locator5.ClosedAuditReport().isEnabled())
 		{
 			
@@ -5646,8 +5916,30 @@ public class Method5 extends BasePage{
 			test.log(LogStatus.FAIL, "  Closed Audit Report Download Successfully "  );
 			
 		}
+		*/
+		Thread.sleep(4000);
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
-		Thread.sleep(2000);
+		Thread.sleep(9000);
+	     Locator5.ClosedAuditReport().click();
+		
+	 	Thread.sleep(18000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "Closed Audit Report Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Closed Audit Report Does Not Downloaded Successfully");
+		}	
+		
+		Thread.sleep(4000);
+		
 		
 		Thread.sleep(2000);
 		Locator5.SelectMonth().click();
@@ -5655,7 +5947,7 @@ public class Method5 extends BasePage{
 		
 		Locator5.SelectMonthDD().click();
 		Thread.sleep(5000);
-		
+		/*
 		if(Locator.MouthCloseReportR().isEnabled())
 		{
 			
@@ -5670,7 +5962,30 @@ public class Method5 extends BasePage{
 			test.log(LogStatus.FAIL, " Month Wise Closed Audit Report Download Successfully"  );
 			
 		}
+		*/
 		
+		Thread.sleep(4000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator.MouthCloseReportR().click();
+		
+	 	Thread.sleep(18000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents.length < allFilesNew.length) {
+			test.log(LogStatus.PASS,  "Month Wise Closed Audit Report Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Month Wise Closed Audit Report Does Not Downloaded Successfully");
+		}	
+		
+		Thread.sleep(4000);
 		
 		
 		/*
@@ -5690,7 +6005,7 @@ public class Method5 extends BasePage{
 		ac.accept();
 		*/
 		
-		
+		/*
 		Thread.sleep(9000);
 		
 		if(Locator5.ComplianceRemarkReport().isEnabled())
@@ -5709,9 +6024,33 @@ public class Method5 extends BasePage{
 		}
 		
 		Thread.sleep(9000);
+		*/
+		
+		Thread.sleep(4000);
+		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents0 = dir0.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator5.ComplianceRemarkReport().click();
+		
+	 	Thread.sleep(18000);
+		File dir11 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew11 = dir11.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents0.length < allFilesNew11.length) {
+			test.log(LogStatus.PASS,  "Compliance Remark Report Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Compliance Remark Report Does Not Downloaded Successfully");
+		}	
+		
+		Thread.sleep(4000);
 		
 
-		
+		/*
 		if(Locator5.AuditReport().isEnabled())
 		{
 			
@@ -5728,7 +6067,30 @@ public class Method5 extends BasePage{
 		}
 		
 		Thread.sleep(2000);
+		*/
 		
+		Thread.sleep(4000);
+		File dir01 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents01 = dir01.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator5.AuditReport().click();
+		
+	 	Thread.sleep(18000);
+		File dir12 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew12 = dir12.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(9000);
+	   if (dirContents01.length < allFilesNew12.length) {
+			test.log(LogStatus.PASS,  "Audit Report Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Audit Report Does Not Downloaded Successfully");
+		}	
+		
+		Thread.sleep(4000);
 		
 		
 	}
@@ -6244,9 +6606,9 @@ public class Method5 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator5.May23().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator5.May23().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
@@ -8296,9 +8658,9 @@ public class Method5 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Feb23().getText();
+    String PeriodText =Locator2.Apr22().getText();
     Thread.sleep(2000);
-    Locator2.Feb23().click();
+    Locator2.Apr22().click();
     Thread.sleep(2000);
    
     
@@ -8504,9 +8866,9 @@ public class Method5 extends BasePage{
  
  Locator2.PeriodFilterCompliedHigh().click();
  Thread.sleep(2000);
- String PeriodText =Locator5.May23().getText();
+ String PeriodText =Locator5.Jun22().getText();
  Thread.sleep(2000);
- Locator5.May23().click();
+ Locator5.Jun22().click();
  Thread.sleep(2000);
 
  
@@ -9084,9 +9446,9 @@ public class Method5 extends BasePage{
 	       
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
-	       String FrequencyText =Locator3.Frequency2().getText();
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
 	       Thread.sleep(2000);
-	       Locator3.Frequency2().click();
+	       Locator3.ReportTabFequencyDD().click();
 	       Thread.sleep(2000);
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
@@ -9279,18 +9641,18 @@ public class Method5 extends BasePage{
 	       
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
-	       String FrequencyText =Locator3.Frequency2().getText();
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
 	       Thread.sleep(2000);
-	       Locator3.Frequency2().click();
+	       Locator3.ReportTabFequencyDD().click();
 	       Thread.sleep(2000);
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator2.Jan24().getText();
+	       String periodtext =Locator2.Jul22().getText();
 	       Thread.sleep(2000);
-	      Locator2.Jan24().click();
+	      Locator2.Jul22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -9489,9 +9851,9 @@ public class Method5 extends BasePage{
        
        Locator3.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
         List<String> li=new ArrayList<String>();
@@ -9682,9 +10044,9 @@ public class Method5 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jan24().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Jan24().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
         
        
@@ -9873,9 +10235,9 @@ public class Method5 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jan24().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Jan24().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
        
@@ -10066,9 +10428,9 @@ public class Method5 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
       
        
@@ -10259,9 +10621,9 @@ public class Method5 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Jul22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.Jul22().click();
        Thread.sleep(2000);
      
        
@@ -10457,9 +10819,9 @@ public class Method5 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
        
        
@@ -10646,9 +11008,9 @@ public class Method5 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.PeriodNA().getText();
+    String PeriodText =Locator5.Jun22().getText();
     Thread.sleep(2000);
-    Locator2.PeriodNA().click();
+    Locator5.Jun22().click();
     Thread.sleep(2000);
    
     
@@ -10837,9 +11199,9 @@ public class Method5 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Mar23().getText();
+    String PeriodText =Locator5.Jun22().getText();
     Thread.sleep(2000);
-    Locator2.Mar23().click();
+    Locator5.Jun22().click();
     Thread.sleep(2000);
   
     
@@ -11024,9 +11386,9 @@ public class Method5 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Mar23().getText();
+    String PeriodText =Locator5.Jun22().getText();
     Thread.sleep(2000);
-    Locator2.Mar23().click();
+    Locator5.Jun22().click();
     Thread.sleep(2000);
     
     
@@ -11206,18 +11568,18 @@ public class Method5 extends BasePage{
 	      
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
-	       String FrequencyText =Locator3.Frequency2().getText();
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
 	       Thread.sleep(2000);
-	       Locator3.Frequency2().click();
+	       Locator3.ReportTabFequencyDD().click();
 	       Thread.sleep(2000);
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator3.Sep23().getText();
+	       String periodtext =Locator5.Sep22().getText();
 	       Thread.sleep(2000);
-	      Locator3.Sep23().click();
+	      Locator5.Sep22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -11423,18 +11785,18 @@ Thread.sleep(3000);
 	       
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
-	       String FrequencyText =Locator3.Frequency2().getText();
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
 	       Thread.sleep(2000);
-	       Locator3.Frequency2().click();
+	       Locator3.ReportTabFequencyDD().click();
 	       Thread.sleep(2000);
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator2.Mar23().getText();
+	       String periodtext =Locator5.Jun22().getText();
 	       Thread.sleep(2000);
-	      Locator2.Mar23().click();
+	      Locator5.Jun22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -11629,18 +11991,18 @@ Thread.sleep(3000);
 	       
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
-	       String FrequencyText =Locator3.Frequency2().getText();
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
 	       Thread.sleep(2000);
-	       Locator3.Frequency2().click();
+	       Locator3.ReportTabFequencyDD().click();
 	       Thread.sleep(2000);
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator2.Jan24().getText();
+	       String periodtext =Locator2.Apr22().getText();
 	       Thread.sleep(2000);
-	      Locator2.Jan24().click();
+	      Locator2.Apr22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -13686,9 +14048,9 @@ Thread.sleep(3000);
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
         
        Locator5.Triangle().click();
@@ -13902,9 +14264,9 @@ Thread.sleep(3000);
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jan24().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Jan24().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
        Locator5.Triangle().click();
@@ -14111,9 +14473,9 @@ Thread.sleep(3000);
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator5.May23().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator5.May23().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
        Locator5.Triangle().click();
@@ -14322,9 +14684,9 @@ Thread.sleep(3000);
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jan24().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator2.Jan24().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
      
        Locator5.Triangle().click();
@@ -14536,9 +14898,9 @@ Thread.sleep(3000);
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator5.Feb23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator5.Feb23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
      
        Locator5.Triangle().click();
@@ -14753,9 +15115,9 @@ Thread.sleep(3000);
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator5.Feb23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator5.Feb23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
        
        Locator5.Triangle().click();
@@ -14968,9 +15330,9 @@ Thread.sleep(3000);
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Jan24().getText();
+    String PeriodText =Locator5.Jun22().getText();
     Thread.sleep(2000);
-    Locator2.Jan24().click();
+    Locator5.Jun22().click();
     Thread.sleep(2000);
   
     Locator5.Triangle().click();
@@ -15182,9 +15544,9 @@ Thread.sleep(3000);
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Mar23().getText();
+    String PeriodText =Locator5.Jun22().getText();
     Thread.sleep(2000);
-    Locator2.Mar23().click();
+    Locator5.Jun22().click();
     Thread.sleep(2000);
   
     Locator5.Triangle().click();
@@ -15393,9 +15755,9 @@ Thread.sleep(3000);
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Mar23().getText();
+    String PeriodText =Locator5.Jun22().getText();
     Thread.sleep(2000);
-    Locator2.Mar23().click();
+    Locator5.Jun22().click();
     Thread.sleep(2000);
   
     Locator5.Triangle().click();
@@ -16424,18 +16786,18 @@ Thread.sleep(3000);
 	       
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
-	       String FrequencyText =Locator3.Frequency2().getText();
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
 	       Thread.sleep(2000);
-	       Locator3.Frequency2().click();
+	       Locator3.ReportTabFequencyDD().click();
 	       Thread.sleep(2000);
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator2.Mar23().getText();
+	       String periodtext =Locator2.Apr22().getText();
 	       Thread.sleep(2000);
-	      Locator2.Mar23().click();
+	      Locator2.Apr22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -16607,7 +16969,257 @@ Thread.sleep(3000);
     }
 	
 	
+	public static void MyWorkspaceLicense( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator4.LicenseTab().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='leftdocumentmenu']"))); 
+			Thread.sleep(1000);
+			
+	if(Locator4.LicenseTab().isDisplayed()) {
+				
+				test.log(LogStatus.PASS, "License tab should be seen below the dashboard tab.");
+			}else {
+				
+				test.log(LogStatus.FAIL, "Audit and License tab should not be below the dashboard tab.");
+				
+			}
+		
+		    
+			Locator4.LicenseTab().click();
+			Thread.sleep(3000);
+		   
+			
+	}
 	
+	public static void MyWorkspaceLicenseSearch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='leftdocumentmenu']"))); 
+			Thread.sleep(1000);
+			
+			Locator4.LicenseTab().click();
+			Thread.sleep(3000);
+		  
+			Locator1.Serach().sendKeys("AK Heights");
+			Thread.sleep(3000);
+		   if(Locator1.Clear().isEnabled()) {
+			   Thread.sleep(2000);
+			   Locator1.Clear().click();
+				Thread.sleep(2000);
+				test.log(LogStatus.PASS, "Clear button working properly");
+
+		   }
+		   else
+		   {
+			   test.log(LogStatus.PASS, "Clear button does not working properly");
+		   }
+			
+		   Thread.sleep(1000);
+		   Method5.LicenceGridAndExcelCount(test,workbook);
+		   
+		   /*
+			File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			Locator1.Export().click();
+			
+		 	Thread.sleep(9000);
+			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		  
+	        Thread.sleep(3000);
+		   if (dirContents1.length < allFilesNew1.length) {
+				test.log(LogStatus.PASS,  "Excel Report download successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL,  "Excel Report does not download successfully");
+			}
+*/
+		   Thread.sleep(2000);
+          if(Locator1.viewlicensedocument().isEnabled()) {
+			   
+        	  Thread.sleep(2000);
+			   Locator1.viewlicensedocument().click();
+				Thread.sleep(2000);
+				test.log(LogStatus.PASS, "Licence document viewed successfully");
+
+		   }
+		   else
+		   {
+			   test.log(LogStatus.PASS, "Licence document does not viewed");
+		   }
+		   
+          Thread.sleep(2000);
+          
+          getDriver().switchTo().frame(Locator1.OuterFrame());
+          Thread.sleep(1000);
+          getDriver().switchTo().frame(Locator1.InnerFrame());
+          
+			File dir = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			Locator1.Download1().click();
+			
+		 	Thread.sleep(9000);
+			File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		  
+	        
+		   if (dirContents.length < allFilesNew.length) {
+				test.log(LogStatus.PASS,  "License document download successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL,  "License document does not download successfully");
+			}
+		   Thread.sleep(1000);
+		   
+		   
+	}
+
+	
+	
+	public static void LicenceGridAndExcelCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        
+        Thread.sleep(3000);
+        Locator.readTotalItems1().click();
+		String item = Locator.readTotalItems1().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+	
+		if(compliancesCount.equalsIgnoreCase("to"))
+		{
+			Thread.sleep(5000);
+		   item = Locator.readTotalItems1().getText();
+			bits = item.split(" ");
+        
+		}
+		
+        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+        
+        js1.executeScript("window.scrollBy(0,-1000)");
+        Thread.sleep(2000);
+ 		
+		Thread.sleep(4000);
+ 
+        File dir9 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] dirContents9 = dir9.listFiles();						//Counting number of files in directory before download
+ 		
+ 		Thread.sleep(3000);
+ 		Locator1.Export().click();
+ 		
+ 	 	Thread.sleep(9000);
+ 		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] allFilesNew0 = dir0.listFiles();						//Counting number of files in directory after download
+ 	  
+        Thread.sleep(3000);
+ 	   if (dirContents9.length < allFilesNew0.length) {
+ 			test.log(LogStatus.PASS,  " Excel Report Download Successfully");
+ 		}
+ 	   else
+ 	   {
+ 		 	test.log(LogStatus.FAIL, "  Excel Report Does Not Download Successfully "   );
+
+ 		}   
+ 	   Thread.sleep(4000);
+
+		
+		
+	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\License Report .xlsx");
+	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);
+	
+	//int rowCount = sheet.getLastRowNum();
+	
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+	
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	
+	
+	System.out.println("Row Count in column  " + columnNumber + ": " + actualRow);
+	
+	workbook.close();
+	fis.close();
+	
+	if(count1 == actualRow)
+	{
+		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+	
+	Thread.sleep(2000);
+	
+	String fis1 = "C:\\Users\\shitalb\\Downloads\\License Report .xlsx";
+	
+	File file = new File(fis1);
+	  
+	 if(file.exists()) {
+		 
+		 if(file.delete())
+		 {
+		 
+		 System.out.println("File deleted Successfully.");
+	     }
+		 
+	 }
+	 else {
+		 
+		 System.out.println("File does not exist Successfully.");
+	 }
+	 
+	 Thread.sleep(2000);
+     
+	    
+	}
+	
+	
+
 	
 	
 	

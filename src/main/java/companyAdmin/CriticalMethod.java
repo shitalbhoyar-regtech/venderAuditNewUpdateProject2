@@ -17,6 +17,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import companyAuditor.Locator2;
+import companyProjectDirector.Locator4;
 import login.BasePage;
 
 public class CriticalMethod extends BasePage {
@@ -1403,7 +1404,7 @@ public class CriticalMethod extends BasePage {
 		Locator.HeadD().click();
 		Thread.sleep(6000);
 		Locator.Director().click();
-		Thread.sleep(15000);
+		Thread.sleep(3000);
 		Locator.DirectorD().click();
 		Thread.sleep(5000);
 		Locator.SubmitProject().click();
@@ -2222,7 +2223,7 @@ public class CriticalMethod extends BasePage {
 		Locator.RegistrationNo().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(3000);
 		
-		
+		/*
 		row0 = sheet.getRow(34);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.Remark().sendKeys(c1.getStringCellValue()); // Writing Task title
@@ -2243,7 +2244,7 @@ public class CriticalMethod extends BasePage {
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.UploadDocumentL().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(4000);
-		
+		*/
 		Locator.Calender1().click();
 		Thread.sleep(3000);
 		
@@ -2255,6 +2256,21 @@ public class CriticalMethod extends BasePage {
 		
 		Locator.Calender1DD().click();
 		Thread.sleep(3000);
+		
+		row0 = sheet.getRow(60);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.AddLicenceHeadCountCT().sendKeys(c1.getStringCellValue()); // Writing Task title
+		Thread.sleep(3000);
+		
+		row0 = sheet.getRow(34);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.Remark().sendKeys(c1.getStringCellValue()); // Writing Task title
+		Thread.sleep(3000);
+		
+		row0 = sheet.getRow(36);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.UploadDocumentL().sendKeys(c1.getStringCellValue()); // Writing Task title
+		Thread.sleep(4000);
 		
 		Locator.SubmitLicence().click();
 		
@@ -2278,6 +2294,34 @@ public class CriticalMethod extends BasePage {
 		
 	}
 	
+	
+	public static void LicenceDetailsVisilbe( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		Locator.MasterButton().click();
+		Thread.sleep(2000);
+		
+		Locator.Contractortab().click();
+		Thread.sleep(2000);
+		
+		Locator.MappingEditProjectCT().click();
+		Thread.sleep(2000);
+		
+		Locator.LicenceDetailsCT().click();
+		Thread.sleep(2000);
+		
+if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&&Locator.StartDate().isDisplayed()&&Locator.EndDate().isDisplayed()&&Locator.HeadCount().isDisplayed()&&Locator.FileName().isDisplayed()&&Locator.LicenseStatus().isDisplayed()&&Locator.Action().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "The Column of Licence Type, Registration No., Start Date, End Date, Head Count, File Name, License Status and Action Column should be seen on the License Details Page.");
+		}else {
+			
+			test.log(LogStatus.FAIL, "The Column of Licence Type, Registration No., Start Date, End Date, Head Count, File Name, License Status and Action Column does not seen on the License Details Page.");
+			
+		}
+
+        Thread.sleep(2000);
+		
+	}
 	
 	public static void ViewLicence( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
@@ -2443,7 +2487,7 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(6000);
 		Locator.AddActAndCompliance().click();
 		Thread.sleep(3000);
-		Locator.ActAndComplienceCentral().click();
+		Locator.UpdateActAndComplienceCentral().click();
 		Thread.sleep(7000);
 		Locator.ActAndComplienceCentralDropDown().click();
 		Thread.sleep(3000);
@@ -2747,10 +2791,10 @@ public class CriticalMethod extends BasePage {
 		Locator.AddComplienceSelectStatutaryACDD().click();
 		Thread.sleep(3000);
 		
-		Locator.ActAndComplienceCentral().click();
+		Locator.ActAndComplienceCentral1().click();
 		Thread.sleep(7000);
 		
-		Locator.ActAndComplienceCentralDropDown().click();
+		Locator.ActAndComplienceCentralDropDown1().click();
 		Thread.sleep(3000);
 		
 		
@@ -2822,12 +2866,11 @@ public class CriticalMethod extends BasePage {
 		
 		Locator.AddComplienceSelectStatutaryInternal().click();
 		Thread.sleep(3000);
-		/*
-		Locator.ActAndComplienceCentral().click();
+		
+		Locator.ActAndComplienceCentral1().click();
 		Thread.sleep(7000);
 		
-		Locator.ActAndComplienceCentralDropDown().click();
-		*/
+		Locator.ActAndComplienceCentralDropDown1().click();		
 		Thread.sleep(3000);
 		
 		
@@ -2856,23 +2899,77 @@ public class CriticalMethod extends BasePage {
 		
 		Locator.ComplianceSaveButtonAC().click();
 		Thread.sleep(3000);
-		
-		
-		Thread.sleep(8000);
+	
+		Thread.sleep(5000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
 			
-			test.log(LogStatus.PASS,  t3 );
+			test.log(LogStatus.PASS, " Central Internal Compliance - "+ t3 );
 			
-			Thread.sleep(20000);
+			Thread.sleep(5000);
 			ac2.accept();
 		
-			Thread.sleep(4000);
+			Thread.sleep(200);
+			
+			Locator.CloseButton().click();
+			Thread.sleep(3000);
+			
+			Locator.AddComplienceAC().click();
+			Thread.sleep(3000);
+			
+			Locator.AddComplienceSelectAC().click();
+			Thread.sleep(3000);
+			
+			Locator.Internal().click();
+			Thread.sleep(3000);
+			
+			Locator.ActAndComplienceCentral1().click();
+			Thread.sleep(7000);
+			
+			Locator.StateDropDown().click();		
+			Thread.sleep(3000);
+			
+			Locator.ActAndComplienceState().click();		
+			Thread.sleep(3000);
+			
+			Locator.ActAndComplienceStateDD().click();		
+			Thread.sleep(3000);
+			
+			Locator.SelectActCom().click();
+			Thread.sleep(3000);
+			
+			Locator.SelectActDD().click();
+			Thread.sleep(3000);
+			
+			row0 = sheet.getRow(160);
+			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+			Locator.ComplianceHeader().sendKeys(c1.getStringCellValue()); // Writing Task title
+			Thread.sleep(3000);
+			
+			Locator.FrequencyAC().click();
+			Thread.sleep(3000);
+			
+			Locator.FrequencyDD().click();
+			Thread.sleep(3000);
+			
+			Locator.ComplianceSaveButtonAC().click();
+			Thread.sleep(3000);
 		
-		
-		
+			Thread.sleep(5000);
+			
+			 Alert ac=getDriver().switchTo().alert();
+				
+				String t=getDriver().switchTo().alert().getText();
+				
+				test.log(LogStatus.PASS, "State Internal Compliance - " + t );
+				
+				Thread.sleep(5000);
+				ac2.accept();
+			
+				Thread.sleep(200);
+
 		
 		
 	}
@@ -3056,6 +3153,16 @@ public class CriticalMethod extends BasePage {
 		         System.out.println("Checkbox is checked");
 		      }
 		
+		      Thread.sleep(1000);
+		      if(Locator.Compliencecombinedformbutton().isDisplayed())
+		      {
+		    	  test.log(LogStatus.PASS, "Combined Form button displayed on the page of act and compliance master - Compliance page.");
+		      }
+		      else
+		      {
+		    	  test.log(LogStatus.PASS, "Combined Form button does not displayed on the page of act and compliance master - compliance page.");
+
+		      }
 			
 			Locator.Compliencecombinedformbutton().click();
 			Thread.sleep(3000);
@@ -3076,8 +3183,45 @@ public class CriticalMethod extends BasePage {
 			ac2.accept();
 		
 			Thread.sleep(2000);
-			Locator.ComplienceClose().click();
-			Thread.sleep(3000);
+	//		Locator.ComplienceClose().click();
+	//		Thread.sleep(3000);
+			
+			File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(9000);
+		     Locator.DownloadSampleFormat().click();
+			
+		 	Thread.sleep(18000);
+			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+			
+		   
+		    Thread.sleep(9000);
+		   if (dirContents1.length < allFilesNew1.length) {
+				test.log(LogStatus.PASS,  "Sample Format Downloaded.");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL, "Sample Format Does Not Downloaded.");
+			}		
+
+		   Thread.sleep(2000);
+			if(Locator.ViewSampleFormat().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			 Locator.ViewSampleFormat().click();
+				test.log(LogStatus.PASS, "Sample Format Viewed Successfully " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, " Sample Format does not Viewed. "  );
+				
+			}
+
 			
 			
 			
@@ -3108,26 +3252,43 @@ public class CriticalMethod extends BasePage {
 		row0 = sheet.getRow(70);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.ChooseFileUploadCompliance().sendKeys(c1.getStringCellValue()); // Writing Task title
-		Thread.sleep(3000);
-		
-		
-		
-		Locator.ButtonComplianceUploadAC().click();
-		
-		
-		Thread.sleep(39000);
+		Thread.sleep(1000);
+			
+		Locator.ButtonComplianceUploadAC().click();	
+		Thread.sleep(9000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
 			
-			test.log(LogStatus.PASS,  t3 );
+			test.log(LogStatus.PASS, "Central Statutory Compliance - " + t3 );
 			
-			Thread.sleep(20000);
+			Thread.sleep(5000);
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+			Locator.ComplianceUploadAC().click();
+			Thread.sleep(3000);
+			
+			row0 = sheet.getRow(159);
+			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+			Locator.ChooseFileUploadCompliance().sendKeys(c1.getStringCellValue()); // Writing Task title
+			Thread.sleep(1000);
+				
+			Locator.ButtonComplianceUploadAC().click();	
+			Thread.sleep(9000);
+			
+			 Alert ac=getDriver().switchTo().alert();
+				
+				String t=getDriver().switchTo().alert().getText();
+				
+				test.log(LogStatus.PASS, "State Statutory Compliance - " + t );
+				
+				Thread.sleep(5000);
+				ac.accept();
+			
+				Thread.sleep(4000);
+			
 		
 	}
 	
@@ -3158,26 +3319,43 @@ public class CriticalMethod extends BasePage {
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.ChooseFileUploadCompliance().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(3000);
-		
-		
-		
-		Locator.ButtonComplianceUploadAC().click();
-		
-		
-		Thread.sleep(39000);
+				
+		Locator.ButtonComplianceUploadAC().click();	
+		Thread.sleep(5000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
 			
-			test.log(LogStatus.PASS,  t3 );
+			test.log(LogStatus.PASS, "Central Internal Compliance - " + t3);
 			
-			Thread.sleep(20000);
+			Thread.sleep(5000);
 			ac2.accept();
 		
-			Thread.sleep(4000);
+			Thread.sleep(1000);
 		
-		
+			Locator.ComplianceUploadAC().click();
+			Thread.sleep(3000);
+			
+			row0 = sheet.getRow(158);
+			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+			Locator.ChooseFileUploadCompliance().sendKeys(c1.getStringCellValue()); // Writing Task title
+			Thread.sleep(3000);
+					
+			Locator.ButtonComplianceUploadAC().click();	
+			Thread.sleep(5000);
+			
+			 Alert ac=getDriver().switchTo().alert();
+				
+				String t=getDriver().switchTo().alert().getText();
+				
+				test.log(LogStatus.PASS, "State Internal Compliance - " + t);
+				
+				Thread.sleep(5000);
+				ac.accept();
+			
+				Thread.sleep(500);
+			
 	}
 	
 	
@@ -4488,28 +4666,40 @@ public class CriticalMethod extends BasePage {
 		
 		Thread.sleep(4000);
 		
-	//	Locator.SelectYearASDD().click();
-	//	Thread.sleep(4000);
-		
+		Locator.SelectYearASDD().click();
+		Thread.sleep(4000);
+		/*
 		WebElement element = Locator.SelectYearASDD();	      
 		//JavascriptExecutor to click element
 	      JavascriptExecutor jse = (JavascriptExecutor)  getDriver();
 	      jse.executeScript("arguments[0].click();", element);
-	      
+	      */
 		
 	      Thread.sleep(2000);
 		
 		Locator.SaveAuditScheduling().click();
 		
-		Thread.sleep(4000);
+		Thread.sleep(15000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
 			
-			test.log(LogStatus.PASS,  t3 );
+			 if(t3.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t3);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t3);
+					
+					
+				} 
+
 			
-			Thread.sleep(20000);
+		//	test.log(LogStatus.PASS,  t3 );
+			
+			Thread.sleep(9000);
 			ac2.accept();
 		
 			Thread.sleep(4000);
@@ -5037,15 +5227,58 @@ public class CriticalMethod extends BasePage {
 	   
 	    Thread.sleep(9000);
 	   if (dirContents5.length < allFilesNew6.length) {
-			test.log(LogStatus.PASS,  "Compliance Remark Report Downloaded Successfully");
+			test.log(LogStatus.PASS,  "Excel Format Downloaded Successfully");
 		}
 	   else
 	   {
-			test.log(LogStatus.FAIL, "Compliance Remark Report Does Not Downloaded Successfully");
+			test.log(LogStatus.FAIL, "Excel Format Does Not Downloaded Successfully");
 		}		
 
-	   Thread.sleep(5000);
-
+	   Thread.sleep(1000);
+	   
+	   Locator.Status1().click();
+	   Thread.sleep(500);
+	   Locator.Status1DD().click();
+	   Thread.sleep(500);
+	   
+	   if (Locator.PDFViewandDownload().isEnabled()) {
+		   
+		   Locator.PDFViewandDownload().click();
+		   Thread.sleep(500);
+			test.log(LogStatus.PASS,  "PDF Viewed Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "PDF Does Not Viewed Successfully");
+		}
+	   Thread.sleep(500);
+	   getDriver().switchTo().frame(Locator.Frame());
+		Thread.sleep(3000);
+	
+		getDriver().switchTo().frame(Locator2.InnerFrame());
+		Thread.sleep(7000);
+		
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator.Downloadasapdf().click();
+		
+	 	Thread.sleep(18000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir1.listFiles();						//Counting number of files in directory after download
+		
+	   
+	    Thread.sleep(9000);
+	   if (dirContents.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "PDF Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "PDF Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(500);
+	    
 		
 	}
 

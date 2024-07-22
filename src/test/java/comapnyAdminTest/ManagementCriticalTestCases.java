@@ -177,7 +177,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 7) 
 	void CTWCompliedgreen1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Complied Status' Count Verification");
+		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - Canteen - 'Complied Status' Count Verification");
 		
 		Method5.CTWCompliedgreen(test,workbook);
 		
@@ -190,7 +190,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 8) 
 	void CTWNotCompliedRed1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Not Complied Status' Count Verification");
+		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - Canteen - 'Not Complied Status' Count Verification");
 		
 		Method5.CTWNotCompliedRed(test,workbook);
 		
@@ -202,7 +202,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 9) 
 	void CTWNotApplicableGrey1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Not Applicable Status' Count Verification");
+		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - Canteen - 'Not Applicable Status' Count Verification");
 		
 		Method5.CTWNotApplicableGrey(test,workbook);
 		
@@ -217,7 +217,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 10) 
 	void CTWAuditStatusSummeryOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Contractor Type Wise - Audit Status Summary - Count Verification");
+		test = extent.startTest("Bar Graph - Stake Holder Wise - Audit Status Summary - Canteen - Count Verification");
 		
 		Method5.CTWAuditStatusSummeryOverdue(test,workbook);
 		
@@ -232,7 +232,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 11) 
 	void PWCSSABCConstructionCompliedHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Complied Status - 'Project - Creation Construction' Count Verification");
+		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Complied Status - Geet Heritage - Count Verification");
 		
 		Method5.PWCSSABCConstructionCompliedHigh(test,workbook);
 		
@@ -245,7 +245,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 12) 
 	void PWCSSABCconstructionNotCompliedHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Complied Status - 'Project - Creation Construction' Count Verification");
+		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Not Complied Status - Geet Heritage - Count Verification");
 		
 		Method5.PWCSSABCconstructionNotCompliedHigh(test,workbook);
 		
@@ -259,7 +259,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 13) 
 	void PWCSSABCconstructionNotApplicableHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Applicable Status - 'Project - Creation Construction' Count Verification");
+		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Not Applicable Status - Geet Heritage - Count Verification");
 		
 		Method5.PWCSSABCconstructionNotApplicableHigh(test,workbook);
 		
@@ -274,7 +274,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	void PWAuditStatusSummeryABCConstructionOverdue1() throws InterruptedException, IOException
 	{
 		
-		test = extent.startTest("Bar Graph - Project Wise - Audit Status Summary - ' Project - Creation Construction ' Count Verification");
+		test = extent.startTest("Bar Graph - Facility Wise - Audit Status Summary - Geet Heritage - Count Verification");
 		
 		Method5.PWAuditStatusSummeryABCConstructionOverdue(test,workbook);
 		
@@ -284,7 +284,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 15) 
+//	@Test(priority = 15) 
 	void PWCSSubcontractorCompliedHigh1() throws InterruptedException, IOException
 	{
 		//WebWait wait = new WebWait( 1000);
@@ -300,7 +300,7 @@ public class ManagementCriticalTestCases extends BasePage {
 		String t = Locator5.RudraHeritage().getText();
 		Thread.sleep(6000);
 		
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - " + t + " Complied Status Verification");
+		test = extent.startTest("Bar Chart - Facility Wise - Compliance Summary (Sub Contractor) - " + t + " Complied Status Verification");
 		
 		Method5.PWCSSubcontractorCompliedHigh(test,workbook);
 		
@@ -310,7 +310,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 16) 
+//	@Test(priority = 16) 
 	void PWCSSubcontractorNotCompliedHigh1() throws InterruptedException, IOException
 	{
 		
@@ -328,7 +328,7 @@ public class ManagementCriticalTestCases extends BasePage {
 		String t = Locator5.RudraHeritage().getText();
 		Thread.sleep(6000);
 		
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - " + t + " Not Complied Status Verification");
+		test = extent.startTest("Bar Chart - Facility Wise - Compliance Summary (Sub Contractor) - " + t + " Not Complied Status Verification");
 				
 		Method5.PWCSSubcontractorNotCompliedHigh(test,workbook);
 		
@@ -338,7 +338,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 17) 
+//	@Test(priority = 17) 
 	void PWCSSubcontractorNotApplicableMedium1() throws InterruptedException, IOException
 	{
 		//WebWait wait = new WebWait( 1000);
@@ -354,7 +354,7 @@ public class ManagementCriticalTestCases extends BasePage {
 		String t = Locator5.RudraHeritage().getText();
 		Thread.sleep(6000);
 		
-		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - " + t + " Not Applicable Status Verification");
+		test = extent.startTest("Bar Chart - Facility Wise - Compliance Summary (Sub Contractor) - " + t + " Not Applicable Status Verification");
 		
 		Method5.PWCSSubcontractorNotApplicableHigh(test,workbook);
 		
@@ -364,7 +364,33 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 18) 
+	@Test(priority = 20) 
+	void MyWorkspaceLicense1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - License tab seen below the dashboard Verification ");
+		
+		Method5.MyWorkspaceLicense(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 21) 
+	void MyWorkspaceLicenseSearch1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("License - License view download Verification ");
+		
+		Method5.MyWorkspaceLicenseSearch(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+
+	
+	
+	
+	@Test(priority = 22) 
 	void DocumentViewButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - View Button Verification");
@@ -381,7 +407,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 19) 
+	@Test(priority = 23) 
 	void DownoloadCompliance1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - Action Columnn - Download Button Verification");
@@ -395,7 +421,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 20) 
+	@Test(priority = 24) 
 	void multipleDownload1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - Multiple File Download Verification");
@@ -408,7 +434,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 21) 
+	@Test(priority = 25) 
 	void DocumentClearButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - Clear Button Verification");
@@ -421,7 +447,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 22) 
+	@Test(priority = 26) 
 	void ExtendReport1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Export Button Verification");
@@ -435,7 +461,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 23) 
+	@Test(priority = 27) 
 	void AuditMonthComplianceReport1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Action Column - File Download Verification");
@@ -449,7 +475,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 24) 
+	@Test(priority = 28) 
 	void ReportClearButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Clear Button Verification");
@@ -464,7 +490,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 25) 
+	@Test(priority = 29) 
 	void MoreReportDownload1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - More Report Button Verification");
@@ -478,7 +504,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 26) 
+	@Test(priority = 30) 
 	void ViewButtonReport1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - View Button Verification");

@@ -3,80 +3,50 @@
 <suite thread-count="2" parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="2" parallel="classes" name="Test(failed)">
     <classes>
-      <class name="comapnyAdminTest.ManagementCriticalTestCases">
-        <methods>
-          <include name="Login"/>
-          <include name="CTWNotApplicableGrey1"/>
-          <include name="DocumentClearButton1"/>
-          <include name="CTWAuditStatusSummeryOverdue1"/>
-          <include name="PWCSSABCConstructionCompliedHigh1"/>
-          <include name="CTWCompliedgreen1"/>
-          <include name="PWAuditStatusSummeryABCConstructionOverdue1"/>
-          <include name="MoreReportDownload1"/>
-          <include name="PWCSSubcontractorNotApplicableMedium1"/>
-          <include name="PWCSSubcontractorNotCompliedHigh1"/>
-          <include name="PWCSSABCconstructionNotCompliedHigh1"/>
-          <include name="setBrowser"/>
-          <include name="GraphCountMatch1"/>
-          <include name="PWCSSubcontractorCompliedHigh1"/>
-          <include name="PWCSSABCconstructionNotApplicableHigh1"/>
-          <include name="GreyInRedCountMtch1"/>
-          <include name="ViewButtonReport1"/>
-          <include name="CTWNotCompliedRed1"/>
-          <include name="browserClosing"/>
-        </methods>
-      </class> <!-- comapnyAdminTest.ManagementCriticalTestCases -->
-      <class name="comapnyAdminTest.ContractorTestCasesCritical">
-        <methods>
-          <include name="Upcomingtransactionandstatuslog1"/>
-          <include name="ClearButtonDocument1"/>
-          <include name="PendingForReviewCountMatch1"/>
-          <include name="UpcomingDownload1"/>
-          <include name="CommentButtonUpcoming1"/>
-          <include name="UpdateOverdue11"/>
-          <include name="PendingReviewAuditLog1"/>
-          <include name="Login"/>
-          <include name="UpcomingDownloadAndViewButton1"/>
-          <include name="UpcomingView1"/>
-          <include name="Rejectedtransactionandstatuslog1"/>
-          <include name="UpcomingAuditLog1"/>
-          <include name="ViewPendingReview1"/>
-          <include name="RejectedDownloadAndViewButton1"/>
-          <include name="UpdateUpcoming1"/>
-          <include name="PendingReviewDownloadAndViewButton1"/>
-          <include name="ComentPendingRewiew1"/>
-          <include name="ViewRejected1"/>
-          <include name="browserClosing"/>
-          <include name="ComentRejected1"/>
-          <include name="setBrowser"/>
-          <include name="RejectedAuditLog1"/>
-          <include name="ViewOverdue1"/>
-          <include name="GraphCountMatch1"/>
-          <include name="PendingRewiewtransactionandstatuslog1"/>
-        </methods>
-      </class> <!-- comapnyAdminTest.ContractorTestCasesCritical -->
       <class name="comapnyAdminTest.AuditorCriticalTestCases">
         <methods>
           <include name="DocumentClearButton1"/>
           <include name="ViewEditPR1"/>
-          <include name="PendingReviewUpdate1"/>
+          <include name="ViewClose1"/>
           <include name="Login"/>
-          <include name="UpdateInEditButton1"/>
-          <include name="RejectedEditButton1"/>
+          <include name="PendingReviewDashboardAndGridCount1"/>
+          <include name="PendingReviewDownload1"/>
+          <include name="Overduetransactionandstatuslog1"/>
           <include name="PWSCompliedHighRisk1"/>
-          <include name="ClosedReviewEditButton1"/>
-          <include name="ViewReportOfCompliance1"/>
-          <include name="OverdueEditButton1"/>
+          <include name="RejectedDashBoardAndGridCount1"/>
+          <include name="AuditCompletionStatusRed1"/>
+          <include name="Closedtransactionandstatuslog1"/>
+          <include name="GraphCountMatchGreen1"/>
+          <include name="MoreReport1"/>
           <include name="setBrowser"/>
-          <include name="PendingForReviewHeadCount1"/>
-          <include name="CommentButtonPR1"/>
+          <include name="ComentClose1"/>
+          <include name="DownloadClosed1"/>
+          <include name="CLosedStatusReopen1"/>
+          <include name="OverdueAuditLog1"/>
+          <include name="ClosedAuditLog1"/>
           <include name="NotApplicableHigh1"/>
-          <include name="UpcomingEditButton1"/>
+          <include name="ClosedDownloadAndViewButton1"/>
+          <include name="GreyInRedCountMtch1"/>
           <include name="PWSNotCompliedHigh1"/>
           <include name="browserClosing"/>
           <include name="ActnColmFileDownld1"/>
         </methods>
       </class> <!-- comapnyAdminTest.AuditorCriticalTestCases -->
+      <class name="comapnyAdminTest.ProjectHeadCriticalTestCases">
+        <methods>
+          <include name="CTWAuditStatusSummeryOverdue1"/>
+          <include name="FileDownload1"/>
+          <include name="PWCSSABCconstructionNotCompliedHigh1"/>
+          <include name="setBrowser"/>
+          <include name="DownloadAndViewButton1"/>
+          <include name="PWCSSABCConstructionCompliedHigh1"/>
+          <include name="CTWNotCompliedRed1"/>
+          <include name="Login"/>
+          <include name="PWCSSABCconstructionNotApplicableHigh1"/>
+          <include name="browserClosing"/>
+          <include name="PWAuditStatusSummeryABCConstructionOverdue1"/>
+        </methods>
+      </class> <!-- comapnyAdminTest.ProjectHeadCriticalTestCases -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

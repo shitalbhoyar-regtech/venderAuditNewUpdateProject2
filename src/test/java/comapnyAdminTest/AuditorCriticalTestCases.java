@@ -758,9 +758,66 @@ public class AuditorCriticalTestCases extends BasePage{
 
 
 
+	
+	@Test(priority = 48) 
+	void MyWorkspaceLicense1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - Audit and License Tab Verification ");
+		
+		Method2.MyWorkspaceLicense(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 49) 
+	void MyWorkspaceLicenseSearch1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - License tab Verification ");
+		
+		Method2.MyWorkspaceLicenseSearch(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	@Test(priority = 50) 
+	void MyWorkspaceLicenseApprove1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - License Approve Verification ");
+		
+		Method2.MyWorkspaceLicenseApprove(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	@Test(priority = 51) 
+	void MyWorkspaceLicenseReject1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - License Reject Verification ");
+		
+		Method2.MyWorkspaceLicenseReject(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 
 	
-//	@Test(priority = 48) 
+	@Test(priority = 52) 
+	void MyWorkspacePreviousDocumentView1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - License Tab - Previous Document Viewed Verification ");
+		
+		Method2.MyWorkspacePreviousDocumentView(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+
+	
+//	@Test(priority = 53) 
 	void PendingForReviewHeadCount1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Pending Review Audit - Head Count Verification");
@@ -774,7 +831,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	
 
 	
-	@Test(priority = 49) 
+	@Test(priority = 54) 
 	void ViewDocument1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - View Button Verification");
@@ -787,7 +844,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 50) 
+	@Test(priority = 55) 
 	void DownloadCompliance1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - Download Button Verification");
@@ -799,7 +856,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 51) 
+	@Test(priority = 56) 
 	void MultipleComplianceDownload1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - Multiple File Download Verification");
@@ -812,7 +869,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 52) 
+	@Test(priority = 57) 
 	void DocumentClearButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - Clear Button Verification");
@@ -824,7 +881,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	}
 	
 	
-   @Test(priority = 53) 
+   @Test(priority = 58) 
 	void ExportReportR1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Export Button Verification");
@@ -837,7 +894,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 54) 
+	@Test(priority = 59) 
 	void ClearButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Clear Button Verification");
@@ -850,7 +907,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 55) 
+	@Test(priority = 60) 
 	void ActnColmFileDownld1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Action Column - File Download Verification");
@@ -863,7 +920,7 @@ public class AuditorCriticalTestCases extends BasePage{
 
 	
 	
-	@Test(priority = 56) 
+	@Test(priority = 61) 
 	void MoreReport1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - More Report Button Verification");
@@ -875,7 +932,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	}
 	
 	
-//	@Test(priority = 57) 
+//	@Test(priority = 62) 
 	void ViewReportOfCompliance1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Project - View Button Verification");

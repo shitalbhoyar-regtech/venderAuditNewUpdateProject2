@@ -94,7 +94,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	
 	
 	
-	/*
+	
 
 	
 	@Test(priority = 1) 
@@ -162,7 +162,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-	*/
+	
 	
 	@Test(priority = 7) 
 	void DeleteSubEntity1() throws InterruptedException, IOException
@@ -175,7 +175,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-	/*
+	
 	
 	 @Test(priority = 4) 
 	 void DeleteE() throws InterruptedException, IOException
@@ -366,7 +366,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	
 	
 	
-	*/
+	
 	
 	@Test(priority = 20) 
 	void AddProject1() throws InterruptedException, IOException         
@@ -405,7 +405,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-	/*
+	
 	
 	
 	@Test(priority = 23) 
@@ -528,7 +528,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	}
 	
 	
-	*/
+	
 	@Test(priority = 32) 
 	void UploadContractorProjectMapping1() throws InterruptedException, IOException
 	{
@@ -552,6 +552,21 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.endTest(test);
 			extent.flush();
 		}
+	   
+	   
+	   
+	   @Test(priority = 33) 
+		void LicenceDetailsVisilbe1() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Contractor Master - Licence grid column Verification ");
+			
+			CriticalMethod.LicenceDetailsVisilbe(test,workbook);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+
+	   
 	   
 	   
 		
@@ -618,7 +633,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		/*
+		
 	
 		@Test(priority = 39) 
 		void ClearAC1() throws InterruptedException, IOException
@@ -631,7 +646,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		*/
+		
 		
 		@Test(priority = 40) 
 		void UpdateActAndCompliance1() throws InterruptedException, IOException
@@ -644,7 +659,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		/*
+		
 
 			
 		@Test(priority = 41) 
@@ -697,7 +712,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 
 		
-		*/
+		
 	
 		@Test(priority = 44) 
 		void UpdateComplianceAC1() throws InterruptedException, IOException
@@ -710,7 +725,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		/*
+		
 		
 		@Test(priority = 45) 
 		void DeleteCompliance1() throws InterruptedException, IOException
@@ -777,6 +792,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
+		
 		@Test(priority = 49) 
 		void ComplianceCombinedFormUpload() throws InterruptedException, IOException
 		{
@@ -788,8 +804,6 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 
-		
-		
 		
 		
 		@Test(priority = 50) 
@@ -1023,7 +1037,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
-		*/
+		
 		
 		@Test(priority = 68) 
 		void AddNewCompliance1() throws InterruptedException, IOException
@@ -1035,7 +1049,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.endTest(test);
 			extent.flush();
 		}
-		/*
+		
 		
 		@Test(priority = 69) 
 		void UpdateCompliencesFTab1() throws InterruptedException, IOException
@@ -1086,7 +1100,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		*/
+		
 		
 		@Test(priority = 73)                                                
 		void UploadCMFTab1() throws InterruptedException, IOException
@@ -1099,7 +1113,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		/*
+		
 		
 		@Test(priority = 74) 
 		void ViewIconCM1() throws InterruptedException, IOException
@@ -1113,7 +1127,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		*/
+		
 		
 		@Test(priority = 75)                                               
 		void AuditSchedule1() throws InterruptedException, IOException
@@ -1127,7 +1141,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
-		/*
+		
 		
 		@Test(priority = 76) 
 		void ClearButtonAS1() throws InterruptedException, IOException
@@ -1207,7 +1221,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		@Test(priority = 82) 
 		void MoreReportR1() throws InterruptedException, IOException
 		{
-			test = extent.startTest(" Report Tab - More Reports - Files Download Verification  ");
+			test = extent.startTest(" Report Tab - More Reports - File Download Verification  ");
 			
 			CriticalMethod.MoreReportR(test,workbook);
 			
@@ -1243,7 +1257,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-	*/
+	
 		
 		
 	

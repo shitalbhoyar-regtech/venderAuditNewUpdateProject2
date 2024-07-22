@@ -52,7 +52,7 @@ public class Method1 extends BasePage{
 		Locator1.Upcoming().click();
 		Thread.sleep(20000);
 		
-		Locator1.UpcomingEditButton().click();
+		Locator1.UpcomingEditButton1().click();
 		Thread.sleep(4000);
 		
         Method2.SwitchToNewlyOpenedWindow(test, workbook);
@@ -828,7 +828,7 @@ public class Method1 extends BasePage{
 		Thread.sleep(20000);
 		
 		
-		Locator1.UpcomingEditButton().click();
+		Locator1.UpcomingEditButton1().click();
 		Thread.sleep(4000);
 		
 		Method2.SwitchToNewlyOpenedWindow(test, workbook);
@@ -939,7 +939,7 @@ public class Method1 extends BasePage{
 		Locator1.Upcoming().click();
 		Thread.sleep(2000);
 		
-		Locator1.UpcomingEditButton().click();
+		Locator1.UpcomingEditButton1().click();
 		Thread.sleep(4000);
 		
 		Method2.SwitchToNewlyOpenedWindow(test, workbook);
@@ -975,7 +975,7 @@ if(Locator1.transactionLog().isDisplayed()&&Locator1.statusLog().isDisplayed()) 
 		Locator1.Upcoming().click();
 		Thread.sleep(2000);
 		
-		Locator1.UpcomingEditButton().click();
+		Locator1.UpcomingEditButton1().click();
 		Thread.sleep(4000);
 		
 		Method2.SwitchToNewlyOpenedWindow(test, workbook);
@@ -1196,13 +1196,13 @@ Thread.sleep(4000);
 	{
 		Thread.sleep(20000);
 		Locator1.Upcoming().click();
-		Thread.sleep(26000);
+		Thread.sleep(10000);
 		
 		
-		Locator1.UpcomingEditButton().click();
+		Locator1.UpcomingEditButton1().click();
 		Thread.sleep(2000);
 		
-         Method2.SwitchToNewlyOpenedWindow(test, workbook);
+  //       Method2.SwitchToNewlyOpenedWindow(test, workbook);
 		
 		Thread.sleep(5000);
 		
@@ -3609,6 +3609,8 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Locator1.DocumentCheckBox().click();
 		
 		Thread.sleep(6000);
+		
+       
 		/*
 		if(Locator1.DocumentDownload().isEnabled())
 		{
@@ -3629,7 +3631,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(9000);
-	     Locator1.DocumentDownload().click();
+	     Locator1.DocumentDownload1().click();
 		
 	 	Thread.sleep(18000);
 		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
@@ -3776,7 +3778,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
 		
 	   
-        Thread.sleep(9000);
+        Thread.sleep(10000);
 	   if (dirContents1.length < allFilesNew1.length) {
 			test.log(LogStatus.PASS,  "Closed Audit Report Download Successfully");
 		}
@@ -3838,7 +3840,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 	   
-        Thread.sleep(9000);
+        Thread.sleep(10000);
 	   if (dirContents.length < allFilesNew.length) {
 			test.log(LogStatus.PASS,  "Month Wise Closed Audit Report File Download Successfully");
 		}
@@ -3877,7 +3879,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			File[] allFilesNewb = dirb.listFiles();						//Counting number of files in directory after download
 			
 		   
-	        Thread.sleep(9000);
+	        Thread.sleep(10000);
 		   if (dirContentsa.length < allFilesNewb.length) {
 				test.log(LogStatus.PASS,  "Compliance Remark Report File Download Successfully");
 			}
@@ -3916,7 +3918,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		File[] allFilesNewd = dird.listFiles();						//Counting number of files in directory after download
 		
 	   
-        Thread.sleep(9000);
+        Thread.sleep(10000);
 	   if (dirContentsc.length < allFilesNewd.length) {
 			test.log(LogStatus.PASS,  "Audit Report Download Sucessfully");
 		}
@@ -11924,9 +11926,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
         
        Locator1.ContractorType().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator1.ContractorTypeDD().getText();
+       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
        Thread.sleep(1000);
-       Locator1.ContractorTypeDD().click();
+       Locator1.ContractorTypeDD1().click();
        Thread.sleep(1000);
        Locator1.ContractorType().click();
        Thread.sleep(2000);
@@ -11957,9 +11959,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator1.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String Periodtext =Locator1.May24().getText();
+       String Periodtext =Locator1.Jun24().getText();
        Thread.sleep(1000);
-       Locator1.May24().click();
+       Locator1.Jun24().click();
        Thread.sleep(2000);
        
 
@@ -12129,60 +12131,70 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Locator1.Overdue().click();
 		Thread.sleep(16000);
 		
-		
-		/*
-		Locator1.EntityLocation().click();
-		Thread.sleep(500);
-		Locator1.EntityLocationExpand().click();
-		Thread.sleep(500);
-		Locator1.EntityLocationExpand().click();
-		Thread.sleep(500);
-      String locationtext =Locator1.EntityLocationExpand1().getText();
-       Thread.sleep(500);
-       Locator1.EntityLocationExpand1().click();
-       Thread.sleep(500);
-       Locator1.EntityLocation().click();
-       Thread.sleep(3000);
-       */
-       
-      
-       
-  //     Locator1.Status().click();
-  //     Thread.sleep(2000);
-       
-       Locator1.Project().click();
-       Thread.sleep(2000);
-       String ProjectText =Locator1.Projecttext3().getText();
-       Thread.sleep(2000);
-       Locator1.Projecttext3().click();
-       Thread.sleep(2000);
-       Locator1.Project().click();
-       Thread.sleep(2000);
-       
-       
-       
-       
-       
-       Locator1.ContractorType().click();
-       Thread.sleep(2000);
-       String ContractorTypeText =Locator1.ContractorTypeDD().getText();
-       Thread.sleep(2000);
-       Locator1.ContractorTypeDD().click();
-       Thread.sleep(2000);
-       Locator1.ContractorType().click();
-       Thread.sleep(2000);
-       
-       
-       
-       
-       Locator1.Frequency().click();
-       Thread.sleep(2000);
-       String FrequencyText =Locator1.FrequencyDD().getText();
-       Thread.sleep(2000);
-       Locator1.FrequencyDD().click();
-       Thread.sleep(2000);
-       Locator1.Frequency().click();
-       Thread.sleep(2000);
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnLocation().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnState().click();
+	       Thread.sleep(2000);
+	 
+		       
+		 Locator1.Location().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD1().click();
+	       Thread.sleep(1000);
+	       String LocationText =Locator1.LocationDD2().getText();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD2().click();
+	       Thread.sleep(1000);
+	       Locator1.Location().click();
+	       Thread.sleep(1000);
+	       
+	       Locator1.State().click();
+	       Thread.sleep(1000);
+	       String StateText =Locator1.StateDD().getText();
+	       Thread.sleep(2000);
+	       Locator1.StateDD().click();
+	       Thread.sleep(1000);
+	       Locator1.State().click();
+	       Thread.sleep(2000);
+
+	       
+    Locator1.Project().click();
+    Thread.sleep(2000);
+    String ProjectText =Locator1.IBPConstruction().getText();
+    Thread.sleep(2000);
+    Locator1.IBPConstruction().click();
+    Thread.sleep(2000);
+    Locator1.Project().click();
+    Thread.sleep(2000);
+     
+    Locator1.ContractorType().click();
+    Thread.sleep(1000);
+    String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+    Thread.sleep(1000);
+    Locator1.ContractorTypeDD1().click();
+    Thread.sleep(1000);
+    Locator1.ContractorType().click();
+    Thread.sleep(2000);
+    
+    
+    
+    
+    Locator1.Frequency().click();
+    Thread.sleep(1000);
+    String FrequencyText =Locator1.FrequencyDD().getText();
+    Thread.sleep(1000);
+    Locator1.FrequencyDD().click();
+    Thread.sleep(1000);
+    Locator1.Frequency().click();
+    Thread.sleep(2000);
        
        Locator1.Status().click();
        Thread.sleep(2000);
@@ -12198,30 +12210,32 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator1.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String Periodtext =Locator1.Mar21().getText();
+       String Periodtext =Locator2.Jul22().getText();
        Thread.sleep(2000);
-       Locator1.Mar21().click();
+       Locator2.Jul22().click();
        Thread.sleep(2000);
   
        
        
         List<String> li=new ArrayList<String>();
         
-      //  li.add(locationtext);
+        li.add(LocationText);
+        li.add(StateText);     
         li.add(ProjectText);
         li.add(ContractorTypeText);
         li.add(FrequencyText);
         li.add(Statustext);
         li.add(Periodtext);
-        
+       
         Thread.sleep(3000);
         
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
-		filter.add("Project");
+		filter.add("Location");
+		filter.add("State");
+		filter.add("Facility");
 		filter.add("ContractorType");
 		filter.add("Frequency");
-		filter.add("Status");	
+		filter.add("Status");
 		filter.add("Period");	
 		
 		
@@ -12236,11 +12250,12 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[4]"));
-		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[9]"));
+		List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[10]"));
+		List<WebElement> statecol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[11]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[9]"));
 		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[8]"));
 
 		
@@ -12253,30 +12268,39 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			HashSet<String> fail=new LinkedHashSet<>();
 			List<WebElement> raw=new ArrayList<WebElement>();
 
-				if(i==0)
-				{
-					raw.addAll(projectcol);
-				}
-			else if(i==1)
-				{
-					raw.addAll(contractorcol);
-				}
-			else if(i==2)
+			if(i==0)
 			{
-				raw.addAll(frequencycol);
+				raw.addAll(entitycol);
 			}
-				
-			else if(i==3)
+		else if(i==1)
 			{
-				raw.addAll(statuscol);
+				raw.addAll(statecol);
 			}
-				
-				
-			else if(i==4)
-			{
-				raw.addAll(periodcol);
-			}
-	
+		else if(i==2)
+		{
+			raw.addAll(projectcol);
+		}
+			
+		else if(i==3)
+		{
+			raw.addAll(contractorcol);
+		}
+			
+		else if(i==4)
+		{
+			raw.addAll(frequencycol);
+		}
+			
+		else if(i==5)
+		{
+			raw.addAll(statuscol);
+		}
+
+		else if(i==6)
+		{
+			raw.addAll(periodcol);
+		}
+
 			for(int k=0;k<raw.size();k++)
 				{
 					text.add(raw.get(k).getText());
@@ -12353,60 +12377,71 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Thread.sleep(16000);
 		
 		
-		/*
-		Locator1.EntityLocation().click();
-		Thread.sleep(500);
-		Locator1.EntityLocationExpand().click();
-		Thread.sleep(500);
-		Locator1.EntityLocationExpand().click();
-		Thread.sleep(500);
-      String locationtext =Locator1.EntityLocationExpand1().getText();
-       Thread.sleep(500);
-       Locator1.EntityLocationExpand1().click();
-       Thread.sleep(500);
-       Locator1.EntityLocation().click();
-       Thread.sleep(3000);
-       */
-       
-      
-       
-  //     Locator1.Status().click();
-  //     Thread.sleep(2000);
-       
-       Locator1.Project().click();
-       Thread.sleep(2000);
-       String ProjectText =Locator1.Projecttext3().getText();
-       Thread.sleep(2000);
-       Locator1.Projecttext3().click();
-       Thread.sleep(2000);
-       Locator1.Project().click();
-       Thread.sleep(2000);
-       
-       
-       
-       
-       
-       Locator1.ContractorType().click();
-       Thread.sleep(2000);
-       String ContractorTypeText =Locator1.ContractorTypeDD().getText();
-       Thread.sleep(2000);
-       Locator1.ContractorTypeDD().click();
-       Thread.sleep(2000);
-       Locator1.ContractorType().click();
-       Thread.sleep(2000);
-       
-       
-       
-       
-       Locator1.Frequency().click();
-       Thread.sleep(2000);
-       String FrequencyText =Locator1.FrequencyDD().getText();
-       Thread.sleep(2000);
-       Locator1.FrequencyDD().click();
-       Thread.sleep(2000);
-       Locator1.Frequency().click();
-       Thread.sleep(2000);
-       
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnLocation().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnState().click();
+	       Thread.sleep(2000);
+	 
+		       
+		 Locator1.Location().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD1().click();
+	       Thread.sleep(1000);
+	       String LocationText =Locator1.LocationDD2().getText();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD2().click();
+	       Thread.sleep(1000);
+	       Locator1.Location().click();
+	       Thread.sleep(1000);
+	       
+	       Locator1.State().click();
+	       Thread.sleep(1000);
+	       String StateText =Locator1.StateDD().getText();
+	       Thread.sleep(2000);
+	       Locator1.StateDD().click();
+	       Thread.sleep(1000);
+	       Locator1.State().click();
+	       Thread.sleep(2000);
+
+	       
+ Locator1.Project().click();
+ Thread.sleep(2000);
+ String ProjectText =Locator1.IBPConstruction().getText();
+ Thread.sleep(2000);
+ Locator1.IBPConstruction().click();
+ Thread.sleep(2000);
+ Locator1.Project().click();
+ Thread.sleep(2000);
+  
+ Locator1.ContractorType().click();
+ Thread.sleep(1000);
+ String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+ Thread.sleep(1000);
+ Locator1.ContractorTypeDD1().click();
+ Thread.sleep(1000);
+ Locator1.ContractorType().click();
+ Thread.sleep(2000);
+ 
+ 
+ 
+ 
+ Locator1.Frequency().click();
+ Thread.sleep(1000);
+ String FrequencyText =Locator1.FrequencyDD().getText();
+ Thread.sleep(1000);
+ Locator1.FrequencyDD().click();
+ Thread.sleep(1000);
+ Locator1.Frequency().click();
+ Thread.sleep(2000);
+        
        Locator1.Status().click();
        Thread.sleep(2000);
        String Statustext =Locator1.Status1Rejected().getText();
@@ -12420,30 +12455,32 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator1.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String Periodtext =Locator2.Jul20().getText();
+       String Periodtext =Locator2.Feb22().getText();
        Thread.sleep(2000);
-       Locator2.Jul20().click();
+       Locator2.Feb22().click();
        Thread.sleep(2000);
  
        
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(ContractorTypeText);
-        li.add(FrequencyText);
-        li.add(Statustext);
-        li.add(Periodtext);
-        
-        Thread.sleep(3000);
-        
+       List<String> li=new ArrayList<String>();
+       
+       li.add(LocationText);
+       li.add(StateText);     
+       li.add(ProjectText);
+       li.add(ContractorTypeText);
+       li.add(FrequencyText);
+       li.add(Statustext);
+       li.add(Periodtext);
+      
+       Thread.sleep(3000);
+       
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
-		filter.add("Project");
+		filter.add("Location");
+		filter.add("State");
+		filter.add("Facility");
 		filter.add("ContractorType");
 		filter.add("Frequency");
-		filter.add("Status");	
+		filter.add("Status");
 		filter.add("Period");	
 		
 		
@@ -12458,11 +12495,12 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[4]"));
-		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[9]"));
+		List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[10]"));
+		List<WebElement> statecol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[11]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[9]"));
 		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[8]"));
 
 		
@@ -12475,28 +12513,38 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			HashSet<String> fail=new LinkedHashSet<>();
 			List<WebElement> raw=new ArrayList<WebElement>();
 
-				if(i==0)
-				{
-					raw.addAll(projectcol);
-				}
-			else if(i==1)
-				{
-					raw.addAll(contractorcol);
-				}
-			else if(i==2)
+			if(i==0)
 			{
-				raw.addAll(frequencycol);
+				raw.addAll(entitycol);
 			}
-				
-			else if(i==3)
+		else if(i==1)
 			{
-				raw.addAll(statuscol);
+				raw.addAll(statecol);
 			}
-				
-			else if(i==4)
-			{
-				raw.addAll(periodcol);
-			}
+		else if(i==2)
+		{
+			raw.addAll(projectcol);
+		}
+			
+		else if(i==3)
+		{
+			raw.addAll(contractorcol);
+		}
+			
+		else if(i==4)
+		{
+			raw.addAll(frequencycol);
+		}
+			
+		else if(i==5)
+		{
+			raw.addAll(statuscol);
+		}
+
+		else if(i==6)
+		{
+			raw.addAll(periodcol);
+		}
 	
 				
 			for(int k=0;k<raw.size();k++)
@@ -12577,54 +12625,70 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Locator1.PendingRewiew().click();
 		Thread.sleep(16000);
 		
-		
-		/*
-		Locator1.EntityLocation().click();
-		Thread.sleep(500);
-		Locator1.EntityLocationExpand().click();
-		Thread.sleep(500);
-		Locator1.EntityLocationExpand().click();
-		Thread.sleep(500);
-      String locationtext =Locator1.EntityLocationExpand1().getText();
-       Thread.sleep(500);
-       Locator1.EntityLocationExpand1().click();
-       Thread.sleep(500);
-       Locator1.EntityLocation().click();
-       Thread.sleep(3000);
-       */
-       
-      
-       
-  //     Locator1.Status().click();
-  //     Thread.sleep(2000);
-       
-       Locator1.Project().click();
-       Thread.sleep(2000);
-       String ProjectText =Locator1.Projecttext3().getText();
-       Thread.sleep(2000);
-       Locator1.Projecttext3().click();
-       Thread.sleep(2000);
-       Locator1.Project().click();
-       Thread.sleep(2000);
-            
-       Locator1.ContractorType().click();
-       Thread.sleep(2000);
-       String ContractorTypeText =Locator1.ContractorTypeDD().getText();
-       Thread.sleep(2000);
-       Locator1.ContractorTypeDD().click();
-       Thread.sleep(2000);
-       Locator1.ContractorType().click();
-       Thread.sleep(2000);
-          
-       Locator1.Frequency().click();
-       Thread.sleep(2000);
-       String FrequencyText =Locator1.FrequencyDD().getText();
-       Thread.sleep(2000);
-       Locator1.FrequencyDD().click();
-       Thread.sleep(2000);
-       Locator1.Frequency().click();
-       Thread.sleep(2000);
-       
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnLocation().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnState().click();
+	       Thread.sleep(2000);
+	 
+		       
+		 Locator1.Location().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD1().click();
+	       Thread.sleep(1000);
+	       String LocationText =Locator1.LocationDD2().getText();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD2().click();
+	       Thread.sleep(1000);
+	       Locator1.Location().click();
+	       Thread.sleep(1000);
+	       
+	       Locator1.State().click();
+	       Thread.sleep(1000);
+	       String StateText =Locator1.StateDD().getText();
+	       Thread.sleep(2000);
+	       Locator1.StateDD().click();
+	       Thread.sleep(1000);
+	       Locator1.State().click();
+	       Thread.sleep(2000);
+
+	       
+Locator1.Project().click();
+Thread.sleep(2000);
+String ProjectText =Locator1.IBPConstruction().getText();
+Thread.sleep(2000);
+Locator1.IBPConstruction().click();
+Thread.sleep(2000);
+Locator1.Project().click();
+Thread.sleep(2000);
+
+Locator1.ContractorType().click();
+Thread.sleep(1000);
+String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+Thread.sleep(1000);
+Locator1.ContractorTypeDD1().click();
+Thread.sleep(1000);
+Locator1.ContractorType().click();
+Thread.sleep(2000);
+
+
+Locator1.Frequency().click();
+Thread.sleep(1000);
+String FrequencyText =Locator1.FrequencyDD().getText();
+Thread.sleep(1000);
+Locator1.FrequencyDD().click();
+Thread.sleep(1000);
+Locator1.Frequency().click();
+Thread.sleep(2000); 
+
+
        Locator1.Status().click();
        Thread.sleep(2000);
        String Statustext =Locator1.Status1PendingReview().getText();
@@ -12639,30 +12703,32 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator1.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String Periodtext =Locator1.Jan20().getText();
+       String Periodtext =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator1.Jan20().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
 
        
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(ContractorTypeText);
-        li.add(FrequencyText);
-        li.add(Statustext);
-        li.add(Periodtext);
-        
-        Thread.sleep(3000);
-        
+       List<String> li=new ArrayList<String>();
+       
+       li.add(LocationText);
+       li.add(StateText);     
+       li.add(ProjectText);
+       li.add(ContractorTypeText);
+       li.add(FrequencyText);
+       li.add(Statustext);
+       li.add(Periodtext);
+      
+       Thread.sleep(3000);
+       
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
-		filter.add("Project");
+		filter.add("Location");
+		filter.add("State");
+		filter.add("Facility");
 		filter.add("ContractorType");
 		filter.add("Frequency");
-		filter.add("Status");	
+		filter.add("Status");
 		filter.add("Period");	
 		
 		
@@ -12677,11 +12743,12 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[4]"));
-		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[9]"));
+		List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[10]"));
+		List<WebElement> statecol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[11]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[9]"));
 		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[8]"));
 
 		
@@ -12694,28 +12761,39 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			HashSet<String> fail=new LinkedHashSet<>();
 			List<WebElement> raw=new ArrayList<WebElement>();
 
-				if(i==0)
-				{
-					raw.addAll(projectcol);
-				}
-			else if(i==1)
-				{
-					raw.addAll(contractorcol);
-				}
-			else if(i==2)
+			if(i==0)
 			{
-				raw.addAll(frequencycol);
+				raw.addAll(entitycol);
 			}
-				
-			else if(i==3)
+		else if(i==1)
 			{
-				raw.addAll(statuscol);
+				raw.addAll(statecol);
 			}
-				
-			else if(i==4)
-			{
-				raw.addAll(periodcol);
-			}
+		else if(i==2)
+		{
+			raw.addAll(projectcol);
+		}
+			
+		else if(i==3)
+		{
+			raw.addAll(contractorcol);
+		}
+			
+		else if(i==4)
+		{
+			raw.addAll(frequencycol);
+		}
+			
+		else if(i==5)
+		{
+			raw.addAll(statuscol);
+		}
+
+		else if(i==6)
+		{
+			raw.addAll(periodcol);
+		}
+	
 
 			for(int k=0;k<raw.size();k++)
 				{
@@ -12794,60 +12872,68 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Locator1.CountMatchClose().click();
 		Thread.sleep(16000);
 		
-		
-		/*
-		Locator1.EntityLocation().click();
-		Thread.sleep(500);
-		Locator1.EntityLocationExpand().click();
-		Thread.sleep(500);
-		Locator1.EntityLocationExpand().click();
-		Thread.sleep(500);
-      String locationtext =Locator1.EntityLocationExpand1().getText();
-       Thread.sleep(500);
-       Locator1.EntityLocationExpand1().click();
-       Thread.sleep(500);
-       Locator1.EntityLocation().click();
-       Thread.sleep(3000);
-       */
-       
-      
-       
-  //     Locator1.Status().click();
-  //     Thread.sleep(2000);
-       
-       Locator1.Project().click();
-       Thread.sleep(2000);
-       String ProjectText =Locator1.Projecttext3().getText();
-       Thread.sleep(2000);
-       Locator1.Projecttext3().click();
-       Thread.sleep(2000);
-       Locator1.Project().click();
-       Thread.sleep(2000);
-       
-       
-       
-       
-       
-       Locator1.ContractorType().click();
-       Thread.sleep(2000);
-       String ContractorTypeText =Locator1.ContractorTypeDD().getText();
-       Thread.sleep(2000);
-       Locator1.ContractorTypeDD().click();
-       Thread.sleep(2000);
-       Locator1.ContractorType().click();
-       Thread.sleep(2000);
-       
-       
-       
-       
-       Locator1.Frequency().click();
-       Thread.sleep(2000);
-       String FrequencyText =Locator1.FrequencyDD().getText();
-       Thread.sleep(2000);
-       Locator1.FrequencyDD().click();
-       Thread.sleep(2000);
-       Locator1.Frequency().click();
-       Thread.sleep(2000);
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnLocation().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnState().click();
+	       Thread.sleep(2000);
+	 
+		       
+		 Locator1.Location().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD1().click();
+	       Thread.sleep(1000);
+	       String LocationText =Locator1.LocationDD2().getText();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD2().click();
+	       Thread.sleep(1000);
+	       Locator1.Location().click();
+	       Thread.sleep(1000);
+	       
+	       Locator1.State().click();
+	       Thread.sleep(1000);
+	       String StateText =Locator1.StateDD().getText();
+	       Thread.sleep(2000);
+	       Locator1.StateDD().click();
+	       Thread.sleep(1000);
+	       Locator1.State().click();
+	       Thread.sleep(2000);
+
+	       
+Locator1.Project().click();
+Thread.sleep(2000);
+String ProjectText =Locator1.IBPConstruction().getText();
+Thread.sleep(2000);
+Locator1.IBPConstruction().click();
+Thread.sleep(2000);
+Locator1.Project().click();
+Thread.sleep(2000);
+
+Locator1.ContractorType().click();
+Thread.sleep(1000);
+String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+Thread.sleep(1000);
+Locator1.ContractorTypeDD1().click();
+Thread.sleep(1000);
+Locator1.ContractorType().click();
+Thread.sleep(2000);
+
+
+Locator1.Frequency().click();
+Thread.sleep(1000);
+String FrequencyText =Locator1.FrequencyDD().getText();
+Thread.sleep(1000);
+Locator1.FrequencyDD().click();
+Thread.sleep(1000);
+Locator1.Frequency().click();
+Thread.sleep(2000); 
        
        Locator1.Status().click();
        Thread.sleep(2000);
@@ -12863,32 +12949,34 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator1.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String Periodtext =Locator1.May20().getText();
+       String Periodtext =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator1.May20().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
 
    
        
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(ContractorTypeText);
-        li.add(FrequencyText);
-        li.add(Statustext);
-        li.add(Periodtext);
-        
-        Thread.sleep(3000);
-        
+      List<String> li=new ArrayList<String>();
+       
+       li.add(LocationText);
+       li.add(StateText);     
+       li.add(ProjectText);
+       li.add(ContractorTypeText);
+       li.add(FrequencyText);
+       li.add(Statustext);
+       li.add(Periodtext);
+      
+       Thread.sleep(3000);
+       
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
-		filter.add("Project");
+		filter.add("Location");
+		filter.add("State");
+		filter.add("Facility");
 		filter.add("ContractorType");
 		filter.add("Frequency");
 		filter.add("Status");
-		filter.add("Period");
+		filter.add("Period");	
 		
 		
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -12902,13 +12990,13 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[4]"));
-		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[9]"));
+		List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[10]"));
+		List<WebElement> statecol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[11]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[9]"));
 		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[8]"));
-
 		
 		Thread.sleep(2000);
 
@@ -12919,30 +13007,39 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			HashSet<String> fail=new LinkedHashSet<>();
 			List<WebElement> raw=new ArrayList<WebElement>();
 
-				if(i==0)
-				{
-					raw.addAll(projectcol);
-				}
-			else if(i==1)
-				{
-					raw.addAll(contractorcol);
-				}
-			else if(i==2)
+			if(i==0)
 			{
-				raw.addAll(frequencycol);
+				raw.addAll(entitycol);
 			}
-				
-			else if(i==3)
+		else if(i==1)
 			{
-				raw.addAll(statuscol);
+				raw.addAll(statecol);
 			}
-				
-			else if(i==4)
-			{
-				raw.addAll(periodcol);
-			}
+		else if(i==2)
+		{
+			raw.addAll(projectcol);
+		}
 			
+		else if(i==3)
+		{
+			raw.addAll(contractorcol);
+		}
 			
+		else if(i==4)
+		{
+			raw.addAll(frequencycol);
+		}
+			
+		else if(i==5)
+		{
+			raw.addAll(statuscol);
+		}
+
+		else if(i==6)
+		{
+			raw.addAll(periodcol);
+		}
+				
 			for(int k=0;k<raw.size();k++)
 				{
 					text.add(raw.get(k).getText());
@@ -13037,6 +13134,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    
 	    getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(10000);
+	    
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+
 	   
        Locator1.Project2().click();
        Thread.sleep(1000);
@@ -13069,14 +13174,22 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        Locator1.RiskFilterComplied().click();
        Thread.sleep(2000);
        
-       
+       Locator1.ContractorType1().click();
+       Thread.sleep(1000);
+       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       Thread.sleep(1000);
+       Locator1.ContractorTypeDD1().click();
+       Thread.sleep(1000);
+       Locator1.ContractorType1().click();
+       Thread.sleep(2000);
+
        
        
        Locator1.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String PeriodText =Locator2.Jan24().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(1000);
-       Locator2.Jan24().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
        
@@ -13084,20 +13197,22 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
         List<String> li=new ArrayList<String>();
         
-      //  li.add(locationtext);
+      
         li.add(ProjectText);
         li.add(Statustext);
         li.add(RiskText);
+        li.add(ContractorTypeText);
         li.add(PeriodText);
        
         
         Thread.sleep(3000);
         
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
+	
 		filter.add("Project");
 		filter.add("Status");
 		filter.add("Risk");
+		filter.add("ContractorType");
 		filter.add("Period");
 			
 		
@@ -13113,11 +13228,11 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
-		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[5]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
 		
 		
 		Thread.sleep(2000);
@@ -13143,6 +13258,10 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			}
 				
 			else if(i==3)
+			{
+				raw.addAll(contractortypecol);
+			}
+			else if(i==4)
 			{
 				raw.addAll(periodcol);
 			}
@@ -13222,6 +13341,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
 	    
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+
+	    
 	       Locator1.Project2().click();
 	       Thread.sleep(2000);
 	       String ProjectText =Locator1.Projecttext3().getText();
@@ -13259,34 +13386,46 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        Thread.sleep(2000);
        
        
-       
+       Locator1.ContractorType1().click();
+       Thread.sleep(1000);
+       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       Thread.sleep(1000);
+       Locator1.ContractorTypeDD1().click();
+       Thread.sleep(1000);
+       Locator1.ContractorType1().click();
+       Thread.sleep(2000);
+
+     
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jan24().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Jan24().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
        
        
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(Statustext);
-        li.add(RiskText);
-        li.add(PeriodText);
        
-        
-        Thread.sleep(3000);
-        
+       List<String> li=new ArrayList<String>();
+       
+     
+       li.add(ProjectText);
+       li.add(Statustext);
+       li.add(RiskText);
+       li.add(ContractorTypeText);
+       li.add(PeriodText);
+      
+       
+       Thread.sleep(3000);
+       
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
+	
 		filter.add("Project");
 		filter.add("Status");
 		filter.add("Risk");
+		filter.add("ContractorType");
 		filter.add("Period");
 			
 		
@@ -13296,17 +13435,17 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Thread.sleep(3000);
 
 		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
-		String s = Locator2.RedGraphGrid().getText();
+		String s = Locator1.RedGraphGrid().getText();
 		Thread.sleep(2000);
 
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
-		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[5]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
 		
 		
 		Thread.sleep(2000);
@@ -13332,6 +13471,10 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			}
 				
 			else if(i==3)
+			{
+				raw.addAll(contractortypecol);
+			}
+			else if(i==4)
 			{
 				raw.addAll(periodcol);
 			}
@@ -13419,7 +13562,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
 	    
-      
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+
+	
      
 	       Locator1.Project2().click();
 	       Thread.sleep(2000);
@@ -13455,34 +13605,44 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        Thread.sleep(2000);
        
        
-       
+       Locator1.ContractorType1().click();
+       Thread.sleep(1000);
+       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       Thread.sleep(1000);
+       Locator1.ContractorTypeDD1().click();
+       Thread.sleep(1000);
+       Locator1.ContractorType1().click();
+       Thread.sleep(2000);
+
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String PeriodText =Locator2.PeriodMediumNC().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(1000);
-       Locator2.PeriodMediumNC().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
        
        
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(Statustext);
-        li.add(RiskText);
-        li.add(PeriodText);
+       List<String> li=new ArrayList<String>();
        
-        
-        Thread.sleep(3000);
-        
+       
+       li.add(ProjectText);
+       li.add(Statustext);
+       li.add(RiskText);
+       li.add(ContractorTypeText);
+       li.add(PeriodText);
+      
+       
+       Thread.sleep(3000);
+       
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
+	
 		filter.add("Project");
 		filter.add("Status");
 		filter.add("Risk");
+		filter.add("ContractorType");
 		filter.add("Period");
 			
 		
@@ -13492,17 +13652,17 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Thread.sleep(3000);
 
 		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
-		String s = Locator2.RedGraphGrid().getText();
+		String s = Locator1.RedGraphGrid().getText();
 		Thread.sleep(2000);
 
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
-		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[5]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
 		
 		
 		Thread.sleep(2000);
@@ -13529,9 +13689,13 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 				
 			else if(i==3)
 			{
+				raw.addAll(contractortypecol);
+			}
+			else if(i==4)
+			{
 				raw.addAll(periodcol);
 			}
-				
+						
 			for(int k=0;k<raw.size();k++)
 				{
 					text.add(raw.get(k).getText());
@@ -13609,6 +13773,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
       
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+
+
 	       
 	       Locator1.Project2().click();
 	       Thread.sleep(2000);
@@ -13646,36 +13818,47 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        Thread.sleep(2000);
        
        
-       
+       Locator1.ContractorType1().click();
+       Thread.sleep(1000);
+       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       Thread.sleep(1000);
+       Locator1.ContractorTypeDD1().click();
+       Thread.sleep(1000);
+       Locator1.ContractorType1().click();
+       Thread.sleep(2000);
+
+ 
        
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(1000);
-       Locator2.Feb23().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
       
        
        
        
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(Statustext);
-        li.add(RiskText);
-        li.add(PeriodText);
+       List<String> li=new ArrayList<String>();
        
-        
-        Thread.sleep(3000);
-        
+       
+       li.add(ProjectText);
+       li.add(Statustext);
+       li.add(RiskText);
+       li.add(ContractorTypeText);
+       li.add(PeriodText);
+      
+       
+       Thread.sleep(3000);
+       
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
+	
 		filter.add("Project");
 		filter.add("Status");
 		filter.add("Risk");
+		filter.add("ContractorType");
 		filter.add("Period");
 			
 		
@@ -13685,17 +13868,17 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Thread.sleep(3000);
 
 		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
-		String s = Locator2.RedGraphGrid().getText();
+		String s = Locator1.RedGraphGrid().getText();
 		Thread.sleep(2000);
 
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
-		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[5]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
 		
 		
 		Thread.sleep(2000);
@@ -13722,8 +13905,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 				
 			else if(i==3)
 			{
+				raw.addAll(contractortypecol);
+			}
+			else if(i==4)
+			{
 				raw.addAll(periodcol);
 			}
+						
+	
 				
 			for(int k=0;k<raw.size();k++)
 				{
@@ -13804,6 +13993,12 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
       
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
        
      
 	    Locator1.Project2().click();
@@ -13840,33 +14035,44 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        Locator2.Risk().click();
        Thread.sleep(2000);
        
-       
+       Locator1.ContractorType1().click();
+       Thread.sleep(1000);
+       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       Thread.sleep(1000);
+       Locator1.ContractorTypeDD1().click();
+       Thread.sleep(1000);
+       Locator1.ContractorType1().click();
+       Thread.sleep(2000);
+
+ 
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
        
        
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(Statustext);
-        li.add(RiskText);
-        li.add(PeriodText);
+       List<String> li=new ArrayList<String>();
        
-        
-        Thread.sleep(3000);
-        
+       
+       li.add(ProjectText);
+       li.add(Statustext);
+       li.add(RiskText);
+       li.add(ContractorTypeText);
+       li.add(PeriodText);
+      
+       
+       Thread.sleep(3000);
+       
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
+	
 		filter.add("Project");
 		filter.add("Status");
 		filter.add("Risk");
+		filter.add("ContractorType");
 		filter.add("Period");
 			
 		
@@ -13876,17 +14082,17 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Thread.sleep(3000);
 
 		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
-		String s = Locator2.RedGraphGrid().getText();
+		String s = Locator1.RedGraphGrid().getText();
 		Thread.sleep(2000);
 
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
-		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[5]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
 		
 		
 		Thread.sleep(2000);
@@ -13913,8 +14119,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 				
 			else if(i==3)
 			{
+				raw.addAll(contractortypecol);
+			}
+			else if(i==4)
+			{
 				raw.addAll(periodcol);
 			}
+						
+	
 				
 			for(int k=0;k<raw.size();k++)
 				{
@@ -13992,7 +14204,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
       
-       
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+
+
      
 	    Locator1.Project2().click();
 	       Thread.sleep(5000);
@@ -14030,35 +14249,46 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        Thread.sleep(2000);
        
        
-       
+       Locator1.ContractorType1().click();
+       Thread.sleep(1000);
+       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       Thread.sleep(1000);
+       Locator1.ContractorTypeDD1().click();
+       Thread.sleep(1000);
+       Locator1.ContractorType1().click();
+       Thread.sleep(2000);
+
+ 
        
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
         
        
        
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(Statustext);
-        li.add(RiskText);
-        li.add(PeriodText);
+       List<String> li=new ArrayList<String>();
        
-        
-        Thread.sleep(3000);
-        
+       
+       li.add(ProjectText);
+       li.add(Statustext);
+       li.add(RiskText);
+       li.add(ContractorTypeText);
+       li.add(PeriodText);
+      
+       
+       Thread.sleep(3000);
+       
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
+	
 		filter.add("Project");
 		filter.add("Status");
 		filter.add("Risk");
+		filter.add("ContractorType");
 		filter.add("Period");
 			
 		
@@ -14068,17 +14298,17 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Thread.sleep(3000);
 
 		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
-		String s = Locator2.RedGraphGrid().getText();
+		String s = Locator1.RedGraphGrid().getText();
 		Thread.sleep(2000);
 
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
-		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[5]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
 		
 		
 		Thread.sleep(2000);
@@ -14105,9 +14335,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 				
 			else if(i==3)
 			{
+				raw.addAll(contractortypecol);
+			}
+			else if(i==4)
+			{
 				raw.addAll(periodcol);
 			}
-				
+						
+			
 			for(int k=0;k<raw.size();k++)
 				{
 					text.add(raw.get(k).getText());
@@ -14183,7 +14418,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
       
-       
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+
+
      
 	    Locator1.Project2().click();
 	       Thread.sleep(16000);
@@ -14220,35 +14462,46 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        Thread.sleep(2000);
        
        
-       
+       Locator1.ContractorType1().click();
+       Thread.sleep(1000);
+       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       Thread.sleep(1000);
+       Locator1.ContractorTypeDD1().click();
+       Thread.sleep(1000);
+       Locator1.ContractorType1().click();
+       Thread.sleep(2000);
+
+ 
        
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jul20().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator2.Jul20().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
       
        
        
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(Statustext);
-        li.add(RiskText);
-        li.add(PeriodText);
+       List<String> li=new ArrayList<String>();
        
-        
-        Thread.sleep(3000);
-        
+       
+       li.add(ProjectText);
+       li.add(Statustext);
+       li.add(RiskText);
+       li.add(ContractorTypeText);
+       li.add(PeriodText);
+      
+       
+       Thread.sleep(3000);
+       
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
+	
 		filter.add("Project");
 		filter.add("Status");
 		filter.add("Risk");
+		filter.add("ContractorType");
 		filter.add("Period");
 			
 		
@@ -14258,17 +14511,17 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Thread.sleep(3000);
 
 		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
-		String s = Locator2.RedGraphGrid().getText();
+		String s = Locator1.RedGraphGrid().getText();
 		Thread.sleep(2000);
 
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
-		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[5]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
 		
 		
 		Thread.sleep(2000);
@@ -14295,8 +14548,13 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 				
 			else if(i==3)
 			{
+				raw.addAll(contractortypecol);
+			}
+			else if(i==4)
+			{
 				raw.addAll(periodcol);
 			}
+						
 				
 			for(int k=0;k<raw.size();k++)
 				{
@@ -14372,7 +14630,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
       
-       
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+
+
      
 	    Locator1.Project2().click();
 	       Thread.sleep(2000);
@@ -14409,14 +14674,23 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        Thread.sleep(2000);
        
        
-       
+       Locator1.ContractorType1().click();
+       Thread.sleep(1000);
+       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       Thread.sleep(1000);
+       Locator1.ContractorTypeDD1().click();
+       Thread.sleep(1000);
+       Locator1.ContractorType1().click();
+       Thread.sleep(2000);
+
+ 
        
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(1000);
-       Locator2.Feb23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
      //  Locator2.PeriodFilterCompliedHigh().click();
      //  Thread.sleep(2000);
@@ -14424,22 +14698,24 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(Statustext);
-        li.add(RiskText);
-        li.add(PeriodText);
+       List<String> li=new ArrayList<String>();
        
-        
-        Thread.sleep(3000);
-        
+       
+       li.add(ProjectText);
+       li.add(Statustext);
+       li.add(RiskText);
+       li.add(ContractorTypeText);
+       li.add(PeriodText);
+      
+       
+       Thread.sleep(3000);
+       
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
+	
 		filter.add("Project");
 		filter.add("Status");
 		filter.add("Risk");
+		filter.add("ContractorType");
 		filter.add("Period");
 			
 		
@@ -14449,17 +14725,17 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Thread.sleep(3000);
 
 		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
-		String s = Locator2.RedGraphGrid().getText();
+		String s = Locator1.RedGraphGrid().getText();
 		Thread.sleep(2000);
 
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
-		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[5]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
 		
 		
 		Thread.sleep(2000);
@@ -14486,8 +14762,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 				
 			else if(i==3)
 			{
+				raw.addAll(contractortypecol);
+			}
+			else if(i==4)
+			{
 				raw.addAll(periodcol);
 			}
+						
+	
 				
 			for(int k=0;k<raw.size();k++)
 				{
@@ -14565,7 +14847,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
       
-       
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+
+
      
 	    Locator1.Project2().click();
 	       Thread.sleep(3000);
@@ -14602,35 +14891,46 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        Thread.sleep(2000);
        
        
-       
+       Locator1.ContractorType1().click();
+       Thread.sleep(1000);
+       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       Thread.sleep(1000);
+       Locator1.ContractorTypeDD1().click();
+       Thread.sleep(1000);
+       Locator1.ContractorType1().click();
+       Thread.sleep(2000);
+
+ 
        
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(1000);
-       Locator2.Feb23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
        
        
        
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(Statustext);
-        li.add(RiskText);
-        li.add(PeriodText);
+       List<String> li=new ArrayList<String>();
        
-        
-        Thread.sleep(3000);
-        
+       
+       li.add(ProjectText);
+       li.add(Statustext);
+       li.add(RiskText);
+       li.add(ContractorTypeText);
+       li.add(PeriodText);
+      
+       
+       Thread.sleep(3000);
+       
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
+	
 		filter.add("Project");
 		filter.add("Status");
 		filter.add("Risk");
+		filter.add("ContractorType");
 		filter.add("Period");
 			
 		
@@ -14640,17 +14940,17 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		Thread.sleep(3000);
 
 		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
-		String s = Locator2.RedGraphGrid().getText();
+		String s = Locator1.RedGraphGrid().getText();
 		Thread.sleep(2000);
 
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
-		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[5]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
 		
 		
 		Thread.sleep(2000);
@@ -14677,9 +14977,14 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 				
 			else if(i==3)
 			{
+				raw.addAll(contractortypecol);
+			}
+			else if(i==4)
+			{
 				raw.addAll(periodcol);
 			}
-				
+						
+			
 			for(int k=0;k<raw.size();k++)
 				{
 					text.add(raw.get(k).getText());
@@ -14896,12 +15201,45 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
       
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnLocation1().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnState1().click();
+	       Thread.sleep(2000);
+	 
+		       
+		 Locator1.Location1().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD1().click();
+	       Thread.sleep(1000);
+	       String LocationText =Locator1.LocationDD3().getText();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD3().click();
+	       Thread.sleep(1000);
+	       Locator1.Location1().click();
+	       Thread.sleep(2000);
+	       
+	       Locator1.State1().click();
+	       Thread.sleep(1000);
+	       String StateText =Locator1.StateDD().getText();
+	       Thread.sleep(2000);
+	       Locator1.StateDD().click();
+	       Thread.sleep(1000);
+	       Locator1.State1().click();
+	       Thread.sleep(2000);
+
+
 		
 	    Locator1.Project1().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator1.Projecttext3().getText();
+	       String ProjectText =Locator1.Projecttext().getText();
 	       Thread.sleep(1000);
-	       Locator1.Projecttext3().click();
+	       Locator1.Projecttext().click();
 	       Thread.sleep(1000);
 	       Locator1.Project1().click();
 	       Thread.sleep(2000);
@@ -14912,9 +15250,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator2.ContractorType().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator2.ContractorTypeDD().getText();
+       String ContractorTypeText =Locator2.ReportTabContractorTypeDD().getText();
        Thread.sleep(1000);
-       Locator2.ContractorTypeDD().click();
+       Locator2.ReportTabContractorTypeDD().click();
        Thread.sleep(1000);
        Locator2.ContractorType().click();
        Thread.sleep(2000);
@@ -14945,34 +15283,33 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator1.period().getText();
+       String periodtext =Locator2.Jul22().getText();
        Thread.sleep(2000);
-      Locator1.period().click();
+      Locator2.Jul22().click();
       Thread.sleep(2000);
       
       
       
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        
-        li.add(ProjectText);
-        li.add(ContractorTypeText);
-        li.add(FrequencyText);
-        li.add(Statustext);
-	    li.add(periodtext);
-	    
-        
-        Thread.sleep(3000);
-        
+      List<String> li=new ArrayList<String>();
+      
+      li.add(LocationText);
+      li.add(StateText);     
+      li.add(ProjectText);
+      li.add(ContractorTypeText);
+      li.add(FrequencyText);
+      li.add(Statustext);
+      li.add(periodtext);
+     
+      Thread.sleep(3000);
+      
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
-		filter.add("Project");
+		filter.add("Location");
+		filter.add("State");
+		filter.add("Facility");
 		filter.add("ContractorType");
 		filter.add("Frequency");
 		filter.add("Status");
-	    filter.add("Period");
-	    
+		filter.add("Period");	
 		
 		
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -14986,13 +15323,13 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[3]"));
-		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[4]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
-	    List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
-
+		List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[9]"));
+		List<WebElement> statecol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[10]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
 		
 		Thread.sleep(2000);
 
@@ -15003,29 +15340,39 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			HashSet<String> fail=new LinkedHashSet<>();
 			List<WebElement> raw=new ArrayList<WebElement>();
 
-				if(i==0)
-				{
-					raw.addAll(projectcol);
-				}
-			else if(i==1)
-				{
-					raw.addAll(contractorcol);
-				}
-			else if(i==2)
+			if(i==0)
 			{
-				raw.addAll(frequencycol);
+				raw.addAll(entitycol);
 			}
-				
-			else if(i==3)
+		else if(i==1)
 			{
-				raw.addAll(statuscol);
+				raw.addAll(statecol);
 			}
-			else if(i==4)
-			{
-				raw.addAll(periodcol);
-			}
-			       
-				
+		else if(i==2)
+		{
+			raw.addAll(projectcol);
+		}
+			
+		else if(i==3)
+		{
+			raw.addAll(contractorcol);
+		}
+			
+		else if(i==4)
+		{
+			raw.addAll(frequencycol);
+		}
+			
+		else if(i==5)
+		{
+			raw.addAll(statuscol);
+		}
+
+		else if(i==6)
+		{
+			raw.addAll(periodcol);
+		}
+					
 			for(int k=0;k<raw.size();k++)
 				{
 					text.add(raw.get(k).getText());
@@ -15115,13 +15462,45 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		getDriver().switchTo().frame(Locator2.Frame());
 	    Thread.sleep(9000);
       
-		
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnLocation1().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnState1().click();
+	       Thread.sleep(2000);
+	 
+		       
+		 Locator1.Location1().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD1().click();
+	       Thread.sleep(1000);
+	       String LocationText =Locator1.LocationDD3().getText();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD3().click();
+	       Thread.sleep(1000);
+	       Locator1.Location1().click();
+	       Thread.sleep(1000);
+	       
+	       Locator1.State1().click();
+	       Thread.sleep(1000);
+	       String StateText =Locator1.StateDD().getText();
+	       Thread.sleep(2000);
+	       Locator1.StateDD().click();
+	       Thread.sleep(1000);
+	       Locator1.State1().click();
+	       Thread.sleep(2000);
+
+
 	   
 	    Locator1.Project1().click();
 	       Thread.sleep(2000);
-	       String ProjectText =Locator1.Projecttext3().getText();
+	       String ProjectText =Locator1.Projecttext().getText();
 	       Thread.sleep(1000);
-	       Locator1.Projecttext3().click();
+	       Locator1.Projecttext().click();
 	       Thread.sleep(1000);
 	       Locator1.Project1().click();
 	       Thread.sleep(2000);
@@ -15130,9 +15509,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator2.ContractorType().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator2.ContractorTypeDD().getText();
+       String ContractorTypeText =Locator2.ReportTabContractorTypeDD().getText();
        Thread.sleep(1000);
-       Locator2.ContractorTypeDD().click();
+       Locator2.ReportTabContractorTypeDD().click();
        Thread.sleep(1000);
        Locator2.ContractorType().click();
        Thread.sleep(2000);
@@ -15164,30 +15543,32 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator2.Period().click();
        Thread.sleep(1000);
-       String periodtext =Locator2.Feb23().getText();
+       String periodtext =Locator2.Apr22().getText();
        Thread.sleep(1000);
-      Locator2.Feb23().click();
+      Locator2.Apr22().click();
       Thread.sleep(2000);
       
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(ContractorTypeText);
-        li.add(FrequencyText);
-        li.add(Statustext);
-	    li.add(periodtext);
-        
-        Thread.sleep(3000);
-        
+      List<String> li=new ArrayList<String>();
+      
+      li.add(LocationText);
+      li.add(StateText);     
+      li.add(ProjectText);
+      li.add(ContractorTypeText);
+      li.add(FrequencyText);
+      li.add(Statustext);
+      li.add(periodtext);
+     
+      Thread.sleep(3000);
+      
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
-		filter.add("Project");
+		filter.add("Location");
+		filter.add("State");
+		filter.add("Facility");
 		filter.add("ContractorType");
 		filter.add("Frequency");
 		filter.add("Status");
-	    filter.add("Period");
+		filter.add("Period");	
 		
 		
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -15201,13 +15582,13 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[9]"));
+		List<WebElement> statecol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[10]"));
 		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
 		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[3]"));
 		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
 		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
-	    List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
-
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
 		
 		Thread.sleep(2000);
 
@@ -15218,27 +15599,38 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			HashSet<String> fail=new LinkedHashSet<>();
 			List<WebElement> raw=new ArrayList<WebElement>();
 
-				if(i==0)
-				{
-					raw.addAll(projectcol);
-				}
-			else if(i==1)
-				{
-					raw.addAll(contractorcol);
-				}
-			else if(i==2)
+			if(i==0)
 			{
-				raw.addAll(frequencycol);
+				raw.addAll(entitycol);
 			}
-				
-			else if(i==3)
+		else if(i==1)
 			{
-				raw.addAll(statuscol);
+				raw.addAll(statecol);
 			}
-			else if(i==4)
-			{
-				raw.addAll(periodcol);
-			}
+		else if(i==2)
+		{
+			raw.addAll(projectcol);
+		}
+			
+		else if(i==3)
+		{
+			raw.addAll(contractorcol);
+		}
+			
+		else if(i==4)
+		{
+			raw.addAll(frequencycol);
+		}
+			
+		else if(i==5)
+		{
+			raw.addAll(statuscol);
+		}
+
+		else if(i==6)
+		{
+			raw.addAll(periodcol);
+		}
 			       
 				
 			for(int k=0;k<raw.size();k++)
@@ -15330,13 +15722,45 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
       
-		
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnLocation1().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnState1().click();
+	       Thread.sleep(2000);
+	 
+		       
+		 Locator1.Location1().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD1().click();
+	       Thread.sleep(1000);
+	       String LocationText =Locator1.LocationDD3().getText();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD3().click();
+	       Thread.sleep(1000);
+	       Locator1.Location1().click();
+	       Thread.sleep(1000);
+	       
+	       Locator1.State1().click();
+	       Thread.sleep(1000);
+	       String StateText =Locator1.StateDD().getText();
+	       Thread.sleep(2000);
+	       Locator1.StateDD().click();
+	       Thread.sleep(1000);
+	       Locator1.State1().click();
+	       Thread.sleep(2000);
+
+
 	   
 	    Locator1.Project1().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator1.Projecttext3().getText();
+	       String ProjectText =Locator1.Projecttext().getText();
 	       Thread.sleep(1000);
-	       Locator1.Projecttext3().click();
+	       Locator1.Projecttext().click();
 	       Thread.sleep(1000);
 	       Locator1.Project1().click();
 	       Thread.sleep(2000);
@@ -15345,9 +15769,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator2.ContractorType().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator2.ContractorTypeDD().getText();
+       String ContractorTypeText =Locator2.ReportTabContractorTypeDD().getText();
        Thread.sleep(1000);
-       Locator2.ContractorTypeDD().click();
+       Locator2.ReportTabContractorTypeDD().click();
        Thread.sleep(1000);
        Locator2.ContractorType().click();
        Thread.sleep(2000);
@@ -15379,30 +15803,32 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator1.May20().getText();
+       String periodtext =Locator2.Mar22().getText();
        Thread.sleep(2000);
-      Locator1.May20().click();
+      Locator2.Mar22().click();
       Thread.sleep(2000);
       
        
-        List<String> li=new ArrayList<String>();
-        
-      //  li.add(locationtext);
-        li.add(ProjectText);
-        li.add(ContractorTypeText);
-        li.add(FrequencyText);
-        li.add(Statustext);
-	    li.add(periodtext);
-        
-        Thread.sleep(3000);
-        
+      List<String> li=new ArrayList<String>();
+      
+      li.add(LocationText);
+      li.add(StateText);     
+      li.add(ProjectText);
+      li.add(ContractorTypeText);
+      li.add(FrequencyText);
+      li.add(Statustext);
+      li.add(periodtext);
+     
+      Thread.sleep(3000);
+      
 		List<String> filter=new ArrayList<String>();	
-	//	filter.add("Location");
-		filter.add("Project");
+		filter.add("Location");
+		filter.add("State");
+		filter.add("Facility");
 		filter.add("ContractorType");
 		filter.add("Frequency");
 		filter.add("Status");
-	    filter.add("Period");
+		filter.add("Period");	
 		
 		
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -15416,13 +15842,13 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[9]"));
+		List<WebElement> statecol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[10]"));
 		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
 		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[3]"));
 		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
 		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
-	    List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
-
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
 		
 		Thread.sleep(2000);
 
@@ -15433,27 +15859,38 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			HashSet<String> fail=new LinkedHashSet<>();
 			List<WebElement> raw=new ArrayList<WebElement>();
 
-				if(i==0)
-				{
-					raw.addAll(projectcol);
-				}
-			else if(i==1)
-				{
-					raw.addAll(contractorcol);
-				}
-			else if(i==2)
+			if(i==0)
 			{
-				raw.addAll(frequencycol);
+				raw.addAll(entitycol);
 			}
-				
-			else if(i==3)
+		else if(i==1)
 			{
-				raw.addAll(statuscol);
+				raw.addAll(statecol);
 			}
-			else if(i==4)
-			{
-				raw.addAll(periodcol);
-			}
+		else if(i==2)
+		{
+			raw.addAll(projectcol);
+		}
+			
+		else if(i==3)
+		{
+			raw.addAll(contractorcol);
+		}
+			
+		else if(i==4)
+		{
+			raw.addAll(frequencycol);
+		}
+			
+		else if(i==5)
+		{
+			raw.addAll(statuscol);
+		}
+
+		else if(i==6)
+		{
+			raw.addAll(periodcol);
+		}
 			       
 				
 			for(int k=0;k<raw.size();k++)
@@ -15610,9 +16047,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(1000);
-		       String PeriodText =Locator2.Jul20().getText();
+		       String PeriodText =Locator2.Apr22().getText();
 		       Thread.sleep(1000);
-		       Locator2.Jul20().click();
+		       Locator2.Apr22().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -15832,9 +16269,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(1000);
-		       String PeriodText =Locator2.Jul20().getText();
+		       String PeriodText =Locator2.Apr22().getText();
 		       Thread.sleep(1000);
-		       Locator2.Jul20().click();
+		       Locator2.Apr22().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -16048,9 +16485,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(2000);
-		       String PeriodText =Locator2.PeriodFilterCompliedMediumDD().getText();
+		       String PeriodText =Locator2.Apr22().getText();
 		       Thread.sleep(1000);
-		       Locator2.PeriodFilterCompliedMediumDD().click();
+		       Locator2.Apr22().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -16286,9 +16723,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(1000);
-		       String PeriodText =Locator2.Feb23().getText();
+		       String PeriodText =Locator2.May22().getText();
 		       Thread.sleep(1000);
-		       Locator2.Feb23().click();
+		       Locator2.May22().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -16495,9 +16932,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(1000);
-		       String PeriodText =Locator2.Mar23().getText();
+		       String PeriodText =Locator2.May22().getText();
 		       Thread.sleep(1000);
-		       Locator2.Mar23().click();
+		       Locator2.May22().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -16686,9 +17123,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(2000);
-		       String PeriodText =Locator2.Jul20().getText();
+		       String PeriodText =Locator2.May22().getText();
 		       Thread.sleep(1000);
-		       Locator2.Jul20().click();
+		       Locator2.May22().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -16898,9 +17335,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(1000);
-		       String PeriodText =Locator2.Jul20().getText();
+		       String PeriodText =Locator2.Mar22().getText();
 		       Thread.sleep(1000);
-		       Locator2.Jul20().click();
+		       Locator2.Mar22().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -17106,9 +17543,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(1000);
-		       String PeriodText =Locator2.Feb23().getText();
+		       String PeriodText =Locator2.Mar22().getText();
 		       Thread.sleep(1000);
-		       Locator2.Feb23().click();
+		       Locator2.Mar22().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -17303,9 +17740,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(1000);
-		       String PeriodText =Locator2.Feb23().getText();
+		       String PeriodText =Locator2.Mar22().getText();
 		       Thread.sleep(1000);
-		       Locator2.Feb23().click();
+		       Locator2.Mar22().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -21959,13 +22396,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(9000);
 		 Locator1.View().click();
-			test.log(LogStatus.PASS, " View Button Working Successfully  " );
+			test.log(LogStatus.PASS, " View Compliance Button Working Successfully  " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " View Button Does Not Working "  );
+			test.log(LogStatus.FAIL, " View Compliance Button Does Not Working "  );
 			
 		}
 	    Thread.sleep(2000);
@@ -21984,25 +22421,14 @@ Thread.sleep(3000);
 	  
         Thread.sleep(3000);
 	   if (dirContents1.length < allFilesNew1.length) {
-			test.log(LogStatus.PASS,  "File Download Successfully");
+			test.log(LogStatus.PASS,  "View Compliance - File Download Successfully");
 		}
 	   else
 	   {
-			test.log(LogStatus.FAIL,  "File Download Successfully");
+			test.log(LogStatus.FAIL,  "View Compliance - File Download Successfully");
 		}
 
 	   Thread.sleep(6000);
-	    Locator1.Delete().click();					                
-	    Thread.sleep(3000);
-		 Alert ac=getDriver().switchTo().alert();
-			
-			String t=getDriver().switchTo().alert().getText();
-			
-			test.log(LogStatus.PASS,  t );		
-			Thread.sleep(4000);
-			ac.accept();
-			Thread.sleep(4000);
-	    
 	    Locator1.Close().click();					                
 	    Thread.sleep(4000);
 
@@ -22022,16 +22448,36 @@ Thread.sleep(3000);
 				
 				Thread.sleep(9000);
 			 Locator1.DownloadAndViewButton().click();
-				test.log(LogStatus.PASS, "  Download and View Button Working Successfully  " );
+				test.log(LogStatus.PASS, "  Download document button Working Successfully  " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, " Download and View Button Does Not Working "  );
+				test.log(LogStatus.FAIL, " Download document button Does Not Working "  );
 				
 			}
 		    Thread.sleep(2000);
+		    
+		    if(Locator1.ViewDocument1().isEnabled())
+			{
+				
+				Thread.sleep(9000);
+			 Locator1.ViewDocument1().click();
+				test.log(LogStatus.PASS, "  View Document button Working Successfully  " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, " View Document button Does Not Working "  );
+				
+			}
+		    Thread.sleep(2000);
+		 //   Locator1.Close1().click();					                
+		 //   Thread.sleep(4000);
+		    
+		    
 	
 	
 	}
@@ -22101,18 +22547,17 @@ Thread.sleep(3000);
 			
 			Thread.sleep(9000);
 		 Locator1.View().click();
-			test.log(LogStatus.PASS, " View Button Working Successfully  " );
+			test.log(LogStatus.PASS, " View Compliance Button Working Successfully  " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, " View Button Does Not Working "  );
+			test.log(LogStatus.FAIL, " View View Compliance Button Does Not Working "  );
 			
 		}
 	    Thread.sleep(2000);
 	    
-	    /*
 		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
@@ -22127,25 +22572,14 @@ Thread.sleep(3000);
 	  
         Thread.sleep(3000);
 	   if (dirContents1.length < allFilesNew1.length) {
-			test.log(LogStatus.PASS,  "File Download Successfully");
+			test.log(LogStatus.PASS,  "View Compliance - File Download Successfully");
 		}
 	   else
 	   {
-			test.log(LogStatus.FAIL,  "File Download Successfully");
+			test.log(LogStatus.FAIL,  "View Compliance - File Download Successfully");
 		}
 
 	   Thread.sleep(6000);
-	    Locator1.Delete().click();					                
-	    Thread.sleep(3000);
-		 Alert ac=getDriver().switchTo().alert();
-			
-			String t=getDriver().switchTo().alert().getText();
-			
-			test.log(LogStatus.PASS,  t );		
-			Thread.sleep(4000);
-			ac.accept();
-			Thread.sleep(4000);
-	    
 	    Locator1.Close().click();					                
 	    Thread.sleep(4000);
 
@@ -22165,16 +22599,31 @@ Thread.sleep(3000);
 				
 				Thread.sleep(9000);
 			 Locator1.DownloadAndViewButton().click();
-				test.log(LogStatus.PASS, "  Download and View Button Working Successfully  " );
+				test.log(LogStatus.PASS, "  Download document button Working Successfully  " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, " Download and View Button Does Not Working "  );
+				test.log(LogStatus.FAIL, " Download document button Does Not Working "  );
 				
 			}
-			*/
+		    Thread.sleep(2000);
+		    
+		    if(Locator1.ViewDocument1().isEnabled())
+			{
+				
+				Thread.sleep(9000);
+			 Locator1.ViewDocument1().click();
+				test.log(LogStatus.PASS, "  View Document button Working Successfully  " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, " View Document button Does Not Working "  );
+				
+			}
 		    Thread.sleep(2000);
 	
 	
@@ -22255,7 +22704,6 @@ Thread.sleep(3000);
 			
 		}
 	    Thread.sleep(2000);
-	    /*
 		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
@@ -22270,29 +22718,17 @@ Thread.sleep(3000);
 	  
         Thread.sleep(3000);
 	   if (dirContents1.length < allFilesNew1.length) {
-			test.log(LogStatus.PASS,  "File Download Successfully");
+			test.log(LogStatus.PASS,  "View Compliance - File Download Successfully");
 		}
 	   else
 	   {
-			test.log(LogStatus.FAIL,  "File Download Successfully");
+			test.log(LogStatus.FAIL,  "View Compliance - File Download Successfully");
 		}
 
 	   Thread.sleep(6000);
-	    Locator1.Delete().click();					                
-	    Thread.sleep(3000);
-		 Alert ac=getDriver().switchTo().alert();
-			
-			String t=getDriver().switchTo().alert().getText();
-			
-			test.log(LogStatus.PASS,  t );		
-			Thread.sleep(4000);
-			ac.accept();
-			Thread.sleep(4000);
-	    */
 	    Locator1.Close().click();					                
 	    Thread.sleep(4000);
 
-	    /*
 		Locator1.SelectFile().sendKeys("E:\\BackupDesktop\\FileUploadForEntityMaster//ProjectMaster.xlsx"); // Writing Task title
 		Thread.sleep(9000);
 		
@@ -22303,19 +22739,35 @@ Thread.sleep(3000);
 			test.log(LogStatus.PASS, "File " + t1 );		
 			Thread.sleep(4000);
 			ac1.accept();
-			*/
+			
 		    if(Locator1.DownloadAndViewButton().isEnabled())
 			{
 				
 				Thread.sleep(9000);
 			 Locator1.DownloadAndViewButton().click();
-				test.log(LogStatus.PASS, "  Download and View Button Working Successfully  " );
+				test.log(LogStatus.PASS, "  Download document button Working Successfully  " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, " Download and View Button Does Not Working "  );
+				test.log(LogStatus.FAIL, " Download document button Does Not Working "  );
+				
+			}
+		    Thread.sleep(2000);
+		    
+		    if(Locator1.ViewDocument1().isEnabled())
+			{
+				
+				Thread.sleep(9000);
+			 Locator1.ViewDocument1().click();
+				test.log(LogStatus.PASS, "  View Document button Working Successfully  " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, " View Document button Does Not Working "  );
 				
 			}
 		    Thread.sleep(2000);
@@ -22325,20 +22777,705 @@ Thread.sleep(3000);
 
 	
 	
+	public static void DocumentTabMultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		Thread.sleep(10000);
+		Locator2.Document().click();
+		Thread.sleep(3000);
+	    
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnLocation11().click();
+	       Thread.sleep(2000);
+	    //   Locator1.ColumnState1().click();
+	    //   Thread.sleep(2000);
+	 
+		       
+		 Locator1.Location11().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD1().click();
+	       Thread.sleep(1000);
+	       String LocationText =Locator1.LocationDD3().getText();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD3().click();
+	       Thread.sleep(1000);
+	       Locator1.Location11().click();
+	       Thread.sleep(1000);
+	       
+    
+	       Locator2.DocumentTabSelectContractor().click();
+	       Thread.sleep(2000);
+	       String contractortext =Locator2.DocumentContractorDD().getText();
+	       Thread.sleep(2000);
+	       Locator2.DocumentContractorDD().click();
+	       Thread.sleep(2000);
+	       Locator2.DocumentTabSelectContractor().click();
+	       Thread.sleep(5000);
+    
+    
+    Locator2.DocumentTabSelectProject1().click();
+    Thread.sleep(2000);
+    String projectText =Locator2.DocumentTabSelectProjectDD().getText();
+    Thread.sleep(2000);
+    Locator2.DocumentTabSelectProjectDD().click();
+    Thread.sleep(2000);
+    Locator2.DocumentTabSelectProject1().click();
+    Thread.sleep(2000);
+    
+    
+    
+    
+     List<String> li=new ArrayList<String>();
+     
+     li.add(LocationText);
+     li.add(contractortext);
+     li.add(projectText);
+    
+     
+     Thread.sleep(3000);
+     
+		List<String> filter=new ArrayList<String>();	
+		filter.add("Location");
+		filter.add("Contractor");
+		filter.add("Project");
+	
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(3000);
+
+		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
+		String s = Locator2.RedGraphGrid().getText();
+		Thread.sleep(2000);
+
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(5000);
+	
+		List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[9]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[2]"));
+		
+		Thread.sleep(2000);
+
+		for(int i=0; i<li.size(); i++){
+			
+			List<String> text= new ArrayList<String>();
+			HashSet<String> pass=new LinkedHashSet<>();
+			HashSet<String> fail=new LinkedHashSet<>();
+			List<WebElement> raw=new ArrayList<WebElement>();
+
+				if(i==0)
+				{
+					raw.addAll(entitycol);
+				}
+			else if(i==1)
+				{
+					raw.addAll(contractorcol);
+				}
+			else if(i==2)
+			{
+				raw.addAll(projectcol);
+			}
+			
+				
+			for(int k=0;k<raw.size();k++)
+				{
+					text.add(raw.get(k).getText());
+				}
+
+				for(int l=0;l<text.size();l++)
+					{
+				if(text.get(l).equals(li.get(i)))
+					{
+						pass.add(text.get(l));	
+						System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+					}
+				else
+				{
+					fail.add(text.get(l));		
+					System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+					System.out.println(i);
+
+				}
+				 }
+		 
+	for(String Fal : fail)
+		 {
+				test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+		 }	
+		 for(String Pas : pass)
+		 {
+			 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+				test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+				System.out.println(filter.get(i)+" : "+Pas);
+	 }
+		 text.clear();
+		pass.clear();
+		fail.clear();
+		raw.clear();
+		
+		
+		}
+		}else {
+			test.log(LogStatus.PASS,"No records found");	
+		}
+		Thread.sleep(3000);
+		
+		JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,-1000)");	
+		Thread.sleep(3000);
+		
+		
+		
+		if(Locator2.ClearDocument().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator2.ClearDocument().click();
+			test.log(LogStatus.PASS, " The applied filter get cleared after clicking on the clear button " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  The applied filter not get cleared after clicking on the clear button "  );
+			
+		}
+		
+	
+		
+	}
+	
+
+	public static void MyWorkspaceLicense( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator1.MyWorkspace().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='linoticeCase']"))); 
+			Thread.sleep(1000);
+			
+	if(Locator1.Audit().isDisplayed()&&Locator1.License().isDisplayed()) {
+				
+				test.log(LogStatus.PASS, "Audit and License tab should be seen under the my workspace tab.");
+			}else {
+				
+				test.log(LogStatus.FAIL, "Audit and License tab should not be seen under the my workspace tab.");
+				
+			}
+		
+		    
+			Locator1.Audit().click();
+			Thread.sleep(3000);
+		   
+			
+	}
+	
+	public static void MyWorkspaceLicenseSearch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator1.MyWorkspace().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='linoticeCase']"))); 
+			Thread.sleep(1000);
+			
+			Locator1.License().click();
+			Thread.sleep(2000);
+		  
+			Locator1.Serach().sendKeys("AK Heights");
+			Thread.sleep(3000);
+		   if(Locator1.Clear().isEnabled()) {
+			   Thread.sleep(2000);
+			   Locator1.Clear().click();
+				Thread.sleep(2000);
+				test.log(LogStatus.PASS, "Clear button working properly");
+
+		   }
+		   else
+		   {
+			   test.log(LogStatus.PASS, "Clear button does not working properly");
+		   }
+			
+		   Thread.sleep(1000);
+		   Method1.LicenceGridAndExcelCount(test,workbook);
+		   
+		   /*
+			File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			Locator1.Export().click();
+			
+		 	Thread.sleep(9000);
+			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		  
+	        Thread.sleep(3000);
+		   if (dirContents1.length < allFilesNew1.length) {
+				test.log(LogStatus.PASS,  "Excel Report download successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL,  "Excel Report does not download successfully");
+			}
+*/
+		   Thread.sleep(2000);
+          if(Locator1.viewlicensedocument().isEnabled()) {
+			   
+        	  Thread.sleep(2000);
+			   Locator1.viewlicensedocument().click();
+				Thread.sleep(2000);
+				test.log(LogStatus.PASS, "Licence document viewed successfully");
+
+		   }
+		   else
+		   {
+			   test.log(LogStatus.PASS, "Licence document does not viewed");
+		   }
+		   
+          Thread.sleep(2000);
+          
+          getDriver().switchTo().frame(Locator1.OuterFrame());
+          Thread.sleep(1000);
+          getDriver().switchTo().frame(Locator1.InnerFrame());
+          
+			File dir = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			Locator1.Download1().click();
+			
+		 	Thread.sleep(9000);
+			File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		  
+	        
+		   if (dirContents.length < allFilesNew.length) {
+				test.log(LogStatus.PASS,  "License document download successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL,  "License document does not download successfully");
+			}
+		   Thread.sleep(1000);
+		   
+		   
+	}
+
 	
 	
+	public static void LicenceGridAndExcelCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        
+        Thread.sleep(3000);
+        Locator.readTotalItems1().click();
+		String item = Locator.readTotalItems1().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+	
+		if(compliancesCount.equalsIgnoreCase("to"))
+		{
+			Thread.sleep(5000);
+		   item = Locator.readTotalItems1().getText();
+			bits = item.split(" ");
+        
+		}
+		
+        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+        
+        js1.executeScript("window.scrollBy(0,-1000)");
+        Thread.sleep(2000);
+ 		
+		Thread.sleep(4000);
+ 
+        File dir9 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] dirContents9 = dir9.listFiles();						//Counting number of files in directory before download
+ 		
+ 		Thread.sleep(3000);
+ 		Locator1.Export().click();
+ 		
+ 	 	Thread.sleep(9000);
+ 		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] allFilesNew0 = dir0.listFiles();						//Counting number of files in directory after download
+ 	  
+        Thread.sleep(3000);
+ 	   if (dirContents9.length < allFilesNew0.length) {
+ 			test.log(LogStatus.PASS,  " Excel Report Download Successfully");
+ 		}
+ 	   else
+ 	   {
+ 		 	test.log(LogStatus.FAIL, "  Excel Report Does Not Download Successfully "   );
+
+ 		}   
+ 	   Thread.sleep(4000);
+
+		
+		
+	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\License Report .xlsx");
+	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);
+	
+	//int rowCount = sheet.getLastRowNum();
+	
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+	
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
 	
 	
+	System.out.println("Row Count in column  " + columnNumber + ": " + actualRow);
+	
+	workbook.close();
+	fis.close();
+	
+	if(count1 == actualRow)
+	{
+		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+	
+	Thread.sleep(2000);
+	
+	String fis1 = "C:\\Users\\shitalb\\Downloads\\License Report .xlsx";
+	
+	File file = new File(fis1);
+	  
+	 if(file.exists()) {
+		 
+		 if(file.delete())
+		 {
+		 
+		 System.out.println("File deleted Successfully.");
+	     }
+		 
+	 }
+	 else {
+		 
+		 System.out.println("File does not exist Successfully.");
+	 }
+	 
+	 Thread.sleep(2000);
+     
+	    
+	}
 	
 	
+
+	public static void MyWorkspaceRenewLicense( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator1.MyWorkspace().click();
+		   Thread.sleep(3000);
+		   
+		   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='linoticeCase']"))); 
+			Thread.sleep(1000);
+			
+			Locator1.License().click();
+			Thread.sleep(1000);
+			
+			Locator1.ColumnSetting().click();
+			Thread.sleep(1000);
+			
+			Locator1.Filter().click();
+			Thread.sleep(1000);
+			
+			Locator1.Expiring().click();
+			Thread.sleep(1000);
+			
+			Locator1.Expired().click();
+			Thread.sleep(1000);
+			
+			Locator1.FilterButton().click();
+			Thread.sleep(1000);
+			
+			
+			
+		/*    
+JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+		   
+		   Locator.All().click();
+		   Thread.sleep(3000);
+		   
+		   Locator.PagingDD1().click();
+		   Thread.sleep(3000);
+		   
+		   JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+	        
+	        js1.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		*/
+		   	    
+			Locator1.RenewLicense().click();
+			Thread.sleep(1000);
+			
+			String l = Locator1.Label().getText();
+			Thread.sleep(1000);
+			
+			Locator1.RegistractionNo().sendKeys(l);
+			Thread.sleep(1000);
+			
+			String t = Locator1.EndDateLabel().getText();
+			Thread.sleep(1000);
+			
+			
+			Locator1.StartDateCalender().click();
+			Thread.sleep(1000);
+			
+			Locator1.ChangeMonthDrop().click();
+			Thread.sleep(1000);
+						
+			Locator1.StartDateCalenderDD().click();
+			Thread.sleep(1000);
+			
+			Locator1.EndDateCalender().sendKeys("30-Dec-2024");
+			Thread.sleep(2000);
+			
+		//	Locator1.EndDateCalenderDD().sendKeys("30-Dec-2024");
+		//	Thread.sleep(1000);
+			
+			Locator1.HeadCount().sendKeys("10");
+			Thread.sleep(1000);
+			
+			Locator1.Remark1().sendKeys("Renewed");
+			Thread.sleep(1000);
+			
+			Locator1.SelectFile1().sendKeys("E:\\BackupDesktop\\FileUploadForEntityMaster\\License Report .xlsx");
+			Thread.sleep(1000);
+			
+			Locator1.Updatelicenseandsendforapprovalbutton().click();
+			Thread.sleep(1000);
+			
+            Alert ac1=getDriver().switchTo().alert();
+			
+			String t1=getDriver().switchTo().alert().getText();
+			
+			test.log(LogStatus.PASS, t1 );		
+			Thread.sleep(4000);
+			ac1.accept();
+			
+			
 	
+	}
+
 	
+
+	public static void MyWorkspaceResendForApproval( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator1.MyWorkspace().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='linoticeCase']"))); 
+			Thread.sleep(1000);
+			
+			Locator1.License().click();
+			Thread.sleep(1000);
+			
+			Locator1.ColumnSetting().click();
+			Thread.sleep(1000);
+			
+			Locator1.Filter().click();
+			Thread.sleep(1000);
+			
+			Locator1.Rejected1().click();
+			Thread.sleep(1000);
+		
+			Locator1.FilterButton().click();
+			Thread.sleep(1000);
+			/*
+			 JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+		   
+		   Locator.All().click();
+		   Thread.sleep(3000);
+		   
+		   Locator.PagingDD1().click();
+		   Thread.sleep(3000);
+		   
+		   JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+	        
+	        js1.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 	*/
+		    	    
+			Locator1.ResendForApproval().click();
+			Thread.sleep(2000);
+			
+			/*
+			String l = Locator1.Label().getText();
+			Thread.sleep(1000);
+			
+			Locator1.RegistractionNo().sendKeys(l);
+			Thread.sleep(1000);
+			
+			Locator1.StartDateCalender().click();
+			Thread.sleep(1000);
+				
+			Locator1.StartDateCalenderDD().click();
+			Thread.sleep(1000);
+			
+			Locator1.EndDateCalender().click();
+			Thread.sleep(2000);
+			
+			Locator1.EndDateCalenderDD().click();
+			Thread.sleep(1000);
+			
+			Locator1.HeadCount().sendKeys("10");
+			Thread.sleep(1000);
+			
+			Locator1.Remark1().sendKeys("Renewed");
+			Thread.sleep(1000);
+			*/
+			Locator1.SelectFile1().sendKeys("E:\\BackupDesktop\\FileUploadForEntityMaster\\License Report .xlsx");
+			Thread.sleep(2000);
+			
+			Locator1.Updatelicenseandsendforapprovalbutton().click();
+			Thread.sleep(2000);
+			
+            Alert ac1=getDriver().switchTo().alert();
+			
+			String t1=getDriver().switchTo().alert().getText();
+			
+			test.log(LogStatus.PASS, t1 );		
+			Thread.sleep(4000);
+			ac1.accept();
+			Thread.sleep(500);
+			
 	
+	}
+
 	
+	public static void MyWorkspacePreviousDocumentView( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator1.MyWorkspace().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='linoticeCase']"))); 
+			Thread.sleep(1000);
+			
+			Locator1.License().click();
+			Thread.sleep(1000);
+			
+			Locator1.ColumnSetting().click();
+			Thread.sleep(1000);
+			
+			Locator1.Filter().click();
+			Thread.sleep(1000);
+			
+			Locator1.Rejected1().click();
+			Thread.sleep(1000);
+		
+			Locator1.FilterButton().click();
+			Thread.sleep(1000);
+		    	    
+			Locator1.Drop().click();
+			Thread.sleep(2000);
+
+	         if(Locator1.ViewLicenseDocument().isEnabled()) {
+				   
+	        	  Thread.sleep(2000);
+				   Locator1.ViewLicenseDocument().click();
+					Thread.sleep(2000);
+					test.log(LogStatus.PASS, "Licence document viewed successfully");
+
+			   }
+			   else
+			   {
+				   test.log(LogStatus.PASS, "Licence document does not viewed");
+			   }
+			   
+	          Thread.sleep(2000);
+	          
+	          getDriver().switchTo().frame(Locator1.OuterFrame());
+	          Thread.sleep(1000);
+	          getDriver().switchTo().frame(Locator1.InnerFrame());
+	          
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(3000);
+				Locator1.Download1().click();
+				
+			 	Thread.sleep(9000);
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+				
+				Thread.sleep(3000);
+			  
+		        
+			   if (dirContents.length < allFilesNew.length) {
+					test.log(LogStatus.PASS,  "License document download successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL,  "License document does not download successfully");
+				}
+			   Thread.sleep(1000);
+			 
+			
 	
-	
-	
-	
+	}
 	
 	
 	

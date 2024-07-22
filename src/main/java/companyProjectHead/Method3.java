@@ -2,11 +2,14 @@ package companyProjectHead;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
@@ -1437,22 +1440,22 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,300)");
-	    Thread.sleep(2000);
+	    Thread.sleep(5000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-1 highcharts-drilldown-data-label']"))); 
-		Thread.sleep(2000);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-1 highcharts-drilldown-data-label']"))); 
+//		Thread.sleep(2000);
 		
-		
+		/*
 	    JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,400)");
 	    Thread.sleep(2000);
-		
+		*/
 		
 		
 		int open = Integer.parseInt(Locator3.ACSREDGraph().getText());	//Reading Dashboard count.
@@ -1469,7 +1472,7 @@ public class Method3 extends BasePage{
 	    
        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 	    
-	    js.executeScript("window.scrollBy(0,1000)");
+	    js1.executeScript("window.scrollBy(0,1000)");
 	    Thread.sleep(9000);
 	    
 	    
@@ -1581,7 +1584,7 @@ public class Method3 extends BasePage{
 	{
 		
 		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(9000);
 		
 		/*
 		
@@ -1714,7 +1717,7 @@ public class Method3 extends BasePage{
 	
 	public static void AuditCompletionStatusGreenGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		
+		Thread.sleep(9000);
 		//WebWait wait = new WebWait(, 1000);
 		
 		/*
@@ -1855,11 +1858,9 @@ public class Method3 extends BasePage{
 	{
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
-		
-		Thread.sleep(2000);
-		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(3000);
+			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,800)");
@@ -3879,7 +3880,7 @@ public class Method3 extends BasePage{
 		
 		
 		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(9000);
 		
 		/*
 		
@@ -3889,8 +3890,8 @@ public class Method3 extends BasePage{
 	    Thread.sleep(18000);
 		
 		*/
-	    Locator3.OverdueCircle().click();					                //Clicking on Dashboard count
-	    Thread.sleep(2000);
+//	    Locator3.OverdueCircle().click();					                //Clicking on Dashboard count
+//	    Thread.sleep(2000);
 		
 		int open = Integer.parseInt(Locator3.PWAuditStatusSummerABCConstructionPendingReview().getText());	//Reading Dashboard count.
 	    Locator3.PWAuditStatusSummerABCConstructionPendingReview().click();					                //Clicking on Dashboard count
@@ -5263,7 +5264,7 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
@@ -5708,7 +5709,7 @@ public class Method3 extends BasePage{
 	    Thread.sleep(2000);
 	    
 	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	    
 	    
 	//    Locator4.CompliedCircle().click();
@@ -6840,61 +6841,71 @@ public class Method3 extends BasePage{
 		Locator3.Report().click();
 		Thread.sleep(9000);
 		
-		/*
-		Thread.sleep(2000);
-		Locator3.Paging().click();
-
-		Thread.sleep(2000);
-		Locator3.Paging20().click();
-		Thread.sleep(2000);
-		*/
-	      Locator2.ProjectReport().click();
-	       Thread.sleep(2000);
-	       Locator2.ProjectReportDD().click();
-	       Thread.sleep(2000);
-	       Locator2.ProjectReport().click();
-	       Thread.sleep(2000);
-	 
-		/*
-		if(Locator3.ReportFileDownload().isEnabled())
-		{
-			
-			Thread.sleep(4000);
-		    Locator3.ReportFileDownload().click();
-			test.log(LogStatus.PASS, " Compliances Remark Report Download Successfully " );
-			
-		}
+		File dir5 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents5 = dir5.listFiles();						//Counting number of files in directory before download
 		
-		else
-		{
-			test.log(LogStatus.FAIL, "  Compliances Remark Report Download Successfully "  );
-			
+		Thread.sleep(9000);
+	     Locator.ActionColmnReportDownload().click();
+		
+	 	Thread.sleep(18000);
+		File dir6 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew6 = dir6.listFiles();						//Counting number of files in directory after download
+		
+	   
+	    Thread.sleep(9000);
+	   if (dirContents5.length < allFilesNew6.length) {
+			test.log(LogStatus.PASS,  "Excel Format Downloaded Successfully");
 		}
-		*/
-	       
-			Thread.sleep(2000);
-			File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
-			
-			Thread.sleep(9000);
-		     Locator3.ReportFileDownload().click();
-			
-		 	Thread.sleep(18000);
-			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-			
+	   else
+	   {
+			test.log(LogStatus.FAIL, "Excel Format Does Not Downloaded Successfully");
+		}		
+
+	   Thread.sleep(1000);
+	   
+	   Locator.Status1().click();
+	   Thread.sleep(500);
+	   Locator.Status1DD().click();
+	   Thread.sleep(500);
+	   
+	   if (Locator.PDFViewandDownload().isEnabled()) {
 		   
-	        Thread.sleep(9000);
-		   if (dirContents1.length < allFilesNew1.length) {
-				test.log(LogStatus.PASS,  "Compliances Remark Report Download Successfully");
-			}
-		   else
-		   {
-				test.log(LogStatus.FAIL, "Compliances Remark Report does not Download Successfully");
-			}		
-			Thread.sleep(4000);
-
+		   Locator.PDFViewandDownload().click();
+		   Thread.sleep(500);
+			test.log(LogStatus.PASS,  "PDF Viewed Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "PDF Does Not Viewed Successfully");
+		}
+	   Thread.sleep(500);
+	   getDriver().switchTo().frame(Locator.Frame());
+		Thread.sleep(3000);
+	
+		getDriver().switchTo().frame(Locator2.InnerFrame());
+		Thread.sleep(7000);
 		
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator.Downloadasapdf().click();
+		
+	 	Thread.sleep(18000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir1.listFiles();						//Counting number of files in directory after download
+		
+	   
+	    Thread.sleep(9000);
+	   if (dirContents.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "PDF Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "PDF Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(500);
+
  		
 	}
 	
@@ -7146,10 +7157,6 @@ public class Method3 extends BasePage{
 		Locator3.ProjectDrop().click();
 		Thread.sleep(7000);
 		
-		
-		
-		
-		
 		if(Locator3.ProjectDropViewButton().isEnabled())
 		{
 			
@@ -7244,9 +7251,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(1000);
-       Locator2.Feb23().click();
+       Locator2.Apr22().click();
        Thread.sleep(1000);
        
        
@@ -7443,9 +7450,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String PeriodText =Locator2.Jan24().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(1000);
-       Locator2.Jan24().click();
+       Locator2.Apr22().click();
        Thread.sleep(1000);
        
        
@@ -7643,9 +7650,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String PeriodText =Locator5.May23().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(1000);
-       Locator5.May23().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
        
@@ -7866,9 +7873,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
       
        
@@ -8084,9 +8091,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
     //   Locator2.PeriodFilterCompliedHigh().click();
     //   Thread.sleep(2000);
@@ -8302,9 +8309,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jul20().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.Jul20().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
        
        
@@ -8495,9 +8502,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jul20().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator2.Jul20().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
        
        
@@ -8687,9 +8694,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
         
        
@@ -8881,9 +8888,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
        
        
@@ -9056,9 +9063,9 @@ public class Method3 extends BasePage{
        
        Locator3.Frequency().click();
        Thread.sleep(2000);
-       String FrequencyText =Locator3.Frequency2().getText();
+       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
        Thread.sleep(2000);
-       Locator3.Frequency2().click();
+       Locator3.ReportTabFequencyDD().click();
        Thread.sleep(2000);
        Locator3.Frequency().click();
        Thread.sleep(2000);
@@ -9078,9 +9085,9 @@ public class Method3 extends BasePage{
        
        Locator3.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator3.Sep23().getText();
+       String periodtext =Locator2.Jul22().getText();
        Thread.sleep(2000);
-      Locator3.Sep23().click();
+      Locator2.Jul22().click();
       Thread.sleep(2000);
       
        
@@ -9278,9 +9285,9 @@ public class Method3 extends BasePage{
        
        Locator3.Frequency().click();
        Thread.sleep(2000);
-       String FrequencyText =Locator3.Frequency2().getText();
+       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
        Thread.sleep(2000);
-       Locator3.Frequency2().click();
+       Locator3.ReportTabFequencyDD().click();
        Thread.sleep(2000);
        Locator3.Frequency().click();
        Thread.sleep(2000);
@@ -9302,9 +9309,9 @@ public class Method3 extends BasePage{
        
        Locator3.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Mar23().getText();
+       String periodtext =Locator2.Apr22().getText();
        Thread.sleep(2000);
-      Locator2.Mar23().click();
+      Locator2.Apr22().click();
       Thread.sleep(2000);
       
        
@@ -9499,9 +9506,9 @@ public class Method3 extends BasePage{
        
        Locator3.Frequency().click();
        Thread.sleep(2000);
-       String FrequencyText =Locator3.Frequency2().getText();
+       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
        Thread.sleep(2000);
-       Locator3.Frequency2().click();
+       Locator3.ReportTabFequencyDD().click();
        Thread.sleep(2000);
        Locator3.Frequency().click();
        Thread.sleep(2000);
@@ -9521,9 +9528,9 @@ public class Method3 extends BasePage{
        
        Locator3.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator5.May23().getText();
+       String periodtext =Locator2.Mar22().getText();
        Thread.sleep(2000);
-      Locator5.May23().click();
+      Locator2.Mar22().click();
       Thread.sleep(2000);
       
        
@@ -9659,15 +9666,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
-		Thread.sleep(2000);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+//		Thread.sleep(2000);
     
 	    
 	    Thread.sleep(6000);
@@ -9723,9 +9730,9 @@ public class Method3 extends BasePage{
        
        Locator3.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
         List<String> li=new ArrayList<String>();
@@ -9851,15 +9858,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(2000);
 		
 		Locator3.PWCSSABCConstructionComplied().click();
 		Thread.sleep(5000);
@@ -9915,9 +9922,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jan24().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Jan24().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
        
@@ -10044,15 +10051,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(2000);
 		
 		Locator3.PWCSSABCConstructionComplied().click();
 		Thread.sleep(2000);
@@ -10105,9 +10112,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodFilterCompliedMediumDD().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedMediumDD().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
        
@@ -10235,15 +10242,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(2000);
 	
 		Locator3.PWCSSABCConstructionComplied().click();
 		Thread.sleep(2000);
@@ -10298,9 +10305,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodNA().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.PeriodNA().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
       
        
@@ -10430,15 +10437,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+//		Thread.sleep(2000);
 	    
 		Locator3.PWCSSABCConstructionComplied().click();
 		Thread.sleep(7000);
@@ -10492,9 +10499,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
      
        
@@ -10622,15 +10629,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(2000);
 	    
 		
 		Locator3.PWCSSABCConstructionComplied().click();
@@ -10690,9 +10697,9 @@ public class Method3 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
        
        
@@ -10819,15 +10826,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(2000);
 		
 		Locator3.PWCSSABCConstructionComplied().click();
 		Thread.sleep(2000);
@@ -10881,9 +10888,9 @@ public class Method3 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Jul20().getText();
+    String PeriodText =Locator2.Mar22().getText();
     Thread.sleep(2000);
-    Locator2.Jul20().click();
+    Locator2.Mar22().click();
     Thread.sleep(2000);
    
     
@@ -11012,15 +11019,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
-		Thread.sleep(2000);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+//		Thread.sleep(2000);
 		
 		Locator3.PWCSSABCConstructionComplied().click();
 		Thread.sleep(2000);
@@ -11072,9 +11079,9 @@ public class Method3 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Feb23().getText();
+    String PeriodText =Locator2.Mar22().getText();
     Thread.sleep(2000);
-    Locator2.Feb23().click();
+    Locator2.Mar22().click();
     Thread.sleep(2000);
   
     
@@ -11199,15 +11206,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
-		Thread.sleep(2000);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+//		Thread.sleep(2000);
 		
 		Locator3.PWCSSABCConstructionComplied().click();
 		Thread.sleep(2000);
@@ -11260,9 +11267,9 @@ public class Method3 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Feb23().getText();
+    String PeriodText =Locator2.Mar22().getText();
     Thread.sleep(2000);
-    Locator2.Feb23().click();
+    Locator2.Mar22().click();
     Thread.sleep(2000);
     
     
@@ -11389,15 +11396,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,1560)");
-	    Thread.sleep(2000);
+	    Thread.sleep(3000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[7]"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"))); 
+	//	Thread.sleep(2000);
 		
 	    Locator3.CTWOverdueRed().click();					                //Clicking on Dashboard count
 
@@ -11444,18 +11451,18 @@ public class Method3 extends BasePage{
 	       
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
-	       String FrequencyText =Locator3.Frequency2().getText();
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
 	       Thread.sleep(2000);
-	       Locator3.Frequency2().click();
+	       Locator3.ReportTabFequencyDD().click();
 	       Thread.sleep(2000);
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator3.Sep23().getText();
+	       String periodtext =Locator2.Jul22().getText();
 	       Thread.sleep(2000);
-	      Locator3.Sep23().click();
+	      Locator2.Jul22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -11592,15 +11599,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,1560)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[7]"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"))); 
+	//	Thread.sleep(2000);
 		
 	    Locator3.CTWPendingReviewYellow().click();					                //Clicking on Dashboard count
 
@@ -11645,18 +11652,18 @@ public class Method3 extends BasePage{
 	       
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
-	       String FrequencyText =Locator3.Frequency2().getText();
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
 	       Thread.sleep(2000);
-	       Locator3.Frequency2().click();
+	       Locator3.ReportTabFequencyDD().click();
 	       Thread.sleep(2000);
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator2.Jan24().getText();
+	       String periodtext =Locator2.Apr22().getText();
 	       Thread.sleep(2000);
-	      Locator2.Jan24().click();
+	      Locator2.Apr22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -11789,15 +11796,15 @@ public class Method3 extends BasePage{
 	{
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,1560)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[7]"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"))); 
+	//	Thread.sleep(2000);
 		
 	    Locator3.CTWCompletedGreen().click();					                //Clicking on Dashboard count
 
@@ -11840,18 +11847,18 @@ public class Method3 extends BasePage{
 	       
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
-	       String FrequencyText =Locator3.Frequency2().getText();
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
 	       Thread.sleep(2000);
-	       Locator3.Frequency2().click();
+	       Locator3.ReportTabFequencyDD().click();
 	       Thread.sleep(2000);
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator2.Mar23().getText();
+	       String periodtext =Locator2.Mar22().getText();
 	       Thread.sleep(2000);
-	      Locator2.Mar23().click();
+	      Locator2.Mar22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -12049,9 +12056,9 @@ public class Method3 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Jan24().getText();
+    String PeriodText =Locator2.May22().getText();
     Thread.sleep(2000);
-    Locator2.Jan24().click();
+    Locator2.May22().click();
     Thread.sleep(2000);
    
     
@@ -12256,9 +12263,9 @@ public class Method3 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Feb23().getText();
+    String PeriodText =Locator2.May22().getText();
     Thread.sleep(2000);
-    Locator2.Feb23().click();
+    Locator2.May22().click();
     Thread.sleep(2000);
   
     
@@ -12458,9 +12465,9 @@ public class Method3 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Feb23().getText();
+    String PeriodText =Locator2.May22().getText();
     Thread.sleep(2000);
-    Locator2.Feb23().click();
+    Locator2.May22().click();
     Thread.sleep(2000);
     
     
@@ -12657,9 +12664,9 @@ public class Method3 extends BasePage{
     
     Locator3.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Feb23().getText();
+    String PeriodText =Locator2.Apr22().getText();
     Thread.sleep(2000);
-    Locator2.Feb23().click();
+    Locator2.Apr22().click();
     Thread.sleep(2000);
     
      List<String> li=new ArrayList<String>();
@@ -12851,9 +12858,9 @@ public class Method3 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Jan24().getText();
+    String PeriodText =Locator2.Apr22().getText();
     Thread.sleep(2000);
-    Locator2.Jan24().click();
+    Locator2.Apr22().click();
     Thread.sleep(2000);
     
     
@@ -13041,9 +13048,9 @@ public class Method3 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator5.May23().getText();
+    String PeriodText =Locator2.Apr22().getText();
     Thread.sleep(2000);
-    Locator5.May23().click();
+    Locator2.Apr22().click();
     Thread.sleep(2000);
     
     
@@ -13240,9 +13247,9 @@ public class Method3 extends BasePage{
  
  Locator2.PeriodFilterCompliedHigh().click();
  Thread.sleep(2000);
- String PeriodText =Locator2.Jan24().getText();
+ String PeriodText =Locator2.Mar22().getText();
  Thread.sleep(2000);
- Locator2.Jan24().click();
+ Locator2.Mar22().click();
  Thread.sleep(2000);
 
  
@@ -13445,9 +13452,9 @@ public class Method3 extends BasePage{
  
  Locator2.PeriodFilterCompliedHigh().click();
  Thread.sleep(2000);
- String PeriodText =Locator2.Mar23().getText();
+ String PeriodText =Locator2.Mar22().getText();
  Thread.sleep(2000);
- Locator2.Mar23().click();
+ Locator2.Mar22().click();
  Thread.sleep(2000);
 
  
@@ -13630,9 +13637,9 @@ public class Method3 extends BasePage{
  
  Locator2.PeriodFilterCompliedHigh().click();
  Thread.sleep(2000);
- String PeriodText =Locator2.Mar23().getText();
+ String PeriodText =Locator2.Mar22().getText();
  Thread.sleep(2000);
- Locator2.Mar23().click();
+ Locator2.Mar22().click();
  Thread.sleep(2000);
  
  
@@ -13772,15 +13779,15 @@ public class Method3 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2350)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[29]"))); 
-		Thread.sleep(2000);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[6]"))); 
+//		Thread.sleep(2000);
 		
 	    Locator3.PWAuditStatusSummeryABCConstructionOverdue().click();					                //Clicking on Dashboard count
 
@@ -13816,9 +13823,9 @@ public class Method3 extends BasePage{
 
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
-	       String ContractorTypeText =Locator3.ContractorTypeDD().getText();
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
 	       Thread.sleep(2000);
-	       Locator3.ContractorTypeDD().click();
+	       Locator3.PWCSSubContractorContractorTypeDD11().click();
 	       Thread.sleep(2000);
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
@@ -13837,9 +13844,9 @@ public class Method3 extends BasePage{
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator3.ReportTabPeriodDD().getText();
+	       String periodtext =Locator2.Jul22().getText();
 	       Thread.sleep(2000);
-	      Locator3.ReportTabPeriodDD().click();
+	      Locator2.Jul22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -14034,9 +14041,9 @@ Thread.sleep(3000);
 
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
-	       String ContractorTypeText =Locator3.ContractorTypeDD().getText();
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
 	       Thread.sleep(2000);
-	       Locator3.ContractorTypeDD().click();
+	       Locator3.PWCSSubContractorContractorTypeDD11().click();
 	       Thread.sleep(2000);
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
@@ -14053,9 +14060,9 @@ Thread.sleep(3000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator3.Sep23().getText();
+	       String periodtext =Locator2.Apr22().getText();
 	       Thread.sleep(2000);
-	      Locator3.Sep23().click();
+	      Locator2.Apr22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -14235,9 +14242,9 @@ Thread.sleep(3000);
 
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
-	       String ContractorTypeText =Locator3.ContractorTypeDD().getText();
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
 	       Thread.sleep(2000);
-	       Locator3.ContractorTypeDD().click();
+	       Locator3.PWCSSubContractorContractorTypeDD11().click();
 	       Thread.sleep(2000);
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
@@ -14254,9 +14261,9 @@ Thread.sleep(3000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator3.Period3().getText();
+	       String periodtext =Locator2.Mar22().getText();
 	       Thread.sleep(2000);
-	      Locator3.Period3().click();
+	      Locator2.Mar22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -15216,15 +15223,15 @@ Thread.sleep(3000);
 	public static void PWCSSubContractorCompliedHighmultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,3000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(2000);
 	    
 		Locator3.RudraHeritage().click();
 		Thread.sleep(4000);
@@ -15272,9 +15279,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(2000);
-	    String PeriodText =Locator2.Mar23().getText();
+	    String PeriodText =Locator2.Apr22().getText();
 	    Thread.sleep(2000);
-	    Locator2.Mar23().click();
+	    Locator2.Apr22().click();
 	    Thread.sleep(2000);
 
 	    Locator3.PWCSSubContractorExpand().click();
@@ -15433,15 +15440,15 @@ Thread.sleep(3000);
 	public static void PWCSSubContractorCompliedMediummultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,3000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(2000);
 		    
 		Locator3.RudraHeritage().click();
 		Thread.sleep(4000);
@@ -15489,9 +15496,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(2000);
-	    String PeriodText =Locator5.May23().getText();
+	    String PeriodText =Locator2.Apr22().getText();
 	    Thread.sleep(2000);
-	    Locator5.May23().click();
+	    Locator2.Apr22().click();
 	    Thread.sleep(2000);
 
 	    Locator3.PWCSSubContractorExpand().click();
@@ -15648,15 +15655,15 @@ Thread.sleep(3000);
 	public static void PWCSSubContractorCompliedLowmultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,3000)");
-	    Thread.sleep(2000);
+	    Thread.sleep(7000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
-		Thread.sleep(2000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(2000);
 	    
 		Locator3.RudraHeritage().click();
 		Thread.sleep(4000);
@@ -15704,9 +15711,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(1000);
-	    String PeriodText =Locator5.May23().getText();
+	    String PeriodText =Locator2.Apr22().getText();
 	    Thread.sleep(1000);
-	    Locator5.May23().click();
+	    Locator2.Apr22().click();
 	    Thread.sleep(1000);
 	
 	    Locator3.PWCSSubContractorExpand().click();
@@ -16153,15 +16160,15 @@ Thread.sleep(3000);
 	public static void PWCSSubContractorNotApplicableHighmultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,3000)");
 	    Thread.sleep(3000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
-		Thread.sleep(3000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(3000);
 	    
 		Locator3.RudraHeritage().click();
 		Thread.sleep(4000);
@@ -16209,9 +16216,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(1000);
-	    String PeriodText =Locator2.Jan24().getText();
+	    String PeriodText =Locator2.Mar22().getText();
 	    Thread.sleep(1000);
-	    Locator2.Jan24().click();
+	    Locator2.Mar22().click();
 	    Thread.sleep(1000);
 
 	    Locator3.PWCSSubContractorExpand().click();
@@ -16369,18 +16376,18 @@ Thread.sleep(3000);
 	public static void PWCSSubContractorNotApplicableMediummultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,3000)");
-	    Thread.sleep(3000);
+	    Thread.sleep(9000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
-		Thread.sleep(3000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(3000);
 	    
 		Locator3.RudraHeritage().click();
-		Thread.sleep(4000);
+		Thread.sleep(3000);
 							                
 	    Locator3.PWCSSubContractorNotApplicableMedium().click();					                //Clicking on Dashboard count
 
@@ -16425,9 +16432,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(1000);
-	    String PeriodText =Locator2.Mar23().getText();
+	    String PeriodText =Locator2.Mar22().getText();
 	    Thread.sleep(1000);
-	    Locator2.Mar23().click();
+	    Locator2.Mar22().click();
 	    Thread.sleep(1000);
 
 	    Locator3.PWCSSubContractorExpand().click();
@@ -16584,15 +16591,15 @@ Thread.sleep(3000);
 	public static void PWCSSubContractorNotApplicableLowmultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,3000)");
-	    Thread.sleep(3000);
+	    Thread.sleep(9000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
-		Thread.sleep(3000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+		//Thread.sleep(3000);
 	    
 		Locator3.RudraHeritage().click();
 		Thread.sleep(4000);
@@ -16640,9 +16647,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(1000);
-	    String PeriodText =Locator2.Mar23().getText();
+	    String PeriodText =Locator2.Mar22().getText();
 	    Thread.sleep(1000);
-	    Locator2.Mar23().click();
+	    Locator2.Mar22().click();
 	    Thread.sleep(1000);
 
 	    Locator3.PWCSSubContractorExpand().click();
@@ -16800,15 +16807,15 @@ Thread.sleep(3000);
 	public static void PWCSSubContractorNotCompliedLowmultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,3000)");
-	    Thread.sleep(3000);
+	    Thread.sleep(7000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
-		Thread.sleep(3000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(3000);
 	    
 		Locator3.RudraHeritage().click();
 		Thread.sleep(4000);
@@ -16856,9 +16863,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(1000);
-	    String PeriodText =Locator2.Feb23().getText();
+	    String PeriodText =Locator2.May22().getText();
 	    Thread.sleep(1000);
-	    Locator2.Feb23().click();
+	    Locator2.May22().click();
 	    Thread.sleep(1000);
 	
 	    Locator3.PWCSSubContractorExpand().click();
@@ -17563,15 +17570,15 @@ Thread.sleep(3000);
 	public static void PWCSSubContractorNotCompliedHighmultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,3000)");
 	    Thread.sleep(3000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
-		Thread.sleep(3000);
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+	//	Thread.sleep(3000);
 		    
 		Locator3.RudraHeritage().click();
 		Thread.sleep(4000);
@@ -17619,9 +17626,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(1000);
-	    String PeriodText =Locator2.Mar23().getText();
+	    String PeriodText =Locator2.May22().getText();
 	    Thread.sleep(1000);
-	    Locator2.Mar23().click();
+	    Locator2.May22().click();
 	    Thread.sleep(1000);
 
 	    Locator3.PWCSSubContractorExpand().click();
@@ -17780,14 +17787,14 @@ Thread.sleep(3000);
 	public static void PWCSSubContractorNotCompliedMediummultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,3000)");
-	    Thread.sleep(3000);
+	    Thread.sleep(6000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Creation Construction']"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
 		Thread.sleep(3000);
 	    
 		Locator3.RudraHeritage().click();
@@ -17836,9 +17843,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(1000);
-	    String PeriodText =Locator2.Feb23().getText();
+	    String PeriodText =Locator2.May22().getText();
 	    Thread.sleep(1000);
-	    Locator2.Feb23().click();
+	    Locator2.May22().click();
 	    Thread.sleep(1000);
 
 	    Locator3.PWCSSubContractorExpand().click();
@@ -18054,6 +18061,254 @@ Thread.sleep(3000);
 	}
 	
 	
+	public static void MyWorkspaceLicense( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator4.LicenseTab().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='leftdocumentmenu']"))); 
+			Thread.sleep(1000);
+			
+	if(Locator4.LicenseTab().isDisplayed()) {
+				
+				test.log(LogStatus.PASS, "License tab should be seen below the dashboard tab.");
+			}else {
+				
+				test.log(LogStatus.FAIL, "Audit and License tab should not be below the dashboard tab.");
+				
+			}
+		
+		    
+			Locator4.LicenseTab().click();
+			Thread.sleep(3000);
+		   
+			
+	}
+	
+	public static void MyWorkspaceLicenseSearch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='leftdocumentmenu']"))); 
+			Thread.sleep(1000);
+			
+			Locator4.LicenseTab().click();
+			Thread.sleep(3000);
+		  
+			Locator1.Serach().sendKeys("AK Heights");
+			Thread.sleep(3000);
+		   if(Locator1.Clear().isEnabled()) {
+			   Thread.sleep(2000);
+			   Locator1.Clear().click();
+				Thread.sleep(2000);
+				test.log(LogStatus.PASS, "Clear button working properly");
+
+		   }
+		   else
+		   {
+			   test.log(LogStatus.PASS, "Clear button does not working properly");
+		   }
+			
+		   Thread.sleep(1000);
+		   Method4.LicenceGridAndExcelCount(test,workbook);
+		   
+		   /*
+			File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			Locator1.Export().click();
+			
+		 	Thread.sleep(9000);
+			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		  
+	        Thread.sleep(3000);
+		   if (dirContents1.length < allFilesNew1.length) {
+				test.log(LogStatus.PASS,  "Excel Report download successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL,  "Excel Report does not download successfully");
+			}
+*/
+		   Thread.sleep(2000);
+          if(Locator1.viewlicensedocument().isEnabled()) {
+			   
+        	  Thread.sleep(2000);
+			   Locator1.viewlicensedocument().click();
+				Thread.sleep(2000);
+				test.log(LogStatus.PASS, "Licence document viewed successfully");
+
+		   }
+		   else
+		   {
+			   test.log(LogStatus.PASS, "Licence document does not viewed");
+		   }
+		   
+          Thread.sleep(2000);
+          
+          getDriver().switchTo().frame(Locator1.OuterFrame());
+          Thread.sleep(1000);
+          getDriver().switchTo().frame(Locator1.InnerFrame());
+          
+			File dir = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			Locator1.Download1().click();
+			
+		 	Thread.sleep(9000);
+			File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		  
+	        
+		   if (dirContents.length < allFilesNew.length) {
+				test.log(LogStatus.PASS,  "License document download successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL,  "License document does not download successfully");
+			}
+		   Thread.sleep(1000);
+		   
+		   
+	}
+
+	
+	
+	public static void LicenceGridAndExcelCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        
+        Thread.sleep(3000);
+        Locator.readTotalItems1().click();
+		String item = Locator.readTotalItems1().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+	
+		if(compliancesCount.equalsIgnoreCase("to"))
+		{
+			Thread.sleep(5000);
+		   item = Locator.readTotalItems1().getText();
+			bits = item.split(" ");
+        
+		}
+		
+        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+        
+        js1.executeScript("window.scrollBy(0,-1000)");
+        Thread.sleep(2000);
+ 		
+		Thread.sleep(4000);
+ 
+        File dir9 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] dirContents9 = dir9.listFiles();						//Counting number of files in directory before download
+ 		
+ 		Thread.sleep(3000);
+ 		Locator1.Export().click();
+ 		
+ 	 	Thread.sleep(9000);
+ 		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] allFilesNew0 = dir0.listFiles();						//Counting number of files in directory after download
+ 	  
+        Thread.sleep(3000);
+ 	   if (dirContents9.length < allFilesNew0.length) {
+ 			test.log(LogStatus.PASS,  " Excel Report Download Successfully");
+ 		}
+ 	   else
+ 	   {
+ 		 	test.log(LogStatus.FAIL, "  Excel Report Does Not Download Successfully "   );
+
+ 		}   
+ 	   Thread.sleep(4000);
+
+		
+		
+	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\License Report .xlsx");
+	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);
+	
+	//int rowCount = sheet.getLastRowNum();
+	
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+	
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	
+	
+	System.out.println("Row Count in column  " + columnNumber + ": " + actualRow);
+	
+	workbook.close();
+	fis.close();
+	
+	if(count1 == actualRow)
+	{
+		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+	
+	Thread.sleep(2000);
+	
+	String fis1 = "C:\\Users\\shitalb\\Downloads\\License Report .xlsx";
+	
+	File file = new File(fis1);
+	  
+	 if(file.exists()) {
+		 
+		 if(file.delete())
+		 {
+		 
+		 System.out.println("File deleted Successfully.");
+	     }
+		 
+	 }
+	 else {
+		 
+		 System.out.println("File does not exist Successfully.");
+	 }
+	 
+	 Thread.sleep(2000);
+     
+	    
+	}
 	
 	
 	

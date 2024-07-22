@@ -2,11 +2,14 @@ package companyProjectDirector;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
@@ -23,6 +26,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import companyAdmin.Locator;
 import companyAuditor.Locator2;
 import companyContractor.Locator1;
+import companyContractor.Method1;
 import companyManagement.Locator5;
 import companyManagement.Method5;
 import companyProjectHead.Locator3;
@@ -285,13 +289,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.ClearButtonRedGraphGrid().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -303,13 +307,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.ViewRedButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -429,13 +433,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "   Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "   Clear button working properly "  );
 			
 		}
 		
@@ -450,13 +454,13 @@ public class Method4 extends BasePage{
 				
 				Thread.sleep(2000);
 			    Locator4.YellowGraphViewButton().click();
-				test.log(LogStatus.PASS, "  View Button Is Clickable " );
+				test.log(LogStatus.PASS, "  Overview button working properly " );
 				
 			}
 			
 			else
 			{
-				test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+				test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 				
 			}
 			
@@ -573,13 +577,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.YellowGraphClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -592,13 +596,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -710,13 +714,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.RedGraph2GreenClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -729,13 +733,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -854,13 +858,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.RedGraphInYellowClearButton().click();
-			test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "   Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "   Clear button working properly "  );
 			
 		}
 		
@@ -872,13 +876,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -995,13 +999,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.RedGraphInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "   Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "   Clear button working properly "  );
 			
 		}
 		
@@ -1016,13 +1020,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -1158,13 +1162,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.GreyInGreenClearButton().click();
-					test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, "  Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -1175,13 +1179,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(4000);
 				    Locator4.ViewGreyInGreen().click();
-					test.log(LogStatus.PASS, "   View Button Is Clickable " );
+					test.log(LogStatus.PASS, "   Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -1298,13 +1302,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.GreyInYellowClearButton().click();
-					test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, "  Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "   Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "   Clear button working properly "  );
 					
 				}
 				
@@ -1315,13 +1319,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.GreyInYellowViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is Clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, " View Button Is Clickable "  );
+					test.log(LogStatus.FAIL, " Overview button working properly "  );
 					
 				}
 				
@@ -1436,13 +1440,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.GreyInRedGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -1453,13 +1457,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.GreyInRedGridViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is Clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -1579,13 +1583,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.ACSREDGraphGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -1716,13 +1720,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.ACSBlueGraphGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -1851,13 +1855,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.ACSGreenGraphGreedClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -1991,13 +1995,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.CTWCompliedGreenHighGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -2010,13 +2014,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.CTWCompliedGreenHighGridViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -2136,13 +2140,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator2.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, "   Clear Button Is clickable " );
+					test.log(LogStatus.PASS, "   Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "   Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "   Clear button working properly "  );
 					
 				}
 				
@@ -2157,13 +2161,13 @@ public class Method4 extends BasePage{
 						
 						Thread.sleep(2000);
 					    Locator2.YellowGraphViewButton().click();
-						test.log(LogStatus.PASS, "  View Button Is clickable " );
+						test.log(LogStatus.PASS, "  Overview button working properly " );
 						
 					}
 					
 					else
 					{
-						test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+						test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 						
 					}
 					
@@ -2280,13 +2284,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator2.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -2299,13 +2303,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.GreenViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -2416,13 +2420,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.CTWCompliedGreenHighGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -2435,13 +2439,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(3000);
 				    Locator4.CTWCompliedGreenHighGridViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -2561,13 +2565,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, "  Medium Risk - Clear Button Is clickable " );
+					test.log(LogStatus.PASS, "  Medium Risk - Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Medium Risk - Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Medium Risk - Clear button working properly "  );
 					
 				}
 				
@@ -2582,13 +2586,13 @@ public class Method4 extends BasePage{
 						
 						Thread.sleep(2000);
 					    Locator4.YellowGraphViewButton().click();
-						test.log(LogStatus.PASS, "  View Button Is clickable " );
+						test.log(LogStatus.PASS, "  Overview button working properly " );
 						
 					}
 					
 					else
 					{
-						test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+						test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 						
 					}
 					
@@ -2706,13 +2710,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -2725,13 +2729,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.GreenViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -2841,13 +2845,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.CTWCompliedGreenHighGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -2860,13 +2864,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.CTWCompliedGreenHighGridViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -2982,13 +2986,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, "  Clear Button Is clickable " );
+					test.log(LogStatus.PASS, "  Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "   Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "   Clear button working properly "  );
 					
 				}
 				
@@ -3003,13 +3007,13 @@ public class Method4 extends BasePage{
 						
 						Thread.sleep(2000);
 					    Locator4.YellowGraphViewButton().click();
-						test.log(LogStatus.PASS, "   View Button Is clickable " );
+						test.log(LogStatus.PASS, "   Overview button working properly " );
 						
 					}
 					
 					else
 					{
-						test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+						test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 						
 					}
 					
@@ -3126,13 +3130,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, "  Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, "  Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -3145,13 +3149,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.GreenViewButton().click();
-					test.log(LogStatus.PASS, "   View Button Is clickable " );
+					test.log(LogStatus.PASS, "   Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "   View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "   Overview button working properly "  );
 					
 				}
 				
@@ -3264,13 +3268,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.ACSREDGraphGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -3318,8 +3322,9 @@ public class Method4 extends BasePage{
 			public static void CTWAuditStatusSummeryPendingReview( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 			{
 				
-				//WebWait wait = new WebWait(, 1000);
-				Thread.sleep(26000);
+				WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+				Thread.sleep(5000);
+					
 				
 				/*
 				
@@ -3401,18 +3406,18 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.ACSBlueGraphGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
 				
-				
+				/*
 				if(Locator4.ACSBlueGraphGridExportButton().isEnabled())
 				{
 					
@@ -3427,6 +3432,30 @@ public class Method4 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
+				*/
+				
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(10000);
+			     Locator4.ACSBlueGraphGridExportButton().click();
+				
+			 	Thread.sleep(9000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(6000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Download Successfully");
+				}
+			   
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File does not Download Successfully");
+				}
+
 				
 				Thread.sleep(4000);
 
@@ -3538,17 +3567,17 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.ACSGreenGraphGreedClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
-				
+				/*
 				
 				if(Locator4.ACSGreenGraphGreedExportButton().isEnabled())
 				{
@@ -3564,7 +3593,30 @@ public class Method4 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
+				*/
 				
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(10000);
+			     Locator4.ACSGreenGraphGreedExportButton().click();
+				
+			 	Thread.sleep(9000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(6000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Download Successfully");
+				}
+			   
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File does not Download Successfully");
+				}
+
 				
 				Thread.sleep(4000);
 
@@ -3682,13 +3734,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator3.ACSREDGraphGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -3825,13 +3877,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator3.ACSREDGraphGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -3955,13 +4007,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator3.ACSREDGraphGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -4089,13 +4141,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator3.ACSREDGraphGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -4234,13 +4286,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.CTWCompliedGreenHighGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -4253,13 +4305,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.CTWCompliedGreenHighGridViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -4379,13 +4431,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator2.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, "   Clear Button Is clickable " );
+					test.log(LogStatus.PASS, "   Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "   Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "   Clear button working properly "  );
 					
 				}
 				
@@ -4400,13 +4452,13 @@ public class Method4 extends BasePage{
 						
 						Thread.sleep(2000);
 					    Locator2.YellowGraphViewButton().click();
-						test.log(LogStatus.PASS, "  View Button Is clickable " );
+						test.log(LogStatus.PASS, "  Overview button working properly " );
 						
 					}
 					
 					else
 					{
-						test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+						test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 						
 					}
 					
@@ -4523,13 +4575,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator2.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -4542,13 +4594,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator2.GreenViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -4670,13 +4722,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.CTWCompliedGreenHighGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -4689,13 +4741,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.CTWCompliedGreenHighGridViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -4815,13 +4867,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, "   Clear Button Is clickable " );
+					test.log(LogStatus.PASS, "   Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "   Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "   Clear button working properly "  );
 					
 				}
 				
@@ -4836,13 +4888,13 @@ public class Method4 extends BasePage{
 						
 						Thread.sleep(2000);
 					    Locator4.YellowGraphViewButton().click();
-						test.log(LogStatus.PASS, "  View Button Is clickable " );
+						test.log(LogStatus.PASS, "  Overview button working properly " );
 						
 					}
 					
 					else
 					{
-						test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+						test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 						
 					}
 					
@@ -4964,13 +5016,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -4983,13 +5035,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.GreenViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -5114,13 +5166,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.CTWCompliedGreenHighGridClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -5133,13 +5185,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.CTWCompliedGreenHighGridViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -5260,13 +5312,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, "   Clear Button Is clickable " );
+					test.log(LogStatus.PASS, "   Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "   Clear Button Is clickable "  );
+					test.log(LogStatus.FAIL, "   Clear button working properly "  );
 					
 				}
 				
@@ -5281,13 +5333,13 @@ public class Method4 extends BasePage{
 						
 						Thread.sleep(2000);
 					    Locator4.YellowGraphViewButton().click();
-						test.log(LogStatus.PASS, "  View Button Is clickable " );
+						test.log(LogStatus.PASS, "  Overview button working properly " );
 						
 					}
 					
 					else
 					{
-						test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+						test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 						
 					}
 					
@@ -5330,7 +5382,7 @@ public class Method4 extends BasePage{
 				Thread.sleep(2000);
 				
 				*/
-				
+				Thread.sleep(3000);
 				int open = Integer.parseInt(Locator4.PWCSSABCconstructionNotApplicableLow().getText());	//Reading Dashboard count.
 			    Locator4.PWCSSABCconstructionNotApplicableLow().click();					                //Clicking on Dashboard count
 
@@ -5404,13 +5456,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+					test.log(LogStatus.PASS, " Clear button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
 				
@@ -5423,13 +5475,13 @@ public class Method4 extends BasePage{
 					
 					Thread.sleep(2000);
 				    Locator4.GreenViewButton().click();
-					test.log(LogStatus.PASS, "  View Button Is clickable " );
+					test.log(LogStatus.PASS, "  Overview button working properly " );
 					
 				}
 				
 				else
 				{
-					test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+					test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 					
 				}
 				
@@ -5534,13 +5586,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.DocumentView().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -5670,13 +5722,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.DocumentClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -5785,13 +5837,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.ReportClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -5921,13 +5973,13 @@ public class Method4 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator4.ProjectDropViewButton().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -6005,9 +6057,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
         
        
@@ -6240,9 +6292,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jan24().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Jan24().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
         
 	    Locator3.PWCSSubContractorExpand().click();
@@ -6468,9 +6520,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator5.May23().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator5.May23().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
  
        
@@ -6633,7 +6685,7 @@ public class Method4 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 		
 		
 			
@@ -6642,8 +6694,8 @@ public class Method4 extends BasePage{
 	    jss.executeScript("window.scrollBy(0,300)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-drilldown-data-label']"))); 
-		Thread.sleep(2000);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-drilldown-data-label']"))); 
+//		Thread.sleep(2000);
 			
 		Locator2.RedGraph2().click();
 		Thread.sleep(2000);
@@ -6695,9 +6747,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator5.May23().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator5.May23().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
       
 	    Locator3.PWCSSubContractorExpand().click();
@@ -6944,9 +6996,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
  //      Locator2.PeriodFilterCompliedHigh().click();
  //      Thread.sleep(2000);
@@ -7106,7 +7158,7 @@ public class Method4 extends BasePage{
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 		
 		
 			
@@ -7115,8 +7167,8 @@ public class Method4 extends BasePage{
 	    jss.executeScript("window.scrollBy(0,300)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-drilldown-data-label']"))); 
-		Thread.sleep(2000);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-drilldown-data-label']"))); 
+//		Thread.sleep(2000);
 			
 		Locator2.RedGraph2().click();
 		Thread.sleep(2000);
@@ -7194,9 +7246,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
   //     Locator2.PeriodFilterCompliedHigh().click();
   //     Thread.sleep(2000);
@@ -7417,9 +7469,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator5.May23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator5.May23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
        
 	    Locator3.PWCSSubContractorExpand().click();
@@ -7644,9 +7696,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
    //    Locator2.PeriodFilterCompliedHigh().click();
     //   Thread.sleep(2000);
@@ -7871,9 +7923,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
       
 	    Locator3.PWCSSubContractorExpand().click();
@@ -8078,9 +8130,9 @@ public class Method4 extends BasePage{
        
        Locator3.Frequency().click();
        Thread.sleep(2000);
-       String FrequencyText =Locator3.Frequency2().getText();
+       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
        Thread.sleep(2000);
-       Locator3.Frequency2().click();
+       Locator3.ReportTabFequencyDD().click();
        Thread.sleep(2000);
        Locator3.Frequency().click();
        Thread.sleep(2000);
@@ -8100,9 +8152,9 @@ public class Method4 extends BasePage{
        
        Locator3.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Jul23().getText();
+       String periodtext =Locator2.Jul22().getText();
        Thread.sleep(2000);
-      Locator2.Jul23().click();
+      Locator2.Jul22().click();
       Thread.sleep(2000);
       
        
@@ -8303,9 +8355,9 @@ public class Method4 extends BasePage{
        
        Locator3.Frequency().click();
        Thread.sleep(2000);
-       String FrequencyText =Locator3.Frequency2().getText();
+       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
        Thread.sleep(2000);
-       Locator3.Frequency2().click();
+       Locator3.ReportTabFequencyDD().click();
        Thread.sleep(2000);
        Locator3.Frequency().click();
        Thread.sleep(2000);
@@ -8327,9 +8379,9 @@ public class Method4 extends BasePage{
        
        Locator3.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Jan24().getText();
+       String periodtext =Locator2.Apr22().getText();
        Thread.sleep(2000);
-      Locator2.Jan24().click();
+      Locator2.Apr22().click();
       Thread.sleep(2000);
       
        
@@ -8506,9 +8558,9 @@ public class Method4 extends BasePage{
        
        Locator3.Frequency().click();
        Thread.sleep(2000);
-       String FrequencyText =Locator3.Frequency2().getText();
+       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
        Thread.sleep(2000);
-       Locator3.Frequency2().click();
+       Locator3.ReportTabFequencyDD().click();
        Thread.sleep(2000);
        Locator3.Frequency().click();
        Thread.sleep(2000);
@@ -8526,9 +8578,9 @@ public class Method4 extends BasePage{
        
        Locator3.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator5.May23().getText();
+       String periodtext =Locator2.Mar22().getText();
        Thread.sleep(2000);
-      Locator5.May23().click();
+      Locator2.Mar22().click();
       Thread.sleep(2000);
       
        
@@ -8716,9 +8768,9 @@ public class Method4 extends BasePage{
        
     Locator3.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator5.Feb231().getText();
+    String PeriodText =Locator2.Apr22().getText();
     Thread.sleep(2000);
-    Locator5.Feb231().click();
+    Locator2.Apr22().click();
     Thread.sleep(2000);
    
      List<String> li=new ArrayList<String>();
@@ -8918,9 +8970,9 @@ public class Method4 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator1.Jan20().getText();
+    String PeriodText =Locator2.May22().getText();
     Thread.sleep(2000);
-    Locator1.Jan20().click();
+    Locator2.May22().click();
     Thread.sleep(2000);
    
     
@@ -9128,9 +9180,9 @@ public class Method4 extends BasePage{
  
  Locator2.PeriodFilterCompliedHigh().click();
  Thread.sleep(2000);
- String PeriodText =Locator2.Jul20().getText();
+ String PeriodText =Locator2.Mar22().getText();
  Thread.sleep(2000);
- Locator2.Jul20().click();
+ Locator2.Mar22().click();
  Thread.sleep(2000);
 
  
@@ -9274,6 +9326,601 @@ public class Method4 extends BasePage{
 		
 	}
 	
+	
+	
+	public static void CTWAuditStatusSummeryOverdue1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(9000);
+			
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1560)");
+	    Thread.sleep(3000);
+	    
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"))); 
+	//	Thread.sleep(2000);
+		
+	    Locator3.CTWOverdueRed().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(5000);
+	    
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	  
+	    Locator3.Project().click();
+	       Thread.sleep(2000);
+	     //  Locator3.ProjectReport().click();
+	     //  Thread.sleep(2000);
+	       String ProjectText =Locator2.CreationConstruction().getText();
+	       Thread.sleep(2000);
+	       Locator2.CreationConstruction().click();
+	       Thread.sleep(2000);
+	       Locator3.Project().click();
+	       Thread.sleep(2000);
+ 
+
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator3.Status1Overdue().getText();
+	       Thread.sleep(2000);
+	       Locator3.Status1Overdue().click();
+	       Thread.sleep(2000);
+	       Locator3.Status2Overdue().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+ 
+ 
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       Thread.sleep(2000);
+	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Thread.sleep(2000);
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	       
+	       
+	       
+	       
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
+	       Thread.sleep(2000);
+	       Locator3.ReportTabFequencyDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       
+	       Locator3.Period().click();
+	       Thread.sleep(2000);
+	       String periodtext =Locator2.Jul22().getText();
+	       Thread.sleep(2000);
+	      Locator2.Jul22().click();
+	      Thread.sleep(2000);
+	      
+	       
+	      
+ 
+ 
+  List<String> li=new ArrayList<String>();
+  
+//  li.add(locationtext);
+  li.add(ProjectText);
+  li.add(Statustext);
+  li.add(ContractorTypeText);
+  li.add(FrequencyText);
+  li.add(periodtext);
+  
+  Thread.sleep(3000);
+  
+		List<String> filter=new ArrayList<String>();	
+	//	filter.add("Location");
+		filter.add("Project");
+		filter.add("Status");
+		filter.add("Contractor Type");
+		filter.add("Frequency");
+		filter.add("Period");
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(3000);
+
+		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
+		String s = Locator2.RedGraphGrid().getText();
+		Thread.sleep(2000);
+
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(5000);
+	
+	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
+	    List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
+
+		
+		Thread.sleep(2000);
+
+		for(int i=0; i<li.size(); i++){
+			
+			List<String> text= new ArrayList<String>();
+			HashSet<String> pass=new LinkedHashSet<>();
+			HashSet<String> fail=new LinkedHashSet<>();
+			List<WebElement> raw=new ArrayList<WebElement>();
+
+				if(i==0)
+				{
+					raw.addAll(projectcol);
+				}
+			else if(i==1)
+				{
+					raw.addAll(statuscol);
+				}
+			else if(i==2)
+			{
+				raw.addAll(contractorcol);
+			}
+				
+			else if(i==3)
+			{
+				raw.addAll(frequencycol);
+			}
+				
+			else if(i==4)
+			{
+				raw.addAll(periodcol);
+			}
+				
+			for(int k=0;k<raw.size();k++)
+				{
+					text.add(raw.get(k).getText());
+				}
+
+				for(int l=0;l<text.size();l++)
+					{
+				if(text.get(l).equals(li.get(i)))
+					{
+						pass.add(text.get(l));	
+						System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+					}
+				else
+				{
+					fail.add(text.get(l));		
+					System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+					System.out.println(i);
+
+				}
+				 }
+		 
+	for(String Fal : fail)
+		 {
+				test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+		 }	
+		 for(String Pas : pass)
+		 {
+			 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+				test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+				System.out.println(filter.get(i)+" : "+Pas);
+	 }
+		 text.clear();
+		pass.clear();
+		fail.clear();
+		raw.clear();
+		
+		
+		}
+		}else {
+			test.log(LogStatus.PASS,"No records found");	
+		}
+		Thread.sleep(3000);
+		
+
+	
+		
+	}
+	
+	
+	
+	
+	
+	
+	public static void CTWAuditStatusSummeryPendingReviewn( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(9000);
+			
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1560)");
+	    Thread.sleep(2000);
+	    
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"))); 
+	//	Thread.sleep(2000);
+		
+	    Locator3.CTWPendingReviewYellow().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(5000);
+	    
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	  
+	    Locator3.Project().click();
+	       Thread.sleep(2000);
+	     //  Locator3.ProjectReport().click();
+	     //  Thread.sleep(2000);
+	       String ProjectText =Locator2.CreationConstruction().getText();
+	       Thread.sleep(2000);
+	       Locator2.CreationConstruction().click();
+	       Thread.sleep(2000);
+	       Locator3.Project().click();
+	       Thread.sleep(2000);
+ 
+
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator3.Status1PendingReview().getText();
+	       Thread.sleep(2000);
+	       Locator3.Status1PendingReview().click();
+	       Thread.sleep(2000);
+	       Locator3.Status2PendingReview().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+ 
+ 
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       Thread.sleep(2000);
+	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Thread.sleep(2000);
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	      
+	       
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
+	       Thread.sleep(2000);
+	       Locator3.ReportTabFequencyDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       
+	       Locator3.Period().click();
+	       Thread.sleep(2000);
+	       String periodtext =Locator2.Apr22().getText();
+	       Thread.sleep(2000);
+	      Locator2.Apr22().click();
+	      Thread.sleep(2000);
+	      
+	       
+	      
+ 
+ 
+  List<String> li=new ArrayList<String>();
+  
+//  li.add(locationtext);
+  li.add(ProjectText);
+  li.add(Statustext);
+  li.add(ContractorTypeText);
+  li.add(FrequencyText);
+  li.add(periodtext);
+  
+  Thread.sleep(3000);
+  
+		List<String> filter=new ArrayList<String>();	
+	//	filter.add("Location");
+		filter.add("Project");
+		filter.add("Status");
+		filter.add("ContractorType");
+		filter.add("Frequency");
+		filter.add("Period");
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(3000);
+
+		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
+		String s = Locator2.RedGraphGrid().getText();
+		Thread.sleep(2000);
+
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(5000);
+	
+	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
+	    List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
+
+		
+		Thread.sleep(2000);
+
+		for(int i=0; i<li.size(); i++){
+			
+			List<String> text= new ArrayList<String>();
+			HashSet<String> pass=new LinkedHashSet<>();
+			HashSet<String> fail=new LinkedHashSet<>();
+			List<WebElement> raw=new ArrayList<WebElement>();
+
+				if(i==0)
+				{
+					raw.addAll(projectcol);
+				}
+			else if(i==1)
+				{
+					raw.addAll(statuscol);
+				}
+			else if(i==2)
+			{
+				raw.addAll(contractorcol);
+			}
+				
+			else if(i==3)
+			{
+				raw.addAll(frequencycol);
+			}
+				
+			else if(i==4)
+			{
+				raw.addAll(periodcol);
+			}
+				
+			for(int k=0;k<raw.size();k++)
+				{
+					text.add(raw.get(k).getText());
+				}
+
+				for(int l=0;l<text.size();l++)
+					{
+				if(text.get(l).equals(li.get(i)))
+					{
+						pass.add(text.get(l));	
+						System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+					}
+				else
+				{
+					fail.add(text.get(l));		
+					System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+					System.out.println(i);
+
+				}
+				 }
+		 
+	for(String Fal : fail)
+		 {
+				test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+		 }	
+		 for(String Pas : pass)
+		 {
+			 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+				test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+				System.out.println(filter.get(i)+" : "+Pas);
+	 }
+		 text.clear();
+		pass.clear();
+		fail.clear();
+		raw.clear();
+		
+		
+		}
+		}else {
+			test.log(LogStatus.PASS,"No records found");	
+		}
+		Thread.sleep(3000);
+		
+
+	
+		
+	}
+	
+	
+	
+	public static void CTWAuditStatusSummeryClosed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(9000);
+			
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1560)");
+	    Thread.sleep(2000);
+	    
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"))); 
+	//	Thread.sleep(2000);
+		
+	    Locator3.CTWCompletedGreen().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(5000);
+	    
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	  
+	       Locator3.Project().click();
+	       Thread.sleep(2000);
+	       String ProjectText =Locator2.CreationConstruction().getText();
+	       Thread.sleep(2000);
+	       Locator2.CreationConstruction().click();
+	       Thread.sleep(2000);
+	       Locator3.Project().click();
+	       Thread.sleep(2000);
+ 
+
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator3.StatusClosed().getText();
+	       Thread.sleep(2000);
+	       Locator3.StatusClosed().click();
+	       Thread.sleep(2000);
+	       Locator3.StatusClosed1().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+ 
+ 
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       Thread.sleep(2000);
+	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Thread.sleep(2000);
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	      
+	       
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
+	       Thread.sleep(2000);
+	       Locator3.ReportTabFequencyDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       
+	       Locator3.Period().click();
+	       Thread.sleep(2000);
+	       String periodtext =Locator2.Mar22().getText();
+	       Thread.sleep(2000);
+	      Locator2.Mar22().click();
+	      Thread.sleep(2000);
+	      
+	       
+	      
+ 
+ 
+  List<String> li=new ArrayList<String>();
+  
+//  li.add(locationtext);
+  li.add(ProjectText);
+  li.add(Statustext);
+  li.add(ContractorTypeText);
+  li.add(FrequencyText);
+  li.add(periodtext);
+  
+  Thread.sleep(3000);
+  
+		List<String> filter=new ArrayList<String>();	
+	//	filter.add("Location");
+		filter.add("Project");
+		filter.add("Status");
+		filter.add("ContractorType");
+		filter.add("Frequency");
+		filter.add("Period");
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(3000);
+
+		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
+		String s = Locator2.RedGraphGrid().getText();
+		Thread.sleep(2000);
+
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(5000);
+	
+	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
+	    List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
+
+		
+		Thread.sleep(2000);
+
+		for(int i=0; i<li.size(); i++){
+			
+			List<String> text= new ArrayList<String>();
+			HashSet<String> pass=new LinkedHashSet<>();
+			HashSet<String> fail=new LinkedHashSet<>();
+			List<WebElement> raw=new ArrayList<WebElement>();
+
+				if(i==0)
+				{
+					raw.addAll(projectcol);
+				}
+			else if(i==1)
+				{
+					raw.addAll(statuscol);
+				}
+			else if(i==2)
+			{
+				raw.addAll(contractorcol);
+			}
+				
+			else if(i==3)
+			{
+				raw.addAll(frequencycol);
+			}
+				
+			else if(i==4)
+			{
+				raw.addAll(periodcol);
+			}
+				
+			for(int k=0;k<raw.size();k++)
+				{
+					text.add(raw.get(k).getText());
+				}
+
+				for(int l=0;l<text.size();l++)
+					{
+				if(text.get(l).equals(li.get(i)))
+					{
+						pass.add(text.get(l));	
+						System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+					}
+				else
+				{
+					fail.add(text.get(l));		
+					System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+					System.out.println(i);
+
+				}
+				 }
+		 
+	for(String Fal : fail)
+		 {
+				test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+		 }	
+		 for(String Pas : pass)
+		 {
+			 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+				test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+				System.out.println(filter.get(i)+" : "+Pas);
+	 }
+		 text.clear();
+		pass.clear();
+		fail.clear();
+		raw.clear();
+		
+		
+		}
+		}else {
+			test.log(LogStatus.PASS,"No records found");	
+		}
+		Thread.sleep(3000);
+		
+
+	
+		
+	}
 	
 	
 	
@@ -9651,7 +10298,7 @@ public class Method4 extends BasePage{
 	
 	
 	
-	public static void CTWAuditStatusSummeryOverdue1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void CTWAuditStatusSummeryOverduen( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
 		
@@ -9708,18 +10355,18 @@ public class Method4 extends BasePage{
 	       
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
-	       String FrequencyText =Locator3.Frequency2().getText();
+	       String FrequencyText =Locator3.ReportTabFequencyDD().getText();
 	       Thread.sleep(2000);
-	       Locator3.Frequency2().click();
+	       Locator3.ReportTabFequencyDD().click();
 	       Thread.sleep(2000);
 	       Locator3.Frequency().click();
 	       Thread.sleep(2000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator3.Sep23().getText();
+	       String periodtext =Locator2.Jul22().getText();
 	       Thread.sleep(2000);
-	      Locator3.Sep23().click();
+	      Locator2.Jul22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -9912,9 +10559,9 @@ public class Method4 extends BasePage{
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator2.Jan24().getText();
+	       String periodtext =Locator2.Jan22().getText();
 	       Thread.sleep(2000);
-	      Locator2.Jan24().click();
+	      Locator2.Jan22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -10240,6 +10887,624 @@ public class Method4 extends BasePage{
 	
 	
 	
+	public static void PWAuditStatusSummeryABCConstructionOverduep( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(9000);
+			
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,2350)");
+	    Thread.sleep(2000);
+	    
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[6]"))); 
+//		Thread.sleep(2000);
+		
+	    Locator4.PWAuditStatusSummeryABCConstructionOverdue().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(20000);
+	   
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	    
+       
+	    Locator2.Project().click();
+	       Thread.sleep(6000);
+	       String ProjectText =Locator3.Project2().getText();
+	       Thread.sleep(9000);
+	       Locator3.Project2().click();
+	       Thread.sleep(3000);
+	       Locator3.Project2().click();
+	       Thread.sleep(3000);
+	       Locator2.Project().click();
+	       Thread.sleep(2000);
+
+
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator3.Status1Overdue().getText();
+	       Thread.sleep(2000);
+	       Locator3.Status1Overdue().click();
+	       Thread.sleep(2000);
+	       Locator3.Status2Overdue().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+
+
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       Thread.sleep(2000);
+	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Thread.sleep(2000);
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	       
+	       
+	       
+	       
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       String FrequencyText =Locator3.FrequencyDD().getText();
+	       Thread.sleep(2000);
+	       Locator3.FrequencyDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       
+	       Locator3.Period().click();
+	       Thread.sleep(2000);
+	       String periodtext =Locator2.Jul22().getText();
+	       Thread.sleep(2000);
+	      Locator2.Jul22().click();
+	      Thread.sleep(2000);
+	      
+	       
+	      
+
+
+List<String> li=new ArrayList<String>();
+
+//li.add(locationtext);
+li.add(ProjectText);
+li.add(Statustext);
+li.add(ContractorTypeText);
+li.add(FrequencyText);
+li.add(periodtext);
+
+Thread.sleep(3000);
+
+		List<String> filter=new ArrayList<String>();	
+	//	filter.add("Location");
+		filter.add("Overdue - Project");
+		filter.add("Status");
+		filter.add("ContractorType");
+		filter.add("Frequency");
+		filter.add("Period");
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(3000);
+
+		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
+		String s = Locator2.RedGraphGrid().getText();
+		Thread.sleep(2000);
+
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(5000);
+	
+	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
+
+		
+		Thread.sleep(2000);
+
+		for(int i=0; i<li.size(); i++){
+			
+			List<String> text= new ArrayList<String>();
+			HashSet<String> pass=new LinkedHashSet<>();
+			HashSet<String> fail=new LinkedHashSet<>();
+			List<WebElement> raw=new ArrayList<WebElement>();
+
+				if(i==0)
+				{
+					raw.addAll(projectcol);
+				}
+			else if(i==1)
+				{
+					raw.addAll(statuscol);
+				}
+			else if(i==2)
+			{
+				raw.addAll(contractortypecol);
+			}
+				
+			else if(i==3)
+			{
+				raw.addAll(frequencycol);
+			}
+				
+			else if(i==4)
+			{
+				raw.addAll(periodcol);
+			}
+				
+			for(int k=0;k<raw.size();k++)
+				{
+					text.add(raw.get(k).getText());
+				}
+
+				for(int l=0;l<text.size();l++)
+					{
+				if(text.get(l).equals(li.get(i)))
+					{
+						pass.add(text.get(l));	
+						System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+					}
+				else
+				{
+					fail.add(text.get(l));		
+					System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+					System.out.println(i);
+
+				}
+				 }
+		 
+	for(String Fal : fail)
+		 {
+				test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+		 }	
+		 for(String Pas : pass)
+		 {
+			 test.log(LogStatus.PASS, filter.get(i)+" dropdown working properly.");
+				test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+				System.out.println(filter.get(i)+" : "+Pas);
+	 }
+		 text.clear();
+		pass.clear();
+		fail.clear();
+		raw.clear();
+		
+		
+		}
+		}else {
+			test.log(LogStatus.PASS,"No records found");	
+		}
+		Thread.sleep(3000);
+		
+
+	    
+		
+		Thread.sleep(4000);
+
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator3.ClosePage().click();
+		
+		Thread.sleep(3000);
+		
+		Method4.PWAuditStatusSummerABCConstructionPendingReview1(test, workbook);	
+		Thread.sleep(3000);
+		
+		Method4.PWAuditStatusSummerABCConstructionClosed1(test, workbook);	
+		Thread.sleep(3000);
+
+		
+		
+		
+	}
+	
+	
+	public static void PWAuditStatusSummerABCConstructionClosed1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(26000);
+		
+		 Locator4.PWAuditStatusSummerABCConstructionCompleted().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(20000);
+	    
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	    
+	    
+	    Locator2.Project().click();
+	       Thread.sleep(3000);  
+	       String ProjectText =Locator3.Project2().getText();
+	       Thread.sleep(3000);
+	       Locator3.Project2().click();
+	       Thread.sleep(3000);
+	       Locator3.Project2().click();
+	       Thread.sleep(3000);
+	       Locator2.Project().click();
+	       Thread.sleep(2000);
+
+
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator3.Status1Closed().getText();
+	       Thread.sleep(2000);
+	       Locator3.Status1Closed().click();
+	       Thread.sleep(2000);
+	       Locator3.Status2Closed().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+
+
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       Thread.sleep(2000);
+	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Thread.sleep(2000);
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	      
+	       
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       String FrequencyText =Locator3.FrequencyDD().getText();
+	       Thread.sleep(2000);
+	       Locator3.FrequencyDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       
+	       Locator3.Period().click();
+	       Thread.sleep(2000);
+	       String periodtext =Locator2.Mar22().getText();
+	       Thread.sleep(2000);
+	      Locator2.Mar22().click();
+	      Thread.sleep(2000);
+	      
+	       
+	      
+
+
+List<String> li=new ArrayList<String>();
+
+//li.add(locationtext);
+li.add(ProjectText);
+li.add(Statustext);
+li.add(ContractorTypeText);
+li.add(FrequencyText);
+li.add(periodtext);
+
+Thread.sleep(3000);
+
+		List<String> filter=new ArrayList<String>();	
+	//	filter.add("Location");
+		filter.add("Completed   -  Project");
+		filter.add("Status");
+		filter.add("ContractorType");
+		filter.add("Frequency");
+		filter.add("Period");
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(3000);
+
+		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
+		String s = Locator2.RedGraphGrid().getText();
+		Thread.sleep(2000);
+
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(5000);
+	
+	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
+
+		
+		Thread.sleep(2000);
+
+		for(int i=0; i<li.size(); i++){
+			
+			List<String> text= new ArrayList<String>();
+			HashSet<String> pass=new LinkedHashSet<>();
+			HashSet<String> fail=new LinkedHashSet<>();
+			List<WebElement> raw=new ArrayList<WebElement>();
+
+				if(i==0)
+				{
+					raw.addAll(projectcol);
+				}
+			else if(i==1)
+				{
+					raw.addAll(statuscol);
+				}
+			else if(i==2)
+			{
+				raw.addAll(contractortypecol);
+			}
+				
+			else if(i==3)
+			{
+				raw.addAll(frequencycol);
+			}
+				
+			else if(i==4)
+			{
+				raw.addAll(periodcol);
+			}
+				
+			for(int k=0;k<raw.size();k++)
+				{
+					text.add(raw.get(k).getText());
+				}
+
+				for(int l=0;l<text.size();l++)
+					{
+				if(text.get(l).equals(li.get(i)))
+					{
+						pass.add(text.get(l));	
+						System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+					}
+				else
+				{
+					fail.add(text.get(l));		
+					System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+					System.out.println(i);
+
+				}
+				 }
+		 
+	for(String Fal : fail)
+		 {
+				test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+		 }	
+		 for(String Pas : pass)
+		 {
+			 test.log(LogStatus.PASS, filter.get(i)+" dropdown working properly.");
+				test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+				System.out.println(filter.get(i)+" : "+Pas);
+	 }
+		 text.clear();
+		pass.clear();
+		fail.clear();
+		raw.clear();
+		
+		
+		}
+		}else {
+			test.log(LogStatus.PASS,"No records found");	
+		}
+		Thread.sleep(3000);
+
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator3.ClosePage().click();
+		
+		Thread.sleep(3000);
+		
+	}
+
+
+	
+	
+	public static void PWAuditStatusSummerABCConstructionPendingReviewp( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(26000);
+		
+		 Locator4.PWAuditStatusSummerABCConstructionPendingReview().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(20000);
+	    
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	    
+	    
+	    Locator2.Project().click();
+	       Thread.sleep(3000);  
+	       String ProjectText =Locator3.Project2().getText();
+	       Thread.sleep(3000);
+	       Locator3.Project2().click();
+	       Thread.sleep(3000);
+	       Locator3.Project2().click();
+	       Thread.sleep(3000);
+	       Locator2.Project().click();
+	       Thread.sleep(2000);
+
+
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator3.Status1PendingReview().getText();
+	       Thread.sleep(2000);
+	       Locator3.Status1PendingReview().click();
+	       Thread.sleep(2000);
+	       Locator3.Status2PendingReview().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+
+
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       Thread.sleep(2000);
+	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Thread.sleep(2000);
+	       Locator3.ContractorType().click();
+	       Thread.sleep(2000);
+	      
+	       
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       String FrequencyText =Locator3.FrequencyDD().getText();
+	       Thread.sleep(2000);
+	       Locator3.FrequencyDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Frequency().click();
+	       Thread.sleep(2000);
+	       
+	       Locator3.Period().click();
+	       Thread.sleep(2000);
+	       String periodtext =Locator2.Apr22().getText();
+	       Thread.sleep(2000);
+	      Locator2.Apr22().click();
+	      Thread.sleep(2000);
+	      
+	       
+	      
+
+
+List<String> li=new ArrayList<String>();
+
+//li.add(locationtext);
+li.add(ProjectText);
+li.add(Statustext);
+li.add(ContractorTypeText);
+li.add(FrequencyText);
+li.add(periodtext);
+
+Thread.sleep(3000);
+
+		List<String> filter=new ArrayList<String>();	
+	//	filter.add("Location");
+		filter.add("Pending Review   -  Project");
+		filter.add("Status");
+		filter.add("ContractorType");
+		filter.add("Frequency");
+		filter.add("Period");
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(3000);
+
+		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
+		String s = Locator2.RedGraphGrid().getText();
+		Thread.sleep(2000);
+
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(5000);
+	
+	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> contractortypecol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"gridAuditStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
+
+		
+		Thread.sleep(2000);
+
+		for(int i=0; i<li.size(); i++){
+			
+			List<String> text= new ArrayList<String>();
+			HashSet<String> pass=new LinkedHashSet<>();
+			HashSet<String> fail=new LinkedHashSet<>();
+			List<WebElement> raw=new ArrayList<WebElement>();
+
+				if(i==0)
+				{
+					raw.addAll(projectcol);
+				}
+			else if(i==1)
+				{
+					raw.addAll(statuscol);
+				}
+			else if(i==2)
+			{
+				raw.addAll(contractortypecol);
+			}
+				
+			else if(i==3)
+			{
+				raw.addAll(frequencycol);
+			}
+				
+			else if(i==4)
+			{
+				raw.addAll(periodcol);
+			}
+				
+			for(int k=0;k<raw.size();k++)
+				{
+					text.add(raw.get(k).getText());
+				}
+
+				for(int l=0;l<text.size();l++)
+					{
+				if(text.get(l).equals(li.get(i)))
+					{
+						pass.add(text.get(l));	
+						System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+					}
+				else
+				{
+					fail.add(text.get(l));		
+					System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+					System.out.println(i);
+
+				}
+				 }
+		 
+	for(String Fal : fail)
+		 {
+				test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+		 }	
+		 for(String Pas : pass)
+		 {
+			 test.log(LogStatus.PASS, filter.get(i)+" dropdown working properly.");
+				test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+				System.out.println(filter.get(i)+" : "+Pas);
+	 }
+		 text.clear();
+		pass.clear();
+		fail.clear();
+		raw.clear();
+		
+		
+		}
+		}else {
+			test.log(LogStatus.PASS,"No records found");	
+		}
+		Thread.sleep(3000);
+		
+
+	
+	    
+      
+		Thread.sleep(4000);
+
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator3.ClosePage().click();
+		
+		Thread.sleep(3000);
+		
+	}
+	
+	
+
 	
 	
 	
@@ -10311,9 +11576,9 @@ public class Method4 extends BasePage{
        
        Locator3.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jul20().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Jul20().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
         List<String> li=new ArrayList<String>();
@@ -10504,9 +11769,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jul20().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator2.Jul20().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
        
@@ -10696,9 +11961,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator1.Jan20().getText();
+       String PeriodText =Locator2.Apr22().getText();
        Thread.sleep(2000);
-       Locator1.Jan20().click();
+       Locator2.Apr22().click();
        Thread.sleep(2000);
        
        
@@ -10888,9 +12153,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator1.Jan20().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator1.Jan20().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
       
        
@@ -11081,9 +12346,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodNCPWCSSDD().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.PeriodNCPWCSSDD().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
      
        
@@ -11277,9 +12542,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodNCPWCSSDD().getText();
+       String PeriodText =Locator2.May22().getText();
        Thread.sleep(2000);
-       Locator2.PeriodNCPWCSSDD().click();
+       Locator2.May22().click();
        Thread.sleep(2000);
        
        
@@ -11468,9 +12733,9 @@ public class Method4 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Jul20().getText();
+    String PeriodText =Locator2.Mar22().getText();
     Thread.sleep(2000);
-    Locator2.Jul20().click();
+    Locator2.Mar22().click();
     Thread.sleep(2000);
    
     
@@ -11659,9 +12924,9 @@ public class Method4 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator1.Jan20().getText();
+    String PeriodText =Locator2.Mar22().getText();
     Thread.sleep(2000);
-    Locator1.Jan20().click();
+    Locator2.Mar22().click();
     Thread.sleep(2000);
   
     
@@ -11846,9 +13111,9 @@ public class Method4 extends BasePage{
     
     Locator2.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Jul20().getText();
+    String PeriodText =Locator2.Mar22().getText();
     Thread.sleep(2000);
-    Locator2.Jul20().click();
+    Locator2.Mar22().click();
     Thread.sleep(2000);
     
     
@@ -12201,7 +13466,7 @@ Thread.sleep(3000);
 		//WebWait wait = new WebWait(, 1000);
 		Thread.sleep(26000);
 		
-		 Locator3.PWAuditStatusSummerABCConstructionPendingReview().click();					                //Clicking on Dashboard count
+		 Locator4.PWAuditStatusSummerABCConstructionPendingReview().click();					                //Clicking on Dashboard count
 
 	    Thread.sleep(20000);
 	    
@@ -12613,8 +13878,8 @@ Thread.sleep(3000);
 			Thread.sleep(2000);
 	       Locator2.SelectLocationDropDownDocument1().click();
 	       Thread.sleep(3000);
-			Locator3.DocumentSelectLocationDropDown1().click();
-			Thread.sleep(2000);
+		//	Locator3.DocumentSelectLocationDropDown1().click();
+		//	Thread.sleep(2000);
 		//     Locator2.SelectLocationDropDownDocument().click();
 		//     Thread.sleep(3000);
 
@@ -12625,9 +13890,9 @@ Thread.sleep(3000);
 	//       Thread.sleep(3000);
 	  //     Locator2.SelectLocationDropDocument().click();
 	//		Thread.sleep(2000);
-	       String locationText =Locator2.SelectLocationDropDownDocument().getText();
+	       String locationText =Locator3.DocumentSelectLocationDropDown1().getText();
 	       Thread.sleep(3000);
-	       Locator2.SelectLocationDropDownDocument().click();
+	       Locator3.DocumentSelectLocationDropDown1().click();
 	       Thread.sleep(3000);
 	       Locator2.SelectLocationDocument().click();
 	       Thread.sleep(2000);
@@ -12645,21 +13910,21 @@ Thread.sleep(3000);
 	       
 	       Locator2.DocumentTabSelectContractor().click();
 	       Thread.sleep(2000);
-	       String contractortext =Locator2.DocumentTabSelectContractorDD().getText();
+	       String contractortext =Locator3.DocumentSelectContractorDropDown().getText();
 	       Thread.sleep(2000);
-	       Locator2.DocumentTabSelectContractorDD().click();
+	       Locator3.DocumentSelectContractorDropDown().click();
 	       Thread.sleep(2000);
 	       Locator2.DocumentTabSelectContractor().click();
 	       Thread.sleep(5000);
     
     
-    Locator2.DocumentTabSelectProject().click();
+    Locator3.DocumentSelectProject().click();
     Thread.sleep(2000);
-    String projectText =Locator2.DocumentTabSelectProjectDD().getText();
+    String projectText =Locator3.DocumentSelectProjectDropDown().getText();
     Thread.sleep(2000);
-    Locator2.DocumentTabSelectProjectDD().click();
+    Locator3.DocumentSelectProjectDropDown().click();
     Thread.sleep(2000);
-    Locator2.DocumentTabSelectProject().click();
+    Locator3.DocumentSelectProject().click();
     Thread.sleep(2000);
     
     
@@ -13121,13 +14386,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -13140,13 +14405,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -13266,13 +14531,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -13285,13 +14550,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -13399,13 +14664,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -13418,13 +14683,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -13534,13 +14799,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -13553,13 +14818,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -13676,13 +14941,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -13695,13 +14960,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -13813,13 +15078,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -13832,13 +15097,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -13944,13 +15209,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -13963,13 +15228,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -14081,13 +15346,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -14100,13 +15365,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -14211,13 +15476,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -14230,13 +15495,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -14278,13 +15543,13 @@ Thread.sleep(3000);
 			
 			Thread.sleep(4000);
 		    Locator3.DownloadAndViewButton().click();
-			test.log(LogStatus.PASS, " Download And View Button Is Clickable " );
+			test.log(LogStatus.PASS, " Download And view button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Download And View Button Is not Clickable "  );
+			test.log(LogStatus.FAIL, "  Download And View Button does not working properly "  );
 			
 		}
 		Thread.sleep(4000);
@@ -14351,9 +15616,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(2000);
-	    String PeriodText =Locator2.Mar23().getText();
+	    String PeriodText =Locator2.Apr22().getText();
 	    Thread.sleep(2000);
-	    Locator2.Mar23().click();
+	    Locator2.Apr22().click();
 	    Thread.sleep(2000);
 	
 	    Locator3.PWCSSubContractorExpand().click();
@@ -14567,9 +15832,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(2000);
-	    String PeriodText =Locator5.May23().getText();
+	    String PeriodText =Locator2.Apr22().getText();
 	    Thread.sleep(2000);
-	    Locator5.May23().click();
+	    Locator2.Apr22().click();
 	    Thread.sleep(2000);
 	  
 	    Locator3.PWCSSubContractorExpand().click();
@@ -14782,9 +16047,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(2000);
-	    String PeriodText =Locator5.May23().getText();
+	    String PeriodText =Locator2.Apr22().getText();
 	    Thread.sleep(2000);
-	    Locator5.May23().click();
+	    Locator2.Apr22().click();
 	    Thread.sleep(2000);
 	 
 	    Locator3.PWCSSubContractorExpand().click();
@@ -15004,9 +16269,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(2000);
-	    String PeriodText =Locator2.Mar23().getText();
+	    String PeriodText =Locator2.May22().getText();
 	    Thread.sleep(2000);
-	    Locator2.Mar23().click();
+	    Locator2.May22().click();
 	    Thread.sleep(2000);
 	 
 	    Locator3.PWCSSubContractorExpand().click();
@@ -15228,9 +16493,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(2000);
-	    String PeriodText =Locator2.Feb23().getText();
+	    String PeriodText =Locator2.May22().getText();
 	    Thread.sleep(2000);
-	    Locator2.Feb23().click();
+	    Locator2.May22().click();
 	    Thread.sleep(2000);
 	  
 	    Locator3.PWCSSubContractorExpand().click();
@@ -15445,9 +16710,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(2000);
-	    String PeriodText =Locator2.Feb23().getText();
+	    String PeriodText =Locator2.May22().getText();
 	    Thread.sleep(2000);
-	    Locator2.Feb23().click();
+	    Locator2.May22().click();
 	    Thread.sleep(2000);
 	 
 	    Locator3.PWCSSubContractorExpand().click();
@@ -15665,9 +16930,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(2000);
-	    String PeriodText =Locator5.May23().getText();
+	    String PeriodText =Locator2.Mar22().getText();
 	    Thread.sleep(2000);
-	    Locator5.May23().click();
+	    Locator2.Mar22().click();
 	    Thread.sleep(2000);
 	  
 	    Locator3.PWCSSubContractorExpand().click();
@@ -15881,9 +17146,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(2000);
-	    String PeriodText =Locator2.Mar23().getText();
+	    String PeriodText =Locator2.Mar22().getText();
 	    Thread.sleep(2000);
-	    Locator2.Mar23().click();
+	    Locator2.Mar22().click();
 	    Thread.sleep(2000);
 	 
 	    Locator3.PWCSSubContractorExpand().click();
@@ -16097,9 +17362,9 @@ Thread.sleep(3000);
 	    
 	    Locator2.PeriodFilterCompliedHigh().click();
 	    Thread.sleep(2000);
-	    String PeriodText =Locator2.Mar23().getText();
+	    String PeriodText =Locator2.Mar22().getText();
 	    Thread.sleep(2000);
-	    Locator2.Mar23().click();
+	    Locator2.Mar22().click();
 	    Thread.sleep(2000);
 	  
 	    Locator3.PWCSSubContractorExpand().click();
@@ -16256,13 +17521,13 @@ Thread.sleep(3000);
 		
 		Locator2.LocationReport().click();
 		Thread.sleep(2000);
-	//	Locator2.LocationProjectMasterExpand().click();
-	//	Thread.sleep(2000);
-	//	Locator2.VCALegalEntityExpandAA().click();
-	//	Thread.sleep(3000);
-		String locationtext =Locator2.VCALegalEntityAADD().getText();
+		Locator2.VCALegalEntityAADD().click();
+		Thread.sleep(2000);
+		Locator2.VCALegalEntityExpandAA().click();
+		Thread.sleep(3000);
+		String locationtext =Locator2.VCALegalEntityAADDGetText().getText();
 	    Thread.sleep(2000);
-	   Locator2.VCALegalEntityAADD().click();
+	   Locator2.VCALegalEntityAADDGetText().click();
        Thread.sleep(2000);
        Locator2.LocationReport().click();
 	   Thread.sleep(2000);
@@ -16301,9 +17566,9 @@ Thread.sleep(3000);
        
        Locator2.ReportTabFequency().click();
        Thread.sleep(2000);
-       String frequencytext =Locator2.ReportTabFequencyDD().getText();
+       String frequencytext =Locator2.ReportTabFequencyDD1().getText();
        Thread.sleep(2000);
-       Locator2.ReportTabFequencyDD().click();
+       Locator2.ReportTabFequencyDD1().click();
        Thread.sleep(2000);
        Locator2.ReportTabFequency().click();
        Thread.sleep(2000);
@@ -16311,9 +17576,9 @@ Thread.sleep(3000);
        
        Locator2.ReportTabPeriod().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Feb23().getText();
+       String periodtext =Locator2.Jan22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.Jan22().click();
        Thread.sleep(2000);
        Locator2.ReportTabPeriod().click();
        Thread.sleep(2000);
@@ -16321,9 +17586,9 @@ Thread.sleep(3000);
        
        Locator2.ReportTabStatus().click();
        Thread.sleep(2000);
-       String statustext =Locator2.ReportTabStatusDD().getText();
+       String statustext =Locator2.Status2Closed().getText();
        Thread.sleep(2000);
-       Locator2.ReportTabStatusDD().click();
+       Locator2.Status2Closed().click();
        Thread.sleep(2000);
        Locator2.ReportTabStatus().click();
        Thread.sleep(2000);
@@ -16491,5 +17756,256 @@ Thread.sleep(3000);
 	
 	
 	}
+	
+	public static void MyWorkspaceLicense( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator4.LicenseTab().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='leftdocumentmenu']"))); 
+			Thread.sleep(1000);
+			
+	if(Locator4.LicenseTab().isDisplayed()) {
+				
+				test.log(LogStatus.PASS, "License tab should be seen below the dashboard tab.");
+			}else {
+				
+				test.log(LogStatus.FAIL, "Audit and License tab should not be below the dashboard tab.");
+				
+			}
+		
+		    
+			Locator4.LicenseTab().click();
+			Thread.sleep(3000);
+		   
+			
+	}
+	
+	public static void MyWorkspaceLicenseSearch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='leftdocumentmenu']"))); 
+			Thread.sleep(1000);
+			
+			Locator4.LicenseTab().click();
+			Thread.sleep(3000);
+		  
+			Locator1.Serach().sendKeys("AK Heights");
+			Thread.sleep(3000);
+		   if(Locator1.Clear().isEnabled()) {
+			   Thread.sleep(2000);
+			   Locator1.Clear().click();
+				Thread.sleep(2000);
+				test.log(LogStatus.PASS, "Clear button working properly");
+
+		   }
+		   else
+		   {
+			   test.log(LogStatus.PASS, "Clear button does not working properly");
+		   }
+			
+		   Thread.sleep(1000);
+		   Method4.LicenceGridAndExcelCount(test,workbook);
+		   
+		   /*
+			File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			Locator1.Export().click();
+			
+		 	Thread.sleep(9000);
+			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		  
+	        Thread.sleep(3000);
+		   if (dirContents1.length < allFilesNew1.length) {
+				test.log(LogStatus.PASS,  "Excel Report download successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL,  "Excel Report does not download successfully");
+			}
+*/
+		   Thread.sleep(2000);
+          if(Locator1.viewlicensedocument().isEnabled()) {
+			   
+        	  Thread.sleep(2000);
+			   Locator1.viewlicensedocument().click();
+				Thread.sleep(2000);
+				test.log(LogStatus.PASS, "Licence document viewed successfully");
+
+		   }
+		   else
+		   {
+			   test.log(LogStatus.PASS, "Licence document does not viewed");
+		   }
+		   
+          Thread.sleep(2000);
+          
+          getDriver().switchTo().frame(Locator1.OuterFrame());
+          Thread.sleep(1000);
+          getDriver().switchTo().frame(Locator1.InnerFrame());
+          
+			File dir = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			Locator1.Download1().click();
+			
+		 	Thread.sleep(9000);
+			File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		  
+	        
+		   if (dirContents.length < allFilesNew.length) {
+				test.log(LogStatus.PASS,  "License document download successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL,  "License document does not download successfully");
+			}
+		   Thread.sleep(1000);
+		   
+		   
+	}
+
+	
+	
+	public static void LicenceGridAndExcelCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        
+        Thread.sleep(3000);
+        Locator.readTotalItems1().click();
+		String item = Locator.readTotalItems1().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+	
+		if(compliancesCount.equalsIgnoreCase("to"))
+		{
+			Thread.sleep(5000);
+		   item = Locator.readTotalItems1().getText();
+			bits = item.split(" ");
+        
+		}
+		
+        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+        
+        js1.executeScript("window.scrollBy(0,-1000)");
+        Thread.sleep(2000);
+ 		
+		Thread.sleep(4000);
+ 
+        File dir9 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] dirContents9 = dir9.listFiles();						//Counting number of files in directory before download
+ 		
+ 		Thread.sleep(3000);
+ 		Locator1.Export().click();
+ 		
+ 	 	Thread.sleep(9000);
+ 		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] allFilesNew0 = dir0.listFiles();						//Counting number of files in directory after download
+ 	  
+        Thread.sleep(3000);
+ 	   if (dirContents9.length < allFilesNew0.length) {
+ 			test.log(LogStatus.PASS,  " Excel Report Download Successfully");
+ 		}
+ 	   else
+ 	   {
+ 		 	test.log(LogStatus.FAIL, "  Excel Report Does Not Download Successfully "   );
+
+ 		}   
+ 	   Thread.sleep(4000);
+
+		
+		
+	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\License Report .xlsx");
+	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);
+	
+	//int rowCount = sheet.getLastRowNum();
+	
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+	
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	
+	
+	System.out.println("Row Count in column  " + columnNumber + ": " + actualRow);
+	
+	workbook.close();
+	fis.close();
+	
+	if(count1 == actualRow)
+	{
+		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+	
+	Thread.sleep(2000);
+	
+	String fis1 = "C:\\Users\\shitalb\\Downloads\\License Report .xlsx";
+	
+	File file = new File(fis1);
+	  
+	 if(file.exists()) {
+		 
+		 if(file.delete())
+		 {
+		 
+		 System.out.println("File deleted Successfully.");
+	     }
+		 
+	 }
+	 else {
+		 
+		 System.out.println("File does not exist Successfully.");
+	 }
+	 
+	 Thread.sleep(2000);
+     
+	    
+	}
+	
+	
 	
 	}

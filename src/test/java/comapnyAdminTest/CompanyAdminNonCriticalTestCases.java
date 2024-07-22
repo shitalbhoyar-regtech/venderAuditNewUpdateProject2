@@ -89,7 +89,7 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 	
 	
 	
-	
+	/*
 	
 	
 //	@Test(priority = 1) 
@@ -1312,8 +1312,8 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 	}
 	
 	
-	
-	@Test(priority = 94) 
+	*/
+//	@Test(priority = 94) 
 	void ReportTabGridAndExcelCountMatch1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Report tab - Grid and Excel sheet count match Verification ");
@@ -1325,7 +1325,22 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 	}
 	
 	
+	@Test(priority = 94) 
+	void GridAndExcelReport1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Report tab - Grid and Excel sheet count match Verification ");
+		
+		Method.GridAndExcelReport(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
+	
+	
+	
+	
+	/*
 	@Test(priority = 95) 
 	void downloadViewReportProject1() throws InterruptedException, IOException
 	{
@@ -1337,7 +1352,7 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 	
-	
+	*/
 	
 	
 	

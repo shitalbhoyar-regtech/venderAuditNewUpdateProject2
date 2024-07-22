@@ -15974,7 +15974,7 @@ public class Method extends BasePage {
 		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
 	}
 	
-	Thread.sleep(2000);
+	Thread.sleep(6000);
 	
 	String fis1 = "C:\\Users\\shitalb\\Downloads\\Audit Status Report .xlsx";
 	
@@ -16152,7 +16152,149 @@ public class Method extends BasePage {
 		
 	
 	
+ 	
+	public static void GridAndExcelReport( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		Thread.sleep(4000);
+		Locator.Report().click();
+		Thread.sleep(5000);
+		
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(2000);
+ 		
+        /*
+        Thread.sleep(7000);
+        Locator.readTotalItems11().click();
+		String item = Locator.readTotalItems11().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+	
+		if(compliancesCount.equalsIgnoreCase("to"))
+		{
+			Thread.sleep(5000);
+		   item = Locator.readTotalItems11().getText();
+			bits = item.split(" ");
+        
+		}
+		
+		Thread.sleep(2000);
+        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+        
+        js1.executeScript("window.scrollBy(0,-1000)");
+        Thread.sleep(2000);
+ 		
+		Thread.sleep(2000);
+ 		Locator.ExportButtonCT().click();
+		Thread.sleep(9000);
+*/
+		//////////////////////////////
+	
 
+//	js.executeScript("window.scrollBy(0,1000)");
+	
+	
+	
+	Thread.sleep(1000);
+	Locator.readTotalItems1().click();
+	String item1 = Locator.readTotalItems1().getText();
+	String[] bits1 = item1.split(" ");								//Splitting the String
+	String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+	int count2 = Integer.parseInt(compliancesCount1);
+	
+    
+	js.executeScript("window.scrollBy(0,-1000)");
+	
+
+	Thread.sleep(1000);
+	File dir = new File("C:\\Users\\shitalb\\Downloads");
+	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+	
+	Thread.sleep(1000);
+//	CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//	Thread.sleep(250);
+	Locator.ReportExport().click();					//Clicking on 'Excel Report' image.
+	test.log(LogStatus.PASS, "File downloaded successfully.");
+	
+	Thread.sleep(5500);
+	File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+	File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+	
+	if(dirContents.length < allFilesNew.length)
+	{
+		
+		
+		File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+	    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+	    {
+	       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+	       {
+	           lastModifiedFile = allFilesNew[i];
+	       }
+	    }
+		
+		Thread.sleep(1000);
+		fis = new FileInputStream(lastModifiedFile);
+		workbook = new XSSFWorkbook(fis);
+		sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+		/*
+		int no = sheet.getFirstRowNum();
+		Row row = sheet.getRow(no);
+		Cell c1 = row.getCell(0);
+		int records =(int) c1.getNumericCellValue();
+		*/
+		sheet = workbook.getSheetAt(0);
+		int columnNumber = 3;
+		int rowCount = 0;
+		int actualRow=0;
+		
+		for(Row row : sheet)
+		{
+			
+			Cell cell =row.getCell(columnNumber);
+			if(cell != null) {
+				
+				rowCount++;
+				actualRow = rowCount-1;
+			}
+			
+		}
+		fis.close();
+		
+		if(count2 == actualRow)
+		{
+			//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+			test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+		}
+		else
+		{
+			//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+			test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+		}
+	}
+	else
+	{
+		test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
 
 }
 

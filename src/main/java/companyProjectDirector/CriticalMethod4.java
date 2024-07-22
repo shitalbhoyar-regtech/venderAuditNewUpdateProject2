@@ -56,7 +56,30 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 		
 	}
 
+	public static void LocationPopupCompliance( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
 	
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divCompletionCount']"))); 
+		Thread.sleep(1000);
+		
+		
+if(Locator4.ComplianceTab().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Compliance box should be seen on the Dashboard");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Compliance box should not seen on the Dashboard");
+			
+		}
+	        
+		
+	}
+
+	
+
 	
 	
 	public static void ProjectsCountGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -260,13 +283,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.ClearButtonRedGraphGrid().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -278,13 +301,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator2.ViewRedButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -403,13 +426,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.RedGraphInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "   Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "   Clear button does not working properly "  );
 			
 		}
 		
@@ -424,13 +447,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.GreenViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -552,13 +575,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.GreyInRedGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -569,13 +592,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.GreyInRedGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -692,18 +715,18 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.ACSREDGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
 		
-		
+		/*
 		if(Locator4.ACSREDGraphGridExportButton().isEnabled())
 		{
 			
@@ -718,7 +741,32 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
+		Thread.sleep(4000);
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(10000);
+	     Locator4.ACSREDGraphGridExportButton().click();
+		
+	 	Thread.sleep(9000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(6000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Download Successfully");
+		}
+	   
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File does not Download Successfully");
+		}
+
+		
+		Thread.sleep(4000);
+
 		
 		Thread.sleep(4000);
 
@@ -746,18 +794,16 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
     {
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
-		
-		Thread.sleep(2000);
-		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(9000);
+			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,800)");
-	    Thread.sleep(2000);
+	    Thread.sleep(9000);
 		
 		Locator4.CTWCompliedGreen().click();
-		Thread.sleep(2000);
+		Thread.sleep(7000);
 		
 		int open = Integer.parseInt(Locator4.CTWCompliedGreenHigh().getText());	//Reading Dashboard count.
 	    Locator4.CTWCompliedGreenHigh().click();					                //Clicking on Dashboard count
@@ -828,13 +874,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -847,13 +893,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -887,23 +933,21 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 	{
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
-		
-		Thread.sleep(2000);
-		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(9000);
+			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,800)");
-	    Thread.sleep(2000);
+	    Thread.sleep(9000);
 		
 		Locator4.CTWNotCompliedRed().click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		int open = Integer.parseInt(Locator4.CTWNotCompliedRedHigh().getText());	//Reading Dashboard count.
 	    Locator4.CTWNotCompliedRedHigh().click();					                //Clicking on Dashboard count
 
-	    Thread.sleep(3000);
+	    Thread.sleep(5000);
 	    
 	    getDriver().switchTo().frame(Locator4.Frame());
 	    Thread.sleep(5000);
@@ -969,13 +1013,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -988,13 +1032,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(3000);
 		    Locator4.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -1029,18 +1073,16 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 	{
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
-		
-		Thread.sleep(2000);
-		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(9000);
+			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,800)");
-	    Thread.sleep(2000);
+	    Thread.sleep(9000);
 		
 		Locator4.CTWNotApplicableGrey().click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		int open = Integer.parseInt(Locator4.CTWNotApplicableHigh().getText());	//Reading Dashboard count.
 	    Locator4.CTWNotApplicableHigh().click();					                //Clicking on Dashboard count
@@ -1111,13 +1153,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -1130,13 +1172,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -1175,15 +1217,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 	{
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
-		
-		
-		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(9000);
+			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,1550)");
-	    Thread.sleep(18000);
+	    jss.executeScript("window.scrollBy(0,1600)");
+	    Thread.sleep(9000);
 		
 		
 		
@@ -1258,18 +1298,18 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.ACSREDGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
 		
-		
+		/*
 		if(Locator4.ACSREDGraphGridExportButton().isEnabled())
 		{
 			
@@ -1284,10 +1324,33 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
-		
+		*/
 		
 		Thread.sleep(4000);
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(10000);
+	     Locator4.ACSREDGraphGridExportButton().click();
+		
+	 	Thread.sleep(9000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(6000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Download Successfully");
+		}
+	   
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File does not Download Successfully");
+		}
 
+		
+		Thread.sleep(4000);
+		
 		getDriver().switchTo().parentFrame();
 		
 		Thread.sleep(4000);
@@ -1405,13 +1468,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -1424,13 +1487,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -1556,13 +1619,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -1575,13 +1638,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -1710,13 +1773,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -1729,13 +1792,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -1752,11 +1815,7 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 		
 		Method4.PWCSSABCconstructionNotApplicableMedium(test, workbook);
 		Thread.sleep(4000);
-		
-		
-		Method4.PWCSSABCconstructionNotApplicableLow(test, workbook);
-		
-		
+		Method4.PWCSSABCconstructionNotApplicableLow(test, workbook);	
 		Thread.sleep(4000);
 		
 	
@@ -1853,18 +1912,18 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator3.ACSREDGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
 		
-		
+		/*
 		if(Locator3.ACSREDGraphGridExportButton().isEnabled())
 		{
 			
@@ -1879,7 +1938,29 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
+		*/
+		Thread.sleep(4000);
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
+		Thread.sleep(10000);
+	     Locator4.ACSREDGraphGridExportButton().click();
+		
+	 	Thread.sleep(9000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(6000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Download Successfully");
+		}
+	   
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File does not Download Successfully");
+		}
+
 		
 		Thread.sleep(4000);
 
@@ -1991,13 +2072,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2010,13 +2091,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -2129,13 +2210,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2148,13 +2229,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -2265,13 +2346,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2284,13 +2365,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -2401,13 +2482,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2420,13 +2501,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -2538,13 +2619,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2557,13 +2638,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator3.CTWCompliedGreenHighGridViewButton().click();
-			test.log(LogStatus.PASS, "  View Button Is clickable " );
+			test.log(LogStatus.PASS, "  Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -2611,7 +2692,7 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(4000);
 		    Locator4.ProjectDropViewButton1().click();
-			test.log(LogStatus.PASS, " Download And View Button Is Clickable " );
+			test.log(LogStatus.PASS, " Download And Overview button working properly " );
 			
 		}
 		
@@ -2639,13 +2720,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.DocumentView().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " Overview button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Overview button does not working properly "  );
 			
 		}
 		
@@ -2780,13 +2861,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.DocumentClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2845,44 +2926,73 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 		Locator4.Report().click();
 		Thread.sleep(20000);
 		
-		JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-	    
-		 js1.executeScript("window.scrollBy(0,1000)");
-		 Thread.sleep(9000);
+		Thread.sleep(1000);
 		
-		Locator1.LastPaging().click();
-		Thread.sleep(3000);
-	
+		File dir5 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents5 = dir5.listFiles();						//Counting number of files in directory before download
 		
-		JavascriptExecutor js2 = (JavascriptExecutor) getDriver();
-	    
-		 js2.executeScript("window.scrollBy(0,-1000)");
-		 Thread.sleep(9000);
-			
+		Thread.sleep(9000);
+	     Locator.ActionColmnReportDownload().click();
 		
-		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
-		
-		Thread.sleep(4000);
-	     Locator4.ReportFileDownload().click();
-		
-	 	Thread.sleep(20000);
-		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+	 	Thread.sleep(18000);
+		File dir6 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew6 = dir6.listFiles();						//Counting number of files in directory after download
 		
 	   
-        Thread.sleep(6000);
-	   if (dirContents1.length < allFilesNew1.length) {
-		   Thread.sleep(2000);
-			test.log(LogStatus.PASS,  "Audit Month Compliance Report Download Successfully");
+	    Thread.sleep(9000);
+	   if (dirContents5.length < allFilesNew6.length) {
+			test.log(LogStatus.PASS,  "Excel Format Downloaded Successfully");
 		}
 	   else
 	   {
-		   Thread.sleep(2000);
-			test.log(LogStatus.FAIL, "Audit Month Compliance Report Does Not Download Successfully");
-		}
+			test.log(LogStatus.FAIL, "Excel Format Does Not Downloaded Successfully");
+		}		
 
-	   Thread.sleep(2000);
+	   Thread.sleep(1000);
+	   
+	   Locator.Status1().click();
+	   Thread.sleep(500);
+	   Locator.Status1DD().click();
+	   Thread.sleep(500);
+	   
+	   if (Locator.PDFViewandDownload().isEnabled()) {
+		   
+		   Locator.PDFViewandDownload().click();
+		   Thread.sleep(500);
+			test.log(LogStatus.PASS,  "PDF Viewed Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "PDF Does Not Viewed Successfully");
+		}
+	   Thread.sleep(500);
+	   getDriver().switchTo().frame(Locator.Frame());
+		Thread.sleep(3000);
+	
+		getDriver().switchTo().frame(Locator2.InnerFrame());
+		Thread.sleep(7000);
+		
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator.Downloadasapdf().click();
+		
+	 	Thread.sleep(18000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir1.listFiles();						//Counting number of files in directory after download
+		
+	   
+	    Thread.sleep(9000);
+	   if (dirContents.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "PDF Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "PDF Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(500);
+
 		
 	}
 	
@@ -2910,13 +3020,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.ReportClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			test.log(LogStatus.PASS, " Clear button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 			
 		}
 		
@@ -2936,7 +3046,7 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 		
 		Locator4.ReportMoreReport().click();
 		Thread.sleep(2000);
-		
+		/*
 		if(Locator4.ClosedAuditReport().isEnabled())
 		{
 			
@@ -2951,8 +3061,30 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			test.log(LogStatus.FAIL, "  Closed Audit Report Download Successfully "  );
 			
 		}
+		*/
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
+	     Locator4.ClosedAuditReport().click();
+		
+	 	Thread.sleep(20000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(6000);
+	   if (dirContents1.length < allFilesNew1.length) {
+		   Thread.sleep(2000);
+			test.log(LogStatus.PASS,  "Closed Audit Report Download Successfully");
+		}
+	   else
+	   {
+		   Thread.sleep(2000);
+			test.log(LogStatus.FAIL, "Closed Audit Report Does Not Download Successfully");
+		}
+
+	   Thread.sleep(2000);
 		
 		Thread.sleep(2000);
 		Locator.SelectMonth().click();
@@ -2960,7 +3092,7 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 		
 		Locator.SelectMonthDD().click();
 		Thread.sleep(2000);
-		
+		/*
 		if(Locator.MouthCloseReportR().isEnabled())
 		{
 			
@@ -2976,7 +3108,32 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 		}
 		Thread.sleep(2000);
+		*/
 		
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(4000);
+	     Locator.MouthCloseReportR().click();
+		
+	 	Thread.sleep(20000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(6000);
+	   if (dirContents.length < allFilesNew.length) {
+		   Thread.sleep(2000);
+			test.log(LogStatus.PASS,  "Month Wise Closed Audit Report Download Successfully");
+		}
+	   else
+	   {
+		   Thread.sleep(2000);
+			test.log(LogStatus.FAIL, "Month Wise Closed Audit Report Does Not Download Successfully");
+		}
+
+	   Thread.sleep(2000);
+
 		/*
 		
 		Locator4.MonthReport().click();
@@ -3007,7 +3164,7 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 		*/
 		
 		Thread.sleep(2000);
-		
+		/*
 		if(Locator4.ComplianceRemarkReport().isEnabled())
 		{
 			
@@ -3022,11 +3179,31 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			test.log(LogStatus.FAIL, "  Compliance Remark Report Download Successfully  "  );
 			
 		}
+		*/
+		File dira = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContentsa = dira.listFiles();						//Counting number of files in directory before download
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
+	     Locator4.ComplianceRemarkReport().click();
 		
+	 	Thread.sleep(20000);
+		File dirb = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNewb = dirb.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(6000);
+	   if (dirContentsa.length < allFilesNewb.length) {
+		   Thread.sleep(2000);
+			test.log(LogStatus.PASS,  "Compliance Remark Report Download Successfully");
+		}
+	   else
+	   {
+		   Thread.sleep(2000);
+			test.log(LogStatus.FAIL, "Compliance Remark Report Does Not Download Successfully");
+		}
 
-		
+	   Thread.sleep(2000);
+		/*
 		if(Locator4.AuditReport().isEnabled())
 		{
 			
@@ -3041,8 +3218,31 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			test.log(LogStatus.FAIL, "  Audit Report Download Successfully  "  );
 			
 		}
+		*/
+	   
+		File dirc = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContentsc = dirc.listFiles();						//Counting number of files in directory before download
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
+	     Locator4.AuditReport().click();
+		
+	 	Thread.sleep(20000);
+		File dird = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNewd = dird.listFiles();						//Counting number of files in directory after download
+		
+	   
+       Thread.sleep(6000);
+	   if (dirContentsc.length < allFilesNewd.length) {
+		   Thread.sleep(2000);
+			test.log(LogStatus.PASS,  "Audit Report Download Successfully");
+		}
+	   else
+	   {
+		   Thread.sleep(2000);
+			test.log(LogStatus.FAIL, "Audit Report Does Not Download Successfully");
+		}
+
+	   Thread.sleep(2000);
 		
 		
 		
@@ -3067,13 +3267,13 @@ if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed(
 			
 			Thread.sleep(2000);
 		    Locator4.ProjectDropViewButton().click();
-			test.log(LogStatus.PASS, " View Button Is Clickable " );
+			test.log(LogStatus.PASS, " View button working properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  View button does not working properly "  );
 			
 		}
 		

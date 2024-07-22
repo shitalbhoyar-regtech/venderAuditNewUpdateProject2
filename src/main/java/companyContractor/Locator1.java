@@ -844,7 +844,7 @@ public class Locator1 extends BasePage{
 
 	    		public static WebElement PendingReviewEdit()		//Method for searching Username input
 	    		{
-	    			PendingReviewEdit = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-edit k-grid-edit'])[2]"));
+	    			PendingReviewEdit = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[14]/a"));
 	    		return PendingReviewEdit;
 	    	    }
 	    
@@ -2073,9 +2073,16 @@ public class Locator1 extends BasePage{
 	
 	public static WebElement UpcomingEditButton()		//Method for searching Username input
 	{
-		UpcomingEditButton = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]"));
+		UpcomingEditButton = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[14]/a"));
 		return UpcomingEditButton;
 	}
+	
+	public static WebElement UpcomingEditButton1()		//Method for searching Username input
+	{
+		UpcomingEditButton = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[2]/td[14]/a"));
+		return UpcomingEditButton;
+	}
+
 	
 	public static WebElement ViewButtonofEditPR()		//Method for searching Username input
 	{
@@ -2496,7 +2503,7 @@ public class Locator1 extends BasePage{
 	
 		public static WebElement EditButtonRejected()		//Method for searching Username input
 		{
-			EditButtonRejected = getDriver().findElement(By.xpath("//a[@class='k-button k-button-icontext ob-edit k-grid-edit']"));
+			EditButtonRejected = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[14]/a"));
 		return EditButtonRejected;
 	    }
 	
@@ -2543,7 +2550,7 @@ public class Locator1 extends BasePage{
 		
 		public static WebElement UpdateOverdue()		//Method for searching Username input
 		{
-			UpdateOverdue = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-edit k-grid-edit'])[1]"));
+			UpdateOverdue = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[14]/a"));
 		return UpdateOverdue;
 	    }
 		
@@ -2793,6 +2800,13 @@ public class Locator1 extends BasePage{
 			DocumentDownload = getDriver().findElement(By.id("btndownloadDocument"));
 		return DocumentDownload;
 	    }
+		
+		public static WebElement DocumentDownload1()		//Method for searching Username input
+		{
+			DocumentDownload = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[11]/a[2]"));
+		return DocumentDownload;
+	    }
+
 		
 		
 		public static WebElement ReportExportButton()		//Method for searching Username input
@@ -3509,6 +3523,15 @@ public class Locator1 extends BasePage{
 			Status2R = getDriver().findElement(By.xpath("//*[@id='divWorkspace']/div[1]/div[1]"));
 		return Status2R;
 	    }
+		
+		public static WebElement State1()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//*[@id='MainContentAL']/div[4]/div[1]"));
+		return Status2R;
+	    }
+
+		
+		
 
 		public static WebElement StateDD()		//Method for searching Username input
 		{
@@ -3523,6 +3546,20 @@ public class Locator1 extends BasePage{
 			Status2R = getDriver().findElement(By.xpath("//*[@id='dvWC']/div[1]"));
 		return Status2R;
 	    }
+		
+		public static WebElement Location1()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//*[@id='MainContentAL']/div[3]/div[3]"));
+		return Status2R;
+	    }
+
+		public static WebElement Location11()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//*[@id='dvDocuments']/div[1]/div[1]"));
+		return Status2R;
+	    }
+
+		
 		
 		public static WebElement LocationDD()		//Method for searching Username input
 		{
@@ -3539,7 +3576,14 @@ public class Locator1 extends BasePage{
 
 		public static WebElement LocationDD2()		//Method for searching Username input
 		{
-			Status2R = getDriver().findElement(By.xpath("(//div[@class='k-animation-container']/div/div//ul[@class='k-group'])[1]/li[3]"));
+			Status2R = getDriver().findElement(By.xpath("(//div[@class='k-animation-container']/div/div//ul[@class='k-group'])[1]/li[1]"));
+		return Status2R;
+	    }
+
+		
+		public static WebElement LocationDD3()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("(//div[@class='k-animation-container']/div/div//ul[@class='k-group k-treeview-lines'])[1]//ul/li[1]//span[2]"));
 		return Status2R;
 	    }
 
@@ -3549,6 +3593,13 @@ public class Locator1 extends BasePage{
 			Status2R = getDriver().findElement(By.xpath("(//table//th/a[@class='k-header-column-menu'])[1]"));
 		return Status2R;
 	    }
+		
+		public static WebElement ColumnMenu1()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("(//table//th/a[@class='k-header-column-menu'])[10]"));
+		return Status2R;
+	    }
+
 
 		
 		public static WebElement Column()		//Method for searching Username input
@@ -3556,8 +3607,22 @@ public class Locator1 extends BasePage{
 			Status2R = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/div[@class='k-column-menu k-popup k-group k-reset k-state-border-up']/ul/li[4]"));
 		return Status2R;
 	    }
+		
+		public static WebElement Filter()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/div[@class='k-column-menu k-popup k-group k-reset k-state-border-up']/ul/li[6]"));
+		return Status2R;
+	    }
+
 
 		public static WebElement ColumnType()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/ul/li[4]"));
+		return Status2R;
+	    }
+
+		
+		public static WebElement ColumnType1()		//Method for searching Username input
 		{
 			Status2R = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/ul/li[4]"));
 		return Status2R;
@@ -3570,13 +3635,77 @@ public class Locator1 extends BasePage{
 		return Status2R;
 	    }
 
+		public static WebElement FilterButton()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/ul/li/div/form/button[1]"));
+		return Status2R;
+	    }
 
+		public static WebElement RemarkReason()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//textarea[@id='txtRejectionRemark']"));
+		return Status2R;
+	    }
+		
+		public static WebElement Submit()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//button[@id='btnSubmitRejectionRemarks']"));
+		return Status2R;
+	    }
+		
+		
+		public static WebElement ApproveORRejectButton()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//*[@id='gridLicense']/div[2]/table/tbody/tr/td[14]/a[3]"));
+		return Status2R;
+	    }
+		
+		public static WebElement Approve()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//button[@id='btnApproveLicense']"));
+		return Status2R;
+	    }
+		
+		public static WebElement Reject()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//button[@id='btnRejectLicense']"));
+		return Status2R;
+	    }
+		
+		
 		public static WebElement ColumnState()		//Method for searching Username input
 		{
 			Status2R = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/ul/li[11]"));
 		return Status2R;
 	    }
 
+		
+		public static WebElement ColumnLocation1()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/ul/li[9]"));
+		return Status2R;
+	    }
+
+		public static WebElement PFRCheckBox()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul[@class='k-reset k-multicheck-wrap']//li[6]//label//input[1]"));
+		return Status2R;
+	    }
+
+		
+		
+		public static WebElement ColumnLocation11()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/ul/li[8]"));
+		return Status2R;
+	    }
+
+
+		public static WebElement ColumnState1()		//Method for searching Username input
+		{
+			Status2R = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/ul/li[10]"));
+		return Status2R;
+	    }
 		
 		public static WebElement Project()		//Method for searching Username input
 		{
@@ -3627,7 +3756,7 @@ public class Locator1 extends BasePage{
 		
 		public static WebElement FrequencyDD()		//Method for searching Username input
 		{
-			FrequencyDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/div/div/ul[1]/li[1]"));
+			FrequencyDD = getDriver().findElement(By.xpath("//li[.='Monthly']"));
 		return FrequencyDD;
 	    }
 		
@@ -3639,15 +3768,28 @@ public class Locator1 extends BasePage{
 		return ContractorType;
 	    }
 		
+		public static WebElement ContractorType1()		//Method for searching Username input
+		{
+			ContractorType = getDriver().findElement(By.xpath("//*[@id='MainContentCL']/div[4]/div[3]"));
+		return ContractorType;
+	    }
+
+		
 		
 		
 		public static WebElement ContractorTypeDD()		//Method for searching Username input
 		{
-			ContractorTypeDD = getDriver().findElement(By.xpath("(//div[@class='k-animation-container'])[1]/div/div/ul/li[.='Contractor']"));
+			ContractorTypeDD = getDriver().findElement(By.xpath("(//li[.='Contractor'])[1]"));
 		return ContractorTypeDD;
 	    }
 		
 		
+		public static WebElement ContractorTypeDD1()		//Method for searching Username input
+		{
+			ContractorTypeDD = getDriver().findElement(By.xpath("(//li[.='Sub-Contractor'])[1]"));
+		return ContractorTypeDD;
+	    }
+	
 		
 		public static WebElement StartDate()		//Method for searching Username input
 		{
@@ -3880,7 +4022,12 @@ public class Locator1 extends BasePage{
 				return May20;
 			    }
 
-				
+				public static WebElement Jun24()		//Method for searching Username input
+				{
+					May20 = getDriver().findElement(By.xpath("//span[.='Jun 24']"));
+				return May20;
+			    }
+
 				
 				public static WebElement ClosedProject1()		//Method for searching Username input
 				{
@@ -3908,9 +4055,16 @@ public class Locator1 extends BasePage{
 				
 				public static WebElement Projecttext3()		//Method for searching Username input
 				{
-					Projecttext3 = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[position()=3]/div/span[.='Chandragan Construction ']"));
+					Projecttext3 = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[position()=2]"));
 				return Projecttext3;
 			    }
+				
+				public static WebElement Projecttext()		//Method for searching Username input
+				{
+					Projecttext3 = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[position()=2]//span[.='Geet Heritage']"));
+				return Projecttext3;
+			    }
+
 				
 				
 				
@@ -4022,7 +4176,7 @@ public class Locator1 extends BasePage{
 	
 				public static WebElement ReportTabTriangleExpand()		//Method for searching Username input
 				{
-					ReportTabTriangleExpand = getDriver().findElement(By.xpath("(//a[@class='k-icon k-i-expand'])[2]"));
+					ReportTabTriangleExpand = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[3]/td[1]"));
 				return ReportTabTriangleExpand;
 			    }
 				
@@ -4058,16 +4212,32 @@ public class Locator1 extends BasePage{
 	
 				public static WebElement DownloadAndViewButton()		//Method for searching Username input
 				{
-					DownloadAndViewButton = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-download k-grid-docView'])[1]"));
+					DownloadAndViewButton = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[2]"));
 				return DownloadAndViewButton;
 			    }
+				
+				public static WebElement ViewDocument1()		//Method for searching Username input
+				{
+					DownloadAndViewButton = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[1]"));
+				return DownloadAndViewButton;
+			    }
+			
+				
+				
 
 				public static WebElement Close()		//Method for searching Username input
 				{
-					Close = getDriver().findElement(By.xpath("(//a[@aria-label='Close'])[1]"));
+					Close = getDriver().findElement(By.xpath("(//a[@aria-label='Close'])[2]"));
 				return Close;
 			    }
 		
+				public static WebElement Close1()		//Method for searching Username input
+				{
+					Close = getDriver().findElement(By.xpath("(//div[@class='k-window-actions']/a/span[@class='k-icon k-i-close'])[1]"));
+				return Close;
+			    }
+
+				
 		
 				public static WebElement Frame3()		//Method for searching Username input
 				{
@@ -4122,8 +4292,197 @@ public class Locator1 extends BasePage{
 			    }
 
 				
+				public static WebElement MyWorkspace()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//*[@id='leftworkspacemenu']"));
+				return Delete;
+			    }
+
+				public static WebElement Audit()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//*[@id='linoticeCase']"));
+				return Delete;
+			    }
+
+				public static WebElement Serach()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//input[@id='txtSearch']"));
+				return Delete;
+			    }
+				
+				public static WebElement Clear()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//button[@id='ClearfilterMain']"));
+				return Delete;
+			    }
+				
+				public static WebElement Export()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//button[@id='btnexport']"));
+				return Delete;
+			    }
+				
+				public static WebElement Download1()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//span[@id='downloadButton']"));
+				return Delete;
+			    }
+				
+				public static WebElement CloseViewPopup()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("(//button[@class='close'])[1]"));
+				return Delete;
+			    }
 				
 				
 				
+				public static WebElement viewlicensedocument()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//*[@id='gridLicense']/div[2]/table/tbody/tr[1]/td[14]/a[1]"));
+				return Delete;
+			    }
+				
+				public static WebElement OuterFrame()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//iframe[@id='IFrameDocumentViewer']"));
+				return Delete;
+			    }
+				
+				public static WebElement InnerFrame()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//div[@id='doccontrol']//iframe[@src]"));
+				return Delete;
+			    }
+				
+				public static WebElement License()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//*[@id='liTask']"));
+				return Delete;
+			    }
+
+				public static WebElement ResendForApproval()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//*[@id='gridLicense']/div[2]/table/tbody/tr[1]/td[14]/a[4]"));
+				return Delete;
+			    }
+				
+				public static WebElement Drop()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//*[@id='gridLicense']/div[2]/table/tbody/tr[1]/td[1]"));
+				return Delete;
+			    }
+				
+				public static WebElement ViewLicenseDocument()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//*[@id='gridLicense']/div[2]/table/tbody/tr[2]/td[2]/div/div[2]/table/tbody/tr/td[14]/a"));
+				return Delete;
+			    }
+				
+				
+				public static WebElement RenewLicense()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//*[@id='gridLicense']/div[2]/table/tbody/tr[1]/td[14]/a[2]"));
+				return Delete;
+			    }
+				
+				public static WebElement Label()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//label[@id='lblRegistrationNo']"));
+				return Delete;
+			    }
+				
+				public static WebElement RegistractionNo()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//input[@id='txtRenewRegistrationNo']"));
+				return Delete;
+			    }
+				
+				public static WebElement EndDateLabel()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//label[@id='lblValidity']"));
+				return Delete;
+			    }
 			
+				
+				
+				
+				public static WebElement StartDateCalender()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//*[@id='divReNewLicenseModal']/div[2]/div[2]/div/span/span/span[2]"));
+				return Delete;
+			    }
+
+				public static WebElement StartDateCalenderDD()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//table[@class='k-content k-month']//tr//td[2]//a[@class='k-link']"));
+				return Delete;
+			    }
+				
+				public static WebElement ChangeMonthDrop()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("(//span[@class='k-icon k-i-arrow-60-right'])[2]"));
+				return Delete;
+			    }
+
+				
+				public static WebElement EndDateCalender()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//input[@id='dateRenewLicenseValidTo']"));
+				return Delete;
+			    }
+
+				public static WebElement EndDateCalenderDD()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//table[@class='k-content k-month']//tr//td[@class='k-state-focused']//a[@class='k-link']"));
+				return Delete;
+			    }
+
+				public static WebElement HeadCount()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//input[@id='txtRenewHeadCount']"));
+				return Delete;
+			    }
+				
+				public static WebElement Remark1()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//textarea[@id='txtRenewRemark']"));
+				return Delete;
+			    }
+				
+				public static WebElement SelectFile1()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//input[@id='txtRenewUpload']"));
+				return Delete;
+			    }
+				
+				public static WebElement Updatelicenseandsendforapprovalbutton()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//button[@id='btnRenewSavedoc']"));
+				return Delete;
+			    }
+
+				public static WebElement ColumnSetting()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("(//span[@class='k-icon k-i-more-vertical'])[10]"));
+				return Delete;
+			    }
+				
+				public static WebElement Rejected1()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//div[@class='k-filterable k-content']//ul/li[3]//label//input[@type='checkbox']"));
+				return Delete;
+			    }
+				
+				public static WebElement Expiring()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//div[@class='k-filterable k-content']//ul/li[4]//label//input[@type='checkbox']"));
+				return Delete;
+			    }
+				
+				public static WebElement Expired()		//Method for searching Username input
+				{
+					Delete = getDriver().findElement(By.xpath("//div[@class='k-filterable k-content']//ul/li[5]//label//input[@type='checkbox']"));
+				return Delete;
+			    }
+
 }

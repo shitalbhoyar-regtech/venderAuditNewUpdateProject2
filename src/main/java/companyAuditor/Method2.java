@@ -8100,9 +8100,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jan24().getText();
+       String PeriodText =Locator2.Jan22().getText();
        Thread.sleep(2000);
-       Locator2.Jan24().click();
+       Locator2.Jan22().click();
        Thread.sleep(2000);
         
        
@@ -8301,9 +8301,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jan24().getText();
+       String PeriodText =Locator2.Jan22().getText();
        Thread.sleep(2000);
-       Locator2.Jan24().click();
+       Locator2.Jan22().click();
        Thread.sleep(2000);
          
        
@@ -14249,14 +14249,429 @@ public class Method2 extends BasePage{
 	
 	
 	
+	public static void MyWorkspaceLicense( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator1.MyWorkspace().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='linoticeCase']"))); 
+			Thread.sleep(1000);
+			
+	if(Locator1.Audit().isDisplayed()&&Locator1.License().isDisplayed()) {
+				
+				test.log(LogStatus.PASS, "Audit and License tab should be seen under the my workspace tab.");
+			}else {
+				
+				test.log(LogStatus.FAIL, "Audit and License tab should not be seen under the my workspace tab.");
+				
+			}
+		
+		    
+			Locator1.Audit().click();
+			Thread.sleep(3000);
+		   
+			
+	}
+	
+	public static void MyWorkspaceLicenseSearch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator1.MyWorkspace().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='linoticeCase']"))); 
+			Thread.sleep(1000);
+			
+			Locator1.License().click();
+			Thread.sleep(2000);
+		  
+			Locator1.Serach().sendKeys("AK Heights");
+			Thread.sleep(3000);
+		   if(Locator1.Clear().isEnabled()) {
+			   Thread.sleep(2000);
+			   Locator1.Clear().click();
+				Thread.sleep(2000);
+				test.log(LogStatus.PASS, "Clear button working properly");
+
+		   }
+		   else
+		   {
+			   test.log(LogStatus.PASS, "Clear button does not working properly");
+		   }
+			
+		   Thread.sleep(1000);
+		   Method2.LicenceGridAndExcelCount(test,workbook);
+		   
+		   /*
+			File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			Locator1.Export().click();
+			
+		 	Thread.sleep(9000);
+			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		  
+	        Thread.sleep(3000);
+		   if (dirContents1.length < allFilesNew1.length) {
+				test.log(LogStatus.PASS,  "Excel Report download successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL,  "Excel Report does not download successfully");
+			}
+*/
+		   Thread.sleep(2000);
+          if(Locator1.viewlicensedocument().isEnabled()) {
+			   
+        	  Thread.sleep(2000);
+			   Locator1.viewlicensedocument().click();
+				Thread.sleep(2000);
+				test.log(LogStatus.PASS, "Licence document viewed successfully");
+
+		   }
+		   else
+		   {
+			   test.log(LogStatus.PASS, "Licence document does not viewed");
+		   }
+		   
+          Thread.sleep(2000);
+          
+          getDriver().switchTo().frame(Locator1.OuterFrame());
+          Thread.sleep(1000);
+          getDriver().switchTo().frame(Locator1.InnerFrame());
+          
+			File dir = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			Locator1.Download1().click();
+			
+		 	Thread.sleep(9000);
+			File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		  
+	        
+		   if (dirContents.length < allFilesNew.length) {
+				test.log(LogStatus.PASS,  "License document download successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL,  "License document does not download successfully");
+			}
+		   Thread.sleep(1000);
+		   
+		   
+	}
+
+	
+	
+	public static void LicenceGridAndExcelCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        
+        Thread.sleep(3000);
+        Locator.readTotalItems1().click();
+		String item = Locator.readTotalItems1().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+	
+		if(compliancesCount.equalsIgnoreCase("to"))
+		{
+			Thread.sleep(5000);
+		   item = Locator.readTotalItems1().getText();
+			bits = item.split(" ");
+        
+		}
+		
+        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+        
+        js1.executeScript("window.scrollBy(0,-1000)");
+        Thread.sleep(2000);
+ 		
+		Thread.sleep(4000);
+ 
+        File dir9 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] dirContents9 = dir9.listFiles();						//Counting number of files in directory before download
+ 		
+ 		Thread.sleep(3000);
+ 		Locator1.Export().click();
+ 		
+ 	 	Thread.sleep(9000);
+ 		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] allFilesNew0 = dir0.listFiles();						//Counting number of files in directory after download
+ 	  
+        Thread.sleep(3000);
+ 	   if (dirContents9.length < allFilesNew0.length) {
+ 			test.log(LogStatus.PASS,  " Excel Report Download Successfully");
+ 		}
+ 	   else
+ 	   {
+ 		 	test.log(LogStatus.FAIL, "  Excel Report Does Not Download Successfully "   );
+
+ 		}   
+ 	   Thread.sleep(4000);
+
+		
+		
+	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\License Report .xlsx");
+	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);
+	
+	//int rowCount = sheet.getLastRowNum();
+	
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+	
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	
+	
+	System.out.println("Row Count in column  " + columnNumber + ": " + actualRow);
+	
+	workbook.close();
+	fis.close();
+	
+	if(count1 == actualRow)
+	{
+		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+	
+	Thread.sleep(2000);
+	
+	String fis1 = "C:\\Users\\shitalb\\Downloads\\License Report .xlsx";
+	
+	File file = new File(fis1);
+	  
+	 if(file.exists()) {
+		 
+		 if(file.delete())
+		 {
+		 
+		 System.out.println("File deleted Successfully.");
+	     }
+		 
+	 }
+	 else {
+		 
+		 System.out.println("File does not exist Successfully.");
+	 }
+	 
+	 Thread.sleep(2000);
+     
+	    
+	}
 	
 	
 	
+	public static void MyWorkspaceLicenseApprove( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator1.MyWorkspace().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='linoticeCase']"))); 
+			Thread.sleep(1000);
+			
+			Locator1.License().click();
+			Thread.sleep(2000);
+			
+			Locator1.ColumnMenu1().click();
+		       Thread.sleep(2000);
+		       Locator1.Filter().click();
+		       Thread.sleep(2000);
+		       Locator1.PFRCheckBox().click();
+		       Thread.sleep(2000);
+		       Locator1.FilterButton().click();
+		       Thread.sleep(2000);
+		       
+		       Locator1.ApproveORRejectButton().click();
+		       Thread.sleep(2000);
+		       
+		       Locator1.Approve().click();
+		       Thread.sleep(2000);
+
+		       Alert ac=getDriver().switchTo().alert();
+				
+				String t=getDriver().switchTo().alert().getText();
+				
+				test.log(LogStatus.PASS, t );
+				
+				Thread.sleep(2000);
+				ac.accept();
+				
+				Thread.sleep(3000);
+	
+	}
 	
 	
+	public static void MyWorkspaceLicenseReject( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator1.MyWorkspace().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='linoticeCase']"))); 
+			Thread.sleep(1000);
+			
+			Locator1.License().click();
+			Thread.sleep(2000);
+			
+			Locator1.ColumnMenu1().click();
+		       Thread.sleep(2000);
+		       Locator1.Filter().click();
+		       Thread.sleep(2000);
+		       Locator1.PFRCheckBox().click();
+		       Thread.sleep(2000);
+		       Locator1.FilterButton().click();
+		       Thread.sleep(2000);
+		       
+		       Locator1.ApproveORRejectButton().click();
+		       Thread.sleep(2000);
+		       
+		       Locator1.Reject().click();
+		       Thread.sleep(2000);
+		       
+		       Locator1.RemarkReason().sendKeys("Need To Upload Document");
+		       Thread.sleep(2000);
+		       
+		       Locator1.Submit().click();
+		       Thread.sleep(2000);
+		       
+		       Alert ac=getDriver().switchTo().alert();
+				
+				String t=getDriver().switchTo().alert().getText();
+				
+				test.log(LogStatus.PASS, t );
+				
+				Thread.sleep(2000);
+				ac.accept();
+				
+				Thread.sleep(3000);
+	
+	}
 	
 	
+	public static void MyWorkspacePreviousDocumentView( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator1.MyWorkspace().click();
+		   Thread.sleep(3000);
+		   
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='linoticeCase']"))); 
+			Thread.sleep(1000);
+			
+			Locator1.License().click();
+			Thread.sleep(1000);
+			
+			Locator1.ColumnSetting().click();
+			Thread.sleep(1000);
+			
+			Locator1.Filter().click();
+			Thread.sleep(1000);
+			
+			Locator1.Rejected1().click();
+			Thread.sleep(1000);
+		
+			Locator1.FilterButton().click();
+			Thread.sleep(1000);
+		    	    
+			Locator1.Drop().click();
+			Thread.sleep(2000);
+
+	         if(Locator1.ViewLicenseDocument().isEnabled()) {
+				   
+	        	  Thread.sleep(2000);
+				   Locator1.ViewLicenseDocument().click();
+					Thread.sleep(2000);
+					test.log(LogStatus.PASS, "Licence document viewed successfully");
+
+			   }
+			   else
+			   {
+				   test.log(LogStatus.PASS, "Licence document does not viewed");
+			   }
+			   
+	          Thread.sleep(2000);
+	          
+	          getDriver().switchTo().frame(Locator1.OuterFrame());
+	          Thread.sleep(1000);
+	          getDriver().switchTo().frame(Locator1.InnerFrame());
+	          
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(3000);
+				Locator1.Download1().click();
+				
+			 	Thread.sleep(9000);
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+				
+				Thread.sleep(3000);
+			  
+		        
+			   if (dirContents.length < allFilesNew.length) {
+					test.log(LogStatus.PASS,  "License document download successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL,  "License document does not download successfully");
+				}
+			   Thread.sleep(1000);
+			 
+			
 	
+	}
 	
 	
 	

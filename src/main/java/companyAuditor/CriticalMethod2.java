@@ -21,6 +21,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import companyAdmin.Locator;
 import companyContractor.Locator1;
 import login.BasePage;
 
@@ -1851,65 +1852,73 @@ public class CriticalMethod2 extends BasePage{
 		Thread.sleep(20000);
 		Locator2.Report().click();
 		Thread.sleep(20000);
-		/*
-		Locator2.ProjectReport1().click();
-		Thread.sleep(2000);
-		Locator2.ProjectReport1DD().click();
-		Thread.sleep(2000);
-		/*
-		Thread.sleep(9000);
+		Thread.sleep(1000);
 		
-		 Alert ac2=getDriver().switchTo().alert();
-			
-			String t3=getDriver().switchTo().alert().getText();
-			
-			test.log(LogStatus.PASS, "Compliance Report Downloaded - " + t3 );
-			
-			Thread.sleep(4000);
-			ac2.accept();
-		
-			Thread.sleep(3000);
-		
-		
-		if(Locator2.ActionClmFileDonld().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator2.ActionClmFileDonld().click();
-			test.log(LogStatus.PASS, " Compliance Report Download Successfully " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  Compliance Report Download Successfully "  );
-			
-		}
-		
-		*/
-		
-		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		File dir5 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents5 = dir5.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(9000);
-	     Locator2.ActionClmFileDonld().click();
+	     Locator.ActionColmnReportDownload().click();
 		
 	 	Thread.sleep(18000);
-		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		File dir6 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew6 = dir6.listFiles();						//Counting number of files in directory after download
 		
 	   
-        Thread.sleep(9000);
-	   if (dirContents1.length < allFilesNew1.length) {
-			test.log(LogStatus.PASS,  "File Downloaded Successfully");
+	    Thread.sleep(9000);
+	   if (dirContents5.length < allFilesNew6.length) {
+			test.log(LogStatus.PASS,  "Excel Format Downloaded Successfully");
 		}
 	   else
 	   {
-			test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+			test.log(LogStatus.FAIL, "Excel Format Does Not Downloaded Successfully");
 		}		
-	   Thread.sleep(2000);
 
+	   Thread.sleep(1000);
+	   
+	   Locator.Status1().click();
+	   Thread.sleep(500);
+	   Locator.Status1DD().click();
+	   Thread.sleep(500);
+	   
+	   if (Locator.PDFViewandDownload().isEnabled()) {
+		   
+		   Locator.PDFViewandDownload().click();
+		   Thread.sleep(500);
+			test.log(LogStatus.PASS,  "PDF Viewed Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "PDF Does Not Viewed Successfully");
+		}
+	   Thread.sleep(500);
+	   getDriver().switchTo().frame(Locator.Frame());
+		Thread.sleep(3000);
+	
+		getDriver().switchTo().frame(Locator2.InnerFrame());
+		Thread.sleep(7000);
 		
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(9000);
+	     Locator.Downloadasapdf().click();
+		
+	 	Thread.sleep(18000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir1.listFiles();						//Counting number of files in directory after download
+		
+	   
+	    Thread.sleep(9000);
+	   if (dirContents.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "PDF Downloaded Successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL, "PDF Does Not Downloaded Successfully");
+		}		
+	   Thread.sleep(500);
+	  
 		
 		
 	}

@@ -3,14 +3,45 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="comapnyAdminTest.ProjectHeadCriticalTestCases">
+      <class name="comapnyAdminTest.ManagementTestCases">
         <methods>
+          <include name="PWCSNotApplicableGraphmedium11"/>
+          <include name="PWCSNotApplicableHigh1"/>
+          <include name="PWCSubContractorNotApplicableGraphLow1"/>
+          <include name="CTWAuditStatusSummeryOverdue11"/>
+          <include name="PWCSSNotApplicableGraphLow1"/>
           <include name="CTWAuditStatusSummeryOverdue1"/>
-          <include name="setBrowser"/>
           <include name="Login"/>
+          <include name="PWCSSubcontractorNotCompliedHigh1"/>
+          <include name="PWCSSNotCompliedGraphMultipleFilterMedium1"/>
+          <include name="ExtendReport1"/>
+          <include name="AuditMonthComplianceReport1"/>
+          <include name="setBrowser"/>
+          <include name="ReportMultipleFilter1"/>
+          <include name="PWCSNotApplicableGraphmedium1"/>
+          <include name="PWCSubContractorCompliedGraphMultipleFilterLow1"/>
+          <include name="PWCSubContractorNotCompliedGraphMultipleFilterLow1"/>
           <include name="browserClosing"/>
+          <include name="DocumentTabMultipleFilter1"/>
+          <include name="multipleDownload1"/>
+          <include name="PWCSSABCconstructionNotApplicableHigh1"/>
+          <include name="DocumentViewButton1"/>
+          <include name="SubContrctorCompliedGraphMultipleFilterMedium1"/>
+          <include name="ViewButtonReport1"/>
+          <include name="CTWAuditStatusSummeryPendingReview11"/>
+          <include name="DocumentClearButton1"/>
+          <include name="PWCSSubcontractorNotApplicableMedium1"/>
+          <include name="PWSubContractorNotCompliedGraphMultipleFilterHigh1"/>
+          <include name="SubContrctorCompliedGraphMultipleFilterHigh1"/>
+          <include name="DownoloadCompliance1"/>
+          <include name="PWCSubContractorNotApplicableGraphHigh1"/>
+          <include name="PWAuditStatusSummeryABCConstructionOverdue1"/>
+          <include name="ReportClearButton1"/>
+          <include name="PWAuditStatusSummeryABCConstructionOverdue11"/>
+          <include name="MoreReportDownload1"/>
+          <include name="PWCSSubcontractorCompliedHigh1"/>
         </methods>
-      </class> <!-- comapnyAdminTest.ProjectHeadCriticalTestCases -->
+      </class> <!-- comapnyAdminTest.ManagementTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -40,7 +40,7 @@ public class ContractorTestCases1 extends BasePage{
 	public static XSSFSheet sheet = null;		//Sheet variable
 	public static List<WebElement> elementsList = null;
 	
-	/*
+	
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		
@@ -52,7 +52,7 @@ public class ContractorTestCases1 extends BasePage{
 		sheet = workbook.getSheetAt(1);					//Retrieving second sheet of Workbook
 		return sheet;
 	}
-	*/
+	
 	
 	@BeforeTest
 
@@ -62,9 +62,9 @@ public class ContractorTestCases1 extends BasePage{
 	//	extent = new com.relevantcodes.extentreports.ExtentReports("C:\\Users\\Shital Bhoyar\\Desktop\\VenderAuditProject\\Reports\\VCACompanyAdmin.html",true);
 		extent = new com.relevantcodes.extentreports.ExtentReports("E:\\VenderAuditProject\\Reports\\VCACompanyContractor.html",true);
 		
-		test = extent.startTest("Verify OpenBrowser");
+		test = extent.startTest("Logging In - - Contractor Login (Non-Critical)");
 		
-		test.log(LogStatus.PASS, "Test Passed - Contractor Login");
+		test.log(LogStatus.PASS, "Test Passed ");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -73,14 +73,14 @@ public class ContractorTestCases1 extends BasePage{
 	void Login() throws InterruptedException, IOException
 	{
 		initialization("company",1);
-	/*
+	
 		XSSFSheet sheet = ReadExcel();
 		Row row0 = sheet.getRow(0);						//Selected 0th index row (First row)
 		Cell c1 = row0.getCell(1);						//Selected cell (0 row,1 column)
 		String URL = c1.getStringCellValue();			//Got the URL stored at position 0,1
-		
+		/*
 		login.Login.BrowserSetup(URL);	
-
+*/
 	
 		Row row1 = sheet.getRow(1);						//Selected 1st index row (Second row)
 		Cell c2 = row1.getCell(1);						//Selected cell (1 row,1 column)
@@ -89,13 +89,13 @@ public class ContractorTestCases1 extends BasePage{
 		Row row2 = sheet.getRow(2);						//Selected 2nd index row (Third row)
 		Cell c3 = row2.getCell(1);						//Selected cell (2 row,1 column)
 		String password = c3.getStringCellValue();		//Got the URL stored at position 2,1
-		
+		/*
 		 = login.Login.UserLogin(uname,password,"company");		//Method of Login class to login user.
 		*/
 	}
 	
 
-//	@Test(priority = 1) 
+	@Test(priority = 1) 
 	void DashboardCountGridCount1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Dashboard Tab - Upcoming Audit");
@@ -110,7 +110,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 
 	
-//	@Test(priority = 2) 
+	@Test(priority = 2) 
 	void UpcomingView1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Upcoming Audit -Edit- View Document Button Verification   ");
@@ -123,7 +123,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority = 3)                                                                    
+	@Test(priority = 3)                                                                    
 	void CommentButtonUpcoming1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Upcoming Audit - Edit - Chat Button Verification");
@@ -135,7 +135,7 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 	
-//	@Test(priority = 4)                                                                    
+	@Test(priority = 4)                                                                    
 	void UpcomingDownload1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Upcoming Audit - Edit - Download Button Verification");
@@ -146,7 +146,7 @@ public class ContractorTestCases1 extends BasePage{
 		extent.flush();
 	}
 	
-//	@Test(priority = 5)                                                                    
+	@Test(priority = 5)                                                                    
 	void UpcomingAuditLog1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Upcoming Audit - Edit - Audit Log Button Verification");
@@ -157,7 +157,7 @@ public class ContractorTestCases1 extends BasePage{
 		extent.flush();
 	}
 	
-//	@Test(priority = 6)                                                                    
+	@Test(priority = 6)                                                                    
 	void Upcomingtransactionandstatuslog1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Upcoming Audit - Edit - Audit Log - transaction and status log tab Verification");
@@ -170,7 +170,7 @@ public class ContractorTestCases1 extends BasePage{
 
 	
 	
-//	@Test(priority = 7)                                                                    
+	@Test(priority = 7)                                                                    
 	void UpcomingDownloadAndViewButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Upcoming Audit - Edit - View Compliance Button Verification");
@@ -183,7 +183,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 
 
-//	@Test(priority = 8)                                                                    
+	@Test(priority = 8)                                                                    
 	void UpdateUpcoming1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Upcoming Audit - Edit - Audit Submited For Auditor Review");
@@ -209,7 +209,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 
-	/*
+	
 	
 	@Test(priority =7 ) 
 	void overduecountMatch1() throws InterruptedException, IOException
@@ -240,7 +240,7 @@ public class ContractorTestCases1 extends BasePage{
 	@Test(priority =9)                                                        
 	void OverdueDownloadAndViewButton1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Overdue Audit - Edit - Download And View Button Verification");
+		test = extent.startTest("Overdue Audit - Edit - View Documents Button Verification");
 		
 		Method1.OverdueDownloadAndViewButton(test,workbook);
 		
@@ -253,7 +253,7 @@ public class ContractorTestCases1 extends BasePage{
 	@Test(priority =10 )                                                      
 	void ViewOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Overdue Audit - Edit - View Button Verification");
+		test = extent.startTest("Overdue Audit - Edit - View Compliance Button Verification");
 		
 		Method1.ViewOverdue(test,workbook);
 		
@@ -289,7 +289,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 
 	
-	/*
+	
 	
 	@Test(priority =13 ) 
 	void RejectedAndGridCountMatch1() throws InterruptedException, IOException
@@ -307,7 +307,7 @@ public class ContractorTestCases1 extends BasePage{
 	@Test(priority =14)                                                        
 	void RejectedDownloadAndViewButton1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Rejected Audit - Edit - Download And View Button Verification");
+		test = extent.startTest("Rejected Audit - Edit - View Documents Button Verification");
 		
 		Method1.RejectedDownloadAndViewButton(test,workbook);
 		
@@ -321,7 +321,7 @@ public class ContractorTestCases1 extends BasePage{
 	@Test(priority =15 ) 
 	void ViewRejected1() throws InterruptedException, IOException
 	{
-		test = extent.startTest(" Rejected Audit - Edit - View Button Verification");
+		test = extent.startTest(" Rejected Audit - Edit - View Compliance Button Verification");
 		
 		Method1.ViewRejected(test,workbook);
 		
@@ -378,7 +378,7 @@ public class ContractorTestCases1 extends BasePage{
 	@Test(priority =19 ) 
 	void PendingReviewDownloadAndViewButton1() throws InterruptedException, IOException           
 	{
-		test = extent.startTest(" Pending Review Audit - Edit - Download And View Button Verification ");
+		test = extent.startTest(" Pending Review Audit - Edit - View Documents Button Verification ");
 		
 		Method1.PendingReviewDownloadAndViewButton(test,workbook);
 		
@@ -391,7 +391,7 @@ public class ContractorTestCases1 extends BasePage{
 	@Test(priority =20 ) 
 	void ViewPendingReview1() throws InterruptedException, IOException           
 	{
-		test = extent.startTest("Pending Review Audit - Edit - View Button Verification ");
+		test = extent.startTest("Pending Review Audit - Edit - View Compliance Button Verification ");
 		
 		Method1.ViewPendingReview(test,workbook);
 		
@@ -443,7 +443,7 @@ public class ContractorTestCases1 extends BasePage{
 	@Test(priority =24) 
 	void ClosedDownloadAndViewButton1() throws InterruptedException, IOException           
 	{
-		test = extent.startTest(" Closed Audit - Edit - Download And View Button Verification ");
+		test = extent.startTest(" Closed Audit - Edit - View Documents Button Verification ");
 		
 		Method1.ClosedDownloadAndViewButton(test,workbook);
 		
@@ -457,7 +457,7 @@ public class ContractorTestCases1 extends BasePage{
 	@Test(priority =25 ) 
 	void ViewClose1() throws InterruptedException, IOException           
 	{
-		test = extent.startTest("Closed Audit - Edit - View Button Verification ");
+		test = extent.startTest("Closed Audit - Edit - View Compliance Button Verification ");
 		
 		Method1.ViewClose(test,workbook);
 		
@@ -477,6 +477,8 @@ public class ContractorTestCases1 extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
+	
+	
 	
 	@Test(priority =27 ) 
 	void ClosedMultipleFilter1() throws InterruptedException, IOException          
@@ -697,7 +699,6 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 	
-	//////////////////
 	
 	@Test(priority = 43) 
 	void ACSPClosedMultipleFilter1() throws InterruptedException, IOException
@@ -770,7 +771,7 @@ public class ContractorTestCases1 extends BasePage{
 		
 	//	String t1 = Locator1.PWSConstruction().getText();	//Reading Dashboard count.
 
-		test = extent.startTest("Bar Graph - Project Wise Compliance Summery - Complied - " + t + " " + " Project Count Verification ");
+		test = extent.startTest("Facility Wise Compliance Summary - Complied - " + t + " " + " Project Count Verification ");
 		
 		Method1.PWSCompliedJKHills(test,workbook);
 		
@@ -783,7 +784,7 @@ public class ContractorTestCases1 extends BasePage{
 	@Test(priority = 48) 
 	void PWSCompliedJKHillsMultipleFilter1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise Compliance Summery - Complied status - Multiple Filter Verification  ");
+		test = extent.startTest("Facility Wise Compliance Summary - Complied status - Multiple Filter Verification  ");
 		
 		Method1.PWSCompliedJKHillsMultipleFilter(test,workbook);
 		
@@ -811,7 +812,7 @@ public class ContractorTestCases1 extends BasePage{
 	//	String t1 = Locator1.PWSConstruction().getText();	//Reading Dashboard count.
 
 		
-		test = extent.startTest("Bar Graph - Project Wise Compliance Summery - Not Complied - " + t + " "  + " Project Count Verification ");
+		test = extent.startTest("Facility Wise Compliance Summary - Not Complied - " + t + " "  + " Project Count Verification ");
 		
 		Method1.PWSNotCompliedJKHills(test,workbook);
 		
@@ -823,7 +824,7 @@ public class ContractorTestCases1 extends BasePage{
 	@Test(priority = 50) 
 	void PWSNotCompliedJKHillsHighMultipleFilter1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise Compliance Summery - Not Complied status - Multiple Filter Verification  ");
+		test = extent.startTest("Facility Wise Compliance Summary - Not Complied status - Multiple Filter Verification  ");
 		
 		Method1.PWSNotCompliedJKHillsHighMultipleFilter(test,workbook);
 		
@@ -850,7 +851,7 @@ public class ContractorTestCases1 extends BasePage{
 		
 //		String t1 = Locator1.PWSConstruction().getText();	//Reading Dashboard count.
 
-		test = extent.startTest("Bar Graph - Project Wise Compliance Summery - Not Applicable - " + t + " " + " Project Count Verification ");
+		test = extent.startTest("Facility Wise Compliance Summary - Not Applicable - " + t + " " + " Project Count Verification ");
 		
 		Method1.PWSNotApplicableJKHillHigh(test,workbook);
 		
@@ -862,7 +863,7 @@ public class ContractorTestCases1 extends BasePage{
 	@Test(priority = 52) 
 	void PWSNotApplicableJKHillHighMultipleFilter1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Project Wise Compliance Summery - Not Applicable status - Multiple Filter Verification  ");
+		test = extent.startTest("Facility Wise Compliance Summary - Not Applicable status - Multiple Filter Verification  ");
 		
 		Method1.PWSNotApplicableJKHillHighMultipleFilter(test,workbook);
 		
@@ -871,6 +872,32 @@ public class ContractorTestCases1 extends BasePage{
 	}
 
 
+	@Test(priority = 53) 
+	void MyWorkspaceLicense1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - Audit and License Tab Verification ");
+		
+		Method1.MyWorkspaceLicense(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+//	@Test(priority = 53) 
+	void MyWorkspaceRenewLicense() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - Renew License Verification ");
+		
+		Method1.MyWorkspaceRenewLicense(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+
+	
 	
 	
 	@Test(priority =53) 
@@ -924,6 +951,18 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 	
+   @Test(priority = 57) 
+	void DocumentTabMultipleFilter1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Document Tab - Multiple Filter Verification");
+		
+		Method1.DocumentTabMultipleFilter(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
 	
 	@Test(priority =57 ) 
 	void ExportReportReport1() throws InterruptedException, IOException          
@@ -962,7 +1001,30 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 
+   @Test(priority = 72) 
+	void ReportTabGridAndExcelCountMatch1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Report tab - Grid and Excel sheet count match Verification ");
+		
+		Method.ReportTabGridAndExcelCountMatch(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
+		
+	
+	@Test(priority = 72) 
+	void DownoadAndViewButton1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Report tab - View Button Verification ");
+		
+		Method1.DownoadAndViewButton(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
 	
 	
 	
@@ -1248,28 +1310,6 @@ public class ContractorTestCases1 extends BasePage{
 	
 	/*
 	
-	@Test(priority = 72) 
-	void ReportTabGridAndExcelCountMatch1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Report tab - Grid and Excel sheet count match Verification ");
-		
-		Method.ReportTabGridAndExcelCountMatch(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 72) 
-	void DownoadAndViewButton1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Report tab - Download And View Button Verification ");
-		
-		Method1.DownoadAndViewButton(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
 	
 	
 	

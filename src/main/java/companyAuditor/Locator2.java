@@ -1204,7 +1204,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement SelectLocationDropDownDocument1()		//Method for searching Username input
 	{
-		SelectLocationDropDownDocument1 = getDriver().findElement(By.xpath("(//span[.='Demo'])[6]"));
+		SelectLocationDropDownDocument1 = getDriver().findElement(By.xpath("//span[.='Select All']"));
 	return SelectLocationDropDownDocument1;
     }
 
@@ -2604,21 +2604,21 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ProjectYashConstruction()		//Method for searching Username input
 	{
-		ProjectYashConstruction = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=12]/div/span[.='Creation Construction']"));
+		ProjectYashConstruction = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=2]"));
 	return ProjectYashConstruction;
     }
 	
 
 	public static WebElement ChandranganConstruction()		//Method for searching Username input
 	{
-		ChandranganConstruction = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=5]/div/span[.='Chandragan Construction ']"));
+		ChandranganConstruction = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=2]"));
 	return ChandranganConstruction;
     }
 
 	
 	public static WebElement CreationConstruction()		//Method for searching Username input
 	{
-		CreationConstruction = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=6]/div/span[.='Creation Construction']"));
+		CreationConstruction = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=2]"));
 	return CreationConstruction;
     }
 
@@ -2967,16 +2967,29 @@ public class Locator2  extends BasePage{
     }
 	
 	
+	public static WebElement DocumentContractorDD()		//Method for searching Username input
+	{
+		DocumentTabSelectContractorDD = getDriver().findElement(By.xpath("//span[.='Suraj']"));
+	return DocumentTabSelectContractorDD;
+    }
+	
+	
 	public static WebElement DocumentTabSelectProject()		//Method for searching Username input
 	{
 		DocumentTabSelectProject = getDriver().findElement(By.xpath("(//span[.='Project'])[1]"));
 	return DocumentTabSelectProject;
     }
 	
+	public static WebElement DocumentTabSelectProject1()		//Method for searching Username input
+	{
+		DocumentTabSelectProject = getDriver().findElement(By.xpath("//*[@id='dvDocuments']/div[1]/div[3]"));
+	return DocumentTabSelectProject;
+    }
+
 	
 	public static WebElement DocumentTabSelectProjectDD()		//Method for searching Username input
 	{
-		DocumentTabSelectProjectDD = getDriver().findElement(By.xpath("//span[.='PRI Update']"));
+		DocumentTabSelectProjectDD = getDriver().findElement(By.xpath("//span[.='Geet Heritage']"));
 	return DocumentTabSelectProjectDD;
     }
 	
@@ -3006,7 +3019,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement VCALegalEntityExpandAA()		//Method for searching Username input
 	{
-		VCALegalEntityExpandAA = getDriver().findElement(By.xpath("(//span[@class='k-icon k-i-expand'])[5]"));
+		VCALegalEntityExpandAA = getDriver().findElement(By.xpath("(//span[.='Select All'])[4]"));
 		return VCALegalEntityExpandAA;
 		
 		
@@ -3015,7 +3028,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement VCALegalEntityAADD()		//Method for searching Username input
 	{
-		VCALegalEntityAADD = getDriver().findElement(By.xpath("(//span[.='CT Hinjewadi 667'])[6]"));
+		VCALegalEntityAADD = getDriver().findElement(By.xpath("(//span[.='VCA Customer Audit'])[5]"));
 		return VCALegalEntityAADD;
 		
 		
@@ -3024,7 +3037,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement VCALegalEntityAADDGetText()		//Method for searching Username input
 	{
-		VCALegalEntityAADDGetText = getDriver().findElement(By.xpath("//span[.='Demo 1']"));
+		VCALegalEntityAADDGetText = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/div/div[2]/ul/li/ul/li[3]/div/span[1]/span[2]"));
 		return VCALegalEntityAADDGetText;
 		
 		
@@ -3033,7 +3046,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ProjectReport()		//Method for searching Username input
 	{
-		ProjectReport = getDriver().findElement(By.xpath("//span[.='Project']"));
+		ProjectReport = getDriver().findElement(By.xpath("//*[@id='dvProject']/div[2]"));
 		return ProjectReport;
 		
 		
@@ -3044,7 +3057,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ProjectReportDD()		//Method for searching Username input
 	{
-		ProjectReportDD = getDriver().findElement(By.xpath("//span[.='Creation Construction']"));
+		ProjectReportDD = getDriver().findElement(By.xpath("//span[.='Geet Heritage']"));
 		return ProjectReportDD;
 		
 		
@@ -3055,7 +3068,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ReportTabContractor()		//Method for searching Username input
 	{
-		ReportTabContractor = getDriver().findElement(By.xpath("(//span[.='Contractor'])[1]"));
+		ReportTabContractor = getDriver().findElement(By.xpath("//*[@id='dvProject']/div[5]"));
 		return ReportTabContractor;
 		
 		
@@ -3065,7 +3078,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ReportTabContractorDD()		//Method for searching Username input
 	{
-		ReportTabContractorDD = getDriver().findElement(By.xpath("//span[.='Suraj Infra - vendor@tlregtech.in']"));
+		ReportTabContractorDD = getDriver().findElement(By.xpath("//span[.='Suraj - venderowner@gmail.com']"));
 		return ReportTabContractorDD;
 		
 		
@@ -3074,7 +3087,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ReportTabContractorType()		//Method for searching Username input
 	{
-		ReportTabContractorType = getDriver().findElement(By.xpath("//span[.='Contractor Type']"));
+		ReportTabContractorType = getDriver().findElement(By.xpath("//*[@id='dvReports']/div[1]/div[2]"));
 		return ReportTabContractorType;
 		
 		
@@ -3092,7 +3105,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ReportTabFequency()		//Method for searching Username input
 	{
-		ReportTabFequency = getDriver().findElement(By.xpath("//span[.='Frequency']"));
+		ReportTabFequency = getDriver().findElement(By.xpath("//*[@id='dvProject']/div[4]"));
 		return ReportTabFequency;
 		
 		
@@ -3108,11 +3121,18 @@ public class Locator2  extends BasePage{
 		
 	}
 	
-	
+	public static WebElement ReportTabFequencyDD1()		//Method for searching Username input
+	{
+		ReportTabFequencyDD = getDriver().findElement(By.xpath("//span[.='Monthly']"));
+		return ReportTabFequencyDD;
+		
+		
+	}
+
 	
 	public static WebElement ReportTabPeriod()		//Method for searching Username input
 	{
-		ReportTabPeriod = getDriver().findElement(By.xpath("//span[.='Period']"));
+		ReportTabPeriod = getDriver().findElement(By.xpath("//*[@id='dvProject']/div[3]"));
 		return ReportTabPeriod;
 		
 		
@@ -3176,6 +3196,16 @@ public class Locator2  extends BasePage{
 	}
 	
 	
+	public static WebElement Jul22()		//Method for searching Username input
+	{
+		Jul20 = getDriver().findElement(By.xpath("//span[.='Jul 22']"));
+		return Jul20;
+		
+		
+	}
+	
+
+	
 	
 	public static WebElement Feb23()		//Method for searching Username input
 	{
@@ -3184,6 +3214,8 @@ public class Locator2  extends BasePage{
 		
 		
 	}
+	
+
 	
 
 	public static WebElement Jan23()		//Method for searching Username input
@@ -3195,18 +3227,43 @@ public class Locator2  extends BasePage{
 	}
 
 	
-	public static WebElement Jan24()		//Method for searching Username input
+	public static WebElement Jan22()		//Method for searching Username input
 	{
-		Jan24 = getDriver().findElement(By.xpath("//span[.='Jan 24']"));
+		Jan24 = getDriver().findElement(By.xpath("//span[.='Jan 22']"));
 		return Jan24;
 		
 		
 	}
 	
+	
+	public static WebElement May22()		//Method for searching Username input
+	{
+		Jan24 = getDriver().findElement(By.xpath("//span[.='May 22']"));
+		return Jan24;
+		
+		
+	}
+	
+	
+	public static WebElement Apr22()		//Method for searching Username input
+	{
+		Jan24 = getDriver().findElement(By.xpath("//span[.='Apr 22']"));
+		return Jan24;
+		
+		
+	}
+
 
 	public static WebElement Mar23()		//Method for searching Username input
 	{
 		Mar23 = getDriver().findElement(By.xpath("//span[.='Mar 23']"));
+	return Mar23;
+    }
+
+	
+	public static WebElement Mar22()		//Method for searching Username input
+	{
+		Mar23 = getDriver().findElement(By.xpath("//span[.='Mar 22']"));
 	return Mar23;
     }
 
