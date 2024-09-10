@@ -1,5 +1,8 @@
 package companyContractor;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -7,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -28,6 +32,7 @@ import companyAdmin.Locator;
 import companyAuditor.Locator2;
 import companyAuditor.Method2;
 import companyManagement.Locator5;
+import companyManagement.Method5;
 import companyProjectDirector.Locator4;
 import companyProjectHead.Locator3;
 import login.BasePage;
@@ -745,9 +750,11 @@ public class Method1 extends BasePage{
 	public static void UpcomingDownloadAndViewButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Thread.sleep(20000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(Locator1.Upcoming()));
 		Locator1.Upcoming().click();
-		Thread.sleep(20000);
+		Thread.sleep(6000);
 		
 		
 		Locator1.UpcomingEditButton().click();
@@ -823,9 +830,10 @@ public class Method1 extends BasePage{
 	public static void CommentButtonUpcoming( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Thread.sleep(20000);
-		Locator1.Upcoming().click();
-		Thread.sleep(20000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(Locator1.Upcoming()));		Locator1.Upcoming().click();
+		Thread.sleep(5000);
 		
 		
 		Locator1.UpcomingEditButton1().click();
@@ -890,15 +898,36 @@ public class Method1 extends BasePage{
 	public static void UpcomingDownload( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Thread.sleep(20000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(Locator1.Upcoming()));
 		Locator1.Upcoming().click();
-		Thread.sleep(20000);
-		
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOf(Locator2.Gridload()));
+
 		
 		Locator1.UpcomingEditButton().click();
 		Thread.sleep(4000);
 		
 		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+		int row = 0;
+		Thread.sleep(500);
+		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+		Cell c1 = null;
+		
+		
+		row0 = sheet.getRow(3);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator1.UpcomingSelectFile().sendKeys(c1.getStringCellValue()); // Writing Task title
+		Thread.sleep(3000);
+		
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+		alert.accept();			
+		Thread.sleep(2000);
+
+
 		
 		Thread.sleep(5000);
 		 
@@ -930,7 +959,7 @@ public class Method1 extends BasePage{
 	public static void UpcomingAuditLog( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(7000);
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("divUpcomingCount"))); 
@@ -1195,9 +1224,10 @@ Thread.sleep(4000);
 	public static void UpcomingView( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		Thread.sleep(20000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		wait.until(ExpectedConditions.visibilityOf(Locator1.Upcoming()));
 		Locator1.Upcoming().click();
-		Thread.sleep(10000);
-		
+		Thread.sleep(7000);
 		
 		Locator1.UpcomingEditButton1().click();
 		Thread.sleep(2000);
@@ -1212,6 +1242,24 @@ Thread.sleep(4000);
         Thread.sleep(4000);
        
 		
+		
+		sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+		int row = 0;
+		Thread.sleep(500);
+		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+		Cell c1 = null;
+		
+		
+		row0 = sheet.getRow(3);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator1.UpcomingSelectFile().sendKeys(c1.getStringCellValue()); // Writing Task title
+		Thread.sleep(3000);
+		
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+		alert.accept();			
+		Thread.sleep(2000);
+
+
 		if(Locator1.ViewButtonofEditPR().isEnabled())
 		{
 			
@@ -1226,9 +1274,7 @@ Thread.sleep(4000);
 			test.log(LogStatus.FAIL, " View Documents Button Does not working properly "  );
 			
 		}
-		
-		
-		
+
 	
 		
 	}
@@ -1242,6 +1288,7 @@ Thread.sleep(4000);
 	{
 		
 		Thread.sleep(20000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
 		Locator1.Overdue().click();
 		Thread.sleep(20000);
 		
@@ -1249,16 +1296,7 @@ Thread.sleep(4000);
         
         js.executeScript("window.scrollBy(0,1000)");
         Thread.sleep(4000);
-        
-   //     Locator1.LastPaging().click();
-	//	Thread.sleep(5000);
-		
-	//	Locator1.FirstLeftPaging().click();
-	//	Thread.sleep(5000);
-	       
-	//	Locator1.FirstLeftPaging().click();
-	//	Thread.sleep(5000);
-	       
+        	       
 		Locator1.UpdateOverdue().click();
 		Thread.sleep(5000);
 		
@@ -1266,11 +1304,23 @@ Thread.sleep(4000);
 		
 		Thread.sleep(6000);
 		
-        
-		
-		// Locator1.UpcomingDownloadAndViewButton().click();
-		// Thread.sleep(2000);
-		 
+		 sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+			int row = 0;
+			Thread.sleep(500);
+			Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+			Cell c1 = null;
+			
+			Thread.sleep(2000);
+			row0 = sheet.getRow(3);
+			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+			Locator1.UpcomingSelectFile().sendKeys(c1.getStringCellValue()); // Writing Task title
+			Thread.sleep(3000);
+	        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+			alert.accept();			
+				Thread.sleep(2000);
+
+
+			 
 		    if(Locator1.UpcomingDownloadAndViewButton().isEnabled())
 		{
 			
@@ -1574,6 +1624,8 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	{
 		
 		Thread.sleep(20000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+
 		Locator1.Overdue().click();
 		Thread.sleep(20000);
 		
@@ -1581,25 +1633,27 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	        
 	        js.executeScript("window.scrollBy(0,1000)");
 	        Thread.sleep(4000);
-	        
-	 //       Locator1.LastPaging().click();
-	//		Thread.sleep(5000);
-			
-	//		Locator1.FirstLeftPaging().click();
-	//		Thread.sleep(5000);
-		       
-	//		Locator1.FirstLeftPaging().click();
-		//	Thread.sleep(5000);	   
-			
-		//	Locator1.FirstLeftPaging().click();
-		//	Thread.sleep(5000);	       
-
 		
 		Locator1.UpcomingEditButton().click();
 		Thread.sleep(3000);
 		
          Method2.SwitchToNewlyOpenedWindow(test, workbook);
 		
+		 sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+			int row = 0;
+			Thread.sleep(500);
+			Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+			Cell c1 = null;
+			
+			Thread.sleep(2000);
+			row0 = sheet.getRow(3);
+			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+			Locator1.UpcomingSelectFile().sendKeys(c1.getStringCellValue()); // Writing Task title
+			Thread.sleep(3000);
+	        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+			alert.accept();			
+				Thread.sleep(2000);
+
 		Thread.sleep(9000);    
 		
 		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
@@ -5368,7 +5422,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void AuditCompletionStatusRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void AuditCompletionStatusRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -5400,7 +5454,31 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    
 	 //   scrollToBottom();
 	    
-	    
+	    try {
+            // Create an instance of Robot class
+            Robot robot = new Robot();
+
+            // Define how many times you want to zoom out
+            int zoomOutSteps = 3;
+
+            // Perform the zoom out action multiple times
+            for (int i = 0; i < zoomOutSteps; i++) {
+                // Press Ctrl key
+                robot.keyPress(KeyEvent.VK_CONTROL);
+                // Press '-' key
+                robot.keyPress(KeyEvent.VK_MINUS);
+                // Release '-' key
+               
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+                // Optional: Wait a bit between zoom steps to observe the effect
+                Thread.sleep(500);
+            }
+
+        } catch (AWTException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
 	   
 
 		String item = Locator2.ACSREDGraphGrid().getText();
@@ -5430,7 +5508,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 					
 		}
 		
-		
+		Thread.sleep(2000);
 		// clear button
 		
         JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
@@ -5460,7 +5538,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
 			
 		}
-		
+		Thread.sleep(2000);
 		
 		
 		if(Locator2.ACSREDGraphGridExportButton().isEnabled())
@@ -11926,9 +12004,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
         
        Locator1.ContractorType().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       String ContractorTypeText =Locator1.ContractorTypeDD().getText();
        Thread.sleep(1000);
-       Locator1.ContractorTypeDD1().click();
+       Locator1.ContractorTypeDD().click();
        Thread.sleep(1000);
        Locator1.ContractorType().click();
        Thread.sleep(2000);
@@ -11959,9 +12037,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator1.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String Periodtext =Locator1.Jun24().getText();
+       String Periodtext =Locator1.Aug24().getText();
        Thread.sleep(1000);
-       Locator1.Jun24().click();
+       Locator1.Aug24().click();
        Thread.sleep(2000);
        
 
@@ -12177,9 +12255,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
      
     Locator1.ContractorType().click();
     Thread.sleep(1000);
-    String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+    String ContractorTypeText =Locator1.ContractorTypeDD().getText();
     Thread.sleep(1000);
-    Locator1.ContractorTypeDD1().click();
+    Locator1.ContractorTypeDD().click();
     Thread.sleep(1000);
     Locator1.ContractorType().click();
     Thread.sleep(2000);
@@ -13145,9 +13223,9 @@ Thread.sleep(2000);
 	   
        Locator1.Project2().click();
        Thread.sleep(1000);
-       String ProjectText =Locator1.Projecttext3().getText();
+       String ProjectText =Locator1.Projecttext().getText();
        Thread.sleep(1000);
-       Locator1.Projecttext3().click();
+       Locator1.Projecttext().click();
        Thread.sleep(1000);
        Locator1.Project2().click();
        Thread.sleep(2000);
@@ -13176,9 +13254,9 @@ Thread.sleep(2000);
        
        Locator1.ContractorType1().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       String ContractorTypeText =Locator1.ContractorTypeDD().getText();
        Thread.sleep(1000);
-       Locator1.ContractorTypeDD1().click();
+       Locator1.ContractorTypeDD().click();
        Thread.sleep(1000);
        Locator1.ContractorType1().click();
        Thread.sleep(2000);
@@ -13187,9 +13265,9 @@ Thread.sleep(2000);
        
        Locator1.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String PeriodText =Locator2.Apr22().getText();
+       String PeriodText =Locator1.Jun24().getText();
        Thread.sleep(1000);
-       Locator2.Apr22().click();
+       Locator1.Jun24().click();
        Thread.sleep(2000);
        
        
@@ -13351,9 +13429,9 @@ Thread.sleep(2000);
 	    
 	       Locator1.Project2().click();
 	       Thread.sleep(2000);
-	       String ProjectText =Locator1.Projecttext3().getText();
+	       String ProjectText =Locator1.Projecttext().getText();
 	       Thread.sleep(1000);
-	       Locator1.Projecttext3().click();
+	       Locator1.Projecttext().click();
 	       Thread.sleep(1000);
 	       Locator1.Project2().click();
 	       Thread.sleep(2000);
@@ -13388,9 +13466,9 @@ Thread.sleep(2000);
        
        Locator1.ContractorType1().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       String ContractorTypeText =Locator1.ContractorTypeDD().getText();
        Thread.sleep(1000);
-       Locator1.ContractorTypeDD1().click();
+       Locator1.ContractorTypeDD().click();
        Thread.sleep(1000);
        Locator1.ContractorType1().click();
        Thread.sleep(2000);
@@ -13399,9 +13477,9 @@ Thread.sleep(2000);
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Apr22().getText();
+       String PeriodText =Locator1.Jun24().getText();
        Thread.sleep(2000);
-       Locator2.Apr22().click();
+       Locator1.Jun24().click();
        Thread.sleep(2000);
        
        
@@ -13573,9 +13651,9 @@ Thread.sleep(2000);
      
 	       Locator1.Project2().click();
 	       Thread.sleep(2000);
-	       String ProjectText =Locator1.Projecttext3().getText();
+	       String ProjectText =Locator1.Projecttext().getText();
 	       Thread.sleep(1000);
-	       Locator1.Projecttext3().click();
+	       Locator1.Projecttext().click();
 	       Thread.sleep(1000);
 	       Locator1.Project2().click();
 	       Thread.sleep(2000);
@@ -13607,9 +13685,9 @@ Thread.sleep(2000);
        
        Locator1.ContractorType1().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
+       String ContractorTypeText =Locator1.ContractorTypeDD().getText();
        Thread.sleep(1000);
-       Locator1.ContractorTypeDD1().click();
+       Locator1.ContractorTypeDD().click();
        Thread.sleep(1000);
        Locator1.ContractorType1().click();
        Thread.sleep(2000);
@@ -13617,9 +13695,9 @@ Thread.sleep(2000);
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String PeriodText =Locator2.Apr22().getText();
+       String PeriodText =Locator1.Jun24().getText();
        Thread.sleep(1000);
-       Locator2.Apr22().click();
+       Locator1.Jun24().click();
        Thread.sleep(2000);
        
        
@@ -15250,9 +15328,9 @@ Thread.sleep(2000);
        
        Locator2.ContractorType().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator2.ReportTabContractorTypeDD().getText();
+       String ContractorTypeText =Locator2.DocumentTabSelectContractor().getText();
        Thread.sleep(1000);
-       Locator2.ReportTabContractorTypeDD().click();
+       Locator2.DocumentTabSelectContractor().click();
        Thread.sleep(1000);
        Locator2.ContractorType().click();
        Thread.sleep(2000);
@@ -15283,9 +15361,9 @@ Thread.sleep(2000);
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Jul22().getText();
+       String periodtext =Locator2.Jan23().getText();
        Thread.sleep(2000);
-      Locator2.Jul22().click();
+      Locator2.Jan23().click();
       Thread.sleep(2000);
       
       
@@ -15509,9 +15587,9 @@ Thread.sleep(2000);
        
        Locator2.ContractorType().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator2.ReportTabContractorTypeDD().getText();
+       String ContractorTypeText =Locator2.DocumentTabSelectContractor().getText();
        Thread.sleep(1000);
-       Locator2.ReportTabContractorTypeDD().click();
+       Locator2.DocumentTabSelectContractor().click();
        Thread.sleep(1000);
        Locator2.ContractorType().click();
        Thread.sleep(2000);
@@ -15543,9 +15621,9 @@ Thread.sleep(2000);
        
        Locator2.Period().click();
        Thread.sleep(1000);
-       String periodtext =Locator2.Apr22().getText();
+       String periodtext =Locator1.Jun24().getText();
        Thread.sleep(1000);
-      Locator2.Apr22().click();
+      Locator1.Jun24().click();
       Thread.sleep(2000);
       
        
@@ -15769,9 +15847,9 @@ Thread.sleep(2000);
        
        Locator2.ContractorType().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator2.ReportTabContractorTypeDD().getText();
+       String ContractorTypeText =Locator2.DocumentTabSelectContractor().getText();
        Thread.sleep(1000);
-       Locator2.ReportTabContractorTypeDD().click();
+       Locator2.DocumentTabSelectContractor().click();
        Thread.sleep(1000);
        Locator2.ContractorType().click();
        Thread.sleep(2000);
@@ -15976,7 +16054,7 @@ Thread.sleep(2000);
 			
 		    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 		    
-		    jss.executeScript("window.scrollBy(0,2000)");
+		    jss.executeScript("window.scrollBy(0,1000)");
 		    Thread.sleep(5000);
 			
 		   /*
@@ -16047,9 +16125,9 @@ Thread.sleep(2000);
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(1000);
-		       String PeriodText =Locator2.Apr22().getText();
+		       String PeriodText =Locator1.Jun24().getText();
 		       Thread.sleep(1000);
-		       Locator2.Apr22().click();
+		       Locator1.Jun24().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -16269,9 +16347,9 @@ Thread.sleep(2000);
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(1000);
-		       String PeriodText =Locator2.Apr22().getText();
+		       String PeriodText =Locator1.Jun24().getText();
 		       Thread.sleep(1000);
-		       Locator2.Apr22().click();
+		       Locator1.Jun24().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -16485,9 +16563,9 @@ Thread.sleep(2000);
 		       
 		       Locator2.PeriodFilterCompliedHigh().click();
 		       Thread.sleep(2000);
-		       String PeriodText =Locator2.Apr22().getText();
+		       String PeriodText =Locator1.Jun24().getText();
 		       Thread.sleep(1000);
-		       Locator2.Apr22().click();
+		       Locator1.Jun24().click();
 		       Thread.sleep(2000);
 		       
 		       
@@ -23012,8 +23090,8 @@ Thread.sleep(3000);
 		   }
 			
 		   Thread.sleep(1000);
-		   Method1.LicenceGridAndExcelCount(test,workbook);
-		   
+		   Method5.LicenceGridAndExcelCount(test,workbook);
+		   Thread.sleep(4000);
 		   /*
 			File dir2 = new File("C:\\Users\\shitalb\\Downloads");
 			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
@@ -23036,6 +23114,19 @@ Thread.sleep(3000);
 				test.log(LogStatus.FAIL,  "Excel Report does not download successfully");
 			}
 */
+		   Locator1.viewlicensedocument().click();
+			Thread.sleep(4000);
+			
+			 Alert ac1=getDriver().switchTo().alert();
+				
+				String t1=getDriver().switchTo().alert().getText();
+				
+				test.log(LogStatus.FAIL, t1 );		
+				Thread.sleep(4000);
+				ac1.accept();
+			
+		   
+		   /*
 		   Thread.sleep(2000);
           if(Locator1.viewlicensedocument().isEnabled()) {
 			   
@@ -23077,7 +23168,7 @@ Thread.sleep(3000);
 				test.log(LogStatus.FAIL,  "License document does not download successfully");
 			}
 		   Thread.sleep(1000);
-		   
+		   */
 		   
 	}
 
@@ -23480,24 +23571,3278 @@ JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	
 	
 	
+	public static void CompliedSubcontractorHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(26000);
+		
+		
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1300)");
+	    Thread.sleep(2000);
+		
+		Locator1.CompliedSubContractor().click();
+		Thread.sleep(2000);
+		
+		int open = Integer.parseInt(Locator1.CompliedSubContractorHigh().getText());	//Reading Dashboard count.
+	    Locator1.CompliedSubContractorHigh().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(2000);
+	    
+	    getDriver().switchTo().frame(Locator1.Frame());
+	    Thread.sleep(5000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(9000);
+
+		String item = Locator1.RedGraphGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " High Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " High Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator1.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator1.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator1.ClearButtonRedGraphGrid().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ClearButtonRedGraphGrid().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly "  );
+			
+		}
+		
+		
+        Thread.sleep(2000);
+		
+		if(Locator1.ViewRedButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ViewRedButton().click();
+			test.log(LogStatus.PASS, "  View Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  View Button Does not Working properly"  );
+			
+		}
+		
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator1.ClosePage().click();
+		
+		Thread.sleep(4000);
+		
+		Method1.CompliedSubcontractorMedium(test, workbook);
+		Thread.sleep(4000);
+		
+		
+		Method1.CompliedSubcontractorLow(test, workbook);
+		Thread.sleep(4000);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	public static void CompliedSubcontractorMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(2000);
+	
+		
+		int open = Integer.parseInt(Locator1.CompliedSubContractorMedium().getText());	//Reading Dashboard count.
+	    Locator1.CompliedSubContractorMedium().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(2000);
+	    
+	    getDriver().switchTo().frame(Locator1.Frame());
+	    Thread.sleep(5000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(9000);
+
+		String item = Locator1.RedGraphGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " Medium Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " Medium Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator1.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator1.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator1.ClearButtonRedGraphGrid().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ClearButtonRedGraphGrid().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly "  );
+			
+		}
+		
+		
+        Thread.sleep(2000);
+		
+		if(Locator1.ViewRedButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ViewRedButton().click();
+			test.log(LogStatus.PASS, "  View Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  View Button Does not Working properly"  );
+			
+		}
+		
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator1.ClosePage().click();
+		
+		Thread.sleep(4000);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	public static void CompliedSubcontractorLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		//WebWait wait = new WebWait(, 1000);
+		
+		Thread.sleep(2000);
+		int open = Integer.parseInt(Locator1.CompliedSubContractorLow().getText());	//Reading Dashboard count.
+	    Locator1.CompliedSubContractorLow().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(2000);
+	    
+	    getDriver().switchTo().frame(Locator1.Frame());
+	    Thread.sleep(5000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(9000);
+
+		String item = Locator1.RedGraphGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " Low Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " Low Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator1.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator1.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator1.ClearButtonRedGraphGrid().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ClearButtonRedGraphGrid().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly "  );
+			
+		}
+		
+		
+        Thread.sleep(2000);
+		
+		if(Locator1.ViewRedButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ViewRedButton().click();
+			test.log(LogStatus.PASS, "  View Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  View Button Does not Working properly"  );
+			
+		}
+		
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator1.ClosePage().click();
+		
+		Thread.sleep(4000);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
 	
 	
 	
 	
+	public static void NotCompliedSubcontractorHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(26000);
+		
+		Thread.sleep(2000);
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1250)");
+	    Thread.sleep(2000);
+		
+		Locator1.NotCompliedSubContractor().click();
+		Thread.sleep(2000);
+		
+		int open = Integer.parseInt(Locator1.NotCompliedSubContractorHigh().getText());	//Reading Dashboard count.
+	    Locator1.NotCompliedSubContractorHigh().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(2000);
+	    
+	    getDriver().switchTo().frame(Locator1.Frame());
+	    Thread.sleep(5000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(9000);
+
+		String item = Locator1.RedGraphGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " High Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " High Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator1.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator1.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator1.ClearButtonRedGraphGrid().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ClearButtonRedGraphGrid().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly "  );
+			
+		}
+		
+		
+        Thread.sleep(2000);
+		
+		if(Locator1.ViewRedButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ViewRedButton().click();
+			test.log(LogStatus.PASS, "  View Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  View Button Does not Working properly"  );
+			
+		}
+		
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator1.ClosePage().click();
+		
+		Thread.sleep(4000);
+		
+		Method1.NotCompliedSubcontractorMedium(test, workbook);
+		Thread.sleep(4000);
+			
+		Method1.NotCompliedSubcontractorLow(test, workbook);
+		Thread.sleep(4000);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	public static void NotCompliedSubcontractorMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		
+		
+		
+		Thread.sleep(2000);
+	
+		
+		int open = Integer.parseInt(Locator1.NotCompliedSubContractorMedium().getText());	//Reading Dashboard count.
+	    Locator1.NotCompliedSubContractorMedium().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(2000);
+	    
+	    getDriver().switchTo().frame(Locator1.Frame());
+	    Thread.sleep(5000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,11000)");
+	    Thread.sleep(9000);
+
+		String item = Locator1.RedGraphGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " Medium Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " Medium Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator1.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator1.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator1.ClearButtonRedGraphGrid().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ClearButtonRedGraphGrid().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly "  );
+			
+		}
+		
+		
+        Thread.sleep(2000);
+		
+		if(Locator1.ViewRedButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ViewRedButton().click();
+			test.log(LogStatus.PASS, "  View Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  View Button Does not Working properly"  );
+			
+		}
+		
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator1.ClosePage().click();
+		
+		Thread.sleep(4000);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	public static void NotCompliedSubcontractorLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		
+		Thread.sleep(2000);
+				
+		int open = Integer.parseInt(Locator1.NotCompliedSubContractorLow().getText());	//Reading Dashboard count.
+	    Locator1.NotCompliedSubContractorLow().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(2000);
+	    
+	    getDriver().switchTo().frame(Locator1.Frame());
+	    Thread.sleep(5000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,11000)");
+	    Thread.sleep(9000);
+
+		String item = Locator1.RedGraphGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " Low Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " Low Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator1.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator1.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator1.ClearButtonRedGraphGrid().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ClearButtonRedGraphGrid().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly "  );
+			
+		}
+		
+		
+        Thread.sleep(2000);
+		
+		if(Locator1.ViewRedButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ViewRedButton().click();
+			test.log(LogStatus.PASS, "  View Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  View Button Does not Working properly"  );
+			
+		}
+		
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator1.ClosePage().click();
+		
+		Thread.sleep(4000);
+		
+		
+	
+		
+		
+	}
 	
 	
 	
 	
+	public static void NotApplicableSubcontractorHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(26000);
+		
+		Thread.sleep(2000);
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1300)");
+	    Thread.sleep(2000);
+		
+		Locator1.NotApplicableSubContractor().click();
+		Thread.sleep(2000);
+		
+		int open = Integer.parseInt(Locator1.NotApplicableSubContractorHigh().getText());	//Reading Dashboard count.
+	    Locator1.NotApplicableSubContractorHigh().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(2000);
+	    
+	    getDriver().switchTo().frame(Locator1.Frame());
+	    Thread.sleep(5000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,11000)");
+	    Thread.sleep(9000);
+
+		String item = Locator1.RedGraphGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " High Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " High Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator1.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator1.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator1.ClearButtonRedGraphGrid().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ClearButtonRedGraphGrid().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly "  );
+			
+		}
+		
+		
+        Thread.sleep(2000);
+		
+		if(Locator1.ViewRedButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ViewRedButton().click();
+			test.log(LogStatus.PASS, "  View Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  View Button Does not Working properly"  );
+			
+		}
+		
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator1.ClosePage().click();
+		
+		Thread.sleep(4000);
+		
+		Method1.NotApplicableSubcontractorMedium(test, workbook);
+		Thread.sleep(4000);
+		
+		
+		Method1.NotApplicableSubcontractorLow(test, workbook);
+		
+		
+		Thread.sleep(4000);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	public static void NotApplicableSubcontractorMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(2000);
+				
+		int open = Integer.parseInt(Locator1.NotApplicableSubContractorMedium().getText());	//Reading Dashboard count.
+	    Locator1.NotApplicableSubContractorMedium().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(2000);
+	    
+	    getDriver().switchTo().frame(Locator1.Frame());
+	    Thread.sleep(5000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,11000)");
+	    Thread.sleep(9000);
+
+		String item = Locator1.RedGraphGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " Medium Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " Medium Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator1.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator1.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator1.ClearButtonRedGraphGrid().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ClearButtonRedGraphGrid().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly "  );
+			
+		}
+		
+		
+        Thread.sleep(2000);
+		
+		if(Locator1.ViewRedButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ViewRedButton().click();
+			test.log(LogStatus.PASS, "  View Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  View Button Does not Working properly"  );
+			
+		}
+		
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator1.ClosePage().click();
+		
+		Thread.sleep(4000);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	public static void NotApplicableSubcontractorLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		
+		Thread.sleep(2000);		
+		int open = Integer.parseInt(Locator1.NotApplicableSubContractorLow().getText());	//Reading Dashboard count.
+	    Locator1.NotApplicableSubContractorLow().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(2000);
+	    
+	    getDriver().switchTo().frame(Locator1.Frame());
+	    Thread.sleep(5000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(9000);
+
+		String item = Locator1.RedGraphGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " Low Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " Low Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator1.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator1.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator1.ClearButtonRedGraphGrid().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ClearButtonRedGraphGrid().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does not working properly "  );
+			
+		}
+		
+		
+        Thread.sleep(2000);
+		
+		if(Locator1.ViewRedButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ViewRedButton().click();
+			test.log(LogStatus.PASS, "  View Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  View Button Does not Working properly"  );
+			
+		}
+		
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator1.ClosePage().click();
+		
+		Thread.sleep(4000);
+		
+		
+		
+		
+	}
+	
+	
+
+	public static void OverdueSubContractor( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(10000);
+		
+        JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1300)");
+	    Thread.sleep(2000);
+	    
+		int open = Integer.parseInt(Locator1.OverdueSubContractor().getText());	//Reading Dashboard count.
+	    Locator1.OverdueSubContractor().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(9000);
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+	//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+	    
+	    getDriver().switchTo().frame(Locator2.Frame());
+	    Thread.sleep(5000);
+	    
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,1500)");
+	    Thread.sleep(9000);
+	    
+	    
+	 //   scrollToBottom();
+	    
+	    try {
+            // Create an instance of Robot class
+            Robot robot = new Robot();
+
+            // Define how many times you want to zoom out
+            int zoomOutSteps = 3;
+
+            // Perform the zoom out action multiple times
+            for (int i = 0; i < zoomOutSteps; i++) {
+                // Press Ctrl key
+                robot.keyPress(KeyEvent.VK_CONTROL);
+                // Press '-' key
+                robot.keyPress(KeyEvent.VK_MINUS);
+                // Release '-' key
+               
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+                // Optional: Wait a bit between zoom steps to observe the effect
+                Thread.sleep(500);
+            }
+
+        } catch (AWTException | InterruptedException e) {
+            e.printStackTrace();
+        }
+	   
+
+		String item = Locator2.ACSREDGraphGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " Overdue -  Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " Overdue - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		// clear button
+		
+        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+	    
+	    jss1.executeScript("window.scrollBy(0,-1000)");
+	    Thread.sleep(2000);
+		
+		Locator2.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator2.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator2.ACSREDGraphGridClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator2.ACSREDGraphGridClearButton().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+			
+		}
+		
+		Thread.sleep(2000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(3000);
+		Locator2.ACSREDGraphGridExportButton().click();
+		
+	 	Thread.sleep(9000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+		
+		Thread.sleep(3000);
+	  
+        
+	   if (dirContents.length < allFilesNew.length) {
+			test.log(LogStatus.PASS,  "File download successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL,  "File did not downloaded");
+		}
+	   Thread.sleep(1000);
+
+		
+		Thread.sleep(4000);
+
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator2.ClosePage().click();
+		
+		Thread.sleep(3000);
+		
+		Method1.PendingReviewSubContractor(test, workbook);
+		
+		Thread.sleep(2000);
+		
+		Method1.ClosedSubContractor(test, workbook);
+			
+		Thread.sleep(2000);
+		
+	}
 	
 	
 	
 	
+	public static void PendingReviewSubContractor( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(2000);
+		
+		
+		int open = Integer.parseInt(Locator1.PendingReviewSubContractor().getText());	//Reading Dashboard count.
+	    Locator1.PendingReviewSubContractor().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(9000);
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+	//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+	    
+	    getDriver().switchTo().frame(Locator2.Frame());
+	    Thread.sleep(5000);
+	    
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(18000);
+	    
+	    
+	 //   scrollToBottom();
+	    
+	    
+	   
+
+		String item = Locator2.ACSBlueGraphGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " Pending Review - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, "Pending Review - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		// clear button
+		
+        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+	    
+	    jss1.executeScript("window.scrollBy(0,-1000)");
+	    Thread.sleep(2000);
+		
+		Locator2.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator2.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator2.ACSBlueGraphGridClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator2.ACSBlueGraphGridClearButton().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+			
+		}
+		
+		
+		
+		Thread.sleep(2000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(3000);
+		Locator2.ACSREDGraphGridExportButton().click();
+		
+	 	Thread.sleep(9000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+		
+		Thread.sleep(3000);
+	  
+        
+	   if (dirContents.length < allFilesNew.length) {
+			test.log(LogStatus.PASS,  "File download successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL,  "File did not downloaded");
+		}
+	   Thread.sleep(1000);
+		
+		Thread.sleep(4000);
+
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator2.ClosePage().click();
+		
+		Thread.sleep(2000);
+		
+		
+		
+		
+		
+			
+		
+		
+	}
 	
 	
 	
 	
+	public static void ClosedSubContractor( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(9000);
+		
+		
+		int open = Integer.parseInt(Locator1.ClosedSubContractor().getText());	//Reading Dashboard count.
+	    Locator1.ClosedSubContractor().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(9000);
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+	//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+	    
+	    getDriver().switchTo().frame(Locator2.Frame());
+	    Thread.sleep(5000);
+	    
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(9000);
+	    
+	    
+	 //   scrollToBottom();
+	    
+	    
+	   
+
+		String item = Locator2.ACSGreenGraphGreed().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		
+		
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, "  Closed -  Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " Closed - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		// clear button
+		
+        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+	    
+	    jss1.executeScript("window.scrollBy(0,-1000)");
+	    Thread.sleep(2000);
+		
+		Locator1.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator1.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator1.ACSGreenGraphGreedClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ACSGreenGraphGreedClearButton().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+			
+		}
+		
+		
+		
+		Thread.sleep(2000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(3000);
+		Locator2.ACSREDGraphGridExportButton().click();
+		
+	 	Thread.sleep(9000);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+		
+		Thread.sleep(3000);
+	  
+        
+	   if (dirContents.length < allFilesNew.length) {
+			test.log(LogStatus.PASS,  "File download successfully");
+		}
+	   else
+	   {
+			test.log(LogStatus.FAIL,  "File did not downloaded");
+		}
+	   Thread.sleep(1000);
+		
+		
+		Thread.sleep(4000);
+
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator1.ClosePage().click();
+		
+		Thread.sleep(2000);
+		
+		
+		
+		
+		
+	}
 	
 	
+	
+	public static void PWSSubContractorCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+			//WebWait wait = new WebWait(, 1000);
+			Thread.sleep(2000);
+			
+			/*
+			
+		    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+		    
+		    jss.executeScript("window.scrollBy(0,750)");
+		    Thread.sleep(5000);
+			*/
+		   
+	//		Locator1.NotCompliedCircle().click();
+	//		Thread.sleep(3000);
+		    
+	//	    Locator1.NotApplicableCircle().click();
+	//	    Thread.sleep(3000);
+			
+		    
+		   Locator1.PWSEcobuildSolutionText().click();
+		   
+		   Thread.sleep(3000);
+			
+			int open = Integer.parseInt(Locator1.PWSSubContractorCompliedHigh().getText());	//Reading Dashboard count.
+		    Locator1.PWSSubContractorCompliedHigh().click();					                //Clicking on Dashboard count
+
+		    Thread.sleep(20000);
+		   
+		    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+		    
+		    
+		    getDriver().switchTo().frame(Locator2.Frame());
+		    Thread.sleep(5000);
+		    
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		    
+		    js.executeScript("window.scrollBy(0,1000)");
+		    Thread.sleep(9000);
+		    
+		    
+		 //   scrollToBottom();
+		    
+		    
+		   
+
+			String item = Locator1.PWSCompliedGraphHighGrid().getText();
+			String[] bits = item.split(" ");								//Splitting the String
+			String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			int count1 = Integer.parseInt(compliancesCount);
+
+			
+			
+			if(open == count1)
+						
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, " High -  Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, " High - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+			
+			
+			// clear button
+			
+	        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+		    
+		    jss1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);
+			
+			Locator1.ClearContractorRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			Locator1.ClearContractorDDRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridClearButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator1.ACSREDGraphGridClearButton().click();
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+				
+			}
+			
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridViewButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator2.PWSCompliedGraphHighGridViewButton().click();
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
+				
+			}
+			
+			
+			
+			Thread.sleep(4000);
+
+			getDriver().switchTo().parentFrame();
+			
+			Thread.sleep(4000);
+			
+			Locator1.ClosePage().click();
+			
+			Thread.sleep(3000);
+			
+			
+			
+			Method1.PWSSubContractorCompliedMedium(test, workbook);
+			
+			Thread.sleep(2000);
+			
+			Method1.PWSSubContractorCompliedlow(test, workbook);
+				
+			Thread.sleep(2000);
+			
+		
+		
+		
+			
+				
+		
+		
+	}
+	
+	
+	
+	
+	public static void PWSSubContractorCompliedMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+			//WebWait wait = new WebWait(, 1000);
+			Thread.sleep(26000);
+			
+			/*
+			
+		    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+		    
+		    jss.executeScript("window.scrollBy(0,750)");
+		    Thread.sleep(5000);
+			
+			
+		    
+		   Locator1.PWSCompliedJKHills().click();
+		   
+		   Thread.sleep(3000);
+		   
+		   */
+			
+			int open = Integer.parseInt(Locator1.PWSSubContractorCompliedmedium().getText());	//Reading Dashboard count.
+		    Locator1.PWSSubContractorCompliedmedium().click();					                //Clicking on Dashboard count
+
+		    Thread.sleep(20000);
+		   
+		    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+		    
+		    
+		    getDriver().switchTo().frame(Locator1.Frame());
+		    Thread.sleep(5000);
+		    
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		    
+		    js.executeScript("window.scrollBy(0,1000)");
+		    Thread.sleep(9000);
+		    
+		    
+		 //   scrollToBottom();
+		    
+		    
+		   
+
+			String item = Locator1.PWSCompliedGraphHighGrid().getText();
+			String[] bits = item.split(" ");								//Splitting the String
+			String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			int count1 = Integer.parseInt(compliancesCount);
+
+			
+			
+			if(open == count1)
+						
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, " Medium -  Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, " Medium - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+			
+			
+			// clear button
+			
+	        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+		    
+		    jss1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);
+			
+			Locator1.ClearContractorRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			Locator1.ClearContractorDDRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridClearButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator1.ACSREDGraphGridClearButton().click();
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+				
+			}
+			
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridViewButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator2.PWSCompliedGraphHighGridViewButton().click();
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
+				
+			}
+			
+			
+			Thread.sleep(4000);
+
+			getDriver().switchTo().parentFrame();
+			
+			Thread.sleep(4000);
+			
+			Locator1.ClosePage().click();
+			
+			Thread.sleep(3000);
+			
+			
+	}
+
+	
+	
+	
+	public static void PWSSubContractorCompliedlow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+			//WebWait wait = new WebWait(, 1000);
+			Thread.sleep(26000);
+			
+			/*
+			
+		    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+		    
+		    jss.executeScript("window.scrollBy(0,750)");
+		    Thread.sleep(5000);
+			
+			
+		    
+		   Locator1.PWSCompliedJKHills().click();
+		   
+		   Thread.sleep(3000);
+		   
+		   */
+			
+			int open = Integer.parseInt(Locator1.PWSSubContractorCompliedlow().getText());	//Reading Dashboard count.
+		    Locator1.PWSSubContractorCompliedlow().click();					                //Clicking on Dashboard count
+
+		    Thread.sleep(20000);
+		   
+		    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+		    
+		    
+		    getDriver().switchTo().frame(Locator1.Frame());
+		    Thread.sleep(5000);
+		    
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		    
+		    js.executeScript("window.scrollBy(0,1000)");
+		    Thread.sleep(9000);
+		    
+		    
+		 //   scrollToBottom();
+		    
+		    
+		   
+
+			String item = Locator1.PWSCompliedGraphHighGrid().getText();
+			String[] bits = item.split(" ");								//Splitting the String
+			String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			int count1 = Integer.parseInt(compliancesCount);
+
+			
+			
+			if(open == count1)
+						
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, " Low -  Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, " Low - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+			
+			
+			// clear button
+			
+	        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+		    
+		    jss1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);
+			
+			Locator1.ClearContractorRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			Locator1.ClearContractorDDRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridClearButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator1.ACSREDGraphGridClearButton().click();
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+				
+			}
+			
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridViewButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator2.PWSCompliedGraphHighGridViewButton().click();
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
+				
+			}
+			
+			
+			Thread.sleep(4000);
+
+			getDriver().switchTo().parentFrame();
+			
+			Thread.sleep(4000);
+			
+			Locator1.ClosePage().click();
+			
+			Thread.sleep(3000);
+			
+			
+	}
+
+	
+	
+	
+	public static void PWSSubContractorNotCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+			//WebWait wait = new WebWait(, 1000);
+			Thread.sleep(2000);
+			
+			/*
+			
+		    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+		    
+		    jss.executeScript("window.scrollBy(0,750)");
+		    Thread.sleep(5000);
+			*/
+		   
+	//		Locator1.NotCompliedCircle().click();
+	//		Thread.sleep(3000);
+		    
+	//	    Locator1.NotApplicableCircle().click();
+	//	    Thread.sleep(3000);
+			
+		    
+		   Locator1.PWSEcobuildSolutionText().click();
+		   
+		   Thread.sleep(3000);
+			
+			int open = Integer.parseInt(Locator1.PWSSubContractorNotCompliedHigh().getText());	//Reading Dashboard count.
+		    Locator1.PWSSubContractorNotCompliedHigh().click();					                //Clicking on Dashboard count
+
+		    Thread.sleep(20000);
+		   
+		    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+		    
+		    
+		    getDriver().switchTo().frame(Locator2.Frame());
+		    Thread.sleep(5000);
+		    
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		    
+		    js.executeScript("window.scrollBy(0,1000)");
+		    Thread.sleep(9000);
+		    
+		    
+		 //   scrollToBottom();
+		    
+		    
+		   
+
+			String item = Locator1.PWSCompliedGraphHighGrid().getText();
+			String[] bits = item.split(" ");								//Splitting the String
+			String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			int count1 = Integer.parseInt(compliancesCount);
+
+			
+			
+			if(open == count1)
+						
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, " High -  Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, " High - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+			
+			
+			// clear button
+			
+	        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+		    
+		    jss1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);
+			
+			Locator1.ClearContractorRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			Locator1.ClearContractorDDRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridClearButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator1.ACSREDGraphGridClearButton().click();
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+				
+			}
+			
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridViewButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator2.PWSCompliedGraphHighGridViewButton().click();
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
+				
+			}
+			
+			
+			
+			Thread.sleep(4000);
+
+			getDriver().switchTo().parentFrame();
+			
+			Thread.sleep(4000);
+			
+			Locator1.ClosePage().click();
+			
+			Thread.sleep(3000);
+			
+			
+			
+			Method1.PWSSubContractorNotCompliedmedium(test, workbook);
+			
+			Thread.sleep(2000);
+			
+			Method1.PWSSubContractorNotCompliedlow(test, workbook);
+				
+			Thread.sleep(2000);
+			
+		
+		
+		
+			
+				
+		
+		
+	}
+	
+	
+	
+	
+	public static void PWSSubContractorNotCompliedmedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+			//WebWait wait = new WebWait(, 1000);
+			Thread.sleep(26000);
+			
+			/*
+			
+		    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+		    
+		    jss.executeScript("window.scrollBy(0,750)");
+		    Thread.sleep(5000);
+			
+			
+		    
+		   Locator1.PWSCompliedJKHills().click();
+		   
+		   Thread.sleep(3000);
+		   
+		   */
+			
+			int open = Integer.parseInt(Locator1.PWSSubContractorNotCompliedmedium().getText());	//Reading Dashboard count.
+		    Locator1.PWSSubContractorNotCompliedmedium().click();					                //Clicking on Dashboard count
+
+		    Thread.sleep(20000);
+		   
+		    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+		    
+		    
+		    getDriver().switchTo().frame(Locator1.Frame());
+		    Thread.sleep(5000);
+		    
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		    
+		    js.executeScript("window.scrollBy(0,1000)");
+		    Thread.sleep(9000);
+		    
+		    
+		 //   scrollToBottom();
+		    
+		    
+		   
+
+			String item = Locator1.PWSCompliedGraphHighGrid().getText();
+			String[] bits = item.split(" ");								//Splitting the String
+			String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			int count1 = Integer.parseInt(compliancesCount);
+
+			
+			
+			if(open == count1)
+						
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, " Medium -  Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, " Medium - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+			
+			
+			// clear button
+			
+	        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+		    
+		    jss1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);
+			
+			Locator1.ClearContractorRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			Locator1.ClearContractorDDRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridClearButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator1.ACSREDGraphGridClearButton().click();
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+				
+			}
+			
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridViewButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator2.PWSCompliedGraphHighGridViewButton().click();
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
+				
+			}
+			
+			
+			Thread.sleep(4000);
+
+			getDriver().switchTo().parentFrame();
+			
+			Thread.sleep(4000);
+			
+			Locator1.ClosePage().click();
+			
+			Thread.sleep(3000);
+			
+			
+	}
+
+	
+	
+	
+	public static void PWSSubContractorNotCompliedlow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+			//WebWait wait = new WebWait(, 1000);
+			Thread.sleep(26000);
+			
+			/*
+			
+		    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+		    
+		    jss.executeScript("window.scrollBy(0,750)");
+		    Thread.sleep(5000);
+			
+			
+		    
+		   Locator1.PWSCompliedJKHills().click();
+		   
+		   Thread.sleep(3000);
+		   
+		   */
+			
+			int open = Integer.parseInt(Locator1.PWSSubContractorNotCompliedlow().getText());	//Reading Dashboard count.
+		    Locator1.PWSSubContractorNotCompliedlow().click();					                //Clicking on Dashboard count
+
+		    Thread.sleep(20000);
+		   
+		    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+		    
+		    
+		    getDriver().switchTo().frame(Locator1.Frame());
+		    Thread.sleep(5000);
+		    
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		    
+		    js.executeScript("window.scrollBy(0,1000)");
+		    Thread.sleep(9000);
+		    
+		    
+		 //   scrollToBottom();
+		    
+		    
+		   
+
+			String item = Locator1.PWSCompliedGraphHighGrid().getText();
+			String[] bits = item.split(" ");								//Splitting the String
+			String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			int count1 = Integer.parseInt(compliancesCount);
+
+			
+			
+			if(open == count1)
+						
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, " Low -  Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, " Low - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+			
+			
+			// clear button
+			
+	        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+		    
+		    jss1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);
+			
+			Locator1.ClearContractorRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			Locator1.ClearContractorDDRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridClearButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator1.ACSREDGraphGridClearButton().click();
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+				
+			}
+			
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridViewButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator2.PWSCompliedGraphHighGridViewButton().click();
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
+				
+			}
+			
+			
+			Thread.sleep(4000);
+
+			getDriver().switchTo().parentFrame();
+			
+			Thread.sleep(4000);
+			
+			Locator1.ClosePage().click();
+			
+			Thread.sleep(3000);
+			
+			
+	}
+
+	
+	
+	public static void PWSSubContractorNotApplicableHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+			//WebWait wait = new WebWait(, 1000);
+			Thread.sleep(2000);
+			
+			/*
+			
+		    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+		    
+		    jss.executeScript("window.scrollBy(0,750)");
+		    Thread.sleep(5000);
+			*/
+		   
+	//		Locator1.NotCompliedCircle().click();
+	//		Thread.sleep(3000);
+		    
+	//	    Locator1.NotApplicableCircle().click();
+	//	    Thread.sleep(3000);
+			
+		    
+		   Locator1.PWSEcobuildSolutionText().click();
+		   
+		   Thread.sleep(3000);
+			
+			int open = Integer.parseInt(Locator1.PWSSubContractorNotApplicableHigh().getText());	//Reading Dashboard count.
+		    Locator1.PWSSubContractorNotApplicableHigh().click();					                //Clicking on Dashboard count
+
+		    Thread.sleep(20000);
+		   
+		    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+		    
+		    
+		    getDriver().switchTo().frame(Locator2.Frame());
+		    Thread.sleep(5000);
+		    
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		    
+		    js.executeScript("window.scrollBy(0,1000)");
+		    Thread.sleep(9000);
+		    
+		    
+		 //   scrollToBottom();
+		    
+		    
+		   
+
+			String item = Locator1.PWSCompliedGraphHighGrid().getText();
+			String[] bits = item.split(" ");								//Splitting the String
+			String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			int count1 = Integer.parseInt(compliancesCount);
+
+			
+			
+			if(open == count1)
+						
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, " High -  Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, " High - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+			
+			
+			// clear button
+			
+	        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+		    
+		    jss1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);
+			
+			Locator1.ClearContractorRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			Locator1.ClearContractorDDRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridClearButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator1.ACSREDGraphGridClearButton().click();
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+				
+			}
+			
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridViewButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator2.PWSCompliedGraphHighGridViewButton().click();
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
+				
+			}
+			
+			
+			
+			Thread.sleep(4000);
+
+			getDriver().switchTo().parentFrame();
+			
+			Thread.sleep(4000);
+			
+			Locator1.ClosePage().click();
+			
+			Thread.sleep(3000);
+			
+			
+			
+			Method1.PWSSubContractorNotApplicablemedium(test, workbook);
+			
+			Thread.sleep(2000);
+			
+			Method1.PWSSubContractorNotApplicablelow(test, workbook);
+				
+			Thread.sleep(2000);
+			
+		
+		
+		
+			
+				
+		
+		
+	}
+	
+	
+	
+	
+	public static void PWSSubContractorNotApplicablemedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+			//WebWait wait = new WebWait(, 1000);
+			Thread.sleep(26000);
+			
+			/*
+			
+		    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+		    
+		    jss.executeScript("window.scrollBy(0,750)");
+		    Thread.sleep(5000);
+			
+			
+		    
+		   Locator1.PWSCompliedJKHills().click();
+		   
+		   Thread.sleep(3000);
+		   
+		   */
+			
+			int open = Integer.parseInt(Locator1.PWSSubContractorNotApplicablemedium().getText());	//Reading Dashboard count.
+		    Locator1.PWSSubContractorNotApplicablemedium().click();					                //Clicking on Dashboard count
+
+		    Thread.sleep(20000);
+		   
+		    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+		    
+		    
+		    getDriver().switchTo().frame(Locator1.Frame());
+		    Thread.sleep(5000);
+		    
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		    
+		    js.executeScript("window.scrollBy(0,1000)");
+		    Thread.sleep(9000);
+		    
+		    
+		 //   scrollToBottom();
+		    
+		    
+		   
+
+			String item = Locator1.PWSCompliedGraphHighGrid().getText();
+			String[] bits = item.split(" ");								//Splitting the String
+			String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			int count1 = Integer.parseInt(compliancesCount);
+
+			
+			
+			if(open == count1)
+						
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, " Medium -  Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, " Medium - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+			
+			
+			// clear button
+			
+	        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+		    
+		    jss1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);
+			
+			Locator1.ClearContractorRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			Locator1.ClearContractorDDRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridClearButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator1.ACSREDGraphGridClearButton().click();
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+				
+			}
+			
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridViewButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator2.PWSCompliedGraphHighGridViewButton().click();
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
+				
+			}
+			
+			
+			Thread.sleep(4000);
+
+			getDriver().switchTo().parentFrame();
+			
+			Thread.sleep(4000);
+			
+			Locator1.ClosePage().click();
+			
+			Thread.sleep(3000);
+			
+			
+	}
+
+	
+	
+	
+	public static void PWSSubContractorNotApplicablelow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+			//WebWait wait = new WebWait(, 1000);
+			Thread.sleep(26000);
+			
+			/*
+			
+		    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+		    
+		    jss.executeScript("window.scrollBy(0,750)");
+		    Thread.sleep(5000);
+			
+			
+		    
+		   Locator1.PWSCompliedJKHills().click();
+		   
+		   Thread.sleep(3000);
+		   
+		   */
+			
+			int open = Integer.parseInt(Locator1.PWSSubContractorNotApplicablelow().getText());	//Reading Dashboard count.
+		    Locator1.PWSSubContractorNotApplicablelow().click();					                //Clicking on Dashboard count
+
+		    Thread.sleep(20000);
+		   
+		    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//	wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+		    
+		    
+		    getDriver().switchTo().frame(Locator1.Frame());
+		    Thread.sleep(5000);
+		    
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		    
+		    js.executeScript("window.scrollBy(0,1000)");
+		    Thread.sleep(9000);
+		    
+		    
+		 //   scrollToBottom();
+		    
+		    
+		   
+
+			String item = Locator1.PWSCompliedGraphHighGrid().getText();
+			String[] bits = item.split(" ");								//Splitting the String
+			String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			int count1 = Integer.parseInt(compliancesCount);
+
+			
+			
+			if(open == count1)
+						
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, " Low -  Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, " Low - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+						
+			}
+			
+			
+			// clear button
+			
+	        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
+		    
+		    jss1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);
+			
+			Locator1.ClearContractorRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			Locator1.ClearContractorDDRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridClearButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator1.ACSREDGraphGridClearButton().click();
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+				
+			}
+			
+			
+			
+			if(Locator1.PWSCompliedGraphHighGridViewButton().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator2.PWSCompliedGraphHighGridViewButton().click();
+				test.log(LogStatus.PASS, " Overview Button Working properly" );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Overview Button Does not Working properly"  );
+				
+			}
+			
+			
+			Thread.sleep(4000);
+
+			getDriver().switchTo().parentFrame();
+			
+			Thread.sleep(4000);
+			
+			Locator1.ClosePage().click();
+			
+			Thread.sleep(3000);
+			
+			
+	}
+
+
+	
+	public static void UpdateOverdue11( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(Locator1.Overdue()));
+		int open = Integer.parseInt(Locator1.Overdue().getText());	//Reading Dashboard count.
+        Locator1.Overdue().click();					                //Clicking on Dashboard count
+
+        Thread.sleep(7000);
+       
+        //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		
+		Locator1.UpdateOverdue().click();
+		Thread.sleep(5000);
+		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Thread.sleep(5000);
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(4000);
+        	       
+
+       			
+		String item = Locator1.AuditPerformpageGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+		
+		Locator1.Paging().click();
+		Thread.sleep(500);
+		Locator1.PagingDD().click();
+		Thread.sleep(500);
+
+		
+        JavascriptExecutor j = (JavascriptExecutor) getDriver();
+        
+        j.executeScript("window.scrollBy(0,-1200)");
+        Thread.sleep(4000);
+        	       
+		
+        for (int i = 1; i <= count1; i++) {
+            // Construct the dynamic XPath
+            String dynamicXPath = "//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[" + i + "]/td[4]/span";
+            String dynamicXPathselectfile = "(//table//*[@id='ComplaineDocUpload'])[" + i + "]";
+            WebElement selectfile = getDriver().findElement(By.xpath(dynamicXPathselectfile));
+
+		    sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+			int row = 0;
+			Thread.sleep(500);
+			Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+			Cell c1 = null;
+			
+			Thread.sleep(2000);
+			row0 = sheet.getRow(3);
+			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+			selectfile.sendKeys(c1.getStringCellValue()); // Writing Task title
+			Thread.sleep(2000);
+		
+	        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+			alert.accept();			
+				Thread.sleep(2000);
+
+
+            // Find the edit icon element using the dynamic XPath
+            WebElement editIcon = getDriver().findElement(By.xpath(dynamicXPath));
+            // Perform the click action on the edit icon
+            editIcon.click();
+            Thread.sleep(2000);
+    		Locator1.SelectStatus().click();
+    		Thread.sleep(5000);
+    		
+    		Locator1.SelectStatusDD().click();
+    		Thread.sleep(5000);	
+
+
+        // call method here to click on either close or select
+
+        }
+        
+		WebElement element = Locator1.CheckBox();	      
+		//JavascriptExecutor to click element
+	      JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+	      jse.executeScript("arguments[0].click();", element);
+	      boolean b = element.isSelected();
+	      if (b) {
+	         System.out.println("Checkbox is not checked");
+	      }else {
+	         System.out.println("Checkbox is checked");
+	      }
+		
+	      Thread.sleep(5000);
+	      JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+	        
+	        js1.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(4000);
+		
+		Locator1.Save1().click();
+		Thread.sleep(2000);
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+
+	//	 Alert ac1=getDriver().switchTo().alert();
+			
+	//		String t1=getDriver().switchTo().alert().getText();
+			
+	//		test.log(LogStatus.PASS, t1 );
+			
+	//		Thread.sleep(4000);
+			alert.accept();
+			Thread.sleep(2000);
+			Locator1.SubmitForAuditor().click();
+			Thread.sleep(2000);
+			Alert ac=getDriver().switchTo().alert();
+			
+			String t1=getDriver().switchTo().alert().getText();
+					
+			test.log(LogStatus.PASS, t1 );
+					
+			Thread.sleep(4000);
+			ac.accept();
+			
+			
+			Thread.sleep(3000);
+			Method2.ClosedNewlyOpenedWindow(test, workbook);
+
+	//		String parentwindow = getDriver().getWindowHandle();			
+			
+		//	getDriver().switchTo().window(parentwindow);
+			
+		//	Locator1.CloseOpenWindow().click();
+			Thread.sleep(9000);
+			 getDriver().navigate().refresh();
+			 Thread.sleep(2000);
+		      
+		      JavascriptExecutor j2 = (JavascriptExecutor) getDriver();
+		        
+		        j2.executeScript("window.scrollBy(0,1000)");
+		        Thread.sleep(4000);
+
+			
+			String item1 = Locator1.Overduegrid().getText();
+			String[] bits1 = item1.split(" ");								//Splitting the String
+			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+			int count = Integer.parseInt(compliancesCount1);
+            System.out.println(count);
+			
+			
+			if(count == (open-1))
+				
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, "Dashboard Count = "+open+" | Displayed records from grid = "+count);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, "Dashboard Count = "+open+" | Displayed records from grid = "+count);
+						
+			}
+
+			Thread.sleep(500);
+		
+
+	}
+	
+	
+	public static void UpcomingPerforedAudit( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(Locator1.Upcoming()));
+		int open = Integer.parseInt(Locator1.Upcoming().getText());	//Reading Dashboard count.
+        Locator1.Upcoming().click();	
+   		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(Locator1.UpcomingEditButton1()));
+
+		Locator1.UpcomingEditButton1().click();
+		Thread.sleep(4000);
+     //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Thread.sleep(5000);
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(4000);
+        	       
+
+       			
+		String item = Locator1.AuditPerformpageGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+		
+		Locator1.Paging().click();
+		Thread.sleep(500);
+		Locator1.PagingDD().click();
+		Thread.sleep(500);
+
+		
+        JavascriptExecutor j = (JavascriptExecutor) getDriver();
+        
+        j.executeScript("window.scrollBy(0,-1200)");
+        Thread.sleep(4000);
+        	       
+		
+        for (int i = 1; i <= count1; i++) {
+            // Construct the dynamic XPath
+            String dynamicXPath = "//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[" + i + "]/td[4]/span";
+            String dynamicXPathselectfile = "(//table//*[@id='ComplaineDocUpload'])[" + i + "]";
+            WebElement selectfile = getDriver().findElement(By.xpath(dynamicXPathselectfile));
+
+		    sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+			int row = 0;
+			Thread.sleep(500);
+			Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+			Cell c1 = null;
+			
+			Thread.sleep(2000);
+			row0 = sheet.getRow(3);
+			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+			selectfile.sendKeys(c1.getStringCellValue()); // Writing Task title
+			Thread.sleep(2000);
+		
+	        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+			alert.accept();			
+				Thread.sleep(2000);
+
+
+            // Find the edit icon element using the dynamic XPath
+            WebElement editIcon = getDriver().findElement(By.xpath(dynamicXPath));
+            // Perform the click action on the edit icon
+            editIcon.click();
+            Thread.sleep(2000);
+    		Locator1.SelectStatus().click();
+    		Thread.sleep(5000);
+    		
+    		Locator1.SelectStatusDD().click();
+    		Thread.sleep(5000);	
+
+
+        // call method here to click on either close or select
+
+        }
+        
+		WebElement element = Locator1.CheckBox();	      
+		//JavascriptExecutor to click element
+	      JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+	      jse.executeScript("arguments[0].click();", element);
+	      boolean b = element.isSelected();
+	      if (b) {
+	         System.out.println("Checkbox is not checked");
+	      }else {
+	         System.out.println("Checkbox is checked");
+	      }
+		
+	      Thread.sleep(5000);
+	      JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+	        
+	        js1.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(4000);
+		
+		Locator1.Save1().click();
+		Thread.sleep(2000);
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+			alert.accept();
+			Thread.sleep(2000);
+			Locator1.SubmitForAuditor().click();
+			Thread.sleep(2000);
+			Alert ac=getDriver().switchTo().alert();
+			
+			String t1=getDriver().switchTo().alert().getText();
+					
+			test.log(LogStatus.PASS, t1 );
+					
+			Thread.sleep(4000);
+			ac.accept();
+			
+			
+			Thread.sleep(3000);
+			Method2.ClosedNewlyOpenedWindow(test, workbook);
+
+	//		String parentwindow = getDriver().getWindowHandle();			
+			
+		//	getDriver().switchTo().window(parentwindow);
+			
+		//	Locator1.CloseOpenWindow().click();
+			Thread.sleep(9000);
+			 getDriver().navigate().refresh();
+			 Thread.sleep(2000);
+		      
+		      JavascriptExecutor j2 = (JavascriptExecutor) getDriver();
+		        
+		        j2.executeScript("window.scrollBy(0,1000)");
+		        Thread.sleep(4000);
+
+			
+			String item1 = Locator1.Overduegrid().getText();
+			String[] bits1 = item1.split(" ");								//Splitting the String
+			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+			int count = Integer.parseInt(compliancesCount1);
+            System.out.println(count);
+			
+			
+			if(count == (open-1))
+				
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, "Dashboard Count = "+open+" | Displayed records from grid = "+count);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, "Dashboard Count = "+open+" | Displayed records from grid = "+count);
+						
+			}
+
+			Thread.sleep(500);
+		
+
+	}
 	
 	
 	

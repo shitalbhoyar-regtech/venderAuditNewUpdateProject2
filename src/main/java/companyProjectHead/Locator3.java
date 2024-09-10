@@ -1688,7 +1688,15 @@ public class Locator3 extends BasePage{
    	 return DocumentSelectContractor;
    	}
   
+    public static WebElement Download()		//Method for searching Username input
+   	{
+    	DocumentSelectContractor = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[11]/a[2]"));
+   	 return DocumentSelectContractor;
+   	}
+
     
+    
+  
     
     
     public static WebElement DocumentSelectContractorDropDown()		//Method for searching Username input
@@ -2072,7 +2080,7 @@ public class Locator3 extends BasePage{
 	
 	public static WebElement Project()		//Method for searching Username input
 	{
-		Project = getDriver().findElement(By.cssSelector("#MainContentAL > div:nth-child(3) > div:nth-child(1)"));
+		Project = getDriver().findElement(By.xpath("//*[@id='dvWC']/div[1]/div[1]"));
 	return Project;
     }
 	
@@ -2124,6 +2132,13 @@ public class Locator3 extends BasePage{
 	return ContractorType;
     }
 	
+	
+	public static WebElement Contractor()		//Method for searching Username input
+	{
+		ContractorType = getDriver().findElement(By.xpath("//*[@id='dvWC']/div[2]/div[3]"));
+	return ContractorType;
+    }
+
 	
 	
 	public static WebElement ContractorTypeDD()		//Method for searching Username input
@@ -3211,6 +3226,15 @@ public class Locator3 extends BasePage{
 		
 	}
 	
+	public static WebElement PWCSSubContractorContractorTypeDD12()		//Method for searching Username input
+	{
+		PWCSSubContractorContractorTypeDD1 = getDriver().findElement(By.xpath("(//span[.='Contractor'])[2]"));
+		return PWCSSubContractorContractorTypeDD1;
+		
+		
+	}
+
+	
 	
 	public static WebElement PWCSSubContractorContractorTypeDD11()		//Method for searching Username input
 	{
@@ -3219,6 +3243,17 @@ public class Locator3 extends BasePage{
 		
 		
 	}
+	
+	
+	public static WebElement ContractorDD()		//Method for searching Username input
+	{
+		PWCSSubContractorContractorTypeDD11 = getDriver().findElement(By.xpath("(//div[@class='k-animation-container']//span[@class='k-in'])[2]"));
+		return PWCSSubContractorContractorTypeDD11;
+		
+		
+	}
+
+	
 
 	
 	public static WebElement Close()		//Method for searching Username input

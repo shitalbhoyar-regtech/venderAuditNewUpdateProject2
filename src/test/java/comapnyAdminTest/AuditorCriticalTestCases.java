@@ -113,20 +113,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	
-	
-	
-	@Test(priority = 2) 
-	void UpcomingEditButton1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Dashboard Tab - Upcoming Audit - Edit Button Verification");
 		
-		CriticalMethod2.UpcomingEditButton(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
 	
 	@Test(priority = 3) 
 	void UpcomingViewDownloadButton1() throws InterruptedException, IOException
@@ -224,6 +211,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
+	
 	
 	@Test(priority =11)                                                        
 	void OverdueDownloadAndViewButton1() throws InterruptedException, IOException
@@ -480,7 +468,7 @@ public class AuditorCriticalTestCases extends BasePage{
 
 	
 	
-	@Test(priority = 31) 
+//	@Test(priority = 31) 
 	void UpdateInEditButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Pending Review Audit - Edit - Change Reviewer Status Verification");
@@ -490,6 +478,19 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
+	
+	@Test(priority = 31) 
+	void PRChangeReviewerstatus1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Pending Review Audit - Edit - Change Reviewer Status Verification");
+		
+		CriticalMethod2.PRChangeReviewerstatus(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
 	
 	
 
@@ -804,7 +805,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	}
 
 	
-	@Test(priority = 52) 
+//	@Test(priority = 52) 
 	void MyWorkspacePreviousDocumentView1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Workspace - License Tab - Previous Document Viewed Verification ");

@@ -59,7 +59,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		extent = new com.relevantcodes.extentreports.ExtentReports("E:\\VenderAuditProject\\Reports\\VCACompanyAdminCritical.html",true);
 		test = extent.startTest("Loging In - Company Admin(Critical)");
 		
-		test.log(LogStatus.PASS, "Test Passed - Company Admin Login");
+		test.log(LogStatus.PASS, "Test Passed ");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -609,7 +609,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-    	@Test(priority = 37) 
+   	@Test(priority = 37) 
 		void DeleteContractorCT1() throws InterruptedException, IOException             
 		{
 			test = extent.startTest(" Contractor Master - Delete Contractor Verification");
@@ -791,7 +791,6 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.endTest(test);
 			extent.flush();
 		}
-		
 		
 		@Test(priority = 49) 
 		void ComplianceCombinedFormUpload() throws InterruptedException, IOException
@@ -1042,7 +1041,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		@Test(priority = 68) 
 		void AddNewCompliance1() throws InterruptedException, IOException
 		{
-			test = extent.startTest(" Compliance Mapping Tab - Add Compliance Verification ");
+			test = extent.startTest(" Compliance Mapping Tab - Mapping Compliance Verification ");
 			
 			CriticalMethod.AddNewCompliance(test,workbook);
 			
@@ -1132,7 +1131,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		@Test(priority = 75)                                               
 		void AuditSchedule1() throws InterruptedException, IOException
 		{
-			test = extent.startTest(" Audit Schedule Tab - Add Audit Scheduled Verification ");
+			test = extent.startTest(" Audit Schedule Tab - Audit Scheduled Verification ");
 			
 			CriticalMethod.AuditSchedule(test,workbook);
 			

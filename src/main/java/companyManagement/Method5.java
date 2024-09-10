@@ -1,5 +1,8 @@
 package companyManagement;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,7 +18,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -51,8 +55,11 @@ public class Method5 extends BasePage{
 	public static void ProjectsCountGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		//WebWait wait = new WebWait(, 1000);
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(20000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divLocationCount']"))); 
+		Thread.sleep(1000);
 		
 		int open = Integer.parseInt(Locator5.Projects().getText());	//Reading Dashboard count.
         Locator5.Projects().click();					                //Clicking on Dashboard count
@@ -109,8 +116,11 @@ public class Method5 extends BasePage{
 	public static void ContractorsCountGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		//WebWait wait = new WebWait(, 1000);
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(20000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divLocationCount']"))); 
+		Thread.sleep(1000);
 		
 		int open = Integer.parseInt(Locator5.Contractors().getText());	//Reading Dashboard count.
         Locator5.Contractors().click();					                //Clicking on Dashboard count
@@ -192,12 +202,15 @@ public class Method5 extends BasePage{
 	
 	
 	
-	public static void GraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divLocationCount']"))); 
+		Thread.sleep(1000);
 		
 		Thread.sleep(2000);
 		
@@ -263,6 +276,8 @@ public class Method5 extends BasePage{
 		    
 		    js1.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);    
+		    Method5.ExcelcountAndGridMatch(test, workbook);
+			Thread.sleep(2000);
 		
 		
 		Locator5.ClearContractorRedGraphGrid().click();
@@ -343,7 +358,7 @@ public class Method5 extends BasePage{
 	
 	
 		
-	public static void YellowGraphDashboardGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void YellowGraphDashboardGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		Thread.sleep(5000);
@@ -407,7 +422,10 @@ public class Method5 extends BasePage{
         JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 	    
 	    js1.executeScript("window.scrollBy(0,-1000)");
-	    Thread.sleep(9000);
+	    Thread.sleep(2000);
+	    
+	    Method5.ExcelcountAndGridMatch(test, workbook);
+		Thread.sleep(2000);
 		
 		Locator5.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -475,7 +493,7 @@ public class Method5 extends BasePage{
 	
 	
 	
-	public static void GreenInGreenGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GreenInGreenGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		/*
 		//WebWait wait = new WebWait(, 1000);
@@ -548,7 +566,9 @@ public class Method5 extends BasePage{
         JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 	    
 	    js1.executeScript("window.scrollBy(0,-1000)");
-	    Thread.sleep(9000);
+	    Thread.sleep(2000);
+	    Method5.ExcelcountAndGridMatch(test, workbook);
+		Thread.sleep(2000);
 		
 		
 		Thread.sleep(2000);
@@ -615,7 +635,7 @@ public class Method5 extends BasePage{
 	
 	
 	
-	public static void RedInGreenGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void RedInGreenGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		/*
@@ -688,7 +708,10 @@ public class Method5 extends BasePage{
         JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 	    
 	    js1.executeScript("window.scrollBy(0,-1000)");
-	    Thread.sleep(9000);
+	    Thread.sleep(2000);
+	    
+	    Method5.ExcelcountAndGridMatch(test, workbook);
+		Thread.sleep(2000);
 		
 		Locator5.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -767,7 +790,7 @@ public class Method5 extends BasePage{
 	
 	
 	
-	public static void RedInYellowCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void RedInYellowCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -829,8 +852,9 @@ public class Method5 extends BasePage{
         JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 	    
 	    js1.executeScript("window.scrollBy(0,-1000)");
-	    Thread.sleep(9000);
-		
+	    Thread.sleep(2000);
+	    Method5.ExcelcountAndGridMatch(test, workbook);
+		Thread.sleep(2000);
 		
 		
 		Thread.sleep(2000);
@@ -899,10 +923,10 @@ public class Method5 extends BasePage{
 	
 	
 	
-	public static void RedInRedGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void RedInRedGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
-		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(3000);
 		
 		
@@ -973,8 +997,9 @@ public class Method5 extends BasePage{
         JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 	    
 	    js1.executeScript("window.scrollBy(0,-1000)");
-	    Thread.sleep(9000);
-		
+	    Thread.sleep(2000);
+	    Method5.ExcelcountAndGridMatch(test, workbook);
+		Thread.sleep(2000);
 		
 		
 		Locator5.ClearContractorRedGraphGrid().click();
@@ -1057,7 +1082,7 @@ public class Method5 extends BasePage{
 		/// Status Wise Summery Not Applicable
 			
 			
-	public static void GreyGraphCountMatchGreen( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GreyGraphCountMatchGreen( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
 				
 				/*
@@ -1136,7 +1161,8 @@ public class Method5 extends BasePage{
 			    
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
-			    
+			    Method5.ExcelcountAndGridMatch(test, workbook);
+				Thread.sleep(2000);
 			    
 			    Thread.sleep(2000);
 				Locator5.ClearContractorRedGraphGrid().click();
@@ -1197,7 +1223,7 @@ public class Method5 extends BasePage{
 			
 			
 			
-			public static void GreyGraphYellowCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+			public static void GreyGraphYellowCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
 				
 				
@@ -1275,7 +1301,8 @@ public class Method5 extends BasePage{
 			    
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
-			    
+			    Method5.ExcelcountAndGridMatch(test, workbook);
+				Thread.sleep(2000);
 			    
 			    Thread.sleep(2000);
 				Locator5.ClearContractorRedGraphGrid().click();
@@ -1341,7 +1368,7 @@ public class Method5 extends BasePage{
 			//SWS Not Applicable
 			
 			
-			public static void GreyInRedCountMtch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+			public static void GreyInRedCountMtch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
 				
 				
@@ -1415,6 +1442,10 @@ public class Method5 extends BasePage{
 			    
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
+			    
+				Method5.ExcelcountAndGridMatch(test, workbook);
+				Thread.sleep(2000);
+			    
 				
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
@@ -1564,6 +1595,52 @@ public class Method5 extends BasePage{
 			    
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
+			    /*
+			    try {
+		            // Create an instance of Robot class
+		            Robot robot = new Robot();
+
+		            // Define how many times you want to zoom out
+		            int zoomOutSteps = 3;
+
+		            // Perform the zoom out action multiple times
+		            for (int i = 0; i < zoomOutSteps; i++) {
+		                // Press Ctrl key
+		                robot.keyPress(KeyEvent.VK_CONTROL);
+		                // Press '-' key
+		                robot.keyPress(KeyEvent.VK_MINUS);
+		                // Release '-' key
+		                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		                // Optional: Wait a bit between zoom steps to observe the effect
+		                Thread.sleep(500);
+		            }
+
+		        } catch (AWTException | InterruptedException e) {
+		            e.printStackTrace();
+		        }
+*/
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}		
+
 				
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
@@ -1588,44 +1665,6 @@ public class Method5 extends BasePage{
 					
 				}
 				
-				
-				/*
-				if(Locator5.ACSREDGraphGridExportButton().isEnabled())
-				{
-					
-					Thread.sleep(2000);
-				    Locator5.ACSREDGraphGridExportButton().click();
-					test.log(LogStatus.PASS, " File Download Successfully " );
-					
-				}
-				
-				else
-				{
-					test.log(LogStatus.FAIL, "  File Download Successfully "  );
-					
-				}
-				*/
-				Thread.sleep(4000);
-				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
-				
-				Thread.sleep(9000);
-			     Locator5.ACSREDGraphGridExportButton().click();
-				
-			 	Thread.sleep(18000);
-				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-				
-			   
-		        Thread.sleep(9000);
-			   if (dirContents1.length < allFilesNew1.length) {
-					test.log(LogStatus.PASS,  "File Downloaded Successfully");
-				}
-			   else
-			   {
-					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
-				}		
-
 				
 				Thread.sleep(4000);
 
@@ -1722,6 +1761,28 @@ public class Method5 extends BasePage{
 			    
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
+			    
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}		
+
 				
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
@@ -1762,7 +1823,7 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
-				*/
+				
 				Thread.sleep(4000);
 				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
 				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
@@ -1784,7 +1845,7 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
 				}		
 
-
+*/
 				
 				Thread.sleep(4000);
 
@@ -1880,6 +1941,28 @@ public class Method5 extends BasePage{
 			    
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
+			    
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}		
+
 				
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
@@ -1920,7 +2003,7 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
-				*/
+				
 				Thread.sleep(4000);
 				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
 				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
@@ -1941,7 +2024,7 @@ public class Method5 extends BasePage{
 			   {
 					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
 				}		
-
+*/
 
 				
 				Thread.sleep(4000);
@@ -2391,13 +2474,21 @@ public class Method5 extends BasePage{
 			public static void CTWNotCompliedRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 			{
 				
-				WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-				Thread.sleep(9000);
-					
+				Thread.sleep(2000);
+				
+				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+				Thread.sleep(3000);
+			    
+				
+				Thread.sleep(2000);
+				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
 			    jss.executeScript("window.scrollBy(0,800)");
-			    Thread.sleep(4000);
+			    Thread.sleep(2000);
+			    
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Canteen']"))); 
+				Thread.sleep(2000);
 				
 				Locator5.CTWNotCompliedRed().click();
 				Thread.sleep(2000);
@@ -2812,14 +2903,21 @@ public class Method5 extends BasePage{
 			public static void CTWNotApplicableGrey( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 			{
 				
+				Thread.sleep(20000);
 				
-				WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-				Thread.sleep(9000);
-					
+				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+				Thread.sleep(3000);
+			    
+				
+				Thread.sleep(2000);
+				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
 			    jss.executeScript("window.scrollBy(0,800)");
-			    Thread.sleep(4000);
+			    Thread.sleep(2000);
+			    
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Canteen']"))); 
+				Thread.sleep(2000);
 				
 				Locator5.CTWNotApplicableGrey().click();
 				Thread.sleep(9000);
@@ -3232,17 +3330,23 @@ public class Method5 extends BasePage{
 			{
 				
 				
-				WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-				Thread.sleep(9000);
-					
-			  
+				Thread.sleep(20000);
+				
+				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+				Thread.sleep(3000);
+			    
+				
+				Thread.sleep(2000);
 				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
-			    jss.executeScript("window.scrollBy(0,1550)");
-			    Thread.sleep(9000);
+			    jss.executeScript("window.scrollBy(0,2000)");
+			    Thread.sleep(2000);
+			    
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[36]"))); 
+				Thread.sleep(2000);
 				
-				
+			//    jss.executeScript("window.scrollBy(0,200)");
 				
 				int open = Integer.parseInt(Locator5.CTWOverdueRed().getText());	//Reading Dashboard count.
 			    Locator5.CTWOverdueRed().click();					                //Clicking on Dashboard count
@@ -3264,7 +3368,30 @@ public class Method5 extends BasePage{
 			    
 			 //   scrollToBottom();
 			    
-			    
+			    try {
+		            // Create an instance of Robot class
+		            Robot robot = new Robot();
+
+		            // Define how many times you want to zoom out
+		            int zoomOutSteps = 3;
+
+		            // Perform the zoom out action multiple times
+		            for (int i = 0; i < zoomOutSteps; i++) {
+		                // Press Ctrl key
+		                robot.keyPress(KeyEvent.VK_CONTROL);
+		                // Press '-' key
+		                robot.keyPress(KeyEvent.VK_MINUS);
+		                // Release '-' key
+		                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		                // Optional: Wait a bit between zoom steps to observe the effect
+		                Thread.sleep(500);
+		            }
+
+		        } catch (AWTException | InterruptedException e) {
+		            e.printStackTrace();
+		        }
+			    Thread.sleep(2000);
 			   
 
 				String item = Locator5.ACSREDGraphGrid().getText();
@@ -3294,6 +3421,30 @@ public class Method5 extends BasePage{
 							
 				}
 				
+				
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
+				
+				Thread.sleep(4000);
+
 				
 				// clear button
 				
@@ -3342,29 +3493,6 @@ public class Method5 extends BasePage{
 					
 				}
 				*/
-				
-				Thread.sleep(4000);
-				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
-				
-				Thread.sleep(9000);
-			     Locator5.ACSREDGraphGridExportButton().click();
-				
-			 	Thread.sleep(18000);
-				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-				
-			   
-		        Thread.sleep(9000);
-			   if (dirContents1.length < allFilesNew1.length) {
-					test.log(LogStatus.PASS,  "File Downloaded Successfully");
-				}
-			   else
-			   {
-					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
-				}	
-				
-				Thread.sleep(4000);
 
 				getDriver().switchTo().parentFrame();
 				
@@ -3452,7 +3580,30 @@ public class Method5 extends BasePage{
 							
 				}
 				
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
+				
+				Thread.sleep(4000);
+
+
 				// clear button
 				
 		        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
@@ -3498,7 +3649,7 @@ public class Method5 extends BasePage{
 				{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
-				}*/
+				}
 				
 				Thread.sleep(4000);
 				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
@@ -3522,7 +3673,7 @@ public class Method5 extends BasePage{
 				}	
 				
 				Thread.sleep(4000);
-				
+				*/
 				
 
 				getDriver().switchTo().parentFrame();
@@ -3613,7 +3764,30 @@ public class Method5 extends BasePage{
 							
 				}
 				
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
+				
+				Thread.sleep(4000);
+
+
 				// clear button
 				
 		        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
@@ -3660,7 +3834,7 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}
-				*/
+				
 				
 				Thread.sleep(4000);
 				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
@@ -3684,7 +3858,7 @@ public class Method5 extends BasePage{
 				}	
 				
 				Thread.sleep(4000);
-				
+				*/
 				
 
 				getDriver().switchTo().parentFrame();
@@ -3710,16 +3884,48 @@ public class Method5 extends BasePage{
             {
 				
 				
-				//WebWait wait = new WebWait(, 1000);
+				Thread.sleep(20000);
 				
-				Thread.sleep(26000);
+				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+				Thread.sleep(3000);
+			    
 				
 				Thread.sleep(2000);
 				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
-			    jss.executeScript("window.scrollBy(0,2000)");
+			    jss.executeScript("window.scrollBy(0,2500)");
 			    Thread.sleep(2000);
+			    
+				
+			    try {
+		            // Create an instance of Robot class
+		            Robot robot = new Robot();
+
+		            // Define how many times you want to zoom out
+		            int zoomOutSteps = 3;
+
+		            // Perform the zoom out action multiple times
+		            for (int i = 0; i < zoomOutSteps; i++) {
+		                // Press Ctrl key
+		                robot.keyPress(KeyEvent.VK_CONTROL);
+		                // Press '-' key
+		                robot.keyPress(KeyEvent.VK_MINUS);
+		                // Release '-' key
+		                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		                // Optional: Wait a bit between zoom steps to observe the effect
+		                Thread.sleep(500);
+		            }
+
+		        } catch (AWTException | InterruptedException e) {
+		            e.printStackTrace();
+		        }
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Ecobuild Solutions']"))); 
+				Thread.sleep(2000);
+
+
+
 				
 				Locator5.PWCSSABCConstructionComplied().click();
 				Thread.sleep(2000);
@@ -3742,6 +3948,7 @@ public class Method5 extends BasePage{
 			    getDriver().switchTo().frame(Locator5.Frame());
 			    Thread.sleep(5000);
 			    
+			    
 			   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
 				//Thread.sleep(500);	
 			   
@@ -3752,7 +3959,7 @@ public class Method5 extends BasePage{
 				Thread.sleep(4000);
 		       JavascriptExecutor js = (JavascriptExecutor) getDriver();
 			    
-			    js.executeScript("window.scrollBy(0,11000)");
+			    js.executeScript("window.scrollBy(0,1000)");
 			    Thread.sleep(18000);
 
 				String item = Locator5.CTWCompliedGreenHighGrid().getText();
@@ -4143,17 +4350,44 @@ public class Method5 extends BasePage{
 			public static void PWCSSABCconstructionNotCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
             {
 				
+				Thread.sleep(20000);
 				
-				//WebWait wait = new WebWait(, 1000);
-				
-				Thread.sleep(26000);
+				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+				Thread.sleep(3000);
+			    
 				
 				Thread.sleep(2000);
 				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
-			    jss.executeScript("window.scrollBy(0,2000)");
+			    jss.executeScript("window.scrollBy(0,2500)");
 			    Thread.sleep(2000);
+			    
+			    try {
+		            // Create an instance of Robot class
+		            Robot robot = new Robot();
+
+		            // Define how many times you want to zoom out
+		            int zoomOutSteps = 3;
+
+		            // Perform the zoom out action multiple times
+		            for (int i = 0; i < zoomOutSteps; i++) {
+		                // Press Ctrl key
+		                robot.keyPress(KeyEvent.VK_CONTROL);
+		                // Press '-' key
+		                robot.keyPress(KeyEvent.VK_MINUS);
+		                // Release '-' key
+		                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		                // Optional: Wait a bit between zoom steps to observe the effect
+		                Thread.sleep(500);
+		            }
+
+		        } catch (AWTException | InterruptedException e) {
+		            e.printStackTrace();
+		        }
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Ecobuild Solutions']"))); 
+				Thread.sleep(2000);
 			    
 			    
 			//    Locator4.CompliedCircle().click();
@@ -4586,18 +4820,44 @@ public class Method5 extends BasePage{
 			public static void PWCSSABCconstructionNotApplicableHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
             {
 				
+				Thread.sleep(20000);
 				
-				//WebWait wait = new WebWait(, 1000);
-				Thread.sleep(26000);
+				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+				Thread.sleep(3000);
+			    
 				
 				Thread.sleep(2000);
 				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
-			    jss.executeScript("window.scrollBy(0,2000)");
+			    jss.executeScript("window.scrollBy(0,2500)");
 			    Thread.sleep(2000);
 			    
-			    
+			    try {
+		            // Create an instance of Robot class
+		            Robot robot = new Robot();
+
+		            // Define how many times you want to zoom out
+		            int zoomOutSteps = 3;
+
+		            // Perform the zoom out action multiple times
+		            for (int i = 0; i < zoomOutSteps; i++) {
+		                // Press Ctrl key
+		                robot.keyPress(KeyEvent.VK_CONTROL);
+		                // Press '-' key
+		                robot.keyPress(KeyEvent.VK_MINUS);
+		                // Release '-' key
+		                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		                // Optional: Wait a bit between zoom steps to observe the effect
+		                Thread.sleep(500);
+		            }
+
+		        } catch (AWTException | InterruptedException e) {
+		            e.printStackTrace();
+		        }
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Ecobuild Solutions']"))); 
+				Thread.sleep(2000);
 			    
 			  //  Locator4.CompliedCircle().click();
 				//   Thread.sleep(3000);
@@ -5036,7 +5296,7 @@ public class Method5 extends BasePage{
 				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
-			    jss.executeScript("window.scrollBy(0,2350)");
+			    jss.executeScript("window.scrollBy(0,3000)");
 			    Thread.sleep(18000);
 				
 				
@@ -5091,7 +5351,29 @@ public class Method5 extends BasePage{
 							
 				}
 				
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
+				
+				Thread.sleep(4000);
+
 				// clear button
 				
 		        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
@@ -5140,28 +5422,6 @@ public class Method5 extends BasePage{
 				}
 				*/
 				
-				Thread.sleep(4000);
-				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
-				
-				Thread.sleep(9000);
-			     Locator5.ACSREDGraphGridExportButton().click();
-				
-			 	Thread.sleep(18000);
-				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-				
-			   
-		        Thread.sleep(9000);
-			   if (dirContents1.length < allFilesNew1.length) {
-					test.log(LogStatus.PASS,  "File Downloaded Successfully");
-				}
-			   else
-			   {
-					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
-				}	
-				
-				Thread.sleep(4000);
 				
 			
 
@@ -5250,7 +5510,30 @@ public class Method5 extends BasePage{
 							
 				}
 				
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
+				
+				Thread.sleep(4000);
+				
+
 				// clear button
 				
 		        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
@@ -5297,29 +5580,6 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  File Download Successfully "  );
 					
 				}*/
-				
-				Thread.sleep(4000);
-				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
-				
-				Thread.sleep(9000);
-			     Locator5.ACSREDGraphGridExportButton().click();
-				
-			 	Thread.sleep(18000);
-				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-				
-			   
-		        Thread.sleep(9000);
-			   if (dirContents1.length < allFilesNew1.length) {
-					test.log(LogStatus.PASS,  "File Downloaded Successfully");
-				}
-			   else
-			   {
-					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
-				}	
-				
-				Thread.sleep(4000);
 				
 				
 
@@ -5400,7 +5660,29 @@ public class Method5 extends BasePage{
 							
 				}
 				
+				Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 				
+				Thread.sleep(9000);
+			     Locator5.ACSREDGraphGridExportButton().click();
+				
+			 	Thread.sleep(18000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(9000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Downloaded Successfully");
+				}
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
+				}	
+				
+				Thread.sleep(4000);
+	
 				// clear button
 				
 		        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
@@ -5449,29 +5731,7 @@ public class Method5 extends BasePage{
 				}
 				*/
 				
-				Thread.sleep(4000);
-				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
-				
-				Thread.sleep(9000);
-			     Locator5.ACSREDGraphGridExportButton().click();
-				
-			 	Thread.sleep(18000);
-				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-				
-			   
-		        Thread.sleep(9000);
-			   if (dirContents1.length < allFilesNew1.length) {
-					test.log(LogStatus.PASS,  "File Downloaded Successfully");
-				}
-			   else
-			   {
-					test.log(LogStatus.FAIL, "File Does Not Downloaded Successfully");
-				}	
-				
-				Thread.sleep(4000);
-				
+			
 				
 
 				getDriver().switchTo().parentFrame();
@@ -5550,7 +5810,7 @@ public class Method5 extends BasePage{
 		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(9000);
-	     Locator3.DocumentDownload().click();
+	     Locator3.Download().click();
 		
 	 	Thread.sleep(18000);
 		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
@@ -5698,6 +5958,8 @@ public class Method5 extends BasePage{
 		
 		Locator5.DocumentSelectLocationDropDown().click();
 		Thread.sleep(2000);
+		Locator5.DocumentSelectLocation().click();
+		Thread.sleep(2000);
 		
 		Locator5.DocumentSelectContractor().click();
 		Thread.sleep(2000);
@@ -5820,11 +6082,13 @@ public class Method5 extends BasePage{
 			test.log(LogStatus.FAIL, "PDF Does Not Viewed Successfully");
 		}
 	   Thread.sleep(500);
+	   /*
 	   getDriver().switchTo().frame(Locator.Frame());
 		Thread.sleep(3000);
 	
 		getDriver().switchTo().frame(Locator2.InnerFrame());
-		Thread.sleep(7000);
+		*/
+		Thread.sleep(17000);
 		
 		File dir = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
@@ -5946,7 +6210,18 @@ public class Method5 extends BasePage{
 		Thread.sleep(2000);
 		
 		Locator5.SelectMonthDD().click();
-		Thread.sleep(5000);
+		Thread.sleep(1000);
+		
+		Locator5.Facility().click();
+		Thread.sleep(1000);
+		
+		Locator5.FacilityDD().click();
+		Thread.sleep(1000);
+		Locator5.Facility().click();
+		Thread.sleep(1000);
+		
+		
+		
 		/*
 		if(Locator.MouthCloseReportR().isEnabled())
 		{
@@ -6539,7 +6814,7 @@ public class Method5 extends BasePage{
 	{
 		
 		
-		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(3000);
 		
 		
@@ -6566,13 +6841,13 @@ public class Method5 extends BasePage{
       
        
      
-       Locator5.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator2.ClosedProject().getText();
        Thread.sleep(2000);
        Locator2.ClosedProject().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -9393,13 +9668,21 @@ public class Method5 extends BasePage{
 	{
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		Thread.sleep(2000);
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,1560)");
-	    Thread.sleep(18000);
+	    jss.executeScript("window.scrollBy(0,2000)");
+	    Thread.sleep(2000);
+	    
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[44]"))); 
+		Thread.sleep(2000);
 		
 	    Locator5.CTWOverdueRed().click();					                //Clicking on Dashboard count
 
@@ -9407,7 +9690,32 @@ public class Method5 extends BasePage{
 	    
 	    getDriver().switchTo().frame(Locator3.Frame());
 	    Thread.sleep(5000);
-	  
+	    
+	    
+	    try {
+            // Create an instance of Robot class
+            Robot robot = new Robot();
+
+            // Define how many times you want to zoom out
+            int zoomOutSteps = 3;
+
+            // Perform the zoom out action multiple times
+            for (int i = 0; i < zoomOutSteps; i++) {
+                // Press Ctrl key
+                robot.keyPress(KeyEvent.VK_CONTROL);
+                // Press '-' key
+                robot.keyPress(KeyEvent.VK_MINUS);
+                // Release '-' key
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+                // Optional: Wait a bit between zoom steps to observe the effect
+                Thread.sleep(500);
+            }
+
+        } catch (AWTException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
 	    Locator3.Project().click();
 	       Thread.sleep(2000);
 	     //  Locator3.ProjectReport().click();
@@ -9434,9 +9742,9 @@ public class Method5 extends BasePage{
  
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
-	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD12().getText();
 	       Thread.sleep(2000);
-	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Locator3.PWCSSubContractorContractorTypeDD12().click();
 	       Thread.sleep(2000);
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
@@ -9590,13 +9898,21 @@ public class Method5 extends BasePage{
 	{
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		Thread.sleep(2000);
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,1560)");
-	    Thread.sleep(10000);
+	    jss.executeScript("window.scrollBy(0,2000)");
+	    Thread.sleep(2000);
+	    
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[44]"))); 
+		Thread.sleep(2000);
 		
 	    Locator5.CTWPendingReviewYellow().click();					                //Clicking on Dashboard count
 
@@ -9604,6 +9920,31 @@ public class Method5 extends BasePage{
 	    
 	    getDriver().switchTo().frame(Locator3.Frame());
 	    Thread.sleep(5000);
+	    
+	    try {
+            // Create an instance of Robot class
+            Robot robot = new Robot();
+
+            // Define how many times you want to zoom out
+            int zoomOutSteps = 3;
+
+            // Perform the zoom out action multiple times
+            for (int i = 0; i < zoomOutSteps; i++) {
+                // Press Ctrl key
+                robot.keyPress(KeyEvent.VK_CONTROL);
+                // Press '-' key
+                robot.keyPress(KeyEvent.VK_MINUS);
+                // Release '-' key
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+                // Optional: Wait a bit between zoom steps to observe the effect
+                Thread.sleep(500);
+            }
+
+        } catch (AWTException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
 	  
 	    Locator3.Project().click();
 	       Thread.sleep(2000);
@@ -9631,9 +9972,9 @@ public class Method5 extends BasePage{
  
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
-	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD12().getText();
 	       Thread.sleep(2000);
-	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Locator3.PWCSSubContractorContractorTypeDD12().click();
 	       Thread.sleep(2000);
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
@@ -9788,14 +10129,46 @@ public class Method5 extends BasePage{
 	{
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
 		
 		Thread.sleep(2000);
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,2000)");
+	    jss.executeScript("window.scrollBy(0,2500)");
+	    Thread.sleep(2000);
+	    
+		
+	    try {
+            // Create an instance of Robot class
+            Robot robot = new Robot();
+
+            // Define how many times you want to zoom out
+            int zoomOutSteps = 3;
+
+            // Perform the zoom out action multiple times
+            for (int i = 0; i < zoomOutSteps; i++) {
+                // Press Ctrl key
+                robot.keyPress(KeyEvent.VK_CONTROL);
+                // Press '-' key
+                robot.keyPress(KeyEvent.VK_MINUS);
+                // Release '-' key
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+                // Optional: Wait a bit between zoom steps to observe the effect
+                Thread.sleep(500);
+            }
+
+        } catch (AWTException | InterruptedException e) {
+            e.printStackTrace();
+        }
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+		Thread.sleep(2000);
+
 	    
 	    
 	    Thread.sleep(6000);
@@ -9811,7 +10184,7 @@ public class Method5 extends BasePage{
 	    Thread.sleep(9000);
 	    
 	  
-	    Locator2.Project().click();
+	    Locator2.Project2().click();
 	       Thread.sleep(3000);
 	       String ProjectText =Locator2.ClosedProject().getText();
 	       Thread.sleep(3000);
@@ -9819,7 +10192,7 @@ public class Method5 extends BasePage{
 	       Thread.sleep(3000);
 	       Locator2.ClosedProject().click();
 	       Thread.sleep(3000);
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(2000);
        
        
@@ -9851,9 +10224,9 @@ public class Method5 extends BasePage{
        
        Locator3.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Apr22().getText();
+       String PeriodText =Locator2.Jan22().getText();
        Thread.sleep(2000);
-       Locator2.Apr22().click();
+       Locator2.Jan22().click();
        Thread.sleep(2000);
        
         List<String> li=new ArrayList<String>();
@@ -9981,14 +10354,45 @@ public class Method5 extends BasePage{
 	{
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(20000);
 		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		Thread.sleep(2000);
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,2000)");
+	    jss.executeScript("window.scrollBy(0,2500)");
 	    Thread.sleep(2000);
+	    
+		
+	    try {
+            // Create an instance of Robot class
+            Robot robot = new Robot();
+
+            // Define how many times you want to zoom out
+            int zoomOutSteps = 3;
+
+            // Perform the zoom out action multiple times
+            for (int i = 0; i < zoomOutSteps; i++) {
+                // Press Ctrl key
+                robot.keyPress(KeyEvent.VK_CONTROL);
+                // Press '-' key
+                robot.keyPress(KeyEvent.VK_MINUS);
+                // Release '-' key
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+                // Optional: Wait a bit between zoom steps to observe the effect
+                Thread.sleep(500);
+            }
+
+        } catch (AWTException | InterruptedException e) {
+            e.printStackTrace();
+        }
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+		Thread.sleep(2000);
 		
 		Locator5.PWCSSABCConstructionComplied().click();
 		Thread.sleep(5000);
@@ -10002,7 +10406,7 @@ public class Method5 extends BasePage{
 	    Thread.sleep(9000);
 	    
 	   
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(3000);
 	       String ProjectText =Locator2.ClosedProject().getText();
 	       Thread.sleep(3000);
@@ -10010,7 +10414,7 @@ public class Method5 extends BasePage{
 	       Thread.sleep(3000);
 	       Locator2.ClosedProject().click();
 	       Thread.sleep(3000);
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(2000);
        
        
@@ -10044,9 +10448,9 @@ public class Method5 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Apr22().getText();
+       String PeriodText =Locator2.Jul22().getText();
        Thread.sleep(2000);
-       Locator2.Apr22().click();
+       Locator2.Jul22().click();
        Thread.sleep(2000);
         
        
@@ -10175,15 +10579,45 @@ public class Method5 extends BasePage{
 	{
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		Thread.sleep(2000);
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,2000)");
-	    
-	    
+	    jss.executeScript("window.scrollBy(0,2500)");
 	    Thread.sleep(2000);
+	    
+		
+	    try {
+            // Create an instance of Robot class
+            Robot robot = new Robot();
+
+            // Define how many times you want to zoom out
+            int zoomOutSteps = 3;
+
+            // Perform the zoom out action multiple times
+            for (int i = 0; i < zoomOutSteps; i++) {
+                // Press Ctrl key
+                robot.keyPress(KeyEvent.VK_CONTROL);
+                // Press '-' key
+                robot.keyPress(KeyEvent.VK_MINUS);
+                // Release '-' key
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+                // Optional: Wait a bit between zoom steps to observe the effect
+                Thread.sleep(500);
+            }
+
+        } catch (AWTException | InterruptedException e) {
+            e.printStackTrace();
+        }
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+		Thread.sleep(2000);
 		
 		Locator5.PWCSSABCConstructionComplied().click();
 		Thread.sleep(5000);
@@ -10195,7 +10629,7 @@ public class Method5 extends BasePage{
 	    Thread.sleep(9000);
 	    
 	   
-	    Locator2.Project().click();
+	    Locator2.Project2().click();
 	       Thread.sleep(3000);
 	       String ProjectText =Locator2.ClosedProject().getText();
 	       Thread.sleep(3000);
@@ -10203,7 +10637,7 @@ public class Method5 extends BasePage{
 	       Thread.sleep(3000);
 	       Locator2.ClosedProject().click();
 	       Thread.sleep(3000);
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(2000);
        
       
@@ -10235,9 +10669,9 @@ public class Method5 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Apr22().getText();
+       String PeriodText =Locator2.Jan22().getText();
        Thread.sleep(2000);
-       Locator2.Apr22().click();
+       Locator2.Jan22().click();
        Thread.sleep(2000);
        
        
@@ -16737,13 +17171,21 @@ Thread.sleep(3000);
 	{
 		
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		Thread.sleep(2000);
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,1560)");
-	    Thread.sleep(10000);
+	    jss.executeScript("window.scrollBy(0,2000)");
+	    Thread.sleep(2000);
+	    
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[44]"))); 
+		Thread.sleep(2000);
 		
 	    Locator5.CTWCompletedGreen().click();					                //Clicking on Dashboard count
 
@@ -16751,6 +17193,31 @@ Thread.sleep(3000);
 	    
 	    getDriver().switchTo().frame(Locator3.Frame());
 	    Thread.sleep(5000);
+	    
+	    try {
+            // Create an instance of Robot class
+            Robot robot = new Robot();
+
+            // Define how many times you want to zoom out
+            int zoomOutSteps = 3;
+
+            // Perform the zoom out action multiple times
+            for (int i = 0; i < zoomOutSteps; i++) {
+                // Press Ctrl key
+                robot.keyPress(KeyEvent.VK_CONTROL);
+                // Press '-' key
+                robot.keyPress(KeyEvent.VK_MINUS);
+                // Release '-' key
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+                // Optional: Wait a bit between zoom steps to observe the effect
+                Thread.sleep(500);
+            }
+
+        } catch (AWTException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
 	  
 	       Locator3.Project().click();
 	       Thread.sleep(2000);
@@ -16776,9 +17243,9 @@ Thread.sleep(3000);
  
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
-	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD12().getText();
 	       Thread.sleep(2000);
-	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Locator3.PWCSSubContractorContractorTypeDD12().click();
 	       Thread.sleep(2000);
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
@@ -16998,21 +17465,65 @@ Thread.sleep(3000);
 			
 	}
 	
+	public static void ViewFile( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+
+	//	Locator1.viewlicensedocument().click();
+	//	Thread.sleep(2000);
+	  
+        	Thread.sleep(2000);
+        	
+            test.log(LogStatus.PASS, "Licence document viewed successfully");
+            Thread.sleep(20000);
+           
+            WebDriverWait wait1 = new WebDriverWait( getDriver(),(120));
+        
+            WebElement downloadButton = wait1.until(ExpectedConditions.elementToBeClickable(By.id("OverViewsICDocumentLU"))); // Replace with actual locator
+            File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			downloadButton.click();
+			
+		 	Thread.sleep(9000);
+			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		  
+	        Thread.sleep(3000);
+		   if (dirContents1.length < allFilesNew1.length) {
+				test.log(LogStatus.PASS,  " Report download successfully");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL,  " Report does not download successfully");
+			}
+	}
+	
+	public static void HandlePopUp( ExtentTest test) throws InterruptedException, IOException
+	{
+
+		Alert alert = getDriver().switchTo().alert();
+        Thread.sleep(3000);
+        String t=getDriver().switchTo().alert().getText();
+        Thread.sleep(2000);
+	    test.log(LogStatus.FAIL, t );
+		Thread.sleep(9000);
+		alert.accept();
+		Thread.sleep(3000);
+	}
 	public static void MyWorkspaceLicenseSearch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
-		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(10000);
-			
-		   
-		   
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='leftdocumentmenu']"))); 
-			Thread.sleep(1000);
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(10000);  
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='leftdocumentmenu']"))); 
+		Thread.sleep(1000);
 			
 			Locator4.LicenseTab().click();
 			Thread.sleep(3000);
-		  
 			Locator1.Serach().sendKeys("AK Heights");
 			Thread.sleep(3000);
 		   if(Locator1.Clear().isEnabled()) {
@@ -17029,29 +17540,243 @@ Thread.sleep(3000);
 			
 		   Thread.sleep(1000);
 		   Method5.LicenceGridAndExcelCount(test,workbook);
+		   Thread.sleep(1000);
 		   
 		   /*
-			File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
-			
-			Thread.sleep(3000);
-			Locator1.Export().click();
-			
-		 	Thread.sleep(9000);
-			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-			
-			Thread.sleep(3000);
-		  
-	        Thread.sleep(3000);
-		   if (dirContents1.length < allFilesNew1.length) {
-				test.log(LogStatus.PASS,  "Excel Report download successfully");
+		   try {
+			    // Attempt to view the license document
+			    Locator1.viewlicensedocument().click();
+			    Thread.sleep(2000); // Wait for any potential UI updates
+
+			    // Log success message
+			    test.log(LogStatus.PASS, "Licence document viewed successfully");
+
+			    // Wait until the download button is clickable
+			    WebDriverWait wait1 = new WebDriverWait(getDriver(), 60);
+			    WebElement downloadButton = wait1.until(ExpectedConditions.elementToBeClickable(By.id("dwn-btn-license"))); // Replace with actual locator
+
+			    // Get the initial number of files in the download directory
+			    File downloadDir = new File("C:\\Users\\shitalb\\Downloads");
+			    int initialFileCount = downloadDir.listFiles().length;
+
+			    // Click the download button
+			    downloadButton.click();
+
+			    // Wait for the download to complete
+			    Thread.sleep(9000); // Consider replacing this with a more reliable wait mechanism
+
+			    // Get the updated number of files in the download directory
+			    int newFileCount = downloadDir.listFiles().length;
+
+			    // Verify download success
+			    if (initialFileCount < newFileCount) {
+			        test.log(LogStatus.PASS, "Report downloaded successfully");
+			    } else {
+			        test.log(LogStatus.FAIL, "Report did not download successfully");
+			    }
+			} catch (Exception e) {
+			    // If an exception occurs, check if it's due to an alert
+			    try {
+			        Alert alert = getDriver().switchTo().alert();
+			        String alertText = alert.getText();
+			        test.log(LogStatus.FAIL, alertText);
+			        alert.accept();
+			        // Retry the download process after handling the alert
+			        try {
+			            // Wait until the download button is clickable again
+			            WebDriverWait wait1 = new WebDriverWait(getDriver(), 60);
+			            WebElement downloadButton = wait1.until(ExpectedConditions.elementToBeClickable(By.id("dwn-btn-license"))); // Replace with actual locator
+
+			            // Get the initial number of files in the download directory
+			            File downloadDir = new File("C:\\Users\\shitalb\\Downloads");
+			            int initialFileCount = downloadDir.listFiles().length;
+
+			            // Click the download button
+			            downloadButton.click();
+
+			            // Wait for the download to complete
+			            Thread.sleep(9000); // Consider replacing this with a more reliable wait mechanism
+
+			            // Get the updated number of files in the download directory
+			            int newFileCount = downloadDir.listFiles().length;
+
+			            // Verify download success
+			            if (initialFileCount < newFileCount) {
+			                test.log(LogStatus.PASS, "Report downloaded successfully");
+			            } else {
+			                test.log(LogStatus.FAIL, "Report did not download successfully");
+			            }
+			        } catch (Exception retryException) {
+			            test.log(LogStatus.FAIL, "Retry failed: " + retryException.getMessage());
+			        }
+			    } catch (NoAlertPresentException noAlert) {
+			        // No alert to handle, log the original exception
+			        test.log(LogStatus.FAIL, e.getMessage());
+			    }
 			}
-		   else
-		   {
-				test.log(LogStatus.FAIL,  "Excel Report does not download successfully");
-			}
-*/
+		   
+		   */
+		   
+		   
+		   Locator1.viewlicensedocument().click();
+	    	Thread.sleep(2000);
+	    	
+	    	
+				 try {
+			            
+					 Method5.ViewFile(test,workbook);
+			         
+				 }
+			    		   catch (Exception e) {
+			    			   e.printStackTrace();
+			    			   Method5.HandlePopUp(test);
+			    			   
+			   	        }
+			   		   
+				
+		/*
+		   try {
+	            
+
+	            // Wait for the page to load
+			 //  WebDriverWait wait = new WebDriverWait( getDriver(),(60)); // 10 seconds timeout
+	            
+	            // Check for popup presence
+	            if (isElementPresent(getDriver(), By.id("OverViewsICDocumentLU"))) { // Replace with actual locator
+	                // Click on the "View" button
+	            	Thread.sleep(2000);
+	            	
+	                test.log(LogStatus.PASS, "Licence document viewed successfully");
+	                Thread.sleep(7000);
+	                // Wait for the download button to be visible and clickable
+	          //      getDriver().switchTo().frame(Locator1.OuterFrame());
+	          //      Thread.sleep(1000);
+	           //     getDriver().switchTo().frame(Locator1.InnerFrame());
+	                WebDriverWait wait1 = new WebDriverWait( getDriver(),(60));
+	                try
+	        		{
+	                	wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("OverViewsICDocumentLU")));	//Wait until records table get visible.
+	        			
+	        		}
+	        		catch(Exception e)
+	        		{
+	        			
+	        		}
+	                WebElement downloadButton = wait1.until(ExpectedConditions.elementToBeClickable(By.id("OverViewsICDocumentLU"))); // Replace with actual locator
+	                File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+	    			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+	    			
+	    			Thread.sleep(3000);
+	    			downloadButton.click();
+	    			
+	    		 	Thread.sleep(9000);
+	    			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+	    			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+	    			
+	    			Thread.sleep(3000);
+	    		  
+	    	        Thread.sleep(3000);
+	    		   if (dirContents1.length < allFilesNew1.length) {
+	    				test.log(LogStatus.PASS,  " Report download successfully");
+	    			}
+	    		   else
+	    		   {
+	    				test.log(LogStatus.FAIL,  " Report does not download successfully");
+	    			}
+	                
+	                System.out.println("Download button clicked.");
+	          
+	                
+	            } else if (isAlertPresent(getDriver())) {
+	                // Accept the alert if no popup is present
+	                Alert alert = getDriver().switchTo().alert();
+	                Thread.sleep(3000);
+	                String t=getDriver().switchTo().alert().getText();
+	                
+	                if(t.equalsIgnoreCase("No")) {
+	     			   
+	              	  
+	      				test.log(LogStatus.PASS, "View Successfully");
+
+	      		   }
+	      		   else
+	      		   {
+	      			 test.log(LogStatus.FAIL, t );
+	      		   }
+	                
+	    			
+	    			Thread.sleep(3000);
+	    			alert.accept();
+	               // System.out.println("Alert was present and accepted.");
+	            } else {
+	              //  System.out.println("Neither popup nor alert was found.");
+	                test.log(LogStatus.FAIL, "Neither popup nor alert was found.");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+		   
+		   
+		   
+		   
+		   
+		   /*
+		   try {
+	            
+
+	            // Wait for the page to load
+		//	   WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+	            // Check for alert presence
+	            if (isAlertPresent(getDriver())) {
+	                // Accept the alert
+	                Alert alert = getDriver().switchTo().alert();
+	                String t1=getDriver().switchTo().alert().getText();
+	    			test.log(LogStatus.FAIL, t1 );
+	    			Thread.sleep(2000);
+	                alert.accept();
+	                System.out.println("Alert was present and accepted.");
+	            } else {
+	                // No alert, proceed to click on "View" and then "Download" buttons
+	           //     WebElement viewButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("dwn-btn-license"))); // Replace with actual locator
+	           //     viewButton.click();
+	            	
+	          //      System.out.println("View button clicked.");
+	           //     test.log(LogStatus.PASS, "Licence document viewed successfully");
+	                
+	                getDriver().switchTo().frame(Locator1.OuterFrame());
+	                Thread.sleep(1000);
+	                getDriver().switchTo().frame(Locator1.InnerFrame());
+	                
+	                // Wait for the download button to be visible and clickable
+	                WebElement downloadButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("dwn-btn-license"))); // Replace with actual locator
+	                File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+	    			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+	    			
+	    			Thread.sleep(3000);
+	    			downloadButton.click();
+	    			
+	    		 	Thread.sleep(9000);
+	    			File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+	    			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+	    			
+	    			Thread.sleep(3000);
+	    		  
+	    	        Thread.sleep(3000);
+	    		   if (dirContents1.length < allFilesNew1.length) {
+	    				test.log(LogStatus.PASS,  " Report download successfully");
+	    			}
+	    		   else
+	    		   {
+	    				test.log(LogStatus.FAIL,  " Report does not download successfully");
+	    			}
+	                
+	                System.out.println("Download button clicked.");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+		   
+		   /*
 		   Thread.sleep(2000);
           if(Locator1.viewlicensedocument().isEnabled()) {
 			   
@@ -17065,9 +17790,11 @@ Thread.sleep(3000);
 		   {
 			   test.log(LogStatus.PASS, "Licence document does not viewed");
 		   }
-		   
-          Thread.sleep(2000);
+		   */
           
+          
+          
+          /*
           getDriver().switchTo().frame(Locator1.OuterFrame());
           Thread.sleep(1000);
           getDriver().switchTo().frame(Locator1.InnerFrame());
@@ -17093,15 +17820,129 @@ Thread.sleep(3000);
 				test.log(LogStatus.FAIL,  "License document does not download successfully");
 			}
 		   Thread.sleep(1000);
-		   
+		   */
 		   
 	}
 
 	
 	
+	private static boolean isElementPresent(ExtentTest test, WebDriver driver, WebElement viewlicensedocument) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+
+	private static boolean isElementPresent(WebDriver driver, By id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+
+	private static boolean isAlertPresent(WebDriver driver) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+
 	public static void LicenceGridAndExcelCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 	
+	      JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		
+	 
+		
+		Thread.sleep(1000);
+		Locator.readTotalItems1().click();
+		String item1 = Locator.readTotalItems1().getText();
+		String[] bits1 = item1.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+		int count2 = Integer.parseInt(compliancesCount1);
+		
+	    
+		js.executeScript("window.scrollBy(0,-1000)");
+		
+
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+		
+		Thread.sleep(1000);
+//		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//		Thread.sleep(250);
+		Locator1.Export().click();					//Clicking on 'Excel Report' image.
+		test.log(LogStatus.PASS, "File downloaded successfully.");
+		
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < allFilesNew.length)
+		{
+			
+			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			/*
+			int no = sheet.getFirstRowNum();
+			Row row = sheet.getRow(no);
+			Cell c1 = row.getCell(0);
+			int records =(int) c1.getNumericCellValue();
+			*/
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow=0;
+			
+			for(Row row : sheet)
+			{
+				
+				Cell cell =row.getCell(columnNumber);
+				if(cell != null) {
+					
+					rowCount++;
+					actualRow = rowCount-1;
+				}
+				
+			}
+			fis.close();
+			
+			if(count2 == actualRow)
+			{
+				//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+				test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+			}
+			else
+			{
+				//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+				test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+			}
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		}
+		
+		/*
 		Thread.sleep(2000);
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         
@@ -17214,7 +18055,7 @@ Thread.sleep(3000);
 	 }
 	 
 	 Thread.sleep(2000);
-     
+     */
 	    
 	}
 	
@@ -17222,6 +18063,882 @@ Thread.sleep(3000);
 
 	
 	
+	public static void ContractorwiseclosedAuditGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+    {
+		
+		Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		Thread.sleep(2000);
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1300)");
+	    Thread.sleep(2000);
+	    
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"))); 
+		Thread.sleep(2000);
+	    		
+		int open = Integer.parseInt(Locator5.ContractorClosedAuditComplied().getText());	//Reading Dashboard count.
+	    Locator5.ContractorClosedAuditComplied().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(3000);
+	    
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	    
+	    Locator3.CTWCompliedGreenHighGridClearButton().click();
+	    Thread.sleep(3000);
+	    
+	    try {
+            // Create an instance of Robot class
+            Robot robot = new Robot();
+
+            // Define how many times you want to zoom out
+            int zoomOutSteps = 3;
+
+            // Perform the zoom out action multiple times
+            for (int i = 0; i < zoomOutSteps; i++) {
+                // Press Ctrl key
+                robot.keyPress(KeyEvent.VK_CONTROL);
+                // Press '-' key
+                robot.keyPress(KeyEvent.VK_MINUS);
+                // Release '-' key
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+                // Optional: Wait a bit between zoom steps to observe the effect
+                Thread.sleep(500);
+            }
+
+        } catch (AWTException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+	    
+	    Locator3.Contractor().click();
+	       Thread.sleep(2000);
+	       Locator3.ContractorDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Contractor().click();
+	       Thread.sleep(2000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(9000);
+
+		String item = Locator3.CTWCompliedGreenHighGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+		
+		
+		System.out.println("Count1 - "+count1);
+
+		Locator2.Status().click();
+	       Thread.sleep(2000);
+	       Locator3.StatusFilterCompliedHighDD1().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+	       
+	       String item1 = Locator3.CTWCompliedGreenHighGrid().getText();
+			String[] bits1 = item1.split(" ");								//Splitting the String
+			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+			int count2 = Integer.parseInt(compliancesCount1);
+			System.out.println("Count2 - "+count2);
+			
+			float total = (float)count2/count1;
+			
+			System.out.println("Total - " + total);
+			
+			double value = total*100;
+			
+			System.out.println("value - " + value);
+			
+		//	double number = total;
+	        long roundedNumber = Math.round(value);
+			
+	        System.out.println("roundedNumber - " + roundedNumber);
+		
+		if(open == roundedNumber)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " Complied - Dashboard Graph Count = "+open+"%"+" | Calculated records from grid = "+roundedNumber+"%");
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " Complied - Dashboard Graph Count = "+open+"%"+" | Calculated records from grid = "+roundedNumber+"%");
+					
+		}
+		
+		Thread.sleep(2000);
+		Method5.GridAndExcelReport(test,workbook);
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator3.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator3.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator3.CTWCompliedGreenHighGridClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator3.CTWCompliedGreenHighGridClearButton().click();
+			test.log(LogStatus.PASS, " Clear Button working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button working Properly "  );
+			
+		}
+		
+		
+		
+        Thread.sleep(4000);
+		
+		if(Locator3.CTWCompliedGreenHighGridViewButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator3.CTWCompliedGreenHighGridViewButton().click();
+			test.log(LogStatus.PASS, "  Overview Button working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
+			
+		}
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator3.ClosePage().click();
+		
+		Thread.sleep(4000);
+		
+		Method5.ContractorwiseNotCompliedclosedAuditGraph(test,workbook);
+		Thread.sleep(5000);
+		
+		Method5.ContractorwiseNotApplicableclosedAuditGraph(test,workbook);
+		Thread.sleep(5000);
+			
+		
+    }
+	
+	public static void GridAndExcelReport( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(2000);
+ 		
+ 
+	
+	Thread.sleep(1000);
+	Locator.readTotalItems1().click();
+	String item1 = Locator.readTotalItems1().getText();
+	String[] bits1 = item1.split(" ");								//Splitting the String
+	String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+	int count2 = Integer.parseInt(compliancesCount1);
+	
+    
+	js.executeScript("window.scrollBy(0,-1000)");
+	
+
+	Thread.sleep(1000);
+	File dir = new File("C:\\Users\\shitalb\\Downloads");
+	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+	
+	Thread.sleep(1000);
+//	CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//	Thread.sleep(250);
+	Locator.ReportExport().click();					//Clicking on 'Excel Report' image.
+	test.log(LogStatus.PASS, "File downloaded successfully.");
+	
+	Thread.sleep(5500);
+	File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+	File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+	
+	if(dirContents.length < allFilesNew.length)
+	{
+		
+		
+		File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+	    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+	    {
+	       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+	       {
+	           lastModifiedFile = allFilesNew[i];
+	       }
+	    }
+		
+		Thread.sleep(1000);
+		fis = new FileInputStream(lastModifiedFile);
+		workbook = new XSSFWorkbook(fis);
+		sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+		/*
+		int no = sheet.getFirstRowNum();
+		Row row = sheet.getRow(no);
+		Cell c1 = row.getCell(0);
+		int records =(int) c1.getNumericCellValue();
+		*/
+		sheet = workbook.getSheetAt(0);
+		int columnNumber = 3;
+		int rowCount = 0;
+		int actualRow=0;
+		
+		for(Row row : sheet)
+		{
+			
+			Cell cell =row.getCell(columnNumber);
+			if(cell != null) {
+				
+				rowCount++;
+				actualRow = rowCount-1;
+			}
+			
+		}
+		fis.close();
+		
+		if(count2 == actualRow)
+		{
+			//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+			test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+		}
+		else
+		{
+			//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+			test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+		}
+	}
+	else
+	{
+		test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+	}
+	
+	}
+	
+	
+	public static void ContractorwiseNotCompliedclosedAuditGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+    {
+		
+		/*
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(26000);
+		
+		Thread.sleep(2000);
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,3000)");
+	    */
+	    Thread.sleep(2000);
+	    		
+		int open = Integer.parseInt(Locator5.ContractorClosedAuditNotComplied().getText());	//Reading Dashboard count.
+	    Locator5.ContractorClosedAuditNotComplied().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(3000);
+	    
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	    
+	    Locator3.CTWCompliedGreenHighGridClearButton().click();
+	    Thread.sleep(3000);
+	    
+	    Locator3.Contractor().click();
+	       Thread.sleep(2000);
+	       Locator3.ContractorDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Contractor().click();
+	       Thread.sleep(2000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(9000);
+
+		String item = Locator3.CTWCompliedGreenHighGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count5 = Integer.parseInt(compliancesCount);
+
+		Locator2.Status().click();
+	       Thread.sleep(2000);
+	       Locator3.StatusFilterNotCompliedHighDD1().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+	       
+	       String item1 = Locator3.CTWCompliedGreenHighGrid().getText();
+			String[] bits1 = item1.split(" ");								//Splitting the String
+			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+			int count6 = Integer.parseInt(compliancesCount1);
+			
+            float total1 = (float)count6/count5;
+			
+			System.out.println("Total1 - " + total1);
+			
+			double value1 = total1*100;
+			
+			System.out.println("value1 - " + value1);
+			
+		//	double number = total;
+	        long roundedNumber1 = Math.round(value1);
+			
+	        System.out.println("roundedNumber1 - " + roundedNumber1);
+		
+		if(open == roundedNumber1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " Not Complied - Dashboard Graph Count = "+open+"%"+" | Calculated records from grid = "+roundedNumber1+"%");
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " Not Complied - Dashboard Graph Count = "+open+"%"+" | Calculated records from grid = "+roundedNumber1+"%");
+					
+		}
+		
+		Thread.sleep(2000);
+		Method5.GridAndExcelReport(test,workbook);
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator3.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator3.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator3.CTWCompliedGreenHighGridClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator3.CTWCompliedGreenHighGridClearButton().click();
+			test.log(LogStatus.PASS, " Clear Button working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button working Properly "  );
+			
+		}
+		
+		
+		
+        Thread.sleep(4000);
+		
+		if(Locator3.CTWCompliedGreenHighGridViewButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator3.CTWCompliedGreenHighGridViewButton().click();
+			test.log(LogStatus.PASS, "  Overview Button working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
+			
+		}
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator3.ClosePage().click();
+		
+		Thread.sleep(4000);
+			
+	
+    }
+
+	
+	public static void ContractorwiseNotApplicableclosedAuditGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+    {
+		
+		/*
+		//WebWait wait = new WebWait(, 1000);
+		Thread.sleep(26000);
+		
+		Thread.sleep(2000);
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,3000)");
+	    */
+	    Thread.sleep(2000);
+	    		
+		int open = Integer.parseInt(Locator5.ContractorClosedAuditNotApplicable().getText());	//Reading Dashboard count.
+	    Locator5.ContractorClosedAuditNotApplicable().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(3000);
+	    
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	    
+	    Locator3.CTWCompliedGreenHighGridClearButton().click();
+	    Thread.sleep(3000);
+	    
+	    Locator3.Contractor().click();
+	       Thread.sleep(2000);
+	       Locator3.ContractorDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Contractor().click();
+	       Thread.sleep(2000);
+	    
+	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
+		//Thread.sleep(500);	
+	   
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    
+			
+		Thread.sleep(4000);
+       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(9000);
+
+		String item = Locator3.CTWCompliedGreenHighGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count3 = Integer.parseInt(compliancesCount);
+
+		Locator2.Status().click();
+	       Thread.sleep(2000);
+	       Locator3.StatusNADD1().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+	       
+	       String item1 = Locator3.CTWCompliedGreenHighGrid().getText();
+			String[] bits1 = item1.split(" ");								//Splitting the String
+			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+			int count4 = Integer.parseInt(compliancesCount1);
+			
+           float total2 = (float)count4/count3;
+			
+			System.out.println("Total2 - " + total2);
+			
+			double value2 = total2*100;
+			
+			System.out.println("value2 - " + value2);
+			
+		//	double number = total;
+	        long roundedNumber2 = Math.round(value2);
+			
+	        System.out.println("roundedNumber2 - " + roundedNumber2);
+		
+		if(open == roundedNumber2)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " Not Applicable - Dashboard Graph Count = "+open+"%"+" | Calculated records from grid = "+roundedNumber2+"%");
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " Not Applicable - Dashboard Graph Count = "+open+"%"+" | Calculated records from grid = "+roundedNumber2+"%");
+					
+		}
+		
+		Thread.sleep(2000);
+		Method5.GridAndExcelReport(test,workbook);
+		   Thread.sleep(5000);
+	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+		    
+		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator3.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator3.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator3.CTWCompliedGreenHighGridClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator3.CTWCompliedGreenHighGridClearButton().click();
+			test.log(LogStatus.PASS, " Clear Button working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button working Properly "  );
+			
+		}
+		
+		
+		
+        Thread.sleep(4000);
+		
+		if(Locator3.CTWCompliedGreenHighGridViewButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator3.CTWCompliedGreenHighGridViewButton().click();
+			test.log(LogStatus.PASS, "  Overview Button working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
+			
+		}
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator3.ClosePage().click();
+		
+		Thread.sleep(4000);
+			
+	
+    }
+
+	
+	private static int initialFileCount;
+	private static int newFileCount;
+
+	public static void downloadFile(ExtentTest test) throws InterruptedException {
+	    // Attempt to view the license document
+
+	    Thread.sleep(15000); // Wait for any potential UI updates
+	 //   getDriver().switchTo().frame(Locator1.iFrame());
+	    Thread.sleep(1000); 
+	    if(Locator1.Downloadbutton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+			Locator1.Downloadbutton().click();
+			test.log(LogStatus.PASS, " Licence document viewed successfully " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, " Licence document Does not viewed successfully "  );
+			
+		}
+	    // Log success message
+	//    test.log(LogStatus.PASS, "Licence document viewed successfully");
+
+	    // Wait until the download button is clickable
+	    WebDriverWait wait = new WebDriverWait(getDriver(), 90);
+	    
+	    WebElement downloadButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#dwn-btn-license"))); // Replace with actual locator
+
+	    // Get the initial number of files in the download directory
+	    File dir9 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] dirContents9 = dir9.listFiles();						//Counting number of files in directory before download
+ 		
+ 		Thread.sleep(3000);
+ 		downloadButton.click();
+ 		
+ 	 	Thread.sleep(9000);
+ 		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
+ 		File[] allFilesNew0 = dir0.listFiles();						//Counting number of files in directory after download
+ 	  
+        Thread.sleep(3000);
+ 	   if (dirContents9.length < allFilesNew0.length) {
+ 			test.log(LogStatus.PASS,  " File Download Successfully");
+ 		}
+ 	   else
+ 	   {
+ 		 	test.log(LogStatus.FAIL, "  File Does Not Download Successfully "   );
+
+ 		}   
+ 	   Thread.sleep(4000);
+
+	}
+
+	public static void verifyDownload() {
+	    // Verify download success
+	    if (initialFileCount < newFileCount) {
+	    	System.out.println("Report downloaded successfully");
+	        //test.log(LogStatus.PASS, "Report downloaded successfully");
+	    } else {
+	    	System.out.println("Report did not download successfully");
+	     //   test.log(LogStatus.FAIL, "Report did not download successfully");
+	    }
+	}
+
+	public static void handleAlert(ExtentTest test) throws InterruptedException {
+	    try {
+	    	Thread.sleep(3000);
+	        Alert alert = getDriver().switchTo().alert();
+	        Thread.sleep(3000);
+	     //   String alertText = alert.getText();
+	        String t=getDriver().switchTo().alert().getText();
+	        if(t!=null)
+	        {
+	        	System.out.println(t);
+	        	test.log(LogStatus.FAIL, t);
+	        }
+	        else
+	        {
+	        	System.out.println(t);
+	        	test.log(LogStatus.PASS, t);
+	        }
+	      //  test.log(LogStatus.FAIL, t);
+	        Thread.sleep(3000);
+	        alert.accept();
+	        Thread.sleep(3000);
+	    } catch (NoAlertPresentException e) {
+	        // No alert present
+	    }
+	}
+
+	public static void performDownloadAndVerify(ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException {
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);  
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@id='leftdocumentmenu']"))); 
+		Thread.sleep(1000);
+			
+			Locator4.LicenseTab().click();
+			Thread.sleep(3000);
+			Locator1.Serach().sendKeys("AK Heights");
+			Thread.sleep(3000);
+		   if(Locator1.Clear().isEnabled()) {
+			   Thread.sleep(2000);
+			   Locator1.Clear().click();
+				Thread.sleep(2000);
+				test.log(LogStatus.PASS, "Clear button working properly");
+
+		   }
+		   else
+		   {
+			   test.log(LogStatus.PASS, "Clear button does not working properly");
+		   }
+			
+		   Thread.sleep(1000);
+		   Method5.LicenceGridAndExcelCount(test,workbook);
+		   Thread.sleep(1000);
+		    Locator1.viewlicensedocument().click();
+		
+		try {
+	        downloadFile(test);
+	        verifyDownload();
+	    } catch (Exception e) {
+	        try {
+	        	
+	      //  	handleAlert( test);
+	        	
+	        	Alert alert = getDriver().switchTo().alert();
+		        Thread.sleep(3000);
+		     //   String alertText = alert.getText();
+		        String t=getDriver().switchTo().alert().getText();
+		        System.out.println(t);
+		        if(t!=null)
+	        {
+	        	System.out.println(t);
+	        	test.log(LogStatus.FAIL, t);
+	        }
+	        else
+	        {
+	        	System.out.println(t);
+	        	test.log(LogStatus.PASS, t);
+	        }
+		      //  test.log(LogStatus.FAIL, "View License - "+t);
+		        Thread.sleep(3000);
+		        alert.accept();
+		        Thread.sleep(3000);
+
+	            // Retry the download process after handling the alert
+	            
+	        } catch (Exception alertException) {
+	            // Log the original exception if no alert was present
+	        	//downloadFile();
+	            test.log(LogStatus.FAIL, e.getMessage());
+	        }
+	    }
+	}
+	
+	
+	public static void ExcelcountAndGridMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+			    
+	  
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(2000); 		
+        
+        Thread.sleep(7000);
+        Locator.readTotalItems1().click();
+		String item = Locator.readTotalItems1().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+	
+		if(compliancesCount.equalsIgnoreCase("to"))
+		{
+			Thread.sleep(5000);
+		   item = Locator.readTotalItems1().getText();
+			bits = item.split(" ");
+        
+		}
+		
+		Thread.sleep(2000);
+        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+        
+        js1.executeScript("window.scrollBy(0,-1000)");
+        Thread.sleep(2000);
+
+Thread.sleep(1000);
+File dir = new File("C:\\Users\\shitalb\\Downloads");
+File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+
+Thread.sleep(1000);
+Locator2.Export().click();
+Thread.sleep(9000);					//Clicking on 'Excel Report' image.
+test.log(LogStatus.PASS, "File downloaded successfully.");
+
+Thread.sleep(5500);
+File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+
+if(dirContents.length < allFilesNew.length)
+{
+	
+	
+	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+    {
+       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+       {
+           lastModifiedFile = allFilesNew[i];
+       }
+    }
+	
+	Thread.sleep(1000);
+	fis = new FileInputStream(lastModifiedFile);
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+	/*
+	int no = sheet.getFirstRowNum();
+	Row row = sheet.getRow(no);
+	Cell c1 = row.getCell(0);
+	int records =(int) c1.getNumericCellValue();
+	*/
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+	
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	fis.close();
+	
+	if(count1 == actualRow)
+	{
+		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+}
+else
+{
+	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+}
+
+	}
 	
 	
 	

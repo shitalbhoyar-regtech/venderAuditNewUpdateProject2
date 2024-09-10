@@ -37,7 +37,7 @@ public class CriticalMethod4 extends BasePage{
 	{
 	
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(3000);
+		Thread.sleep(20000);
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divLocationCount']"))); 
 		Thread.sleep(1000);

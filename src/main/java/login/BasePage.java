@@ -30,6 +30,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.ExtentReports;
 	import com.relevantcodes.extentreports.ExtentTest;
 
+import companyContractor.Locator1;
+
 
 
 	
@@ -159,7 +161,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 	private void openBrower(int no) throws IOException {
 
 		if (browser.contains("chrome")) {
-					System.setProperty("webdriver.chrome.driver", "C:\\Users\\shitalb\\Documents\\chromedriver-win32\\chromedriver.exe");
+					System.setProperty("webdriver.chrome.driver", "C:\\Users\\shitalb\\Documents\\driver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 					//WebDriverManager.chromedriver().setup();
 					ChromeOptions options = new ChromeOptions();
 					options.addArguments("--remote-allow-origins=*");
@@ -203,6 +205,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 		
 		login.Login.UserLogin(uname,password,link);		//Method of Login class to login user.
 		
+	//	Locator1.Dashboard1().click();
+	//	Thread.sleep(2000);
 		
 	}
 	

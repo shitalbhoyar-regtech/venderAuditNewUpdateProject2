@@ -1990,7 +1990,7 @@ return PWCSSubContractorCompliedLow;
 
 		public static WebElement ClosedProject()		//Method for searching Username input
 		{
-			ClosedProject = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[position()=2]"));
+			ClosedProject = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[position()=16]"));
 		return ClosedProject;
 	    }
 

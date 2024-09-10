@@ -704,7 +704,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement UpcomingClearButton()		//Method for searching Username input
 	{
-		UpcomingClearButton = getDriver().findElement(By.id("ClearfilterMain"));
+		UpcomingClearButton = getDriver().findElement(By.xpath("//button[@id='ClearfilterMain']"));
 		return UpcomingClearButton;
 	}
 	
@@ -764,7 +764,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement OverdueClearButton()		//Method for searching Username input
 	{
-		OverdueClearButton = getDriver().findElement(By.id("ClearfilterMain"));
+		OverdueClearButton = getDriver().findElement(By.xpath("//button[@id='ClearfilterMain']"));
 		return OverdueClearButton;
 	}
 	
@@ -823,7 +823,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement RejectedClearButton()		//Method for searching Username input
 	{
-		RejectedClearButton = getDriver().findElement(By.id("ClearfilterMain"));
+		RejectedClearButton = getDriver().findElement(By.xpath("//button[@id='ClearfilterMain']"));
 		return RejectedClearButton;
 	}
 	
@@ -879,7 +879,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement PendingReviewClearButton()		//Method for searching Username input
 	{
-		PendingReviewClearButton = getDriver().findElement(By.id("ClearfilterMain"));
+		PendingReviewClearButton = getDriver().findElement(By.xpath("//button[@id='ClearfilterMain']"));
 		return PendingReviewClearButton;
 	}
 	
@@ -1045,11 +1045,16 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement EditButtonPendingReview()		//Method for searching Username input
 	{
-		EditButtonPendingReview = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[9]/a[1]"));
+		EditButtonPendingReview = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[14]/a"));
 	return EditButtonPendingReview;
     }
 	
-	
+	public static WebElement Gridload()		//Method for searching Username input
+	{
+		EditButtonPendingReview = getDriver().findElement(By.xpath("//div[@id='grid']"));
+	return EditButtonPendingReview;
+    }
+
 	
 	
 	public static WebElement EditButtonnPendingReview()		//Method for searching Username input
@@ -1117,7 +1122,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ClosedClearButton()		//Method for searching Username input
 	{
-		ClosedClearButton = getDriver().findElement(By.id("ClearfilterMain"));
+		ClosedClearButton = getDriver().findElement(By.xpath("//button[@id='ClearfilterMain']"));
 	return ClosedClearButton;
     }
 	
@@ -1155,21 +1160,21 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement CheckBoxDocument()		//Method for searching Username input
 	{
-		CheckBoxDocument = getDriver().findElement(By.id("sel_chkbx"));
+		CheckBoxDocument = getDriver().findElement(By.xpath("(//input[@id='sel_chkbx'])[3]"));
 	return CheckBoxDocument;
     }
 	
 	
 	public static WebElement CheckBox2Document()		//Method for searching Username input
 	{
-		CheckBox2Document = getDriver().findElement(By.xpath("(//input[@id='sel_chkbx'])[2]"));
+		CheckBox2Document = getDriver().findElement(By.xpath("(//input[@id='sel_chkbx'])[4]"));
 	return CheckBox2Document;
     }
 	
 	
 	public static WebElement CheckBox3Document()		//Method for searching Username input
 	{
-		CheckBox3Document = getDriver().findElement(By.xpath("(//input[@id='sel_chkbx'])[3]"));
+		CheckBox3Document = getDriver().findElement(By.xpath("(//input[@id='sel_chkbx'])[5]"));
 	return CheckBox3Document;
     }
 	
@@ -1187,9 +1192,9 @@ public class Locator2  extends BasePage{
 	return SelectLocationDocument;
     }
 	
-	public static WebElement SelectLocationDropDocument()		//Method for searching Username input
+	public static WebElement FacilityOne()		//Method for searching Username input
 	{
-		SelectLocationDropDocument = getDriver().findElement(By.xpath("(//span[@class='k-icon k-i-expand'])[1]"));
+		SelectLocationDropDocument = getDriver().findElement(By.xpath("//*[@id='dvWC']/div[3]"));
 	return SelectLocationDropDocument;
     }
 	
@@ -1212,7 +1217,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ClearDocument()		//Method for searching Username input
 	{
-		ClearDocument = getDriver().findElement(By.id("btnClear"));
+		ClearDocument = getDriver().findElement(By.xpath("//button[@id='btnClear']"));
 	return ClearDocument;
     }
 	
@@ -1305,7 +1310,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement MoreReport()		//Method for searching Username input
 	{
-		MoreReport = getDriver().findElement(By.id("MoreReport"));
+		MoreReport = getDriver().findElement(By.xpath("//button[@id='MoreReport']"));
 	return MoreReport;
     }
 	
@@ -1315,7 +1320,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement CloseAuditReportR()		//Method for searching Username input
 	{
-		CloseAuditReportR = getDriver().findElement(By.id("btnGetVendorAuditForCloseReport"));
+		CloseAuditReportR = getDriver().findElement(By.xpath("//button[@id='btnGetVendorAuditForCloseReport']"));
 		return CloseAuditReportR;
 		
 		
@@ -1340,11 +1345,24 @@ public class Locator2  extends BasePage{
     
     public static WebElement MonthReportDD()		//Method for searching Username input
    	{
-    	MonthReportDD = getDriver().findElement(By.xpath("//li[.='Oct 22']"));
+    	MonthReportDD = getDriver().findElement(By.xpath("//li[.='Jan 24']"));
    	 return MonthReportDD;
    	}
     
-	
+    public static WebElement Facilty()		//Method for searching Username input
+   	{
+    	MonthReportDD = getDriver().findElement(By.xpath("//*[@id='divReportss']/div[1]/div[2]"));
+   	 return MonthReportDD;
+   	}
+
+    public static WebElement FaciltyDD()		//Method for searching Username input
+   	{
+    	MonthReportDD = getDriver().findElement(By.xpath("//span[.='Ecobuild Solutions']"));
+   	 return MonthReportDD;
+   	}
+
+  
+  
 	
 	public static WebElement RemarkReportR()		//Method for searching Username input
 	{
@@ -1367,7 +1385,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ReportDrop()		//Method for searching Username input
 	{
-		ReportDrop = getDriver().findElement(By.cssSelector("#grid > div.k-grid-content.k-auto-scrollable > table > tbody > tr:nth-child(1) > td.k-hierarchy-cell > a"));
+		ReportDrop = getDriver().findElement(By.cssSelector("#grid > div.k-grid-content.k-auto-scrollable > table > tbody > tr:nth-child(1) > td.k-hierarchy-cell"));
 		return ReportDrop;
 		
 		
@@ -1879,7 +1897,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ClosePage()		//Method for searching Username input
 	{
-		ClosePage = getDriver().findElement(By.xpath("//div[@id='ConstractorPopUpForScheduleComplainces']//button[@type='button'][normalize-space()='×']"));
+		ClosePage = getDriver().findElement(By.xpath("//*[@id='ConstractorPopUpForScheduleComplainces']/div/div/div[1]/button"));
 		return ClosePage;
 		
 		
@@ -1988,6 +2006,16 @@ public class Locator2  extends BasePage{
 		
 		
 	}
+	
+	public static WebElement Export()		//Method for searching Username input
+	{
+		ACSBlueGraphGridExportButton = getDriver().findElement(By.xpath("//button[@id='btnDownloaddrpReports']"));
+		return ACSBlueGraphGridExportButton;
+		
+		
+	}
+
+	
 	
 	
 	
@@ -2437,7 +2465,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement Project()		//Method for searching Username input
 	{
-		Project = getDriver().findElement(By.xpath("//span[.='Project']"));
+		Project = getDriver().findElement(By.xpath("//*[@id='dvWC']/div[2]"));
 	return Project;
     }
 	
@@ -2445,7 +2473,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement Project2()		//Method for searching Username input
 	{
-		Project2 = getDriver().findElement(By.xpath("(//span[.='ABC Construction'])[3]"));
+		Project2 = getDriver().findElement(By.xpath("//*[@id='dvWC']/div[1]/div[1]"));
 	return Project2;
     }
 	
@@ -2590,13 +2618,13 @@ public class Locator2  extends BasePage{
 
 	public static WebElement ClosedProject()		//Method for searching Username input
 	{
-		ClosedProject = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=2]"));
+		ClosedProject = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=16]"));
 	return ClosedProject;
     }
 	
 	public static WebElement Agriculture()		//Method for searching Username input
 	{
-		Agriculture = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=3]//span[.='Agriculture']"));
+		Agriculture = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=15]//span[.='RCV Industries']"));
 	return Agriculture;
     }
 
@@ -2604,7 +2632,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement ProjectYashConstruction()		//Method for searching Username input
 	{
-		ProjectYashConstruction = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=2]"));
+		ProjectYashConstruction = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=16]"));
 	return ProjectYashConstruction;
     }
 	
@@ -2618,7 +2646,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement CreationConstruction()		//Method for searching Username input
 	{
-		CreationConstruction = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=2]"));
+		CreationConstruction = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=16]"));
 	return CreationConstruction;
     }
 
@@ -2962,7 +2990,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement DocumentTabSelectContractorDD()		//Method for searching Username input
 	{
-		DocumentTabSelectContractorDD = getDriver().findElement(By.xpath("//span[.='Suraj Infra']"));
+		DocumentTabSelectContractorDD = getDriver().findElement(By.xpath("//span[.='Suraj']"));
 	return DocumentTabSelectContractorDD;
     }
 	
@@ -3037,7 +3065,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement VCALegalEntityAADDGetText()		//Method for searching Username input
 	{
-		VCALegalEntityAADDGetText = getDriver().findElement(By.xpath("//div[@class='k-animation-container']/div/div[2]/ul/li/ul/li[3]/div/span[1]/span[2]"));
+		VCALegalEntityAADDGetText = getDriver().findElement(By.xpath("//span[.='VCA Limited ']"));
 		return VCALegalEntityAADDGetText;
 		
 		
@@ -3278,13 +3306,13 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement PRIUpdate()		//Method for searching Username input
 	{
-		PRIUpdate = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=17]//span[.='PRI Update']"));
+		PRIUpdate = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=15]//span[.='RCV Industries']"));
 	return PRIUpdate;
     }
 
 	public static WebElement ChandranganConstruction1()		//Method for searching Username input
 	{
-		ChandranganConstruction1 = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=6]//span[.='Chandragan Construction ']"));
+		ChandranganConstruction1 = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[position()=9]//span[.='Geet Heritage']"));
 	return ChandranganConstruction1;
     }
 

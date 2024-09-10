@@ -6017,18 +6017,15 @@ public class Method4 extends BasePage{
 	    Thread.sleep(10000);
 	   
        
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator4.ClosedProject().getText();
        Thread.sleep(2000);
        Locator4.ClosedProject().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
-       
-       
-       
-       
+            
        Locator2.Status().click();
        Thread.sleep(2000);
        String Statustext =Locator2.StatusFilterCompliedHighDD().getText();
@@ -6075,9 +6072,9 @@ public class Method4 extends BasePage{
 
 	    Locator3.PWCSSubContractorContractorType().click();
 	    Thread.sleep(2000);
-	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD1().getText();
 	    Thread.sleep(2000);
-	    Locator3.PWCSSubContractorContractorTypeDD11().click();
+	    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	    Thread.sleep(2000);
 	//    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	//    Thread.sleep(2000);
@@ -6221,7 +6218,7 @@ public class Method4 extends BasePage{
 	{
 		
 		
-		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(3000);
 		
 		
@@ -6251,13 +6248,13 @@ public class Method4 extends BasePage{
 	
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator4.ClosedProject().getText();
        Thread.sleep(2000);
        Locator4.ClosedProject().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -6309,9 +6306,9 @@ public class Method4 extends BasePage{
 
 	    Locator3.PWCSSubContractorContractorType().click();
 	    Thread.sleep(2000);
-	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD1().getText();
 	    Thread.sleep(2000);
-	    Locator3.PWCSSubContractorContractorTypeDD11().click();
+	    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	    Thread.sleep(2000);
 	//    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	//    Thread.sleep(2000);
@@ -6684,7 +6681,7 @@ public class Method4 extends BasePage{
 	{
 		
 		
-		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(9000);
 		
 		
@@ -6709,13 +6706,13 @@ public class Method4 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator4.ClosedProject().getText();
        Thread.sleep(2000);
        Locator4.ClosedProject().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        Locator2.Status().click();
@@ -6747,9 +6744,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.May22().getText();
+       String PeriodText =Locator2.Feb22().getText();
        Thread.sleep(2000);
-       Locator2.May22().click();
+       Locator2.Feb22().click();
        Thread.sleep(2000);
       
 	    Locator3.PWCSSubContractorExpand().click();
@@ -6764,9 +6761,9 @@ public class Method4 extends BasePage{
 
 	    Locator3.PWCSSubContractorContractorType().click();
 	    Thread.sleep(2000);
-	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD1().getText();
 	    Thread.sleep(2000);
-	    Locator3.PWCSSubContractorContractorTypeDD11().click();
+	    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	    Thread.sleep(2000);
 	//    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	//    Thread.sleep(2000);
@@ -6909,14 +6906,14 @@ public class Method4 extends BasePage{
 	{
 		
 		
-		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(3000);
 		
 		
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,300)");
+	    jss.executeScript("window.scrollBy(0,370)");
 	    Thread.sleep(2000);
 	    
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-drilldown-data-label']"))); 
@@ -6934,13 +6931,13 @@ public class Method4 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator4.ClosedProject().getText();
        Thread.sleep(2000);
        Locator4.ClosedProject().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -6996,9 +6993,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.May22().getText();
+       String PeriodText =Locator2.Feb22().getText();
        Thread.sleep(2000);
-       Locator2.May22().click();
+       Locator2.Feb22().click();
        Thread.sleep(2000);
  //      Locator2.PeriodFilterCompliedHigh().click();
  //      Thread.sleep(2000);
@@ -7015,9 +7012,9 @@ public class Method4 extends BasePage{
 
 	    Locator3.PWCSSubContractorContractorType().click();
 	    Thread.sleep(2000);
-	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD1().getText();
 	    Thread.sleep(2000);
-	    Locator3.PWCSSubContractorContractorTypeDD11().click();
+	    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	    Thread.sleep(2000);
 	//    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	//    Thread.sleep(2000);
@@ -7157,7 +7154,7 @@ public class Method4 extends BasePage{
 	{
 		
 		
-		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(9000);
 		
 		
@@ -7182,13 +7179,13 @@ public class Method4 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator4.ClosedProject().getText();
        Thread.sleep(2000);
        Locator4.ClosedProject().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -7246,9 +7243,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.May22().getText();
+       String PeriodText =Locator2.Feb22().getText();
        Thread.sleep(2000);
-       Locator2.May22().click();
+       Locator2.Feb22().click();
        Thread.sleep(2000);
   //     Locator2.PeriodFilterCompliedHigh().click();
   //     Thread.sleep(2000);
@@ -7265,9 +7262,9 @@ public class Method4 extends BasePage{
 
 	    Locator3.PWCSSubContractorContractorType().click();
 	    Thread.sleep(2000);
-	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD1().getText();
 	    Thread.sleep(2000);
-	    Locator3.PWCSSubContractorContractorTypeDD11().click();
+	    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	    Thread.sleep(2000);
 	//    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	//    Thread.sleep(2000);
@@ -7432,13 +7429,13 @@ public class Method4 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator4.ClosedProject().getText();
        Thread.sleep(2000);
        Locator4.ClosedProject().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -7486,9 +7483,9 @@ public class Method4 extends BasePage{
 
 	    Locator3.PWCSSubContractorContractorType().click();
 	    Thread.sleep(2000);
-	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD12().getText();
 	    Thread.sleep(2000);
-	    Locator3.PWCSSubContractorContractorTypeDD11().click();
+	    Locator3.PWCSSubContractorContractorTypeDD12().click();
 	    Thread.sleep(2000);
 	//    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	//    Thread.sleep(2000);
@@ -7656,13 +7653,13 @@ public class Method4 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator4.ClosedProject().getText();
        Thread.sleep(2000);
        Locator4.ClosedProject().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -7715,9 +7712,9 @@ public class Method4 extends BasePage{
 
 	    Locator3.PWCSSubContractorContractorType().click();
 	    Thread.sleep(2000);
-	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD12().getText();
 	    Thread.sleep(2000);
-	    Locator3.PWCSSubContractorContractorTypeDD11().click();
+	    Locator3.PWCSSubContractorContractorTypeDD12().click();
 	    Thread.sleep(2000);
 	//    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	//    Thread.sleep(2000);
@@ -7883,13 +7880,13 @@ public class Method4 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator4.ClosedProject().getText();
        Thread.sleep(2000);
        Locator4.ClosedProject().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -7940,9 +7937,9 @@ public class Method4 extends BasePage{
 
 	    Locator3.PWCSSubContractorContractorType().click();
 	    Thread.sleep(2000);
-	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	    String contractorTypeText =Locator3.PWCSSubContractorContractorTypeDD12().getText();
 	    Thread.sleep(2000);
-	    Locator3.PWCSSubContractorContractorTypeDD11().click();
+	    Locator3.PWCSSubContractorContractorTypeDD12().click();
 	    Thread.sleep(2000);
 	//    Locator3.PWCSSubContractorContractorTypeDD1().click();
 	//    Thread.sleep(2000);
@@ -8082,7 +8079,7 @@ public class Method4 extends BasePage{
 	{
 		
 		
-		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(3000);
 		
 		
@@ -8118,9 +8115,9 @@ public class Method4 extends BasePage{
        
        Locator3.ContractorType().click();
        Thread.sleep(2000);
-       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD12().getText();
        Thread.sleep(2000);
-       Locator3.PWCSSubContractorContractorTypeDD11().click();
+       Locator3.PWCSSubContractorContractorTypeDD12().click();
        Thread.sleep(2000);
        Locator3.ContractorType().click();
        Thread.sleep(2000);
@@ -8152,9 +8149,9 @@ public class Method4 extends BasePage{
        
        Locator3.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Jul22().getText();
+       String periodtext =Locator2.Feb23().getText();
        Thread.sleep(2000);
-      Locator2.Jul22().click();
+      Locator2.Feb23().click();
       Thread.sleep(2000);
       
        
@@ -8343,9 +8340,9 @@ public class Method4 extends BasePage{
        
        Locator3.ContractorType().click();
        Thread.sleep(2000);
-       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD12().getText();
        Thread.sleep(2000);
-       Locator3.PWCSSubContractorContractorTypeDD11().click();
+       Locator3.PWCSSubContractorContractorTypeDD12().click();
        Thread.sleep(2000);
        Locator3.ContractorType().click();
        Thread.sleep(2000);
@@ -8379,9 +8376,9 @@ public class Method4 extends BasePage{
        
        Locator3.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Apr22().getText();
+       String periodtext =Locator1.Jun24().getText();
        Thread.sleep(2000);
-      Locator2.Apr22().click();
+      Locator1.Jun24().click();
       Thread.sleep(2000);
       
        
@@ -8712,14 +8709,19 @@ public class Method4 extends BasePage{
 		
 		
 		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(20000);
 		
-		Thread.sleep(2000);
-		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(10000);
+	   		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,800)");
 	    Thread.sleep(2000);
+	    
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Canteen']"))); 
+		Thread.sleep(2000);
+
 		
 		Locator5.CTWCompliedGreen().click();
 		Thread.sleep(2000);
@@ -8731,7 +8733,7 @@ public class Method4 extends BasePage{
 	    getDriver().switchTo().frame(Locator3.Frame());
 	    Thread.sleep(10000);
 	    
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(3000);  
 	       String ProjectText =Locator2.ProjectYashConstruction().getText();
 	       Thread.sleep(3000);
@@ -8739,7 +8741,7 @@ public class Method4 extends BasePage{
 	       Thread.sleep(3000);
 	     //  Locator2.Project2().click();
 	     //  Thread.sleep(3000);
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(2000);
     
     
@@ -8768,9 +8770,9 @@ public class Method4 extends BasePage{
        
     Locator3.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator2.Apr22().getText();
+    String PeriodText =Locator1.Jun24().getText();
     Thread.sleep(2000);
-    Locator2.Apr22().click();
+    Locator1.Jun24().click();
     Thread.sleep(2000);
    
      List<String> li=new ArrayList<String>();
@@ -14065,8 +14067,16 @@ Thread.sleep(3000);
 		
 		Locator2.LocationReport().click();
 		Thread.sleep(2000);
-	//	Locator2.LocationProjectMasterExpand().click();
-	//	Thread.sleep(2000);
+		
+		String script = "return window.getComputedStyle(document.querySelector('k-icon k-i-expand'),':before').getPropertyValue('content')";
+        Thread.sleep(3000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String content = (String) js.executeScript(script);
+        System.out.println(content);
+        
+        Thread.sleep(2000);
+		Locator2.LocationProjectMasterExpand().click();
+		Thread.sleep(2000);
 	//	Locator2.VCALegalEntityExpandAA().click();
 	//	Thread.sleep(3000);
 		String locationtext =Locator2.VCALegalEntityAADD().getText();
@@ -14165,8 +14175,8 @@ Thread.sleep(3000);
 		filter.add("Status");
 		
 		
-		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,1000)");	
+		JavascriptExecutor j = (JavascriptExecutor) getDriver();
+		j.executeScript("window.scrollBy(0,1000)");	
 		Thread.sleep(3000);
 
 		Locator1.GridCount().click();					//Clicking on Text of total items just to scroll down.

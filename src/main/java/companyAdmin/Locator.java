@@ -1033,7 +1033,7 @@ public class Locator extends BasePage{
 		
 	public static WebElement AddSubEntity()		//Method for searching Username input
 	{
-		AddSubEntity = getDriver().findElement(By.xpath("(//a[contains(@class,'k-button k-button-icontext k-grid-arrow-right enabled k-grid-proceed')])[4]"));
+		AddSubEntity = getDriver().findElement(By.xpath("(//a[contains(@class,'k-button k-button-icontext k-grid-arrow-right enabled k-grid-proceed')])[1]"));
 		return AddSubEntity;
 		
 	}
@@ -1273,7 +1273,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement Confirm()		//Method for searching Username input
 	{
-		Confirm = getDriver().findElement(By.id("btnConfirmdelete"));
+		Confirm = getDriver().findElement(By.xpath("//button[@id='btnConfirmdelete']"));
 		return Confirm;
 		
 	}
@@ -1447,21 +1447,21 @@ public class Locator extends BasePage{
 	
 	public static WebElement DeleteUser()		//Method for searching Username input
 	{
-		DeleteUser = getDriver().findElement(By.xpath("(//a[contains(@class,'k-button k-button-icontext ob-Delete')])[14]"));
+		DeleteUser = getDriver().findElement(By.xpath("(//a[contains(@class,'k-button k-button-icontext ob-Delete')])[20]"));
 		return DeleteUser;
 		
 	}
 	
 	public static WebElement EditUser()		//Method for searching Username input
 	{
-		EditUser = getDriver().findElement(By.xpath("//*[@id='gridUser']/div[2]/table/tbody/tr[14]/td[7]/a[1]"));
+		EditUser = getDriver().findElement(By.xpath("//*[@id='gridUser']/div[2]/table/tbody/tr[20]/td[7]/a[1]"));
 		return EditUser;
 		
 	}
 	
 	public static WebElement UserResetPass5()		//Method for searching Username input
 	{
-		UserResetPass5 = getDriver().findElement(By.xpath("(//div[@class='ob-Reset'])[14]"));
+		UserResetPass5 = getDriver().findElement(By.xpath("(//div[@class='ob-Reset'])[20]"));
 		return UserResetPass5;
 		
 	}
@@ -1476,7 +1476,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement PagingDD()		//Method for searching Username input
 	{
-		PagingDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//ul//li[.='20']"));
+		PagingDD = getDriver().findElement(By.xpath("//*[@id='gridUser']/div[2]/table/tbody/tr[20]/td[7]/a[1]"));
 		return PagingDD;
 		
 	}
@@ -2061,14 +2061,14 @@ public class Locator extends BasePage{
 	
 	public static WebElement Director()		//Method for searching Username input
 	{
-		Director = getDriver().findElement(By.xpath("(//span[@class='k-select'])[16]"));
+		Director = getDriver().findElement(By.xpath("(//span[@class='k-select'])[17]"));
 		return Director;
 		
 	}
 	
 	public static WebElement DirectorD()		//Method for searching Username input
 	{
-		DirectorD = getDriver().findElement(By.xpath("(//ul[@id='dropdownDirector_listbox']//li)[2]"));
+		DirectorD = getDriver().findElement(By.xpath("(//ul[@id='dropdownDirector_listbox']//li)[1]"));
 		return DirectorD;
 		
 	}
@@ -4698,7 +4698,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement ActionColmnReportDownload()		//Method for searching Username input
 	{
-		ActionColmnReportDownload = getDriver().findElement(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[15]/a[2]"));
+		ActionColmnReportDownload = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[15]/a[2]"));
 		return ActionColmnReportDownload;
 		
 		
@@ -4740,7 +4740,7 @@ public class Locator extends BasePage{
 
 	public static WebElement Downloadasapdf()		//Method for searching Username input
 	{
-		ActionColmnReportDownload = getDriver().findElement(By.xpath("//span[@id='downloadAsPdfButton']"));
+		ActionColmnReportDownload = getDriver().findElement(By.xpath("//a[@id='dwn-btn-report']"));
 		return ActionColmnReportDownload;
 		
 		

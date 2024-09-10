@@ -11,6 +11,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -106,7 +107,8 @@ public class CriticalMethod extends BasePage {
 		Locator.SubmitButton().click();
 	
 		Thread.sleep(6000);
-		
+		/*
+		WebDriverWait wait = new WebDriverWait(getDriver(), (80));
 		
         Alert ac=getDriver().switchTo().alert();
 		
@@ -120,12 +122,45 @@ public class CriticalMethod extends BasePage {
 	    	
 		Locator.Close().click();
 		Thread.sleep(3000);
+		*/
+		
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Entity Details Saved Successfully") || t.equalsIgnoreCase("Entity already exist")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	        } finally {
+	        	Locator.Close().click();
+	    		Thread.sleep(3000);
+	        }
+	    
 		
 //		CriticalMethod.ClearEntityButton(,test,workbook);
 //		Thread.sleep(3000);
 		
-		
-	}
+	}	
+	
 	
 	
 	
@@ -229,7 +264,7 @@ public class CriticalMethod extends BasePage {
 		
         Thread.sleep(5000);
 		
-		
+		/*
         Alert ac=getDriver().switchTo().alert();
 		
 		String t1=getDriver().switchTo().alert().getText();
@@ -240,6 +275,36 @@ public class CriticalMethod extends BasePage {
 		ac.accept();
 		
 		Thread.sleep(3000);
+		*/
+        
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Sub-Entity Details Saved Successfully") || t.equalsIgnoreCase("Sub-Entity already exist")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	        } 
+	    
 				
 	//	CriticalMethod.UpdateSubEntity(,test,workbook);
 	//	Thread.sleep(3000);
@@ -321,7 +386,7 @@ public class CriticalMethod extends BasePage {
 		 Thread.sleep(6000);
 		 
 		
-		 
+		 /*
 		 Locator.CityS().click();
 			Thread.sleep(4000);
 			
@@ -337,7 +402,7 @@ public class CriticalMethod extends BasePage {
 		      }
 			
 		      Thread.sleep(20000);
-		
+		*/
 		
 		Locator.industryS().click();
 		 Thread.sleep(3000);
@@ -350,7 +415,7 @@ public class CriticalMethod extends BasePage {
 		
         Thread.sleep(5000);
 		
-		
+		/*
         Alert ac=getDriver().switchTo().alert();
 		
 		String t1=getDriver().switchTo().alert().getText();
@@ -359,7 +424,37 @@ public class CriticalMethod extends BasePage {
 		
 		Thread.sleep(4000);
 		ac.accept();
-				
+			*/
+        
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Sub-Entity Details Updated Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+	  
 		
 		
 		
@@ -418,7 +513,7 @@ public class CriticalMethod extends BasePage {
 	Thread.sleep(3000);
 	Locator.Confirm().click();
 	Thread.sleep(5000);
-	
+	/*
 	Alert ac=getDriver().switchTo().alert();
 	
 	String t1=getDriver().switchTo().alert().getText();
@@ -427,8 +522,36 @@ public class CriticalMethod extends BasePage {
 	
 	Thread.sleep(4000);
 	ac.accept();
-	
-	
+	*/
+	 try {
+         // Wait for the alert to be present
+         WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 120 seconds timeout
+         Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+         // Once alert is present, handle it
+         System.out.println("Alert is present: " + alert.getText());
+         Alert ac1=getDriver().switchTo().alert();
+ 		
+ 		String t=getDriver().switchTo().alert().getText();
+ 		
+		 if(t.equalsIgnoreCase("Entity deleted successfully.")) 
+		 {
+				test.log(LogStatus.PASS, t);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, t);
+				
+				
+			} 
+ 		
+ 		Thread.sleep(5000);
+         ac1.accept(); // Accept the alert (click OK)
+     } catch (Exception e) {
+         System.out.println("Alert not found within the specified time.");
+         test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+     } 
+
 	
 	
 	}
@@ -537,7 +660,7 @@ public class CriticalMethod extends BasePage {
 	
 		Thread.sleep(9000);
 		
-		
+		/*
         Alert ac=getDriver().switchTo().alert();
 		
 		String t1=getDriver().switchTo().alert().getText();
@@ -546,7 +669,36 @@ public class CriticalMethod extends BasePage {
 		
 		Thread.sleep(4000);
 		ac.accept();
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Entity Details Updated Successfully") || t.equalsIgnoreCase("Entity already exist")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	         //   System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+	    
 		
 		
 	}
@@ -571,7 +723,7 @@ public class CriticalMethod extends BasePage {
 	
 	Locator.UploadButton().click();
 	Thread.sleep(9000);
-	
+	/*
 	 Alert ac=getDriver().switchTo().alert();
 		
 		String t1=getDriver().switchTo().alert().getText();
@@ -582,7 +734,36 @@ public class CriticalMethod extends BasePage {
 		ac.accept();
 	
 		Thread.sleep(4000);
-		
+		*/
+	 try {
+         // Wait for the alert to be present
+         WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+         Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+         // Once alert is present, handle it
+         System.out.println("Alert is present: " + alert.getText());
+         Alert ac1=getDriver().switchTo().alert();
+ 		
+ 		String t=getDriver().switchTo().alert().getText();
+ 		
+		 if(t.equalsIgnoreCase("File uploaded successfully.")) 
+		 {
+				test.log(LogStatus.PASS, t);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, t);
+				
+				
+			} 
+ 		
+ 		Thread.sleep(5000);
+         ac1.accept(); // Accept the alert (click OK)
+     } catch (Exception e) {
+         System.out.println("Alert not found within the specified time");
+         test.log(LogStatus.FAIL, "Alert not found within the specified time");
+     } 
+
 		
 		
 	}
@@ -610,6 +791,7 @@ public class CriticalMethod extends BasePage {
 	    Locator.ConfirmSubEntityDelete().click();
 	    Thread.sleep(3000);
 	
+	    /*
 	    Alert ac=getDriver().switchTo().alert();
 	
 	    String t1=getDriver().switchTo().alert().getText();
@@ -619,7 +801,36 @@ public class CriticalMethod extends BasePage {
 	    Thread.sleep(3000);
 	    ac.accept();
 	    Thread.sleep(3000);
-	
+	*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 120 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Sub-Entity deleted successfully.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+	  
 	
 	}
 	
@@ -675,8 +886,8 @@ public class CriticalMethod extends BasePage {
 		Locator.AddUserSelectRole().click();
 		Thread.sleep(4000);
 		Locator.UserSubmitButton().click();
-		Thread.sleep(20000);
-		
+		Thread.sleep(9000);
+		/*
 		 Alert ac1=getDriver().switchTo().alert();
 			
 			String t2=getDriver().switchTo().alert().getText();
@@ -686,10 +897,41 @@ public class CriticalMethod extends BasePage {
 			Thread.sleep(2000);
 			ac1.accept();
 			Thread.sleep(2000);
-			
+			*/
 		
-		Locator.CloseUserPage().click();
-		Thread.sleep(2000);
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") || t.equalsIgnoreCase("Contact No Exist.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } finally {
+	        	Locator.CloseUserPage().click();
+	    		Thread.sleep(2000);
+	        }
+
+		
 		
 	}
 	
@@ -772,8 +1014,8 @@ public class CriticalMethod extends BasePage {
 	Locator.AddUserSelectRole().click();
 	Thread.sleep(3000);
 	Locator.UserSubmitButton().click();
-	Thread.sleep(20000);
-	
+	Thread.sleep(9000);
+	/*
 	 Alert ac1=getDriver().switchTo().alert();
 		
 		String t2=getDriver().switchTo().alert().getText();
@@ -784,16 +1026,41 @@ public class CriticalMethod extends BasePage {
 		ac1.accept();
 		
 		Thread.sleep(2000);
+	*/
 	
-	Locator.CloseUserPage().click();
-	
-	Thread.sleep(3000);
-	
-	
-	
-	
-	
-	
+	 try {
+         // Wait for the alert to be present
+         WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+         Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+         // Once alert is present, handle it
+         System.out.println("Alert is present: " + alert.getText());
+         Alert ac1=getDriver().switchTo().alert();
+ 		
+ 		String t=getDriver().switchTo().alert().getText();
+ 		
+		 if(t.equalsIgnoreCase("Record Saved Successfully") || t.equalsIgnoreCase("Contact No Exist.")) 
+		 {
+				test.log(LogStatus.PASS, t);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, t);
+				
+				
+			} 
+ 		
+ 		Thread.sleep(5000);
+         ac1.accept(); // Accept the alert (click OK)
+     } catch (Exception e) {
+         System.out.println("Alert not found within the specified time.");
+         test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+     } finally {
+     	Locator.CloseUserPage().click();
+ 		Thread.sleep(2000);
+     }
+
+
 	
 	}
 	
@@ -887,7 +1154,7 @@ public class CriticalMethod extends BasePage {
 			Locator.DeleteUser().click();
 			
 			Thread.sleep(3000);
-			
+			/*
 			 Alert ac1=getDriver().switchTo().alert();
 				
 				String t2=getDriver().switchTo().alert().getText();
@@ -898,6 +1165,38 @@ public class CriticalMethod extends BasePage {
 				ac1.accept();
 				
 				Thread.sleep(3000);
+				*/
+			
+			 try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac=getDriver().switchTo().alert();
+		    		
+		    		String t=getDriver().switchTo().alert().getText();
+		    		
+		   		 if(t.equalsIgnoreCase("Are you sure want to inactive this user?")) 
+				 {
+						test.log(LogStatus.PASS, t);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, t);
+						
+						
+					} 
+		    		
+		    		Thread.sleep(5000);
+		            ac.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+		        } 
+
+				/*
 		 
              Alert ac2=getDriver().switchTo().alert();
 				
@@ -909,6 +1208,37 @@ public class CriticalMethod extends BasePage {
 				ac2.accept();
 				
 				Thread.sleep(3000);
+				*/
+				
+				 try {
+			            // Wait for the alert to be present
+			            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+			            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+			            // Once alert is present, handle it
+			            System.out.println("Alert is present: " + alert.getText());
+			            Alert ac=getDriver().switchTo().alert();
+			    		
+			    		String t=getDriver().switchTo().alert().getText();
+			    		
+			   		 if(t.equalsIgnoreCase("User Inactive Successfully")) 
+					 {
+							test.log(LogStatus.PASS, t);
+						}
+						else
+						{
+							test.log(LogStatus.FAIL, t);
+							
+							
+						} 
+			    		
+			    		Thread.sleep(5000);
+			            ac.accept(); // Accept the alert (click OK)
+			        } catch (Exception e) {
+			            System.out.println("Alert not found within the specified time.");
+			            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+			        } 
+
 		 
 		 
 	 }
@@ -936,8 +1266,8 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(3000);
 		
 		Locator.SubmitUploadUser().click();
-		Thread.sleep(20000);
-		
+		Thread.sleep(7000);
+		/*
 		 Alert ac=getDriver().switchTo().alert();
 			
 			String t1=getDriver().switchTo().alert().getText();
@@ -948,7 +1278,36 @@ public class CriticalMethod extends BasePage {
 			ac.accept();
 		
 			Thread.sleep(4000);
-	 	
+	 	*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("File Uploaded Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Download error log");
+	            test.log(LogStatus.FAIL, "Download error log");
+	        } 
+
 			
 			
 		
@@ -1015,6 +1374,7 @@ public class CriticalMethod extends BasePage {
 		
 		
 		Thread.sleep(5000);
+		/*
 		 Alert ac1=getDriver().switchTo().alert();
 			
 			String t2=getDriver().switchTo().alert().getText();
@@ -1026,7 +1386,35 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(3000);
 	 
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") || t.equalsIgnoreCase("Contact No Exist.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
 		
 		
 		
@@ -1109,6 +1497,7 @@ public class CriticalMethod extends BasePage {
 		
 		
 		Thread.sleep(5000);
+		/*
 		 Alert ac1=getDriver().switchTo().alert();
 			
 			String t2=getDriver().switchTo().alert().getText();
@@ -1119,7 +1508,36 @@ public class CriticalMethod extends BasePage {
 			ac1.accept();
 			
 			Thread.sleep(3000);
-	 
+	 */
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") || t.equalsIgnoreCase("Contact No Exist.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+		
 		
 		
 			
@@ -1186,6 +1604,7 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(3000);
 		
 		Thread.sleep(5000);
+		/*
 		 Alert ac1=getDriver().switchTo().alert();
 			
 			String t2=getDriver().switchTo().alert().getText();
@@ -1194,8 +1613,37 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(4000);
 			ac1.accept();
-		
-			
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Are you sure want to inactive this user?")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+			/*
 			Thread.sleep(5000);
 			 Alert ac2=getDriver().switchTo().alert();
 				
@@ -1205,7 +1653,36 @@ public class CriticalMethod extends BasePage {
 				
 				Thread.sleep(4000);
 				ac2.accept();
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Deleted Successfully") || t.equalsIgnoreCase("Contractor already in used.") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 	}
 	
 	
@@ -1289,7 +1766,8 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(3000);
 		Locator.SubmitAssignment().click();
 		
-		Thread.sleep(20000);
+		Thread.sleep(7000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -1300,6 +1778,36 @@ public class CriticalMethod extends BasePage {
 			ac2.accept();
 		
 			Thread.sleep(4000);
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 		
 		
 	}
@@ -1333,7 +1841,8 @@ public class CriticalMethod extends BasePage {
 		
 		
 		
-		Thread.sleep(20000);
+		Thread.sleep(6000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -1344,7 +1853,36 @@ public class CriticalMethod extends BasePage {
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Deleted Successfully.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 		
 		
 		
@@ -1411,6 +1949,7 @@ public class CriticalMethod extends BasePage {
 		
 		
 		Thread.sleep(5000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -1421,6 +1960,36 @@ public class CriticalMethod extends BasePage {
 			ac2.accept();
 		
 			Thread.sleep(4000);
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 		
 	}
 	
@@ -1479,11 +2048,23 @@ public class CriticalMethod extends BasePage {
 		Locator.UploadDocumentL().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(4000);
 		
+		Locator.Calender1().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender1DD().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender2().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender1DD().click();
+		Thread.sleep(3000);
+		
 		Locator.SubmitLicence().click();
 		
 		
-		Thread.sleep(30000);
-		
+		Thread.sleep(9000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -1494,10 +2075,42 @@ public class CriticalMethod extends BasePage {
 			ac2.accept();
 		
 			Thread.sleep(4000);
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } finally {
+	        	Locator.ClosetLicence().click();    		
+	    		Thread.sleep(3000);
+	        	
+	        }
+
 		
-		Locator.ClosetLicence().click();
 		
-		Thread.sleep(3000);
 			
 		
 	}
@@ -1570,9 +2183,9 @@ public class CriticalMethod extends BasePage {
 		Locator.SpaceProject1().click();
 		Thread.sleep(2000);
 		Locator.SubmitProject().click();
-		Thread.sleep(10000);
+		Thread.sleep(9000);
 		
-		
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -1583,7 +2196,36 @@ public class CriticalMethod extends BasePage {
 			ac2.accept();
 		
 			Thread.sleep(4000);
+			*/
 		
+			 try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac1=getDriver().switchTo().alert();
+		    		
+		    		String t=getDriver().switchTo().alert().getText();
+		    		
+		   		 if(t.equalsIgnoreCase("Record Saved Successfully") || t.equalsIgnoreCase("Project Name already exist.")) 
+				 {
+						test.log(LogStatus.PASS, t);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, t);
+						
+						
+					} 
+		    		
+		    		Thread.sleep(5000);
+		            ac1.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+		        } 
 
 		
 		
@@ -1617,8 +2259,8 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(3000);
 		
 		Locator.SaveCloser().click();
-		Thread.sleep(33000);
-		
+		Thread.sleep(9000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -1629,6 +2271,36 @@ public class CriticalMethod extends BasePage {
 			ac2.accept();
 		
 			Thread.sleep(4000);
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 		
 		
 	}
@@ -1657,8 +2329,8 @@ public class CriticalMethod extends BasePage {
 		
 		Locator.ProjectUploadButton().click();
 		
-		Thread.sleep(20000);
-		
+		Thread.sleep(6000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -1669,7 +2341,36 @@ public class CriticalMethod extends BasePage {
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 			  
 		
 	}
@@ -1793,7 +2494,7 @@ public class CriticalMethod extends BasePage {
 		Locator.MapButtonSave().click();
 		
 		Thread.sleep(5000);
-		
+		/*
 		 Alert ac=getDriver().switchTo().alert();
 			
 			String t1=getDriver().switchTo().alert().getText();
@@ -1804,7 +2505,37 @@ public class CriticalMethod extends BasePage {
 			ac.accept();
 		
 			Thread.sleep(4000);
-	 
+	 */
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+
 		
 	
 		
@@ -1870,6 +2601,7 @@ public class CriticalMethod extends BasePage {
 		
 		
 		Thread.sleep(7000);
+		/*
 		 Alert ac1=getDriver().switchTo().alert();
 			
 			String t2=getDriver().switchTo().alert().getText();
@@ -1880,7 +2612,36 @@ public class CriticalMethod extends BasePage {
 			ac1.accept();
 			
 			Thread.sleep(6000);
-	 
+	 */
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 		
 		
 		
@@ -1962,6 +2723,7 @@ public class CriticalMethod extends BasePage {
 		
 		
 		Thread.sleep(7000);
+		/*
 		 Alert ac1=getDriver().switchTo().alert();
 			
 			String t2=getDriver().switchTo().alert().getText();
@@ -1972,7 +2734,36 @@ public class CriticalMethod extends BasePage {
 			ac1.accept();
 			
 			Thread.sleep(6000);
-	 
+	 */
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 		
 		
 		
@@ -1999,7 +2790,8 @@ public class CriticalMethod extends BasePage {
 		
 		Locator.btnSaveClouserDateCT().click();
 		
-		Thread.sleep(23000);
+		Thread.sleep(5000);
+		/*
 		 Alert ac1=getDriver().switchTo().alert();
 			
 			String t2=getDriver().switchTo().alert().getText();
@@ -2010,7 +2802,36 @@ public class CriticalMethod extends BasePage {
 			ac1.accept();
 			
 			Thread.sleep(6000);
-	 
+	 */
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 		    	
 		
 	}
@@ -2122,6 +2943,7 @@ public class CriticalMethod extends BasePage {
 		Locator.UploadSubmitCT().click();
 		
 		Thread.sleep(9000);
+		/*
 		 Alert ac1=getDriver().switchTo().alert();
 			
 			String t2=getDriver().switchTo().alert().getText();
@@ -2132,7 +2954,36 @@ public class CriticalMethod extends BasePage {
 			ac1.accept();
 			
 			Thread.sleep(6000);
-			
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("File uploaded successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Download error log");
+	            test.log(LogStatus.FAIL, "Download error log");
+	        } 
+
 		
 			
 	}
@@ -2163,6 +3014,7 @@ public class CriticalMethod extends BasePage {
 			Locator.UploadContractorProjectMappingUploadBCT().click();
 			
 			Thread.sleep(7000);
+			/*
 			 Alert ac3=getDriver().switchTo().alert();
 				
 				String t4=getDriver().switchTo().alert().getText();
@@ -2171,7 +3023,36 @@ public class CriticalMethod extends BasePage {
 				
 				Thread.sleep(5000);
 				ac3.accept();
-		
+		*/
+			 try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac1=getDriver().switchTo().alert();
+		    		
+		    		String t=getDriver().switchTo().alert().getText();
+		    		
+		   		 if(t.equalsIgnoreCase("File uploaded successfully")) 
+				 {
+						test.log(LogStatus.PASS, t);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, t);
+						
+						
+					} 
+		    		
+		    		Thread.sleep(5000);
+		            ac1.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+		        } 
+
 		
 	}
 	
@@ -2275,8 +3156,8 @@ public class CriticalMethod extends BasePage {
 		Locator.SubmitLicence().click();
 		
 		
-		Thread.sleep(40000);
-		
+		Thread.sleep(4000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -2287,10 +3168,44 @@ public class CriticalMethod extends BasePage {
 			ac2.accept();
 		
 			Thread.sleep(4000);
+			*/
+			 try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 50); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac1=getDriver().switchTo().alert();
+		    		
+		    		String t=getDriver().switchTo().alert().getText();
+		    		
+		   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+				 {
+						test.log(LogStatus.PASS, t);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, t);
+						
+						
+					} 
+		    		
+		    		Thread.sleep(5000);
+		            ac1.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+		        } finally {
+		        	Locator.ClosetLicence().click();
+		    		
+		    		Thread.sleep(3000);
+		        	
+		        }
+
+
 		
-		Locator.ClosetLicence().click();
 		
-		Thread.sleep(3000);
 		
 	}
 	
@@ -2457,7 +3372,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		
 		Thread.sleep(31000);
-		
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -2472,6 +3387,43 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Locator.ClosetLicence().click();
 		
 		Thread.sleep(3000);
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } finally {
+	        	Locator.ClosetLicence().click();
+	    		
+	    		Thread.sleep(3000);
+	        	
+	        }
+
+
+
 	
 
 	}
@@ -2513,8 +3465,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Thread.sleep(3000);
 		Locator.ButtonSaveAct().click();
 		
-		Thread.sleep(20000);
-		
+		Thread.sleep(7000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -2525,7 +3477,36 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")|| t.equalsIgnoreCase("Act already exist.") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 		
 		
 		
@@ -2550,8 +3531,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.DeleteLicenceC().click();
 		
-		Thread.sleep(8000);
-		
+		Thread.sleep(4000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -2562,8 +3543,36 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 60); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Deleted Successfully.") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 		
 	}
 
@@ -2663,8 +3672,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Thread.sleep(3000);
 		Locator.ButtonSaveAct().click();
 		
-		Thread.sleep(8000);
-		
+		Thread.sleep(7000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -2675,7 +3684,36 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")|| t.equalsIgnoreCase("Act already exist.") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 		
 		
 		
@@ -2707,8 +3745,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.BtnSaveDeActivationAC().click();
 		
-		Thread.sleep(20000);
-		
+		Thread.sleep(9000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -2719,6 +3757,37 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(9000);
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 60); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Disable Successfully") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+
 		
 		
 	}
@@ -2748,9 +3817,9 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Thread.sleep(3000);
 		
 		Locator.UploadButtonAC().click();
-		Thread.sleep(20000);
+		Thread.sleep(9000);
 		
-		
+		/*
 		Alert ac3=getDriver().switchTo().alert();
 		
 		String t4=getDriver().switchTo().alert().getText();
@@ -2761,7 +3830,36 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		ac3.accept();
 	
 		Thread.sleep(4000);
-			
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("File uploaded successfully.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Download error log");
+	            test.log(LogStatus.FAIL, "Download error log");
+	        } 
+
 		
 	
 		
@@ -2824,7 +3922,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Locator.ComplianceSaveButtonAC().click();
 		Thread.sleep(3000);
 		
-		
+		/*
 		Thread.sleep(8000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
@@ -2837,7 +3935,37 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")|| t.equalsIgnoreCase("Compliance Header already exist.") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+
 		
 		
 		
@@ -2899,7 +4027,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.ComplianceSaveButtonAC().click();
 		Thread.sleep(3000);
-	
+	/*
 		Thread.sleep(5000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
@@ -2910,6 +4038,37 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			
 			Thread.sleep(5000);
 			ac2.accept();
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")|| t.equalsIgnoreCase("Compliance Header already exist.") ) 
+			 {
+					test.log(LogStatus.PASS, " Central Internal Compliance - "+ t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, " Central Internal Compliance - "+t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+
 		
 			Thread.sleep(200);
 			
@@ -2956,7 +4115,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			
 			Locator.ComplianceSaveButtonAC().click();
 			Thread.sleep(3000);
-		
+		/*
 			Thread.sleep(5000);
 			
 			 Alert ac=getDriver().switchTo().alert();
@@ -2969,6 +4128,36 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 				ac2.accept();
 			
 				Thread.sleep(200);
+*/
+			 try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac1=getDriver().switchTo().alert();
+		    		
+		    		String t=getDriver().switchTo().alert().getText();
+		    		
+		   		 if(t.equalsIgnoreCase("Record Saved Successfully")|| t.equalsIgnoreCase("Compliance Header already exist.") ) 
+				 {
+						test.log(LogStatus.PASS, "State Internal Compliance - " + t);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, "State Internal Compliance - " +t);
+						
+						
+					} 
+		    		
+		    		Thread.sleep(5000);
+		            ac1.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+		        } 
+
 
 		
 		
@@ -3033,7 +4222,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Locator.ComplianceSaveButtonAC().click();
 		Thread.sleep(3000);
 		
-		
+		/*
 		Thread.sleep(8000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
@@ -3046,7 +4235,37 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);	
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+
 	}
 
 	public static void DeleteCompliance( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -3073,8 +4292,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
         
 		
         Locator.DeleteButtonSaveDeactivateAC().click();
-        Thread.sleep(25000);
-		
+        Thread.sleep(6000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3085,7 +4304,37 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-        
+        */
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Disable Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+
 		
 	}
 	 public static void ComplianceClearButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -3172,7 +4421,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			
 			Locator.Complienceuploadbutton().click();
 			Thread.sleep(3000);
-			
+			/*
             Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3181,6 +4430,36 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			
 			Thread.sleep(2000);
 			ac2.accept();
+			*/
+			 try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac1=getDriver().switchTo().alert();
+		    		
+		    		String t=getDriver().switchTo().alert().getText();
+		    		
+		   		 if(t.equalsIgnoreCase("File uploaded successfully.")) 
+				 {
+						test.log(LogStatus.PASS, t);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, t);
+						
+						
+					} 
+		    		
+		    		Thread.sleep(5000);
+		            ac1.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+		        } 
+
 		
 			Thread.sleep(2000);
 	//		Locator.ComplienceClose().click();
@@ -3256,7 +4535,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			
 		Locator.ButtonComplianceUploadAC().click();	
 		Thread.sleep(9000);
-		
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3265,6 +4544,37 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			
 			Thread.sleep(5000);
 			ac2.accept();
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+			 {
+					test.log(LogStatus.PASS, "Central Statutory Compliance - " +t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Central Statutory Compliance - " +t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+
 		
 			Thread.sleep(4000);
 			Locator.ComplianceUploadAC().click();
@@ -3277,7 +4587,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 				
 			Locator.ButtonComplianceUploadAC().click();	
 			Thread.sleep(9000);
-			
+			/*
 			 Alert ac=getDriver().switchTo().alert();
 				
 				String t=getDriver().switchTo().alert().getText();
@@ -3288,7 +4598,36 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 				ac.accept();
 			
 				Thread.sleep(4000);
-			
+			*/
+			 try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac1=getDriver().switchTo().alert();
+		    		
+		    		String t=getDriver().switchTo().alert().getText();
+		    		
+		   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+				 {
+						test.log(LogStatus.PASS, "State Statutory Compliance - " +t);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, "State Statutory Compliance - " +t);
+						
+						
+					} 
+		    		
+		    		Thread.sleep(5000);
+		            ac1.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		            test.log(LogStatus.FAIL, "Download error log");
+		        } 
+
 		
 	}
 	
@@ -3322,7 +4661,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 				
 		Locator.ButtonComplianceUploadAC().click();	
 		Thread.sleep(5000);
-		
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3331,7 +4670,36 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			
 			Thread.sleep(5000);
 			ac2.accept();
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+			 {
+					test.log(LogStatus.PASS, "Central Internal Compliance - " +t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Central Internal Compliance - " +t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 			Thread.sleep(1000);
 		
 			Locator.ComplianceUploadAC().click();
@@ -3344,7 +4712,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 					
 			Locator.ButtonComplianceUploadAC().click();	
 			Thread.sleep(5000);
-			
+			/*
 			 Alert ac=getDriver().switchTo().alert();
 				
 				String t=getDriver().switchTo().alert().getText();
@@ -3355,7 +4723,36 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 				ac.accept();
 			
 				Thread.sleep(500);
-			
+			*/
+			 try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac1=getDriver().switchTo().alert();
+		    		
+		    		String t=getDriver().switchTo().alert().getText();
+		    		
+		   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+				 {
+						test.log(LogStatus.PASS, "State Internal Compliance - " +t);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, "State Internal Compliance - " +t);
+						
+						
+					} 
+		    		
+		    		Thread.sleep(5000);
+		            ac1.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+		        } 
+
 	}
 	
 	
@@ -3426,8 +4823,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		*/
 		Locator.TemplateSaveButtonAC().click();
 		
-		Thread.sleep(20000);
-		
+		Thread.sleep(6000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3439,7 +4836,36 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 			Thread.sleep(4000);
 		
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")|| t.equalsIgnoreCase("Template Name already exist.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
 		
 		
 		
@@ -3510,8 +4936,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
         Thread.sleep(3000);
 		
         Locator.DeleteButtonSaveDeactivateAC().click();
-        Thread.sleep(39000);
-		
+        Thread.sleep(6000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3522,7 +4948,37 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Disable Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+
 	}
 	
 	
@@ -3556,8 +5012,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.UploadButtonTemplateAC().click();
 		
-		Thread.sleep(39000);
-		
+		Thread.sleep(7000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3568,7 +5024,37 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("File uploaded successfully.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Download Error log");
+	        } 
+
+
 	}
 	
 	
@@ -3599,8 +5085,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.AddContractorTypeSaveButton().click();
 		
-		Thread.sleep(9000);
-		
+		Thread.sleep(7000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3611,6 +5097,35 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
 		
 			Locator.CloseContractorTypePage().click();
 			Thread.sleep(4000);
@@ -3647,8 +5162,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.AddContractorTypeSaveButton().click();
 		
-		Thread.sleep(9000);
-		
+		Thread.sleep(7000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3659,6 +5174,37 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")||t.equalsIgnoreCase("Type Name already exist.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
 		
 			Locator.CloseContractorTypePage().click();
 			Thread.sleep(4000);
@@ -3678,7 +5224,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Locator.DeleteContractorType().click();
 		
 		Thread.sleep(9000);
-		
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3687,9 +5233,42 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			
 			Thread.sleep(9000);
 			ac2.accept();
+			
 		
 			Thread.sleep(4000);
-			
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Are you sure want to delete this Contractor Type?")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
+			/*
 			 Alert ac3=getDriver().switchTo().alert();
 				
 				String t4=getDriver().switchTo().alert().getText();
@@ -3698,7 +5277,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 				
 				Thread.sleep(9000);
 				ac3.accept();
-			
+			*/
+			 try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac1=getDriver().switchTo().alert();
+		    		
+		    		String t=getDriver().switchTo().alert().getText();
+		    		
+		   		 if(t.equalsIgnoreCase("Record Deleted Successfully")|| t.equalsIgnoreCase("Contractor type already in used.")) 
+				 {
+						test.log(LogStatus.PASS, t);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, t);
+						
+						
+					} 
+		    		
+		    		Thread.sleep(5000);
+		            ac1.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+		        } 
+
+			 Thread.sleep(4000);
+
 		
 			
 		
@@ -3779,7 +5389,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Locator.SaveCityMaster().click();
 		
 		Thread.sleep(9000);
-		
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3790,7 +5400,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")|| t.equalsIgnoreCase("City Name already exist.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
 	}
 	
@@ -3829,7 +5470,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Locator.SaveCityMaster().click();
 		
 		Thread.sleep(9000);
-		
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3840,7 +5481,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") || t.equalsIgnoreCase("City Name already exist.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
 	}
 	
@@ -3856,7 +5528,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.DeletetCityMaster().click();
 		Thread.sleep(9000);
-		
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3867,6 +5539,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Deleted Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
 		
 		
@@ -3944,8 +5648,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Thread.sleep(3000);
 		
 		Locator.SaveLicenceTypeButton().click();
-		Thread.sleep(9000);
-		
+		Thread.sleep(5000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -3956,7 +5660,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
- 		
+ 		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+		   		 if(t.equalsIgnoreCase("Record Saved Successfully")||t.equalsIgnoreCase("License name already exists")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
  		
  		
  	}
@@ -3989,8 +5724,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Thread.sleep(3000);
 		
 		Locator.SaveLicenceTypeButton().click();
-		Thread.sleep(9000);
-		
+		Thread.sleep(5000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -4001,7 +5736,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
- 		
+ 		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")||t.equalsIgnoreCase("License name already exists")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
 	}
 	
@@ -4017,7 +5783,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.DeleteLicenceType().click();
 		Thread.sleep(3000);
-		
+		/*
 		Thread.sleep(9000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
@@ -4030,7 +5796,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Deleted Successfully.") || t.equalsIgnoreCase("License type already in use.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
 		
 	}
@@ -4108,7 +5905,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.SaveDataPoint().click();
 		Thread.sleep(3000);
-		
+		/*
 		Thread.sleep(9000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
@@ -4121,7 +5918,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
 		
 		
@@ -4163,7 +5991,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.SaveDataPoint().click();
 		Thread.sleep(3000);
-		
+		/*
 		Thread.sleep(9000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
@@ -4176,7 +6004,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 70); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
 		
 		
@@ -4197,7 +6056,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.DeleteDataPoint().click();
 		Thread.sleep(9000);
-		
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -4208,7 +6067,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
-		
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Deleted Successfully.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
 		
 		
@@ -4318,7 +6208,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Locator.SaveMappingButton().click();
 		Thread.sleep(3000);
 		
-		
+		/*
 		Thread.sleep(9000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
@@ -4331,6 +6221,39 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
+			*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
+		
 		
 		
 	}
@@ -4361,7 +6284,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Locator.RemoveCM().click();
 		
 		Thread.sleep(9000);
-		
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -4372,6 +6295,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Deleted Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
 		
 	}
@@ -4595,7 +6550,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.UploadButtonCM().click();
 		Thread.sleep(3000);
-		
+		/*
 		Thread.sleep(9000);
 		
 		 Alert ac2=getDriver().switchTo().alert();
@@ -4608,6 +6563,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("File uploaded successfully.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
 	}
 
@@ -4679,8 +6666,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 		Locator.SaveAuditScheduling().click();
 		
-		Thread.sleep(15000);
-		
+		Thread.sleep(7000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -4703,6 +6690,38 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
 
 		
@@ -4773,8 +6792,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	
 		Locator.AssignSelectAuditorSaveAA().click();
 		
-		Thread.sleep(20000);
-		
+		Thread.sleep(7000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -4785,7 +6804,40 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			ac2.accept();
 		
 			Thread.sleep(4000);
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
+
 
 		
 		
@@ -4806,8 +6858,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		Thread.sleep(4000);
 		Locator.SelectAuditorSaveAA().click();
 		
-		Thread.sleep(20000);
-		
+		Thread.sleep(6000);
+		/*
 		 Alert ac2=getDriver().switchTo().alert();
 			
 			String t3=getDriver().switchTo().alert().getText();
@@ -4820,7 +6872,40 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 			Thread.sleep(4000);
 		
 	//	Locator.ScheduleAS().click();
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+
+		 Thread.sleep(4000);
+
 		
+
 		
 		
 	}

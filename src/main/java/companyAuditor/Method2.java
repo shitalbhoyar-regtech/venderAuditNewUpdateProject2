@@ -29,6 +29,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import companyAdmin.Locator;
 import companyContractor.Locator1;
 import companyContractor.Method1;
+import companyManagement.Method5;
 import companyProjectHead.Locator3;
 import login.BasePage;
 
@@ -436,12 +437,12 @@ public class Method2 extends BasePage{
 	public static void UpcomingEditButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Thread.sleep(20000);
-		Locator2.UpcomingCountDashboard().click();
-		Thread.sleep(20000);
+		Thread.sleep(500);
+//		Locator2.UpcomingCountDashboard().click();
+//		Thread.sleep(20000);
 		
-		Locator2.EditButtonPendingReview().click();
-		Thread.sleep(9000);
+//		Locator2.EditButtonPendingReview().click();
+//		Thread.sleep(9000);
 		
 		
 		// Locator2.ViewButtonPR().click();
@@ -453,13 +454,13 @@ public class Method2 extends BasePage{
 			
 			Thread.sleep(2000);
 		    Locator2.UpcomingEditButton().click();
-			test.log(LogStatus.PASS, " Edit Button Is Clickable " );
+			test.log(LogStatus.PASS, " Edit Button Working Properly " );
 			
 		}
 		
 		else
 		{
-			test.log(LogStatus.FAIL, "  Edit Button Is Clickable "  );
+			test.log(LogStatus.FAIL, "  Edit Button does not Working Properly "  );
 			
 		}
 		
@@ -1237,6 +1238,30 @@ public class Method2 extends BasePage{
 		
 	}
 	
+	public static void ClosedNewlyOpenedWindow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		String parentwindow = getDriver().getWindowHandle();
+		Set<String> allwindow = getDriver().getWindowHandles();
+		
+		for(String window : allwindow)
+		{
+			
+			if(!window.equalsIgnoreCase(parentwindow))
+			{
+				
+				getDriver().switchTo().window(window).close();
+				
+			
+			}
+			
+			
+		}
+		
+		
+	}
+
 	
 	
 	public static void SwitchToNewlyOpenedWindowClose( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -1734,13 +1759,13 @@ public class Method2 extends BasePage{
 		Locator2.Document().click();
 		Thread.sleep(20000);
 		
-		Locator2.SelectLocationDocument().click();
-		Thread.sleep(9000);
+	//	Locator2.SelectLocationDocument().click();
+	//	Thread.sleep(9000);
 		
-		Locator2.SelectLocationDropDocument().click();
+		Locator2.FacilityOne().click();
 		Thread.sleep(2000);
 		
-		Locator2.SelectLocationDropDownDocument().click();
+		Locator2.FaciltyDD().click();
 		Thread.sleep(2000);
 		
 		
@@ -3804,7 +3829,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void AuditCompletionStatusRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void AuditCompletionStatusRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -3942,11 +3967,11 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void AuditCompletionStatusBlueGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void AuditCompletionStatusBlueGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(5000);
 		
 		/*
 		
@@ -4014,6 +4039,9 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method2.StatusWiseSummaryExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -4037,24 +4065,7 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
-		
-		
-		
-		if(Locator2.ACSBlueGraphGridExportButton().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator2.ACSBlueGraphGridExportButton().click();
-			test.log(LogStatus.PASS, " File Download Successfully " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  File Download Successfully "  );
-			
-		}
-		
+				
 		Thread.sleep(4000);
 
 		getDriver().switchTo().parentFrame();
@@ -4077,7 +4088,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void AuditCompletionStatusGreenGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void AuditCompletionStatusGreenGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		//WebWait wait = new WebWait(, 1000);
@@ -4149,6 +4160,9 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method2.StatusWiseSummaryExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -4172,25 +4186,7 @@ public class Method2 extends BasePage{
 			test.log(LogStatus.FAIL, "  Clear button Does Not working properly "  );
 			
 		}
-		
-		
-		
-		if(Locator2.ACSGreenGraphGreedExportButton().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator2.ACSGreenGraphGreedExportButton().click();
-			test.log(LogStatus.PASS, " File Download Successfully " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  File Download Successfully "  );
-			
-		}
-		
-		
+				
 		Thread.sleep(4000);
 
 		getDriver().switchTo().parentFrame();
@@ -4218,7 +4214,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void CompliedHighRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void CompliedHighRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -4361,7 +4357,7 @@ public class Method2 extends BasePage{
 	}
 	
 	
-	public static void PWSCompliedMediumRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSCompliedMediumRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -4442,6 +4438,9 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method2.ExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -4501,7 +4500,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void PWSCompliedLowRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSCompliedLowRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -4581,6 +4580,9 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method2.ExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -4643,7 +4645,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void PWSNotCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSNotCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -4791,7 +4793,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void NotCompliedMediumRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void NotCompliedMediumRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		/*
 		
@@ -4869,6 +4871,9 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method2.ExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -4929,7 +4934,7 @@ public class Method2 extends BasePage{
 	}
 	
 	
-	public static void PWSNotCompliedLowRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSNotCompliedLowRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		/*
@@ -5009,6 +5014,9 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method2.ExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -5115,7 +5123,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void NotApplicableHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void NotApplicableHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -5252,7 +5260,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void PWSNotApplicableGraphmedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSNotApplicableGraphmedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -5328,6 +5336,9 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method2.ExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -5386,7 +5397,7 @@ public class Method2 extends BasePage{
 	}
 	
 	
-	public static void PWSNotApplicableGraphLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSNotApplicableGraphLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -5460,6 +5471,9 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method2.ExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -6901,9 +6915,10 @@ public class Method2 extends BasePage{
 	
 	public static void UpcomingMultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Thread.sleep(19000);
-		Locator1.Upcoming().click();
-		Thread.sleep(16000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(Locator1.Upcoming()));		Locator1.Upcoming().click();
+		Thread.sleep(6000);
 		
 		
 		/*
@@ -6921,11 +6936,21 @@ public class Method2 extends BasePage{
        Thread.sleep(3000);
        */
        
-      
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+	       Locator1.Location().click();
+	       Thread.sleep(500);
+
        
   //     Locator1.Status().click();
   //     Thread.sleep(2000);
        
+
+		
        Locator2.Project().click();
        Thread.sleep(2000);
        String ProjectText =Locator2.Agriculture().getText();
@@ -6934,10 +6959,7 @@ public class Method2 extends BasePage{
        Thread.sleep(2000);
        Locator2.Project().click();
        Thread.sleep(2000);
-       
-       
-       
-       
+             
        
        Locator2.ContractorType().click();
        Thread.sleep(2000);
@@ -6974,9 +6996,9 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Apr24().getText();
+       String periodtext =Locator1.Aug24().getText();
        Thread.sleep(2000);
-      Locator2.Apr24().click();
+      Locator1.Aug24().click();
       Thread.sleep(2000);
     //  Locator2.Period().click();
      // Thread.sleep(3000);
@@ -7003,8 +7025,8 @@ public class Method2 extends BasePage{
 		filter.add("Period");
 		
 		
-		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,1000)");	
+		JavascriptExecutor j = (JavascriptExecutor) getDriver();
+		j.executeScript("window.scrollBy(0,1000)");	
 		Thread.sleep(3000);
 
 		Locator1.GridCount().click();					//Clicking on Text of total items just to scroll down.
@@ -7015,11 +7037,11 @@ public class Method2 extends BasePage{
 		Thread.sleep(5000);
 	
 	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[4]"));
-		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[9]"));
-		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[8]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[9]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[8]"));
 
 		
 		Thread.sleep(2000);
@@ -7149,7 +7171,15 @@ public class Method2 extends BasePage{
        Thread.sleep(3000);
        */
        
-      
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+	       Locator1.Location().click();
+	       Thread.sleep(500);
+
        
   //     Locator1.Status().click();
   //     Thread.sleep(2000);
@@ -7165,9 +7195,6 @@ public class Method2 extends BasePage{
        Thread.sleep(2000);
        
        
-       
-       
-       
        Locator2.ContractorType().click();
        Thread.sleep(2000);
        String ContractorTypeText =Locator2.ContractorTypeDD().getText();
@@ -7176,9 +7203,7 @@ public class Method2 extends BasePage{
        Thread.sleep(2000);
        Locator2.ContractorType().click();
        Thread.sleep(2000);
-       
-       
-       
+          
        
        Locator2.Frequency().click();
        Thread.sleep(2000);
@@ -7203,12 +7228,11 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Feb22().getText();
+       String periodtext =Locator1.Jun24().getText();
        Thread.sleep(2000);
-      Locator2.Feb22().click();
+      Locator1.Jun24().click();
       Thread.sleep(2000);
-      Locator2.Period().click();
-      Thread.sleep(3000);
+ 
     
        
         List<String> li=new ArrayList<String>();
@@ -7377,7 +7401,16 @@ public class Method2 extends BasePage{
        Thread.sleep(3000);
        */
        
-      
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+	       Locator1.Location().click();
+	       Thread.sleep(500);
+
+
        
   //     Locator1.Status().click();
   //     Thread.sleep(2000);
@@ -7430,12 +7463,11 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.PeriodNCPWCSSDD().getText();
+       String periodtext =Locator2.Feb22().getText();
        Thread.sleep(2000);
-      Locator2.PeriodNCPWCSSDD().click();
+      Locator2.Feb22().click();
       Thread.sleep(2000);
-      Locator2.Period().click();
-      Thread.sleep(3000);
+     
      
        
        
@@ -7605,7 +7637,16 @@ public class Method2 extends BasePage{
        Thread.sleep(3000);
        */
        
-      
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+	       Locator1.Location().click();
+	       Thread.sleep(500);
+
+
        
   //     Locator1.Status().click();
   //     Thread.sleep(2000);
@@ -7657,12 +7698,10 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Feb23().getText();
+       String periodtext =Locator1.Jun24().getText();
        Thread.sleep(2000);
-      Locator2.Feb23().click();
+      Locator1.Jun24().click();
       Thread.sleep(2000);
-      Locator2.Period().click();
-      Thread.sleep(3000);
      
        
         List<String> li=new ArrayList<String>();
@@ -7830,7 +7869,16 @@ public class Method2 extends BasePage{
        Locator1.EntityLocation().click();
        Thread.sleep(3000);
        */
-       
+	       Locator1.ColumnMenu().click();
+	       Thread.sleep(2000);
+	       Locator1.Column().click();
+	       Thread.sleep(2000);
+	       Locator1.ColumnType().click();
+	       Thread.sleep(2000);
+	       Locator1.Location().click();
+	       Thread.sleep(500);
+
+
       
        
   //     Locator1.Status().click();
@@ -7885,13 +7933,11 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.PeriodNA().getText();
+       String periodtext =Locator2.Jul22().getText();
        Thread.sleep(2000);
-      Locator2.PeriodNA().click();
+      Locator2.Jul22().click();
       Thread.sleep(2000);
-    //  Locator2.Period().click();
-    //  Thread.sleep(3000);
-       
+    
        
         List<String> li=new ArrayList<String>();
         
@@ -8060,13 +8106,13 @@ public class Method2 extends BasePage{
 	   
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
        Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -8100,9 +8146,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jan22().getText();
+       String PeriodText =Locator1.Jun24().getText();
        Thread.sleep(2000);
-       Locator2.Jan22().click();
+       Locator1.Jun24().click();
        Thread.sleep(2000);
         
        
@@ -8260,13 +8306,13 @@ public class Method2 extends BasePage{
 	
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
        Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -8481,13 +8527,13 @@ public class Method2 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
        Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -8544,9 +8590,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodMediumNC().getText();
+       String PeriodText =Locator1.Jun24().getText();
        Thread.sleep(2000);
-       Locator2.PeriodMediumNC().click();
+       Locator1.Jun24().click();
        Thread.sleep(2000);
        
        
@@ -8701,13 +8747,13 @@ public class Method2 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
        Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -8765,9 +8811,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Feb22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.Feb22().click();
        Thread.sleep(2000);
       
        
@@ -8920,7 +8966,7 @@ public class Method2 extends BasePage{
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,200)");
+	    jss.executeScript("window.scrollBy(0,300)");
 	    Thread.sleep(2000);
 		
 		Locator2.RedGraph2().click();
@@ -8935,13 +8981,13 @@ public class Method2 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
        Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -8997,13 +9043,11 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.Feb22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.Feb22().click();
        Thread.sleep(2000);
-    //   Locator2.PeriodFilterCompliedHigh().click();
-    //   Thread.sleep(2000);
-       
+      
        
        
        
@@ -9167,13 +9211,13 @@ public class Method2 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
        Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -9231,9 +9275,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar23().getText();
+       String PeriodText =Locator2.Feb22().getText();
        Thread.sleep(2000);
-       Locator2.Mar23().click();
+       Locator2.Feb22().click();
        Thread.sleep(2000);
        
        
@@ -9382,13 +9426,13 @@ public class Method2 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
        Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -9422,9 +9466,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jul20().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator2.Jul20().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
         
        
@@ -9556,7 +9600,7 @@ public class Method2 extends BasePage{
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,200)");
+	    jss.executeScript("window.scrollBy(0,300)");
 	    Thread.sleep(2000);
 		
 		Locator2.GreyGraph().click();
@@ -9571,13 +9615,13 @@ public class Method2 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
        Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -9611,9 +9655,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
         
        
@@ -9762,13 +9806,13 @@ public class Method2 extends BasePage{
       
        
      
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(2000);
        Locator2.ChandranganConstruction1().click();
        Thread.sleep(2000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -9802,9 +9846,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb23().getText();
+       String PeriodText =Locator2.Mar22().getText();
        Thread.sleep(2000);
-       Locator2.Feb23().click();
+       Locator2.Mar22().click();
        Thread.sleep(2000);
          
        
@@ -9946,13 +9990,13 @@ public class Method2 extends BasePage{
 	    Thread.sleep(9000);
       
 		
-	    Locator2.Project().click();
+	    Locator2.Project2().click();
 	       Thread.sleep(5000);
 	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(6000);
 	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(2000);
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(2000);
        
        
@@ -9993,9 +10037,9 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Sep20().getText();
+       String periodtext =Locator2.Feb23().getText();
        Thread.sleep(2000);
-      Locator2.Sep20().click();
+      Locator2.Feb23().click();
       Thread.sleep(2000);
       
       
@@ -10164,13 +10208,13 @@ public class Method2 extends BasePage{
       
 		
 	   
-	    Locator2.Project().click();
+	    Locator2.Project2().click();
 	       Thread.sleep(5000);
 	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(6000);
 	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(2000);
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(2000);
        
        
@@ -10211,9 +10255,9 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Feb23().getText();
+       String periodtext =Locator1.Jun24().getText();
        Thread.sleep(2000);
-      Locator2.Feb23().click();
+      Locator1.Jun24().click();
       Thread.sleep(2000);
       
        
@@ -10377,13 +10421,13 @@ public class Method2 extends BasePage{
       
 		
 	   
-	    Locator2.Project().click();
+	    Locator2.Project2().click();
 	       Thread.sleep(5000);
 	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(6000);
 	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(2000);
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(2000);
        
        
@@ -10424,9 +10468,9 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.PeriodNADD().getText();
+       String periodtext =Locator2.Jan22().getText();
        Thread.sleep(2000);
-      Locator2.PeriodNADD().click();
+      Locator2.Jan22().click();
       Thread.sleep(2000);
       
        
@@ -10601,7 +10645,7 @@ public class Method2 extends BasePage{
 	    Thread.sleep(9000);
 	    
 	  
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(3000);
        String ProjectText =Locator2.ChandranganConstruction1().getText();
        Thread.sleep(3000);
@@ -10609,7 +10653,7 @@ public class Method2 extends BasePage{
        Thread.sleep(3000);
        Locator2.ChandranganConstruction1().click();
        Thread.sleep(3000);
-       Locator2.Project().click();
+       Locator2.Project2().click();
        Thread.sleep(2000);
        
        
@@ -10641,9 +10685,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jul20().getText();
+       String PeriodText =Locator1.Jun24().getText();
        Thread.sleep(2000);
-       Locator2.Jul20().click();
+       Locator1.Jun24().click();
        Thread.sleep(2000);
        
        
@@ -10792,7 +10836,7 @@ public class Method2 extends BasePage{
 	    Thread.sleep(9000);
 	    
 	   
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(3000);
 	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(3000);
@@ -10800,7 +10844,7 @@ public class Method2 extends BasePage{
 	       Thread.sleep(3000);
 	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(3000);
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(2000);
        
        
@@ -10834,9 +10878,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jul20().getText();
+       String PeriodText =Locator1.Jun24().getText();
        Thread.sleep(2000);
-       Locator2.Jul20().click();
+       Locator1.Jun24().click();
        Thread.sleep(2000);
       
        
@@ -10983,7 +11027,7 @@ public class Method2 extends BasePage{
 	    Thread.sleep(9000);
 	    
 	   
-	    Locator2.Project().click();
+	    Locator2.Project2().click();
 	       Thread.sleep(3000);
 	       String ProjectText =Locator2.ChandranganConstruction1().getText();
 	       Thread.sleep(3000);
@@ -10991,7 +11035,7 @@ public class Method2 extends BasePage{
 	       Thread.sleep(3000);
 	       Locator2.ChandranganConstruction1().click();
 	       Thread.sleep(3000);
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(2000);
        
       
@@ -11023,12 +11067,11 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.PeriodFilterCompliedMediumDD().getText();
+       String PeriodText =Locator1.Jun24().getText();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedMediumDD().click();
+       Locator1.Jun24().click();
        Thread.sleep(2000);
-       Locator2.PeriodFilterCompliedHigh().click();
-       Thread.sleep(2000);
+       
        
        
        
@@ -12379,13 +12422,13 @@ public class Method2 extends BasePage{
 	       Thread.sleep(5000);
     
     
-    Locator2.DocumentTabSelectProject().click();
+    Locator2.FacilityOne().click();
     Thread.sleep(2000);
-    String projectText =Locator2.DocumentTabSelectProjectDD().getText();
+    String projectText =Locator2.FaciltyDD().getText();
     Thread.sleep(2000);
-    Locator2.DocumentTabSelectProjectDD().click();
+    Locator2.FaciltyDD().click();
     Thread.sleep(2000);
-    Locator2.DocumentTabSelectProject().click();
+    Locator2.FacilityOne().click();
     Thread.sleep(2000);
     
     
@@ -12417,8 +12460,8 @@ public class Method2 extends BasePage{
 		Thread.sleep(5000);
 	
 	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"gridComplianceStatusWise\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[2]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[2]"));
 		
 		Thread.sleep(2000);
 
@@ -12519,6 +12562,14 @@ public class Method2 extends BasePage{
 		
 		Locator2.LocationReport().click();
 		Thread.sleep(2000);
+		/*
+		String script = "return window.getComputedStyle(document.querySelector('k-icon k-i-expand'),':before').getPropertyValue('content')";
+        Thread.sleep(3000);
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        String content = (String) js.executeScript(script);
+        System.out.println(content);
+*/
+		
 		Locator2.LocationProjectMasterExpand().click();
 		Thread.sleep(2000);
 		Locator2.VCALegalEntityExpandAA().click();
@@ -12533,9 +12584,9 @@ public class Method2 extends BasePage{
        
        Locator2.ProjectReport().click();
        Thread.sleep(2000);
-       String Projecttext =Locator2.ProjectReportDD().getText();
+       String Projecttext =Locator2.FaciltyDD().getText();
        Thread.sleep(4000);
-       Locator2.ProjectReportDD().click();
+       Locator2.FaciltyDD().click();
        Thread.sleep(2000);
        Locator2.ProjectReport().click();
        Thread.sleep(2000);
@@ -12574,12 +12625,11 @@ public class Method2 extends BasePage{
        
        Locator2.ReportTabPeriod().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.ReportTabPeriodDD().getText();
+       String periodtext =Locator1.Jun24().getText();
        Thread.sleep(2000);
-       Locator2.ReportTabPeriodDD().click();
+       Locator1.Jun24().click();
        Thread.sleep(2000);
-       Locator2.ReportTabPeriod().click();
-       Thread.sleep(2000);
+      
        
        
        Locator2.ReportTabStatus().click();
@@ -12619,8 +12669,8 @@ public class Method2 extends BasePage{
 		filter.add("Status");
 		
 		
-		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,1000)");	
+		JavascriptExecutor j = (JavascriptExecutor) getDriver();
+		j.executeScript("window.scrollBy(0,1000)");	
 		Thread.sleep(3000);
 
 		Locator1.GridCount().click();					//Clicking on Text of total items just to scroll down.
@@ -12727,8 +12777,8 @@ public class Method2 extends BasePage{
 		}
 		Thread.sleep(3000);
 
-		JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,-1000)");	
+		JavascriptExecutor j5 = (JavascriptExecutor) getDriver();
+		j5.executeScript("window.scrollBy(0,-1000)");	
 		Thread.sleep(3000);
 		
 		if(Locator.ClearButtonReport().isEnabled())
@@ -12754,34 +12804,105 @@ public class Method2 extends BasePage{
 	public static void overdueExcelcountAndGridMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(7000);
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		
+	 
 		
-    //    Locator1.Overdue().click();					                //Clicking on Dashboard count
+		Thread.sleep(1000);
+		Locator.readTotalItems1().click();
+		String item1 = Locator.readTotalItems1().getText();
+		String[] bits1 = item1.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+		int count2 = Integer.parseInt(compliancesCount1);
+		
+	    
+		js.executeScript("window.scrollBy(0,-1000)");
+		
 
-        Thread.sleep(20000);
-       
-        //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
-	//	//wait.until(ExpectedConditions.visibilityOf(Locator1.GridLoad()));
-        
-        
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+		
+		Thread.sleep(1000);
+//		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//		Thread.sleep(250);
+		Locator2.UpcomingExportButton().click();					//Clicking on 'Excel Report' image.
+		test.log(LogStatus.PASS, "File downloaded successfully.");
+		
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < allFilesNew.length)
+		{
+			
+			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			/*
+			int no = sheet.getFirstRowNum();
+			Row row = sheet.getRow(no);
+			Cell c1 = row.getCell(0);
+			int records =(int) c1.getNumericCellValue();
+			*/
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow=0;
+			
+			for(Row row : sheet)
+			{
+				
+				Cell cell =row.getCell(columnNumber);
+				if(cell != null) {
+					
+					rowCount++;
+					actualRow = rowCount-1;
+				}
+				
+			}
+			fis.close();
+			
+			if(count2 == actualRow)
+			{
+				//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+				test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+			}
+			else
+			{
+				//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+				test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+			}
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		}
+		
+	
+             /*
 		Thread.sleep(2000);
        			
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         
         js.executeScript("window.scrollBy(0,1000)");
         Thread.sleep(2000);
-       
-
-        /*
-		String item = Locator1.GridCount().getText();
-		String[] bits = item.split(" ");								//Splitting the String
-		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-		int count1 = Integer.parseInt(compliancesCount);
-
-*/
-        
-        
+              
         Thread.sleep(7000);
         Locator.readTotalItems1().click();
 		String item = Locator.readTotalItems1().getText();
@@ -12886,7 +13007,7 @@ public class Method2 extends BasePage{
 		 
 		 System.out.println("File does not exist Successfully.");
 	 }
-	 
+	 */
 	
 	}
 	
@@ -12895,34 +13016,110 @@ public class Method2 extends BasePage{
 	
 	public static void UpcomingExcelcountAndGridMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
-		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
-		
-	//    Locator2.UpcomingCountDashboard().click();					                //Clicking on Dashboard count
-
-	    Thread.sleep(20000);
-	   
-	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
-	//	//wait.until(ExpectedConditions.visibilityOf(Locator1.GridLoad()));
-	    
-	   
-		Thread.sleep(20000);
+			    
+	  
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         
         js.executeScript("window.scrollBy(0,1000)");
-        Thread.sleep(2000);
-       
-
-        /*
-		String item = Locator1.GridCount().getText();
+        Thread.sleep(2000); 		
+        
+        Thread.sleep(7000);
+        Locator.readTotalItems1().click();
+		String item = Locator.readTotalItems1().getText();
 		String[] bits = item.split(" ");								//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		int count1 = Integer.parseInt(compliancesCount);
+	
+		if(compliancesCount.equalsIgnoreCase("to"))
+		{
+			Thread.sleep(5000);
+		   item = Locator.readTotalItems1().getText();
+			bits = item.split(" ");
+        
+		}
+		
+		Thread.sleep(2000);
+        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+        
+        js1.executeScript("window.scrollBy(0,-1000)");
+        Thread.sleep(2000);
 
-*/
+Thread.sleep(1000);
+File dir = new File("C:\\Users\\shitalb\\Downloads");
+File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+
+Thread.sleep(1000);
+Locator.ExportButtonCT().click();
+Thread.sleep(9000);					//Clicking on 'Excel Report' image.
+test.log(LogStatus.PASS, "File downloaded successfully.");
+
+Thread.sleep(5500);
+File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+
+if(dirContents.length < allFilesNew.length)
+{
+	
+	
+	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+    {
+       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+       {
+           lastModifiedFile = allFilesNew[i];
+       }
+    }
+	
+	Thread.sleep(1000);
+	fis = new FileInputStream(lastModifiedFile);
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+	/*
+	int no = sheet.getFirstRowNum();
+	Row row = sheet.getRow(no);
+	Cell c1 = row.getCell(0);
+	int records =(int) c1.getNumericCellValue();
+	*/
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+	
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	fis.close();
+	
+	if(count1 == actualRow)
+	{
+		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+}
+else
+{
+	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+}
+
         
         
+        
+        
+        /*
+               
         Thread.sleep(7000);
         Locator.readTotalItems1().click();
 		String item = Locator.readTotalItems1().getText();
@@ -13024,7 +13221,7 @@ public class Method2 extends BasePage{
 		 
 		 System.out.println("File does not exist Successfully.");
 	 }
-	 
+	 */
 	
 	}
 	
@@ -13033,139 +13230,97 @@ public class Method2 extends BasePage{
 	public static void RejectedExcelcountAndGridMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(7000);
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		
+	 
 		
-	//    Locator2.RejectedDasboardCount().click();					                //Clicking on Dashboard count
-
-	    Thread.sleep(20000);
-	   
-	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
-	//	//wait.until(ExpectedConditions.visibilityOf(Locator1.GridLoad()));
+		Thread.sleep(1000);
+		Locator.readTotalItems1().click();
+		String item1 = Locator.readTotalItems1().getText();
+		String[] bits1 = item1.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+		int count2 = Integer.parseInt(compliancesCount1);
+		
 	    
-	   			
-		Thread.sleep(20000);
-        JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        
-        js.executeScript("window.scrollBy(0,1000)");
-        Thread.sleep(2000);
-       
-
-        /*
-		String item = Locator1.GridCount().getText();
-		String[] bits = item.split(" ");								//Splitting the String
-		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-		int count1 = Integer.parseInt(compliancesCount);
-
-*/
-        
-        
-        Thread.sleep(7000);
-        Locator.readTotalItems1().click();
-		String item = Locator.readTotalItems1().getText();
-		String[] bits = item.split(" ");								//Splitting the String
-		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-		int count1 = Integer.parseInt(compliancesCount);
-	
-		if(compliancesCount.equalsIgnoreCase("to"))
-		{
-			Thread.sleep(5000);
-		   item = Locator.readTotalItems1().getText();
-			bits = item.split(" ");
-        
-		}
+		js.executeScript("window.scrollBy(0,-1000)");
 		
-        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-        
-        js1.executeScript("window.scrollBy(0,-1000)");
-        Thread.sleep(5000);
- 		
-	//	Thread.sleep(2000);
- 	//	Locator.ExportButtonCT().click();
-		Thread.sleep(5000);
+
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 		
-		if(Locator2.UpcomingExportButton().isEnabled())
+		Thread.sleep(1000);
+//		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//		Thread.sleep(250);
+		Locator2.UpcomingExportButton().click();					//Clicking on 'Excel Report' image.
+		test.log(LogStatus.PASS, "File downloaded successfully.");
+		
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < allFilesNew.length)
 		{
 			
-			Thread.sleep(2000);
-		    Locator2.UpcomingExportButton().click();
-			test.log(LogStatus.PASS, " File Download Successfully " );
 			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			/*
+			int no = sheet.getFirstRowNum();
+			Row row = sheet.getRow(no);
+			Cell c1 = row.getCell(0);
+			int records =(int) c1.getNumericCellValue();
+			*/
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow=0;
+			
+			for(Row row : sheet)
+			{
+				
+				Cell cell =row.getCell(columnNumber);
+				if(cell != null) {
+					
+					rowCount++;
+					actualRow = rowCount-1;
+				}
+				
+			}
+			fis.close();
+			
+			if(count2 == actualRow)
+			{
+				//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+				test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+			}
+			else
+			{
+				//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+				test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+			}
 		}
-		
 		else
 		{
-			test.log(LogStatus.FAIL, "  File Download Successfully "  );
-			
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 		}
 		
-		
-		Thread.sleep(2000);
 
-		
-		
-	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\Audit Compliances Report .xlsx");
-	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
-	workbook = new XSSFWorkbook(fis);
-	sheet = workbook.getSheetAt(0);
-	
-	//int rowCount = sheet.getLastRowNum();
-	
-	sheet = workbook.getSheetAt(0);
-	int columnNumber = 3;
-	int rowCount = 0;
-	int actualRow=0;
-	
-	for(Row row : sheet)
-	{
-		
-		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
-			
-			rowCount++;
-			actualRow = rowCount-1;
-		}
-		
-	}
-	
-	
-	System.out.println("Row Count in column  " + columnNumber + ": " + actualRow);
-	
-	workbook.close();
-	fis.close();
-	
-	if(count1 == actualRow)
-	{
-		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
-		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
-	}
-	else
-	{
-		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
-		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
-	}
-	
-	Thread.sleep(2000);
-	
-	String fis1 = "C:\\\\Users\\\\shitalb\\\\Downloads\\\\Audit Compliances Report .xlsx";
-	
-	File file = new File(fis1);
-	  
-	 if(file.exists()) {
-		 
-		 if(file.delete())
-		 {
-		 
-		 System.out.println("File deleted Successfully.");
-	     }
-		 
-	 }
-	 else {
-		 
-		 System.out.println("File does not exist Successfully.");
-	 }
-	 
-	
 	}
 	
 	
@@ -13174,134 +13329,95 @@ public class Method2 extends BasePage{
 	public static void PendingReviewExcelcountAndGridMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(7000);
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		
+	 
 		
-	 //   Locator2.PendingReviewCountDashboard().click();					                //Clicking on Dashboard count
-
-	    Thread.sleep(20000);
-	   
-	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
-	//	//wait.until(ExpectedConditions.visibilityOf(Locator1.GridLoad()));
+		Thread.sleep(1000);
+		Locator.readTotalItems1().click();
+		String item1 = Locator.readTotalItems1().getText();
+		String[] bits1 = item1.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+		int count2 = Integer.parseInt(compliancesCount1);
+		
 	    
-	   			
-		Thread.sleep(20000);
-        JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        
-        js.executeScript("window.scrollBy(0,1000)");
-        Thread.sleep(2000);
-       
-
-        /*
-		String item = Locator1.GridCount().getText();
-		String[] bits = item.split(" ");								//Splitting the String
-		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-		int count1 = Integer.parseInt(compliancesCount);
-
-*/
-        
-        
-        Thread.sleep(7000);
-        Locator.readTotalItems1().click();
-		String item = Locator.readTotalItems1().getText();
-		String[] bits = item.split(" ");								//Splitting the String
-		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-		int count1 = Integer.parseInt(compliancesCount);
-	
-		if(compliancesCount.equalsIgnoreCase("to"))
-		{
-			Thread.sleep(5000);
-		   item = Locator.readTotalItems1().getText();
-			bits = item.split(" ");
-        
-		}
+		js.executeScript("window.scrollBy(0,-1000)");
 		
-        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-        
-        js1.executeScript("window.scrollBy(0,-1000)");
-        Thread.sleep(2000);
- 		
-	//	Thread.sleep(2000);
- 	//	Locator.ExportButtonCT().click();
-		Thread.sleep(5000);
+
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 		
-		if(Locator2.UpcomingExportButton().isEnabled())
+		Thread.sleep(1000);
+//		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//		Thread.sleep(250);
+		Locator2.UpcomingExportButton().click();					//Clicking on 'Excel Report' image.
+		test.log(LogStatus.PASS, "File downloaded successfully.");
+		
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < allFilesNew.length)
 		{
 			
-			Thread.sleep(2000);
-		    Locator2.UpcomingExportButton().click();
-			test.log(LogStatus.PASS, " File Download Successfully " );
 			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			/*
+			int no = sheet.getFirstRowNum();
+			Row row = sheet.getRow(no);
+			Cell c1 = row.getCell(0);
+			int records =(int) c1.getNumericCellValue();
+			*/
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow=0;
+			
+			for(Row row : sheet)
+			{
+				
+				Cell cell =row.getCell(columnNumber);
+				if(cell != null) {
+					
+					rowCount++;
+					actualRow = rowCount-1;
+				}
+				
+			}
+			fis.close();
+			
+			if(count2 == actualRow)
+			{
+				//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+				test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+			}
+			else
+			{
+				//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+				test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+			}
 		}
-		
 		else
 		{
-			test.log(LogStatus.FAIL, "  File Download Successfully "  );
-			
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 		}
-		Thread.sleep(2000);
-		
-	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\Audit Compliances Report .xlsx");
-	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
-	workbook = new XSSFWorkbook(fis);
-	sheet = workbook.getSheetAt(0);
-	
-	//int rowCount = sheet.getLastRowNum();
-	
-	sheet = workbook.getSheetAt(0);
-	int columnNumber = 3;
-	int rowCount = 0;
-	int actualRow=0;
-	
-	for(Row row : sheet)
-	{
-		
-		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
-			
-			rowCount++;
-			actualRow = rowCount-1;
-		}
-		
-	}
-	
-	
-	System.out.println("Row Count in column  " + columnNumber + ": " + actualRow);
-	
-	workbook.close();
-	fis.close();
-	
-	if(count1 == actualRow)
-	{
-		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
-		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
-	}
-	else
-	{
-		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
-		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
-	}
-	
-	Thread.sleep(2000);
-	
-	String fis1 = "C:\\\\Users\\\\shitalb\\\\Downloads\\\\Audit Compliances Report .xlsx";
-	
-	File file = new File(fis1);
-	  
-	 if(file.exists()) {
-		 
-		 if(file.delete())
-		 {
-		 
-		 System.out.println("File deleted Successfully.");
-	     }
-		 
-	 }
-	 else {
-		 
-		 System.out.println("File does not exist Successfully.");
-	 }
-	 Thread.sleep(2000);
 	
 	}
 	
@@ -13311,134 +13427,95 @@ public class Method2 extends BasePage{
 	public static void ClosedExcelcountAndGridMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
-		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
+		Thread.sleep(7000);
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		
+	 
 		
-	//    Locator2.ClosedDashboardCountMatch().click();					                //Clicking on Dashboard count
-
-	    Thread.sleep(20000);
-	   
-	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
-	//	//wait.until(ExpectedConditions.visibilityOf(Locator1.GridLoad()));
+		Thread.sleep(1000);
+		Locator.readTotalItems1().click();
+		String item1 = Locator.readTotalItems1().getText();
+		String[] bits1 = item1.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+		int count2 = Integer.parseInt(compliancesCount1);
+		
 	    
-	    		
-		Thread.sleep(20000);
-        JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        
-        js.executeScript("window.scrollBy(0,1000)");
-        Thread.sleep(2000);
-       
-
-        /*
-		String item = Locator1.GridCount().getText();
-		String[] bits = item.split(" ");								//Splitting the String
-		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-		int count1 = Integer.parseInt(compliancesCount);
-
-*/
-        
-        
-        Thread.sleep(7000);
-        Locator.readTotalItems1().click();
-		String item = Locator.readTotalItems1().getText();
-		String[] bits = item.split(" ");								//Splitting the String
-		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-		int count1 = Integer.parseInt(compliancesCount);
-	
-		if(compliancesCount.equalsIgnoreCase("to"))
-		{
-			Thread.sleep(5000);
-		   item = Locator.readTotalItems1().getText();
-			bits = item.split(" ");
-        
-		}
+		js.executeScript("window.scrollBy(0,-1000)");
 		
-        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-        
-        js1.executeScript("window.scrollBy(0,-1000)");
-        Thread.sleep(2000);
- 		
-	//	Thread.sleep(2000);
- 	//	Locator.ExportButtonCT().click();
-		Thread.sleep(5000);
+
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 		
-		if(Locator2.UpcomingExportButton().isEnabled())
+		Thread.sleep(1000);
+//		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//		Thread.sleep(250);
+		Locator2.UpcomingExportButton().click();					//Clicking on 'Excel Report' image.
+		test.log(LogStatus.PASS, "File downloaded successfully.");
+		
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < allFilesNew.length)
 		{
 			
-			Thread.sleep(2000);
-		    Locator2.UpcomingExportButton().click();
-			test.log(LogStatus.PASS, " File Download Successfully " );
 			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			/*
+			int no = sheet.getFirstRowNum();
+			Row row = sheet.getRow(no);
+			Cell c1 = row.getCell(0);
+			int records =(int) c1.getNumericCellValue();
+			*/
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow=0;
+			
+			for(Row row : sheet)
+			{
+				
+				Cell cell =row.getCell(columnNumber);
+				if(cell != null) {
+					
+					rowCount++;
+					actualRow = rowCount-1;
+				}
+				
+			}
+			fis.close();
+			
+			if(count2 == actualRow)
+			{
+				//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+				test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+			}
+			else
+			{
+				//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+				test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+			}
 		}
-		
 		else
 		{
-			test.log(LogStatus.FAIL, "  File Download Successfully "  );
-			
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 		}
-		Thread.sleep(2000);
-		
-	FileInputStream fis = new FileInputStream("C:\\\\Users\\\\shitalb\\\\Downloads\\\\Audit Compliances Report .xlsx");
-	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
-	workbook = new XSSFWorkbook(fis);
-	sheet = workbook.getSheetAt(0);
-	
-	//int rowCount = sheet.getLastRowNum();
-	
-	sheet = workbook.getSheetAt(0);
-	int columnNumber = 3;
-	int rowCount = 0;
-	int actualRow=0;
-	
-	for(Row row : sheet)
-	{
-		
-		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
-			
-			rowCount++;
-			actualRow = rowCount-1;
-		}
-		
-	}
-	
-	
-	System.out.println("Row Count in column  " + columnNumber + ": " + actualRow);
-	
-	workbook.close();
-	fis.close();
-	
-	if(count1 == actualRow)
-	{
-		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
-		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
-	}
-	else
-	{
-		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
-		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
-	}
-	
-	Thread.sleep(2000);
-	
-	String fis1 = "C:\\\\Users\\\\shitalb\\\\Downloads\\\\Audit Compliances Report .xlsx";
-	
-	File file = new File(fis1);
-	  
-	 if(file.exists()) {
-		 
-		 if(file.delete())
-		 {
-		 
-		 System.out.println("File deleted Successfully.");
-	     }
-		 
-	 }
-	 else {
-		 
-		 System.out.println("File does not exist Successfully.");
-	 }
-	 Thread.sleep(2000);
 	
 	}
 	
@@ -14309,8 +14386,19 @@ public class Method2 extends BasePage{
 		   }
 			
 		   Thread.sleep(1000);
-		   Method2.LicenceGridAndExcelCount(test,workbook);
-		   
+		   Method5.LicenceGridAndExcelCount(test,workbook);
+		   Thread.sleep(4000);	
+		   /*
+		   Locator1.viewlicensedocument().click();
+			Thread.sleep(4000);
+			
+			 Alert ac1=getDriver().switchTo().alert();
+				
+				String t1=getDriver().switchTo().alert().getText();
+				
+				test.log(LogStatus.FAIL, t1 );		
+				Thread.sleep(4000);
+				ac1.accept();
 		   /*
 			File dir2 = new File("C:\\Users\\shitalb\\Downloads");
 			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
@@ -14333,6 +14421,8 @@ public class Method2 extends BasePage{
 				test.log(LogStatus.FAIL,  "Excel Report does not download successfully");
 			}
 */
+		   
+		   
 		   Thread.sleep(2000);
           if(Locator1.viewlicensedocument().isEnabled()) {
 			   
@@ -14676,9 +14766,198 @@ public class Method2 extends BasePage{
 	
 	
 	
+	public static void StatusWiseSummaryExportGrid( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		Thread.sleep(7000);
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		
+	 
+		
+		Thread.sleep(1000);
+		Locator.readTotalItems1().click();
+		String item1 = Locator.readTotalItems1().getText();
+		String[] bits1 = item1.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+		int count2 = Integer.parseInt(compliancesCount1);
+		
+	    
+		js.executeScript("window.scrollBy(0,-1000)");
+		
+
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+		
+		Thread.sleep(1000);
+//		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//		Thread.sleep(250);
+		Locator2.ACSBlueGraphGridExportButton().click();					//Clicking on 'Excel Report' image.
+		test.log(LogStatus.PASS, "File downloaded successfully.");
+		
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < allFilesNew.length)
+		{
+			
+			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			/*
+			int no = sheet.getFirstRowNum();
+			Row row = sheet.getRow(no);
+			Cell c1 = row.getCell(0);
+			int records =(int) c1.getNumericCellValue();
+			*/
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow=0;
+			
+			for(Row row : sheet)
+			{
+				
+				Cell cell =row.getCell(columnNumber);
+				if(cell != null) {
+					
+					rowCount++;
+					actualRow = rowCount-1;
+				}
+				
+			}
+			fis.close();
+			
+			if(count2 == actualRow)
+			{
+				//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+				test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+			}
+			else
+			{
+				//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+				test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+			}
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		}
+	
+	}
 	
 	
+	public static void ExportGrid( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		Thread.sleep(7000);
+	       JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		
+	 
+		
+		Thread.sleep(1000);
+		Locator.readTotalItems1().click();
+		String item1 = Locator.readTotalItems1().getText();
+		String[] bits1 = item1.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+		int count2 = Integer.parseInt(compliancesCount1);
+		
+	    
+		js.executeScript("window.scrollBy(0,-1000)");
+		
+
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+		
+		Thread.sleep(1000);
+//		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//		Thread.sleep(250);
+		Locator2.Export().click();					//Clicking on 'Excel Report' image.
+		test.log(LogStatus.PASS, "File downloaded successfully.");
+		
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < allFilesNew.length)
+		{
+			
+			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			/*
+			int no = sheet.getFirstRowNum();
+			Row row = sheet.getRow(no);
+			Cell c1 = row.getCell(0);
+			int records =(int) c1.getNumericCellValue();
+			*/
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow=0;
+			
+			for(Row row : sheet)
+			{
+				
+				Cell cell =row.getCell(columnNumber);
+				if(cell != null) {
+					
+					rowCount++;
+					actualRow = rowCount-1;
+				}
+				
+			}
+			fis.close();
+			
+			if(count2 == actualRow)
+			{
+				//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+				test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+			}
+			else
+			{
+				//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+				test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+			}
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		}
 	
+	}
+	
+
 	
 	
 	

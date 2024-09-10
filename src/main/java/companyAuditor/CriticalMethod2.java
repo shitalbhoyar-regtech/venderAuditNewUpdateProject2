@@ -1,5 +1,8 @@
 package companyAuditor;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -88,16 +91,17 @@ public class CriticalMethod2 extends BasePage{
 	public static void UpcomingdashboardAndGridCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 	
-	//WebWait wait = new WebWait( 1000);
-	Thread.sleep(26000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(Locator2.UpcomingCountDashboard()));
 	
 	int open = Integer.parseInt(Locator2.UpcomingCountDashboard().getText());	//Reading Dashboard count.
     Locator2.UpcomingCountDashboard().click();					                //Clicking on Dashboard count
-
-    Thread.sleep(20000);
+    Thread.sleep(2000);
+ //   WebElement Grid = getDriver().findElement(By.xpath("//div[@id='grid"));
    
-    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
-	//wait.until(ExpectedConditions.visibilityOf(Locator1.GridLoad()));
+  //    wait.until(ExpectedConditions.visibilityOf(Grid));
+	wait.until(ExpectedConditions.visibilityOf(Locator2.Gridload()));
     
     
 	Thread.sleep(2000);
@@ -150,8 +154,10 @@ public class CriticalMethod2 extends BasePage{
 	Method2.UpcomingExcelcountAndGridMatch(test,workbook);
 	Thread.sleep(2000);
 	
-	Method2.UpcomingClearButton( test, workbook);
+	Method2.UpcomingClearButton( test, workbook);	
+	Thread.sleep(2000);
 	
+	Method2.UpcomingEditButton( test, workbook);	
 	Thread.sleep(2000);
 	
 	
@@ -252,7 +258,7 @@ public class CriticalMethod2 extends BasePage{
 	
 	public static void UpcomingEditButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		
+		/*
 		Thread.sleep(9000);
 		Locator2.UpcomingCountDashboard().click();
 		Thread.sleep(9000);
@@ -263,7 +269,7 @@ public class CriticalMethod2 extends BasePage{
 		
 		// Locator2.ViewButtonPR().click();
 	    
-		
+		*/
 		
 		if(Locator2.UpcomingEditButton().isEnabled())
 		{
@@ -293,7 +299,9 @@ public class CriticalMethod2 extends BasePage{
 	public static void UpcomingViewDownloadButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Thread.sleep(15000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(Locator2.UpcomingCountDashboard()));
 		Locator2.UpcomingCountDashboard().click();
 		Thread.sleep(7000);
 		
@@ -335,7 +343,7 @@ public class CriticalMethod2 extends BasePage{
 	
 	public static void OverdueEditButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		
+		/*
 		Thread.sleep(20000);
 		Locator2.OverdueDasboardCount().click();
 		Thread.sleep(20000);
@@ -374,11 +382,11 @@ public class CriticalMethod2 extends BasePage{
 	
 	public static void RejectedEditButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		
+		/*
 		Thread.sleep(20000);
 		Locator2.RejectedDasboardCount().click();
 		Thread.sleep(20000);
-	/*	
+	
 		Locator2.EditButtonPendingReview().click();
 		Thread.sleep(9000);
 		
@@ -450,8 +458,8 @@ public class CriticalMethod2 extends BasePage{
 	
 	public static void ClosedReviewEditButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		
-		Thread.sleep(20000);
+		/*
+		Thread.sleep(2000);
 		Locator2.ClosedDashboardCountMatch().click();
 		Thread.sleep(20000);
 	/*	
@@ -495,13 +503,15 @@ public class CriticalMethod2 extends BasePage{
 	{
 		
 		
-	//	//WebWait wait = new WebWait( 1000);
-		Thread.sleep(26000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(Locator2.OverdueDasboardCount()));
+	
 		
 		int open = Integer.parseInt(Locator2.OverdueDasboardCount().getText());	//Reading Dashboard count.
 	    Locator2.OverdueDasboardCount().click();					                //Clicking on Dashboard count
 
-	    Thread.sleep(20000);
+	    Thread.sleep(5000);
 	   
 	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
 	//	//wait.until(ExpectedConditions.visibilityOf(Locator1.GridLoad()));
@@ -559,8 +569,8 @@ public class CriticalMethod2 extends BasePage{
 	    Method2.OverdueClearButton( test, workbook);
 	    Thread.sleep(2000);
 	    
-		
-	    
+	    CriticalMethod2.OverdueEditButton(test,workbook);
+	    Thread.sleep(2000);
 	    
 	    
 	    
@@ -731,8 +741,8 @@ public class CriticalMethod2 extends BasePage{
 	    Method2.RejectedClearButton( test, workbook);
 	    Thread.sleep(2000);
 	    
-	    
-	    
+	    CriticalMethod2.RejectedEditButton(test,workbook);
+	    Thread.sleep(500);
 	    
 		
 		
@@ -1452,7 +1462,8 @@ public class CriticalMethod2 extends BasePage{
 		Method2.ClearButtonClosed( test, workbook);
 		Thread.sleep(2000);
 		
-		
+		CriticalMethod2.ClosedReviewEditButton(test,workbook);
+		Thread.sleep(2000);
 		
 		
 		
@@ -1708,13 +1719,13 @@ public class CriticalMethod2 extends BasePage{
 		Locator2.Document().click();
 		Thread.sleep(20000);
 		
-		Locator2.SelectLocationDocument().click();
+		Locator2.FacilityOne().click();
 		Thread.sleep(2000);
 		
 	//	Locator2.SelectLocationDropDocument().click();
 	//	Thread.sleep(2000);
 		
-		Locator2.SelectLocationDropDownDocument().click();
+		Locator2.FaciltyDD().click();
 		Thread.sleep(2000);
 		
 		
@@ -1852,14 +1863,15 @@ public class CriticalMethod2 extends BasePage{
 		Thread.sleep(20000);
 		Locator2.Report().click();
 		Thread.sleep(20000);
-		Thread.sleep(1000);
+		
 		
 		File dir5 = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents5 = dir5.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(9000);
 	     Locator.ActionColmnReportDownload().click();
-		
+    //     wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
+
 	 	Thread.sleep(18000);
 		File dir6 = new File("C:\\Users\\shitalb\\Downloads");
 		File[] allFilesNew6 = dir6.listFiles();						//Counting number of files in directory after download
@@ -1874,7 +1886,7 @@ public class CriticalMethod2 extends BasePage{
 			test.log(LogStatus.FAIL, "Excel Format Does Not Downloaded Successfully");
 		}		
 
-	   Thread.sleep(1000);
+	   Thread.sleep(10000);
 	   
 	   Locator.Status1().click();
 	   Thread.sleep(500);
@@ -1936,24 +1948,7 @@ public class CriticalMethod2 extends BasePage{
 		
 		Locator2.MoreReport().click();
 		Thread.sleep(4000);
-		
-		/*
-		if(Locator2.CloseAuditReportR().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-			Locator2.CloseAuditReportR().click();
-			test.log(LogStatus.PASS, "Closed Audit Report Download Successfully" );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, " Closed Audit Report Download Successfully"  );
-			
-		}
-		*/
-		
+				
 		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
@@ -1974,7 +1969,15 @@ public class CriticalMethod2 extends BasePage{
 			test.log(LogStatus.FAIL, "Closed Audit Report Does Not Downloaded Successfully");
 		}		
 	   Thread.sleep(5000);
+	   
+	   
+	   
+	   Locator2.Facilty().click();	
+		Thread.sleep(2000);
 		
+		Locator2.FaciltyDD().click();	
+		Thread.sleep(2000);
+			
 		Locator2.MonthReport().click();	
 		Thread.sleep(2000);
 		
@@ -3817,7 +3820,7 @@ public class CriticalMethod2 extends BasePage{
 	
 	
 	
-	public static void AuditCompletionStatusRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void AuditCompletionStatusRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -3828,7 +3831,7 @@ public class CriticalMethod2 extends BasePage{
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,400)");
+	    jss.executeScript("window.scrollBy(0,470)");
 	    Thread.sleep(2000);
 		
 		
@@ -3860,6 +3863,7 @@ public class CriticalMethod2 extends BasePage{
 		String[] bits = item.split(" ");								//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
 		int count1 = Integer.parseInt(compliancesCount);
+		
 
 		
 		
@@ -3890,6 +3894,33 @@ public class CriticalMethod2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    try {
+            // Create an instance of Robot class
+            Robot robot = new Robot();
+
+            // Define how many times you want to zoom out
+            int zoomOutSteps = 3;
+
+            // Perform the zoom out action multiple times
+            for (int i = 0; i < zoomOutSteps; i++) {
+                // Press Ctrl key
+                robot.keyPress(KeyEvent.VK_CONTROL);
+                // Press '-' key
+                robot.keyPress(KeyEvent.VK_MINUS);
+                // Release '-' key
+                robot.keyRelease(KeyEvent.VK_CONTROL);
+
+                // Optional: Wait a bit between zoom steps to observe the effect
+                Thread.sleep(500);
+            }
+
+        } catch (AWTException | InterruptedException e) {
+            e.printStackTrace();
+        }
+	    
+		Method2.StatusWiseSummaryExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -3911,23 +3942,6 @@ public class CriticalMethod2 extends BasePage{
 		else
 		{
 			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
-			
-		}
-		
-		
-		
-		if(Locator2.ACSREDGraphGridExportButton().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator2.ACSREDGraphGridExportButton().click();
-			test.log(LogStatus.PASS, " File Download Successfully " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
 		
@@ -4224,7 +4238,7 @@ public class CriticalMethod2 extends BasePage{
 	
 	
 	
-	public static void CompliedHighRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void CompliedHighRisk( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -4304,6 +4318,9 @@ public class CriticalMethod2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method2.ExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -4655,7 +4672,7 @@ public class CriticalMethod2 extends BasePage{
 	
 	
 	
-	public static void PWSNotCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSNotCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException, NumberFormatException
 	{
 		
 		
@@ -4735,6 +4752,9 @@ public class CriticalMethod2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method2.ExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -5164,7 +5184,7 @@ public class CriticalMethod2 extends BasePage{
 	
 	
 	
-	public static void NotApplicableHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void NotApplicableHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException, NumberFormatException
 	{
 		
 		
@@ -5240,6 +5260,8 @@ public class CriticalMethod2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    Method2.ExportGrid( test, workbook);
+		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -6076,7 +6098,177 @@ public class CriticalMethod2 extends BasePage{
 	}
 	
 	
+	public static void PRChangeReviewerstatus( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+			
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(Locator2.PendingReviewCountDashboard()));
+		int open = Integer.parseInt(Locator2.PendingReviewCountDashboard().getText());	//Reading Dashboard count.
+        Locator2.PendingReviewCountDashboard().click();	
+   		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(Locator2.EditButtonnPendingReview()));
+
+		Locator2.EditButtonnPendingReview().click();
+		Thread.sleep(4000);
+     //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));		
+		Method2.SwitchToNewlyOpenedWindow(test, workbook);
+		
+		Thread.sleep(5000);
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(4000);
+        	       
+        wait.until(ExpectedConditions.visibilityOf(Locator1.AuditPerformpageGrid()));
+       			
+		String item = Locator1.AuditPerformpageGrid().getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+		
+		Locator1.Paging().click();
+		Thread.sleep(500);
+		Locator1.PagingDD().click();
+		Thread.sleep(500);
+
+		
+        JavascriptExecutor j = (JavascriptExecutor) getDriver();
+        
+        j.executeScript("window.scrollBy(0,-1200)");
+        Thread.sleep(4000);
+        	       
+		
+        for (int i = 1; i <= count1; i++) {
+            // Construct the dynamic XPath
+            String dynamicXPath = "//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[" + i + "]/td[4]/span";
+            String dynamicXPathselectfile = "(//table//*[@id='ComplaineDocUpload'])[" + i + "]";
+            WebElement selectfile = getDriver().findElement(By.xpath(dynamicXPathselectfile));
+
+		    sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+			int row = 0;
+			Thread.sleep(500);
+			Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+			Cell c1 = null;
+			
+			Thread.sleep(2000);
+			row0 = sheet.getRow(3);
+			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+			selectfile.sendKeys(c1.getStringCellValue()); // Writing Task title
+			Thread.sleep(2000);
+		
+	        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+			alert.accept();			
+				Thread.sleep(2000);
+
+
+            // Find the edit icon element using the dynamic XPath
+            WebElement editIcon = getDriver().findElement(By.xpath(dynamicXPath));
+            // Perform the click action on the edit icon
+            editIcon.click();
+            Thread.sleep(2000);
+            Locator2.SelectStatus().click();
+    		Thread.sleep(5000);
+    		
+    		Locator2.SelectStatusDD().click();
+    		Thread.sleep(5000);	
+
+
+        // call method here to click on either close or select
+
+        }
+        
+		WebElement element = Locator1.CheckBox();	      
+		//JavascriptExecutor to click element
+	      JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+	      jse.executeScript("arguments[0].click();", element);
+	      boolean b = element.isSelected();
+	      if (b) {
+	         System.out.println("Checkbox is not checked");
+	      }else {
+	         System.out.println("Checkbox is checked");
+	      }
+		
+	      Thread.sleep(5000);
+	      JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+	        
+	        js1.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(4000);
+		
+		Locator2.Save1().click();
+		Thread.sleep(2000);
+		/*
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+			alert.accept();
+			Thread.sleep(2000);
+			Locator1.SubmitForAuditor().click();
+			Thread.sleep(2000);
+			*/
+			Alert ac=getDriver().switchTo().alert();
+			
+			String t1=getDriver().switchTo().alert().getText();
+					
+			test.log(LogStatus.PASS, t1 );
+					
+			Thread.sleep(4000);
+			ac.accept();
+			
+			
+			Thread.sleep(3000);
+			Method2.ClosedNewlyOpenedWindow(test, workbook);
+
+	//		String parentwindow = getDriver().getWindowHandle();			
+			
+		//	getDriver().switchTo().window(parentwindow);
+			
+		//	Locator1.CloseOpenWindow().click();
+			Thread.sleep(9000);
+			 getDriver().navigate().refresh();
+			 Thread.sleep(2000);
+		      
+		      JavascriptExecutor j2 = (JavascriptExecutor) getDriver();
+		        
+		        j2.executeScript("window.scrollBy(0,1000)");
+		        Thread.sleep(4000);
+
+			
+			String item1 = Locator1.Overduegrid().getText();
+			String[] bits1 = item1.split(" ");								//Splitting the String
+			String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+			int count = Integer.parseInt(compliancesCount1);
+            System.out.println(count);
+			
+			
+			if(count == (open-1))
+				
+			{
+							
+			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+							
+			test.log(LogStatus.PASS, "Dashboard Count = "+open+" | Displayed records from grid = "+count);
+						
+			}
+						
+			else
+						
+			{
+							
+			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+							
+			test.log(LogStatus.FAIL, "Dashboard Count = "+open+" | Displayed records from grid = "+count);
+						
+			}
+
+			Thread.sleep(500);
+		
+
+	}
 	
+	
+	
+		
+
 	
 	
 	
