@@ -2141,7 +2141,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void GraphCountMatch( ExtentTest test, XSSFWorkbook workbook, WebElement element,WebElement graphElement) throws InterruptedException
+	public static void GraphCountMatch( ExtentTest test, XSSFWorkbook workbook, WebElement element,WebElement graphElement) throws InterruptedException, IOException
 	{
 		
 		
@@ -2347,7 +2347,7 @@ public class Method2 extends BasePage{
 	}
 	
 	
-	public static void YellowGraphDashboardGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void YellowGraphDashboardGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 	/*	
@@ -2422,6 +2422,8 @@ public class Method2 extends BasePage{
 	    
 	    js1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(9000);
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -2489,7 +2491,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void GreenInGreenGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GreenInGreenGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		/*
 		//WebWait wait = new WebWait(, 1000);
@@ -2564,7 +2566,8 @@ public class Method2 extends BasePage{
 	    js1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(9000);
 		
-		
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
 		Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
@@ -2776,7 +2779,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void RedInGreenGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void RedInGreenGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		/*
@@ -2850,6 +2853,8 @@ public class Method2 extends BasePage{
 	    
 	    js1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(9000);
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -2982,7 +2987,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void RedInYellowCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void RedInYellowCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		/*
@@ -3059,7 +3064,8 @@ public class Method2 extends BasePage{
 	    js1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(9000);
 		
-		
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
 		
@@ -3176,7 +3182,7 @@ public class Method2 extends BasePage{
 	}
 	
 	
-	public static void RedInRedGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void RedInRedGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -3392,7 +3398,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void GreyGraphCountMatchGreen( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GreyGraphCountMatchGreen( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		/*
@@ -3473,6 +3479,9 @@ public class Method2 extends BasePage{
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
 	    
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
+	    
 	    Thread.sleep(2000);
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -3532,7 +3541,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void GreyGraphYellowCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GreyGraphYellowCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -3610,6 +3619,9 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -3672,7 +3684,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void GreyInRedCountMtch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GreyInRedCountMtch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -4039,6 +4051,8 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	  //  Method1.GraphExcelAuditCount(test,workbook);
+	  //  Thread.sleep(2000);
 	    
 	    Method2.StatusWiseSummaryExportGrid( test, workbook);
 		Thread.sleep(2000);
@@ -4160,6 +4174,9 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	//    Method1.GraphExcelAuditCount(test,workbook);
+	 //   Thread.sleep(2000);
 	    
 	    Method2.StatusWiseSummaryExportGrid( test, workbook);
 		Thread.sleep(2000);
@@ -5837,7 +5854,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void GreyInRedCountMtchA( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GreyInRedCountMtchA( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -7155,7 +7172,18 @@ public class Method2 extends BasePage{
 		Locator1.Overdue().click();
 		Thread.sleep(16000);
 		
-		
+		Locator1.Location11().click();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD().click();
+	       Thread.sleep(10000);
+	       Locator1.LocationDD1().click();
+	       Thread.sleep(1000);
+	       String LocationText =Locator1.LocationDD3().getText();
+	       Thread.sleep(1000);
+	       Locator1.LocationDD3().click();
+	       Thread.sleep(1000);
+	       Locator1.Location11().click();
+	       Thread.sleep(1000);
 		/*
 		Locator1.EntityLocation().click();
 		Thread.sleep(500);
@@ -7177,13 +7205,19 @@ public class Method2 extends BasePage{
 	       Thread.sleep(2000);
 	       Locator1.ColumnType().click();
 	       Thread.sleep(2000);
-	       Locator1.Location().click();
-	       Thread.sleep(500);
+	    //   Locator1.Location().click();
+	    //   Thread.sleep(500);
 
        
-  //     Locator1.Status().click();
-  //     Thread.sleep(2000);
+       Locator1.ColumnLocation().click();
+      Thread.sleep(2000);
 		
+      Locator2.Period().click();
+      Thread.sleep(2000);
+      String periodtext =Locator1.Jun24().getText();
+      Thread.sleep(2000);
+     Locator1.Jun24().click();
+     Thread.sleep(2000);
 		
        Locator2.Project().click();
        Thread.sleep(2000);
@@ -7226,17 +7260,12 @@ public class Method2 extends BasePage{
        Thread.sleep(4000);
        
        
-       Locator2.Period().click();
-       Thread.sleep(2000);
-       String periodtext =Locator1.Jun24().getText();
-       Thread.sleep(2000);
-      Locator1.Jun24().click();
-      Thread.sleep(2000);
+       
  
     
        
         List<String> li=new ArrayList<String>();
-        
+        li.add(LocationText);
         li.add(ProjectText);
         li.add(ContractorTypeText);
         li.add(FrequencyText);
@@ -7247,6 +7276,7 @@ public class Method2 extends BasePage{
         Thread.sleep(3000);
         
 		List<String> filter=new ArrayList<String>();	
+		filter.add("Location/Entity");
 		filter.add("Project");
 		filter.add("ContractorType");
 		filter.add("Frequency");
@@ -7265,12 +7295,12 @@ public class Method2 extends BasePage{
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
-		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[1]"));
-		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[4]"));
-		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[6]"));
-		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[9]"));
-		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id=\"grid\"]/div[2]/table/tbody/tr[1]/td[8]"));
+		List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[10]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[4]"));
+		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[9]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[8]"));
 
 		
 		Thread.sleep(2000);
@@ -7282,27 +7312,30 @@ public class Method2 extends BasePage{
 			HashSet<String> fail=new LinkedHashSet<>();
 			List<WebElement> raw=new ArrayList<WebElement>();
 			
-			
+			if(i==0)
+			{
+				raw.addAll(entitycol);
+			}
 
-				if(i==0)
+			else if(i==1)
 				{
 					raw.addAll(projectcol);
 				}
-			else if(i==1)
+			else if(i==2)
 				{
 					raw.addAll(contractorcol);
 				}
-			else if(i==2)
+			else if(i==3)
 			{
 				raw.addAll(frequencycol);
 			}
 				
-			else if(i==3)
+			else if(i==4)
 			{
 				raw.addAll(statuscol);
 			}
 				
-			else if(i==4)
+			else if(i==5)
 			{
 				raw.addAll(periodcol);
 			}
@@ -8091,7 +8124,7 @@ public class Method2 extends BasePage{
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,200)");
+	    jss.executeScript("window.scrollBy(0,300)");
 	    Thread.sleep(2000);
 		
 		Locator2.GreenGraph().click();
@@ -8146,9 +8179,9 @@ public class Method2 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator1.Jun24().getText();
+       String PeriodText =Locator2.Jun24().getText();
        Thread.sleep(2000);
-       Locator1.Jun24().click();
+       Locator2.Jun24().click();
        Thread.sleep(2000);
         
        
@@ -10004,9 +10037,9 @@ public class Method2 extends BasePage{
        
        Locator2.ContractorType().click();
        Thread.sleep(2000);
-       String ContractorTypeText =Locator2.ContractorTypeDD().getText();
+       String ContractorTypeText =Locator2.ReportTabContractorTypeDD().getText();
        Thread.sleep(2000);
-       Locator2.ContractorTypeDD().click();
+       Locator2.ReportTabContractorTypeDD().click();
        Thread.sleep(2000);
        Locator2.ContractorType().click();
        Thread.sleep(2000);
@@ -10037,9 +10070,9 @@ public class Method2 extends BasePage{
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Feb23().getText();
+       String periodtext =Locator2.Feb24().getText();
        Thread.sleep(2000);
-      Locator2.Feb23().click();
+      Locator2.Feb24().click();
       Thread.sleep(2000);
       
       
@@ -12576,7 +12609,7 @@ public class Method2 extends BasePage{
 		Thread.sleep(3000);
 		String locationtext =Locator2.VCALegalEntityAADDGetText().getText();
 	    Thread.sleep(2000);
-	   Locator2.VCALegalEntityAADD().click();
+	   Locator2.VCALegalEntityAADDGetText().click();
        Thread.sleep(2000);
        Locator2.LocationReport().click();
 	   Thread.sleep(2000);
@@ -13115,113 +13148,6 @@ else
 }
 
         
-        
-        
-        
-        /*
-               
-        Thread.sleep(7000);
-        Locator.readTotalItems1().click();
-		String item = Locator.readTotalItems1().getText();
-		String[] bits = item.split(" ");								//Splitting the String
-		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-		int count1 = Integer.parseInt(compliancesCount);
-	
-		if(compliancesCount.equalsIgnoreCase("to"))
-		{
-			Thread.sleep(5000);
-		   item = Locator.readTotalItems1().getText();
-			bits = item.split(" ");
-        
-		}
-		
-        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-        
-        js1.executeScript("window.scrollBy(0,-1000)");
-        Thread.sleep(2000);
- 		
-	//	Thread.sleep(2000);
- 	//	Locator.ExportButtonCT().click();
-		Thread.sleep(9000);
-		
-		if(Locator2.UpcomingExportButton().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator2.UpcomingExportButton().click();
-			test.log(LogStatus.PASS, " File Download Successfully " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  File Download Successfully "  );
-			
-		}
-		
-		
-		Thread.sleep(4000);
-	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\Audit Compliances Report .xlsx");
-	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
-	workbook = new XSSFWorkbook(fis);
-	sheet = workbook.getSheetAt(0);
-	
-	//int rowCount = sheet.getLastRowNum();
-	
-	sheet = workbook.getSheetAt(0);
-	int columnNumber = 3;
-	int rowCount = 0;
-	int actualRow=0;
-	
-	for(Row row : sheet)
-	{
-		
-		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
-			
-			rowCount++;
-			actualRow = rowCount-1;
-		}
-		
-	}
-	
-	
-	System.out.println("Row Count in column  " + columnNumber + ": " + actualRow);
-	
-	workbook.close();
-	fis.close();
-	
-	if(count1 == actualRow)
-	{
-		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
-		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
-	}
-	else
-	{
-		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
-		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
-	}
-	
-	Thread.sleep(2000);
-	
-	String fis1 = "C:\\\\Users\\\\shitalb\\\\Downloads\\\\Audit Compliances Report .xlsx";
-	
-	File file = new File(fis1);
-	  
-	 if(file.exists()) {
-		 
-		 if(file.delete())
-		 {
-		 
-		 System.out.println("File deleted Successfully.");
-	     }
-		 
-	 }
-	 else {
-		 
-		 System.out.println("File does not exist Successfully.");
-	 }
-	 */
 	
 	}
 	

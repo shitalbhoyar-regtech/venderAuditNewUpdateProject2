@@ -20,6 +20,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import companyManagement.Method5;
 import companyProjectDirector.Method4;
 import companyProjectHead.CriticalMethod3;
 import companyProjectHead.Locator3;
@@ -96,7 +97,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	
 	
 	
-	
+	/*
 	
 	@Test(priority = 1) 
 	void ProjectsCountGridCount1() throws InterruptedException, IOException
@@ -220,8 +221,21 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	}
 	
 	
-	
 	@Test(priority = 10) 
+	void ContractorwiseclosedAuditGraph1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Bar Graph - ‘Contractor Wise’ Bar Graph for Closed Audits - Suraj Contractor - Count Verification");
+		
+		Method3.ContractorwiseclosedAuditGraph(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+
+	
+	
+	@Test(priority = 11) 
 	void CTWAuditStatusSummeryOverdue1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Bar Graph - Stake Holder Wise - Audit Status Summary - Canteen - Count Verification");
@@ -275,7 +289,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	}
 	
 	
-	
+	*/
 	
 	
 	
@@ -295,7 +309,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	
 	
 	
-//	@Test(priority = 15) 
+	@Test(priority = 15) 
 	void PWCSSubcontractorCompliedHigh1() throws InterruptedException, IOException
 	{
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
@@ -322,7 +336,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	
 	
 	
-//	@Test(priority = 16) 
+	@Test(priority = 16) 
 	void PWCSSubcontractorNotCompliedMedium1() throws InterruptedException, IOException
 	{
 		
@@ -350,7 +364,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	
 	
 	
-//	@Test(priority = 17) 
+	@Test(priority = 17) 
 	void PWCSSubcontractorNotApplicableMedium1() throws InterruptedException, IOException
 	{
 	//	WebWait wait = new WebWait( 1000);
@@ -373,7 +387,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	
+	/*
 	
 	@Test(priority = 20) 
 	void MyWorkspaceLicense1() throws InterruptedException, IOException
@@ -532,7 +546,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	
+	*/
 	
 	
 	

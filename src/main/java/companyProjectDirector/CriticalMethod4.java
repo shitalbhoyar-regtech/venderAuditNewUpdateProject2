@@ -43,7 +43,8 @@ public class CriticalMethod4 extends BasePage{
 		Thread.sleep(1000);
 		Locator4.Location().click();
 		Thread.sleep(2000);
-		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Locationdetailinfo']/div[1]/div/table/thead/tr/th[1]/a[2]"))); 
+
 if(Locator4.LocationColumn().isDisplayed()&&Locator4.AdressColumn().isDisplayed()&&Locator4.EmailColumn().isDisplayed()&&Locator4.ContactPersonColumn().isDisplayed()) {
 			
 			test.log(LogStatus.PASS, "The Column of Location, Adress, Email and contact person should be seen in the Location popup");

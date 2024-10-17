@@ -21,12 +21,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-
 
 import companyAdmin.Locator;
 import companyAuditor.Locator2;
@@ -207,7 +207,6 @@ public class Method1 extends BasePage{
 		int count1 = Integer.parseInt(compliancesCount);
 
 		
-		
 		if(open == count1)
 					
 		{
@@ -287,149 +286,94 @@ public class Method1 extends BasePage{
 	public static void UpcomingAuditExcelCountGridCount1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
-		//WebWait wait = new WebWait( 1000);
-		/*
-		Thread.sleep(20000);
+	      JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		
+	 
 		
-        Locator1.Upcoming().click();					                //Clicking on Dashboard count
-        Thread.sleep(20000);
-        
-       
-		//wait.until(ExpectedConditions.visibilityOf(Locator1.GridLoad()));
-        
-		Thread.sleep(4000);
-       			
-        JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        
-        js.executeScript("window.scrollBy(0,1000)");
-        Thread.sleep(5000);
-       
-/
-        */
-        
-        Thread.sleep(7000);
-        Locator.readTotalItems1().click();
-		String item = Locator.readTotalItems1().getText();
-		String[] bits = item.split(" ");								//Splitting the String
-		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-		int count1 = Integer.parseInt(compliancesCount);
-	
-		if(compliancesCount.equalsIgnoreCase("to"))
-		{
-			Thread.sleep(5000);
-		   item = Locator.readTotalItems1().getText();
-			bits = item.split(" ");
-        
-		}
+		Thread.sleep(1000);
+		Locator.readTotalItems1().click();
+		String item1 = Locator.readTotalItems1().getText();
+		String[] bits1 = item1.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+		int count2 = Integer.parseInt(compliancesCount1);
 		
-        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-        
-        js1.executeScript("window.scrollBy(0,-1000)");
-        Thread.sleep(2000);
- 		
-		Thread.sleep(4000);
- 	//	Locator.ExportButtonCT().click();
-	//	Thread.sleep(9000);
-		/*
-		if(Locator1.UpcomingExport().isEnabled())
+	    
+		js.executeScript("window.scrollBy(0,-1000)");
+		
+
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+		
+		Thread.sleep(1000);
+//		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//		Thread.sleep(250);
+		Locator.ExportButtonCT().click();					//Clicking on 'Excel Report' image.
+		test.log(LogStatus.PASS, "File downloaded successfully.");
+		
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < allFilesNew.length)
 		{
 			
-			Thread.sleep(2000);
-		 Locator1.UpcomingExport().click();
-			test.log(LogStatus.PASS, " Export Button Is Clickable" );
 			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			/*
+			int no = sheet.getFirstRowNum();
+			Row row = sheet.getRow(no);
+			Cell c1 = row.getCell(0);
+			int records =(int) c1.getNumericCellValue();
+			*/
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow=0;
+			
+			for(Row row : sheet)
+			{
+				
+				Cell cell =row.getCell(columnNumber);
+				if(cell != null) {
+					
+					rowCount++;
+					actualRow = rowCount-1;
+				}
+				
+			}
+			fis.close();
+			
+			if(count2 == actualRow)
+			{
+				//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+				test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+			}
+			else
+			{
+				//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+				test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+			}
 		}
-		
 		else
 		{
-			test.log(LogStatus.FAIL, " Export Button From Workspace "  );
-			
-		}
-		*/
-        File dir9 = new File("C:\\Users\\shitalb\\Downloads");
- 		File[] dirContents9 = dir9.listFiles();						//Counting number of files in directory before download
- 		
- 		Thread.sleep(3000);
- 		Locator1.UpcomingExport().click();
- 		
- 	 	Thread.sleep(9000);
- 		File dir0 = new File("C:\\Users\\shitalb\\Downloads");
- 		File[] allFilesNew0 = dir0.listFiles();						//Counting number of files in directory after download
- 	  
-        Thread.sleep(3000);
- 	   if (dirContents9.length < allFilesNew0.length) {
- 			test.log(LogStatus.PASS,  " File Download Successfully");
- 		}
- 	   else
- 	   {
- 		 	test.log(LogStatus.FAIL, "  File Does Not Download Successfully "   );
-
- 		}   
- 	   Thread.sleep(4000);
-
-		
-		
-	FileInputStream fis = new FileInputStream("C:\\Users\\shitalb\\Downloads\\Audit Compliances Report .xlsx");
-	//Workbook workbook = new XSSFWorkbook(fileInputStream);	
-	workbook = new XSSFWorkbook(fis);
-	sheet = workbook.getSheetAt(0);
-	
-	//int rowCount = sheet.getLastRowNum();
-	
-	sheet = workbook.getSheetAt(0);
-	int columnNumber = 3;
-	int rowCount = 0;
-	int actualRow=0;
-	
-	for(Row row : sheet)
-	{
-		
-		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
-			
-			rowCount++;
-			actualRow = rowCount-1;
-		}
-		
-	}
-	
-	
-	System.out.println("Row Count in column  " + columnNumber + ": " + actualRow);
-	
-	workbook.close();
-	fis.close();
-	
-	if(count1 == actualRow)
-	{
-		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
-		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
-	}
-	else
-	{
-		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
-		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
-	}
-	
-	Thread.sleep(2000);
-	
-	String fis1 = "C:\\Users\\shitalb\\Downloads\\Audit Compliances Report .xlsx";
-	
-	File file = new File(fis1);
-	  
-	 if(file.exists()) {
-		 
-		 if(file.delete())
-		 {
-		 
-		 System.out.println("File deleted Successfully.");
-	     }
-		 
-	 }
-	 else {
-		 
-		 System.out.println("File does not exist Successfully.");
-	 }
-	 
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		} 
 	 Thread.sleep(2000);
      
 	    
@@ -1499,7 +1443,7 @@ Thread.sleep(4000);
 		
 		*/
         
-        Method1.OverdueAuditExcelCountGridCount1(test,workbook);
+        Method1.UpcomingAuditExcelCountGridCount1(test,workbook);
 	    
 	    Thread.sleep(4000);
 	    
@@ -1902,7 +1846,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		}
 	    */
         
-		Method1.RejectedAuditExcelCountGridCount1(test,workbook);
+		Method1.UpcomingAuditExcelCountGridCount1(test,workbook);
 
 	    Thread.sleep(4000);
 	    
@@ -2405,7 +2349,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		}
 		*/
         
-		Method1.PendingReviewAuditExcelCountGridCount1(test,workbook);
+		Method1.UpcomingAuditExcelCountGridCount1(test,workbook);
 
 	    Thread.sleep(4000);
 	    
@@ -2898,31 +2842,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		
 		
       Thread.sleep(4000);
-		/*
-	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
-	    
-	    jss.executeScript("window.scrollBy(0,-1000)");
-	    Thread.sleep(2000);
 		
-	    
-	    
-	    if(Locator1.UpcomingExport().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		 Locator1.UpcomingExport().click();
-			test.log(LogStatus.PASS, " Export Button Is Clickable" );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, " Export Button From Workspace "  );
-			
-		}
-	    */
       
-      Method1.ClosedAuditExcelCountGridCount1(test,workbook);
+      Method1.UpcomingAuditExcelCountGridCount1(test,workbook);
 	  Thread.sleep(4000);
 	    
 	    Locator1.ClearButtonStateRejected().click();
@@ -3761,30 +3683,15 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void ExportReportReport( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void ExportReportReport( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
 		Thread.sleep(20000);
 		Locator1.ReportButton().click();
 		Thread.sleep(20000);
+		
 		/*
-		if(Locator1.ReportExportButton().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		 Locator1.ReportExportButton().click();
-			test.log(LogStatus.PASS, "  File Download Sucessfully  " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  File Download Sucessfully  "  );
-			
-		}
-		*/
-		
 		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
@@ -3806,6 +3713,98 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		}		
 
 	Thread.sleep(2000);
+	*/
+	
+    JavascriptExecutor js = (JavascriptExecutor) getDriver();
+    
+    js.executeScript("window.scrollBy(0,1000)");
+    Thread.sleep(2000);
+		
+
+
+Thread.sleep(1000);
+Locator.readTotalItems1().click();
+String item1 = Locator.readTotalItems1().getText();
+String[] bits1 = item1.split(" ");								//Splitting the String
+String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+int count2 = Integer.parseInt(compliancesCount1);
+
+
+js.executeScript("window.scrollBy(0,-1000)");
+
+
+Thread.sleep(1000);
+File dir = new File("C:\\Users\\shitalb\\Downloads");
+File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+
+Thread.sleep(1000);
+//CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//Thread.sleep(250);
+Locator1.ReportExportButton().click();					//Clicking on 'Excel Report' image.
+test.log(LogStatus.PASS, "File downloaded successfully.");
+
+Thread.sleep(5500);
+File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+
+if(dirContents.length < allFilesNew.length)
+{
+	
+	
+	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+    {
+       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+       {
+           lastModifiedFile = allFilesNew[i];
+       }
+    }
+	
+	Thread.sleep(1000);
+	fis = new FileInputStream(lastModifiedFile);
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+	/*
+	int no = sheet.getFirstRowNum();
+	Row row = sheet.getRow(no);
+	Cell c1 = row.getCell(0);
+	int records =(int) c1.getNumericCellValue();
+	*/
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+	
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	fis.close();
+	
+	if(count2 == actualRow)
+	{
+		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+		test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+	}
+}
+else
+{
+	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+} 
+Thread.sleep(2000);
+
 		
 		
 	}
@@ -3843,50 +3842,25 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 
 	Thread.sleep(2000);
 	
-		/*
-		if(Locator1.ClosedAuditReportMRR().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		 Locator1.ClosedAuditReportMRR().click();
-			test.log(LogStatus.PASS, " Closed Audit Report Download Sucessfully  " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, " Closed Audit Report Download Sucessfully  "  );
-			
-		}
-		*/
-		
 		Thread.sleep(7000);
 		Locator.SelectMonth().click();
 		Thread.sleep(2000);
 		
 		Locator.SelectMonthDD().click();
 		Thread.sleep(2000);
-		/*
-		if(Locator.MouthCloseReportR().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-			Locator.MouthCloseReportR().click();
-			test.log(LogStatus.PASS, "Month Wise Closed Audit Report File Download Successfully" );
-			
-		}
 		
-		else
-		{
-			test.log(LogStatus.FAIL, " Month Wise Closed Audit Report File Download Successfully"  );
-			
-		}
-		*/
+		Locator.SelectProject().click();
+		Thread.sleep(2000);
+		
+		Locator.SelectProjectDD().click();
+		Thread.sleep(2000);
+		
+		
 		
 		File dir = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
-		Thread.sleep(9000);
+		Thread.sleep(3000);
 	     Locator.MouthCloseReportR().click();
 		
 	 	Thread.sleep(18000);
@@ -4126,7 +4100,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void GraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -4196,7 +4170,10 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 		    
 		    js1.executeScript("window.scrollBy(0,-1000)");
-		    Thread.sleep(2000);    
+		    Thread.sleep(2000);  
+		    
+		    Method1.GraphExcelCount(test,workbook);
+			  Thread.sleep(4000);
 		
 		
 		Locator1.ClearContractorRedGraphGrid().click();
@@ -4274,7 +4251,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void YellowGraphDashboardGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void YellowGraphDashboardGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 	/*	
@@ -4349,6 +4326,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    
 	    js1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(9000);
+	    
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
 		
 		Locator1.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -4416,7 +4396,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void GreenInGreenGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GreenInGreenGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		/*
 		//WebWait wait = new WebWait(, 1000);
@@ -4491,6 +4471,8 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    js1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(9000);
 		
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
 		
 		Thread.sleep(2000);
 		
@@ -4838,7 +4820,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void RedInRedGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void RedInRedGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -4912,7 +4894,8 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    js1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(9000);
 		
-		
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -4936,11 +4919,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			test.log(LogStatus.FAIL, "   Clear Button Working Properly "  );
 			
 		}
-		
-		
-		
-		
-		
+				
         Thread.sleep(2000);
 		
 		if(Locator2.GreenViewButton().isEnabled())
@@ -5271,7 +5250,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void GreyInRedCountMtch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GreyInRedCountMtch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException, NumberFormatException
 	{
 		
 		
@@ -5345,6 +5324,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -5515,6 +5497,10 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Method1.GraphExcelAuditCount(test,workbook);
+	    Thread.sleep(2000);
+	    
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -5540,7 +5526,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		}
 		Thread.sleep(2000);
 		
-		
+		/*
 		if(Locator2.ACSREDGraphGridExportButton().isEnabled())
 		{
 			
@@ -5555,7 +5541,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			test.log(LogStatus.FAIL, "  File Download Successfully "  );
 			
 		}
-		
+		*/
 		
 		Thread.sleep(4000);
 
@@ -5852,7 +5838,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void PWSCompliedJKHills( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSCompliedJKHills( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -5935,6 +5921,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		    
 		    jss1.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);
+		    
+		    Method1.GraphExcelCount(test,workbook);
+			Thread.sleep(4000);
 			
 			Locator1.ClearContractorRedGraphGrid().click();
 			Thread.sleep(2000);
@@ -5988,8 +5977,6 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 			
 			Thread.sleep(3000);
 			
-			
-			
 			Method1.PWSCompliedJKHillsMedium(test, workbook);
 			
 			Thread.sleep(2000);
@@ -6010,7 +5997,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void PWSCompliedJKHillsMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSCompliedJKHillsMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -6089,6 +6076,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		    
 		    jss1.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);
+		    
+		    Method1.GraphExcelCount(test,workbook);
+			  Thread.sleep(4000);
 			
 			Locator1.ClearContractorRedGraphGrid().click();
 			Thread.sleep(2000);
@@ -6147,7 +6137,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void PWSCompliedJKHillsLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSCompliedJKHillsLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -6226,6 +6216,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		    
 		    jss1.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);
+		    
+		    Method1.GraphExcelCount(test,workbook);
+			  Thread.sleep(4000);
 			
 			Locator1.ClearContractorRedGraphGrid().click();
 			Thread.sleep(2000);
@@ -6288,7 +6281,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void PWSNotCompliedJKHills( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSNotCompliedJKHills( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -6372,6 +6365,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		    
 		    jss1.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);
+		    
+		    Method1.GraphExcelCount(test,workbook);
+			Thread.sleep(4000);
 			
 			Locator1.ClearContractorRedGraphGrid().click();
 			Thread.sleep(2000);
@@ -6446,7 +6442,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void PWSNotCompliedJKHillsMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSNotCompliedJKHillsMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -6512,6 +6508,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		    
 		    jss1.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);
+		    
+		    Method1.GraphExcelCount(test,workbook);
+			Thread.sleep(4000);
 			
 			Locator1.ClearContractorRedGraphGrid().click();
 			Thread.sleep(2000);
@@ -6570,7 +6569,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void PWSNotCompliedJKHillsLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSNotCompliedJKHillsLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -6635,6 +6634,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		    
 		    jss1.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);
+		    
+		    Method1.GraphExcelCount(test,workbook);
+			Thread.sleep(4000);
 			
 			Locator1.ClearContractorRedGraphGrid().click();
 			Thread.sleep(2000);
@@ -6697,7 +6699,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void PWSNotApplicableJKHillHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSNotApplicableJKHillHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -6781,6 +6783,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		    
 		    jss1.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);
+		    
+		    Method1.GraphExcelCount(test,workbook);
+			Thread.sleep(4000);
 			
 			Locator1.ClearContractorRedGraphGrid().click();
 			Thread.sleep(2000);
@@ -6854,7 +6859,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 	
 	
-	public static void PWSNotApplicableJKHillsMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSNotApplicableJKHillsMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -6940,6 +6945,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		    
 		    jss1.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);
+		    
+		    Method1.GraphExcelCount(test,workbook);
+			Thread.sleep(4000);
 			
 			Locator1.ClearContractorRedGraphGrid().click();
 			Thread.sleep(2000);
@@ -7005,7 +7013,7 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 	
 
 	
-	public static void PWSNotApplicableJKHillsLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void PWSNotApplicableJKHillsLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -7091,6 +7099,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
 		    
 		    jss1.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);
+		    
+		    Method1.GraphExcelCount(test,workbook);
+			Thread.sleep(4000);
 			
 			Locator1.ClearContractorRedGraphGrid().click();
 			Thread.sleep(2000);
@@ -12288,9 +12299,9 @@ if(Locator1.transactionLogRemark().isDisplayed()&&Locator1.transactionLogCreated
        
        Locator1.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String Periodtext =Locator2.Jul22().getText();
+       String Periodtext =Locator2.Apr24().getText();
        Thread.sleep(2000);
-       Locator2.Jul22().click();
+       Locator2.Apr24().click();
        Thread.sleep(2000);
   
        
@@ -13254,9 +13265,9 @@ Thread.sleep(2000);
        
        Locator1.ContractorType1().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator1.ContractorTypeDD().getText();
+       String ContractorTypeText =Locator1.ContractorTypeDD1().getText();
        Thread.sleep(1000);
-       Locator1.ContractorTypeDD().click();
+       Locator1.ContractorTypeDD1().click();
        Thread.sleep(1000);
        Locator1.ContractorType1().click();
        Thread.sleep(2000);
@@ -13265,9 +13276,9 @@ Thread.sleep(2000);
        
        Locator1.PeriodFilterCompliedHigh().click();
        Thread.sleep(1000);
-       String PeriodText =Locator1.Jun24().getText();
+       String PeriodText =Locator2.Jan24().getText();
        Thread.sleep(1000);
-       Locator1.Jun24().click();
+       Locator2.Jan24().click();
        Thread.sleep(2000);
        
        
@@ -15278,7 +15289,7 @@ Thread.sleep(2000);
 		
 		getDriver().switchTo().frame(Locator1.Frame());
 	    Thread.sleep(9000);
-      
+      /*
 	       Locator1.ColumnMenu().click();
 	       Thread.sleep(2000);
 	       Locator1.Column().click();
@@ -15310,7 +15321,7 @@ Thread.sleep(2000);
 	       Thread.sleep(1000);
 	       Locator1.State1().click();
 	       Thread.sleep(2000);
-
+*/
 
 		
 	    Locator1.Project1().click();
@@ -15328,9 +15339,9 @@ Thread.sleep(2000);
        
        Locator2.ContractorType().click();
        Thread.sleep(1000);
-       String ContractorTypeText =Locator2.DocumentTabSelectContractor().getText();
+       String ContractorTypeText =Locator2.ReportTabContractorTypeDD().getText();
        Thread.sleep(1000);
-       Locator2.DocumentTabSelectContractor().click();
+       Locator2.ReportTabContractorTypeDD().click();
        Thread.sleep(1000);
        Locator2.ContractorType().click();
        Thread.sleep(2000);
@@ -15361,17 +15372,17 @@ Thread.sleep(2000);
        
        Locator2.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Jan23().getText();
+       String periodtext =Locator1.Aug24().getText();
        Thread.sleep(2000);
-      Locator2.Jan23().click();
+      Locator1.Aug24().click();
       Thread.sleep(2000);
       
       
       
       List<String> li=new ArrayList<String>();
       
-      li.add(LocationText);
-      li.add(StateText);     
+  //    li.add(LocationText);
+  //    li.add(StateText);     
       li.add(ProjectText);
       li.add(ContractorTypeText);
       li.add(FrequencyText);
@@ -15381,8 +15392,8 @@ Thread.sleep(2000);
       Thread.sleep(3000);
       
 		List<String> filter=new ArrayList<String>();	
-		filter.add("Location");
-		filter.add("State");
+	//	filter.add("Location");
+	//	filter.add("State");
 		filter.add("Facility");
 		filter.add("ContractorType");
 		filter.add("Frequency");
@@ -15401,8 +15412,8 @@ Thread.sleep(2000);
 		if(!s.equalsIgnoreCase("No items to display")) {
 		Thread.sleep(5000);
 	
-		List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[9]"));
-		List<WebElement> statecol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[10]"));
+	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[9]"));
+	//	List<WebElement> statecol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[10]"));
 		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
 		List<WebElement> contractorcol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[3]"));
 		List<WebElement> frequencycol=getDriver().findElements(By.xpath("//*[@id='gridAuditStatusWise']/div[2]/table/tbody/tr[1]/td[4]"));
@@ -15417,7 +15428,7 @@ Thread.sleep(2000);
 			HashSet<String> pass=new LinkedHashSet<>();
 			HashSet<String> fail=new LinkedHashSet<>();
 			List<WebElement> raw=new ArrayList<WebElement>();
-
+/*
 			if(i==0)
 			{
 				raw.addAll(entitycol);
@@ -15426,27 +15437,28 @@ Thread.sleep(2000);
 			{
 				raw.addAll(statecol);
 			}
-		else if(i==2)
+			*/
+		 if(i==0)
 		{
 			raw.addAll(projectcol);
 		}
 			
-		else if(i==3)
+		else if(i==1)
 		{
 			raw.addAll(contractorcol);
 		}
 			
-		else if(i==4)
+		else if(i==2)
 		{
 			raw.addAll(frequencycol);
 		}
 			
-		else if(i==5)
+		else if(i==3)
 		{
 			raw.addAll(statuscol);
 		}
 
-		else if(i==6)
+		else if(i==4)
 		{
 			raw.addAll(periodcol);
 		}
@@ -22875,7 +22887,7 @@ Thread.sleep(3000);
 		 Locator1.Location11().click();
 	       Thread.sleep(1000);
 	       Locator1.LocationDD().click();
-	       Thread.sleep(1000);
+	       Thread.sleep(10000);
 	       Locator1.LocationDD1().click();
 	       Thread.sleep(1000);
 	       String LocationText =Locator1.LocationDD3().getText();
@@ -23058,6 +23070,140 @@ Thread.sleep(3000);
 		   
 			
 	}
+	
+	
+	
+	public static void AddLicenceCT( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(10000);
+			
+		   Locator1.MyWorkspace().click();
+		   Thread.sleep(4000);
+		   
+		//   wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='gridLicense']"))); 
+		//	Thread.sleep(2000);
+			
+			Locator1.License().click();
+			Thread.sleep(2000);
+			
+			Locator1.AddButtonLic().click();
+			Thread.sleep(500);
+			Locator1.ProjectContractor().click();
+			Thread.sleep(500);
+			Locator1.ProjectContractoDD().click();
+			Thread.sleep(500);	
+	//	Locator.LicenceDetailsCT().click();
+	//	Thread.sleep(3000);
+		
+	//	Locator.AddLicenceDetailsCT().click();
+	//	Thread.sleep(3000);
+		
+		Locator1.AddLicenceTypeCT1().click();
+		Thread.sleep(3000);
+		
+		Locator.LicenceTypeLD().click();
+		Thread.sleep(3000);
+		
+		
+		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+		int row = 0;
+		Thread.sleep(500);
+		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+		Cell c1 = null;
+		
+		Locator.Registration().sendKeys("WOCT78HJ"); // Writing Task title
+		Thread.sleep(3000);
+		
+		Locator.Calender1().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender1DD().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender2().click();
+		Thread.sleep(3000);
+		
+		Locator1.NextMonthTri().click();
+		Thread.sleep(3000);	
+		
+		Locator.Calender1DD().click();
+		Thread.sleep(3000);
+		
+		
+	//	row0 = sheet.getRow(60);
+	//	c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.AddLicenceHeadCountCT().sendKeys("100"); // Writing Task title
+		Thread.sleep(3000);
+		
+		row0 = sheet.getRow(34);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.Remark().sendKeys("Nill"); // Writing Task title
+		Thread.sleep(3000);
+		
+		row0 = sheet.getRow(36);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.UploadDocumentL().sendKeys(c1.getStringCellValue()); // Writing Task title
+		Thread.sleep(4000);
+		
+		Locator.SubmitLicence().click();
+		
+		
+		Thread.sleep(4000);
+		/*
+		 Alert ac2=getDriver().switchTo().alert();
+			
+			String t3=getDriver().switchTo().alert().getText();
+			
+			test.log(LogStatus.PASS, t3 );
+			
+			Thread.sleep(20000);
+			ac2.accept();
+		
+			Thread.sleep(4000);
+			*/
+			 try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 50); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac1=getDriver().switchTo().alert();
+		    		
+		    		String t=getDriver().switchTo().alert().getText();
+		    		
+		   		 if(t.equalsIgnoreCase("Record Saved Successfully") ) 
+				 {
+						test.log(LogStatus.PASS, t);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, t);
+						
+						
+					} 
+		    		
+		    		Thread.sleep(5000);
+		            ac1.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+		        } finally {
+		        	Locator.ClosetLicence().click();
+		    		
+		    		Thread.sleep(3000);
+		        	
+		        }
+
+
+		
+		
+		
+	}
+	
 	
 	public static void MyWorkspaceLicenseSearch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
@@ -24873,30 +25019,7 @@ JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
-		
-		Locator2.ClearContractorRedGraphGrid().click();
-		Thread.sleep(2000);
-		
-		
-		Locator2.ClearContractorDDRedGraphGrid().click();
-		Thread.sleep(2000);
-		
-		
-		if(Locator2.ACSREDGraphGridClearButton().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator2.ACSREDGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Working Properly " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
-			
-		}
-		
+				
 		Thread.sleep(2000);
 		File dir = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
@@ -24919,7 +25042,28 @@ JavascriptExecutor js = (JavascriptExecutor) getDriver();
 			test.log(LogStatus.FAIL,  "File did not downloaded");
 		}
 	   Thread.sleep(1000);
-
+		Locator2.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator2.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator2.ACSREDGraphGridClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator2.ACSREDGraphGridClearButton().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+			
+		}
 		
 		Thread.sleep(4000);
 
@@ -25009,29 +25153,6 @@ JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
 		
-		Locator2.ClearContractorRedGraphGrid().click();
-		Thread.sleep(2000);
-		
-		
-		Locator2.ClearContractorDDRedGraphGrid().click();
-		Thread.sleep(2000);
-		
-		
-		if(Locator2.ACSBlueGraphGridClearButton().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator2.ACSBlueGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Working Properly " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
-			
-		}
-		
 		
 		
 		Thread.sleep(2000);
@@ -25056,6 +25177,30 @@ JavascriptExecutor js = (JavascriptExecutor) getDriver();
 			test.log(LogStatus.FAIL,  "File did not downloaded");
 		}
 	   Thread.sleep(1000);
+		Locator2.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator2.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator2.ACSBlueGraphGridClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator2.ACSBlueGraphGridClearButton().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+			
+		}
+		
+
 		
 		Thread.sleep(4000);
 
@@ -25144,31 +25289,6 @@ JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
 		
-		Locator1.ClearContractorRedGraphGrid().click();
-		Thread.sleep(2000);
-		
-		
-		Locator1.ClearContractorDDRedGraphGrid().click();
-		Thread.sleep(2000);
-		
-		
-		if(Locator1.ACSGreenGraphGreedClearButton().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator1.ACSGreenGraphGreedClearButton().click();
-			test.log(LogStatus.PASS, " Clear Button Working Properly " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
-			
-		}
-		
-		
-		
 		Thread.sleep(2000);
 		File dir = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
@@ -25191,7 +25311,28 @@ JavascriptExecutor js = (JavascriptExecutor) getDriver();
 			test.log(LogStatus.FAIL,  "File did not downloaded");
 		}
 	   Thread.sleep(1000);
+		Locator1.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
 		
+		
+		Locator1.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator1.ACSGreenGraphGreedClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator1.ACSGreenGraphGreedClearButton().click();
+			test.log(LogStatus.PASS, " Clear Button Working Properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Does Not Working Properly "  );
+			
+		}
 		
 		Thread.sleep(4000);
 
@@ -26660,7 +26801,7 @@ JavascriptExecutor js = (JavascriptExecutor) getDriver();
 							
 			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
 							
-			test.log(LogStatus.PASS, "Dashboard Count = "+open+" | Displayed records from grid = "+count);
+			test.log(LogStatus.PASS, "Before Performe the Audit Count = "+open+" | After Perform the Audit Count = "+count);
 						
 			}
 						
@@ -26670,7 +26811,7 @@ JavascriptExecutor js = (JavascriptExecutor) getDriver();
 							
 			//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
 							
-			test.log(LogStatus.FAIL, "Dashboard Count = "+open+" | Displayed records from grid = "+count);
+			test.log(LogStatus.FAIL, "Before Performe the Audit Count = "+open+" | After Perform the Audit Count = "+count);
 						
 			}
 
@@ -26844,6 +26985,457 @@ JavascriptExecutor js = (JavascriptExecutor) getDriver();
 
 	}
 	
+	
+	
+	
+	public static void UpcomingAudit( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		int open = Integer.parseInt(Locator1.RedGraph().getText());	//Reading Dashboard count.
+	    Locator1.RedGraph().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(2000);
+	    
+	    getDriver().switchTo().frame(Locator1.Frame());
+	    Thread.sleep(5000);
+
+		
+		Thread.sleep(500);
+		Actions action = new Actions(getDriver());
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	//	js.executeScript("window.scrollBy(0,500)");			//Scrolling down window by 1000 px.cfo
+		js.executeScript("window.scrollBy(0,200)");
+		Thread.sleep(3000);
+		int CompliedValue = Integer.parseInt(Locator1.GreenGraph().getText());	//Reading value of 'Not Completed'
+		Locator1.GreenGraph().click();									//CLicking on 'Not Completed' count
+		
+		Thread.sleep(5000);
+	//	int critical = Integer.parseInt(CFOcountPOM.readCritical().getText());	//Reading Critical risk count.
+		int high = Integer.parseInt(Locator1.RedGraph().getText());			//Reading High risk count.
+		int medium = Integer.parseInt(Locator1.YellowGraph().getText());		//Reading Medium risk count.
+		int low = Integer.parseInt(Locator1.GreenGraphinGreen().getText());				//Reading Low risk count.
+		
+		int total =  high + medium + low;
+		/*
+		if(CompliedValue == total)
+		{
+			test.log(LogStatus.PASS, "Not Completed' Compliance Count matches to sum of all risked compliances.");
+			test.log(LogStatus.PASS, "Total Not Completed' Compliances : "+total);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "'Not Completed' Compliance Count doesn't matches to sum of all risked compliances.");
+			test.log(LogStatus.FAIL, "Total 'Not Completed' Compliances : "+total+" | Total Sum : "+NotCompletedValue);
+		}
+	*/
+		if(CompliedValue > 0)
+		{
+			/*
+			if(critical > 0)
+			{
+				AuditorcountPOM.GraphCount( test, "Critical", critical, "Statutory");
+			}
+			else
+			{
+				test.log(LogStatus.PASS, "'Critical' Risk Compliance Count = "+critical);
+			}
+			*/
+			if(high > 0)
+			{
+				Method1.GraphCount( test, "High", high, "Statutory");
+			}
+			else
+			{
+				test.log(LogStatus.PASS, "'High' Risk Compliance Count = "+high);
+			}
+			
+			if(medium > 0)
+			{
+				Method1.GraphCount( test, "Medium", medium, "Statutory");
+			}
+			else
+			{
+				test.log(LogStatus.PASS, "'Medium' Risk Compliance Count = "+medium);
+			}
+			
+			if(low > 0)
+			{
+				Method1.GraphCount( test, "Low", low, "Statutory");
+			}
+			else
+			{
+				test.log(LogStatus.PASS, "'Low' Risk Compliance Count = "+low);
+			}
+			
+			Thread.sleep(500);
+			action.moveToElement(Locator1.Back()).click().build().perform();	 //Clicking on Back button
+			Thread.sleep(2000);
+		}
+		else
+		{
+			test.log(LogStatus.PASS, " 'Completed' Compliance Count = "+CompliedValue);
+			
+			Thread.sleep(500);
+			action.moveToElement(Locator1.Back()).click().build().perform();	//Clicking on Dashboard
+		}
+		
+
+	}
+	
+	
+	
+	public static void GraphCount( ExtentTest test, String risk, int complianceCount, String Compliance)throws InterruptedException
+	{
+		Thread.sleep(2000);
+		if(risk.equalsIgnoreCase("High"))
+		{
+			Locator1.RedGraph().click();					//Clicking on Critical value of Pie Chart of 'Not Completed'.
+		}
+		else if(risk.equalsIgnoreCase("Medium"))
+		{
+			Locator1.YellowGraph().click();						//Clicking on High value of Pie Chart of 'Not Completed'.
+		}
+		
+		else if(risk.equalsIgnoreCase("Low"))
+		{
+			Locator1.GreenGraphinGreen().click();						//Clicking on Low value of Pie Chart of 'Not Completed'.
+		}
+		Thread.sleep(10000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (80));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("//iframe[@id='showdetails']"));	//Wait until frame get visible and switch to it.
+		Thread.sleep(8000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver() ;
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(5000);
+		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
+		Thread.sleep(1000);
+		String s = Locator1.RedGraphGrid().getText();
+		Thread.sleep(8000);
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(10000);
+		try
+		{
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='k-selectable']")));
+			Thread.sleep(3000);
+		}
+		catch(Exception e)
+		{
+			
+		}
+		Thread.sleep(8000);
+		String s1 = Locator1.RedGraphGrid().getText();		//Reading total number of items.
+		String[] bits = s1.split(" ");									//Splitting the String
+		String itomsCount = bits[bits.length - 2];						//Getting the second last word (total number of items)
+		
+		int count = 0;
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			Thread.sleep(2500);
+			s1 = Locator1.RedGraphGrid().getText();
+			bits = s1.split(" ");										//Splitting the String
+			itomsCount = bits[bits.length - 2];
+		}
+		if(itomsCount.equalsIgnoreCase("to"))							//If not items found
+		{
+			count = 0;
+		}
+		else
+		{
+			count = Integer.parseInt(itomsCount);
+		}
+		
+		
+		if(count == complianceCount)
+		{
+			//test.log(LogStatus.PASS, "'"+risk+"' risk compliance count matches to numbers of items from grid.");
+			test.log(LogStatus.PASS, "'"+risk+"' risk compliance count = " + complianceCount + " | Total number of items from grid = "+count);
+		}
+		else
+		{
+			//test.log(LogStatus.FAIL, "'"+risk+"' risk compliance count does not matches to numbers of Items.");
+			test.log(LogStatus.FAIL, "'"+risk+"' risk compliance count = " + complianceCount + " | Total number of items from grid = "+count);
+		}
+		
+		Thread.sleep(4000);
+		 Locator1.ExportButton().click();
+			Thread.sleep(4000);
+			test.log(LogStatus.PASS, "Excel file Export Successfully");
+			Thread.sleep(3000);
+			
+			
+			Locator1.ClearContractorRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			Locator1.ClearContractorDDRedGraphGrid().click();
+			Thread.sleep(2000);
+			
+			
+			if(Locator1.ClearButtonRedGraphGrid().isEnabled())
+			{
+				
+				Thread.sleep(2000);
+			    Locator1.ClearButtonRedGraphGrid().click();
+				test.log(LogStatus.PASS, " Clear Button Working Properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear Button Does not working properly "  );
+				
+			}
+			
+			
+	        Thread.sleep(2000);
+			
+  By locator = By.xpath("(//a[@role='button'])[1]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(8000);
+			
+			WebElement ViewButton = getDriver().findElement(locator);	
+			Thread.sleep(3000);
+		JavascriptExecutor jse=(JavascriptExecutor) getDriver();
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			test.log(LogStatus.PASS, "overView Successfully");
+			/*
+			try {
+				CFOcountPOM.closeDocument().click();
+				}catch(Exception e){
+					CFOcountPOM.closeDocument1().click();
+				}
+				*/
+			
+			Thread.sleep(4000);
+			
+			getDriver().switchTo().parentFrame();
+			
+			Thread.sleep(4000);
+			
+			Locator1.ClosePage().click();
+			
+			Thread.sleep(4000);
+		/*
+			getDriver().switchTo().parentFrame();
+		Thread.sleep(1000);
+		CFOcountPOM.closeCategories().click();					//Closing the High Risk Window.
+		Thread.sleep(2000);
+		*/
+		
+	}else {
+		
+		Thread.sleep(1000);
+		js.executeScript("window.scrollBy(1000,0)");	
+		Thread.sleep(1000);
+		getDriver().switchTo().parentFrame();
+		Thread.sleep(1000);
+		Locator1.ClosePage().click();
+		Thread.sleep(1000);
+		test.log(LogStatus.PASS, "'"+risk+"' risk compliance count matches to numbers of items from grid.= 0");
+		
+		
+	}
+	}
+	
+	
+	public static void GraphExcelCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+	      JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		
+	 
+		
+		Thread.sleep(1000);
+		Locator.readTotalItems1().click();
+		String item1 = Locator.readTotalItems1().getText();
+		String[] bits1 = item1.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+		int count2 = Integer.parseInt(compliancesCount1);
+		
+	    
+		js.executeScript("window.scrollBy(0,-1000)");
+		
+
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+		
+		Thread.sleep(1000);
+//		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//		Thread.sleep(250);
+		Locator1.ExportButton().click();					//Clicking on 'Excel Report' image.
+		test.log(LogStatus.PASS, "File downloaded successfully.");
+		
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < allFilesNew.length)
+		{
+			
+			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			/*
+			int no = sheet.getFirstRowNum();
+			Row row = sheet.getRow(no);
+			Cell c1 = row.getCell(0);
+			int records =(int) c1.getNumericCellValue();
+			*/
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow=0;
+			
+			for(Row row : sheet)
+			{
+				
+				Cell cell =row.getCell(columnNumber);
+				if(cell != null) {
+					
+					rowCount++;
+					actualRow = rowCount-1;
+				}
+				
+			}
+			fis.close();
+			
+			if(count2 == actualRow)
+			{
+				//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+				test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+			}
+			else
+			{
+				//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+				test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+			}
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		} 
+	 Thread.sleep(2000);
+	    
+	}
+	
+	
+	
+	public static void GraphExcelAuditCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+	      JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		
+	 
+		
+		Thread.sleep(1000);
+		Locator.readTotalItems1().click();
+		String item1 = Locator.readTotalItems1().getText();
+		String[] bits1 = item1.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+		int count2 = Integer.parseInt(compliancesCount1);
+		
+	    
+		js.executeScript("window.scrollBy(0,-1000)");
+		
+
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+		
+		Thread.sleep(1000);
+//		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//		Thread.sleep(250);
+		Locator1.ACSREDGraphGridExportButton().click();					//Clicking on 'Excel Report' image.
+		test.log(LogStatus.PASS, "File downloaded successfully.");
+		
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < allFilesNew.length)
+		{
+			
+			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			/*
+			int no = sheet.getFirstRowNum();
+			Row row = sheet.getRow(no);
+			Cell c1 = row.getCell(0);
+			int records =(int) c1.getNumericCellValue();
+			*/
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow=0;
+			
+			for(Row row : sheet)
+			{
+				
+				Cell cell =row.getCell(columnNumber);
+				if(cell != null) {
+					
+					rowCount++;
+					actualRow = rowCount-1;
+				}
+				
+			}
+			fis.close();
+			
+			if(count2 == actualRow)
+			{
+				//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+				test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+			}
+			else
+			{
+				//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+				test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+			}
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		} 
+	 Thread.sleep(2000);
+	    
+	}
+	
+	
+
 	
 	
 		

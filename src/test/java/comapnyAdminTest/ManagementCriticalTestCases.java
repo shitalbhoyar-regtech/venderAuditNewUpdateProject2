@@ -89,7 +89,7 @@ public class ManagementCriticalTestCases extends BasePage {
 		*/
 	}
 	
-/*
+
 	@Test(priority = 1) 
 	void LocationPopupColumnist1() throws InterruptedException, IOException
 	{
@@ -223,21 +223,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	
 	
 	
-	
-	
 	@Test(priority = 10) 
-	void CTWAuditStatusSummeryOverdue1() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Bar Graph - Stake Holder Wise - Audit Status Summary - Canteen - Count Verification");
-		
-		Method5.CTWAuditStatusSummeryOverdue(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	
-	@Test(priority = 11) 
 	void ContractorwiseclosedAuditGraph1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Bar Graph - ‘Contractor Wise’ Bar Graph for Closed Audits - Suraj Contractor - Count Verification");
@@ -250,11 +236,25 @@ public class ManagementCriticalTestCases extends BasePage {
 
 	
 	
+	@Test(priority = 11) 
+	void CTWAuditStatusSummeryOverdue1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Bar Graph - Stake Holder Wise - Audit Status Summary - Canteen - Count Verification");
+		
+		Method5.CTWAuditStatusSummeryOverdue(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+
+	
 	
 	@Test(priority = 12) 
 	void PWCSSABCConstructionCompliedHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Complied Status - Ecobuild Solutions - Count Verification");
+		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Complied Status - CHN-CTS-MEPZ-TBM - Count Verification");
 		
 		Method5.PWCSSABCConstructionCompliedHigh(test,workbook);
 		
@@ -267,7 +267,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 13) 
 	void PWCSSABCconstructionNotCompliedHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Not Complied Status - Ecobuild Solutions - Count Verification");
+		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Not Complied Status - CHN-CTS-MEPZ-TBM - Count Verification");
 		
 		Method5.PWCSSABCconstructionNotCompliedHigh(test,workbook);
 		
@@ -281,7 +281,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 14) 
 	void PWCSSABCconstructionNotApplicableHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Not Applicable Status - Ecobuild Solutions - Count Verification");
+		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Not Applicable Status - CHN-CTS-MEPZ-TBM - Count Verification");
 		
 		Method5.PWCSSABCconstructionNotApplicableHigh(test,workbook);
 		
@@ -290,13 +290,13 @@ public class ManagementCriticalTestCases extends BasePage {
 	}
 	
 	
-	*/
+	
 	
 	@Test(priority = 15) 
 	void PWAuditStatusSummeryABCConstructionOverdue1() throws InterruptedException, IOException
 	{
 		
-		test = extent.startTest("Bar Graph - Facility Wise - Audit Status Summary - Kamayani Heights - Count Verification");
+		test = extent.startTest("Bar Graph - Facility Wise - Audit Status Summary - CHN-CTS-MEPZ-TBM - Count Verification");
 		
 		Method5.PWAuditStatusSummeryABCConstructionOverdue(test,workbook);
 		
@@ -397,7 +397,7 @@ public class ManagementCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 20) 
+//	@Test(priority = 20) 
 	void MyWorkspaceLicenseSearch1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License - License view download Verification ");
@@ -408,7 +408,7 @@ public class ManagementCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 
-//	@Test(priority = 21) 
+	@Test(priority = 21) 
 	void performDownloadAndVerify1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License - License view download Verification ");

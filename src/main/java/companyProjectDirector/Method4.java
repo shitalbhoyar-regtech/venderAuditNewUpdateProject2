@@ -6054,9 +6054,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Apr22().getText();
+       String PeriodText =Locator2.Jan24().getText();
        Thread.sleep(2000);
-       Locator2.Apr22().click();
+       Locator2.Jan24().click();
        Thread.sleep(2000);
         
        
@@ -6289,9 +6289,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Apr22().getText();
+       String PeriodText =Locator2.Jan24().getText();
        Thread.sleep(2000);
-       Locator2.Apr22().click();
+       Locator2.Jan24().click();
        Thread.sleep(2000);
         
 	    Locator3.PWCSSubContractorExpand().click();
@@ -6744,9 +6744,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb22().getText();
+       String PeriodText =Locator2.Feb24().getText();
        Thread.sleep(2000);
-       Locator2.Feb22().click();
+       Locator2.Feb24().click();
        Thread.sleep(2000);
       
 	    Locator3.PWCSSubContractorExpand().click();
@@ -6993,9 +6993,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb22().getText();
+       String PeriodText =Locator2.Feb24().getText();
        Thread.sleep(2000);
-       Locator2.Feb22().click();
+       Locator2.Feb24().click();
        Thread.sleep(2000);
  //      Locator2.PeriodFilterCompliedHigh().click();
  //      Thread.sleep(2000);
@@ -7243,9 +7243,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Feb22().getText();
+       String PeriodText =Locator2.Feb24().getText();
        Thread.sleep(2000);
-       Locator2.Feb22().click();
+       Locator2.Feb24().click();
        Thread.sleep(2000);
   //     Locator2.PeriodFilterCompliedHigh().click();
   //     Thread.sleep(2000);
@@ -7466,9 +7466,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar22().getText();
+       String PeriodText =Locator2.Mar24().getText();
        Thread.sleep(2000);
-       Locator2.Mar22().click();
+       Locator2.Mar24().click();
        Thread.sleep(2000);
        
 	    Locator3.PWCSSubContractorExpand().click();
@@ -7693,9 +7693,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar22().getText();
+       String PeriodText =Locator2.Mar24().getText();
        Thread.sleep(2000);
-       Locator2.Mar22().click();
+       Locator2.Mar24().click();
        Thread.sleep(2000);
    //    Locator2.PeriodFilterCompliedHigh().click();
     //   Thread.sleep(2000);
@@ -7920,9 +7920,9 @@ public class Method4 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Mar22().getText();
+       String PeriodText =Locator2.Mar24().getText();
        Thread.sleep(2000);
-       Locator2.Mar22().click();
+       Locator2.Mar24().click();
        Thread.sleep(2000);
       
 	    Locator3.PWCSSubContractorExpand().click();
@@ -8099,14 +8099,14 @@ public class Method4 extends BasePage{
 	    Thread.sleep(9000);
       
 		
-	   
+	    
        Locator3.Project().click();
        Thread.sleep(2000);
      //  Locator3.ProjectReport().click();
      //  Thread.sleep(2000);
-       String ProjectText =Locator4.ClosedProject().getText();
+       String ProjectText =Locator4.Projectnametext().getText();
        Thread.sleep(2000);
-       Locator4.ClosedProject().click();
+       Locator4.Projectnametext().click();
        Thread.sleep(2000);
        Locator3.Project().click();
        Thread.sleep(2000);
@@ -8149,9 +8149,9 @@ public class Method4 extends BasePage{
        
        Locator3.Period().click();
        Thread.sleep(2000);
-       String periodtext =Locator2.Feb23().getText();
+       String periodtext =Locator2.Feb24().getText();
        Thread.sleep(2000);
-      Locator2.Feb23().click();
+      Locator2.Feb24().click();
       Thread.sleep(2000);
       
        
@@ -8329,9 +8329,9 @@ public class Method4 extends BasePage{
 	       Thread.sleep(2000);
 	     //  Locator3.ProjectReport().click();
 	     //  Thread.sleep(2000);
-	       String ProjectText =Locator4.ClosedProject().getText();
+	       String ProjectText =Locator4.Projectnametext().getText();
 	       Thread.sleep(2000);
-	       Locator4.ClosedProject().click();
+	       Locator4.Projectnametext().click();
 	       Thread.sleep(2000);
 	       Locator3.Project().click();
 	       Thread.sleep(2000);
@@ -8532,9 +8532,9 @@ public class Method4 extends BasePage{
 	       Thread.sleep(2000);
 	     //  Locator3.ProjectReport().click();
 	     //  Thread.sleep(2000);
-	       String ProjectText =Locator4.ClosedProject().getText();
+	       String ProjectText =Locator4.Projectnametext().getText();
 	       Thread.sleep(2000);
-	       Locator4.ClosedProject().click();
+	       Locator4.Projectnametext().click();
 	       Thread.sleep(2000);
 	       Locator3.Project().click();
 	       Thread.sleep(2000);
@@ -8770,9 +8770,9 @@ public class Method4 extends BasePage{
        
     Locator3.PeriodFilterCompliedHigh().click();
     Thread.sleep(2000);
-    String PeriodText =Locator1.Jun24().getText();
+    String PeriodText =Locator2.Aug24().getText();
     Thread.sleep(2000);
-    Locator1.Jun24().click();
+    Locator2.Aug24().click();
     Thread.sleep(2000);
    
      List<String> li=new ArrayList<String>();

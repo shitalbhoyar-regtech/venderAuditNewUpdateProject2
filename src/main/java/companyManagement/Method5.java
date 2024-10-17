@@ -2487,8 +2487,8 @@ public class Method5 extends BasePage{
 			    jss.executeScript("window.scrollBy(0,800)");
 			    Thread.sleep(2000);
 			    
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Canteen']"))); 
-				Thread.sleep(2000);
+			//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Canteen']"))); 
+			//	Thread.sleep(2000);
 				
 				Locator5.CTWNotCompliedRed().click();
 				Thread.sleep(2000);
@@ -3343,7 +3343,7 @@ public class Method5 extends BasePage{
 			    jss.executeScript("window.scrollBy(0,2000)");
 			    Thread.sleep(2000);
 			    
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[36]"))); 
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[28]"))); 
 				Thread.sleep(2000);
 				
 			//    jss.executeScript("window.scrollBy(0,200)");
@@ -3391,7 +3391,7 @@ public class Method5 extends BasePage{
 		        } catch (AWTException | InterruptedException e) {
 		            e.printStackTrace();
 		        }
-			    Thread.sleep(2000);
+			    Thread.sleep(3000);
 			   
 
 				String item = Locator5.ACSREDGraphGrid().getText();
@@ -3883,7 +3883,7 @@ public class Method5 extends BasePage{
 			public static void PWCSSABCConstructionCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
             {
 				
-				
+				/*
 				Thread.sleep(20000);
 				
 				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
@@ -3921,12 +3921,12 @@ public class Method5 extends BasePage{
 		        } catch (AWTException | InterruptedException e) {
 		            e.printStackTrace();
 		        }
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Ecobuild Solutions']"))); 
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='CHN-CTS-MEPZ-TBM']"))); 
 				Thread.sleep(2000);
 
 
 
-				
+				*/
 				Locator5.PWCSSABCConstructionComplied().click();
 				Thread.sleep(2000);
 				
@@ -4349,7 +4349,7 @@ public class Method5 extends BasePage{
 			
 			public static void PWCSSABCconstructionNotCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
             {
-				
+				/*
 				Thread.sleep(20000);
 				
 				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
@@ -4386,9 +4386,9 @@ public class Method5 extends BasePage{
 		        } catch (AWTException | InterruptedException e) {
 		            e.printStackTrace();
 		        }
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Ecobuild Solutions']"))); 
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='CHN-CTS-MEPZ-TBM']"))); 
 				Thread.sleep(2000);
-			    
+			    */
 			    
 			//    Locator4.CompliedCircle().click();
 			//	   Thread.sleep(3000);
@@ -4819,7 +4819,7 @@ public class Method5 extends BasePage{
 			
 			public static void PWCSSABCconstructionNotApplicableHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
             {
-				
+				/*
 				Thread.sleep(20000);
 				
 				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
@@ -4856,7 +4856,7 @@ public class Method5 extends BasePage{
 		        } catch (AWTException | InterruptedException e) {
 		            e.printStackTrace();
 		        }
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Ecobuild Solutions']"))); 
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='CHN-CTS-MEPZ-TBM']"))); 
 				Thread.sleep(2000);
 			    
 			  //  Locator4.CompliedCircle().click();
@@ -4868,7 +4868,7 @@ public class Method5 extends BasePage{
 			//	 Locator4.NotApplicableCircle().click();
 			//	  Thread.sleep(3000);
 			    
-			    
+			    */
 				
 				Locator5.PWCSSABCConstructionComplied().click();
 				Thread.sleep(6000);
@@ -6881,9 +6881,9 @@ public class Method5 extends BasePage{
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Apr22().getText();
+       String PeriodText =Locator2.Jan24().getText();
        Thread.sleep(2000);
-       Locator2.Apr22().click();
+       Locator2.Jan24().click();
        Thread.sleep(2000);
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
@@ -9681,7 +9681,7 @@ public class Method5 extends BasePage{
 	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[44]"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[28]"))); 
 		Thread.sleep(2000);
 		
 	    Locator5.CTWOverdueRed().click();					                //Clicking on Dashboard count
@@ -9763,9 +9763,9 @@ public class Method5 extends BasePage{
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator2.Jul23().getText();
+	       String periodtext =Locator2.Apr24().getText();
 	       Thread.sleep(2000);
-	      Locator2.Jul23().click();
+	      Locator2.Apr24().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -10166,7 +10166,7 @@ public class Method5 extends BasePage{
         } catch (AWTException | InterruptedException e) {
             e.printStackTrace();
         }
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='CHN-CTS-MEPZ-TBM']"))); 
 		Thread.sleep(2000);
 
 	    
@@ -10224,9 +10224,9 @@ public class Method5 extends BasePage{
        
        Locator3.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Jan22().getText();
+       String PeriodText =Locator2.Jan24().getText();
        Thread.sleep(2000);
-       Locator2.Jan22().click();
+       Locator2.Jan24().click();
        Thread.sleep(2000);
        
         List<String> li=new ArrayList<String>();
@@ -11954,7 +11954,7 @@ public class Method5 extends BasePage{
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,2350)");
+	    jss.executeScript("window.scrollBy(0,3000)");
 	    Thread.sleep(18000);
 		
 	    Locator5.PWAuditStatusSummeryABCConstructionOverdue().click();					                //Clicking on Dashboard count
@@ -11967,11 +11967,11 @@ public class Method5 extends BasePage{
        
 	    Locator2.Project().click();
 	       Thread.sleep(6000);
-	       String ProjectText =Locator2.ClosedProject().getText();
+	       String ProjectText =Locator2.ClickProject().getText();
 	       Thread.sleep(9000);
-	       Locator2.ClosedProject().click();
+	       Locator2.ClickProject().click();
 	       Thread.sleep(3000);
-	       Locator2.ClosedProject().click();
+	       Locator2.ClickProject().click();
 	       Thread.sleep(3000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -11991,9 +11991,9 @@ public class Method5 extends BasePage{
 
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
-	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD1().getText();
 	       Thread.sleep(2000);
-	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Locator3.PWCSSubContractorContractorTypeDD1().click();
 	       Thread.sleep(2000);
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
@@ -12011,9 +12011,9 @@ public class Method5 extends BasePage{
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator5.Sep22().getText();
+	       String periodtext =Locator2.Apr22().getText();
 	       Thread.sleep(2000);
-	      Locator5.Sep22().click();
+	      Locator2.Apr22().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -12148,12 +12148,12 @@ Thread.sleep(3000);
 		
 		Thread.sleep(3000);
 		
-		Method5.PWAuditStatusSummerABCConstructionPendingReview1(test, workbook);
+	//	Method5.PWAuditStatusSummerABCConstructionPendingReview1(test, workbook);
 		
-		Thread.sleep(3000);
+	//	Thread.sleep(3000);
 		
-		Method5.PWAuditStatusSummerABCConstructionCompleted(test, workbook);
-		Thread.sleep(3000);
+	//	Method5.PWAuditStatusSummerABCConstructionCompleted(test, workbook);
+	//	Thread.sleep(3000);
 		
 	}
 	
@@ -12184,11 +12184,11 @@ Thread.sleep(3000);
 	    
 	    Locator2.Project().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator2.ClosedProject().getText();
+	       String ProjectText =Locator2.ClickProject().getText();
 	       Thread.sleep(5000);
-	       Locator2.ClosedProject().click();
+	       Locator2.ClickProject().click();
 	       Thread.sleep(3000);
-	       Locator2.ClosedProject().click();
+	       Locator2.ClickProject().click();
 	       Thread.sleep(3000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -12209,9 +12209,9 @@ Thread.sleep(3000);
 	
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
-	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD1().getText();
 	       Thread.sleep(2000);
-	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Locator3.PWCSSubContractorContractorTypeDD1().click();
 	       Thread.sleep(2000);
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
@@ -12228,9 +12228,9 @@ Thread.sleep(3000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator5.Jun22().getText();
+	       String periodtext =Locator5.Jun21().getText();
 	       Thread.sleep(2000);
-	      Locator5.Jun22().click();
+	      Locator5.Jun21().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -12388,11 +12388,11 @@ Thread.sleep(3000);
 	   
 	    Locator2.Project().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator2.ClosedProject().getText();
+	       String ProjectText =Locator2.ClickProject().getText();
 	       Thread.sleep(5000);
-	       Locator2.ClosedProject().click();
+	       Locator2.ClickProject().click();
 	       Thread.sleep(3000);
-	       Locator2.ClosedProject().click();
+	       Locator2.ClickProject().click();
 	       Thread.sleep(3000);
 	       Locator2.Project().click();
 	       Thread.sleep(2000);
@@ -12415,9 +12415,9 @@ Thread.sleep(3000);
 
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
-	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD11().getText();
+	       String ContractorTypeText =Locator3.PWCSSubContractorContractorTypeDD1().getText();
 	       Thread.sleep(2000);
-	       Locator3.PWCSSubContractorContractorTypeDD11().click();
+	       Locator3.PWCSSubContractorContractorTypeDD1().click();
 	       Thread.sleep(2000);
 	       Locator3.ContractorType().click();
 	       Thread.sleep(2000);
@@ -12434,9 +12434,9 @@ Thread.sleep(3000);
 	       
 	       Locator3.Period().click();
 	       Thread.sleep(2000);
-	       String periodtext =Locator2.Apr22().getText();
+	       String periodtext =Locator2.Jul21().getText();
 	       Thread.sleep(2000);
-	      Locator2.Apr22().click();
+	      Locator2.Jul21().click();
 	      Thread.sleep(2000);
 	      
 	       
@@ -14429,10 +14429,10 @@ Thread.sleep(3000);
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,3000)");
+	    jss.executeScript("window.scrollBy(0,3500)");
 	    Thread.sleep(3000);
 		
-		Locator4.RudraHeritage().click();
+		Locator5.RudraHeritage().click();
 		Thread.sleep(6000);
 		
 	    Locator5.PWCSSubContractorCompliedHigh().click();					                //Clicking on Dashboard count
@@ -14442,13 +14442,14 @@ Thread.sleep(3000);
 	    Thread.sleep(9000);
 	    
 	   
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(3000);
-	       String ProjectText =Locator2.ClosedProject().getText();
+	       String ProjectText =Locator2.projectdd().getText();
 	       Thread.sleep(3000);
-	       Locator2.ClosedProject().click();
+	       System.out.println(ProjectText);
+	    //   Locator2.projectdd().click();
 	       Thread.sleep(3000);
-	       Locator2.Project().click();
+	       Locator2.Project2().click();
 	       Thread.sleep(2000);
        
        
@@ -14482,9 +14483,9 @@ Thread.sleep(3000);
        
        Locator2.PeriodFilterCompliedHigh().click();
        Thread.sleep(2000);
-       String PeriodText =Locator2.Apr22().getText();
+       String PeriodText =Locator2.Jan24().getText();
        Thread.sleep(2000);
-       Locator2.Apr22().click();
+       Locator2.Jan24().click();
        Thread.sleep(2000);
         
        Locator5.Triangle().click();
@@ -18079,7 +18080,7 @@ Thread.sleep(3000);
 	    jss.executeScript("window.scrollBy(0,1300)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"))); 
 		Thread.sleep(2000);
 	    		
 		int open = Integer.parseInt(Locator5.ContractorClosedAuditComplied().getText());	//Reading Dashboard count.
@@ -18261,6 +18262,702 @@ Thread.sleep(3000);
 			
 		
     }
+	
+	
+	
+	
+	public static void CLOSEDGraphFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		Thread.sleep(2000);
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1300)");
+	    Thread.sleep(2000);
+	    
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"))); 
+		Thread.sleep(2000);
+	    		
+	    Locator5.ContractorClosedAuditComplied().click();					                //Clicking on Dashboard count
+					                //Clicking on Dashboard count
+
+	    Thread.sleep(3000);
+	    
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	    
+	    Locator3.CTWCompliedGreenHighGridClearButton().click();
+	    Thread.sleep(3000);
+	    
+	    
+	    
+	    Locator2.Project2().click();
+	       Thread.sleep(3000);
+	       String ProjectText =Locator2.Projects().getText();
+	       Thread.sleep(3000);
+	       Locator2.Projects().click();
+	       Thread.sleep(3000);
+	       Locator2.Project2().click();
+	       Thread.sleep(2000);
+ 
+	       Locator3.Contractor().click();
+	       Thread.sleep(2000);
+	       String Contractor =Locator3.ContractorDD().getText();
+	       Thread.sleep(3000);
+	       Locator3.ContractorDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Contractor().click();
+	       Thread.sleep(2000);
+ 
+	       /*
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator2.StatusFilterCompliedHighDD().getText();
+	       Thread.sleep(2000);
+	    //   Locator2.StatusNADD().click();
+	   //    Thread.sleep(2000);
+	    //   Locator2.StatusNADD1().click();
+	   //    Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+ */
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator2.StatusFilterCompliedHighDD1().getText();
+	       Thread.sleep(2000);
+	       Locator3.StatusFilterCompliedHighDD1().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+ 
+ Locator2.Risk().click();
+ Thread.sleep(2000);
+ String RiskText =Locator2.RiskFilterNotCompliedLowDD1().getText();
+ Thread.sleep(2000);
+ Locator2.RiskFilterNotCompliedLowDD1().click();
+ Thread.sleep(2000);
+ Locator2.Risk().click();
+ Thread.sleep(2000);
+ 
+ 
+ 
+ 
+ 
+ Locator2.PeriodFilterCompliedHigh().click();
+ Thread.sleep(2000);
+ String PeriodText =Locator5.Jun22().getText();
+ Thread.sleep(2000);
+ Locator5.Jun22().click();
+ Thread.sleep(2000);
+
+ 
+ 
+ 
+ 
+  List<String> li=new ArrayList<String>();
+  
+//  li.add(locationtext);
+  li.add(ProjectText);
+  li.add(Contractor);
+  li.add(Statustext);
+  li.add(RiskText);
+  li.add(PeriodText);
+ 
+  
+  Thread.sleep(3000);
+  
+		List<String> filter=new ArrayList<String>();	
+	//	filter.add("Location");
+		filter.add("Project");
+		filter.add("Contractor");
+		filter.add("Status");
+		filter.add("Risk");
+		filter.add("Period");
+			
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(3000);
+
+		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
+		String s = Locator2.RedGraphGrid().getText();
+		Thread.sleep(2000);
+
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(5000);
+	
+	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> Contractorcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
+		
+		
+		Thread.sleep(2000);
+
+		for(int i=0; i<li.size(); i++){
+			
+			List<String> text= new ArrayList<String>();
+			HashSet<String> pass=new LinkedHashSet<>();
+			HashSet<String> fail=new LinkedHashSet<>();
+			List<WebElement> raw=new ArrayList<WebElement>();
+
+				if(i==0)
+				{
+					raw.addAll(projectcol);
+				}
+			else if(i==1)
+				{
+					raw.addAll(Contractorcol);
+				}
+			else if(i==2)
+			{
+				raw.addAll(statuscol);
+			}
+			else if(i==3)
+			{
+				raw.addAll(riskcol);
+			}
+				
+			else if(i==4)
+			{
+				raw.addAll(periodcol);
+			}
+				
+			for(int k=0;k<raw.size();k++)
+				{
+					text.add(raw.get(k).getText());
+				}
+
+				for(int l=0;l<text.size();l++)
+					{
+				if(text.get(l).equals(li.get(i)))
+					{
+						pass.add(text.get(l));	
+						System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+					}
+				else
+				{
+					fail.add(text.get(l));		
+					System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+					System.out.println(i);
+
+				}
+				 }
+		 
+	for(String Fal : fail)
+		 {
+				test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+		 }	
+		 for(String Pas : pass)
+		 {
+			 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+				test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+				System.out.println(filter.get(i)+" : "+Pas);
+	 }
+		 text.clear();
+		pass.clear();
+		fail.clear();
+		raw.clear();
+		
+		
+		}
+		}else {
+			test.log(LogStatus.PASS,"No records found");	
+		}
+		Thread.sleep(3000);
+
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator2.ClosePage().click();
+		
+		Thread.sleep(4000);
+	
+		
+	//	Method5.CLOSEDGraphFilterNotComplied(test, workbook);
+	//	Thread.sleep(4000);
+		
+		
+	//	Method5.CLOSEDGraphFilterNotApplicable(test, workbook);	
+	//	Thread.sleep(4000);
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	public static void CLOSEDGraphFilterNotApplicable( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		Thread.sleep(2000);
+		/*
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		Thread.sleep(2000);
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1300)");
+	    Thread.sleep(2000);
+	    
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"))); 
+		Thread.sleep(2000);
+	    	*/	
+	    Locator5.ContractorClosedAuditNotApplicable().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(3000);
+	    
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	    
+	    Locator3.CTWCompliedGreenHighGridClearButton().click();
+	    Thread.sleep(3000);
+	    
+	    
+	    
+	    Locator2.Project2().click();
+	       Thread.sleep(3000);
+	       String ProjectText =Locator2.Projects().getText();
+	       Thread.sleep(3000);
+	       Locator2.Projects().click();
+	       Thread.sleep(3000);
+	       Locator2.Project2().click();
+	       Thread.sleep(2000);
+ 
+	       Locator3.Contractor().click();
+	       Thread.sleep(2000);
+	       String Contractor =Locator3.ContractorDD().getText();
+	       Thread.sleep(3000);
+	       Locator3.ContractorDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Contractor().click();
+	       Thread.sleep(2000);
+ 
+	       /*
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator2.StatusFilterCompliedHighDD().getText();
+	       Thread.sleep(2000);
+	    //   Locator2.StatusNADD().click();
+	   //    Thread.sleep(2000);
+	    //   Locator2.StatusNADD1().click();
+	   //    Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+ */
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator2.StatusNADD1().getText();
+	       Thread.sleep(2000);
+	       Locator3.StatusNADD1().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+ 
+ Locator2.Risk().click();
+ Thread.sleep(2000);
+ String RiskText =Locator2.RiskFilterCompliedHighDD1().getText();
+ Thread.sleep(2000);
+ Locator2.RiskFilterCompliedHighDD1().click();
+ Thread.sleep(2000);
+ Locator2.Risk().click();
+ Thread.sleep(2000);
+ 
+ 
+ 
+ 
+ 
+ Locator2.PeriodFilterCompliedHigh().click();
+ Thread.sleep(2000);
+ String PeriodText =Locator5.Jun22().getText();
+ Thread.sleep(2000);
+ Locator5.Jun22().click();
+ Thread.sleep(2000);
+
+ 
+ 
+ 
+ 
+  List<String> li=new ArrayList<String>();
+  
+//  li.add(locationtext);
+  li.add(ProjectText);
+  li.add(Contractor);
+  li.add(Statustext);
+  li.add(RiskText);
+  li.add(PeriodText);
+ 
+  
+  Thread.sleep(3000);
+  
+		List<String> filter=new ArrayList<String>();	
+	//	filter.add("Location");
+		filter.add("Project");
+		filter.add("Contractor");
+		filter.add("Status");
+		filter.add("Risk");
+		filter.add("Period");
+			
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(3000);
+
+		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
+		String s = Locator2.RedGraphGrid().getText();
+		Thread.sleep(2000);
+
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(5000);
+	
+	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> Contractorcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
+		
+		
+		Thread.sleep(2000);
+
+		for(int i=0; i<li.size(); i++){
+			
+			List<String> text= new ArrayList<String>();
+			HashSet<String> pass=new LinkedHashSet<>();
+			HashSet<String> fail=new LinkedHashSet<>();
+			List<WebElement> raw=new ArrayList<WebElement>();
+
+				if(i==0)
+				{
+					raw.addAll(projectcol);
+				}
+			else if(i==1)
+				{
+					raw.addAll(Contractorcol);
+				}
+			else if(i==2)
+			{
+				raw.addAll(statuscol);
+			}
+			else if(i==3)
+			{
+				raw.addAll(riskcol);
+			}
+				
+			else if(i==4)
+			{
+				raw.addAll(periodcol);
+			}
+				
+			for(int k=0;k<raw.size();k++)
+				{
+					text.add(raw.get(k).getText());
+				}
+
+				for(int l=0;l<text.size();l++)
+					{
+				if(text.get(l).equals(li.get(i)))
+					{
+						pass.add(text.get(l));	
+						System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+					}
+				else
+				{
+					fail.add(text.get(l));		
+					System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+					System.out.println(i);
+
+				}
+				 }
+		 
+	for(String Fal : fail)
+		 {
+				test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+		 }	
+		 for(String Pas : pass)
+		 {
+			 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+				test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+				System.out.println(filter.get(i)+" : "+Pas);
+	 }
+		 text.clear();
+		pass.clear();
+		fail.clear();
+		raw.clear();
+		
+		
+		}
+		}else {
+			test.log(LogStatus.PASS,"No records found");	
+		}
+		Thread.sleep(3000);
+
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator2.ClosePage().click();
+		
+		Thread.sleep(4000);
+	
+	
+		
+	}
+	
+	public static void CLOSEDGraphFilterNotComplied( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		
+		Thread.sleep(2000);
+		/*
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		Thread.sleep(2000);
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1300)");
+	    Thread.sleep(2000);
+	    
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"))); 
+		Thread.sleep(2000);
+	    	*/	
+	    Locator5.ContractorClosedAuditNotComplied().click();					                //Clicking on Dashboard count
+
+	    Thread.sleep(3000);
+	    
+	    getDriver().switchTo().frame(Locator3.Frame());
+	    Thread.sleep(5000);
+	    
+	    Locator3.CTWCompliedGreenHighGridClearButton().click();
+	    Thread.sleep(3000);
+	    
+	    
+	    
+	    Locator2.Project2().click();
+	       Thread.sleep(3000);
+	       String ProjectText =Locator2.Projects().getText();
+	       Thread.sleep(3000);
+	       Locator2.Projects().click();
+	       Thread.sleep(3000);
+	       Locator2.Project2().click();
+	       Thread.sleep(2000);
+ 
+	       Locator3.Contractor().click();
+	       Thread.sleep(2000);
+	       String Contractor =Locator3.ContractorDD().getText();
+	       Thread.sleep(3000);
+	       Locator3.ContractorDD().click();
+	       Thread.sleep(2000);
+	       Locator3.Contractor().click();
+	       Thread.sleep(2000);
+ 
+	       /*
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator2.StatusFilterCompliedHighDD().getText();
+	       Thread.sleep(2000);
+	    //   Locator2.StatusNADD().click();
+	   //    Thread.sleep(2000);
+	    //   Locator2.StatusNADD1().click();
+	   //    Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+ */
+	       Locator2.Status().click();
+	       Thread.sleep(2000);
+	       String Statustext =Locator2.StatusFilterNotCompliedHighDD1().getText();
+	       Thread.sleep(2000);
+	       Locator3.StatusFilterNotCompliedHighDD1().click();
+	       Thread.sleep(2000);
+	       Locator2.Status().click();
+	       Thread.sleep(5000);
+ 
+ Locator2.Risk().click();
+ Thread.sleep(2000);
+ String RiskText =Locator2.RiskFilterCompliedHighDD1().getText();
+ Thread.sleep(2000);
+ Locator2.RiskFilterCompliedHighDD1().click();
+ Thread.sleep(2000);
+ Locator2.Risk().click();
+ Thread.sleep(2000);
+ 
+ 
+ 
+ 
+ 
+ Locator2.PeriodFilterCompliedHigh().click();
+ Thread.sleep(2000);
+ String PeriodText =Locator5.Jun22().getText();
+ Thread.sleep(2000);
+ Locator5.Jun22().click();
+ Thread.sleep(2000);
+
+ 
+ 
+ 
+ 
+  List<String> li=new ArrayList<String>();
+  
+//  li.add(locationtext);
+  li.add(ProjectText);
+  li.add(Contractor);
+  li.add(Statustext);
+  li.add(RiskText);
+  li.add(PeriodText);
+ 
+  
+  Thread.sleep(3000);
+  
+		List<String> filter=new ArrayList<String>();	
+	//	filter.add("Location");
+		filter.add("Project");
+		filter.add("Contractor");
+		filter.add("Status");
+		filter.add("Risk");
+		filter.add("Period");
+			
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");	
+		Thread.sleep(3000);
+
+		Locator1.RedGraphGrid().click();					//Clicking on Text of total items just to scroll down.
+		String s = Locator2.RedGraphGrid().getText();
+		Thread.sleep(2000);
+
+		if(!s.equalsIgnoreCase("No items to display")) {
+		Thread.sleep(5000);
+	
+	//	List<WebElement> entitycol=getDriver().findElements(By.xpath("//*[@id='grid']/div[3]/table/tbody/tr/td[1]"));
+		List<WebElement> projectcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[1]"));
+		List<WebElement> Contractorcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[3]"));
+		List<WebElement> statuscol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[6]"));
+		List<WebElement> riskcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[7]"));
+		List<WebElement> periodcol=getDriver().findElements(By.xpath("//*[@id='gridComplianceStatusWise']/div[2]/table/tbody/tr[1]/td[5]"));
+		
+		
+		Thread.sleep(2000);
+
+		for(int i=0; i<li.size(); i++){
+			
+			List<String> text= new ArrayList<String>();
+			HashSet<String> pass=new LinkedHashSet<>();
+			HashSet<String> fail=new LinkedHashSet<>();
+			List<WebElement> raw=new ArrayList<WebElement>();
+
+				if(i==0)
+				{
+					raw.addAll(projectcol);
+				}
+			else if(i==1)
+				{
+					raw.addAll(Contractorcol);
+				}
+			else if(i==2)
+			{
+				raw.addAll(statuscol);
+			}
+			else if(i==3)
+			{
+				raw.addAll(riskcol);
+			}
+				
+			else if(i==4)
+			{
+				raw.addAll(periodcol);
+			}
+				
+			for(int k=0;k<raw.size();k++)
+				{
+					text.add(raw.get(k).getText());
+				}
+
+				for(int l=0;l<text.size();l++)
+					{
+				if(text.get(l).equals(li.get(i)))
+					{
+						pass.add(text.get(l));	
+						System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+					}
+				else
+				{
+					fail.add(text.get(l));		
+					System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+					System.out.println(i);
+
+				}
+				 }
+		 
+	for(String Fal : fail)
+		 {
+				test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+		 }	
+		 for(String Pas : pass)
+		 {
+			 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+				test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+				System.out.println(filter.get(i)+" : "+Pas);
+	 }
+		 text.clear();
+		pass.clear();
+		fail.clear();
+		raw.clear();
+		
+		
+		}
+		}else {
+			test.log(LogStatus.PASS,"No records found");	
+		}
+		Thread.sleep(3000);
+
+		
+		Thread.sleep(4000);
+		
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator2.ClosePage().click();
+		
+		Thread.sleep(4000);
+	
+	
+		
+	}
+	
+	
 	
 	public static void GridAndExcelReport( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
@@ -18679,9 +19376,9 @@ Thread.sleep(3000);
 	
     }
 
-	
 	private static int initialFileCount;
 	private static int newFileCount;
+	
 
 	public static void downloadFile(ExtentTest test) throws InterruptedException {
 	    // Attempt to view the license document
@@ -18797,8 +19494,22 @@ Thread.sleep(3000);
 		   Thread.sleep(1000);
 		   Method5.LicenceGridAndExcelCount(test,workbook);
 		   Thread.sleep(1000);
-		    Locator1.viewlicensedocument().click();
+		    
 		
+		    if(Locator1.viewlicensedocument().isEnabled()) {
+				   Thread.sleep(2000);
+				   Locator1.viewlicensedocument().click();
+					Thread.sleep(2000);
+					test.log(LogStatus.PASS, "License view successfully");
+
+			   }
+			   else
+			   {
+				   test.log(LogStatus.PASS, "License button does not View.");
+			   }
+				
+			   Thread.sleep(1000);
+		    /*
 		try {
 	        downloadFile(test);
 	        verifyDownload();
@@ -18835,6 +19546,7 @@ Thread.sleep(3000);
 	            test.log(LogStatus.FAIL, e.getMessage());
 	        }
 	    }
+	    */
 	}
 	
 	

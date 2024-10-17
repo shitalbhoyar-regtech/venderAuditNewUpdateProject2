@@ -18,10 +18,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -376,6 +375,29 @@ public class Method extends BasePage {
 		Locator.SubmitButton().click();
 		Thread.sleep(5000);
 		
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac=getDriver().switchTo().alert();
+	    		
+	    		String t1=getDriver().switchTo().alert().getText();
+	    		
+	    		test.log(LogStatus.PASS, t1 );
+	    		
+	    		Thread.sleep(4000);
+	    		ac.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	        } finally {
+	        	Locator.CloseEntityButton().click();
+	    		Thread.sleep(3000);
+	        }
+
+		/*
         Alert ac=getDriver().switchTo().alert();
 		
 		String t1=getDriver().switchTo().alert().getText();
@@ -384,9 +406,9 @@ public class Method extends BasePage {
 		
 		Thread.sleep(4000);
 		ac.accept();
-		
-		Locator.CloseEntityButton().click();
-		Thread.sleep(4000);
+		*/
+	//	Locator.CloseEntityButton().click();
+	//	Thread.sleep(4000);
 		
 	}
 		
@@ -398,11 +420,6 @@ public class Method extends BasePage {
 		Locator.AddEntity1().click();
 		Thread.sleep(3000);
 		
-		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
-		int row = 0;
-		Thread.sleep(500);
-		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
-		Cell c1 = null;
 		
 		
 		
@@ -427,6 +444,12 @@ public class Method extends BasePage {
 		Thread.sleep(1000);
 		Locator.StateD().click();
 		Thread.sleep(1000);
+		
+		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+		int row = 0;
+		Thread.sleep(500);
+		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+		Cell c1 = null;
 		
 		
 		row0 = sheet.getRow(5);
@@ -476,7 +499,7 @@ public class Method extends BasePage {
 	
 		Thread.sleep(5000);
 		
-		
+		/*
         Alert ac=getDriver().switchTo().alert();
 		
 		String t1=getDriver().switchTo().alert().getText();
@@ -489,6 +512,28 @@ public class Method extends BasePage {
 		Thread.sleep(4000);
 		Locator.CloseEntityButton().click();
 		Thread.sleep(4000);
+		*/
+		try {
+            // Wait for the alert to be present
+            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+            // Once alert is present, handle it
+            System.out.println("Alert is present: " + alert.getText());
+            Alert ac=getDriver().switchTo().alert();
+    		
+    		String t1=getDriver().switchTo().alert().getText();
+    		
+    		test.log(LogStatus.PASS, "Without Enter Data Validation Message For Name Field  = " + t1 );
+    		
+    		Thread.sleep(4000);
+    		ac.accept(); // Accept the alert (click OK)
+        } catch (Exception e) {
+            System.out.println("Alert not found within the specified time.");
+        } finally {
+        	Locator.CloseEntityButton().click();
+    		Thread.sleep(3000);
+        }
 		
 		//Validation message for subentity dropdown
 		
@@ -578,7 +623,7 @@ public class Method extends BasePage {
 	
 		Thread.sleep(5000);
 		
-		
+		/*
         Alert aca=getDriver().switchTo().alert();
 		
 		String ta=getDriver().switchTo().alert().getText();
@@ -591,6 +636,29 @@ public class Method extends BasePage {
 		Thread.sleep(4000);
 		Locator.CloseEntityButton().click();
 		Thread.sleep(4000);
+		*/
+		try {
+            // Wait for the alert to be present
+            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+            // Once alert is present, handle it
+            System.out.println("Alert is present: " + alert.getText());
+            Alert ac=getDriver().switchTo().alert();
+    		
+    		String t1=getDriver().switchTo().alert().getText();
+    		
+    		test.log(LogStatus.PASS, "Without Enter Data Validation Message For Sub-Entity Field  = " + t1 );
+    		
+    		Thread.sleep(4000);
+    		ac.accept(); // Accept the alert (click OK)
+        } catch (Exception e) {
+            System.out.println("Alert not found within the specified time.");
+        } finally {
+        	Locator.CloseEntityButton().click();
+    		Thread.sleep(3000);
+        }
+
 		
 		// entity validation message for EntityType field
 			
@@ -681,7 +749,7 @@ public class Method extends BasePage {
 	
 		Thread.sleep(5000);
 		
-		
+		/*
         Alert acb=getDriver().switchTo().alert();
 		
 		String tb=getDriver().switchTo().alert().getText();
@@ -694,6 +762,29 @@ public class Method extends BasePage {
 		Thread.sleep(4000);
 		Locator.CloseEntityButton().click();
 		Thread.sleep(3000);
+		*/
+		
+		try {
+            // Wait for the alert to be present
+            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+            // Once alert is present, handle it
+            System.out.println("Alert is present: " + alert.getText());
+            Alert ac=getDriver().switchTo().alert();
+    		
+    		String t1=getDriver().switchTo().alert().getText();
+    		
+    		test.log(LogStatus.PASS, "Without Enter Data Validation Message For Type Field  = " + t1 );
+    		
+    		Thread.sleep(4000);
+    		ac.accept(); // Accept the alert (click OK)
+        } catch (Exception e) {
+            System.out.println("Alert not found within the specified time.");
+        } finally {
+        	Locator.CloseEntityButton().click();
+    		Thread.sleep(3000);
+        }
 		
 		//entity validation for legal entity dropdown field
 		
@@ -767,7 +858,7 @@ public class Method extends BasePage {
 	
 		Thread.sleep(5000);
 		
-		
+		/*
         Alert ac4=getDriver().switchTo().alert();
 		
 		String t5=getDriver().switchTo().alert().getText();
@@ -781,7 +872,29 @@ public class Method extends BasePage {
 		Thread.sleep(2000);
 		Locator.CloseEntityButton().click();
 		Thread.sleep(2000);
+		*/
 		
+		try {
+            // Wait for the alert to be present
+            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+            // Once alert is present, handle it
+            System.out.println("Alert is present: " + alert.getText());
+            Alert ac=getDriver().switchTo().alert();
+    		
+    		String t1=getDriver().switchTo().alert().getText();
+    		
+    		test.log(LogStatus.PASS, "Without Enter Data Validation Message For Legal Entity Field  = " + t1 );
+    		
+    		Thread.sleep(4000);
+    		ac.accept(); // Accept the alert (click OK)
+        } catch (Exception e) {
+            System.out.println("Alert not found within the specified time.");
+        } finally {
+        	Locator.CloseEntityButton().click();
+    		Thread.sleep(3000);
+        }
 		
 		
 		// Entity Validation For State Field
@@ -865,7 +978,7 @@ public class Method extends BasePage {
 	
 		Thread.sleep(5000);
 		
-		
+		/*
         Alert acd=getDriver().switchTo().alert();
 		
 		String td=getDriver().switchTo().alert().getText();
@@ -879,7 +992,28 @@ public class Method extends BasePage {
 		Thread.sleep(4000);
 		Locator.CloseEntityButton().click();
 		Thread.sleep(4000);
-		
+		*/
+		try {
+            // Wait for the alert to be present
+            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+            // Once alert is present, handle it
+            System.out.println("Alert is present: " + alert.getText());
+            Alert ac=getDriver().switchTo().alert();
+    		
+    		String t1=getDriver().switchTo().alert().getText();
+    		
+    		test.log(LogStatus.PASS, "Without Enter Data Validation Message For State Field  = " + t1 );
+    		
+    		Thread.sleep(4000);
+    		ac.accept(); // Accept the alert (click OK)
+        } catch (Exception e) {
+            System.out.println("Alert not found within the specified time.");
+        } finally {
+        	Locator.CloseEntityButton().click();
+    		Thread.sleep(3000);
+        }
 		
 		// Entity Validation For Adress Field
 		
@@ -946,7 +1080,7 @@ public class Method extends BasePage {
 			
 				Thread.sleep(5000);
 				
-				
+				/*
 		        Alert ac8=getDriver().switchTo().alert();
 				
 				String t9=getDriver().switchTo().alert().getText();
@@ -959,6 +1093,28 @@ public class Method extends BasePage {
 				Thread.sleep(2000);
 				Locator.CloseEntityButton().click();
 				Thread.sleep(4000);
+				*/
+				try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac=getDriver().switchTo().alert();
+		    		
+		    		String t1=getDriver().switchTo().alert().getText();
+		    		
+		    		test.log(LogStatus.PASS, "Without Enter Data Validation Message For Adress Field  = " + t1 );
+		    		
+		    		Thread.sleep(4000);
+		    		ac.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		        } finally {
+		        	Locator.CloseEntityButton().click();
+		    		Thread.sleep(3000);
+		        }
 				
 				
 			// Entity Validation For Contact Person TextBox	
@@ -1049,7 +1205,7 @@ public class Method extends BasePage {
 			
 				Thread.sleep(5000);
 				
-				
+				/*
 		        Alert acf=getDriver().switchTo().alert();
 				
 				String tf=getDriver().switchTo().alert().getText();
@@ -1063,6 +1219,30 @@ public class Method extends BasePage {
 				Thread.sleep(4000);
 				Locator.CloseEntityButton().click();
 				Thread.sleep(3000);
+				*/
+				try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac=getDriver().switchTo().alert();
+		    		
+		    		String t1=getDriver().switchTo().alert().getText();
+		    		
+		    		test.log(LogStatus.PASS, "Without Enter Data Validation Message For Contact Person Field  = " + t1 );
+		    		
+		    		Thread.sleep(4000);
+		    		ac.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		        } finally {
+		        	Locator.CloseEntityButton().click();
+		    		Thread.sleep(3000);
+		        }
+				
+				
 				
 				// Entity Validation For Email Text Field
 				
@@ -1129,7 +1309,7 @@ public class Method extends BasePage {
 			
 				Thread.sleep(5000);
 				
-				
+				/*
 		        Alert ach=getDriver().switchTo().alert();
 				
 				String th=getDriver().switchTo().alert().getText();
@@ -1143,6 +1323,29 @@ public class Method extends BasePage {
 				Thread.sleep(2000);
 				Locator.CloseEntityButton().click();
 				Thread.sleep(2000);
+				*/
+				try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac=getDriver().switchTo().alert();
+		    		
+		    		String t1=getDriver().switchTo().alert().getText();
+		    		
+		    		test.log(LogStatus.PASS, "Without Enter Data Validation Message For Email Field  = " + t1 );
+		    		
+		    		Thread.sleep(4000);
+		    		ac.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		        } finally {
+		        	Locator.CloseEntityButton().click();
+		    		Thread.sleep(3000);
+		        }
+				
 				
 				// Entity Validation For Status DropDown
 				
@@ -1207,7 +1410,7 @@ public class Method extends BasePage {
 			
 				Thread.sleep(5000);
 				
-				
+				/*
 		        Alert aci=getDriver().switchTo().alert();
 				
 				String ti=getDriver().switchTo().alert().getText();
@@ -1222,6 +1425,29 @@ public class Method extends BasePage {
 				Thread.sleep(2000);
 				Locator.CloseEntityButton().click();
 				Thread.sleep(4000);
+				*/
+				try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac=getDriver().switchTo().alert();
+		    		
+		    		String t1=getDriver().switchTo().alert().getText();
+		    		
+		    		test.log(LogStatus.PASS, "Without Enter Data Validation Message For Status Field  = " + t1 );
+		    		
+		    		Thread.sleep(4000);
+		    		ac.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		        } finally {
+		        	Locator.CloseEntityButton().click();
+		    		Thread.sleep(3000);
+		        }
+				
 				
 				// Entity Validation For Industry Field
 				
@@ -1312,7 +1538,7 @@ public class Method extends BasePage {
 			
 				Thread.sleep(5000);
 				
-				
+				/*
 		        Alert acj=getDriver().switchTo().alert();
 				
 				String tj=getDriver().switchTo().alert().getText();
@@ -1325,6 +1551,28 @@ public class Method extends BasePage {
 				Thread.sleep(4000);
 				Locator.CloseEntityButton().click();
 				Thread.sleep(4000);
+				*/
+				try {
+		            // Wait for the alert to be present
+		            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+		            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+		            // Once alert is present, handle it
+		            System.out.println("Alert is present: " + alert.getText());
+		            Alert ac=getDriver().switchTo().alert();
+		    		
+		    		String t1=getDriver().switchTo().alert().getText();
+		    		
+		    		test.log(LogStatus.PASS, "Without Enter Data Validation Message For Industry Field  = " + t1 );
+		    		
+		    		Thread.sleep(4000);
+		    		ac.accept(); // Accept the alert (click OK)
+		        } catch (Exception e) {
+		            System.out.println("Alert not found within the specified time.");
+		        } finally {
+		        	Locator.CloseEntityButton().click();
+		    		Thread.sleep(3000);
+		        }
 					
 		
 		
@@ -2037,7 +2285,7 @@ public class Method extends BasePage {
 	public static void AddUser( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Thread.sleep(3000);
@@ -2107,7 +2355,7 @@ public class Method extends BasePage {
 	public static void UpdateUser( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 	
-	Locator.MasterButton().click();
+	//Locator.MasterButton().click();
 	Thread.sleep(3000);
 	Locator.UserButton().click();
 	Thread.sleep(3000);
@@ -2195,7 +2443,7 @@ public class Method extends BasePage {
 	public static void UserReset4( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.UserButton().click();
@@ -2237,7 +2485,7 @@ public class Method extends BasePage {
 	public static void ValidationUser( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 	/*	
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -2265,13 +2513,16 @@ public class Method extends BasePage {
 		
 		Thread.sleep(3000);
 		
-		Locator.MasterButton().click();
-		Thread.sleep(3000);
+	//	//Locator.MasterButton().click();
+	//	Thread.sleep(3000);
 		
+	//	Actions action = new Actions(getDriver());
+	//	action.moveToElement(Locator.UserButton()).click().build().perform();	 //Clicking on Back button
+		Thread.sleep(2000);
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		
-		Thread.sleep(3000);
+	Thread.sleep(3000);
 		Locator.AddUser().click();
 		Thread.sleep(3000);
 		
@@ -2323,20 +2574,20 @@ public class Method extends BasePage {
 			Thread.sleep(2000);
 			
 		
-		Locator.CloseUserPage().click();
-		Thread.sleep(2000);
+	//	Locator.CloseUserPage().click();
+	//	Thread.sleep(2000);
 		
 		// last name
 		
-		Locator.MasterButton().click();
-		Thread.sleep(3000);
+		//Locator.MasterButton().click();
+	//	Thread.sleep(3000);
+		
+	//	Thread.sleep(3000);
+	//	Locator.UserButton().click();
 		
 		Thread.sleep(3000);
-		Locator.UserButton().click();
-		
-		Thread.sleep(3000);
-		Locator.AddUser().click();
-		Thread.sleep(3000);
+	//	Locator.AddUser().click();
+	//	Thread.sleep(3000);
 		
 		
 		
@@ -2345,8 +2596,9 @@ public class Method extends BasePage {
 		Locator.AddUserFirstName().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(2000);
 		
-		
-		
+		Locator.AddUserLastName().clear();
+		Thread.sleep(2000);
+		/*
 		row0 = sheet.getRow(18);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.AddUserEmail().sendKeys(c1.getStringCellValue()); // Writing Task title
@@ -2368,6 +2620,7 @@ public class Method extends BasePage {
 		Thread.sleep(4000);
 		Locator.AddUserSelectRole().click();
 		Thread.sleep(4000);
+		*/
 		Locator.UserSubmitButton().click();
 		Thread.sleep(4000);
 		
@@ -2382,36 +2635,37 @@ public class Method extends BasePage {
 			Thread.sleep(2000);
 			
 		
-		Locator.CloseUserPage().click();
-		Thread.sleep(2000);
+	//	Locator.CloseUserPage().click();
+	//	Thread.sleep(2000);
 		
 		// for email
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
+	//	Thread.sleep(3000);
+		
+	//	Thread.sleep(3000);
+	//	Locator.UserButton().click();
+		
+	//	Thread.sleep(3000);
+	//	Locator.AddUser().click();
 		Thread.sleep(3000);
 		
-		Thread.sleep(3000);
-		Locator.UserButton().click();
 		
-		Thread.sleep(3000);
-		Locator.AddUser().click();
-		Thread.sleep(3000);
-		
-		
-		
+		/*
 		row0 = sheet.getRow(16);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.AddUserFirstName().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(2000);
-		
+		*/
 		row0 = sheet.getRow(17);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.AddUserLastName().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(2000);
 		
 		
-		
-		
+		Locator.AddUserEmail().clear();
+		Thread.sleep(2000);
+		/*
 		row0 = sheet.getRow(19);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.AddUserContact().sendKeys(c1.getStringCellValue()); // Writing Task title
@@ -2427,6 +2681,7 @@ public class Method extends BasePage {
 		Thread.sleep(4000);
 		Locator.AddUserSelectRole().click();
 		Thread.sleep(4000);
+		*/
 		Locator.UserSubmitButton().click();
 		Thread.sleep(4000);
 		
@@ -2441,17 +2696,17 @@ public class Method extends BasePage {
 			Thread.sleep(2000);
 			
 		
-		Locator.CloseUserPage().click();
-		Thread.sleep(2000);
+	//	Locator.CloseUserPage().click();
+	//	Thread.sleep(2000);
 		
 		// user contact
 		
-		Locator.MasterButton().click();
-		Thread.sleep(3000);
+		//Locator.MasterButton().click();
+	//	Thread.sleep(3000);
 		
-		Thread.sleep(3000);
-		Locator.UserButton().click();
-		
+	//	Thread.sleep(3000);
+	//	Locator.UserButton().click();
+		/*
 		Thread.sleep(3000);
 		Locator.AddUser().click();
 		Thread.sleep(3000);
@@ -2467,12 +2722,15 @@ public class Method extends BasePage {
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.AddUserLastName().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(2000);
-		
+		*/
 		row0 = sheet.getRow(18);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.AddUserEmail().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(2000);
 		
+		Locator.AddUserContact().clear();
+		Thread.sleep(2000);
+		/*
 		
 		
 		
@@ -2486,7 +2744,7 @@ public class Method extends BasePage {
 		Thread.sleep(4000);
 		Locator.AddUserSelectRole().click();
 		Thread.sleep(4000);
-		
+		*/
 		Locator.UserSubmitButton().click();
 		Thread.sleep(4000);
 		
@@ -2506,11 +2764,11 @@ public class Method extends BasePage {
 		
 		// user role
 		
-		Locator.MasterButton().click();
-		Thread.sleep(3000);
+		//Locator.MasterButton().click();
+	//	Thread.sleep(3000);
 		
-		Thread.sleep(3000);
-		Locator.UserButton().click();
+	//	Thread.sleep(3000);
+	//	Locator.UserButton().click();
 		
 		Thread.sleep(3000);
 		Locator.AddUser().click();
@@ -2543,7 +2801,7 @@ public class Method extends BasePage {
 		Thread.sleep(4000);
 		Locator.UserSubmitButton().click();
 		Thread.sleep(4000);
-		
+		/*
 		 Alert ac14=getDriver().switchTo().alert();
 			
 			String t24=getDriver().switchTo().alert().getText();
@@ -2553,10 +2811,30 @@ public class Method extends BasePage {
 			Thread.sleep(2000);
 			ac14.accept();
 			Thread.sleep(2000);
-			
+			*/
+		try {
+            // Wait for the alert to be present
+            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+            // Once alert is present, handle it
+            System.out.println("Alert is present: " + alert.getText());
+            Alert a=getDriver().switchTo().alert();
+    		
+    		String t=getDriver().switchTo().alert().getText();
+			test.log(LogStatus.PASS, " User validation message for Role Field = " + t);
+
+    		Thread.sleep(5000);
+            a.accept(); // Accept the alert (click OK)
+        } catch (Exception e) {
+            System.out.println("Alert not found within the specified time.");
+        } finally {
+        	Locator.CloseUserPage().click();
+    		Thread.sleep(2000);
+        }
 		
-		Locator.CloseUserPage().click();
-		Thread.sleep(2000);
+	//	Locator.CloseUserPage().click();
+	//	Thread.sleep(2000);
 		
 		
 		
@@ -2566,7 +2844,7 @@ public class Method extends BasePage {
 	public static void ValidationUserRole( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -2611,7 +2889,7 @@ public class Method extends BasePage {
 	
 	 public static void UserDelete1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	 {
-		 Locator.MasterButton().click();
+		 //Locator.MasterButton().click();
 		 Thread.sleep(3000);
 		 Locator.UserButton().click();
 		 Thread.sleep(3000);
@@ -2650,7 +2928,7 @@ public class Method extends BasePage {
 	
 	public static void UploadUser( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -2692,7 +2970,7 @@ public class Method extends BasePage {
 	public static void AddContractors( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -2773,7 +3051,7 @@ public class Method extends BasePage {
 	public static void UpdateContractor( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(1000);
 		
 		Locator.UserButton().click();
@@ -2870,7 +3148,7 @@ public class Method extends BasePage {
 	public static void ResetPassContractor1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(1000);
 		
 		Locator.UserButton().click();
@@ -2912,7 +3190,7 @@ public class Method extends BasePage {
 	public static void DeleteContractor( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -2950,7 +3228,7 @@ public class Method extends BasePage {
 	public static void AddManagementAssignment( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -2997,7 +3275,7 @@ public class Method extends BasePage {
 	
 	public static void DeleteMA( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(4000);
@@ -3045,7 +3323,7 @@ public class Method extends BasePage {
 	public static void AddProject( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 	
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.ProjectButton().click();
 		Thread.sleep(2000);
@@ -3115,7 +3393,7 @@ public class Method extends BasePage {
 	
 	public static void AddLicence( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		
 		Locator.ProjectButton().click();
 		Thread.sleep(4000);
@@ -3193,7 +3471,7 @@ public class Method extends BasePage {
 	public static void UpdateProject( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.ProjectButton().click();
 		Thread.sleep(2000);
@@ -3281,7 +3559,7 @@ public class Method extends BasePage {
 	public static void DeleteProject( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.ProjectButton().click();
 		Thread.sleep(2000);
@@ -3323,7 +3601,7 @@ public class Method extends BasePage {
 	public static void UploadProject( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(4000);
 		Locator.ProjectButton().click();
 		Thread.sleep(4000);
@@ -3369,8 +3647,8 @@ public class Method extends BasePage {
 	
 	public static void UploadProjectBlankSheet( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
-		Thread.sleep(4000);
+	//	//Locator.MasterButton().click();
+	//	Thread.sleep(4000);
 		
 		Locator.ProjectButton().click();
 		Thread.sleep(4000);
@@ -3410,7 +3688,11 @@ public class Method extends BasePage {
 	
 	public static void UploadUserWithoutEnterData( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
+		////Locator.MasterButton().click();
+		//Thread.sleep(3000);
+		////Locator.MasterButton().click();
+	//	Thread.sleep(3000);
+	//	//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -3451,7 +3733,7 @@ public class Method extends BasePage {
 	{
 		
 		
-        Locator.MasterButton().click();
+        //Locator.MasterButton().click();
         Thread.sleep(3000);
 		Locator.ProjectButton().click();
 		Thread.sleep(3000);
@@ -3494,7 +3776,7 @@ public class Method extends BasePage {
 	public static void MapNewProject( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
         Thread.sleep(3000);
 		
         Locator.Contractortab().click();
@@ -3577,7 +3859,7 @@ public class Method extends BasePage {
 	public static void CTContractorAdd( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(6000);
@@ -3654,7 +3936,7 @@ public class Method extends BasePage {
 	public static void UpdateContractorCT( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(7000);
@@ -3747,7 +4029,7 @@ public class Method extends BasePage {
 	public static void DeleteContractorCT( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -3782,7 +4064,7 @@ public class Method extends BasePage {
 	public static void ExportButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -3815,7 +4097,7 @@ public class Method extends BasePage {
 	public static void ClearButtonCTCC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -3862,7 +4144,7 @@ public class Method extends BasePage {
 	public static void UploadContractorCT( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -3908,7 +4190,7 @@ public class Method extends BasePage {
 	
 	public static void uploadContractorBlanksheet( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -3930,7 +4212,7 @@ public class Method extends BasePage {
 		Locator.UploadSubmitCT().click();
 		Thread.sleep(3000);
 		
-		
+		/*
 		Thread.sleep(23000);
 		 Alert ac2=getDriver().switchTo().alert();
 			
@@ -3942,8 +4224,25 @@ public class Method extends BasePage {
 			ac2.accept();
 			
 			Thread.sleep(6000);
+*/
+		try {
+            // Wait for the alert to be present
+            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
 
-		
+            // Once alert is present, handle it
+            System.out.println("Alert is present: " + alert.getText());
+            Alert ac=getDriver().switchTo().alert();
+    		
+    		String t1=getDriver().switchTo().alert().getText();
+    		
+    		test.log(LogStatus.PASS, t1 );
+    		
+    		Thread.sleep(4000);
+    		ac.accept(); // Accept the alert (click OK)
+        } catch (Exception e) {
+            System.out.println("Alert not found within the specified time.");
+        } 
 		
 		
 		
@@ -3956,7 +4255,7 @@ public class Method extends BasePage {
 	
 	public static void UploadContractorProjectMapping( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -3994,7 +4293,7 @@ public class Method extends BasePage {
 	public static void UploadContractorProjectMappingSheet( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -4037,7 +4336,7 @@ public class Method extends BasePage {
 	public static void AddLicenceCT( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.Contractortab().click();
@@ -4125,7 +4424,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.Contractortab().click();
@@ -4171,7 +4470,7 @@ public class Method extends BasePage {
 	public static void UpdateLicence( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.Contractortab().click();
@@ -4266,7 +4565,7 @@ public class Method extends BasePage {
 	public static void AddActAndComplience( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4322,7 +4621,7 @@ public class Method extends BasePage {
 	public static void DeleteLicenceC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.Contractortab().click();
@@ -4359,7 +4658,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4411,7 +4710,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4468,7 +4767,7 @@ public class Method extends BasePage {
 	public static void DeleteAc( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4512,7 +4811,7 @@ public class Method extends BasePage {
 	{
 		
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4555,7 +4854,7 @@ public class Method extends BasePage {
 	{
 		
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4597,7 +4896,7 @@ public class Method extends BasePage {
 	{
 		
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4639,7 +4938,7 @@ public class Method extends BasePage {
 	public static void AddActWithState( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4699,7 +4998,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4760,7 +5059,7 @@ public class Method extends BasePage {
 	public static void AddActDuplicate( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 			
-			Locator.MasterButton().click();
+			//Locator.MasterButton().click();
 			Thread.sleep(3000);
 			
 			Locator.ActAndComplianceMaster().click();
@@ -4815,7 +5114,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4873,7 +5172,7 @@ public class Method extends BasePage {
 	public static void AddCompliance( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4947,7 +5246,7 @@ public class Method extends BasePage {
 	public static void AddComplianceForState( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5029,7 +5328,7 @@ public class Method extends BasePage {
 	public static void AddComplianceForDiffeState( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5108,7 +5407,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5181,7 +5480,7 @@ public class Method extends BasePage {
 	public static void UpdateComplianceAC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5252,7 +5551,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5291,7 +5590,7 @@ public class Method extends BasePage {
 	 {
 		 
 		 
-		 Locator.MasterButton().click();
+		 //Locator.MasterButton().click();
 			Thread.sleep(3000);
 			
 			Locator.ActAndComplianceMaster().click();
@@ -5327,7 +5626,7 @@ public class Method extends BasePage {
 	public static void UploadCompliance( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5376,7 +5675,7 @@ public class Method extends BasePage {
 	public static void UploadBlankSheetComplianceAC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5425,7 +5724,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5510,7 +5809,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5550,7 +5849,7 @@ public class Method extends BasePage {
 	public static void DeleteTemplateAC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5590,7 +5889,7 @@ public class Method extends BasePage {
 	public static void UploadTemplate( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5634,7 +5933,7 @@ public class Method extends BasePage {
 	public static void UploadBlankSheetTemplateAC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5679,7 +5978,7 @@ public class Method extends BasePage {
 	
 	public static void DuplicateTemplateAC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5747,7 +6046,7 @@ public class Method extends BasePage {
 	public static void AddContractorType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ContractorTypeButton().click();
@@ -5790,7 +6089,7 @@ public class Method extends BasePage {
 	public static void UpdateContractorType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ContractorTypeButton().click();
@@ -5838,7 +6137,7 @@ public class Method extends BasePage {
 	public static void DeleteContractorType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ContractorTypeButton().click();
@@ -5878,7 +6177,7 @@ public class Method extends BasePage {
 	public static void ContractorTypeClearButtonn( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ContractorTypeButton().click();
@@ -5919,7 +6218,7 @@ public class Method extends BasePage {
 	
 	public static void AddCity( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.CityMasterButton().click();
@@ -5966,7 +6265,7 @@ public class Method extends BasePage {
 	public static void UpdateCity( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.CityMasterButton().click();
@@ -6017,7 +6316,7 @@ public class Method extends BasePage {
 	public static void DeleteCity( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.CityMasterButton().click();
@@ -6044,7 +6343,7 @@ public class Method extends BasePage {
 	public static void CityMasterClearButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.CityMasterButton().click();
@@ -6091,7 +6390,7 @@ public class Method extends BasePage {
  	public static void AddLicenceType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
  	{
  		
- 		Locator.MasterButton().click();
+ 		//Locator.MasterButton().click();
 		Thread.sleep(3000);
  		
 		Locator.LicenceTypeMaster().click();
@@ -6134,7 +6433,7 @@ public class Method extends BasePage {
 	public static void UpdateLicenceType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
  		
 		Locator.LicenceTypeMaster().click();
@@ -6178,7 +6477,7 @@ public class Method extends BasePage {
 	public static void DeleteLicenceType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
  		
 		Locator.LicenceTypeMaster().click();
@@ -6208,7 +6507,7 @@ public class Method extends BasePage {
 	public static void LicenceTypeClearButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
  		
 		Locator.LicenceTypeMaster().click();
@@ -6248,7 +6547,7 @@ public class Method extends BasePage {
 	public static void AddDataPoint( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.DataPointMaster().click();
@@ -6299,7 +6598,7 @@ public class Method extends BasePage {
 	public static void UpdateDataPoint( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.DataPointMaster().click();
@@ -6358,7 +6657,7 @@ public class Method extends BasePage {
 	public static void DeleteDataPoint( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.DataPointMaster().click();
@@ -6390,7 +6689,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.DataPointMaster().click();
@@ -7342,7 +7641,7 @@ public class Method extends BasePage {
 
  	public static void UploadUservalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
  	{
- 		Locator.MasterButton().click();
+ 		//Locator.MasterButton().click();
  		Thread.sleep(3000);
  		Locator.UserButton().click();
  		Thread.sleep(3000);
@@ -7378,7 +7677,7 @@ public class Method extends BasePage {
  	public static void AddContractorsvalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.UserButton().click();
 		Thread.sleep(2000);
@@ -7410,7 +7709,7 @@ public class Method extends BasePage {
  	public static void AddContractorsvalidationallfield( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.UserButton().click();
 		Thread.sleep(2000);
@@ -7751,7 +8050,7 @@ public class Method extends BasePage {
  	public static void AddManagementAssignmentvalidation1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.UserButton().click();
 		Thread.sleep(2000);
@@ -7807,7 +8106,7 @@ public class Method extends BasePage {
  	public static void AddManagementAssignmentvalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.UserButton().click();
 		Thread.sleep(2000);
@@ -7961,7 +8260,7 @@ public class Method extends BasePage {
  	public static void UploadProjectvalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.ProjectButton().click();
 		Thread.sleep(2000);
@@ -7996,7 +8295,7 @@ public class Method extends BasePage {
  	public static void UploadContractorCTvalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -8033,7 +8332,7 @@ public class Method extends BasePage {
  	public static void UploadContractorProjectMappingSheetvalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -8070,7 +8369,7 @@ public class Method extends BasePage {
 	{
 		
 		Thread.sleep(2000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -8104,7 +8403,7 @@ public class Method extends BasePage {
  	public static void UploadCompliancevalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -8138,7 +8437,7 @@ public class Method extends BasePage {
  	public static void UploadTemplatevalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -9589,7 +9888,7 @@ public class Method extends BasePage {
  	
  	public static void AddCityvalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.CityMasterButton().click();
@@ -9631,7 +9930,7 @@ public class Method extends BasePage {
  	public static void AddLicenceTypevalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
  	{
  		
- 		Locator.MasterButton().click();
+ 		//Locator.MasterButton().click();
 		Thread.sleep(3000);
  		
 		Locator.LicenceTypeMaster().click();
@@ -9894,7 +10193,7 @@ public class Method extends BasePage {
  	public static void AddLicenceCTvalidation1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		
 		Locator.Contractortab().click();
@@ -9938,7 +10237,7 @@ public class Method extends BasePage {
  	public static void AddLicenceCTvalidation2( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.Contractortab().click();
@@ -10354,7 +10653,7 @@ public class Method extends BasePage {
  	public static void AddDataPointvalidation1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.DataPointMaster().click();
@@ -10410,7 +10709,7 @@ public class Method extends BasePage {
  	public static void AddDataPointvalidation12( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.DataPointMaster().click();
@@ -10519,7 +10818,7 @@ public class Method extends BasePage {
  	public static void AddActAndCompliencevalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -10583,7 +10882,7 @@ public class Method extends BasePage {
  	public static void AddActAndCompliencevalidation2( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -10790,7 +11089,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -10876,7 +11175,7 @@ public class Method extends BasePage {
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -10964,7 +11263,7 @@ public class Method extends BasePage {
  	public static void AddContractorTypevalidation( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ContractorTypeButton().click();
@@ -11137,7 +11436,7 @@ public class Method extends BasePage {
  	
  	public static void UploadUserDifferentExcelSheet( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -11182,7 +11481,7 @@ public class Method extends BasePage {
  	
  	public static void UploadUserPdf( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -11226,7 +11525,7 @@ public class Method extends BasePage {
  	
  	public static void UploadUserVideo( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -11273,7 +11572,7 @@ public class Method extends BasePage {
  	public static void UploadProjectDifferentExcelSheet( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(4000);
 		Locator.ProjectButton().click();
 		Thread.sleep(4000);
@@ -11320,7 +11619,7 @@ public class Method extends BasePage {
  	public static void UploadProjectpdf( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(4000);
 		Locator.ProjectButton().click();
 		Thread.sleep(4000);
@@ -11369,7 +11668,7 @@ public class Method extends BasePage {
  	public static void UploadProjectVideo( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(4000);
 		Locator.ProjectButton().click();
 		Thread.sleep(4000);
@@ -11416,7 +11715,7 @@ public class Method extends BasePage {
  	public static void UploadContractorCTDifferentExcelSheet( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -11465,7 +11764,7 @@ public class Method extends BasePage {
  	public static void UploadContractorCTPdf( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -11516,7 +11815,7 @@ public class Method extends BasePage {
  	public static void UploadContractorCTVideo( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -11566,7 +11865,7 @@ public class Method extends BasePage {
  	public static void UploadContractorProjectMappingDifferentSheetName( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -11606,7 +11905,7 @@ public class Method extends BasePage {
  	public static void UploadContractorProjectMappingpdf( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -11648,7 +11947,7 @@ public class Method extends BasePage {
  	public static void UploadContractorProjectMappingVideo( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -11690,7 +11989,7 @@ public class Method extends BasePage {
 	{
 		
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -11736,7 +12035,7 @@ public class Method extends BasePage {
 	{
 		
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -11780,7 +12079,7 @@ public class Method extends BasePage {
 	{
 		
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -11823,7 +12122,7 @@ public class Method extends BasePage {
  	public static void UploadComplianceDifferentExcelSheetName( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -11873,7 +12172,7 @@ public class Method extends BasePage {
  	public static void UploadCompliancePdf( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -11922,7 +12221,7 @@ public class Method extends BasePage {
  	public static void UploadComplianceVideo( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -11972,7 +12271,7 @@ public class Method extends BasePage {
  	public static void UploadTemplateDifferentExcelSheet( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -12018,7 +12317,7 @@ public class Method extends BasePage {
  	public static void UploadTemplatePdf( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -12065,7 +12364,7 @@ public class Method extends BasePage {
  	public static void UploadTemplateVideo( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -12115,7 +12414,7 @@ public class Method extends BasePage {
  	public static void AddUserInvalidEmail( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Thread.sleep(3000);
@@ -12341,7 +12640,7 @@ public class Method extends BasePage {
  	public static void AddUserInvalidContact( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Thread.sleep(3000);
@@ -12616,7 +12915,7 @@ public class Method extends BasePage {
  	public static void AddContractorsInvalidEmail( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -12878,7 +13177,7 @@ public class Method extends BasePage {
  	public static void AddContractorsInvalidContacts( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -13075,7 +13374,7 @@ public class Method extends BasePage {
  	
  	public static void UploadUserNotFilledMandatoryData( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -13128,7 +13427,7 @@ public class Method extends BasePage {
  	public static void UploadProjectNotFillingMandatoryData( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(4000);
 		Locator.ProjectButton().click();
 		Thread.sleep(4000);
@@ -13177,7 +13476,7 @@ public class Method extends BasePage {
  	public static void UploadContractorCTNotFillingMandatoryData( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -13228,7 +13527,7 @@ public class Method extends BasePage {
  	public static void UploadContractorProjectMappingNotFilledMandatoryData( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -13276,7 +13575,7 @@ public class Method extends BasePage {
 	{
 		
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -13326,7 +13625,7 @@ public class Method extends BasePage {
  	public static void UploadComplianceNotFilledMandatoryData( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -13381,7 +13680,7 @@ public class Method extends BasePage {
  	public static void UploadTemplateNotFillingMandatoryData( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -13480,7 +13779,7 @@ public class Method extends BasePage {
  	
  	public static void ProjectMasterMultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
- 		Locator.MasterButton().click();
+ 		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.ProjectButton().click();
 		Thread.sleep(2000);
@@ -13652,7 +13951,7 @@ public class Method extends BasePage {
  	
  	public static void ContractorMasterMultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
- 		Locator.MasterButton().click();
+ 		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.Contractortab().click();
 		Thread.sleep(2000);
@@ -14458,7 +14757,7 @@ public class Method extends BasePage {
  	public static void UploadProject1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(4000);
 		Locator.ProjectButton().click();
 		Thread.sleep(4000);
@@ -15028,7 +15327,7 @@ public class Method extends BasePage {
  	
  	public static void UploadUserUserMastercontactfieldaccepttext( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -15113,7 +15412,7 @@ public class Method extends BasePage {
  	
  	public static void UserMasterEmailIdfieldAcceptnumbers( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -15199,7 +15498,7 @@ public class Method extends BasePage {
  	
  	public static void UserMasterrolefieldacceptdifferentname( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -15287,7 +15586,7 @@ public class Method extends BasePage {
  	
  	public static void UserMastertextfieldacceptnumbers( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -15372,7 +15671,7 @@ public class Method extends BasePage {
  	
  	public static void UserMasterwithoutenteringtwomandatoryfield( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -15570,7 +15869,7 @@ public class Method extends BasePage {
 		
 //		WebWait wait = new WebWait(, 1000);
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -15670,7 +15969,7 @@ public class Method extends BasePage {
 		
 	//	WebWait wait = new WebWait(, 1000);
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -15781,7 +16080,7 @@ public class Method extends BasePage {
  	public static void GridAndExcelCountMatchComplianceTab( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();

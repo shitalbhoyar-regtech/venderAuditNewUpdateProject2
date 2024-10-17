@@ -93,9 +93,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	
 	
 	
-	
-	
-
+/*
 	
 	@Test(priority = 1) 
 	void Entity() throws InterruptedException, IOException
@@ -1035,10 +1033,44 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
+		*/
+		
+//	@Test(priority = 0) 
+	void CMCheckBox() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Compliance Mapping Tab - Two check box displayed on compliance list page verification. ");
+		
+		CriticalMethod.CMCheckBox(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 0) 
+		void AddTemplateandUpadtetemplateButton() throws InterruptedException, IOException
+		{
+			test = extent.startTest(" Compliance Mapping Tab - Assign - Edit -Add Template button and update template button verification ");
+			
+			CriticalMethod.AddTemplateandUpadtetemplateButton(test,workbook);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 0) 
+		void AddTemplate() throws InterruptedException, IOException
+		{
+			test = extent.startTest(" Compliance Mapping Tab - Assign - Edit -Add Template verification ");
+			
+			CriticalMethod.AddTemplate(test,workbook);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 		
 		
-		
-		@Test(priority = 68) 
+	
+	//	@Test(priority = 68) 
 		void AddNewCompliance1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Compliance Mapping Tab - Mapping Compliance Verification ");
@@ -1049,8 +1081,9 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
+	
 		
-		@Test(priority = 69) 
+	//	@Test(priority = 69) 
 		void UpdateCompliencesFTab1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Compliance Mapping Tab - Edit Button-Remove Compliance Verification");
@@ -1061,7 +1094,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		
+		/*
 		
 		@Test(priority = 70) 
 		void ExportReportDownloadCM1() throws InterruptedException, IOException
@@ -1255,7 +1288,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.endTest(test);
 			extent.flush();
 		}
-		
+		*/
 	
 		
 		

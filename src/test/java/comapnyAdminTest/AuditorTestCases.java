@@ -66,9 +66,9 @@ public class AuditorTestCases extends BasePage{
 		extent = new com.relevantcodes.extentreports.ExtentReports("E:\\VenderAuditProject\\Reports\\VCACompanyAuditor.html",true);
 		
 		
-		test = extent.startTest("Verify OpenBrowser");
+		test = extent.startTest("Logging In - Auditor Login (Non-Critical) ");
 		
-		test.log(LogStatus.PASS, "Test Passed - Auditor Login.");
+		test.log(LogStatus.PASS, "Test Passed");
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -99,7 +99,7 @@ public class AuditorTestCases extends BasePage{
 	}
 	
 	
-	/*
+	
 	@Test(priority = 1) 
 	void UpcomingdashboardAndGridCountMatch1() throws InterruptedException, IOException
 	{
@@ -183,7 +183,7 @@ public class AuditorTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 8) 
+//	@Test(priority = 8) 
 	void UpcomingMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Upcoming Audit - Multiple Filter Verification  ");
@@ -193,13 +193,6 @@ public class AuditorTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	@Test(priority = 9) 
@@ -380,7 +373,7 @@ public class AuditorTestCases extends BasePage{
 	}
 
 	
-	@Test(priority = 23) 
+//	@Test(priority = 23) 
 	void RejectedMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Rejected Audit - Multiple Filter Verification  ");
@@ -483,11 +476,11 @@ public class AuditorTestCases extends BasePage{
 	
 	
 	@Test(priority = 31) 
-	void UpdateInEditButton1() throws InterruptedException, IOException
+	void PRChangeReviewerstatus1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Pending Review Audit - Edit - Change Reviewer Status Verification");
 		
-		CriticalMethod2.UpdateInEditButton(test,workbook);
+		CriticalMethod2.PRChangeReviewerstatus(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -496,7 +489,7 @@ public class AuditorTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 32) 
+//	@Test(priority = 32) 
 	void PendingReviewMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Pending Review Audit - Multiple Filter Verification  ");
@@ -507,7 +500,17 @@ public class AuditorTestCases extends BasePage{
 		extent.flush();
 	}
 	
-
+@Test(priority = 32) 
+	void PendingForReviewHeadCount1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Pending Review Audit - Head Count Verification");
+		
+		CriticalMethod2.PendingForReviewHeadCount(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
 	
 	@Test(priority = 33) 
 	void ClosedDashboardAndGridCount1() throws InterruptedException, IOException
@@ -533,7 +536,7 @@ public class AuditorTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 35) 
+//	@Test(priority = 35) 
 	void ClosedMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Closed Audit - Multiple Filter Verification  ");
@@ -557,7 +560,7 @@ public class AuditorTestCases extends BasePage{
 			extent.endTest(test);
 			extent.flush();
 		}
-		
+	
 
 	@Test(priority = 37) 
 	void CompliedGraphMultipleFilterHigh1() throws InterruptedException, IOException
@@ -571,7 +574,7 @@ public class AuditorTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 38) 
+//	@Test(priority = 38) 
 	void CompliedGraphMultipleFilterMedium1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Complied status - Medium Risk - Multiple Filter Verification  ");
@@ -583,7 +586,7 @@ public class AuditorTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 39) 
+//	@Test(priority = 39) 
 	void CompliedGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Complied status - Low Risk - Multiple Filter Verification  ");
@@ -608,7 +611,7 @@ public class AuditorTestCases extends BasePage{
 		}
 		
 		
-	@Test(priority = 41) 
+//	@Test(priority = 41) 
 	void NotCompliedGraphMultipleFilterHigh1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Complied status - High Risk - Multiple Filter Verification  ");
@@ -620,7 +623,7 @@ public class AuditorTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 42) 
+//	@Test(priority = 42) 
 	void NotCompliedGraphMultipleFilterMedium1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Complied status - Medium Risk - Multiple Filter Verification  ");
@@ -633,7 +636,7 @@ public class AuditorTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 43) 
+//	@Test(priority = 43) 
 	void NotCompliedGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Complied status - Low Risk - Multiple Filter Verification  ");
@@ -659,7 +662,7 @@ public class AuditorTestCases extends BasePage{
 		
 		
 		
-	@Test(priority = 45) 
+//	@Test(priority = 45) 
 	void NotApplicableGraphMultipleFilterHigh1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Applicable status - High Risk - Multiple Filter Verification  ");
@@ -672,7 +675,7 @@ public class AuditorTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 46) 
+//	@Test(priority = 46) 
 	void NotApplicableGraphMultipleFilterMedium1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Applicable status - Medium Risk - Multiple Filter Verification  ");
@@ -687,7 +690,7 @@ public class AuditorTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 47) 
+//	@Test(priority = 47) 
 	void NotApplicableGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Applicable status - Low Risk - Multiple Filter Verification  ");
@@ -720,7 +723,7 @@ public class AuditorTestCases extends BasePage{
 		}
 		
 	
-	//@Test(priority = 49) 
+	@Test(priority = 49) 
 	void ACSOverdueMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Audit Completion status - Overdue Status - Multiple Filter Verification  ");
@@ -733,7 +736,7 @@ public class AuditorTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 50) 
+//	@Test(priority = 50) 
 	void ACSPendingReviewMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Audit Completion status - Pending Review Status - Multiple Filter Verification  ");
@@ -745,7 +748,7 @@ public class AuditorTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 51) 
+//	@Test(priority = 51) 
 	void ACSClosedMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Audit Completion status - Closed Status - Multiple Filter Verification  ");
@@ -798,7 +801,7 @@ public class AuditorTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 54) 
+//	@Test(priority = 54) 
 	void PWCSSCompliedGraphMultipleFilterMedium1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Project Wise Compliance Summary - Complied status - Medium Risk - Multiple Filter Verification  ");
@@ -810,7 +813,7 @@ public class AuditorTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 55) 
+//	@Test(priority = 55) 
 	void PWCSSCompliedGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Project Wise Compliance Summary - Complied status - Low Risk - Multiple Filter Verification  ");
@@ -937,22 +940,67 @@ public class AuditorTestCases extends BasePage{
 	
 
 
-	
 	@Test(priority = 62) 
-	void PendingForReviewHeadCount1() throws InterruptedException, IOException
+	void MyWorkspaceLicense1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Pending Review Audit - Head Count Verification");
+		test = extent.startTest("My Workspace - Audit and License Tab Verification ");
 		
-		CriticalMethod2.PendingForReviewHeadCount(test,workbook);
+		Method2.MyWorkspaceLicense(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
+	@Test(priority = 63) 
+	void MyWorkspaceLicenseSearch1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - License tab Verification ");
+		
+		Method2.MyWorkspaceLicenseSearch(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	@Test(priority = 64) 
+	void MyWorkspaceLicenseApprove1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - License Approve Verification ");
+		
+		Method2.MyWorkspaceLicenseApprove(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	@Test(priority = 65) 
+	void MyWorkspaceLicenseReject1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - License Reject Verification ");
+		
+		Method2.MyWorkspaceLicenseReject(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
+	@Test(priority = 66) 
+	void MyWorkspacePreviousDocumentView1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - License Tab - Previous Document Viewed Verification ");
+		
+		Method2.MyWorkspacePreviousDocumentView(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
 	
 
 	
-	@Test(priority = 63) 
+	@Test(priority = 67) 
 	void ViewDocument1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - View Button Verification");
@@ -965,7 +1013,7 @@ public class AuditorTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 64) 
+	@Test(priority = 68) 
 	void DownloadCompliance1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - Download Button Verification");
@@ -977,7 +1025,7 @@ public class AuditorTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 65) 
+	@Test(priority = 69) 
 	void MultipleComplianceDownload1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - Multiple File Download Verification");
@@ -990,7 +1038,7 @@ public class AuditorTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 66) 
+	@Test(priority = 70) 
 	void DocumentClearButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - Clear Button Verification");
@@ -1002,7 +1050,7 @@ public class AuditorTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 67) 
+	@Test(priority = 71) 
 	void DocumentTabMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - Multiple Filter Verification  ");
@@ -1015,20 +1063,21 @@ public class AuditorTestCases extends BasePage{
 	
 
 	
-   @Test(priority = 68) 
-	void ExportReportR1() throws InterruptedException, IOException
+	
+   @Test(priority = 72) 
+	void ReportTabGridAndExcelCountMatch1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Export Button Verification");
 		
-		CriticalMethod2.ExportReportR(test,workbook);
+		Method.ReportTabGridAndExcelCountMatch1(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
+   
 	
-	
-	@Test(priority = 69) 
+	@Test(priority = 73) 
 	void ClearButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Clear Button Verification");
@@ -1041,7 +1090,7 @@ public class AuditorTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 70) 
+	@Test(priority = 74) 
 	void ActnColmFileDownld1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Action Column - File Download Verification");
@@ -1054,7 +1103,7 @@ public class AuditorTestCases extends BasePage{
 
 	
 	
-	@Test(priority = 71) 
+	@Test(priority = 75) 
 	void MoreReport1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - More Report Button Verification");
@@ -1066,7 +1115,7 @@ public class AuditorTestCases extends BasePage{
 	}
 	
 	
-	@Test(priority = 72) 
+	@Test(priority = 76) 
 	void ViewReportOfCompliance1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Project - View Button Verification");
@@ -1076,9 +1125,9 @@ public class AuditorTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	*/
 	
-	@Test(priority = 73) 
+	
+	@Test(priority = 77) 
 	void ReportMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Report Tab - Multiple Filter Verification  ");

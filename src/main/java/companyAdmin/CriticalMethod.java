@@ -1,15 +1,22 @@
 package companyAdmin;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -737,7 +744,7 @@ public class CriticalMethod extends BasePage {
 		*/
 	 try {
          // Wait for the alert to be present
-         WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+         WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
          Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
 
          // Once alert is present, handle it
@@ -761,7 +768,7 @@ public class CriticalMethod extends BasePage {
          ac1.accept(); // Accept the alert (click OK)
      } catch (Exception e) {
          System.out.println("Alert not found within the specified time");
-         test.log(LogStatus.FAIL, "Alert not found within the specified time");
+         test.log(LogStatus.FAIL, "Download Error File");
      } 
 
 		
@@ -838,8 +845,8 @@ public class CriticalMethod extends BasePage {
 	public static void AddUser( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
-		Thread.sleep(3000);
+	//	//Locator.MasterButton().click();
+	//	Thread.sleep(3000);
 		
 		Thread.sleep(3000);
 		Locator.UserButton().click();
@@ -939,10 +946,12 @@ public class CriticalMethod extends BasePage {
 	public static void UpdateUser( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 	
-	Locator.MasterButton().click();
-	Thread.sleep(3000);
+//	//Locator.MasterButton().click();
+//	Thread.sleep(3000);
 	Locator.UserButton().click();
 	Thread.sleep(3000);
+	
+	
 	
 	sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
 	int row = 0;
@@ -955,7 +964,7 @@ public class CriticalMethod extends BasePage {
     js1.executeScript("window.scrollBy(0,1000)");
     Thread.sleep(5000);
   
- 
+ /*
     Locator.Paging().click();
 	Thread.sleep(3000);
 	
@@ -966,7 +975,8 @@ public class CriticalMethod extends BasePage {
     
     js.executeScript("window.scrollBy(0,1000)");
     Thread.sleep(5000);
-  
+  */
+    
 	Locator.EditUser().click();
 	Thread.sleep(3000);
 	
@@ -1067,12 +1077,12 @@ public class CriticalMethod extends BasePage {
 	public static void UserReset4( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
-		Thread.sleep(3000);
+		//Locator.MasterButton().click();
+	//	Thread.sleep(3000);
 		
 		Locator.UserButton().click();
 		Thread.sleep(3000);
-		
+		/*
 		JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 	    
 	    js1.executeScript("window.scrollBy(0,1000)");
@@ -1089,7 +1099,7 @@ public class CriticalMethod extends BasePage {
 	    
 	    js.executeScript("window.scrollBy(0,1000)");
 	    Thread.sleep(5000);
-	    
+	    */
 		
 		Locator.UserResetPass5().click();
 		Thread.sleep(6000);
@@ -1127,11 +1137,11 @@ public class CriticalMethod extends BasePage {
 	
 	 public static void UserDelete1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	 {
-		 Locator.MasterButton().click();
+		 //Locator.MasterButton().click();
 		 Thread.sleep(3000);
 		 Locator.UserButton().click();
 		 Thread.sleep(3000);
-		 
+		 /*
 		 JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 		    
 		    js1.executeScript("window.scrollBy(0,1000)");
@@ -1149,7 +1159,7 @@ public class CriticalMethod extends BasePage {
 		    
 		    js.executeScript("window.scrollBy(0,1000)");
 		    Thread.sleep(5000);
-		    
+		    */
 			
 			Locator.DeleteUser().click();
 			
@@ -1246,7 +1256,7 @@ public class CriticalMethod extends BasePage {
 	
 	public static void UploadUser( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -1281,7 +1291,7 @@ public class CriticalMethod extends BasePage {
 	 	*/
 		 try {
 	            // Wait for the alert to be present
-	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
 	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
 
 	            // Once alert is present, handle it
@@ -1313,10 +1323,267 @@ public class CriticalMethod extends BasePage {
 		
 	}
 	
+	
+	
+	
+	
+	
+	public static void UploadUser1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
+	{
+		//Locator.MasterButton().click();
+		Thread.sleep(3000);
+		Locator.UserButton().click();
+		Thread.sleep(3000);
+		Locator.UploadUserButton().click();
+		Thread.sleep(3000);
+		
+		
+		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+		int row = 0;
+		Thread.sleep(500);
+		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+		Cell c1 = null;
+		
+		row0 = sheet.getRow(22);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.ChooseFileUser().sendKeys(c1.getStringCellValue()); // Writing Task title
+		Thread.sleep(3000);
+		
+		Locator.SubmitUploadUser().click();
+		Thread.sleep(7000);
+		
+		
+		
+                 
+	}
+	
+	
+	public static void UploadUser11( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException{
+	    
+		//Locator.MasterButton().click();
+				Thread.sleep(3000);
+				Locator.UserButton().click();
+				Thread.sleep(3000);
+				Locator.UploadUserButton().click();
+				Thread.sleep(3000);
+				
+				
+				sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+				int row = 0;
+				Thread.sleep(500);
+				Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+				Cell c1 = null;
+				
+				row0 = sheet.getRow(22);
+				c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+				Locator.ChooseFileUser().sendKeys(c1.getStringCellValue()); // Writing Task title
+				Thread.sleep(3000);        
+	        try {            
+	        	Locator.SubmitUploadUser().click();
+				Thread.sleep(7000);	            
+	            // Define a wait time (e.g., 10 seconds) for the alert to appear
+				WebDriverWait wait1 = new WebDriverWait(getDriver(), 120);	            
+	            // Check if the alert appears within the specified time
+	            try {
+	                Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+	                System.out.println("Alert is present. Message: " + alert.getText());
+	                
+	                String t=getDriver().switchTo().alert().getText();
+	                Thread.sleep(1000);	
+		    		
+	   	   		 if(t.equalsIgnoreCase("File Uploaded Successfully")) 
+	   			 {
+	   					test.log(LogStatus.PASS, t);
+	   				}
+	   				else
+	   				{
+	   					test.log(LogStatus.FAIL, t);
+	   					
+	   					
+	   				} 
+	   	   	Thread.sleep(2000);	
+	                
+	                alert.accept();  // Accept the alert if needed
+	            } catch (Exception e) {
+	                System.out.println("No alert found within the specified time.");
+	                // Check if the download link is present for the error file
+	                WebElement downloadLink = null;
+	                try {
+	                    downloadLink = getDriver().findElement(By.id("errorLink")); // Use the appropriate locator for the download link
+	                } catch (Exception linkNotFoundException) {
+	                    System.out.println("Download link for error file is not present.");
+	                }
+	                // If the download link is present, download the file
+	                if (downloadLink != null && downloadLink.isDisplayed()) {
+	                    System.out.println("Download link is present. Starting the download...");
+	                    downloadLink.click();
+	                    Thread.sleep(19000);	 
+	                    // Wait for download to complete, or manage file download as needed
+	                    /*
+	                    String downloadFilePath = "C:\\Users\\shitalb\\Downloads";  // Set your download folder
+	                    File downloadedFile = new File(downloadFilePath + "ErrorFile.txt"); // Adjust filename and type
+	                    if (downloadedFile.exists()) {
+	                        System.out.println("File downloaded successfully: " + downloadedFile.getAbsolutePath());
+	                        */
+	           		 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
+
+	               		 List<String> lines =new ArrayList<>();	               		  
+	               		 try{
+	               		    BufferedReader reader = new BufferedReader(new FileReader(filePath));
+	               		    String line;	               		  
+	               		  while((line = reader.readLine()) != null) {
+	               			 lines.add(line);	               			  
+	               		  }	               	  
+	               		 reader.close();	               		 
+	               		 if(lines.size() >= 2) {               			 
+	               			 for(int i = 1; i < lines.size() - 1; i++) {	
+	               				 
+	               				 test.log(LogStatus.FAIL, "Error Log Details  :- "+lines.get(i));	               				 
+	               			 }               			 
+	               		 }	               		 
+	               		 File file = new File(filePath);	               		  
+	               		 if(file.exists()) {	               			 
+	               			 if(file.delete())
+	               			 {	               			 
+	               			 System.out.println("File deleted Successfully.");
+	               		     }               			 
+	               		 }
+	               		 else {	               			 
+	               			 System.out.println("File does not exist Successfully.");
+	               		 }	               		 
+	               	  }
+	               	  catch(IOException e1) {
+	               		  
+	               		  e1.printStackTrace();
+	               	  }	               	  
+	                    } else {
+	                        System.out.println("File download failed or the file is not found.");
+	                    }	                    
+	                }
+	            
+	        } finally {
+                System.out.println("...Done All Process");
+
+	            // Close the browser
+	        //	getDriver().quit();
+	        }
+	    }
+	
+	
+	
 	public static void AddContractors( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
+		Thread.sleep(3000);
+		Locator.UserButton().click();
+		Thread.sleep(3000);
+		Locator.ViewContractor().click();
+		Thread.sleep(3000);
+		Locator.AddContractor().click();
+		Thread.sleep(3000);
+		
+		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
+		int row = 0;
+		Thread.sleep(500);
+		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
+		Cell c1 = null;
+		
+		row0 = sheet.getRow(23);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.AddContractorName().sendKeys(c1.getStringCellValue()); // Writing Task title
+		
+		
+		
+		row0 = sheet.getRow(24);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.AddContractorSPOCName().sendKeys(c1.getStringCellValue()); // Writing Task title
+		
+		
+		
+		row0 = sheet.getRow(25);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.AddContractorSPOCMail().sendKeys(c1.getStringCellValue()); // Writing Task title
+		
+		
+		row0 = sheet.getRow(26);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.AddContractorSPOCContact().sendKeys(c1.getStringCellValue()); // Writing Task title
+		
+		Thread.sleep(4000);
+		Locator.AddContractorType().click();
+		Thread.sleep(4000);
+		/*
+		row0 = sheet.getRow(27);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.AddContractorTypeSearch().sendKeys(c1.getStringCellValue()); // Writing Task title
+		Thread.sleep(3000);
+		*/
+		
+		Locator.AddContractorTypeuser().click();
+		Thread.sleep(3000);
+		
+		row0 = sheet.getRow(28);
+		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
+		Locator.NatureOfWorkContractor().sendKeys(c1.getStringCellValue()); // Writing Task title
+		Thread.sleep(3000);
+		
+		Locator.SubmitContractor().click();
+		
+		
+		Thread.sleep(5000);
+		/*
+		 Alert ac1=getDriver().switchTo().alert();
+			
+			String t2=getDriver().switchTo().alert().getText();
+			
+			test.log(LogStatus.PASS,  t2 );
+			
+			Thread.sleep(4000);
+			ac1.accept();
+			
+			Thread.sleep(3000);
+	 
+		*/
+		 try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Record Saved Successfully") || t.equalsIgnoreCase("Contact No Exist.")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            System.out.println("Alert not found within the specified time.");
+	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	        } 
+		
+		
+		
+			
+		
+	}
+	
+	public static void AddDuplicateContractor( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -1426,7 +1693,7 @@ public class CriticalMethod extends BasePage {
 	public static void UpdateContractor( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(1000);
 		
 		Locator.UserButton().click();
@@ -1550,7 +1817,7 @@ public class CriticalMethod extends BasePage {
 	public static void ResetPassContractor1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(1000);
 		
 		Locator.UserButton().click();
@@ -1592,7 +1859,7 @@ public class CriticalMethod extends BasePage {
 	public static void DeleteContractor( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -1665,7 +1932,7 @@ public class CriticalMethod extends BasePage {
 	    		
 	    		String t=getDriver().switchTo().alert().getText();
 	    		
-	   		 if(t.equalsIgnoreCase("Record Deleted Successfully") || t.equalsIgnoreCase("Contractor already in used.") ) 
+	   		 if(t.equalsIgnoreCase("Record Deleted Successfully.") || t.equalsIgnoreCase("Contractor already in used.") ) 
 			 {
 					test.log(LogStatus.PASS, t);
 				}
@@ -1690,7 +1957,7 @@ public class CriticalMethod extends BasePage {
 	public static void DeleteContractor1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -1700,7 +1967,7 @@ public class CriticalMethod extends BasePage {
 		
 		Locator.DeleteContractor1().click();
 		Thread.sleep(3000);
-		
+		/*
 		Thread.sleep(5000);
 		 Alert ac1=getDriver().switchTo().alert();
 			
@@ -1710,8 +1977,38 @@ public class CriticalMethod extends BasePage {
 			
 			Thread.sleep(4000);
 			ac1.accept();
+		*/
 		
+		try {
+            // Wait for the alert to be present
+            WebDriverWait wait1 = new WebDriverWait(getDriver(), 120); // 10 seconds timeout
+            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+            // Once alert is present, handle it
+            System.out.println("Alert is present: " + alert.getText());
+            Alert ac=getDriver().switchTo().alert();
+    		
+    		String t=getDriver().switchTo().alert().getText();
+    		
+   		 if(t.equalsIgnoreCase("Are you sure want to inactive this user?")) 
+		 {
+				test.log(LogStatus.PASS, t);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, t);
+				
+				
+			} 
+    		
+    		Thread.sleep(5000);
+            ac.accept(); // Accept the alert (click OK)
+        } catch (Exception e) {
+            System.out.println("Alert not found within the specified time.");
+            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+        } 
 			
+		/*
 			Thread.sleep(5000);
 			 Alert ac2=getDriver().switchTo().alert();
 				
@@ -1721,7 +2018,36 @@ public class CriticalMethod extends BasePage {
 				
 				Thread.sleep(4000);
 				ac2.accept();
+		*/
 		
+		try {
+            // Wait for the alert to be present
+            WebDriverWait wait1 = new WebDriverWait(getDriver(), 80); // 10 seconds timeout
+            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+            // Once alert is present, handle it
+            System.out.println("Alert is present: " + alert.getText());
+            Alert ac=getDriver().switchTo().alert();
+    		
+    		String t=getDriver().switchTo().alert().getText();
+    		
+   		 if(t.equalsIgnoreCase("Contractor already in used.")) 
+		 {
+				test.log(LogStatus.PASS, t);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, t);
+				
+				
+			} 
+    		
+    		Thread.sleep(5000);
+            ac.accept(); // Accept the alert (click OK)
+        } catch (Exception e) {
+            System.out.println("Alert not found within the specified time.");
+            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+        } 
 	}
 	
 	
@@ -1737,7 +2063,7 @@ public class CriticalMethod extends BasePage {
 	public static void AddManagementAssignment( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(3000);
@@ -1815,7 +2141,7 @@ public class CriticalMethod extends BasePage {
 	
 	public static void DeleteMA( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.UserButton().click();
 		Thread.sleep(4000);
@@ -1893,7 +2219,7 @@ public class CriticalMethod extends BasePage {
 	public static void AddProject( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 	
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.ProjectButton().click();
 		Thread.sleep(2000);
@@ -1996,7 +2322,7 @@ public class CriticalMethod extends BasePage {
 	
 	public static void AddLicence( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		
 		Locator.ProjectButton().click();
 		Thread.sleep(4000);
@@ -2118,7 +2444,7 @@ public class CriticalMethod extends BasePage {
 	public static void UpdateProject( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.ProjectButton().click();
 		Thread.sleep(2000);
@@ -2237,7 +2563,7 @@ public class CriticalMethod extends BasePage {
 	public static void DeleteProject( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		Locator.ProjectButton().click();
 		Thread.sleep(2000);
@@ -2309,7 +2635,7 @@ public class CriticalMethod extends BasePage {
 	public static void UploadProject( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(4000);
 		Locator.ProjectButton().click();
 		Thread.sleep(4000);
@@ -2353,7 +2679,7 @@ public class CriticalMethod extends BasePage {
 	    		
 	    		String t=getDriver().switchTo().alert().getText();
 	    		
-	   		 if(t.equalsIgnoreCase("Record Saved Successfully")) 
+	   		 if(t.equalsIgnoreCase("File Uploaded Successfully")) 
 			 {
 					test.log(LogStatus.PASS, t);
 				}
@@ -2384,7 +2710,7 @@ public class CriticalMethod extends BasePage {
 	{
 		
 		
-        Locator.MasterButton().click();
+        //Locator.MasterButton().click();
         Thread.sleep(3000);
 		Locator.ProjectButton().click();
 		Thread.sleep(3000);
@@ -2427,7 +2753,7 @@ public class CriticalMethod extends BasePage {
 	public static void MapNewProject( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
         Thread.sleep(3000);
 		
         Locator.Contractortab().click();
@@ -2545,7 +2871,7 @@ public class CriticalMethod extends BasePage {
 	public static void CTContractorAdd( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(6000);
@@ -2652,7 +2978,7 @@ public class CriticalMethod extends BasePage {
 	public static void UpdateContractorCT( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(7000);
@@ -2775,7 +3101,7 @@ public class CriticalMethod extends BasePage {
 	public static void DeleteContractorCT( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -2840,7 +3166,7 @@ public class CriticalMethod extends BasePage {
 	public static void ExportButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -2869,11 +3195,111 @@ public class CriticalMethod extends BasePage {
 		
 	}
 	
+	public static void ContractorExport( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+		
+		Thread.sleep(3000);
+		Locator.Contractortab().click();
+		Thread.sleep(3000);
+	      JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,1000)");
+	        Thread.sleep(2000);
+	 		
+	 
+		
+		Thread.sleep(1000);
+		Locator.readTotalItems1().click();
+		String item1 = Locator.readTotalItems1().getText();
+		String[] bits1 = item1.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 2];				//Getting the second last word (total number of users)
+		int count2 = Integer.parseInt(compliancesCount1);
+		
+	    
+		js.executeScript("window.scrollBy(0,-1000)");
+		
+
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+		
+		Thread.sleep(1000);
+//		CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//		Thread.sleep(250);
+		Locator.ExportButtonCT().click();					//Clicking on 'Excel Report' image.
+		test.log(LogStatus.PASS, "File downloaded successfully.");
+		
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+		
+		if(dirContents.length < allFilesNew.length)
+		{
+			
+			
+			File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+		    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+		    {
+		       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+		       {
+		           lastModifiedFile = allFilesNew[i];
+		       }
+		    }
+			
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+			/*
+			int no = sheet.getFirstRowNum();
+			Row row = sheet.getRow(no);
+			Cell c1 = row.getCell(0);
+			int records =(int) c1.getNumericCellValue();
+			*/
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow=0;
+			
+			for(Row row : sheet)
+			{
+				
+				Cell cell =row.getCell(columnNumber);
+				if(cell != null) {
+					
+					rowCount++;
+					actualRow = rowCount-1;
+				}
+				
+			}
+			fis.close();
+			
+			if(count2 == actualRow)
+			{
+				//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+				test.log(LogStatus.PASS, "Total records from Grid = "+count2+" | Total records from Report = "+actualRow);
+			}
+			else
+			{
+				//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+				test.log(LogStatus.FAIL, "Total records from Grid = "+count2+" | Total records from Excel Sheet = "+actualRow);
+			}
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		} 
+	 Thread.sleep(2000);
+     
+	    
+	}
+	
+	
 	
 	public static void ClearButtonCTCC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -2920,7 +3346,7 @@ public class CriticalMethod extends BasePage {
 	public static void UploadContractorCT( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -2992,7 +3418,7 @@ public class CriticalMethod extends BasePage {
 	public static void UploadContractorProjectMappingSheet( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		Locator.Contractortab().click();
 		Thread.sleep(3000);
@@ -3065,7 +3491,7 @@ public class CriticalMethod extends BasePage {
 	public static void AddLicenceCT( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.Contractortab().click();
@@ -3213,7 +3639,7 @@ public class CriticalMethod extends BasePage {
 	public static void LicenceDetailsVisilbe( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(2000);
 		
 		Locator.Contractortab().click();
@@ -3242,7 +3668,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.Contractortab().click();
@@ -3288,7 +3714,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void UpdateLicence( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.Contractortab().click();
@@ -3432,7 +3858,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void AddActAndComplience( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -3517,7 +3943,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void DeleteLicenceC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.Contractortab().click();
@@ -3582,7 +4008,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -3634,7 +4060,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -3722,7 +4148,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void DeleteAc( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -3797,7 +4223,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	{
 		
 		Thread.sleep(3000);
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -3871,7 +4297,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void AddCompliance( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -3977,7 +4403,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void AddComplianceForInternal( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4168,7 +4594,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void UpdateComplianceAC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
         
 		Locator.ActAndComplianceMaster().click();
@@ -4272,7 +4698,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4341,7 +4767,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	 {
 		 
 		 
-		 Locator.MasterButton().click();
+		 //Locator.MasterButton().click();
 			Thread.sleep(3000);
 			
 			Locator.ActAndComplianceMaster().click();
@@ -4379,7 +4805,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	 {
 		 
 		 
-		 Locator.MasterButton().click();
+		 //Locator.MasterButton().click();
 			Thread.sleep(3000);
 			
 			Locator.ActAndComplianceMaster().click();
@@ -4509,7 +4935,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void UploadCompliance( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4635,7 +5061,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void UploadComplianceInternal( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4763,7 +5189,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4877,7 +5303,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4917,7 +5343,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void DeleteTemplateAC( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -4987,7 +5413,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void UploadTemplate( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ActAndComplianceMaster().click();
@@ -5064,7 +5490,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void AddContractorType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ContractorTypeButton().click();
@@ -5136,7 +5562,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void UpdateContractorType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ContractorTypeButton().click();
@@ -5215,7 +5641,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void DeleteContractorType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException 
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ContractorTypeButton().click();
@@ -5319,7 +5745,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void ContractorTypeClearButtonn( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.ContractorTypeButton().click();
@@ -5360,7 +5786,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	
 	public static void AddCity( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.CityMasterButton().click();
@@ -5438,7 +5864,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void UpdateCity( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.CityMasterButton().click();
@@ -5520,7 +5946,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void DeleteCity( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.CityMasterButton().click();
@@ -5579,7 +6005,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void CityMasterClearButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.CityMasterButton().click();
@@ -5626,7 +6052,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
  	public static void AddLicenceType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
  	{
  		
- 		Locator.MasterButton().click();
+ 		//Locator.MasterButton().click();
 		Thread.sleep(3000);
  		
 		Locator.LicenceTypeMaster().click();
@@ -5700,7 +6126,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void UpdateLicenceType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
  		
 		Locator.LicenceTypeMaster().click();
@@ -5775,7 +6201,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void DeleteLicenceType( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
  		
 		Locator.LicenceTypeMaster().click();
@@ -5836,7 +6262,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void LicenceTypeClearButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
  		
 		Locator.LicenceTypeMaster().click();
@@ -5876,7 +6302,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void AddDataPoint( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.DataPointMaster().click();
@@ -5958,7 +6384,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void UpdateDataPoint( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.DataPointMaster().click();
@@ -6048,7 +6474,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	public static void DeleteDataPoint( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.DataPointMaster().click();
@@ -6111,7 +6537,7 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 	{
 		
 		
-		Locator.MasterButton().click();
+		//Locator.MasterButton().click();
 		Thread.sleep(3000);
 		
 		Locator.DataPointMaster().click();
@@ -6258,6 +6684,49 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 	}
 	
+	public static void CMCheckBox( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(3000);
+		Locator.ComplianceMapping().click();
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='gridPendingMapping']"))); 
+		Thread.sleep(1000);
+		WebElement element = Locator.CheckBox();	      
+		//JavascriptExecutor to click element
+	      JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+	      jse.executeScript("arguments[0].click();", element);
+	      boolean b = element.isSelected();
+	      if (b) {
+	         System.out.println("Checkbox is not checked");
+	      }else {
+	         System.out.println("Checkbox is checked");
+	      }
+	      
+	      
+	//	Locator.CheckBox().click();
+		Thread.sleep(1000);
+		
+		Locator.NextButton().click();
+		Thread.sleep(7000);
+		
+if(Locator.Manualcomplianceselectioncheckbox().isDisplayed()&&Locator.TemplateCompliance().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Manual compliance selection checkbox and Template Compliance checkbox should be seen on the compliance list page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Manual compliance selection checkbox and Template Compliance checkbox should not seen on the compliance list page");
+			
+		}
+	        
+		
+		
+		
+
+		
+	}
 	
 	
 	public static void UpdateCompliencesFTab( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -6331,7 +6800,136 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		
 	}
 	
+	public static void AddTemplateandUpadtetemplateButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(3000);
+		Locator.ComplianceMapping().click();
+		Thread.sleep(4000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='gridPendingMapping']"))); 
+		Thread.sleep(1000);
+				
+		Locator.Assign().click();
+		Thread.sleep(6000);
+		
+		Locator.UpdateComplienceCM().click();
+		Thread.sleep(3000);
+		
+if(Locator.AddTempbutton().isDisplayed()&&Locator.UpdateTempbutton().isDisplayed()) {
+			
+			test.log(LogStatus.PASS, "Add Template button and Update Template button should be seen on the compliance list page");
+		}else {
+			
+			test.log(LogStatus.FAIL, "Add Template button and Update Template button should not seen on the compliance list page");
+			
+		}
+
+		
+
+	}
 	
+	public static void AddTemplate( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(3000);
+		Locator.ComplianceMapping().click();
+		Thread.sleep(4000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='gridPendingMapping']"))); 
+		Thread.sleep(1000);
+				
+		Locator.Assign().click();
+		Thread.sleep(6000);
+		
+		Locator.UpdateComplienceCM().click();
+		Thread.sleep(3000);
+		
+		Locator.Filtertemp().click();
+		Thread.sleep(3000);
+		
+		Locator.FiltertempDD().click();
+		Thread.sleep(3000);
+		Locator.AddTempbutton().click();
+		Thread.sleep(3000);
+		try {
+            // Wait for the alert to be present
+            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+            // Once alert is present, handle it
+            System.out.println("Alert is present: " + alert.getText());
+            Alert ac1=getDriver().switchTo().alert();
+    		
+    		String t=getDriver().switchTo().alert().getText();
+    		
+   		 if(t.equalsIgnoreCase("Template Added Successfully")) 
+		 {
+				test.log(LogStatus.PASS, t);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, t);
+				
+				
+			} 
+    		
+    		Thread.sleep(5000);
+            ac1.accept(); // Accept the alert (click OK)
+        } catch (Exception e) {
+            
+        } 
+
+	 Thread.sleep(4000);
+	 Locator.UpdateComplienceCM().click();
+		Thread.sleep(3000);
+	 WebElement element = Locator.CheckBoxtemp();	      
+		//JavascriptExecutor to click element
+	      JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+	      jse.executeScript("arguments[0].click();", element);
+	      boolean b = element.isSelected();
+	      if (b) {
+	         System.out.println("Checkbox is not checked");
+	      }else {
+	         System.out.println("Checkbox is checked");
+	      }
+	      Thread.sleep(4000);
+	      JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	        
+	        js.executeScript("window.scrollBy(0,500)");
+	        Thread.sleep(5000);
+	      Locator.UpdateTempbutton().click();
+	      Thread.sleep(4000);
+	      try {
+	            // Wait for the alert to be present
+	            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+	            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+	            // Once alert is present, handle it
+	            System.out.println("Alert is present: " + alert.getText());
+	            Alert ac1=getDriver().switchTo().alert();
+	    		
+	    		String t=getDriver().switchTo().alert().getText();
+	    		
+	   		 if(t.equalsIgnoreCase("Template updated Successfully")) 
+			 {
+					test.log(LogStatus.PASS, t);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, t);
+					
+					
+				} 
+	    		
+	    		Thread.sleep(5000);
+	            ac1.accept(); // Accept the alert (click OK)
+	        } catch (Exception e) {
+	            
+	        } 
+		
+		
+	}
 	
 	public static void ExportReportDownloadCM( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{

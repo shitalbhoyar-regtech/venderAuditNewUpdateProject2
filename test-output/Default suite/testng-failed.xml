@@ -3,31 +3,39 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="comapnyAdminTest.CompanyAdminCriticalTestCases">
+      <class name="comapnyAdminTest.CompanyAdminNonCriticalTestCases">
         <methods>
-          <include name="UpdateProject1"/>
-          <include name="UpdateComplianceAC1"/>
           <include name="setBrowser"/>
+          <include name="AddActDuplicateForCentral1"/>
+          <include name="MoreReportR1"/>
+          <include name="AddActWithState1"/>
+          <include name="UpdateProject1"/>
+          <include name="UpdateActAndCompliance1"/>
+          <include name="UploadComplianceInternal"/>
+          <include name="AddLicence1"/>
+          <include name="DeleteAc1"/>
+          <include name="DeleteSubEntity1"/>
+          <include name="browserClosing"/>
+          <include name="UpdateSubEntity1"/>
+          <include name="AddProject1"/>
+          <include name="AddActDuplicate1"/>
+          <include name="UploadBlankSheetComplianceAC1"/>
+          <include name="UpdateLicence1"/>
+          <include name="AddLicenceCT1"/>
+          <include name="UploadActWithsameAct1"/>
           <include name="CityMasterClearButton1"/>
           <include name="UploadCompliance1"/>
-          <include name="browserClosing"/>
+          <include name="AddActWithDifferentState1"/>
+          <include name="UpdateComplianceAC1"/>
+          <include name="UpdateUser1"/>
           <include name="UserDelete11"/>
           <include name="ResetPassContractor11"/>
-          <include name="UploadContractorProjectMapping1"/>
-          <include name="AddManagementAssignment1"/>
-          <include name="UploadComplianceInternal"/>
           <include name="ActionColReportDownload1"/>
-          <include name="UpdateUser1"/>
-          <include name="DeleteAc1"/>
-          <include name="UpdateActAndCompliance1"/>
-          <include name="AddProject1"/>
+          <include name="AddDuplicateComplianceCentral1"/>
           <include name="Login"/>
-          <include name="UserResetPass2"/>
-          <include name="MoreReportR1"/>
-          <include name="UploadContractorCT1"/>
-          <include name="Entity"/>
+          <include name="ViewIconCM1"/>
         </methods>
-      </class> <!-- comapnyAdminTest.CompanyAdminCriticalTestCases -->
+      </class> <!-- comapnyAdminTest.CompanyAdminNonCriticalTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

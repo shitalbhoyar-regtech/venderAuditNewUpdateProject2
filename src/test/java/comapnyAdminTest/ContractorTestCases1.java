@@ -94,7 +94,10 @@ public class ContractorTestCases1 extends BasePage{
 		*/
 	}
 	
-/*
+	
+	
+	
+
 	@Test(priority = 1) 
 	void DashboardCountGridCount1() throws InterruptedException, IOException
 	{
@@ -105,6 +108,7 @@ public class ContractorTestCases1 extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
+	
 	
 	@Test(priority = 2)                                                                    
 	void UpcomingPerforedAudit1() throws InterruptedException, IOException
@@ -193,7 +197,7 @@ public class ContractorTestCases1 extends BasePage{
 		
 	
 	
-	@Test(priority =9 ) 
+///	@Test(priority =9 ) 
 	void UpcomingMultipleFilter1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Upcoming Audit - Multiple Filter Verification  ");
@@ -273,7 +277,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority =15 ) 
+	@Test(priority =15 ) 
 	void OverdueMultipleFilter1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Overdue Audit - Multiple Filter Verification  ");
@@ -343,7 +347,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority =17) 
+///	@Test(priority =17) 
 	void RejectedMultipleFilter1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Rejected Audit - Multiple Filter Verification  ");
@@ -410,7 +414,7 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 	
-//	@Test(priority =22 ) 
+///	@Test(priority =22 ) 
 	void PendingReviewMultipleFilter1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Pending Review Audit - Multiple Filter Verification  ");
@@ -477,7 +481,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority =27 ) 
+///	@Test(priority =27 ) 
 	void ClosedMultipleFilter1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Closed Audit - Multiple Filter Verification  ");
@@ -518,7 +522,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-	@Test(priority = 30) 
+///	@Test(priority = 30) 
 	void CompliedGraphMultipleFilterMedium1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Complied Status - Medium Risk - Multiple Filter Verification");
@@ -532,7 +536,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-	@Test(priority = 31) 
+///	@Test(priority = 31) 
 	void CompliedGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Complied Status - Low Risk - Multiple Filter Verification");
@@ -560,7 +564,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority = 33) 
+///	@Test(priority = 33) 
 	void NotCompliedGraphMultipleFilterHigh1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Complied Status - High Risk - Multiple Filter Verification");
@@ -574,7 +578,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority = 34) 
+///	@Test(priority = 34) 
 	void NotCompliedGraphMultipleFilterMedium1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Complied Status - Medium Risk - Multiple Filter Verification");
@@ -587,7 +591,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 
-//	@Test(priority = 35) 
+///	@Test(priority = 35) 
 	void NotCompliedGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Complied Status - Low Risk - Multiple Filter Verification");
@@ -615,7 +619,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority = 37) 
+///	@Test(priority = 37) 
 	void NotApplicableGraphMultipleFilterHigh1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Applicable Status - High Risk - Multiple Filter Verification");
@@ -628,7 +632,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority = 38) 
+///	@Test(priority = 38) 
 	void NotApplicableGraphMultipleFilterMedium1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Applicable Status - Medium Risk - Multiple Filter Verification");
@@ -643,7 +647,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority = 39) 
+///	@Test(priority = 39) 
 	void NotApplicableGraphMultipleFilterLow1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Not Applicable Status - Low Risk - Multiple Filter Verification");
@@ -683,7 +687,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-	@Test(priority = 42) 
+///	@Test(priority = 42) 
 	void ACSPendingReviewMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Audit Completion status - Pending Review Status - Multiple Filter Verification  ");
@@ -696,7 +700,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-	@Test(priority = 43) 
+///	@Test(priority = 43) 
 	void ACSPClosedMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Status Wise Summery - Audit Completion status - Closed Status - Multiple Filter Verification  ");
@@ -711,7 +715,7 @@ public class ContractorTestCases1 extends BasePage{
 
 	
 	
-//	@Test(priority =44 ) 
+///	@Test(priority =44 ) 
 	void AuditCompletionStatusOverdue1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Pie Chart - Status Wise Summery - 'Audit Completion Status' - Overdue Edit Button Verification ");
@@ -724,7 +728,7 @@ public class ContractorTestCases1 extends BasePage{
 
 	
 	
-//	@Test(priority =45 ) 
+///	@Test(priority =45 ) 
 	void AuditCompletionStatusPendingReview1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Pie Chart - Status Wise Summery - 'Audit Completion Status' - Pending Review - Edit Button Verification ");
@@ -736,7 +740,7 @@ public class ContractorTestCases1 extends BasePage{
 	}
 
 	
-//	@Test(priority =46 ) 
+///	@Test(priority =46 ) 
 	void AuditCompletionStatusClosed1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Pie Chart - Status Wise Summery - 'Audit Completion Status' - Closed - Edit Button Verification ");
@@ -817,7 +821,7 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 	
-//	@Test(priority = 50) 
+///	@Test(priority = 50) 
 	void PWSNotCompliedJKHillsHighMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Facility Wise Compliance Summary - Not Complied status - Multiple Filter Verification  ");
@@ -856,7 +860,7 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 	
-//	@Test(priority = 52) 
+///	@Test(priority = 52) 
 	void PWSNotApplicableJKHillHighMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Facility Wise Compliance Summary - Not Applicable status - Multiple Filter Verification  ");
@@ -866,6 +870,129 @@ public class ContractorTestCases1 extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
+	
+	
+		@Test(priority =47) 
+	void CompliedSubcontractorHigh1() throws InterruptedException, IOException          
+	{
+		test = extent.startTest("Pie Chart - Status Wise Summary (Sub-Contractor) - 'Complied Status' Count Verification ");
+		
+		Method1.CompliedSubcontractorHigh(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority =48) 
+	void NotCompliedSubcontractorHigh1() throws InterruptedException, IOException          
+	{
+		test = extent.startTest("Pie Chart - Status Wise Summary (Sub-Contractor) - 'Not Complied Status' Count Verification ");
+		
+		Method1.NotCompliedSubcontractorHigh(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
+	@Test(priority =49) 
+	void NotApplicableSubcontractorHigh1() throws InterruptedException, IOException          
+	{
+		test = extent.startTest("Pie Chart - Status Wise Summary (Sub-Contractor) - 'Not Applicable Status' Count Verification ");
+		
+		Method1.NotApplicableSubcontractorHigh(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
+	@Test(priority =50) 
+	void OverdueSubContractor1() throws InterruptedException, IOException          
+	{
+		test = extent.startTest("Pie Chart - Status Wise Summery(Sub-Contractor) - 'Audit Completion Status' Count Verification ");
+		
+		Method1.OverdueSubContractor(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	@Test(priority =51) 
+	void PWSSubContratorCompliedHigh1() throws InterruptedException, IOException          
+	{  
+		Thread.sleep(10000);
+		
+		JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,2000)");
+	    Thread.sleep(5000);
+		
+		
+	    String t = Locator1.PWSEcobuildSolutionText().getText();
+		Thread.sleep(500);//Reading Dashboard count.
+		
+	//	String t1 = Locator1.PWSConstruction().getText();	//Reading Dashboard count.
+
+		test = extent.startTest("Bar Graph - Project Wise Compliance Summery(Sub-Contractor) - Complied - " + t + " " + " Project Count Verification ");
+		
+		Method1.PWSSubContractorCompliedHigh(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority =52) 
+	void PWSSubContratorNotCompliedHigh1() throws InterruptedException, IOException          
+	{  
+		Thread.sleep(9000);
+		
+		JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,2000)");
+	    Thread.sleep(5000);
+		
+		
+	    String t = Locator1.PWSEcobuildSolutionText().getText();
+		Thread.sleep(500);//Reading Dashboard count.
+		
+	//	String t1 = Locator1.PWSConstruction().getText();	//Reading Dashboard count.
+
+		test = extent.startTest("Bar Graph - Project Wise Compliance Summery(Sub-Contractor) - Not Complied - " + t + " " + " Project Count Verification ");
+		
+		Method1.PWSSubContractorNotCompliedHigh(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
+	@Test(priority =53) 
+	void PWSSubContractorNotApplicableHigh1() throws InterruptedException, IOException          
+	{  
+		Thread.sleep(9000);
+		
+		JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,2000)");
+	    Thread.sleep(5000);
+		
+		
+	    String t = Locator1.PWSEcobuildSolutionText().getText();
+		Thread.sleep(500);//Reading Dashboard count.
+		
+	//	String t1 = Locator1.PWSConstruction().getText();	//Reading Dashboard count.
+
+		test = extent.startTest("Bar Graph - Project Wise Compliance Summery(Sub-Contractor) - Not Applicable - " + t + " " + " Project Count Verification ");
+		
+		Method1.PWSSubContractorNotApplicableHigh(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
 
 
 	@Test(priority = 53) 
@@ -892,11 +1019,22 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 	
+	@Test(priority = 53) 
+	void AddLicenceCT1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - Add License Verification ");
+		
+		Method1.AddLicenceCT(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
 
 	
 	
 	
-//	@Test(priority =53) 
+	@Test(priority =54) 
 	void ClearButtonDocument1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Document Tab - Clear Button Verification ");
@@ -909,7 +1047,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority =54 ) 
+	@Test(priority =54 ) 
 	void ViewButtonDocuments1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Document Tab - View Button Verification ");
@@ -922,7 +1060,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority =55 ) 
+	@Test(priority =55 ) 
 	void DownloadDocument1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Document Tab - Download Button Verification ");
@@ -935,7 +1073,7 @@ public class ContractorTestCases1 extends BasePage{
 	
 	
 	
-//	@Test(priority =56 ) 
+	@Test(priority =56 ) 
 	void DownloadMultipleDocument() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Document Tab - Multiple File Download Verification ");
@@ -947,7 +1085,7 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 	
- //  @Test(priority = 57) 
+   @Test(priority = 57) 
 	void DocumentTabMultipleFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Document Tab - Multiple Filter Verification");
@@ -960,7 +1098,7 @@ public class ContractorTestCases1 extends BasePage{
 
 	
 	
-	@Test(priority =57 ) 
+	@Test(priority =58 ) 
 	void ExportReportReport1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Report Tab - Export Button Verification ");
@@ -997,6 +1135,7 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 
+	
    @Test(priority = 60) 
 	void ReportTabGridAndExcelCountMatch1() throws InterruptedException, IOException
 	{
@@ -1008,7 +1147,7 @@ public class ContractorTestCases1 extends BasePage{
 		extent.flush();
 	}
 	
-		/*
+		
 	
 	@Test(priority = 72) 
 	void DownoadAndViewButton1() throws InterruptedException, IOException
@@ -1022,7 +1161,7 @@ public class ContractorTestCases1 extends BasePage{
 	}
 
 	
-	*/
+	
 	
 	//...........................Negative Test Cases Script
 	

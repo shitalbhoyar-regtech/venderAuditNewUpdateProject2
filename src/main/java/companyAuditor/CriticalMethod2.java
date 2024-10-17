@@ -26,6 +26,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import companyAdmin.Locator;
 import companyContractor.Locator1;
+import companyContractor.Method1;
 import login.BasePage;
 
 public class CriticalMethod2 extends BasePage{
@@ -2132,7 +2133,7 @@ public class CriticalMethod2 extends BasePage{
 	
 	
 	
-	public static void GraphCountMatch( ExtentTest test, XSSFWorkbook workbook, WebElement element,WebElement graphElement) throws InterruptedException
+	public static void GraphCountMatch( ExtentTest test, XSSFWorkbook workbook, WebElement element,WebElement graphElement) throws InterruptedException, IOException
 	{
 		
 		
@@ -2203,6 +2204,8 @@ public class CriticalMethod2 extends BasePage{
 		    
 		    js1.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);    
+		    Method1.GraphExcelCount(test,workbook);
+			  Thread.sleep(4000);
 		
 		
 		Locator2.ClearContractorRedGraphGrid().click();
@@ -3167,7 +3170,7 @@ public class CriticalMethod2 extends BasePage{
 	}
 	
 	
-	public static void RedInRedGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void RedInRedGraphCountMatch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -3240,7 +3243,8 @@ public class CriticalMethod2 extends BasePage{
 	    
 	    js1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(9000);
-		
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
 		
 		
 		Locator2.ClearContractorRedGraphGrid().click();
@@ -3663,7 +3667,7 @@ public class CriticalMethod2 extends BasePage{
 	
 	
 	
-	public static void GreyInRedCountMtch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	public static void GreyInRedCountMtch( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
 		
@@ -3737,6 +3741,8 @@ public class CriticalMethod2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    Method1.GraphExcelCount(test,workbook);
+		  Thread.sleep(4000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -6142,7 +6148,7 @@ public class CriticalMethod2 extends BasePage{
 		
         for (int i = 1; i <= count1; i++) {
             // Construct the dynamic XPath
-            String dynamicXPath = "//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[" + i + "]/td[4]/span";
+            String dynamicXPath = "//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[" + i + "]/td[7]/span";
             String dynamicXPathselectfile = "(//table//*[@id='ComplaineDocUpload'])[" + i + "]";
             WebElement selectfile = getDriver().findElement(By.xpath(dynamicXPathselectfile));
 
@@ -6246,7 +6252,7 @@ public class CriticalMethod2 extends BasePage{
 							
 			//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
 							
-			test.log(LogStatus.PASS, "Dashboard Count = "+open+" | Displayed records from grid = "+count);
+			test.log(LogStatus.PASS, "Before Review Audit Count = "+open+" | After Review Audit Count = "+count);
 						
 			}
 						

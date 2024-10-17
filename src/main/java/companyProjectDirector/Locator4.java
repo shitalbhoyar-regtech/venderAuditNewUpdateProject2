@@ -1981,7 +1981,7 @@ return PWCSSubContractorCompliedLow;
     
 		public static WebElement Projectnametext()		//Method for searching Username input
 		{
-			Projectnametext = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[position()=4]/div/span[.='Chandragan Construction ']"));
+			Projectnametext = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[position()=1]"));
 			return Projectnametext;
 			
 			
@@ -1990,7 +1990,7 @@ return PWCSSubContractorCompliedLow;
 
 		public static WebElement ClosedProject()		//Method for searching Username input
 		{
-			ClosedProject = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[position()=16]"));
+			ClosedProject = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[position()=1]"));
 		return ClosedProject;
 	    }
 

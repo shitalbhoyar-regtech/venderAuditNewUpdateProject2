@@ -17,8 +17,10 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 	import org.openqa.selenium.chrome.ChromeOptions;
 	import org.openqa.selenium.edge.EdgeDriver;
 	import org.openqa.selenium.firefox.FirefoxDriver;
@@ -161,7 +163,11 @@ import companyContractor.Locator1;
 	private void openBrower(int no) throws IOException {
 
 		if (browser.contains("chrome")) {
-					System.setProperty("webdriver.chrome.driver", "C:\\Users\\shitalb\\Documents\\driver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+				
+			
+				System.setProperty("webdriver.chrome.driver", "E:\\driver\\chromedriver-win64\\chromedriver.exe");
+
+			//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\shitalb\\Documents\\driver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 					//WebDriverManager.chromedriver().setup();
 					ChromeOptions options = new ChromeOptions();
 					options.addArguments("--remote-allow-origins=*");
@@ -207,6 +213,18 @@ import companyContractor.Locator1;
 		
 	//	Locator1.Dashboard1().click();
 	//	Thread.sleep(2000);
+		
+	       WebElement element = getDriver().findElement(By.xpath("//li[@id='leftAssingmentmenu'] | //*[@id='leftmastermenu']"));
+
+	        if (element != null) {
+	        	element.click();
+	            System.out.println("Element found!");
+	            // Perform actions on the element
+	        } else {
+	        	
+	            System.out.println("Element not found");
+	        }
+
 		
 	}
 	

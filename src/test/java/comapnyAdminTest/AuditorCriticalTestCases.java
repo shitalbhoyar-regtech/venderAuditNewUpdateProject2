@@ -379,6 +379,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 
+
 	
 	
 	@Test(priority = 24) 
@@ -468,7 +469,7 @@ public class AuditorCriticalTestCases extends BasePage{
 
 	
 	
-//	@Test(priority = 31) 
+	@Test(priority = 31) 
 	void UpdateInEditButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Pending Review Audit - Edit - Change Reviewer Status Verification");
@@ -479,7 +480,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 	
-	@Test(priority = 31) 
+	@Test(priority = 32) 
 	void PRChangeReviewerstatus1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Pending Review Audit - Edit - Change Reviewer Status Verification");
