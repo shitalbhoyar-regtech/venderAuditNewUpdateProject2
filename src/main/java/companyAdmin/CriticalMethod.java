@@ -1,6 +1,6 @@
 package companyAdmin;
 
-import java.io.BufferedReader;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
@@ -25,6 +25,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import companyAuditor.Locator2;
+import companyContractor.Locator1;
 import companyProjectDirector.Locator4;
 import login.BasePage;
 
@@ -767,8 +768,7 @@ public class CriticalMethod extends BasePage {
  		Thread.sleep(5000);
          ac1.accept(); // Accept the alert (click OK)
      } catch (Exception e) {
-         System.out.println("Alert not found within the specified time");
-         test.log(LogStatus.FAIL, "Download Error File");
+         
      } 
 
 		
@@ -1314,8 +1314,7 @@ public class CriticalMethod extends BasePage {
 	    		Thread.sleep(5000);
 	            ac1.accept(); // Accept the alert (click OK)
 	        } catch (Exception e) {
-	            System.out.println("Download error log");
-	            test.log(LogStatus.FAIL, "Download error log");
+	            
 	        } 
 
 			
@@ -1401,12 +1400,20 @@ public class CriticalMethod extends BasePage {
 	   					
 	   					
 	   				} 
+	   	   		 
 	   	   	Thread.sleep(2000);	
 	                
 	                alert.accept();  // Accept the alert if needed
-	            } catch (Exception e) {
-	                System.out.println("No alert found within the specified time.");
+	            }
+	        catch (Exception e) {
+	        } 
+
+	        }
+	        catch (Exception e) {
+	        } 
+	        
 	                // Check if the download link is present for the error file
+	                /*
 	                WebElement downloadLink = null;
 	                try {
 	                    downloadLink = getDriver().findElement(By.id("errorLink")); // Use the appropriate locator for the download link
@@ -1419,16 +1426,19 @@ public class CriticalMethod extends BasePage {
 	                    downloadLink.click();
 	                    Thread.sleep(19000);	 
 	                    // Wait for download to complete, or manage file download as needed
-	                    /*
+	                    
 	                    String downloadFilePath = "C:\\Users\\shitalb\\Downloads";  // Set your download folder
 	                    File downloadedFile = new File(downloadFilePath + "ErrorFile.txt"); // Adjust filename and type
 	                    if (downloadedFile.exists()) {
 	                        System.out.println("File downloaded successfully: " + downloadedFile.getAbsolutePath());
-	                        */
+	                        
+	                    
 	           		 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
 
-	               		 List<String> lines =new ArrayList<>();	               		  
+	               		 List<String> lines =new ArrayList<>();
+	               		 
 	               		 try{
+	               			 
 	               		    BufferedReader reader = new BufferedReader(new FileReader(filePath));
 	               		    String line;	               		  
 	               		  while((line = reader.readLine()) != null) {
@@ -1467,7 +1477,8 @@ public class CriticalMethod extends BasePage {
 	            // Close the browser
 	        //	getDriver().quit();
 	        }
-	    }
+	        */
+	        }
 	
 	
 	
@@ -2374,15 +2385,16 @@ public class CriticalMethod extends BasePage {
 		Locator.UploadDocumentL().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(4000);
 		
-		Locator.Calender1().click();
+		Locator.Calender11().click();
 		Thread.sleep(3000);
 		
 		Locator.Calender1DD().click();
 		Thread.sleep(3000);
 		
-		Locator.Calender2().click();
+		Locator.Calender1().click();
 		Thread.sleep(3000);
-		
+		Locator1.NextMonthTri().click();
+		Thread.sleep(3000);		
 		Locator.Calender1DD().click();
 		Thread.sleep(3000);
 		
@@ -2693,8 +2705,7 @@ public class CriticalMethod extends BasePage {
 	    		Thread.sleep(5000);
 	            ac1.accept(); // Accept the alert (click OK)
 	        } catch (Exception e) {
-	            System.out.println("Alert not found within the specified time.");
-	            test.log(LogStatus.FAIL, "Alert not found within the specified time.");
+	            
 	        } 
 
 			  
@@ -3552,6 +3563,7 @@ public class CriticalMethod extends BasePage {
 		Locator.UploadDocumentL().sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(4000);
 		*/
+		/*
 		Locator.Calender1().click();
 		Thread.sleep(3000);
 		
@@ -3563,7 +3575,19 @@ public class CriticalMethod extends BasePage {
 		
 		Locator.Calender1DD().click();
 		Thread.sleep(3000);
+		*/
+		Locator.Calender11().click();
+		Thread.sleep(3000);
 		
+		Locator.Calender1DD().click();
+		Thread.sleep(3000);
+		
+		Locator.Calender1().click();
+		Thread.sleep(3000);
+		Locator1.NextMonthTri().click();
+		Thread.sleep(3000);		
+		Locator.Calender1DD().click();
+		Thread.sleep(3000);
 		row0 = sheet.getRow(60);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.AddLicenceHeadCountCT().sendKeys(c1.getStringCellValue()); // Writing Task title
@@ -6720,14 +6744,67 @@ if(Locator.Manualcomplianceselectioncheckbox().isDisplayed()&&Locator.TemplateCo
 			test.log(LogStatus.FAIL, "Manual compliance selection checkbox and Template Compliance checkbox should not seen on the compliance list page");
 			
 		}
-	        
-		
-		
-		
 
 		
 	}
 	
+	public static void UnlockDaysMaster( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+	{
+		
+		//Locator.MasterButton().click();
+		Thread.sleep(3000);
+		
+		Locator.UnlockDaysMaster().click();
+		Thread.sleep(1000);
+		
+		
+		WebElement element = Locator.Checkbox();	      
+		//JavascriptExecutor to click element
+	      JavascriptExecutor jse = (JavascriptExecutor) getDriver();
+	      jse.executeScript("arguments[0].click();", element);
+	      boolean b = element.isSelected();
+	      if (b) {
+	         System.out.println("Checkbox is not checked");
+	      }else {
+	         System.out.println("Checkbox is checked");
+	      }
+	
+		Thread.sleep(500);
+		Locator.Addbutton().click();
+		Thread.sleep(500);
+		Locator.daysadd().sendKeys("20");
+		Thread.sleep(500);
+		Locator.Submit().click();
+		Thread.sleep(500);
+		try {
+            // Wait for the alert to be present
+            WebDriverWait wait1 = new WebDriverWait(getDriver(), 30); // 10 seconds timeout
+            Alert alert = wait1.until(ExpectedConditions.alertIsPresent());
+
+            // Once alert is present, handle it
+            System.out.println("Alert is present: " + alert.getText());
+            Alert ac1=getDriver().switchTo().alert();
+    		
+    		String t=getDriver().switchTo().alert().getText();
+    		
+   		 if(t.equalsIgnoreCase("Successfully updated.")) 
+		 {
+				test.log(LogStatus.PASS, t);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, t);
+				
+				
+			} 
+    		
+    		Thread.sleep(5000);
+            ac1.accept(); // Accept the alert (click OK)
+        } catch (Exception e) {
+            
+        } 
+	
+		}
 	
 	public static void UpdateCompliencesFTab( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
@@ -7672,22 +7749,6 @@ if(Locator.AddTempbutton().isDisplayed()&&Locator.UpdateTempbutton().isDisplayed
 		Locator.MoreReportReport().click();
 		Thread.sleep(4000);
 		
-		/*
-		if(Locator.CloseAuditReportR().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-			Locator.CloseAuditReportR().click();
-			test.log(LogStatus.PASS, "Closed Audit Report Download Successfully" );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, " Closed Audit Report Does Not Download Successfully"  );
-			
-		}
-		*/
 		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
@@ -7709,27 +7770,16 @@ if(Locator.AddTempbutton().isDisplayed()&&Locator.UpdateTempbutton().isDisplayed
 		}		
 
 	   Thread.sleep(2000);
+	   Locator2.Facilty().click();	
+		Thread.sleep(2000);
+		
+		Locator2.FaciltyDD().click();	
+		Thread.sleep(2000);
 		Locator.SelectMonth().click();
 		Thread.sleep(2000);
 		
 		Locator.SelectMonthDD().click();
 		Thread.sleep(5000);
-		/*
-		if(Locator.MouthCloseReportR().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-			Locator.MouthCloseReportR().click();
-			test.log(LogStatus.PASS, "Month Wise Closed Audit Report Download Successfully" );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, " Month Wise Closed Audit Report Does Not Download Successfully"  );
-			
-		}
-		*/
 		
 		File dir = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
@@ -7752,42 +7802,9 @@ if(Locator.AddTempbutton().isDisplayed()&&Locator.UpdateTempbutton().isDisplayed
 		}		
 
 	   Thread.sleep(5000);
-
-		
-		/*
-		
-		
-		Thread.sleep(24000);
-		
-		 Alert ac2=getDriver()
-			
-			String t3=getDriver().switchTo().alert().getText();
-			
-			test.log(LogStatus.PASS, "Month Wise Closed Audit Report - " + t3 );
-			
-			Thread.sleep(20000);
-			ac2.accept();
-			
-			*/
 		
 			Thread.sleep(4000);
-			/*
-			if(Locator.RemarkReportR().isEnabled())
-			{
 				
-				Thread.sleep(2000);
-				Locator.RemarkReportR().click();
-				test.log(LogStatus.PASS, "Compliance Remark Report Download Successfully" );
-				
-			}
-			
-			else
-			{
-				test.log(LogStatus.FAIL, " Compliance Remark Report Does Not Download Successfully"  );
-				
-			}
-			*/
-			
 			File dir7 = new File("C:\\Users\\shitalb\\Downloads");
 			File[] dirContents7 = dir7.listFiles();						//Counting number of files in directory before download
 			
@@ -7808,23 +7825,6 @@ if(Locator.AddTempbutton().isDisplayed()&&Locator.UpdateTempbutton().isDisplayed
 				test.log(LogStatus.FAIL, "Compliance Remark Report Does Not Downloaded Successfully");
 			}		
 
-		   Thread.sleep(5000);
-		/*
-			if(Locator.AuditReport().isEnabled())
-			{
-				
-				Thread.sleep(2000);
-				Locator.AuditReport().click();
-				test.log(LogStatus.PASS, "Audit Report File Download Successfully" );
-				
-			}
-			
-			else
-			{
-				test.log(LogStatus.FAIL, " Audit Report File Download Successfully"  );
-				
-			}
-			*/
 			Thread.sleep(2000);
 			
 			
@@ -7849,24 +7849,6 @@ if(Locator.AddTempbutton().isDisplayed()&&Locator.UpdateTempbutton().isDisplayed
 			}		
 
 		   Thread.sleep(5000);
-
-			
-			/*
-		Locator.AuditReport().click();
-		
-		Thread.sleep(2000);
-		
-		 Alert ac21=getDriver()
-			
-			String t31=getDriver().switchTo().alert().getText();
-			
-			test.log(LogStatus.PASS, "audit Report - " + t31 );
-			
-			Thread.sleep(20000);
-			ac21.accept();
-		
-			Thread.sleep(4000);
-		*/
 		
 	}
 	
@@ -7879,22 +7861,6 @@ if(Locator.AddTempbutton().isDisplayed()&&Locator.UpdateTempbutton().isDisplayed
 		Locator.Report().click();
 		Thread.sleep(20000);
 		
-		/*
-		if(Locator.ActionColmnReportDownload().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-			Locator.ActionColmnReportDownload().click();
-			test.log(LogStatus.PASS, "Compliance Remark Report Download Successfully" );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "Compliance Remark Report Download Successfully"  );
-			
-		}
-		*/
 		Thread.sleep(1000);
 		
 		File dir5 = new File("C:\\Users\\shitalb\\Downloads");

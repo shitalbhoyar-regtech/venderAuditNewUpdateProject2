@@ -36,6 +36,8 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 	public static XSSFSheet sheet = null;		//Sheet variable
 	public static List<WebElement> elementsList = null;
 	public static List<String> lines = null;
+	public static WebElement BufferedReader = null;
+	
 
 	
 	public static XSSFSheet ReadExcel() throws IOException
@@ -89,6 +91,7 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 	}
 	
 	//-------------Entity Master-------------------------
+	/*
 	
 	@Test(priority = 1) 
 	void Entity() throws InterruptedException, IOException
@@ -296,7 +299,7 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 	
 	
 
-//	@Test(priority = 17) 
+	@Test(priority = 17) 
 	void UploadUser1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - File Upload Verification");
@@ -307,7 +310,7 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 	
-	@Test(priority = 17) 
+//	@Test(priority = 17) 
 	void UploadUser11() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - File Upload Verification");
@@ -706,7 +709,7 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 			extent.flush();
 		}
 		
-		
+		*/
 		
    	@Test(priority = 46) 
 		void DeleteContractorCT1() throws InterruptedException, IOException             
@@ -731,10 +734,11 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
+	
 
 	//--------------------------------Act and Compliance master------------------
 	
-	@Test(priority = 48) 
+//	@Test(priority = 48) 
 	void AddActWithState1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Act And Compliance master - Add Act With State Verification");
@@ -745,7 +749,7 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 	
-	@Test(priority = 49) 
+//	@Test(priority = 49) 
 	void AddActWithDifferentState1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Act And Compliance master - Add Act With Different State Verification");
@@ -756,7 +760,7 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 	
-	@Test(priority = 49) 
+//	@Test(priority = 49) 
 	void AddActDuplicate1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Act And Compliance master - Add Duplicate Act With State Verification");
@@ -769,7 +773,7 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 	
 	
 
-	@Test(priority = 50) 
+//	@Test(priority = 50) 
 	void AddActDuplicateForCentral1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Act And Compliance master - Add Duplicate Act With Central Verification");
@@ -876,30 +880,6 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 	
 	
 	@Test(priority = 58) 
-	void AddDuplicateComplianceCentral1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Add  Duplicate Compliance For Central Verification");
-		
-		Method.AddDuplicateComplianceCentral(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-
-	
-	
-	@Test(priority = 59) 
-	void UploadBlankSheetComplianceAC1() throws InterruptedException, IOException
-	{
-		test = extent.startTest(" Act And Compliance master - Without Enter Data Compliance File Upload Verification");
-		
-		Method.UploadBlankSheetComplianceAC(test,workbook);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-
-	@Test(priority = 60) 
 	void AddCompliance1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance master - Add Compliance For Statutory Verification");
@@ -910,13 +890,40 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 	
-	
-	@Test(priority = 61) 
+		@Test(priority = 59) 
 	void AddComplianceForInternal() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Act And Compliance master - Add Compliance For Internal Verification");
 		
 		CriticalMethod.AddComplianceForInternal(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
+
+	
+	
+
+	@Test(priority = 60) 
+	void AddDuplicateComplianceCentral1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Add  Duplicate Compliance For Central Verification");
+		
+		Method.AddDuplicateComplianceCentral(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 61) 
+	void UploadBlankSheetComplianceAC1() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Act And Compliance master - Without Enter Data Compliance File Upload Verification");
+		
+		Method.UploadBlankSheetComplianceAC(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -989,18 +996,19 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 
-
-	
 	@Test(priority = 67) 
-	void UploadBlankSheetTemplateAC1() throws InterruptedException, IOException
+	void ComplianceCombinedFormUpload() throws InterruptedException, IOException
 	{
-		test = extent.startTest(" Act And Compliance master - Without Enter Data Template File Upload Verification ");
+		test = extent.startTest(" Act And Compliance master - Compliance - upload combined form Verification");
 		
-		Method.UploadBlankSheetTemplateAC(test,workbook);
+		CriticalMethod.ComplianceCombinedFormUpload(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
+
+	
+	
 	
 	
 	
@@ -1016,11 +1024,11 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 	}
 	
 	@Test(priority = 69) 
-	void ComplianceCombinedFormUpload() throws InterruptedException, IOException
+	void UploadBlankSheetTemplateAC1() throws InterruptedException, IOException
 	{
-		test = extent.startTest(" Act And Compliance master - Compliance - upload combined form Verification");
+		test = extent.startTest(" Act And Compliance master - Without Enter Data Template File Upload Verification ");
 		
-		CriticalMethod.ComplianceCombinedFormUpload(test,workbook);
+		Method.UploadBlankSheetTemplateAC(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -1500,8 +1508,10 @@ public class CompanyAdminNonCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 	
+	
+	
 
-
+////////////////////////////////////////////Not Exicuted Test
 	
 	/*
 	@Test(priority = 20) 

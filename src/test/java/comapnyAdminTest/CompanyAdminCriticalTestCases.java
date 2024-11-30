@@ -93,7 +93,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	
 	
 	
-/*
+
 	
 	@Test(priority = 1) 
 	void Entity() throws InterruptedException, IOException
@@ -1033,9 +1033,21 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		*/
 		
-//	@Test(priority = 0) 
+	
+	@Test(priority = 68) 
+	void UnlockDaysMaster() throws InterruptedException, IOException
+	{
+		test = extent.startTest(" Unlocked Days Master");
+		
+		CriticalMethod.UnlockDaysMaster(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+		
+	@Test(priority = 69) 
 	void CMCheckBox() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Compliance Mapping Tab - Two check box displayed on compliance list page verification. ");
@@ -1046,7 +1058,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-//	@Test(priority = 0) 
+	@Test(priority = 70) 
 		void AddTemplateandUpadtetemplateButton() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Compliance Mapping Tab - Assign - Edit -Add Template button and update template button verification ");
@@ -1057,7 +1069,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 0) 
+		@Test(priority = 71) 
 		void AddTemplate() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Compliance Mapping Tab - Assign - Edit -Add Template verification ");
@@ -1070,7 +1082,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 	
-	//	@Test(priority = 68) 
+		@Test(priority = 72) 
 		void AddNewCompliance1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Compliance Mapping Tab - Mapping Compliance Verification ");
@@ -1083,7 +1095,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 	
 		
-	//	@Test(priority = 69) 
+		@Test(priority = 73) 
 		void UpdateCompliencesFTab1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Compliance Mapping Tab - Edit Button-Remove Compliance Verification");
@@ -1094,9 +1106,9 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.flush();
 		}
 		
-		/*
 		
-		@Test(priority = 70) 
+		
+		@Test(priority = 74) 
 		void ExportReportDownloadCM1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Compliance Mapping Tab - Update - Export To Excel Button Verification ");
@@ -1109,7 +1121,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 71) 
+		@Test(priority = 75) 
 		void ExportButtonCM1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Compliance Mapping Tab - Export Button Verification");
@@ -1121,7 +1133,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
-		@Test(priority = 72) 
+		@Test(priority = 76) 
 		void ClearButton1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Compliance Mapping Tab - Clear Button Verification ");
@@ -1134,7 +1146,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 73)                                                
+		@Test(priority = 77)                                                
 		void UploadCMFTab1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Compliance Mapping Tab - File Upload Verification ");
@@ -1147,7 +1159,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 74) 
+		@Test(priority = 78) 
 		void ViewIconCM1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Compliance Mapping Tab - View Button Verification ");
@@ -1161,7 +1173,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 75)                                               
+		@Test(priority = 79)                                               
 		void AuditSchedule1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Audit Schedule Tab - Audit Scheduled Verification ");
@@ -1175,7 +1187,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 76) 
+		@Test(priority = 80) 
 		void ClearButtonAS1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Audit Schedule Tab - Clear Button Verification");
@@ -1188,7 +1200,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 77)                                                        
+		@Test(priority = 81)                                                        
 		void AssignComplience1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Audit Assignment Tab - Assigned Compliance Verification ");
@@ -1201,7 +1213,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 	
-		@Test(priority = 78)                                                          
+		@Test(priority = 82)                                                          
 		void UnassignComplianceAA1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Audit Assignment Tab - UnAssign Compliance Verification  ");
@@ -1213,7 +1225,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
-		@Test(priority = 79) 
+		@Test(priority = 83) 
 		void ClearButtonAA1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Audit Assignment Tab - Clear Button Verification  ");
@@ -1225,7 +1237,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
-		@Test(priority = 80) 
+		@Test(priority = 84) 
 		void ExportReportFromReport1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Report Tab - Export Button Verification  ");
@@ -1237,7 +1249,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
-		@Test(priority = 81) 
+		@Test(priority = 85) 
 		void ClearButtonReport1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Report Tab - Clear Button Verification ");
@@ -1250,7 +1262,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 82) 
+		@Test(priority = 86) 
 		void MoreReportR1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Report Tab - More Reports - File Download Verification  ");
@@ -1264,7 +1276,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 	
-		@Test(priority =83) 
+		@Test(priority =87) 
 		void ActionColReportDownload1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Report Tab - Action Column - File Download Verification  ");
@@ -1278,7 +1290,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 84) 
+		@Test(priority = 88) 
 		void ViewReport1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Report Tab - View Button Verification  ");
@@ -1288,7 +1300,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 			extent.endTest(test);
 			extent.flush();
 		}
-		*/
+		
 	
 		
 		

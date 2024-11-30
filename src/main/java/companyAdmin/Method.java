@@ -1,10 +1,42 @@
 package companyAdmin;
+
+
 import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+import companyAuditor.Locator2;
+import companyContractor.Locator1;
+import companyProjectHead.Locator3;
+import login.BasePage;
+import login.LoginPOM;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -14778,6 +14810,7 @@ public class Method extends BasePage {
 		Locator.ProjectUploadButton().click();
 		Thread.sleep(5000);
 		
+		/*
 		Locator.ErrorFile().click();
 		Thread.sleep(19000);
 		
@@ -14833,7 +14866,7 @@ public class Method extends BasePage {
 	            	  e.printStackTrace();
 	              }
 	              
- 	              
+ 	             */ 
  	    
 	
 	}
@@ -14866,7 +14899,7 @@ public class Method extends BasePage {
 	
 	Locator.ErrorFile().click();
 	Thread.sleep(19000);
-		
+		/*
 	 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
      
 	 List<String> lines =new ArrayList<>();
@@ -14915,7 +14948,7 @@ public class Method extends BasePage {
 	  
 	  e.printStackTrace();
   }
-  
+  */
    
      
 		
@@ -14946,7 +14979,7 @@ public class Method extends BasePage {
 	
 	Locator.ErrorFile().click();
 	Thread.sleep(19000);
-		
+		/*
 	 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
      
 	 List<String> lines =new ArrayList<>();
@@ -14995,7 +15028,7 @@ public class Method extends BasePage {
 	  
 	  e.printStackTrace();
   }
-  
+  */
    
 		
 	}
@@ -15025,7 +15058,7 @@ public class Method extends BasePage {
 	
 	Locator.ErrorFile().click();
 	Thread.sleep(19000);
-		
+		/*
 	 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
      
 	 List<String> lines =new ArrayList<>();
@@ -15075,7 +15108,7 @@ public class Method extends BasePage {
 	  e.printStackTrace();
   }
   
-   
+   */
 		
 	}
 	
@@ -15105,7 +15138,7 @@ public class Method extends BasePage {
 	
 	Locator.ErrorFile().click();
 	Thread.sleep(19000);
-		
+		/*
 	 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
      
 	 List<String> lines =new ArrayList<>();
@@ -15155,7 +15188,7 @@ public class Method extends BasePage {
 	  e.printStackTrace();
   }
   
-   
+   */
      
 		
 	}
@@ -15188,7 +15221,7 @@ public class Method extends BasePage {
 	
 	Locator.ErrorFile().click();
 	Thread.sleep(19000);
-		
+		/*
 	 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
      
 	 List<String> lines =new ArrayList<>();
@@ -15237,7 +15270,7 @@ public class Method extends BasePage {
 	  
 	  e.printStackTrace();
   }
-  
+  */
    
      
 		
@@ -15268,7 +15301,7 @@ public class Method extends BasePage {
 	
 	Locator.ErrorFile().click();
 	Thread.sleep(19000);
-		
+		/*
 	 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
      
 	 List<String> lines =new ArrayList<>();
@@ -15317,7 +15350,7 @@ public class Method extends BasePage {
 	  
 	  e.printStackTrace();
   }
-  
+  */
    
 		
 	}
@@ -15352,7 +15385,7 @@ public class Method extends BasePage {
 		
 		Locator.ErrorFile().click();
 		Thread.sleep(19000);
-			
+			/*
 		 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
 	     
 		 List<String> lines =new ArrayList<>();
@@ -15401,7 +15434,7 @@ public class Method extends BasePage {
 		  
 		  e.printStackTrace();
 	  }
-	  
+	  */
 	 	
 			
 			
@@ -15437,7 +15470,7 @@ public class Method extends BasePage {
 		
 		Locator.ErrorFile().click();
 		Thread.sleep(19000);
-			
+			/*
 		 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
 	     
 		 List<String> lines =new ArrayList<>();
@@ -15487,7 +15520,7 @@ public class Method extends BasePage {
 		  e.printStackTrace();
 	  }
 	  
-	 	
+	 	*/
 			
 			
 		
@@ -15527,7 +15560,7 @@ public class Method extends BasePage {
 		 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
 	     
 		 List<String> lines =new ArrayList<>();
-		  
+		  /*
 		 try{
 		    BufferedReader reader = new BufferedReader(new FileReader(filePath));
 		    String line;
@@ -15572,7 +15605,7 @@ public class Method extends BasePage {
 		  
 		  e.printStackTrace();
 	  }
-	  
+	  */
 	 	
 			
 			
@@ -15611,7 +15644,7 @@ public class Method extends BasePage {
 		
 		Locator.ErrorFile().click();
 		Thread.sleep(19000);
-			
+			/*
 		 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
 	     
 		 List<String> lines =new ArrayList<>();
@@ -15661,7 +15694,7 @@ public class Method extends BasePage {
 		  e.printStackTrace();
 	  }
 	  
-	 	
+	 	*/
 			
 			
 		
@@ -15696,7 +15729,7 @@ public class Method extends BasePage {
 		
 		Locator.ErrorFile().click();
 		Thread.sleep(19000);
-			
+			/*
 		 String filePath = "C:\\Users\\shitalb\\Downloads\\ErrorFile.txt";
 	     
 		 List<String> lines =new ArrayList<>();
@@ -15746,7 +15779,7 @@ public class Method extends BasePage {
 		  e.printStackTrace();
 	  }
 	  
-	 	
+	 	*/
 			
 			
 		

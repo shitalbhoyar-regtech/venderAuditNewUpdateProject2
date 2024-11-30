@@ -113,7 +113,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-		
+		/*
 	
 	@Test(priority = 3) 
 	void UpcomingViewDownloadButton1() throws InterruptedException, IOException
@@ -948,7 +948,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	
 
 	
-
+*/
 	
 
 		

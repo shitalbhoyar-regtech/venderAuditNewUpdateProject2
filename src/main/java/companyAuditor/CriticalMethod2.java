@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -15,6 +16,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -119,6 +122,19 @@ public class CriticalMethod2 extends BasePage{
 	int count1 = Integer.parseInt(compliancesCount);
 
 	
+    
+	/*
+	TakesScreenshot ts = (TakesScreenshot)getDriver();
+	File screenshot = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+    
+    // Define the destination for the screenshot
+    File destination = new File("E:\\VenderAuditProject\\Reports\\VCACompanyAuditorCritical.html");
+    
+    // Save the screenshot to the destination
+    FileUtils.copyFile(screenshot, destination);
+    
+    System.out.println("Screenshot saved at: " + destination.getAbsolutePath());
+    */
 	
 	if(open == count1)
 				

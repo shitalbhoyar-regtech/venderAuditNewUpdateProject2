@@ -8,8 +8,11 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -126,8 +129,6 @@ public class ManagementCriticalTestCases extends BasePage {
 	}
 	
 	
-	
-	
 	@Test(priority = 3) 
 	void GraphCountMatch1() throws InterruptedException, IOException
 	{
@@ -226,7 +227,24 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 10) 
 	void ContractorwiseclosedAuditGraph1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - ‘Contractor Wise’ Bar Graph for Closed Audits - Suraj Contractor - Count Verification");
+       Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		Thread.sleep(2000);
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1300)");
+	    Thread.sleep(2000);
+	    String t = Locator5.ContractorTxt().getText();
+	    
+	    
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"))); 
+		Thread.sleep(2000);
+		test = extent.startTest("Bar Graph - ‘Contractor Wise’ Bar Graph for Closed Audits - "+" "+t+" "+" - Count Verification");
 		
 		Method5.ContractorwiseclosedAuditGraph(test,workbook);
 		
@@ -295,8 +313,15 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 15) 
 	void PWAuditStatusSummeryABCConstructionOverdue1() throws InterruptedException, IOException
 	{
+		Thread.sleep(26000);
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,3000)");
+	    Thread.sleep(18000);
+	    String t=Locator5.FacilityTxt().getText();	
+	    System.out.println(t);
 		
-		test = extent.startTest("Bar Graph - Facility Wise - Audit Status Summary - CHN-CTS-MEPZ-TBM - Count Verification");
+		test = extent.startTest("Bar Graph - Facility Wise - Audit Status Summary - "+" "+ t+" "+" - Count Verification");
 		
 		Method5.PWAuditStatusSummeryABCConstructionOverdue(test,workbook);
 		
@@ -397,7 +422,7 @@ public class ManagementCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-//	@Test(priority = 20) 
+	@Test(priority = 20) 
 	void MyWorkspaceLicenseSearch1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License - License view download Verification ");

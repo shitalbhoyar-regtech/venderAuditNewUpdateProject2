@@ -220,7 +220,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-	
+	*/
 	@Test(priority = 10) 
 	void ContractorwiseclosedAuditGraph1() throws InterruptedException, IOException
 	{
@@ -231,7 +231,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-
+/*
 
 	
 	

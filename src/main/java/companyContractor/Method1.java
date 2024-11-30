@@ -174,13 +174,31 @@ public class Method1 extends BasePage{
 		
 	}
 	
-	
+	public static void setZoomLevel(WebDriver driver, double zoomLevel) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.body.style.zoom='" + zoomLevel + "'");
+    }
 	
 	
 	
 	public static void DashboardCountGridCount( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
+//		try {
+//           
+//
+//            // Set zoom level to 50% (0.5) for zooming out
+//            setZoomLevel(getDriver(), 0.5);
+//
+//            // Wait to observe the effect
+//            Thread.sleep(2000);
+//
+            // Set zoom level back to 100% (1.0) to reset to normal        
+		  setZoomLevel(getDriver(), 1.0);
+//
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 //		WebDriver wait = new WebDriver(1000);
 		Thread.sleep(20000);
 		

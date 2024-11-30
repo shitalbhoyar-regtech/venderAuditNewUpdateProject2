@@ -627,6 +627,11 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 	
 	}
 	
+	public static void setZoomLevel(WebDriver driver, double zoomLevel) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.body.style.zoom='" + zoomLevel + "'");
+    }
+	
 
 	
 	public static void AuditCompletionStatusRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
@@ -636,7 +641,20 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 		//WebWait wait = new WebWait(, 1000);
 		Thread.sleep(26000);
 		
-		
+		try {         
+
+	           // Set zoom level to 50% (0.5) for zooming out
+	           setZoomLevel(getDriver(), 0.8);
+
+//	           // Wait to observe the effect
+	           Thread.sleep(2000);
+	//
+//	           // Set zoom level back to 100% (1.0) to reset to normal
+//	         //  setZoomLevel(getDriver(), 1.0);
+	//
+	       } catch (InterruptedException e) {
+	           e.printStackTrace();
+	       }
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    

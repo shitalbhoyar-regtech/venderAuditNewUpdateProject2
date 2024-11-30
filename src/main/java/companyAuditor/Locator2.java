@@ -1360,8 +1360,6 @@ public class Locator2  extends BasePage{
     	MonthReportDD = getDriver().findElement(By.xpath("//span[.='Ecobuild Solutions']"));
    	 return MonthReportDD;
    	}
-
-  
   
 	
 	public static WebElement RemarkReportR()		//Method for searching Username input

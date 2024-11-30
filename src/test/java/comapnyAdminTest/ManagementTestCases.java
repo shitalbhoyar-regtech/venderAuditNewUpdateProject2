@@ -431,7 +431,24 @@ public class ManagementTestCases extends BasePage{
 	@Test(priority = 26) 
 	void ContractorwiseclosedAuditGraph1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - ‘Contractor Wise - Compliance Status Summary for Closed Audits - Shubham Contractor - Count Verification");
+       Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		Thread.sleep(2000);
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,1300)");
+	    Thread.sleep(2000);
+	    String t = Locator5.ContractorTxt().getText();
+	    
+	    
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"))); 
+		Thread.sleep(2000);
+		test = extent.startTest("Bar Graph - ‘Contractor Wise’ Bar Graph for Closed Audits - "+" "+t+" "+" - Count Verification");
 		
 		Method5.ContractorwiseclosedAuditGraph(test,workbook);
 		
@@ -793,15 +810,21 @@ public class ManagementTestCases extends BasePage{
 	@Test(priority = 44) 
 	void PWAuditStatusSummeryABCConstructionOverdue1() throws InterruptedException, IOException
 	{
+		Thread.sleep(26000);
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,3000)");
+	    Thread.sleep(18000);
+	    String t=Locator5.FacilityTxt().getText();	
+	    System.out.println(t);
 		
-		test = extent.startTest("Bar Graph - Facility Wise - Audit Status Summary - Kamayani Heights - Count Verification");
+		test = extent.startTest("Bar Graph - Facility Wise - Audit Status Summary - "+" "+ t+" "+" - Count Verification");
 		
 		Method5.PWAuditStatusSummeryABCConstructionOverdue(test,workbook);
 		
 		extent.endTest(test);
 		extent.flush();
-	}	
-	
+	}
 	
 	@Test(priority = 45) 
 	void PWAuditStatusSummeryABCConstructionOverdue11() throws InterruptedException, IOException

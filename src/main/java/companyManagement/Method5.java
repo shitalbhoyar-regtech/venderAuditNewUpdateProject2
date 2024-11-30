@@ -3874,6 +3874,10 @@ public class Method5 extends BasePage{
 				
 				
 			}
+			public static void setZoomLevel(WebDriver driver, double zoomLevel) {
+		        JavascriptExecutor js = (JavascriptExecutor) driver;
+		        js.executeScript("document.body.style.zoom='" + zoomLevel + "'");
+		    }
 			
 			
 
@@ -3883,7 +3887,7 @@ public class Method5 extends BasePage{
 			public static void PWCSSABCConstructionCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
             {
 				
-				/*
+				
 				Thread.sleep(20000);
 				
 				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
@@ -3894,10 +3898,10 @@ public class Method5 extends BasePage{
 				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
-			    jss.executeScript("window.scrollBy(0,2500)");
+			    jss.executeScript("window.scrollBy(0,2200)");
 			    Thread.sleep(2000);
 			    
-				
+				/*
 			    try {
 		            // Create an instance of Robot class
 		            Robot robot = new Robot();
@@ -3927,6 +3931,20 @@ public class Method5 extends BasePage{
 
 
 				*/
+				try {         
+
+			           // Set zoom level to 50% (0.5) for zooming out
+			           setZoomLevel(getDriver(), 0.9);
+
+//			           // Wait to observe the effect
+			           Thread.sleep(2000);
+			//
+//			           // Set zoom level back to 100% (1.0) to reset to normal
+//			         //  setZoomLevel(getDriver(), 1.0);
+			//
+			       } catch (InterruptedException e) {
+			           e.printStackTrace();
+			       }
 				Locator5.PWCSSABCConstructionComplied().click();
 				Thread.sleep(2000);
 				
@@ -3996,9 +4014,9 @@ public class Method5 extends BasePage{
 				    js1.executeScript("window.scrollBy(0,-1000)");
 				    Thread.sleep(2000);    
 				
-				
+				/*
 				Locator5.ClearContractorRedGraphGrid().click();
-				Thread.sleep(2000);
+				Thread.sleep(5000);
 				
 				
 				Locator5.ClearContractorDDRedGraphGrid().click();
@@ -4019,7 +4037,7 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  Clear Button working Properly "  );
 					
 				}
-				
+				*/
 				
 				
 		        Thread.sleep(2000);
@@ -4399,7 +4417,20 @@ public class Method5 extends BasePage{
 			//	 Locator4.NotApplicableCircle().click();
 			//    Thread.sleep(3000);
 			    
-				
+				try {         
+
+			           // Set zoom level to 50% (0.5) for zooming out
+			           setZoomLevel(getDriver(), 0.8);
+
+//			           // Wait to observe the effect
+			           Thread.sleep(2000);
+			//
+//			           // Set zoom level back to 100% (1.0) to reset to normal
+//			         //  setZoomLevel(getDriver(), 1.0);
+			//
+			       } catch (InterruptedException e) {
+			           e.printStackTrace();
+			       }
 				Locator5.PWCSSABCConstructionComplied().click();
 				Thread.sleep(4000);
 				
@@ -4458,7 +4489,7 @@ public class Method5 extends BasePage{
 				    js1.executeScript("window.scrollBy(0,-1000)");
 				    Thread.sleep(2000);    
 				
-				
+				/*
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
 				
@@ -4481,7 +4512,7 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  Clear Button working Properly "  );
 					
 				}
-				
+				*/
 				
 				
 		        Thread.sleep(2000);
@@ -4869,7 +4900,20 @@ public class Method5 extends BasePage{
 			//	  Thread.sleep(3000);
 			    
 			    */
-				
+				try {         
+
+			           // Set zoom level to 50% (0.5) for zooming out
+			           setZoomLevel(getDriver(), 0.8);
+
+//			           // Wait to observe the effect
+			           Thread.sleep(2000);
+			//
+//			           // Set zoom level back to 100% (1.0) to reset to normal
+//			         //  setZoomLevel(getDriver(), 1.0);
+			//
+			       } catch (InterruptedException e) {
+			           e.printStackTrace();
+			       }
 				Locator5.PWCSSABCConstructionComplied().click();
 				Thread.sleep(6000);
 				
@@ -4928,7 +4972,7 @@ public class Method5 extends BasePage{
 				    js1.executeScript("window.scrollBy(0,-1000)");
 				    Thread.sleep(2000);    
 				
-				
+				/*
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
 				
@@ -4951,7 +4995,7 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  Clear Button working Properly "  );
 					
 				}
-				
+				*/
 				
 				
 		        Thread.sleep(2000);
@@ -5290,16 +5334,30 @@ public class Method5 extends BasePage{
 				
 				
 				//WebWait wait = new WebWait(, 1000);
+				/*
 				Thread.sleep(26000);
-				
-				
-				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
 			    jss.executeScript("window.scrollBy(0,3000)");
 			    Thread.sleep(18000);
-				
-				
+			    String t=Locator5.FacilityTxt().getText();	
+			    System.out.println(t);
+			    */
+				/*
+				try {         
+
+			           // Set zoom level to 50% (0.5) for zooming out
+			           setZoomLevel(getDriver(), 0.9);
+
+//			           // Wait to observe the effect
+			           Thread.sleep(2000);
+			//
+//			           // Set zoom level back to 100% (1.0) to reset to normal
+//			         //  setZoomLevel(getDriver(), 1.0);
+			//
+			       } catch (InterruptedException e) {
+			           e.printStackTrace();
+			       }*/
 				
 				int open = Integer.parseInt(Locator5.PWAuditStatusSummeryABCConstructionOverdue().getText());	//Reading Dashboard count.
 			    Locator5.PWAuditStatusSummeryABCConstructionOverdue().click();					                //Clicking on Dashboard count
@@ -18066,7 +18124,7 @@ Thread.sleep(3000);
 	
 	public static void ContractorwiseclosedAuditGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
     {
-		
+		/*
 		Thread.sleep(20000);
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
@@ -18079,9 +18137,12 @@ Thread.sleep(3000);
 	    
 	    jss.executeScript("window.scrollBy(0,1300)");
 	    Thread.sleep(2000);
+	    String t = Locator5.ContractorTxt().getText();
+	    
 	    
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"))); 
 		Thread.sleep(2000);
+		*/
 	    		
 		int open = Integer.parseInt(Locator5.ContractorClosedAuditComplied().getText());	//Reading Dashboard count.
 	    Locator5.ContractorClosedAuditComplied().click();					                //Clicking on Dashboard count

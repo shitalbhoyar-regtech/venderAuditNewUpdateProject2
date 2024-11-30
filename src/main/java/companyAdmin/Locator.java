@@ -2039,7 +2039,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement LocationPDropDown()		//Method for searching Username input
 	{
-		LocationPDropDown = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//div//ul[@class='k-group']//li[1]//span/span"));
+		LocationPDropDown = getDriver().findElement(By.xpath("(//span[.='AMARAVATI'])[2]"));
 		return LocationPDropDown;
 		
 	}
@@ -2179,6 +2179,14 @@ public class Locator extends BasePage{
 		return UploadDocumentL;
 		
 	}
+	
+	public static WebElement Calender11()		//Method for searching Username input
+	{
+		UploadDocumentL = getDriver().findElement(By.xpath("//*[@id='NewDocModal']/div/div[3]/span/span/span[2]"));
+		return UploadDocumentL;
+		
+	}
+
 
 	public static WebElement Calender1DD()		//Method for searching Username input
 	{
@@ -3973,6 +3981,54 @@ public class Locator extends BasePage{
 		
 		
 	}
+	public static WebElement UnlockDaysMaster()		//Method for searching Username input
+	{
+		ComplianceMapping = getDriver().findElement(By.xpath("//*[@id='Documentssubmenu']/li[10]/a"));
+		return ComplianceMapping;
+		
+		
+	}
+	
+	public static WebElement Checkbox()		//Method for searching Username input
+	{
+		ComplianceMapping = getDriver().findElement(By.xpath("(//label[@class='k-checkbox-label k-no-text'])[2]"));
+		return ComplianceMapping;
+		
+		
+	}
+
+	public static WebElement Addbutton()		//Method for searching Username input
+	{
+		ComplianceMapping = getDriver().findElement(By.xpath("//button[@id='btnAddLockingDays']"));
+		return ComplianceMapping;
+		
+		
+	}
+
+	public static WebElement daysadd()		//Method for searching Username input
+	{
+		ComplianceMapping = getDriver().findElement(By.xpath("//textarea[@id='txtUnLockingDays']"));
+		return ComplianceMapping;
+		
+		
+	}
+
+	public static WebElement Submit()		//Method for searching Username input
+	{
+		ComplianceMapping = getDriver().findElement(By.xpath("//button[@id='btnSubmitLockingDays']"));
+		return ComplianceMapping;
+		
+		
+	}
+
+	public static WebElement close()		//Method for searching Username input
+	{
+		ComplianceMapping = getDriver().findElement(By.cssSelector(".k-window-actions"));
+		return ComplianceMapping;
+		
+		
+	}
+
 	
 	
 	public static WebElement Assign()		//Method for searching Username input
@@ -4319,7 +4375,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement ViewButtonCM()		//Method for searching Username input
 	{
-		ViewButtonCM = getDriver().findElement(By.xpath("//a[@class='k-button k-button-icontext ob-view k-grid-edit2']"));
+		ViewButtonCM = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[4]/a[1]"));
 		return ViewButtonCM;
 		
 		
