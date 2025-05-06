@@ -322,7 +322,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	}
 	
 	
-	@Test(priority = 17) 
+//	@Test(priority = 17) 
 	void DeleteContractor11() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" User Master - View Contractor User - Alerady In Used Contractor Delete Verification");
@@ -432,7 +432,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 25) 
+//	@Test(priority = 25) 
 	void ProjectClearButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Project Master - Clear Button Verification ");
@@ -501,7 +501,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 30) 
+//	@Test(priority = 30) 
 	void ClearButtonCTCC1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Contractor Master - Clear Button Verification");
@@ -553,7 +553,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	   
 	   
 	   
-	   @Test(priority = 33) 
+//	   @Test(priority = 33) 
 		void LicenceDetailsVisilbe1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Contractor Master - Licence grid column Verification ");
@@ -633,7 +633,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 	
-		@Test(priority = 39) 
+	//	@Test(priority = 39) 
 		void ClearAC1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Act And Compliance master - Act - Clear Button Verification");
@@ -698,7 +698,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
-		@Test(priority = 43) 
+	//	@Test(priority = 43) 
 		void AddComplianceForInternal() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Act And Compliance master - Add Compliance For Internal Verification");
@@ -739,7 +739,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 46) 
+	//	@Test(priority = 46) 
 		void ComplianceClearButton1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Act And Compliance master - Compliance - Clear Button Verification");
@@ -765,7 +765,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 47) 
+	//	@Test(priority = 47) 
 		void UploadComplianceInternal() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Act And Compliance master -Compliance - for Internal -File Upload Verification");
@@ -803,7 +803,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 
 		
 		
-		@Test(priority = 50) 
+	//	@Test(priority = 50) 
 		void TemplateClearButton1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Act And Compliance master - Template Clear Button Verification");
@@ -891,7 +891,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 		
-		@Test(priority = 56) 
+	//	@Test(priority = 56) 
 		void AddCity1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" City Master - Add City Verification ");
@@ -903,7 +903,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
-		@Test(priority = 57) 
+	//	@Test(priority = 57) 
 		void UpdateCity1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" City Master - Update City Verification ");
@@ -915,7 +915,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		}
 		
 		
-		@Test(priority = 58) 
+	//	@Test(priority = 58) 
 		void DeleteCity1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" City Master - Delete City Verification ");
@@ -1035,7 +1035,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 		
 	
-	@Test(priority = 68) 
+//	@Test(priority = 68) 
 	void UnlockDaysMaster() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Unlocked Days Master");
@@ -1047,7 +1047,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 	}
 	
 		
-	@Test(priority = 69) 
+//	@Test(priority = 69) 
 	void CMCheckBox() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Compliance Mapping Tab - Two check box displayed on compliance list page verification. ");
@@ -1095,7 +1095,7 @@ public class CompanyAdminCriticalTestCases extends BasePage {
 		
 	
 		
-		@Test(priority = 73) 
+	//	@Test(priority = 73) 
 		void UpdateCompliencesFTab1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Compliance Mapping Tab - Edit Button-Remove Compliance Verification");

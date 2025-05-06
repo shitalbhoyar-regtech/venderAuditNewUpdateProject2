@@ -101,7 +101,7 @@ public class AuditorCriticalTestCases extends BasePage{
 	}
 	
 	
-	
+
 	
 	@Test(priority = 1) 
 	void UpcomingdashboardAndGridCountMatch1() throws InterruptedException, IOException
@@ -113,7 +113,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-		/*
+		
 	
 	@Test(priority = 3) 
 	void UpcomingViewDownloadButton1() throws InterruptedException, IOException
@@ -172,6 +172,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
+
 	
 	@Test(priority = 8)                                                                    
 	void Upcomingtransactionandstatuslog1() throws InterruptedException, IOException
@@ -469,7 +470,7 @@ public class AuditorCriticalTestCases extends BasePage{
 
 	
 	
-	@Test(priority = 31) 
+////	@Test(priority = 0) Not to run
 	void UpdateInEditButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Pending Review Audit - Edit - Change Reviewer Status Verification");
@@ -480,7 +481,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 	
-	@Test(priority = 32) 
+	@Test(priority = 31) 
 	void PRChangeReviewerstatus1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Pending Review Audit - Edit - Change Reviewer Status Verification");
@@ -948,7 +949,6 @@ public class AuditorCriticalTestCases extends BasePage{
 	
 
 	
-*/
 	
 
 		

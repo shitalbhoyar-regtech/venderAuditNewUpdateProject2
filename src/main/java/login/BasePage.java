@@ -211,8 +211,21 @@ import companyContractor.Locator1;
 		
 		login.Login.UserLogin(uname,password,link);		//Method of Login class to login user.
 		
-	//	Locator1.Dashboard1().click();
-	//	Thread.sleep(2000);
+		
+		try {
+			Locator1.VendorAudit().click();
+			Thread.sleep(2000);
+			}
+			catch(Exception e) {
+				
+			}
+		try {
+		Locator1.Dashboard1().click();
+		Thread.sleep(2000);
+		}
+		catch(Exception e) {
+			
+		}
 		
 	       WebElement element = getDriver().findElement(By.xpath("//li[@id='leftAssingmentmenu'] | //*[@id='leftmastermenu']"));
 

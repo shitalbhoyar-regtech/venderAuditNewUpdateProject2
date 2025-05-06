@@ -1033,7 +1033,7 @@ public class Locator extends BasePage{
 		
 	public static WebElement AddSubEntity()		//Method for searching Username input
 	{
-		AddSubEntity = getDriver().findElement(By.xpath("(//a[contains(@class,'k-button k-button-icontext k-grid-arrow-right enabled k-grid-proceed')])[1]"));
+		AddSubEntity = getDriver().findElement(By.xpath("(//a[contains(@class,'k-button k-button-icontext k-grid-arrow-right enabled k-grid-proceed')])[3]"));
 		return AddSubEntity;
 		
 	}
@@ -1316,7 +1316,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement ViewBranches()		//Method for searching Username input
 	{
-		ViewBranches = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext k-grid-arrow-right enabled k-grid-proceed'])[1]"));
+		ViewBranches = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext k-grid-arrow-right enabled k-grid-proceed'])[3]"));
 		return ViewBranches;
 		
 	}
@@ -1354,6 +1354,12 @@ public class Locator extends BasePage{
 	public static WebElement MasterButton()		//Method for searching Username input
 	{
 		MasterButton = getDriver().findElement(By.id("leftmastermenu"));
+		return MasterButton;
+		
+	}
+	public static WebElement Entity()		//Method for searching Username input
+	{
+		MasterButton = getDriver().findElement(By.xpath("//li[@id='leftmastermenu']//li[1]"));
 		return MasterButton;
 		
 	}
@@ -2039,7 +2045,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement LocationPDropDown()		//Method for searching Username input
 	{
-		LocationPDropDown = getDriver().findElement(By.xpath("(//span[.='AMARAVATI'])[2]"));
+		LocationPDropDown = getDriver().findElement(By.xpath("(//span[.='Ashok Chennai & Co'])[4]"));
 		return LocationPDropDown;
 		
 	}
@@ -4835,7 +4841,7 @@ public class Locator extends BasePage{
 	
 	public static WebElement ActionColmnReportDownload()		//Method for searching Username input
 	{
-		ActionColmnReportDownload = getDriver().findElement(By.xpath("//*[@id='grid']/div[2]/table/tbody/tr[1]/td[15]/a[2]"));
+		ActionColmnReportDownload = getDriver().findElement(By.xpath("//div[@id='grid']//table//tr//td//a[2]"));
 		return ActionColmnReportDownload;
 		
 		

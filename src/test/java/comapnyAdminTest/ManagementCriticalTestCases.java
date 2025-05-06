@@ -22,7 +22,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-
+import companyContractor.Method1;
 import companyManagement.Locator5;
 import companyManagement.Method5;
 import companyProjectDirector.CriticalMethod4;
@@ -93,7 +93,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	}
 	
 
-	@Test(priority = 1) 
+	@Test(priority = 0) 
 	void LocationPopupColumnist1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Dashboard Tab - Location Popup verification");
@@ -189,7 +189,17 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 7) 
 	void CTWCompliedgreen1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - Canteen - 'Complied Status' Count Verification");
+		Thread.sleep(20000);
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divLocationCount']"))); 
+
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,800)");
+	    Thread.sleep(6000);
+	    String t = Locator5.CTWCompliedGreen().getText();
+		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary -" + t + " - 'Complied Status' Count Verification");
 		
 		Method5.CTWCompliedgreen(test,workbook);
 		
@@ -202,7 +212,17 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 8) 
 	void CTWNotCompliedRed1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - Canteen - 'Not Complied Status' Count Verification");
+		Thread.sleep(20000);
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divLocationCount']"))); 
+
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	    jss.executeScript("window.scrollBy(0,800)");
+	    Thread.sleep(6000);
+	    String t = Locator5.CTWCompliedGreen().getText();
+		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - " + t + " - 'Not Complied Status' Count Verification");
 		
 		Method5.CTWNotCompliedRed(test,workbook);
 		
@@ -214,7 +234,17 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 9) 
 	void CTWNotApplicableGrey1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - Canteen - 'Not Applicable Status' Count Verification");
+	Thread.sleep(20000);
+	WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+	Thread.sleep(2000);
+	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divLocationCount']"))); 
+
+    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+    
+    jss.executeScript("window.scrollBy(0,800)");
+    Thread.sleep(6000);
+    String t = Locator5.CTWCompliedGreen().getText();
+	test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - " + t + " - 'Not Applicable Status' Count Verification");
 		
 		Method5.CTWNotApplicableGrey(test,workbook);
 		
@@ -234,15 +264,11 @@ public class ManagementCriticalTestCases extends BasePage {
 	    
 		
 		Thread.sleep(2000);
-		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,1300)");
 	    Thread.sleep(2000);
 	    String t = Locator5.ContractorTxt().getText();
-	    
-	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"))); 
 		Thread.sleep(2000);
 		test = extent.startTest("Bar Graph - ‘Contractor Wise’ Bar Graph for Closed Audits - "+" "+t+" "+" - Count Verification");
 		
@@ -257,7 +283,7 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 11) 
 	void CTWAuditStatusSummeryOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Stake Holder Wise - Audit Status Summary - Canteen - Count Verification");
+		test = extent.startTest("Bar Graph - Contractor Type Wise - Audit Status Summary - Pratikashh Contractor - Count Verification");
 		
 		Method5.CTWAuditStatusSummeryOverdue(test,workbook);
 		
@@ -272,7 +298,21 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 12) 
 	void PWCSSABCConstructionCompliedHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Complied Status - CHN-CTS-MEPZ-TBM - Count Verification");
+		Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    
+		
+		
+	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    
+	 //   jss.executeScript("window.scrollBy(0,2200)");
+	    Thread.sleep(2000);
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCConstructionComplied());
+
+		String t = Locator5.PWCSSABCConstructionComplied().getText();
+		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Complied Status - " + t + " - Count Verification");
 		
 		Method5.PWCSSABCConstructionCompliedHigh(test,workbook);
 		
@@ -285,7 +325,15 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 13) 
 	void PWCSSABCconstructionNotCompliedHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Not Complied Status - CHN-CTS-MEPZ-TBM - Count Verification");
+       Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    Thread.sleep(2000);
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCConstructionComplied());
+
+		String t = Locator5.PWCSSABCConstructionComplied().getText();
+		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Complied Status - " + t +" - Count Verification");
 		
 		Method5.PWCSSABCconstructionNotCompliedHigh(test,workbook);
 		
@@ -299,7 +347,15 @@ public class ManagementCriticalTestCases extends BasePage {
 	@Test(priority = 14) 
 	void PWCSSABCconstructionNotApplicableHigh1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Not Applicable Status - CHN-CTS-MEPZ-TBM - Count Verification");
+       Thread.sleep(20000);
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
+		Thread.sleep(3000);
+	    Thread.sleep(2000);
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCConstructionComplied());
+
+		String t = Locator5.PWCSSABCConstructionComplied().getText();
+		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Applicable Status - "+ t +" - Count Verification");
 		
 		Method5.PWCSSABCconstructionNotApplicableHigh(test,workbook);
 		
@@ -315,13 +371,14 @@ public class ManagementCriticalTestCases extends BasePage {
 	{
 		Thread.sleep(26000);
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
-	    
+      //  ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.FacilityTxt());
+
 	    jss.executeScript("window.scrollBy(0,3000)");
-	    Thread.sleep(18000);
+	    Thread.sleep(2000);
 	    String t=Locator5.FacilityTxt().getText();	
 	    System.out.println(t);
 		
-		test = extent.startTest("Bar Graph - Facility Wise - Audit Status Summary - "+" "+ t+" "+" - Count Verification");
+		test = extent.startTest("Bar Graph - Project Wise  - Audit Status Summary - "+" "+ t+" "+" - Count Verification");
 		
 		Method5.PWAuditStatusSummeryABCConstructionOverdue(test,workbook);
 		
@@ -335,19 +392,16 @@ public class ManagementCriticalTestCases extends BasePage {
 	void PWCSSubcontractorCompliedHigh1() throws InterruptedException, IOException
 	{
 		//WebWait wait = new WebWait( 1000);
+		
+		
 		Thread.sleep(26000);
-		
-		Thread.sleep(2000);
-		
-	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
-	    
-	    jss.executeScript("window.scrollBy(0,4000)");
-	    Thread.sleep(2000);
-		
+	    ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.RudraHeritage());
+
+	
 		String t = Locator5.RudraHeritage().getText();
 		Thread.sleep(6000);
 		
-		test = extent.startTest("Bar Chart - Facility Wise - Compliance Summary (Sub Contractor) - " + t + " Complied Status Verification");
+		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - " + t + " Complied Status Verification");
 		
 		Method5.PWCSSubcontractorCompliedHigh(test,workbook);
 		
@@ -375,7 +429,7 @@ public class ManagementCriticalTestCases extends BasePage {
 		String t = Locator5.RudraHeritage().getText();
 		Thread.sleep(6000);
 		
-		test = extent.startTest("Bar Chart - Facility Wise - Compliance Summary (Sub Contractor) - " + t + " Not Complied Status Verification");
+		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - " + t + " Not Complied Status Verification");
 				
 		Method5.PWCSSubcontractorNotCompliedHigh(test,workbook);
 		
@@ -401,7 +455,7 @@ public class ManagementCriticalTestCases extends BasePage {
 		String t = Locator5.RudraHeritage().getText();
 		Thread.sleep(6000);
 		
-		test = extent.startTest("Bar Chart - Facility Wise - Compliance Summary (Sub Contractor) - " + t + " Not Applicable Status Verification");
+		test = extent.startTest("Bar Chart - Project Wise - Compliance Summary (Sub Contractor) - " + t + " Not Applicable Status Verification");
 		
 		Method5.PWCSSubcontractorNotApplicableHigh(test,workbook);
 		
@@ -423,6 +477,17 @@ public class ManagementCriticalTestCases extends BasePage {
 	}
 	
 	@Test(priority = 20) 
+	void AddLicenceCT1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - Add License Verification ");
+		
+		Method1.AddLicenceCT(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 21) 
 	void MyWorkspaceLicenseSearch1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License - License view download Verification ");
@@ -433,7 +498,7 @@ public class ManagementCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 
-	@Test(priority = 21) 
+//	@Test(priority = 21) 
 	void performDownloadAndVerify1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("License - License view download Verification ");

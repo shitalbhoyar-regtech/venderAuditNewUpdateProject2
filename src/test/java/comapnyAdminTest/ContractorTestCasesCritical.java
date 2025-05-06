@@ -64,6 +64,10 @@ public class ContractorTestCasesCritical extends BasePage {
 		test = extent.startTest("Loging In - Contractor(Critical)");
 		
 		test.log(LogStatus.PASS, "Test Passed");
+		test.log(LogStatus.PASS, "Link : login.teamleaseregtech.com");
+		test.log(LogStatus.PASS, "Login : venderowner@gmail.com ");
+		test.log(LogStatus.PASS, "Pass : admin@123 ");
+
 		extent.endTest(test);
 		extent.flush();
 	}
@@ -250,7 +254,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	
 	
 	
-	@Test(priority =11)                                                        
+//	@Test(priority =11)                                                        
 	void OverdueDownloadAndViewButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Overdue Audit - Edit - View Documents Verification");
@@ -340,7 +344,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	
 	
 	
-	@Test(priority =18)                                                        
+//	@Test(priority =18)                                                        
 	void RejectedDownloadAndViewButton1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Rejected Audit - Edit - View Document Button Verification");
@@ -644,9 +648,9 @@ public class ContractorTestCasesCritical extends BasePage {
 	
 
 	
+	/*
 	
-	
-	@Test(priority =41) 
+//	@Test(priority =41) 
 	void AuditCompletionStatusOverdue1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Pie Chart - Status Wise Summery - 'Audit Completion Status' - Overdue Edit Button Verification ");
@@ -658,7 +662,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	}
 
 	
-	@Test(priority =42) 
+//	@Test(priority =42) 
 	void AuditCompletionStatusPendingReview1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Pie Chart - Status Wise Summery - 'Audit Completion Status' - Pending Review - Edit Button Verification ");
@@ -669,7 +673,7 @@ public class ContractorTestCasesCritical extends BasePage {
 		extent.flush();
 	}
 
-	@Test(priority =43) 
+//	@Test(priority =43) 
 	void AuditCompletionStatusClosed1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Pie Chart - Status Wise Summery - 'Audit Completion Status' - Closed - Edit Button Verification ");
@@ -680,7 +684,7 @@ public class ContractorTestCasesCritical extends BasePage {
 		extent.flush();
 	}
 
-	
+	*/
 	
 	
 	
@@ -768,7 +772,7 @@ public class ContractorTestCasesCritical extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority =47) 
+//	@Test(priority =47) 
 	void CompliedSubcontractorHigh1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Pie Chart - Status Wise Summary (Sub-Contractor) - 'Complied Status' Count Verification ");
@@ -780,7 +784,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	}
 	
 	
-	@Test(priority =48) 
+//	@Test(priority =48) 
 	void NotCompliedSubcontractorHigh1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Pie Chart - Status Wise Summary (Sub-Contractor) - 'Not Complied Status' Count Verification ");
@@ -792,7 +796,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	}
 
 	
-	@Test(priority =49) 
+//	@Test(priority =49) 
 	void NotApplicableSubcontractorHigh1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Pie Chart - Status Wise Summary (Sub-Contractor) - 'Not Applicable Status' Count Verification ");
@@ -804,7 +808,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	}
 
 	
-	@Test(priority =50) 
+//	@Test(priority =50) 
 	void OverdueSubContractor1() throws InterruptedException, IOException          
 	{
 		test = extent.startTest("Pie Chart - Status Wise Summery(Sub-Contractor) - 'Audit Completion Status' Count Verification ");
@@ -817,7 +821,7 @@ public class ContractorTestCasesCritical extends BasePage {
 
 	
 
-	@Test(priority =51) 
+//	@Test(priority =51) 
 	void PWSSubContratorCompliedHigh1() throws InterruptedException, IOException          
 	{  
 		Thread.sleep(10000);
@@ -842,7 +846,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	}
 	
 	
-	@Test(priority =52) 
+//	@Test(priority =52) 
 	void PWSSubContratorNotCompliedHigh1() throws InterruptedException, IOException          
 	{  
 		Thread.sleep(9000);
@@ -867,7 +871,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	}
 
 	
-	@Test(priority =53) 
+//	@Test(priority =53) 
 	void PWSSubContractorNotApplicableHigh1() throws InterruptedException, IOException          
 	{  
 		Thread.sleep(9000);
@@ -905,6 +909,18 @@ public class ContractorTestCasesCritical extends BasePage {
 	
 	
 	@Test(priority = 55) 
+	void AddLicenceCT1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - Add License Verification ");
+		
+		Method1.AddLicenceCT(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 56) 
 	void MyWorkspaceLicenseSearch1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Workspace - License tab Verification ");
@@ -918,7 +934,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	
 
 	
-	@Test(priority = 56) 
+	@Test(priority = 57) 
 	void MyWorkspaceRenewLicense() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Workspace - Renew License Verification ");
@@ -930,7 +946,7 @@ public class ContractorTestCasesCritical extends BasePage {
 	}
 	
 	
-    @Test(priority = 57) 
+//    @Test(priority = 57) 
 	void MyWorkspacePreviousDocumentView1() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Workspace - License Tab - Previous Document Viewed Verification ");

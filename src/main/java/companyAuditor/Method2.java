@@ -17,7 +17,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -3977,6 +3977,11 @@ public class Method2 extends BasePage{
 	}
 	
 	
+	public static void setZoomLevel(WebDriver driver, double zoomLevel) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.body.style.zoom='" + zoomLevel + "'");
+    }
+	
 	
 	
 	public static void AuditCompletionStatusBlueGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
@@ -3996,7 +4001,7 @@ public class Method2 extends BasePage{
 		
 		int open = Integer.parseInt(Locator2.ACSBlueGraph().getText());	//Reading Dashboard count.
 	    Locator2.ACSBlueGraph().click();					                //Clicking on Dashboard count
-
+	    
 	    Thread.sleep(20000);
 	   
 	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
@@ -4014,9 +4019,6 @@ public class Method2 extends BasePage{
 	    
 	 //   scrollToBottom();
 	    
-	    
-	   
-
 		String item = Locator2.ACSBlueGraphGrid().getText();
 		String[] bits = item.split(" ");								//Splitting the String
 		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
@@ -4051,11 +4053,11 @@ public class Method2 extends BasePage{
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
-	  //  Method1.GraphExcelAuditCount(test,workbook);
-	  //  Thread.sleep(2000);
-	    
+	  
 	    Method2.StatusWiseSummaryExportGrid( test, workbook);
 		Thread.sleep(2000);
+	 //   Method1.GraphExcelAuditCount(test,workbook);
+	  //  Thread.sleep(2000);
 		
 		Locator2.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -4083,10 +4085,10 @@ public class Method2 extends BasePage{
 		Thread.sleep(4000);
 
 		getDriver().switchTo().parentFrame();
-		
+		 
 		Thread.sleep(4000);
-		
-		Locator2.ClosePage().click();
+		getDriver().navigate().refresh();
+		//Locator2.ClosePage().click();
 		
 		Thread.sleep(2000);
 		
@@ -4119,7 +4121,7 @@ public class Method2 extends BasePage{
 		
 		int open = Integer.parseInt(Locator2.ACSGreenGraph().getText());	//Reading Dashboard count.
 	    Locator2.ACSGreenGraph().click();					                //Clicking on Dashboard count
-
+	    
 	    Thread.sleep(20000);
 	   
 	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
@@ -4207,10 +4209,19 @@ public class Method2 extends BasePage{
 		Thread.sleep(4000);
 
 		getDriver().switchTo().parentFrame();
-		
+		try {
+	           // Set zoom level to 90% (0.9) for zooming out
+	        //  setZoomLevel(getDriver(), 0.7);
+	           // Wait to observe the effect
+	          Thread.sleep(2000);
+	            // Set zoom level back to 100% (1.0) to reset to normal
+			  setZoomLevel(getDriver(), 1.0);
+	        } catch (InterruptedException e) {
+	          e.printStackTrace();
+	        }
 		Thread.sleep(4000);
-		
-		Locator2.ClosePage().click();
+		getDriver().navigate().refresh();
+		//Locator2.ClosePage().click();
 		
 		Thread.sleep(2000);
 		
@@ -7168,9 +7179,13 @@ public class Method2 extends BasePage{
 	
 	public static void OverdueMultipleFilter( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		Thread.sleep(19000);
-		Locator1.Overdue().click();
-		Thread.sleep(16000);
+		Thread.sleep(2000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(Locator1.Overdue1()));		
+		Thread.sleep(6000);
+		Locator1.Overdue1().click();
+		Thread.sleep(3000);
 		
 		Locator1.Location11().click();
 	       Thread.sleep(1000);
@@ -7203,8 +7218,8 @@ public class Method2 extends BasePage{
 	       Thread.sleep(2000);
 	       Locator1.Column().click();
 	       Thread.sleep(2000);
-	       Locator1.ColumnType().click();
-	       Thread.sleep(2000);
+	   //    Locator1.ColumnType().click();
+	    //   Thread.sleep(2000);
 	    //   Locator1.Location().click();
 	    //   Thread.sleep(500);
 

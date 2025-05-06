@@ -803,7 +803,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement RejectedDasboardCount()		//Method for searching Username input
 	{
-		RejectedDasboardCount = getDriver().findElement(By.id("divRejectedCount"));
+		RejectedDasboardCount = getDriver().findElement(By.xpath("//div[@id='divRejectedCount']"));
 		return RejectedDasboardCount;
 	}
 	
@@ -955,13 +955,13 @@ public class Locator2  extends BasePage{
 
 	public static WebElement EditInEditButton()		//Method for searching Username input
 	{
-		EditInEditButton = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[2]/td[7]/span"));
+		EditInEditButton = getDriver().findElement(By.xpath("//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[1]/td[7]/span"));
 	return EditInEditButton;
     }
 	
 	  public static WebElement SelectStatus()		//Method for searching Username input
 		{
-	    	SelectStatus = getDriver().findElement(By.xpath("(//span[.='Select Status'])[3]"));
+	    	SelectStatus = getDriver().findElement(By.xpath("(//span[.='Select Status'])[3] | //span[@aria-owns='AuditCheckListStatusID_listbox']"));
 			return SelectStatus;
 			
 			
@@ -1074,7 +1074,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement PWSCompliedJKHills()		//Method for searching Username input
 	{
-		PWSCompliedJKHills = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"));
+		PWSCompliedJKHills = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Mantra Mesmer']"));
 	return PWSCompliedJKHills;
     }
 	
@@ -1087,7 +1087,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement Download()		//Method for searching Username input
 	{
-		Download = getDriver().findElement(By.xpath("//div[@id='ui-display']//div[@class='group']/span[@id='downloadButton']"));
+		Download = getDriver().findElement(By.xpath("//a[@id='dwn-btn-contract']"));
 	return Download;
     }
 
@@ -1161,6 +1161,11 @@ public class Locator2  extends BasePage{
 	public static WebElement CheckBoxDocument()		//Method for searching Username input
 	{
 		CheckBoxDocument = getDriver().findElement(By.xpath("(//input[@id='sel_chkbx'])[3]"));
+	return CheckBoxDocument;
+    }
+	public static WebElement download()		//Method for searching Username input
+	{
+		CheckBoxDocument = getDriver().findElement(By.xpath("//div[@id='grid']//table//tr//td//a[2]"));
 	return CheckBoxDocument;
     }
 	
@@ -1357,7 +1362,7 @@ public class Locator2  extends BasePage{
 
     public static WebElement FaciltyDD()		//Method for searching Username input
    	{
-    	MonthReportDD = getDriver().findElement(By.xpath("//span[.='Ecobuild Solutions']"));
+    	MonthReportDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//div//ul//li[1]"));
    	 return MonthReportDD;
    	}
   

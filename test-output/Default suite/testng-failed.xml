@@ -3,30 +3,71 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="comapnyAdminTest.ManagementTestCases">
+      <class name="comapnyAdminTest.AuditorCriticalTestCases">
         <methods>
-          <include name="PWCSSABCconstructionNotCompliedHigh1"/>
-          <include name="DocumentTabMultipleFilter1"/>
-          <include name="browserClosing"/>
-          <include name="GreyInRedCountMtch1"/>
-          <include name="ContractorwiseclosedAuditGraph1"/>
-          <include name="PWCSSABCconstructionNotApplicableHigh1"/>
-          <include name="PWCSSABCConstructionCompliedHigh1"/>
-          <include name="CTWAuditStatusSummeryOverdue1"/>
-          <include name="Login"/>
-          <include name="ViewButtonReport1"/>
-          <include name="PWCSSubcontractorNotCompliedHigh1"/>
           <include name="DocumentClearButton1"/>
-          <include name="PWCSSubcontractorNotApplicableMedium1"/>
-          <include name="AuditMonthComplianceReport1"/>
+          <include name="UpcomingdashboardAndGridCountMatch1"/>
+          <include name="Rejectedtransactionandstatuslog1"/>
+          <include name="Overduetransactionandstatuslog1"/>
+          <include name="RejectedDashBoardAndGridCount1"/>
+          <include name="ClosedReviewEditButton1"/>
+          <include name="Upcomingtransactionandstatuslog1"/>
+          <include name="AuditCompletionStatusRed1"/>
+          <include name="GraphCountMatchGreen1"/>
+          <include name="CommentButtonUpcoming1"/>
           <include name="setBrowser"/>
-          <include name="ReportMultipleFilter1"/>
-          <include name="SubContrctorCompliedGraphMultipleFilterHigh1"/>
-          <include name="PWAuditStatusSummeryABCConstructionOverdue1"/>
-          <include name="CTWCompliedgreen1"/>
-          <include name="MoreReportDownload1"/>
+          <include name="ClosedDashboardAndGridCount1"/>
+          <include name="ViewOverdue1"/>
+          <include name="MultipleComplianceDownload1"/>
+          <include name="ViewDocument1"/>
+          <include name="OverdueAuditLog1"/>
+          <include name="ClearButton1"/>
+          <include name="browserClosing"/>
+          <include name="UpcomingDownload1"/>
+          <include name="ViewEditPR1"/>
+          <include name="Login"/>
+          <include name="RejectedEditButton1"/>
+          <include name="PendingReviewAuditLog1"/>
+          <include name="PendingReviewDownload1"/>
+          <include name="OverdueDashboardAndGridCount1"/>
+          <include name="PWSCompliedHighRisk1"/>
+          <include name="MoreReport1"/>
+          <include name="ComentClose1"/>
+          <include name="CLosedStatusReopen1"/>
+          <include name="GreyInRedCountMtch1"/>
+          <include name="UpcomingAuditLog1"/>
+          <include name="ComentOverdue11"/>
+          <include name="PRChangeReviewerstatus1"/>
+          <include name="ViewRejected1"/>
+          <include name="ViewClose1"/>
+          <include name="RedInRedGraphCountMatch1"/>
+          <include name="PendingReviewDashboardAndGridCount1"/>
+          <include name="OverdueEditButton1"/>
+          <include name="UpcomingViewDownloadButton1"/>
+          <include name="MyWorkspaceLicenseApprove1"/>
+          <include name="PendingRewiewtransactionandstatuslog1"/>
+          <include name="OverdueDownloadAndViewButton1"/>
+          <include name="RejectedDownloadAndViewButton1"/>
+          <include name="MyWorkspaceLicenseSearch1"/>
+          <include name="NotApplicableHigh1"/>
+          <include name="ClosedDownloadAndViewButton1"/>
+          <include name="PendingReviewUpdate1"/>
+          <include name="UpcomingDownloadAndViewButton1"/>
+          <include name="MyWorkspaceLicense1"/>
+          <include name="MyWorkspaceLicenseReject1"/>
+          <include name="Closedtransactionandstatuslog1"/>
+          <include name="DownloadDocumentOverdue1"/>
+          <include name="RejectedAuditLog1"/>
+          <include name="DownloadClosed1"/>
+          <include name="DownloadCompliance1"/>
+          <include name="CommentButtonPR1"/>
+          <include name="ClosedAuditLog1"/>
+          <include name="PWSNotCompliedHigh1"/>
+          <include name="ComentRejected1"/>
+          <include name="ActnColmFileDownld1"/>
+          <include name="ExportReportR1"/>
         </methods>
-      </class> <!-- comapnyAdminTest.ManagementTestCases -->
+      </class> <!-- comapnyAdminTest.AuditorCriticalTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

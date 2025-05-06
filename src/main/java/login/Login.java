@@ -104,8 +104,15 @@ public class Login extends BasePage {
 		LoginPOM.setUname().sendKeys(username);		//Sent username to input box 
 		Thread.sleep(500);
 		LoginPOM.setPassword().sendKeys(password);	//Sent password to input box
+		try {
 		LoginPOM.clickSubmit().click();				//Clicked on Sign-in button
 		Thread.sleep(500);
+		}
+		catch(Exception e) {
+			LoginPOM.Submit().click();				//Clicked on Sign-in button
+			Thread.sleep(500);
+		}
+		
 		if(!username.equalsIgnoreCase("performer@avantis.info"))
 		{
 			try
@@ -233,7 +240,8 @@ public class Login extends BasePage {
 			
 			
 	
-		}		
+		}
+	
 		return getDriver(); 
 	}
 	

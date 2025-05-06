@@ -1700,12 +1700,29 @@ public class Method4 extends BasePage{
 				}
 				
 				
-				// clear button
+				
 				
 		        JavascriptExecutor jss1 = (JavascriptExecutor) getDriver();
 			    
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
+			    
+			 // clear button
+				if(Locator4.ACSBlueGraphGridExportButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator4.ACSBlueGraphGridExportButton().click();
+					test.log(LogStatus.PASS, " File Download Successfully " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  File Download Successfully "  );
+					
+				}
+				
 				
 				Locator4.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
@@ -1732,20 +1749,6 @@ public class Method4 extends BasePage{
 				
 				
 				
-				if(Locator4.ACSBlueGraphGridExportButton().isEnabled())
-				{
-					
-					Thread.sleep(2000);
-				    Locator4.ACSBlueGraphGridExportButton().click();
-					test.log(LogStatus.PASS, " File Download Successfully " );
-					
-				}
-				
-				else
-				{
-					test.log(LogStatus.FAIL, "  File Download Successfully "  );
-					
-				}
 				
 				Thread.sleep(4000);
 
@@ -1841,6 +1844,20 @@ public class Method4 extends BasePage{
 			    
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
+			    if(Locator4.ACSGreenGraphGreedExportButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator4.ACSGreenGraphGreedExportButton().click();
+					test.log(LogStatus.PASS, " File Download Successfully " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  File Download Successfully "  );
+					
+				}
 				
 				Locator4.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
@@ -1867,20 +1884,7 @@ public class Method4 extends BasePage{
 				
 				
 				
-				if(Locator4.ACSGreenGraphGreedExportButton().isEnabled())
-				{
-					
-					Thread.sleep(2000);
-				    Locator4.ACSGreenGraphGreedExportButton().click();
-					test.log(LogStatus.PASS, " File Download Successfully " );
-					
-				}
 				
-				else
-				{
-					test.log(LogStatus.FAIL, "  File Download Successfully "  );
-					
-				}
 				
 				
 				Thread.sleep(4000);
@@ -3392,6 +3396,29 @@ public class Method4 extends BasePage{
 			    
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
+			    
+			    Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(10000);
+			     Locator4.ACSBlueGraphGridExportButton().click();
+				
+			 	Thread.sleep(9000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(6000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Download Successfully");
+				}
+			   
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File does not Download Successfully");
+				}
+
 				
 				Locator4.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
@@ -3434,28 +3461,7 @@ public class Method4 extends BasePage{
 				}
 				*/
 				
-				Thread.sleep(4000);
-				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 				
-				Thread.sleep(10000);
-			     Locator4.ACSBlueGraphGridExportButton().click();
-				
-			 	Thread.sleep(9000);
-				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-				
-			   
-		        Thread.sleep(6000);
-			   if (dirContents1.length < allFilesNew1.length) {
-					test.log(LogStatus.PASS,  "File Download Successfully");
-				}
-			   
-			   else
-			   {
-					test.log(LogStatus.FAIL, "File does not Download Successfully");
-				}
-
 				
 				Thread.sleep(4000);
 
@@ -3553,6 +3559,29 @@ public class Method4 extends BasePage{
 			    
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
+			    
+			    Thread.sleep(4000);
+				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+				
+				Thread.sleep(10000);
+			     Locator4.ACSGreenGraphGreedExportButton().click();
+				
+			 	Thread.sleep(9000);
+				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+				
+			   
+		        Thread.sleep(6000);
+			   if (dirContents1.length < allFilesNew1.length) {
+					test.log(LogStatus.PASS,  "File Download Successfully");
+				}
+			   
+			   else
+			   {
+					test.log(LogStatus.FAIL, "File does not Download Successfully");
+				}
+
 				
 				Locator4.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
@@ -3595,28 +3624,7 @@ public class Method4 extends BasePage{
 				}
 				*/
 				
-				Thread.sleep(4000);
-				File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 				
-				Thread.sleep(10000);
-			     Locator4.ACSGreenGraphGreedExportButton().click();
-				
-			 	Thread.sleep(9000);
-				File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-				File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-				
-			   
-		        Thread.sleep(6000);
-			   if (dirContents1.length < allFilesNew1.length) {
-					test.log(LogStatus.PASS,  "File Download Successfully");
-				}
-			   
-			   else
-			   {
-					test.log(LogStatus.FAIL, "File does not Download Successfully");
-				}
-
 				
 				Thread.sleep(4000);
 
@@ -3864,6 +3872,20 @@ public class Method4 extends BasePage{
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
 				
+			    if(Locator3.ACSREDGraphGridExportButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator3.ACSREDGraphGridExportButton().click();
+					test.log(LogStatus.PASS, " File Download Successfully " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  File Download Successfully "  );
+					
+				}
 				Locator3.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
 				
@@ -3886,24 +3908,6 @@ public class Method4 extends BasePage{
 					test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
 					
 				}
-				
-				
-				
-				if(Locator3.ACSREDGraphGridExportButton().isEnabled())
-				{
-					
-					Thread.sleep(2000);
-				    Locator3.ACSREDGraphGridExportButton().click();
-					test.log(LogStatus.PASS, " File Download Successfully " );
-					
-				}
-				
-				else
-				{
-					test.log(LogStatus.FAIL, "  File Download Successfully "  );
-					
-				}
-				
 				
 				Thread.sleep(4000);
 
@@ -3994,6 +3998,20 @@ public class Method4 extends BasePage{
 			    jss1.executeScript("window.scrollBy(0,-1000)");
 			    Thread.sleep(2000);
 				
+			    if(Locator3.ACSREDGraphGridExportButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator3.ACSREDGraphGridExportButton().click();
+					test.log(LogStatus.PASS, " File Download Successfully " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  File Download Successfully "  );
+					
+				}
 				Locator3.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
 				
@@ -4019,20 +4037,7 @@ public class Method4 extends BasePage{
 				
 				
 				
-				if(Locator3.ACSREDGraphGridExportButton().isEnabled())
-				{
-					
-					Thread.sleep(2000);
-				    Locator3.ACSREDGraphGridExportButton().click();
-					test.log(LogStatus.PASS, " File Download Successfully " );
-					
-				}
 				
-				else
-				{
-					test.log(LogStatus.FAIL, "  File Download Successfully "  );
-					
-				}
 				
 				
 				Thread.sleep(4000);

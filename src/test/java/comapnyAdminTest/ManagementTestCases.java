@@ -522,7 +522,7 @@ public class ManagementTestCases extends BasePage{
 	
 	
 	@Test(priority = 32) 
-	void PWCSSABCConstructionCompliedHigh1() throws InterruptedException
+	void PWCSSABCConstructionCompliedHigh1() throws InterruptedException, IOException
 	{
 		Thread.sleep(20000);
 		

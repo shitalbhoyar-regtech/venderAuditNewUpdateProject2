@@ -1331,7 +1331,7 @@ public class ContractorTestCases1 extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	*/
+	
 	
 //	@Test(priority =43 ) 
 	void AddHeadCountRejectedvalidation1() throws InterruptedException, IOException          
@@ -1345,7 +1345,7 @@ public class ContractorTestCases1 extends BasePage{
 	}
 	
 	
-		/*
+		
 	
 	
 	

@@ -2,12 +2,14 @@ package companyProjectDirector;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -637,21 +639,19 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 	public static void AuditCompletionStatusRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		
+		 Thread.sleep(26000);
 		//WebWait wait = new WebWait(, 1000);
-		Thread.sleep(26000);
-		
 		try {         
 
 	           // Set zoom level to 50% (0.5) for zooming out
-	           setZoomLevel(getDriver(), 0.8);
+	           setZoomLevel(getDriver(), 0.9);
 
-//	           // Wait to observe the effect
-	           Thread.sleep(2000);
-	//
-//	           // Set zoom level back to 100% (1.0) to reset to normal
-//	         //  setZoomLevel(getDriver(), 1.0);
-	//
+	           // Wait to observe the effect
+		Thread.sleep(2000);
+
+	          //  Set zoom level back to 100% (1.0) to reset to normal
+	           setZoomLevel(getDriver(), 1.0);
+
 	       } catch (InterruptedException e) {
 	           e.printStackTrace();
 	       }
@@ -661,11 +661,12 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 	    jss.executeScript("window.scrollBy(0,400)");
 	    Thread.sleep(2000);
 		
-		
-		
+			
 		int open = Integer.parseInt(Locator4.ACSREDGraph().getText());	//Reading Dashboard count.
 	    Locator4.ACSREDGraph().click();					                //Clicking on Dashboard count
 
+       
+		
 	    Thread.sleep(20000);
 	   
 	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
@@ -720,6 +721,29 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Thread.sleep(4000);
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(10000);
+	     Locator4.ACSREDGraphGridExportButton().click();
+		
+	 	Thread.sleep(9000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(6000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Download Successfully");
+		}
+	   
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File does not Download Successfully");
+		}
+
 		
 		Locator4.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -761,28 +785,7 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 			
 		}
 		*/
-		Thread.sleep(4000);
-		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
-		Thread.sleep(10000);
-	     Locator4.ACSREDGraphGridExportButton().click();
-		
-	 	Thread.sleep(9000);
-		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-		
-	   
-        Thread.sleep(6000);
-	   if (dirContents1.length < allFilesNew1.length) {
-			test.log(LogStatus.PASS,  "File Download Successfully");
-		}
-	   
-	   else
-	   {
-			test.log(LogStatus.FAIL, "File does not Download Successfully");
-		}
-
 		
 		Thread.sleep(4000);
 
@@ -812,9 +815,9 @@ if(Locator4.ComplianceTab().isDisplayed()) {
     public static void CTWCompliedgreen( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
     {
 		
-		
+    	Thread.sleep(20000);
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(9000);
+		Thread.sleep(2000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
@@ -953,7 +956,7 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(9000);
+		Thread.sleep(20000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
@@ -1093,7 +1096,7 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(9000);
+		Thread.sleep(20000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
@@ -1102,6 +1105,10 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 		
 		Locator4.CTWNotApplicableGrey().click();
 		Thread.sleep(5000);
+		
+	//	WebElement roc = getDriver().findElement(By.cssSelector("#highcharts-0 > svg > g.highcharts-legend > g > g > g.highcharts-legend-item.highcharts-column-series.highcharts-color-undefined.highcharts-series-4 > rect"));
+		
+	//	  roc.click();
 		
 		int open = Integer.parseInt(Locator4.CTWNotApplicableHigh().getText());	//Reading Dashboard count.
 	    Locator4.CTWNotApplicableHigh().click();					                //Clicking on Dashboard count
@@ -1237,11 +1244,11 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 		
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-		Thread.sleep(9000);
+		Thread.sleep(25000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,1600)");
+	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(9000);
 		
 		
@@ -1303,6 +1310,29 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Thread.sleep(4000);
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(10000);
+	     Locator4.ACSREDGraphGridExportButton().click();
+		
+	 	Thread.sleep(9000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(6000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Download Successfully");
+		}
+	   
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File does not Download Successfully");
+		}
+
 		
 		Locator4.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -1345,28 +1375,7 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 		}
 		*/
 		
-		Thread.sleep(4000);
-		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
-		Thread.sleep(10000);
-	     Locator4.ACSREDGraphGridExportButton().click();
-		
-	 	Thread.sleep(9000);
-		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-		
-	   
-        Thread.sleep(6000);
-	   if (dirContents1.length < allFilesNew1.length) {
-			test.log(LogStatus.PASS,  "File Download Successfully");
-		}
-	   
-	   else
-	   {
-			test.log(LogStatus.FAIL, "File does not Download Successfully");
-		}
-
 		
 		Thread.sleep(4000);
 		
@@ -1855,7 +1864,7 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,2350)");
+	    jss.executeScript("window.scrollBy(0,3050)");
 	    Thread.sleep(18000);
 		
 		
@@ -1917,6 +1926,29 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 	    
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
+	    
+	    Thread.sleep(4000);
+		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+		
+		Thread.sleep(10000);
+	     Locator4.ACSREDGraphGridExportButton().click();
+		
+	 	Thread.sleep(9000);
+		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
+		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+		
+	   
+        Thread.sleep(6000);
+	   if (dirContents1.length < allFilesNew1.length) {
+			test.log(LogStatus.PASS,  "File Download Successfully");
+		}
+	   
+	   else
+	   {
+			test.log(LogStatus.FAIL, "File does not Download Successfully");
+		}
+
 		
 		Locator3.ClearContractorRedGraphGrid().click();
 		Thread.sleep(2000);
@@ -1958,28 +1990,7 @@ if(Locator4.ComplianceTab().isDisplayed()) {
 			
 		}
 		*/
-		Thread.sleep(4000);
-		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
-		Thread.sleep(10000);
-	     Locator4.ACSREDGraphGridExportButton().click();
-		
-	 	Thread.sleep(9000);
-		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
-		File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-		
-	   
-        Thread.sleep(6000);
-	   if (dirContents1.length < allFilesNew1.length) {
-			test.log(LogStatus.PASS,  "File Download Successfully");
-		}
-	   
-	   else
-	   {
-			test.log(LogStatus.FAIL, "File does not Download Successfully");
-		}
-
 		
 		Thread.sleep(4000);
 

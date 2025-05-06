@@ -1863,7 +1863,7 @@ public class Method3 extends BasePage{
 	public static void CTWCompliedgreen( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		
+		Thread.sleep(20000);
 		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(7000);
 			
@@ -2271,7 +2271,7 @@ public class Method3 extends BasePage{
 	public static void CTWNotCompliedRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		
+		Thread.sleep(20000);
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
 		Thread.sleep(7000);
 			
@@ -2280,10 +2280,10 @@ public class Method3 extends BasePage{
 	    jss.executeScript("window.scrollBy(0,790)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Canteen']"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Food Technology']"))); 
 		Thread.sleep(2000);
 		
-		Locator3.CTWNotCompliedRed().click();
+		Locator3.CTWCompliedGreen().click();
 		Thread.sleep(2000);
 		
 		int open = Integer.parseInt(Locator3.CTWNotCompliedRedHigh().getText());	//Reading Dashboard count.
@@ -2681,19 +2681,19 @@ public class Method3 extends BasePage{
 	public static void CTWNotApplicableGrey( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		
+		Thread.sleep(20000);
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
 		Thread.sleep(7000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,910)");
+	    jss.executeScript("window.scrollBy(0,790)");
 	    Thread.sleep(2000);
 	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Canteen']"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Food Technology']"))); 
 		Thread.sleep(2000);
 	
-		Locator3.CTWNotApplicableGrey().click();
+		Locator3.CTWCompliedGreen().click();
 		Thread.sleep(2000);
 		
 		int open = Integer.parseInt(Locator3.CTWNotApplicableHigh().getText());	//Reading Dashboard count.
@@ -2825,7 +2825,7 @@ public class Method3 extends BasePage{
 	public static void ContractorwiseclosedAuditGraph( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
     {
 		
-		Thread.sleep(20000);
+		Thread.sleep(25000);
 		
 		WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 		Thread.sleep(3000);
@@ -2837,8 +2837,9 @@ public class Method3 extends BasePage{
 	    
 	    jss.executeScript("window.scrollBy(0,1300)");
 	    Thread.sleep(2000);
-	    
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"))); 
+      //  ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.ContractorClosedAuditComplied());
+
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"))); 
 		Thread.sleep(2000);
 	    		
 		int open = Integer.parseInt(Locator3.ContractorClosedAuditComplied().getText());	//Reading Dashboard count.
@@ -3012,12 +3013,12 @@ public class Method3 extends BasePage{
 		
 		Thread.sleep(4000);
 		
-		Method3.ContractorwiseNotCompliedclosedAuditGraph(test,workbook);
+	/*	Method3.ContractorwiseNotCompliedclosedAuditGraph(test,workbook);
 		Thread.sleep(5000);
 		
 		Method3.ContractorwiseNotApplicableclosedAuditGraph(test,workbook);
 		Thread.sleep(5000);
-			
+		*/	
 		
     }
 	
@@ -3610,17 +3611,19 @@ public class Method3 extends BasePage{
 	public static void CTWAuditStatusSummeryOverdue( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		
+		Thread.sleep(20000);
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
 		Thread.sleep(15000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,1900)");
+	    jss.executeScript("window.scrollBy(0,2000)");
 	    Thread.sleep(6000);
+       // ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.CTWOverdueRed());
+
 	    
 	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"))); 
-	//	Thread.sleep(3000);
+		Thread.sleep(3000);
 		
 		
 		
@@ -4091,13 +4094,13 @@ public class Method3 extends BasePage{
 	public static void PWAuditStatusSummeryABCConstructionOverdue( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-		
+		Thread.sleep(21000);
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
 		Thread.sleep(9000);
 			
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,2350)");
+	    jss.executeScript("window.scrollBy(0,2850)");
 	    Thread.sleep(7000);
 	    
 	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[29]"))); 
@@ -4161,28 +4164,7 @@ public class Method3 extends BasePage{
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
 		
-		Locator3.ClearContractorRedGraphGrid().click();
-		Thread.sleep(2000);
 		
-		
-		Locator3.ClearContractorDDRedGraphGrid().click();
-		Thread.sleep(2000);
-		
-		
-		if(Locator3.ACSREDGraphGridClearButton().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator3.ACSREDGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear button working properly " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
-			
-		}
 		
 		
 		/*
@@ -4223,7 +4205,28 @@ public class Method3 extends BasePage{
 
 		
 		Thread.sleep(4000);
-
+		Locator3.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator3.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator3.ACSREDGraphGridClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator3.ACSREDGraphGridClearButton().click();
+			test.log(LogStatus.PASS, " Clear button working properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
+			
+		}
 		
 		Thread.sleep(4000);
 
@@ -4322,28 +4325,6 @@ public class Method3 extends BasePage{
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
 		
-		Locator3.ClearContractorRedGraphGrid().click();
-		Thread.sleep(2000);
-		
-		
-		Locator3.ClearContractorDDRedGraphGrid().click();
-		Thread.sleep(2000);
-		
-		
-		if(Locator3.ACSREDGraphGridClearButton().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator3.ACSREDGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear button working properly " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
-			
-		}
 		
 		
 		/*
@@ -4385,7 +4366,29 @@ public class Method3 extends BasePage{
 
 		
 		Thread.sleep(4000);
-
+		Locator3.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator3.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator3.ACSREDGraphGridClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator3.ACSREDGraphGridClearButton().click();
+			test.log(LogStatus.PASS, " Clear button working properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
+			
+		}
+		
 
 		getDriver().switchTo().parentFrame();
 		
@@ -4481,28 +4484,7 @@ public class Method3 extends BasePage{
 	    jss1.executeScript("window.scrollBy(0,-1000)");
 	    Thread.sleep(2000);
 		
-		Locator3.ClearContractorRedGraphGrid().click();
-		Thread.sleep(2000);
 		
-		
-		Locator3.ClearContractorDDRedGraphGrid().click();
-		Thread.sleep(2000);
-		
-		
-		if(Locator3.ACSREDGraphGridClearButton().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator3.ACSREDGraphGridClearButton().click();
-			test.log(LogStatus.PASS, " Clear button working properly " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
-			
-		}
 		
 		
 		/*
@@ -4544,7 +4526,28 @@ public class Method3 extends BasePage{
 
 		
 		Thread.sleep(4000);
-
+		Locator3.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator3.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator3.ACSREDGraphGridClearButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator3.ACSREDGraphGridClearButton().click();
+			test.log(LogStatus.PASS, " Clear button working properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
+			
+		}
 		
 		
 		
@@ -5792,14 +5795,15 @@ public class Method3 extends BasePage{
 	public static void PWCSSABCConstructionCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
     {
 		
-		
+		Thread.sleep(20000);
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
 		Thread.sleep(15000);
-			
-	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCConstructionComplied());
+
+	 /*   JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2500)");
-	    Thread.sleep(6000);
+	    Thread.sleep(6000);*/
 	    
 	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
 	//	Thread.sleep(2000);
@@ -6229,14 +6233,15 @@ public class Method3 extends BasePage{
 	public static void PWCSSABCconstructionNotCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
     {
 		
-		
+		Thread.sleep(20000);
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
 		Thread.sleep(15000);
-			
-	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCConstructionComplied());
+
+	/*    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2500)");
-	    Thread.sleep(2000);
+	    Thread.sleep(2000);*/
 	    
 	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
 		Thread.sleep(3000);
@@ -6672,14 +6677,16 @@ public class Method3 extends BasePage{
 	public static void PWCSSABCconstructionNotApplicableHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
     {
 		
-		
+		Thread.sleep(20000);
 		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
 		Thread.sleep(15000);
 			
-	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	/*    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,2500)");
-	    Thread.sleep(2000);
+	    Thread.sleep(2000);*/
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCConstructionComplied());
+
 	    
 	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[3]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Chandragan Construction']"))); 
 	//	Thread.sleep(2000);

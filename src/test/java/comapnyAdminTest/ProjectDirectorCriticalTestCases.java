@@ -23,6 +23,7 @@ import companyContractor.Method1;
 import companyProjectDirector.CriticalMethod4;
 import companyProjectDirector.Locator4;
 import companyProjectDirector.Method4;
+import companyProjectHead.Method3;
 import login.BasePage;
 
 public class ProjectDirectorCriticalTestCases extends BasePage{
@@ -196,6 +197,8 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 		test = extent.startTest("Pie Chart - Status Wise Summary - 'Audit Completion Status' Count Verification");
 		
 		CriticalMethod4.AuditCompletionStatusRed(test,workbook);
+	//	Method3.AuditCompletionStatusRed(test,workbook);
+
 		
 		extent.endTest(test);
 		extent.flush();
@@ -210,7 +213,7 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 	@Test(priority = 9) 
 	void CTWCompliedgreen1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - 'Complied Status' Count Verification");
+		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Complied Status' Count Verification");
 		
 		CriticalMethod4.CTWCompliedgreen(test,workbook);
 		
@@ -228,7 +231,7 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 	@Test(priority = 10) 
 	void CTWNotCompliedRed1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - 'Not Complied Status' Count Verification");
+		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Not Complied Status' Count Verification");
 		
 		CriticalMethod4.CTWNotCompliedRed(test,workbook);
 		
@@ -243,7 +246,7 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 	@Test(priority = 11) 
 	void CTWNotApplicableGrey1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Stake Holder Wise - Compliance Status Summary - 'Not Applicable Status' Count Verification");
+		test = extent.startTest("Bar Graph - Contractor Type Wise - Compliance Status Summary - 'Not Applicable Status' Count Verification");
 		
 		CriticalMethod4.CTWNotApplicableGrey(test,workbook);
 		
@@ -252,13 +255,24 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 	}
 	
 	
-	
-	
-	
 	@Test(priority = 12) 
+	void ContractorwiseclosedAuditGraph1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Bar Graph - ‘Contractor Wise’ Bar Graph for Closed Audits - Suraj Contractor - Count Verification");
+		
+		Method3.ContractorwiseclosedAuditGraph(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
+	
+	
+	@Test(priority = 13) 
 	void CTWAuditStatusSummeryOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Stake Holder Wise - Audit Status Summary - Count Verification' Count Verification");
+		test = extent.startTest("Bar Graph - Contractor Type Wise - Audit Status Summary - Count Verification' Count Verification");
 		
 		CriticalMethod4.CTWAuditStatusSummeryOverdue(test,workbook);
 		
@@ -270,7 +284,7 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 	
 	
 	
-	@Test(priority = 13) 
+	@Test(priority = 14) 
 	void PWCSSABCConstructionCompliedHigh1() throws InterruptedException, IOException
 	{
 		
@@ -281,13 +295,13 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,2000)");
+	    jss.executeScript("window.scrollBy(0,2500)");
 	    Thread.sleep(2000);
 		
 		String t = Locator4.PWCSSABCConstructionComplied().getText();
 		Thread.sleep(2000);
 		
-		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Complied Status -  " + t + " Count Verification");
+		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Complied Status -  " + t + " Count Verification");
 		
 		CriticalMethod4.PWCSSABCConstructionCompliedHigh(test,workbook);
 		
@@ -308,13 +322,13 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,2000)");
+	    jss.executeScript("window.scrollBy(0,2500)");
 	    Thread.sleep(2000);
 		
 		String t = Locator4.PWCSSABCConstructionComplied().getText();
 		Thread.sleep(2000);
 
-		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Not Complied Status -  " + t + " Count Verification");
+		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Complied Status -  " + t + " Count Verification");
 		
 		CriticalMethod4.PWCSSABCconstructionNotCompliedHigh(test,workbook);
 		
@@ -335,13 +349,13 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
-	    jss.executeScript("window.scrollBy(0,2000)");
+	    jss.executeScript("window.scrollBy(0,2500)");
 	    Thread.sleep(2000);
 		
 		String t = Locator4.PWCSSABCConstructionComplied().getText();
 		Thread.sleep(2000);
 
-		test = extent.startTest("Bar Graph - Facility Wise - Compliance Status Summary - Not Applicable Status - " + t + " Count Verification");
+		test = extent.startTest("Bar Graph - Project Wise - Compliance Status Summary - Not Applicable Status - " + t + " Count Verification");
 		
 		CriticalMethod4.PWCSSABCconstructionNotApplicableHigh(test,workbook);
 		
@@ -354,7 +368,7 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 	@Test(priority = 16) 
 	void PWAuditStatusSummeryABCConstructionOverdue1() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Bar Graph - Facility Wise - Audit Status Summary - 'Geet Heritage ' Count Verification");
+		test = extent.startTest("Bar Graph - Project Wise - Audit Status Summary - 'Geet Heritage ' Count Verification");
 		
 		CriticalMethod4.PWAuditStatusSummeryABCConstructionOverdue(test,workbook);
 		
@@ -467,6 +481,16 @@ public class ProjectDirectorCriticalTestCases extends BasePage{
 		extent.flush();
 	}
 	
+	@Test(priority = 20) 
+	void AddLicenceCT1() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Workspace - Add License Verification ");
+		
+		Method1.AddLicenceCT(test,workbook);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
 	
 	@Test(priority = 22) 

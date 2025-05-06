@@ -102,6 +102,7 @@ public class CriticalMethod2 extends BasePage{
 	int open = Integer.parseInt(Locator2.UpcomingCountDashboard().getText());	//Reading Dashboard count.
     Locator2.UpcomingCountDashboard().click();					                //Clicking on Dashboard count
     Thread.sleep(2000);
+   
  //   WebElement Grid = getDriver().findElement(By.xpath("//div[@id='grid"));
    
   //    wait.until(ExpectedConditions.visibilityOf(Grid));
@@ -116,13 +117,16 @@ public class CriticalMethod2 extends BasePage{
     Thread.sleep(2000);
    
 
-	String item = Locator2.UpcomingCountGrid().getText();
-	String[] bits = item.split(" ");								//Splitting the String
-	String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
-	int count1 = Integer.parseInt(compliancesCount);
-
 	
-    
+	String item = Locator2.UpcomingCountGrid().getText();
+
+	 if(!item.equalsIgnoreCase("No items to display")) {
+			Thread.sleep(5000);
+			//String item = Locator2.UpcomingCountGrid().getText();
+
+			String[] bits = item.split(" ");								//Splitting the String
+			String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+			int count1 = Integer.parseInt(compliancesCount);
 	/*
 	TakesScreenshot ts = (TakesScreenshot)getDriver();
 	File screenshot = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
@@ -177,10 +181,11 @@ public class CriticalMethod2 extends BasePage{
 	Method2.UpcomingEditButton( test, workbook);	
 	Thread.sleep(2000);
 	
-	
-	
-	
-	
+	 }
+	 else {
+			test.log(LogStatus.PASS, "No Record Found");
+
+	 }
 	
 }
 	
@@ -321,7 +326,12 @@ public class CriticalMethod2 extends BasePage{
 		wait.until(ExpectedConditions.visibilityOf(Locator2.UpcomingCountDashboard()));
 		Locator2.UpcomingCountDashboard().click();
 		Thread.sleep(7000);
-		
+        JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+	    jss.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(2000);
+		String item = Locator2.UpcomingCountGrid().getText();
+		 if(!item.equalsIgnoreCase("No items to display")) {
+				Thread.sleep(5000);
 		Locator2.UpcomingEditButton().click();
 		Thread.sleep(9000);
 		
@@ -354,18 +364,23 @@ public class CriticalMethod2 extends BasePage{
 		
 	    Locator2.Downloadbutton().click();
 	    Thread.sleep(4000);
+		 }
+		 else {
+				test.log(LogStatus.PASS, "  No Record Found "  );
+
+		 }
 	}
 	
 	
 	
 	public static void OverdueEditButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		/*
+		
 		Thread.sleep(20000);
 		Locator2.OverdueDasboardCount().click();
 		Thread.sleep(20000);
-	/*	
-		Locator2.EditButtonPendingReview().click();
+	
+	/*	Locator2.EditButtonPendingReview().click();
 		Thread.sleep(9000);
 		
 		*/
@@ -399,15 +414,18 @@ public class CriticalMethod2 extends BasePage{
 	
 	public static void RejectedEditButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		/*
+		try {
 		Thread.sleep(20000);
 		Locator2.RejectedDasboardCount().click();
 		Thread.sleep(20000);
 	
 		Locator2.EditButtonPendingReview().click();
 		Thread.sleep(9000);
+		}
+		catch(Exception e) {
+			
+		}
 		
-		*/
 		// Locator2.ViewButtonPR().click();
 	    
 		
@@ -475,7 +493,7 @@ public class CriticalMethod2 extends BasePage{
 	
 	public static void ClosedReviewEditButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		/*
+		
 		Thread.sleep(2000);
 		Locator2.ClosedDashboardCountMatch().click();
 		Thread.sleep(20000);
@@ -1071,12 +1089,12 @@ public class CriticalMethod2 extends BasePage{
 		}
 		Thread.sleep(4000);
 		
-		getDriver().switchTo().frame(Locator2.OuterFrame());
+	/*	getDriver().switchTo().frame(Locator2.OuterFrame());
 		Thread.sleep(4000);
 		
 		getDriver().switchTo().frame(Locator2.InnerFrame());
 		Thread.sleep(4000);
-		
+		*/
 	//    wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@class='k-content-frame']")));
 		
 	 //   WebDriverWait wait1 = new WebDriverWait( getDriver(),(60));
@@ -1619,34 +1637,15 @@ public class CriticalMethod2 extends BasePage{
 		
 		Thread.sleep(20000);
 		Locator2.Document().click();
-		Thread.sleep(20000);
-		
-		
-		Locator2.CheckBoxDocument().click();
-		Thread.sleep(2000);
-		
-		/*
-		if(Locator2.DownloadDocument().isEnabled())
-		{
-			
-			Thread.sleep(2000);
-		    Locator2.DownloadDocument().click();
-			test.log(LogStatus.PASS, " File download Successfully " );
-			
-		}
-		
-		else
-		{
-			test.log(LogStatus.FAIL, "  File download Successfully "  );
-			
-		}
-		*/
+		Thread.sleep(5000);
+	//	Locator2.download().click();
+	//	Thread.sleep(2000);
 		
 		File dir2 = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(9000);
-	     Locator2.DownloadDocument().click();
+	     Locator2.download().click();
 		
 	 	Thread.sleep(18000);
 		File dir3 = new File("C:\\Users\\shitalb\\Downloads");
@@ -1921,12 +1920,12 @@ public class CriticalMethod2 extends BasePage{
 			test.log(LogStatus.FAIL, "PDF Does Not Viewed Successfully");
 		}
 	   Thread.sleep(500);
-	   getDriver().switchTo().frame(Locator.Frame());
+	/*   getDriver().switchTo().frame(Locator.Frame());
 		Thread.sleep(3000);
 	
 		getDriver().switchTo().frame(Locator2.InnerFrame());
 		Thread.sleep(7000);
-		
+		*/
 		File dir = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
@@ -6164,7 +6163,7 @@ public class CriticalMethod2 extends BasePage{
 		
         for (int i = 1; i <= count1; i++) {
             // Construct the dynamic XPath
-            String dynamicXPath = "//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[" + i + "]/td[7]/span";
+            String dynamicXPath = "//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr[" + i + "]/td[7]/span[2] |//*[@id='gridComplianceAsPerSchedule']/div[2]/table/tbody/tr["+ i + "]//td[7]";
             String dynamicXPathselectfile = "(//table//*[@id='ComplaineDocUpload'])[" + i + "]";
             WebElement selectfile = getDriver().findElement(By.xpath(dynamicXPathselectfile));
 
@@ -6188,11 +6187,16 @@ public class CriticalMethod2 extends BasePage{
             // Find the edit icon element using the dynamic XPath
             WebElement editIcon = getDriver().findElement(By.xpath(dynamicXPath));
             // Perform the click action on the edit icon
+            Thread.sleep(1000);
             editIcon.click();
             Thread.sleep(2000);
+            try {
             Locator2.SelectStatus().click();
-    		Thread.sleep(5000);
-    		
+    		Thread.sleep(500);
+            }
+            catch(Exception e) {
+            	
+            }
     		Locator2.SelectStatusDD().click();
     		Thread.sleep(5000);	
 

@@ -21,6 +21,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -30,6 +31,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import companyAdmin.Locator;
 import companyAuditor.Locator2;
 import companyContractor.Locator1;
+import companyContractor.Method1;
 import companyProjectDirector.Locator4;
 import companyProjectDirector.Method4;
 import companyProjectHead.Locator3;
@@ -2051,14 +2053,15 @@ public class Method5 extends BasePage{
 			public static void CTWCompliedgreen( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
             {
 				
-				
+			/*	Thread.sleep(20000);
 				WebDriverWait wait = new WebDriverWait( getDriver(),(60));
-				Thread.sleep(9000);
-					
+				Thread.sleep(2000);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divLocationCount']"))); 
+
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
 			    jss.executeScript("window.scrollBy(0,800)");
-			    Thread.sleep(4000);
+			    Thread.sleep(6000);*/
 								
 				Locator5.CTWCompliedGreen().click();
 				Thread.sleep(9000);
@@ -2474,7 +2477,7 @@ public class Method5 extends BasePage{
 			public static void CTWNotCompliedRed( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 			{
 				
-				Thread.sleep(2000);
+				/*Thread.sleep(20000);
 				
 				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 				Thread.sleep(3000);
@@ -2489,8 +2492,8 @@ public class Method5 extends BasePage{
 			    
 			//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Canteen']"))); 
 			//	Thread.sleep(2000);
-				
-				Locator5.CTWNotCompliedRed().click();
+				*/
+				Locator5.CTWCompliedGreen().click();
 				Thread.sleep(2000);
 				
 				int open = Integer.parseInt(Locator5.CTWNotCompliedRedHigh().getText());	//Reading Dashboard count.
@@ -2903,7 +2906,7 @@ public class Method5 extends BasePage{
 			public static void CTWNotApplicableGrey( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 			{
 				
-				Thread.sleep(20000);
+			/*	Thread.sleep(20000);
 				
 				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 				Thread.sleep(3000);
@@ -2916,10 +2919,10 @@ public class Method5 extends BasePage{
 			    jss.executeScript("window.scrollBy(0,800)");
 			    Thread.sleep(2000);
 			    
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Canteen']"))); 
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Maintenance']"))); 
 				Thread.sleep(2000);
-				
-				Locator5.CTWNotApplicableGrey().click();
+				*/
+				Locator5.CTWCompliedGreen().click();
 				Thread.sleep(9000);
 				
 				int open = Integer.parseInt(Locator5.CTWNotApplicableHigh().getText());	//Reading Dashboard count.
@@ -3343,8 +3346,8 @@ public class Method5 extends BasePage{
 			    jss.executeScript("window.scrollBy(0,2000)");
 			    Thread.sleep(2000);
 			    
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[28]"))); 
-				Thread.sleep(2000);
+			//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[33]"))); 
+			//	Thread.sleep(2000);
 				
 			//    jss.executeScript("window.scrollBy(0,200)");
 				
@@ -3884,80 +3887,28 @@ public class Method5 extends BasePage{
 //Project Wise Compliance Status Summary
 			
 			
-			public static void PWCSSABCConstructionCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+			public static void PWCSSABCConstructionCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
             {
 				
 				
-				Thread.sleep(20000);
+			/*	Thread.sleep(20000);
 				
 				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 				Thread.sleep(3000);
 			    
 				
-				Thread.sleep(2000);
 				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 			    
-			    jss.executeScript("window.scrollBy(0,2200)");
+			 //   jss.executeScript("window.scrollBy(0,2200)");
 			    Thread.sleep(2000);
-			    
-				/*
-			    try {
-		            // Create an instance of Robot class
-		            Robot robot = new Robot();
-
-		            // Define how many times you want to zoom out
-		            int zoomOutSteps = 3;
-
-		            // Perform the zoom out action multiple times
-		            for (int i = 0; i < zoomOutSteps; i++) {
-		                // Press Ctrl key
-		                robot.keyPress(KeyEvent.VK_CONTROL);
-		                // Press '-' key
-		                robot.keyPress(KeyEvent.VK_MINUS);
-		                // Release '-' key
-		                robot.keyRelease(KeyEvent.VK_CONTROL);
-
-		                // Optional: Wait a bit between zoom steps to observe the effect
-		                Thread.sleep(500);
-		            }
-
-		        } catch (AWTException | InterruptedException e) {
-		            e.printStackTrace();
-		        }
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[4]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='CHN-CTS-MEPZ-TBM']"))); 
-				Thread.sleep(2000);
-
-
-
-				*/
-				try {         
-
-			           // Set zoom level to 50% (0.5) for zooming out
-			           setZoomLevel(getDriver(), 0.9);
-
-//			           // Wait to observe the effect
-			           Thread.sleep(2000);
-			//
-//			           // Set zoom level back to 100% (1.0) to reset to normal
-//			         //  setZoomLevel(getDriver(), 1.0);
-			//
-			       } catch (InterruptedException e) {
-			           e.printStackTrace();
-			       }
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCConstructionComplied());
+*/
 				Locator5.PWCSSABCConstructionComplied().click();
 				Thread.sleep(2000);
 				
-				
-			//	Locator1.CompliedCircle().click();
-			//	   Thread.sleep(3000);
-				    
-			  //  Locator4.NotCompliedCircle().click();
-			//	Thread.sleep(3000);
-				    
-				// Locator4.NotApplicableCircle().click();
-				  Thread.sleep(5000);
-				
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCConstructionCompliedHigh());
+
 				int open = Integer.parseInt(Locator5.PWCSSABCConstructionCompliedHigh().getText());	//Reading Dashboard count.
 			    Locator5.PWCSSABCConstructionCompliedHigh().click();					                //Clicking on Dashboard count
 
@@ -3967,8 +3918,8 @@ public class Method5 extends BasePage{
 			    Thread.sleep(5000);
 			    
 			    
-			   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
-				//Thread.sleep(500);	
+			  //  wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("showdetailsLocation"));                                                            	
+			//	Thread.sleep(500);	
 			   
 			    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
 				//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
@@ -4006,15 +3957,105 @@ public class Method5 extends BasePage{
 				test.log(LogStatus.FAIL, " High Risk - Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
 							
 				}
+				Thread.sleep(2000);
+				JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+			    
+			    js1.executeScript("window.scrollBy(0,-1000)");
+			    Thread.sleep(2000);    
+			
+				Thread.sleep(1000);
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 				
+				Thread.sleep(1000);
+//				CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//				Thread.sleep(250);
+				Locator.ExportReportFR().click();					//Clicking on 'Excel Report' image.
+				test.log(LogStatus.PASS, "File downloaded successfully.");
 				
-				   Thread.sleep(5000);
-			       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-				    
-				    js1.executeScript("window.scrollBy(0,-1000)");
-				    Thread.sleep(2000);    
+				Thread.sleep(5500);
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 				
-				/*
+				if(dirContents.length < allFilesNew.length)
+				{
+					
+					
+					File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+				    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+				    {
+				       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+				       {
+				           lastModifiedFile = allFilesNew[i];
+				       }
+				    }
+					
+					Thread.sleep(1000);
+					fis = new FileInputStream(lastModifiedFile);
+					workbook = new XSSFWorkbook(fis);
+					sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+					/*
+					int no = sheet.getFirstRowNum();
+					Row row = sheet.getRow(no);
+					Cell c1 = row.getCell(0);
+					int records =(int) c1.getNumericCellValue();
+					*/
+					sheet = workbook.getSheetAt(0);
+					int columnNumber = 3;
+					int rowCount = 0;
+					int actualRow=0;
+					
+					for(Row row : sheet)
+					{
+						
+						Cell cell =row.getCell(columnNumber);
+						if(cell != null) {
+							
+							rowCount++;
+							actualRow = rowCount-1;
+						}
+						
+					}
+					fis.close();
+					
+					if(count1 == actualRow)
+					{
+						//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+						test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+					}
+					else
+					{
+						//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+						test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+					}
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+				} 
+	        Thread.sleep(5000);
+		        Actions action = new Actions(getDriver());
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.CTWCompliedGreenHighGridViewButton());
+		      //  Locator5.CTWCompliedGreenHighGridViewButton().click();
+
+				if(Locator5.CTWCompliedGreenHighGridViewButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator5.CTWCompliedGreenHighGridViewButton().click();
+					test.log(LogStatus.PASS, "  Overview Button working Properly " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
+					
+				}
+				Thread.sleep(5000);
+				Locator5.ClosePage1().click();
+				Thread.sleep(2000);
+				
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(5000);
 				
@@ -4037,26 +4078,6 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  Clear Button working Properly "  );
 					
 				}
-				*/
-				
-				
-		        Thread.sleep(2000);
-				
-				if(Locator5.CTWCompliedGreenHighGridViewButton().isEnabled())
-				{
-					
-					Thread.sleep(2000);
-				    Locator5.CTWCompliedGreenHighGridViewButton().click();
-					test.log(LogStatus.PASS, "  Overview Button working Properly " );
-					
-				}
-				
-				else
-				{
-					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
-					
-				}
-				
 				
 				Thread.sleep(4000);
 				
@@ -4092,7 +4113,7 @@ public class Method5 extends BasePage{
 			
 			
 				
-			public static void PWCSSABCConstructionCompliedMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+			public static void PWCSSABCConstructionCompliedMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
 				
 				Thread.sleep(5000);
@@ -4152,39 +4173,84 @@ public class Method5 extends BasePage{
 				
 				
 				Thread.sleep(2000);
-				
-		        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+				JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 			    
 			    js1.executeScript("window.scrollBy(0,-1000)");
-			    Thread.sleep(9000);
+			    Thread.sleep(2000);    
+			
+				Thread.sleep(1000);
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 				
-				Locator5.ClearContractorRedGraphGrid().click();
-				Thread.sleep(2000);
+				Thread.sleep(1000);
+//				CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//				Thread.sleep(250);
+				Locator.ExportReportFR().click();					//Clicking on 'Excel Report' image.
+				test.log(LogStatus.PASS, "File downloaded successfully.");
 				
+				Thread.sleep(5500);
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 				
-				Locator5.ClearContractorDDRedGraphGrid().click();
-				Thread.sleep(2000);
-				
-				
-				if(Locator5.YellowGraphClearButton().isEnabled())
+				if(dirContents.length < allFilesNew.length)
 				{
 					
-					Thread.sleep(2000);
-				    Locator5.YellowGraphClearButton().click();
-					test.log(LogStatus.PASS, "   Clear Button working Properly " );
 					
+					File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+				    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+				    {
+				       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+				       {
+				           lastModifiedFile = allFilesNew[i];
+				       }
+				    }
+					
+					Thread.sleep(1000);
+					fis = new FileInputStream(lastModifiedFile);
+					workbook = new XSSFWorkbook(fis);
+					sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+					/*
+					int no = sheet.getFirstRowNum();
+					Row row = sheet.getRow(no);
+					Cell c1 = row.getCell(0);
+					int records =(int) c1.getNumericCellValue();
+					*/
+					sheet = workbook.getSheetAt(0);
+					int columnNumber = 3;
+					int rowCount = 0;
+					int actualRow=0;
+					
+					for(Row row : sheet)
+					{
+						
+						Cell cell =row.getCell(columnNumber);
+						if(cell != null) {
+							
+							rowCount++;
+							actualRow = rowCount-1;
+						}
+						
+					}
+					fis.close();
+					
+					if(count1 == actualRow)
+					{
+						//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+						test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+					}
+					else
+					{
+						//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+						test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+					}
 				}
-				
 				else
 				{
-					test.log(LogStatus.FAIL, "   Clear Button working Properly "  );
-					
-				}
-				
-				
-				
-				
-				
+					test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+				} 
+	        Thread.sleep(5000);
+		        Actions action = new Actions(getDriver());
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.CTWCompliedGreenHighGridViewButton());
 				 Thread.sleep(2000);
 					
 					if(Locator5.YellowGraphViewButton().isEnabled())
@@ -4201,8 +4267,31 @@ public class Method5 extends BasePage{
 						test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
 						
 					}
+					Thread.sleep(2000);
+					Locator5.ClosePage1().click();
+					Thread.sleep(2000);
+					Locator5.ClearContractorRedGraphGrid().click();
+					Thread.sleep(2000);
 					
 					
+					Locator5.ClearContractorDDRedGraphGrid().click();
+					Thread.sleep(2000);
+					
+					
+					if(Locator5.YellowGraphClearButton().isEnabled())
+					{
+						
+						Thread.sleep(2000);
+					    Locator5.YellowGraphClearButton().click();
+						test.log(LogStatus.PASS, "   Clear Button working Properly " );
+						
+					}
+					
+					else
+					{
+						test.log(LogStatus.FAIL, "   Clear Button working Properly "  );
+						
+					}
 					Thread.sleep(4000);
 				
 				
@@ -4224,7 +4313,7 @@ public class Method5 extends BasePage{
 			
 			
 			
-			public static void PWCSSABCConstructionCompliedLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+			public static void PWCSSABCConstructionCompliedLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
 				/*
 				//WebWait wait = new WebWait(, 1000);
@@ -4294,14 +4383,107 @@ public class Method5 extends BasePage{
 				
 				
 				
-		        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+				Thread.sleep(2000);
+				JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 			    
 			    js1.executeScript("window.scrollBy(0,-1000)");
-			    Thread.sleep(9000);
+			    Thread.sleep(2000);    
+			
+				Thread.sleep(1000);
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 				
+				Thread.sleep(1000);
+//				CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//				Thread.sleep(250);
+				Locator.ExportReportFR().click();					//Clicking on 'Excel Report' image.
+				test.log(LogStatus.PASS, "File downloaded successfully.");
+				
+				Thread.sleep(5500);
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+				
+				if(dirContents.length < allFilesNew.length)
+				{
+					
+					
+					File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+				    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+				    {
+				       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+				       {
+				           lastModifiedFile = allFilesNew[i];
+				       }
+				    }
+					
+					Thread.sleep(1000);
+					fis = new FileInputStream(lastModifiedFile);
+					workbook = new XSSFWorkbook(fis);
+					sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+					/*
+					int no = sheet.getFirstRowNum();
+					Row row = sheet.getRow(no);
+					Cell c1 = row.getCell(0);
+					int records =(int) c1.getNumericCellValue();
+					*/
+					sheet = workbook.getSheetAt(0);
+					int columnNumber = 3;
+					int rowCount = 0;
+					int actualRow=0;
+					
+					for(Row row : sheet)
+					{
+						
+						Cell cell =row.getCell(columnNumber);
+						if(cell != null) {
+							
+							rowCount++;
+							actualRow = rowCount-1;
+						}
+						
+					}
+					fis.close();
+					
+					if(count1 == actualRow)
+					{
+						//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+						test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+					}
+					else
+					{
+						//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+						test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+					}
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+				} 
+	        Thread.sleep(5000);
+		        Actions action = new Actions(getDriver());
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.CTWCompliedGreenHighGridViewButton());
+		      //  Locator5.CTWCompliedGreenHighGridViewButton().click();
+
 				
 				Thread.sleep(2000);
 				
+				if(Locator5.GreenViewButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator5.GreenViewButton().click();
+					test.log(LogStatus.PASS, "  Overview Button working Properly " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
+					
+				}
+				Thread.sleep(2000);
+				Locator5.ClosePage1().click();
+				Thread.sleep(2000);
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
 				
@@ -4325,26 +4507,6 @@ public class Method5 extends BasePage{
 					
 				}
 				
-				
-				
-				Thread.sleep(2000);
-				
-				if(Locator5.GreenViewButton().isEnabled())
-				{
-					
-					Thread.sleep(2000);
-				    Locator5.GreenViewButton().click();
-					test.log(LogStatus.PASS, "  Overview Button working Properly " );
-					
-				}
-				
-				else
-				{
-					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
-					
-				}
-				
-			
 				Thread.sleep(4000);
 
 				getDriver().switchTo().parentFrame();
@@ -4365,15 +4527,15 @@ public class Method5 extends BasePage{
 			
 			
 			
-			public static void PWCSSABCconstructionNotCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+			public static void PWCSSABCconstructionNotCompliedHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
             {
-				/*
+				
 				Thread.sleep(20000);
 				
 				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 				Thread.sleep(3000);
 			    
-				
+				/*
 				Thread.sleep(2000);
 				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
@@ -4417,7 +4579,7 @@ public class Method5 extends BasePage{
 			//	 Locator4.NotApplicableCircle().click();
 			//    Thread.sleep(3000);
 			    
-				try {         
+				/*try {         
 
 			           // Set zoom level to 50% (0.5) for zooming out
 			           setZoomLevel(getDriver(), 0.8);
@@ -4431,9 +4593,13 @@ public class Method5 extends BasePage{
 			       } catch (InterruptedException e) {
 			           e.printStackTrace();
 			       }
+			       */
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCConstructionComplied());
+
 				Locator5.PWCSSABCConstructionComplied().click();
 				Thread.sleep(4000);
-				
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCconstructionNotCompliedHigh());
+
 				int open = Integer.parseInt(Locator5.PWCSSABCconstructionNotCompliedHigh().getText());	//Reading Dashboard count.
 			    Locator5.PWCSSABCconstructionNotCompliedHigh().click();					                //Clicking on Dashboard count
 
@@ -4483,13 +4649,107 @@ public class Method5 extends BasePage{
 				}
 				
 				
-				   Thread.sleep(5000);
-			       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-				    
-				    js1.executeScript("window.scrollBy(0,-1000)");
-				    Thread.sleep(2000);    
+				Thread.sleep(2000);
+				JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+			    
+			    js1.executeScript("window.scrollBy(0,-1000)");
+			    Thread.sleep(2000);    
+			
+				Thread.sleep(1000);
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 				
-				/*
+				Thread.sleep(1000);
+//				CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//				Thread.sleep(250);
+				Locator.ExportReportFR().click();					//Clicking on 'Excel Report' image.
+				test.log(LogStatus.PASS, "File downloaded successfully.");
+				
+				Thread.sleep(5500);
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+				
+				if(dirContents.length < allFilesNew.length)
+				{
+					
+					
+					File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+				    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+				    {
+				       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+				       {
+				           lastModifiedFile = allFilesNew[i];
+				       }
+				    }
+					
+					Thread.sleep(1000);
+					fis = new FileInputStream(lastModifiedFile);
+					workbook = new XSSFWorkbook(fis);
+					sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+					/*
+					int no = sheet.getFirstRowNum();
+					Row row = sheet.getRow(no);
+					Cell c1 = row.getCell(0);
+					int records =(int) c1.getNumericCellValue();
+					*/
+					sheet = workbook.getSheetAt(0);
+					int columnNumber = 3;
+					int rowCount = 0;
+					int actualRow=0;
+					
+					for(Row row : sheet)
+					{
+						
+						Cell cell =row.getCell(columnNumber);
+						if(cell != null) {
+							
+							rowCount++;
+							actualRow = rowCount-1;
+						}
+						
+					}
+					fis.close();
+					
+					if(count1 == actualRow)
+					{
+						//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+						test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+					}
+					else
+					{
+						//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+						test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+					}
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+				} 
+	        Thread.sleep(5000);
+		        Actions action = new Actions(getDriver());
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.CTWCompliedGreenHighGridViewButton());
+		      //  Locator5.CTWCompliedGreenHighGridViewButton().click();
+    
+                Thread.sleep(2000);
+				
+				if(Locator5.CTWCompliedGreenHighGridViewButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator5.CTWCompliedGreenHighGridViewButton().click();
+					test.log(LogStatus.PASS, "  Overview Button working Properly " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
+					
+				}
+				Thread.sleep(2000);
+				Locator5.ClosePage1().click();
+				Thread.sleep(2000);
+				
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
 				
@@ -4512,27 +4772,6 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  Clear Button working Properly "  );
 					
 				}
-				*/
-				
-				
-		        Thread.sleep(2000);
-				
-				if(Locator5.CTWCompliedGreenHighGridViewButton().isEnabled())
-				{
-					
-					Thread.sleep(2000);
-				    Locator5.CTWCompliedGreenHighGridViewButton().click();
-					test.log(LogStatus.PASS, "  Overview Button working Properly " );
-					
-				}
-				
-				else
-				{
-					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
-					
-				}
-				
-				
 				Thread.sleep(4000);
 				
 				getDriver().switchTo().parentFrame();
@@ -4569,7 +4808,7 @@ public class Method5 extends BasePage{
 			
 			
 				
-			public static void PWCSSABCconstructionNotCompliedMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+			public static void PWCSSABCconstructionNotCompliedMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
 				
 				Thread.sleep(5000);
@@ -4629,12 +4868,106 @@ public class Method5 extends BasePage{
 				
 				
 				Thread.sleep(2000);
-				
-		        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+				JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 			    
 			    js1.executeScript("window.scrollBy(0,-1000)");
-			    Thread.sleep(9000);
+			    Thread.sleep(2000);    
+			
+				Thread.sleep(1000);
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 				
+				Thread.sleep(1000);
+//				CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//				Thread.sleep(250);
+				Locator.ExportReportFR().click();					//Clicking on 'Excel Report' image.
+				test.log(LogStatus.PASS, "File downloaded successfully.");
+				
+				Thread.sleep(5500);
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+				
+				if(dirContents.length < allFilesNew.length)
+				{
+					
+					
+					File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+				    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+				    {
+				       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+				       {
+				           lastModifiedFile = allFilesNew[i];
+				       }
+				    }
+					
+					Thread.sleep(1000);
+					fis = new FileInputStream(lastModifiedFile);
+					workbook = new XSSFWorkbook(fis);
+					sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+					/*
+					int no = sheet.getFirstRowNum();
+					Row row = sheet.getRow(no);
+					Cell c1 = row.getCell(0);
+					int records =(int) c1.getNumericCellValue();
+					*/
+					sheet = workbook.getSheetAt(0);
+					int columnNumber = 3;
+					int rowCount = 0;
+					int actualRow=0;
+					
+					for(Row row : sheet)
+					{
+						
+						Cell cell =row.getCell(columnNumber);
+						if(cell != null) {
+							
+							rowCount++;
+							actualRow = rowCount-1;
+						}
+						
+					}
+					fis.close();
+					
+					if(count1 == actualRow)
+					{
+						//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+						test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+					}
+					else
+					{
+						//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+						test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+					}
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+				} 
+	        Thread.sleep(5000);
+		        Actions action = new Actions(getDriver());
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.CTWCompliedGreenHighGridViewButton());
+		      //  Locator5.CTWCompliedGreenHighGridViewButton().click();
+    
+                Thread.sleep(2000);
+                Thread.sleep(2000);
+				
+				if(Locator5.YellowGraphViewButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator5.YellowGraphViewButton().click();
+					test.log(LogStatus.PASS, "  Overview Button working Properly " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
+					
+				}
+				Thread.sleep(2000);
+				Locator5.ClosePage1().click();
+				Thread.sleep(2000);
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
 				
@@ -4657,33 +4990,7 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "   Clear Button working Properly "  );
 					
 				}
-				
-				
-				
-				
-				
-				 Thread.sleep(2000);
-					
-					if(Locator5.YellowGraphViewButton().isEnabled())
-					{
-						
-						Thread.sleep(2000);
-					    Locator5.YellowGraphViewButton().click();
-						test.log(LogStatus.PASS, "  Overview Button working Properly " );
-						
-					}
-					
-					else
-					{
-						test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
-						
-					}
-					
-					
 					Thread.sleep(4000);
-				
-				
-					
 					getDriver().switchTo().parentFrame();
 					
 					Thread.sleep(4000);
@@ -4701,11 +5008,11 @@ public class Method5 extends BasePage{
 			
 			
 			
-			public static void PWCSSABCconstructionNotCompliedLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+			public static void PWCSSABCconstructionNotCompliedLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
 				
 				//WebWait wait = new WebWait(, 1000);
-				Thread.sleep(26000);
+			//	Thread.sleep(26000);
 				/*
 				Thread.sleep(2000);
 				
@@ -4776,13 +5083,108 @@ public class Method5 extends BasePage{
 				
 				
 				
-		        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-			    
-			    js1.executeScript("window.scrollBy(0,-1000)");
-			    Thread.sleep(9000);
-				
 				
 				Thread.sleep(2000);
+				JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+			    
+			    js1.executeScript("window.scrollBy(0,-1000)");
+			    Thread.sleep(2000);    
+			
+				Thread.sleep(1000);
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+				
+				Thread.sleep(1000);
+//				CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//				Thread.sleep(250);
+				Locator.ExportReportFR().click();					//Clicking on 'Excel Report' image.
+				test.log(LogStatus.PASS, "File downloaded successfully.");
+				
+				Thread.sleep(5500);
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+				
+				if(dirContents.length < allFilesNew.length)
+				{
+					
+					
+					File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+				    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+				    {
+				       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+				       {
+				           lastModifiedFile = allFilesNew[i];
+				       }
+				    }
+					
+					Thread.sleep(1000);
+					fis = new FileInputStream(lastModifiedFile);
+					workbook = new XSSFWorkbook(fis);
+					sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+					/*
+					int no = sheet.getFirstRowNum();
+					Row row = sheet.getRow(no);
+					Cell c1 = row.getCell(0);
+					int records =(int) c1.getNumericCellValue();
+					*/
+					sheet = workbook.getSheetAt(0);
+					int columnNumber = 3;
+					int rowCount = 0;
+					int actualRow=0;
+					
+					for(Row row : sheet)
+					{
+						
+						Cell cell =row.getCell(columnNumber);
+						if(cell != null) {
+							
+							rowCount++;
+							actualRow = rowCount-1;
+						}
+						
+					}
+					fis.close();
+					
+					if(count1 == actualRow)
+					{
+						//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+						test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+					}
+					else
+					{
+						//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+						test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+					}
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+				} 
+	        Thread.sleep(5000);
+		        Actions action = new Actions(getDriver());
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.CTWCompliedGreenHighGridViewButton());
+		      //  Locator5.CTWCompliedGreenHighGridViewButton().click();
+
+                Thread.sleep(2000);
+				
+				if(Locator5.GreenViewButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator5.GreenViewButton().click();
+					test.log(LogStatus.PASS, "  Overview Button working Properly " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
+					
+				}
+				
+				Thread.sleep(2000);			
+				Locator5.ClosePage1().click();
+				Thread.sleep(4000);
 				
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
@@ -4806,27 +5208,6 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  Clear Button working Properly "  );
 					
 				}
-				
-				
-				
-				Thread.sleep(2000);
-				
-				if(Locator5.GreenViewButton().isEnabled())
-				{
-					
-					Thread.sleep(2000);
-				    Locator5.GreenViewButton().click();
-					test.log(LogStatus.PASS, "  Overview Button working Properly " );
-					
-				}
-				
-				else
-				{
-					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
-					
-				}
-				
-			
 				Thread.sleep(4000);
 
 				getDriver().switchTo().parentFrame();
@@ -4848,15 +5229,15 @@ public class Method5 extends BasePage{
 			
 			
 			
-			public static void PWCSSABCconstructionNotApplicableHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+			public static void PWCSSABCconstructionNotApplicableHigh( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
             {
-				/*
+				
 				Thread.sleep(20000);
 				
 				WebDriverWait wait = new WebDriverWait( getDriver(),(120));
 				Thread.sleep(3000);
 			    
-				
+				/*
 				Thread.sleep(2000);
 				
 			    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
@@ -4900,7 +5281,7 @@ public class Method5 extends BasePage{
 			//	  Thread.sleep(3000);
 			    
 			    */
-				try {         
+			/*	try {         
 
 			           // Set zoom level to 50% (0.5) for zooming out
 			           setZoomLevel(getDriver(), 0.8);
@@ -4914,9 +5295,13 @@ public class Method5 extends BasePage{
 			       } catch (InterruptedException e) {
 			           e.printStackTrace();
 			       }
+			       */
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCConstructionComplied());
+
 				Locator5.PWCSSABCConstructionComplied().click();
 				Thread.sleep(6000);
-				
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.PWCSSABCconstructionNotApplicableHigh());
+
 				int open = Integer.parseInt(Locator5.PWCSSABCconstructionNotApplicableHigh().getText());	//Reading Dashboard count.
 			    Locator5.PWCSSABCconstructionNotApplicableHigh().click();					                //Clicking on Dashboard count
 
@@ -4966,13 +5351,108 @@ public class Method5 extends BasePage{
 				}
 				
 				
-				   Thread.sleep(5000);
-			       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
-				    
-				    js1.executeScript("window.scrollBy(0,-1000)");
-				    Thread.sleep(2000);    
 				
-				/*
+				Thread.sleep(2000);
+				JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+			    
+			    js1.executeScript("window.scrollBy(0,-1000)");
+			    Thread.sleep(2000);    
+			
+				Thread.sleep(1000);
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+				
+				Thread.sleep(1000);
+//				CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//				Thread.sleep(250);
+				Locator.ExportReportFR().click();					//Clicking on 'Excel Report' image.
+				test.log(LogStatus.PASS, "File downloaded successfully.");
+				
+				Thread.sleep(5500);
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+				
+				if(dirContents.length < allFilesNew.length)
+				{
+					
+					
+					File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+				    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+				    {
+				       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+				       {
+				           lastModifiedFile = allFilesNew[i];
+				       }
+				    }
+					
+					Thread.sleep(1000);
+					fis = new FileInputStream(lastModifiedFile);
+					workbook = new XSSFWorkbook(fis);
+					sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+					/*
+					int no = sheet.getFirstRowNum();
+					Row row = sheet.getRow(no);
+					Cell c1 = row.getCell(0);
+					int records =(int) c1.getNumericCellValue();
+					*/
+					sheet = workbook.getSheetAt(0);
+					int columnNumber = 3;
+					int rowCount = 0;
+					int actualRow=0;
+					
+					for(Row row : sheet)
+					{
+						
+						Cell cell =row.getCell(columnNumber);
+						if(cell != null) {
+							
+							rowCount++;
+							actualRow = rowCount-1;
+						}
+						
+					}
+					fis.close();
+					
+					if(count1 == actualRow)
+					{
+						//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+						test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+					}
+					else
+					{
+						//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+						test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+					}
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+				} 
+	        Thread.sleep(5000);
+		        Actions action = new Actions(getDriver());
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.CTWCompliedGreenHighGridViewButton());
+		      //  Locator5.CTWCompliedGreenHighGridViewButton().click();
+ 		        Thread.sleep(2000);
+				
+				if(Locator5.CTWCompliedGreenHighGridViewButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator5.CTWCompliedGreenHighGridViewButton().click();
+					test.log(LogStatus.PASS, "  Overview Button working Properly " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
+					
+				}
+
+				Thread.sleep(4000);
+				Locator5.ClosePage1().click();
+				Thread.sleep(4000);
+				
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
 				
@@ -4995,26 +5475,6 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "  Clear Button working Properly "  );
 					
 				}
-				*/
-				
-				
-		        Thread.sleep(2000);
-				
-				if(Locator5.CTWCompliedGreenHighGridViewButton().isEnabled())
-				{
-					
-					Thread.sleep(2000);
-				    Locator5.CTWCompliedGreenHighGridViewButton().click();
-					test.log(LogStatus.PASS, "  Overview Button working Properly " );
-					
-				}
-				
-				else
-				{
-					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
-					
-				}
-				
 				
 				Thread.sleep(4000);
 				
@@ -5053,7 +5513,7 @@ public class Method5 extends BasePage{
 			
 			
 				
-			public static void PWCSSABCconstructionNotApplicableMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+			public static void PWCSSABCconstructionNotApplicableMedium( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
 				
 				Thread.sleep(5000);
@@ -5113,12 +5573,104 @@ public class Method5 extends BasePage{
 				
 				
 				Thread.sleep(2000);
-				
-		        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+				JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 			    
 			    js1.executeScript("window.scrollBy(0,-1000)");
-			    Thread.sleep(9000);
+			    Thread.sleep(2000);    
+			
+				Thread.sleep(1000);
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 				
+				Thread.sleep(1000);
+//				CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//				Thread.sleep(250);
+				Locator.ExportReportFR().click();					//Clicking on 'Excel Report' image.
+				test.log(LogStatus.PASS, "File downloaded successfully.");
+				
+				Thread.sleep(5500);
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+				
+				if(dirContents.length < allFilesNew.length)
+				{
+					
+					
+					File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+				    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+				    {
+				       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+				       {
+				           lastModifiedFile = allFilesNew[i];
+				       }
+				    }
+					
+					Thread.sleep(1000);
+					fis = new FileInputStream(lastModifiedFile);
+					workbook = new XSSFWorkbook(fis);
+					sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+					/*
+					int no = sheet.getFirstRowNum();
+					Row row = sheet.getRow(no);
+					Cell c1 = row.getCell(0);
+					int records =(int) c1.getNumericCellValue();
+					*/
+					sheet = workbook.getSheetAt(0);
+					int columnNumber = 3;
+					int rowCount = 0;
+					int actualRow=0;
+					
+					for(Row row : sheet)
+					{
+						
+						Cell cell =row.getCell(columnNumber);
+						if(cell != null) {
+							
+							rowCount++;
+							actualRow = rowCount-1;
+						}
+						
+					}
+					fis.close();
+					
+					if(count1 == actualRow)
+					{
+						//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+						test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+					}
+					else
+					{
+						//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+						test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+					}
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+				} 
+	        Thread.sleep(5000);
+		        Actions action = new Actions(getDriver());
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.CTWCompliedGreenHighGridViewButton());
+		      //  Locator5.CTWCompliedGreenHighGridViewButton().click();
+ 		       Thread.sleep(2000);
+				
+				if(Locator5.YellowGraphViewButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator5.YellowGraphViewButton().click();
+					test.log(LogStatus.PASS, "  Overview Button working Properly " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
+					
+				}
+				Thread.sleep(4000);
+				Locator5.ClosePage1().click();
+				Thread.sleep(4000);
 				Locator5.ClearContractorRedGraphGrid().click();
 				Thread.sleep(2000);
 				
@@ -5141,33 +5693,6 @@ public class Method5 extends BasePage{
 					test.log(LogStatus.FAIL, "   Clear Button working Properly "  );
 					
 				}
-				
-				
-				
-				
-				
-				 Thread.sleep(2000);
-					
-					if(Locator5.YellowGraphViewButton().isEnabled())
-					{
-						
-						Thread.sleep(2000);
-					    Locator5.YellowGraphViewButton().click();
-						test.log(LogStatus.PASS, "  Overview Button working Properly " );
-						
-					}
-					
-					else
-					{
-						test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
-						
-					}
-					
-					
-					Thread.sleep(4000);
-				
-				
-					
 					getDriver().switchTo().parentFrame();
 					
 					Thread.sleep(4000);
@@ -5185,7 +5710,7 @@ public class Method5 extends BasePage{
 			
 			
 			
-			public static void PWCSSABCconstructionNotApplicableLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
+			public static void PWCSSABCconstructionNotApplicableLow( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 			{
 				/*
 				//WebWait wait = new WebWait(, 1000);
@@ -5255,12 +5780,106 @@ public class Method5 extends BasePage{
 				
 				
 				
-		        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+				Thread.sleep(2000);
+				JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
 			    
 			    js1.executeScript("window.scrollBy(0,-1000)");
-			    Thread.sleep(9000);
+			    Thread.sleep(2000);    
+			
+				Thread.sleep(1000);
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
+				File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 				
+				Thread.sleep(1000);
+//				CFOcountPOM.clickNextPage1(driver).sendKeys(Keys.PAGE_UP);
+//				Thread.sleep(250);
+				Locator.ExportReportFR().click();					//Clicking on 'Excel Report' image.
+				test.log(LogStatus.PASS, "File downloaded successfully.");
 				
+				Thread.sleep(5500);
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+				File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+				
+				if(dirContents.length < allFilesNew.length)
+				{
+					
+					
+					File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+				    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+				    {
+				       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+				       {
+				           lastModifiedFile = allFilesNew[i];
+				       }
+				    }
+					
+					Thread.sleep(1000);
+					fis = new FileInputStream(lastModifiedFile);
+					workbook = new XSSFWorkbook(fis);
+					sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+					/*
+					int no = sheet.getFirstRowNum();
+					Row row = sheet.getRow(no);
+					Cell c1 = row.getCell(0);
+					int records =(int) c1.getNumericCellValue();
+					*/
+					sheet = workbook.getSheetAt(0);
+					int columnNumber = 3;
+					int rowCount = 0;
+					int actualRow=0;
+					
+					for(Row row : sheet)
+					{
+						
+						Cell cell =row.getCell(columnNumber);
+						if(cell != null) {
+							
+							rowCount++;
+							actualRow = rowCount-1;
+						}
+						
+					}
+					fis.close();
+					
+					if(count1 == actualRow)
+					{
+						//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+						test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+					}
+					else
+					{
+						//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+						test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+					}
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+				} 
+	        Thread.sleep(5000);
+		        Actions action = new Actions(getDriver());
+		        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", Locator5.CTWCompliedGreenHighGridViewButton());
+		      //  Locator5.CTWCompliedGreenHighGridViewButton().click();
+ 		        
+ 		     
+ 		      Thread.sleep(2000);
+				
+				if(Locator5.GreenViewButton().isEnabled())
+				{
+					
+					Thread.sleep(2000);
+				    Locator5.GreenViewButton().click();
+					test.log(LogStatus.PASS, "  Overview Button working Properly " );
+					
+				}
+				
+				else
+				{
+					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
+					
+				}
+				Thread.sleep(2000);
+				Locator5.ClosePage1().click();
 				Thread.sleep(2000);
 				
 				Locator5.ClearContractorRedGraphGrid().click();
@@ -5286,26 +5905,6 @@ public class Method5 extends BasePage{
 					
 				}
 				
-				
-				
-				Thread.sleep(2000);
-				
-				if(Locator5.GreenViewButton().isEnabled())
-				{
-					
-					Thread.sleep(2000);
-				    Locator5.GreenViewButton().click();
-					test.log(LogStatus.PASS, "  Overview Button working Properly " );
-					
-				}
-				
-				else
-				{
-					test.log(LogStatus.FAIL, "  Overview Button working Properly "  );
-					
-				}
-				
-			
 				Thread.sleep(4000);
 
 				getDriver().switchTo().parentFrame();
@@ -6267,7 +6866,7 @@ public class Method5 extends BasePage{
 		Locator5.SelectMonth().click();
 		Thread.sleep(2000);
 		
-		Locator5.SelectMonthDD().click();
+		Locator5.PeriodDD().click();
 		Thread.sleep(1000);
 		
 		Locator5.Facility().click();
@@ -17679,9 +18278,10 @@ Thread.sleep(3000);
 		   
 		   Locator1.viewlicensedocument().click();
 	    	Thread.sleep(2000);
+			test.log(LogStatus.PASS, "Licence Viewed successfully.");
+
 	    	
-	    	
-				 try {
+			/*	 try {
 			            
 					 Method5.ViewFile(test,workbook);
 			         
@@ -17691,7 +18291,7 @@ Thread.sleep(3000);
 			    			   Method5.HandlePopUp(test);
 			    			   
 			   	        }
-			   		   
+			   		   */
 				
 		/*
 		   try {

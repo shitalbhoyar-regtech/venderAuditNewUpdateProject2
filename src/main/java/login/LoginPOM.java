@@ -34,6 +34,11 @@ public class LoginPOM extends BasePage{
 		submit = getDriver().findElement(By.xpath("//input[@name='Submit']"));
 		return submit;
 	}
+	public static WebElement Submit()	//Method for searching button for Save/Sign-in
+	{
+		submit = getDriver().findElement(By.xpath("//button[@id='Submit']"));
+		return submit;
+	}
 	
 	public static WebElement clickQALink()	//Method for searching QALink for user login
 	{

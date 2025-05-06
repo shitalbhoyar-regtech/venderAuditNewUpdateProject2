@@ -3,7 +3,6 @@ package companyAdmin;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,9 +37,13 @@ public class CriticalMethod extends BasePage {
 	private static int open;
 	
 	
+	
 	public static void Addentity2( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 
+		Locator.Entity().click();
+		Thread.sleep(3000);
+		
 		Locator.AddEntity1().click();
 		Thread.sleep(3000);
 		
@@ -50,6 +53,8 @@ public class CriticalMethod extends BasePage {
 		Row row0 = sheet.getRow(row); // Selected 0th index row (First row)
 		Cell c1 = null;
 						
+		
+		
 		row0 = sheet.getRow(3);
 		c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 		Locator.EntityName().sendKeys(c1.getStringCellValue()); // Writing Task title
@@ -176,7 +181,8 @@ public class CriticalMethod extends BasePage {
 	public static void AddSubEntity2( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 
-	
+		Locator.Entity().click();
+		Thread.sleep(3000);
 		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
 		int row = 0;
 		Thread.sleep(500);
@@ -323,6 +329,8 @@ public class CriticalMethod extends BasePage {
 	public static void UpdateSubEntity( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
+		Locator.Entity().click();
+		Thread.sleep(3000);
 		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
 		int row = 0;
 		Thread.sleep(500);
@@ -477,7 +485,8 @@ public class CriticalMethod extends BasePage {
 	
 	public static void ClearEntityButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		
+		Locator.Entity().click();
+		Thread.sleep(3000);
 		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
 		int row = 0;
 		Thread.sleep(500);
@@ -515,7 +524,8 @@ public class CriticalMethod extends BasePage {
 	
 	public static void DeleteE( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-	
+		Locator.Entity().click();
+		Thread.sleep(3000);
 		Thread.sleep(3000);
 	Locator.DeleteEntity().click();
 	Thread.sleep(3000);
@@ -569,7 +579,8 @@ public class CriticalMethod extends BasePage {
 	{
 
 		
-		
+		Locator.Entity().click();
+		Thread.sleep(3000);
 		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
 		int row = 0;
 		Thread.sleep(500);
@@ -662,8 +673,8 @@ public class CriticalMethod extends BasePage {
 		Thread.sleep(3000);
 	//	Locator.industry().click();
 	//	Thread.sleep(3000);
-		Locator.industryD().click();
-		Thread.sleep(5000);
+	//	Locator.industryD().click();
+	//	Thread.sleep(5000);
 		Locator.SubmitButton().click();
 	
 		Thread.sleep(9000);
@@ -714,6 +725,8 @@ public class CriticalMethod extends BasePage {
 	public static void UploadEntity1( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 	
+		Locator.Entity().click();
+		Thread.sleep(3000);
 	Locator.UploadEntity().click();
 	Thread.sleep(3000);
 
@@ -781,6 +794,8 @@ public class CriticalMethod extends BasePage {
 	public static void DeleteSubEntity( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
 		
+		Locator.Entity().click();
+		Thread.sleep(3000);
 		sheet = workbook.getSheetAt(0); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
 		int row = 0;
 		Thread.sleep(500);
@@ -5074,8 +5089,8 @@ if(Locator.LicenceType().isDisplayed()&&Locator.RegistrationNo1().isDisplayed()&
 		    		Thread.sleep(5000);
 		            ac1.accept(); // Accept the alert (click OK)
 		        } catch (Exception e) {
-		            System.out.println("Alert not found within the specified time.");
-		            test.log(LogStatus.FAIL, "Download error log");
+		          //  System.out.println("Alert not found within the specified time.");
+		           //// test.log(LogStatus.FAIL, "Download error log");
 		        } 
 
 		
@@ -7859,7 +7874,7 @@ if(Locator.AddTempbutton().isDisplayed()&&Locator.UpdateTempbutton().isDisplayed
 	{
 		Thread.sleep(4000);
 		Locator.Report().click();
-		Thread.sleep(20000);
+		Thread.sleep(7000);
 		
 		Thread.sleep(1000);
 		
@@ -7901,12 +7916,12 @@ if(Locator.AddTempbutton().isDisplayed()&&Locator.UpdateTempbutton().isDisplayed
 			test.log(LogStatus.FAIL, "PDF Does Not Viewed Successfully");
 		}
 	   Thread.sleep(500);
-	   getDriver().switchTo().frame(Locator.Frame());
+	/*   getDriver().switchTo().frame(Locator.Frame());
 		Thread.sleep(3000);
 	
 		getDriver().switchTo().frame(Locator2.InnerFrame());
 		Thread.sleep(7000);
-		
+		*/
 		File dir = new File("C:\\Users\\shitalb\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		

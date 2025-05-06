@@ -974,6 +974,14 @@ public class Locator5 extends BasePage{
 			
 			
 		}
+		public static WebElement ClosePage1()		//Method for searching Username input
+		{
+			ClosePage = getDriver().findElement(By.cssSelector("a[aria-label='Close']"));
+			return ClosePage;
+			
+			
+		}
+		
 		
 	
 	//Audit Completion Status-Status Wise Summary
@@ -1121,7 +1129,7 @@ public class Locator5 extends BasePage{
 	
 		public static WebElement CTWCompliedGreen()		//Method for searching Username input
 		{
-			CTWCompliedGreen = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Canteen']"));
+			CTWCompliedGreen = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Maintenance']"));
 			return CTWCompliedGreen;
 			
 			
@@ -1165,7 +1173,7 @@ public class Locator5 extends BasePage{
 		
 		public static WebElement CTWCompliedGreenHighGridViewButton()		//Method for searching Username input
 		{
-			CTWCompliedGreenHighGridViewButton = getDriver().findElement(By.xpath("(//a[@class='k-button k-button-icontext ob-view k-grid-view'])[1]"));
+			CTWCompliedGreenHighGridViewButton = getDriver().findElement(By.xpath("//div[@id='gridComplianceStatusWise']/div/table/tbody/tr/td[11]/a"));
 			return CTWCompliedGreenHighGridViewButton;
 			
 			
@@ -1306,7 +1314,7 @@ public class Locator5 extends BasePage{
 		
 		public static WebElement CTWCompletedGreen()		//Method for searching Username input
 		{
-			CTWCompletedGreen = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[20]"));
+			CTWCompletedGreen = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[13]"));
 			return CTWCompletedGreen;
 			
 			
@@ -1317,7 +1325,7 @@ public class Locator5 extends BasePage{
 		
 		public static WebElement CTWOverdueRed()		//Method for searching Username input
 		{
-			CTWOverdueRed = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[28]"));
+			CTWOverdueRed = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[17]"));
 			return CTWOverdueRed;
 			
 			
@@ -1328,7 +1336,7 @@ public class Locator5 extends BasePage{
 		
 		public static WebElement CTWPendingReviewYellow()		//Method for searching Username input
 		{
-			CTWPendingReviewYellow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[36]"));
+			CTWPendingReviewYellow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[21]"));
 			return CTWPendingReviewYellow;
 			
 			
@@ -1354,7 +1362,7 @@ public class Locator5 extends BasePage{
 
 		public static WebElement PWCSSABCConstructionCompliedHigh()		//Method for searching Username input
 		{
-			PWCSSABCConstructionCompliedHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[40]"));
+			PWCSSABCConstructionCompliedHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[22]"));
 			return PWCSSABCConstructionCompliedHigh;
 			
 			
@@ -1365,7 +1373,7 @@ public class Locator5 extends BasePage{
 		
 		public static WebElement PWCSSABCConstructionCompliedMedium()		//Method for searching Username input
 		{
-			PWCSSABCConstructionCompliedMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[41]"));
+			PWCSSABCConstructionCompliedMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[23]"));
 			return PWCSSABCConstructionCompliedMedium;
 			
 			
@@ -1376,7 +1384,7 @@ public class Locator5 extends BasePage{
 
 		public static WebElement PWCSSABCConstructionCompliedLow()		//Method for searching Username input
 		{
-			PWCSSABCConstructionCompliedLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[42]"));
+			PWCSSABCConstructionCompliedLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[24]"));
 			return PWCSSABCConstructionCompliedLow;
 			
 			
@@ -1390,7 +1398,7 @@ public class Locator5 extends BasePage{
 
 		public static WebElement PWCSSABCconstructionNotCompliedHigh()		//Method for searching Username input
 		{
-			PWCSSABCconstructionNotCompliedHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[43]"));
+			PWCSSABCconstructionNotCompliedHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[25]"));
 			return PWCSSABCconstructionNotCompliedHigh;
 			
 			
@@ -1400,7 +1408,7 @@ public class Locator5 extends BasePage{
 		
 		public static WebElement PWCSSABCconstructionNotCompliedMedium()		//Method for searching Username input
 		{
-			PWCSSABCconstructionNotCompliedMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[44]"));
+			PWCSSABCconstructionNotCompliedMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[26]"));
 			return PWCSSABCconstructionNotCompliedMedium;
 			
 			
@@ -1411,7 +1419,7 @@ public class Locator5 extends BasePage{
 
 		public static WebElement PWCSSABCconstructionNotCompliedLow()		//Method for searching Username input
 		{
-			PWCSSABCconstructionNotCompliedLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[45]"));
+			PWCSSABCconstructionNotCompliedLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[27]"));
 			return PWCSSABCconstructionNotCompliedLow;
 			
 			
@@ -1424,7 +1432,7 @@ public class Locator5 extends BasePage{
 		
 		public static WebElement PWCSSABCconstructionNotApplicableHigh()		//Method for searching Username input
 		{
-			PWCSSABCconstructionNotApplicableHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[46]"));
+			PWCSSABCconstructionNotApplicableHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[28]"));
 			return PWCSSABCconstructionNotApplicableHigh;
 			
 			
@@ -1435,7 +1443,7 @@ public class Locator5 extends BasePage{
 		
 		public static WebElement PWCSSABCconstructionNotApplicableMedium()		//Method for searching Username input
 		{
-			PWCSSABCconstructionNotApplicableMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[47]"));
+			PWCSSABCconstructionNotApplicableMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[29]"));
 			return PWCSSABCconstructionNotApplicableMedium;
 			
 			
@@ -1445,7 +1453,7 @@ public class Locator5 extends BasePage{
 
 		public static WebElement PWCSSABCconstructionNotApplicableLow()		//Method for searching Username input
 		{
-			PWCSSABCconstructionNotApplicableLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[48]"));
+			PWCSSABCconstructionNotApplicableLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[30]"));
 			return PWCSSABCconstructionNotApplicableLow;
 			
 			
@@ -1469,7 +1477,7 @@ public class Locator5 extends BasePage{
 		
 		public static WebElement PWAuditStatusSummeryABCConstructionOverdue()		//Method for searching Username input
 		{
-			PWAuditStatusSummeryABCConstructionOverdue = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[73]"));
+			PWAuditStatusSummeryABCConstructionOverdue = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[30]"));
 			return PWAuditStatusSummeryABCConstructionOverdue;
 			
 			
@@ -1479,7 +1487,7 @@ public class Locator5 extends BasePage{
 		
 		public static WebElement PWAuditStatusSummerABCConstructionPendingReview()		//Method for searching Username input
 		{
-			PWAuditStatusSummerABCConstructionPendingReview = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[95]"));
+			PWAuditStatusSummerABCConstructionPendingReview = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[35]"));
 			return PWAuditStatusSummerABCConstructionPendingReview;
 			
 			
@@ -1490,7 +1498,7 @@ public class Locator5 extends BasePage{
 
 		public static WebElement PWAuditStatusSummerABCConstructionClosed()		//Method for searching Username input
 		{
-			PWAuditStatusSummerABCConstructionClosed = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[51]"));
+			PWAuditStatusSummerABCConstructionClosed = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[25]"));
 			return PWAuditStatusSummerABCConstructionClosed;
 			
 			
@@ -1714,7 +1722,7 @@ public class Locator5 extends BasePage{
 
 	public static WebElement FacilityDD()		//Method for searching Username input
 	{
-		SelectMonthDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[3]//span[2]"));
+		SelectMonthDD = getDriver().findElement(By.xpath("//div[@class='k-animation-container']//li[21]//span[2]"));
 		return SelectMonthDD;
 		
 		
@@ -2656,7 +2664,7 @@ public class Locator5 extends BasePage{
 	
 	public static WebElement PWCSSubContractorCompliedHigh()		//Method for searching Username input
 	{
-	PWCSSubContractorCompliedHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[106]"));
+	PWCSSubContractorCompliedHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[37]"));
 	return PWCSSubContractorCompliedHigh;
 
 
@@ -2666,7 +2674,7 @@ public class Locator5 extends BasePage{
 	
 	public static WebElement PWCSSubContractorCompliedMedium()		//Method for searching Username input
 	{
-		PWCSSubContractorCompliedMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[107]"));
+		PWCSSubContractorCompliedMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[38]"));
 		return PWCSSubContractorCompliedMedium;
 		
 		
@@ -2676,7 +2684,7 @@ public class Locator5 extends BasePage{
 	
 	public static WebElement PWCSSubContractorCompliedLow()		//Method for searching Username input
 	{
-		PWCSSubContractorCompliedLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[108]"));
+		PWCSSubContractorCompliedLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[39]"));
 		return PWCSSubContractorCompliedLow;
 		
 		
@@ -2699,7 +2707,7 @@ public class Locator5 extends BasePage{
 	
 	public static WebElement PWCSSubContractorNotCompliedHigh()		//Method for searching Username input
 	{
-		PWCSSubContractorNotCompliedHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[109]"));
+		PWCSSubContractorNotCompliedHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[40]"));
 		return PWCSSubContractorNotCompliedHigh;
 		
 		
@@ -2710,7 +2718,7 @@ public class Locator5 extends BasePage{
 	
 	public static WebElement PWCSSubContractorNotCompliedMedium()		//Method for searching Username input
 	{
-		PWCSSubContractorNotCompliedMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[110]"));
+		PWCSSubContractorNotCompliedMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[41]"));
 		return PWCSSubContractorNotCompliedMedium;
 		
 		
@@ -2722,7 +2730,7 @@ public class Locator5 extends BasePage{
 	
 	public static WebElement PWCSSubContractorNotCompliedLow()		//Method for searching Username input
 	{
-		PWCSSubContractorNotCompliedLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[111]"));
+		PWCSSubContractorNotCompliedLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[42]"));
 		return PWCSSubContractorNotCompliedLow;
 		
 		
@@ -2749,7 +2757,7 @@ public class Locator5 extends BasePage{
 	
 	public static WebElement PWCSSubContractorNotApplicableHigh()		//Method for searching Username input
 	{
-		PWCSSubContractorNotApplicableHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[112]"));
+		PWCSSubContractorNotApplicableHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[43]"));
 		return PWCSSubContractorNotApplicableHigh;
 		
 		
@@ -2759,7 +2767,7 @@ public class Locator5 extends BasePage{
 	
 	public static WebElement PWCSSubContractorNotApplicableMedium()		//Method for searching Username input
 	{
-		PWCSSubContractorNotApplicableMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[113]"));
+		PWCSSubContractorNotApplicableMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[44]"));
 		return PWCSSubContractorNotApplicableMedium;
 		
 		
@@ -2768,7 +2776,7 @@ public class Locator5 extends BasePage{
 	
 	public static WebElement PWCSSubContractorNotApplicableLow()		//Method for searching Username input
 	{
-		PWCSSubContractorNotApplicableLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[114]"));
+		PWCSSubContractorNotApplicableLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[45]"));
 		return PWCSSubContractorNotApplicableLow;
 		
 		
@@ -3007,7 +3015,7 @@ public class Locator5 extends BasePage{
 
 	public static WebElement FacilityTxt()		//Method for searching Username input
 	{
-		RudraHeritage = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text']//*[name()='tspan' and .='CHN-CTS-MEPZ-TBM']"));
+		RudraHeritage = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[5]//*[name()='text']//*[name()='tspan' and .='Ecobuild Solutions']"));
 		return RudraHeritage;
 		
 		
@@ -3016,6 +3024,13 @@ public class Locator5 extends BasePage{
 	public static WebElement ContractorTxt()		//Method for searching Username input
 	{
 		RudraHeritage = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[2]//*[name()='text']//*[name()='tspan' and .='Suraj']"));
+		return RudraHeritage;
+		
+		
+	}
+	public static WebElement ContractortypeTxt()		//Method for searching Username input
+	{
+		RudraHeritage = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text']//*[name()='tspan' and .='Maintenance']"));
 		return RudraHeritage;
 		
 		
@@ -3067,7 +3082,7 @@ public class Locator5 extends BasePage{
 	
 	public static WebElement ContractorClosedAuditComplied()		//Method for searching Username input
 	{
-		SubContractorDD = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"));
+		SubContractorDD = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"));
 		return SubContractorDD;
 		
 		
@@ -3077,7 +3092,7 @@ public class Locator5 extends BasePage{
 	
 	public static WebElement ContractorClosedAuditNotComplied()		//Method for searching Username input
 	{
-		SubContractorDD = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[10]"));
+		SubContractorDD = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[5]"));
 		return SubContractorDD;
 		
 		
@@ -3086,7 +3101,7 @@ public class Locator5 extends BasePage{
 
 	public static WebElement ContractorClosedAuditNotApplicable()		//Method for searching Username input
 	{
-		SubContractorDD = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[15]"));
+		SubContractorDD = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[8]"));
 		return SubContractorDD;
 		
 		
