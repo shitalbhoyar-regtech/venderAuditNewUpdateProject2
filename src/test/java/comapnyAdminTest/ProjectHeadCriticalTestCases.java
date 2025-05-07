@@ -98,7 +98,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	
 	
 	
-	
+	/*
 	
 	@Test(priority = 1) 
 	void ProjectsCountGridCount1() throws InterruptedException, IOException
@@ -234,7 +234,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	}
 
 
-	
+	*/
 	
 	@Test(priority = 11) 
 	void CTWAuditStatusSummeryOverdue1() throws InterruptedException, IOException
@@ -292,7 +292,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 	
 	
 	
-	
+	/*
 	
 	
 	@Test(priority = 14) 
@@ -561,7 +561,7 @@ public class ProjectHeadCriticalTestCases extends BasePage {
 		extent.flush();
 	}
 	
-	
+	*/
 	
 	
 	

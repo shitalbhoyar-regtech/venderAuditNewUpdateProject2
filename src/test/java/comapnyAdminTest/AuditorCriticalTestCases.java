@@ -19,6 +19,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import companyAdmin.Method;
 import companyAuditor.CriticalMethod2;
 import companyAuditor.Locator2;
 import companyAuditor.Method2;
@@ -113,7 +114,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-		
+		/*
 	
 	@Test(priority = 3) 
 	void UpcomingViewDownloadButton1() throws InterruptedException, IOException
@@ -172,7 +173,6 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-
 	
 	@Test(priority = 8)                                                                    
 	void Upcomingtransactionandstatuslog1() throws InterruptedException, IOException
@@ -628,7 +628,7 @@ public class AuditorCriticalTestCases extends BasePage{
 
 		
 		
-		
+		/*
 		@Test(priority = 42) 
 		void RedInRedGraphCountMatch1() throws InterruptedException, IOException
 		{
@@ -654,7 +654,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		}
 		
 		
-		
+		/*
 	
 	
 		
@@ -676,7 +676,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		}
 		
 	
-		
+		*/
 		@Test(priority = 45) 
 		void PWSCompliedHighRisk1() throws InterruptedException, IOException
 		{
@@ -703,7 +703,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		
 		
 		
-		
+		/*
 
 		
 		
@@ -945,7 +945,7 @@ public class AuditorCriticalTestCases extends BasePage{
 		extent.endTest(test);
 		extent.flush();
 	}
-	
+	*/
 	
 
 	

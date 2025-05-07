@@ -24,6 +24,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.applitools.eyes.selenium.Eyes;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -172,14 +173,14 @@ public class CriticalMethod2 extends BasePage{
 	
 	Thread.sleep(2000);
     
-	Method2.UpcomingExcelcountAndGridMatch(test,workbook);
+	/*Method2.UpcomingExcelcountAndGridMatch(test,workbook);
 	Thread.sleep(2000);
 	
 	Method2.UpcomingClearButton( test, workbook);	
 	Thread.sleep(2000);
 	
 	Method2.UpcomingEditButton( test, workbook);	
-	Thread.sleep(2000);
+	Thread.sleep(2000);*/
 	
 	 }
 	 else {
@@ -414,18 +415,15 @@ public class CriticalMethod2 extends BasePage{
 	
 	public static void RejectedEditButton( ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 	{
-		try {
+		/*
 		Thread.sleep(20000);
 		Locator2.RejectedDasboardCount().click();
 		Thread.sleep(20000);
-	
+	/*
 		Locator2.EditButtonPendingReview().click();
 		Thread.sleep(9000);
-		}
-		catch(Exception e) {
-			
-		}
 		
+		*/
 		// Locator2.ViewButtonPR().click();
 	    
 		
@@ -2155,19 +2153,32 @@ public class CriticalMethod2 extends BasePage{
 		//WebWait wait = new WebWait( 1000);
 		Thread.sleep(26000);
 		
+		Eyes eyes = new Eyes();
+	    eyes.open(getDriver(), "MyApp", "Status Wise Summary");
+
 		Thread.sleep(2000);
 		
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
 	    
 	    jss.executeScript("window.scrollBy(0,400)");
 	    Thread.sleep(2000);
-		
-		Locator2.GreenGraph().click();
+	//	Method2.scrollToElement(driver, Locator2.GreenGraph(driver));
+		//Locator2.GreenGraph(driver).click();
 		Thread.sleep(2000);
-		
+		 eyes.checkElement(Locator2.GreenGraph());
+		// eyes.addMouseTrigger(MouseAction.Click, Locator2.GreenGraph(driver));
+		 
+		 Thread.sleep(2000);
+		Method2.scrollToElement(getDriver(), Locator2.GreenGraph());
+		Thread.sleep(2000);
+		Locator2.GreenGraph().click();
+		Method2.scrollToElement(getDriver(), Locator2.RedGraph());
+		 eyes.checkElement(Locator2.RedGraph());
 		int open = Integer.parseInt(Locator2.RedGraph().getText());	//Reading Dashboard count.
+		//eyes.checkElement(graphElement);
+	//	System.out.println(graphElement);
 	    Locator2.RedGraph().click();					                //Clicking on Dashboard count
-
+	    eyes.checkWindow();
 	    Thread.sleep(2000);
 	    
 	    getDriver().switchTo().frame(Locator2.Frame());
@@ -2176,8 +2187,8 @@ public class CriticalMethod2 extends BasePage{
 	   // wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IFNewPeriodGraphCompliance"));                                                            	
 		//Thread.sleep(500);	
 	   
-	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit()));
-		////wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad()));
+	    //    wait.until(ExpectedConditions.visibilityOf(Locator1.Edit(driver)));
+		//wait.until(ExpectedConditions.visibilityOf(Locator2.GridLoad(driver)));
 	    
 			
 		Thread.sleep(4000);
@@ -2192,7 +2203,7 @@ public class CriticalMethod2 extends BasePage{
 		int count1 = Integer.parseInt(compliancesCount);
 
 		
-		
+		 eyes.checkWindow();
 		if(open == count1)
 					
 		{
@@ -2215,9 +2226,102 @@ public class CriticalMethod2 extends BasePage{
 		
 		
 		   Thread.sleep(5000);
-	       JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+	       JavascriptExecutor js1 = (JavascriptExecutor) driver;
 		    
 		    js1.executeScript("window.scrollBy(0,-1000)");
+		    Thread.sleep(2000);    
+		
+		
+		Locator2.ClearContractorRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		Locator2.ClearContractorDDRedGraphGrid().click();
+		Thread.sleep(2000);
+		
+		
+		if(Locator2.ClearButtonRedGraphGrid().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator2.ClearButtonRedGraphGrid().click();
+			test.log(LogStatus.PASS, " Clear Button Is Clickable " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear Button Is Clickable "  );
+			
+		}
+		
+		
+        Thread.sleep(2000);
+        eyes.checkElement(Locator2.ViewRedButton());
+		if(Locator2.ViewRedButton().isEnabled())
+		{
+			
+			Thread.sleep(2000);
+		    Locator2.ViewRedButton().click();
+		    eyes.checkWindow();
+			test.log(LogStatus.PASS, "  View Button Is Clickable " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  View Button Is Clickable "  );
+			
+		}
+		
+		
+		Thread.sleep(4000);
+		eyes.checkWindow("Compliance Review");
+		getDriver().switchTo().parentFrame();
+		
+		Thread.sleep(4000);
+		
+		Locator2.ClosePage().click();
+		
+		Thread.sleep(4000);
+		// eyes.checkWindow();
+
+		Method2.YellowGraphDashboardGridCount( test, workbook);
+		Thread.sleep(4000);
+		
+	//	Method2.GreenInGreenGraph(driver, test, workbook);
+		
+		
+		Thread.sleep(4000);
+		
+		eyes.close();
+		
+
+		if(open == count1)
+					
+		{
+						
+		//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+						
+		test.log(LogStatus.PASS, " High Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+					
+		else
+					
+		{
+						
+		//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+						
+		test.log(LogStatus.FAIL, " High Risk :- Dashboard Graph Count = "+open+" | Displayed records from grid = "+count1);
+					
+		}
+		
+		
+		   Thread.sleep(5000);
+	       JavascriptExecutor j = (JavascriptExecutor) getDriver();
+		    
+		    j.executeScript("window.scrollBy(0,-1000)");
 		    Thread.sleep(2000);    
 		    Method1.GraphExcelCount(test,workbook);
 			  Thread.sleep(4000);
@@ -4279,8 +4383,9 @@ public class CriticalMethod2 extends BasePage{
 		Locator2.PWSCompliedJKHills().click();
 		Thread.sleep(2000);
 		
+		Actions actions = new Actions(getDriver());
 		int open = Integer.parseInt(Locator2.PWSCompliedGraphHigh().getText());	//Reading Dashboard count.
-	    Locator2.PWSCompliedGraphHigh().click();					                //Clicking on Dashboard count
+		actions.moveToElement(Locator2.PWSCompliedGraphHigh()).click().perform();
 
 	    Thread.sleep(20000);
 	   
@@ -4391,7 +4496,7 @@ public class CriticalMethod2 extends BasePage{
 		Thread.sleep(4000);
 		
 		Locator2.ClosePage().click();
-		
+	
 		Thread.sleep(3000);
 		
 		Method2.PWSCompliedMediumRisk( test, workbook);

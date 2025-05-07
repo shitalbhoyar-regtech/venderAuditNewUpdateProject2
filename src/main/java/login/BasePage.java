@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import com.applitools.eyes.selenium.Eyes;
 
 import javax.xml.datatype.Duration;
 
@@ -18,6 +19,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -29,6 +31,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.applitools.eyes.RectangleSize;
+import com.applitools.eyes.selenium.Eyes;
 import com.relevantcodes.extentreports.ExtentReports;
 	import com.relevantcodes.extentreports.ExtentTest;
 
@@ -36,9 +40,9 @@ import companyContractor.Locator1;
 
 
 
-	
 
 	public class BasePage {
+		public Eyes eyes=null;
 
 		public Properties prop;
 		protected static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
@@ -165,13 +169,22 @@ import companyContractor.Locator1;
 		if (browser.contains("chrome")) {
 				
 			
-				System.setProperty("webdriver.chrome.driver", "E:\\driver\\chromedriver-win64\\chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", "E:\\driver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 
 			//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\shitalb\\Documents\\driver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
 					//WebDriverManager.chromedriver().setup();
 					ChromeOptions options = new ChromeOptions();
 					options.addArguments("--remote-allow-origins=*");
-					driver.set(new ChromeDriver(options));		
+					driver.set(new ChromeDriver(options));	
+				/*	eyes = new Eyes();
+			        System.out.println("open");
+			        eyes.setApiKey("W0iJ6tayX7GqHk5M8tCoYKZJbGfDOTqntPF4YDR9bRA110");
+			        System.out.println("open1");
+			        Dimension currentSize = getDriver().manage().window().getSize();
+			        eyes.open(getDriver(), "MyApp", "Homepage Test",
+			        	    new RectangleSize(currentSize.getWidth(), currentSize.getHeight()));
+			    //    eyes.open(driver, "MyApp", "Homepage Test", new RectangleSize(1024, 768));
+			        System.out.println("open3");*/
 	}
 				
 				else {
@@ -212,13 +225,13 @@ import companyContractor.Locator1;
 		login.Login.UserLogin(uname,password,link);		//Method of Login class to login user.
 		
 		
-		try {
+	/*	try {
 			Locator1.VendorAudit().click();
 			Thread.sleep(2000);
 			}
 			catch(Exception e) {
 				
-			}
+			}*/
 		try {
 		Locator1.Dashboard1().click();
 		Thread.sleep(2000);

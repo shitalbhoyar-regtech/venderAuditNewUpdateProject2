@@ -1,8 +1,12 @@
 package companyAuditor;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import login.BasePage;
 
@@ -691,7 +695,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement UpcomingCountGrid()		//Method for searching Username input
 	{
-		UpcomingCountGrid = getDriver().findElement(By.xpath("//span[@class='k-pager-info k-label']"));
+		UpcomingCountGrid = getDriver().findElement(By.xpath("//span[@class='k-pager-info k-labelsss']"));
 		return UpcomingCountGrid;
 	}
 	
@@ -1074,7 +1078,7 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement PWSCompliedJKHills()		//Method for searching Username input
 	{
-		PWSCompliedJKHills = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Mantra Mesmer']"));
+		PWSCompliedJKHills = getDriver().findElement(By.xpath("(//*[local-name()='svg']//*[name()='g' and @class='highcharts-axis-labels highcharts-xaxis-labels '])[1]//*[name()='text' and @class='highcharts-drilldown-axis-label']//*[name()='tspan' and .='Geet Heritage']"));
 	return PWSCompliedJKHills;
     }
 	
@@ -1426,7 +1430,10 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement GreenGraph()		//Method for searching Username input
 	{
-		GreenGraph = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-drilldown-data-label']"));
+		//GreenGraph = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-drilldown-data-label']"));
+		GreenGraph = getDriver().findElement(By.xpath("//div[@id='divpieChartPeriodWiseComplianceStatus']//*[local-name()='svg']//*[name()='g' and @class='highcharts-label highcharts-data-label highcharts-data-label-color-0 highcharts-drilldown-data-label']"));
+
+		
 		return GreenGraph;
 		
 		
@@ -1436,7 +1443,9 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement RedGraph()		//Method for searching Username input
 	{
-		RedGraph = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 '])[1]"));
+	//	RedGraph = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-0 '])[1]"));
+		RedGraph = getDriver().findElement(By.xpath("//div[@id='divpieChartPeriodWiseComplianceStatus']//*[local-name()='svg']//*[name()='g' and @class='highcharts-label highcharts-data-label highcharts-data-label-color-1 highcharts-drilldown-data-label']"));
+		
 		return RedGraph;
 		
 		
@@ -1612,7 +1621,10 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement RedGraph2()		//Method for searching Username input
 	{
-		RedGraph2 = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-1 highcharts-drilldown-data-label']"));
+	//	RedGraph2 = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-1 highcharts-drilldown-data-label']"));
+		RedGraph2 = getDriver().findElement(By.xpath("//div[@id='divpieChartPeriodWiseComplianceStatus']//*[local-name()='svg']//*[name()='g' and @class='highcharts-label highcharts-data-label highcharts-data-label-color-1 highcharts-drilldown-data-label']"));
+
+		
 		return RedGraph2;
 		
 		
@@ -1736,7 +1748,9 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement GreyGraph()		//Method for searching Username input
 	{
-		GreyGraph = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-2 highcharts-drilldown-data-label']"));
+		//GreyGraph = getDriver().findElement(By.xpath("//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-2 highcharts-drilldown-data-label']"));
+		GreyGraph = getDriver().findElement(By.xpath("//div[@id='divpieChartPeriodWiseComplianceStatus']//*[local-name()='svg']//*[name()='g' and @class='highcharts-label highcharts-data-label highcharts-data-label-color-2 highcharts-drilldown-data-label']"));
+		
 		return GreyGraph;
 		
 		
@@ -2077,7 +2091,12 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement PWSCompliedGraphHigh()		//Method for searching Username input
 	{
-		PWSCompliedGraphHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"));
+		//PWSCompliedGraphHigh = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[1]"));
+		PWSCompliedGraphHigh = getDriver().findElement(By.xpath("//div[@id='divbarChartProjectWiseComplianceStatus']//*[local-name()='svg']//*[local-name()='g' and contains(@class, 'highcharts-series-3')]//*[local-name()='g' and contains(@class, 'highcharts-data-label')][1]"));
+		//PWSCompliedGraphHigh = getDriver().findElement(By.xpath("//*[contains(@class, 'highcharts-label highcharts-data-label highcharts-data-label-color-undefined ') and @transform='translate(156,110)']"));
+
+		
+		
 		return PWSCompliedGraphHigh;
 		
 		
@@ -2120,8 +2139,12 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement PWSCompliedGraphMedium()		//Method for searching Username input
 	{
-		PWSCompliedGraphMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"));
-		return PWSCompliedGraphMedium;
+		WebDriverWait wait = new WebDriverWait(getDriver(), 50);
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divbarChartProjectWiseComplianceStatus']//*[local-name()='svg']//*[local-name()='g' and contains(@class, 'highcharts-series-3')]//*[local-name()='g' and contains(@class, 'highcharts-data-label')][1]/following-sibling::*[local-name()='g'][1]")));
+		//PWSCompliedGraphMedium = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[2]"));
+		//PWSCompliedGraphHigh = getDriver().findElement(By.xpath("//div[@id='divbarChartProjectWiseComplianceStatus']//*[local-name()='svg']//*[local-name()='g' and contains(@class, 'highcharts-series-3')]//*[local-name()='g' and contains(@class, 'highcharts-data-label')][1]/following-sibling::*[local-name()='g'][1]"));
+
+		//return PWSCompliedGraphMedium;
 		
 		
 	}
@@ -2158,8 +2181,14 @@ public class Locator2  extends BasePage{
 	
 	public static WebElement PWSCompliedGraphLow()		//Method for searching Username input
 	{
-		PWSCompliedGraphLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[3]"));
-		return PWSCompliedGraphLow;
+		WebDriverWait wait = new WebDriverWait(getDriver(), 50);
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='divbarChartProjectWiseComplianceStatus']//*[local-name()='svg']//*[local-name()='g' and contains(@class, 'highcharts-series-3')]//*[local-name()='g' and contains(@class, 'highcharts-data-label')][1]/following-sibling::*[local-name()='g'][2]")));
+		
+		//PWSCompliedGraphLow = getDriver().findElement(By.xpath("(//*[@class='highcharts-label highcharts-data-label highcharts-data-label-color-undefined '])[3]"));
+		//PWSCompliedGraphLow = getDriver().findElement(By.xpath("//div[@id='divbarChartProjectWiseComplianceStatus']   //*[@id='highcharts-9']  //*[local-name()='svg']   //*[name()='g' and contains(@class, 'highcharts-series-3')]   //*[name()='g' and contains(@class, 'highcharts-data-label')][1]/following-sibling::*[name()='g'][2]"));
+
+		
+	//	return PWSCompliedGraphLow;
 		
 		
 	}

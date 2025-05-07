@@ -23,6 +23,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.applitools.eyes.selenium.Eyes;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
@@ -83,7 +84,7 @@ public class Method2 extends BasePage{
 	
 	
 	
-	public static void scrollToElement(WebElement element)
+	public static void scrollToElement(WebDriver webDriver, WebElement element)
 	{
 		
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -2364,9 +2365,16 @@ public class Method2 extends BasePage{
 		Locator2.GreenGraph().click();
 		Thread.sleep(2000);
 		*/
-		
-		int open = Integer.parseInt(Locator2.YellowGraph().getText());	//Reading Dashboard count.
-	    Locator2.YellowGraph().click();					                //Clicking on Dashboard count
+		Eyes eyes = new Eyes();
+		  eyes.open(getDriver(), "MyApp", "Status Wise Summary - Medium");
+	          eyes.checkElement(Locator2.YellowGraph());
+			Method2.scrollToElement( getDriver(),Locator2.YellowGraph());
+			 eyes.checkElement(Locator2.YellowGraph());
+			int open = Integer.parseInt(Locator2.YellowGraph().getText());	//Reading Dashboard count.
+		    Locator2.YellowGraph().click();					                //Clicking on Dashboard count
+			 eyes.checkWindow();
+//		int open = Integer.parseInt(Locator2.YellowGraph().getText());	//Reading Dashboard count.
+//	    Locator2.YellowGraph().click();					                //Clicking on Dashboard count
 
 	    Thread.sleep(20000);
 	   
@@ -2387,6 +2395,7 @@ public class Method2 extends BasePage{
 	    
 	    
 	   
+	    eyes.checkElement(Locator2.YellowGraphGrid());
 
 		String item = Locator2.YellowGraphGrid().getText();
 		String[] bits = item.split(" ");								//Splitting the String
@@ -4394,9 +4403,9 @@ public class Method2 extends BasePage{
 		
 		/*
 		Thread.sleep(2000);
-		
+		*/
 	    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
-	    
+	    /*
 	    jss.executeScript("window.scrollBy(0,900)");
 	    Thread.sleep(2000);
 		
@@ -4404,9 +4413,11 @@ public class Method2 extends BasePage{
 		Thread.sleep(5000);
 		
 		*/
-		
+		Actions actions = new Actions(getDriver());
+		jss.executeScript("window.scrollBy(0,100)");
+		//String t=Locator2.PWSCompliedGraphMedium().getText();
 		int open = Integer.parseInt(Locator2.PWSCompliedGraphMedium().getText());	//Reading Dashboard count.
-	    Locator2.PWSCompliedGraphMedium().click();					                //Clicking on Dashboard count
+		actions.moveToElement(Locator2.PWSCompliedGraphMedium()).click().perform();
 
 	    Thread.sleep(23000);
 	   
@@ -14897,6 +14908,27 @@ else
 		}
 	
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 	
